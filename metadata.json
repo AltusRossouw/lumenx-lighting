@@ -1,0 +1,6 @@
+{
+  "name": "LumenX Lighting",
+  "description": "High-performance industrial and commercial LED lighting systems engineered for Africa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

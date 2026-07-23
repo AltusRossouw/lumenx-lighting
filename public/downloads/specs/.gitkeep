@@ -1,0 +1,5 @@
+Place PDF spec sheets here.
+Filenames should match the auto-generated slug from product names.
+Example: architectural-led-downlights.pdf
+
+When a product has an explicit pdfUrl in data.ts, that URL is used instead.

@@ -1,0 +1,5 @@
+Place IES photometric files here.
+Filenames should match the auto-generated slug from product names.
+Example: industrial-high-efficiency-highbay.ies
+
+When a product has an explicit iesUrl in data.ts, that URL is used instead.
