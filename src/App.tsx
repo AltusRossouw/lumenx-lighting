@@ -9,6 +9,7 @@ import { ComplianceSection } from './components/ComplianceSection';
 import { ContactSection } from './components/ContactSection';
 import { ProductsPage } from './components/ProductsPage';
 import { ProductDetailPage } from './components/ProductDetailPage';
+import { PrismBeam } from './components/animations';
 import { ShieldCheck } from 'lucide-react';
 
 type Page = 'company' | 'products' | { type: 'product-detail'; categoryId: string };
@@ -54,10 +55,15 @@ export default function App() {
         {currentPage === 'company' ? (
           <>
             <HeroSection onScrollTo={scrollToSection} />
+            <PrismBeam className="h-24" />
             <OverviewSection />
+            <PrismBeam className="h-24" count={3} colors={["#00D4FF", "#60A5FA", "#5165FF"]} />
             <ServicesSection />
+            <PrismBeam className="h-20" count={4} />
             <PortfolioSection />
+            <PrismBeam className="h-20" count={3} colors={["#5165FF", "#60A5FA", "#00D4FF"]} />
             <ComplianceSection />
+            <PrismBeam className="h-24" count={2} colors={["#00D4FF", "#5165FF"]} />
             <ContactSection />
           </>
         ) : currentPage === 'products' ? (

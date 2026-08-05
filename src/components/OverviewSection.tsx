@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { COMPANY } from '../data';
 import { Target, Eye, Heart, Users } from 'lucide-react';
+import { LightBloom } from './animations';
 
 export const OverviewSection: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
@@ -48,16 +49,17 @@ export const OverviewSection: React.FC = () => {
         {/* Quick facts */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           {quickFacts.map((fact, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.2 + i * 0.1, duration: 0.7 }}
-              className="gradient-border-card card-lift p-6"
-            >
-              <span className="text-[10px] font-mono text-slate-600 uppercase tracking-[0.2em] mb-3 block">{fact.label}</span>
-              <p className="text-sm text-slate-300 leading-relaxed font-sans font-light">{fact.value}</p>
-            </motion.div>
+            <LightBloom key={i} delay={0.1 + i * 0.1} bloomIntensity={0.35}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.2 + i * 0.1, duration: 0.7 }}
+                className="gradient-border-card card-lift p-6"
+              >
+                <span className="text-[10px] font-mono text-slate-600 uppercase tracking-[0.2em] mb-3 block">{fact.label}</span>
+                <p className="text-sm text-slate-300 leading-relaxed font-sans font-light">{fact.value}</p>
+              </motion.div>
+            </LightBloom>
           ))}
         </div>
 
@@ -66,19 +68,20 @@ export const OverviewSection: React.FC = () => {
           {pillars.map((p, i) => {
             const Icon = p.icon;
             return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.4 + i * 0.1, duration: 0.7 }}
-                className="gradient-border-card card-lift p-6"
-              >
-                <div className="w-10 h-10 bg-primary/[0.05] flex items-center justify-center mb-5">
-                  <Icon className="w-5 h-5 text-primary/60" />
-                </div>
-                <h3 className="font-display text-lg font-semibold text-white mb-3 tracking-tight">{p.title}</h3>
-                <p className="text-sm text-slate-400 leading-relaxed font-sans font-light">{p.text}</p>
-              </motion.div>
+              <LightBloom key={i} delay={0.3 + i * 0.1} bloomIntensity={0.35}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.4 + i * 0.1, duration: 0.7 }}
+                  className="gradient-border-card card-lift p-6"
+                >
+                  <div className="w-10 h-10 bg-primary/[0.05] flex items-center justify-center mb-5">
+                    <Icon className="w-5 h-5 text-primary/60" />
+                  </div>
+                  <h3 className="font-display text-lg font-semibold text-white mb-3 tracking-tight">{p.title}</h3>
+                  <p className="text-sm text-slate-400 leading-relaxed font-sans font-light">{p.text}</p>
+                </motion.div>
+              </LightBloom>
             );
           })}
         </div>

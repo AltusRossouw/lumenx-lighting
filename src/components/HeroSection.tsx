@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { COMPANY } from '../data';
 import { ArrowRight, ArrowDown, ShieldCheck, Award, MapPin } from 'lucide-react';
+import { LightningBolt, HaloPulse } from './animations';
 
 interface HeroSectionProps {
   onScrollTo: (sectionId: string) => void;
@@ -14,6 +15,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollTo }) => {
 
   return (
     <section ref={containerRef} id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-[#06090F]" style={{ minHeight: '100svh' }}>
+      {/* Lightning bolt effect */}
+      <LightningBolt boltCount={2} interval={5000} color="#00D4FF" intensity={0.8} />
+
       {/* Blueprint grid mask */}
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: 'linear-gradient(rgba(0,212,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.04) 1px, transparent 1px)',
@@ -92,7 +96,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollTo }) => {
               </div>
               <h1 className="font-display text-[clamp(2.8rem,7vw,6rem)] font-extrabold tracking-[-0.03em] leading-[0.92] text-white mb-6">
                 LIGHTING<br />
-                <span className="gradient-text neon-glow">ENGINEERED</span><br />
+                <span className="gradient-text">ENGINEERED</span><br />
                 <span className="text-white/90">FOR REAL</span><br />
                 PROJECTS
               </h1>
@@ -100,10 +104,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollTo }) => {
                 {COMPANY.intro}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button onClick={() => onScrollTo('contact')} className="group relative overflow-hidden px-8 py-4 bg-primary text-[#06090F] font-bold text-sm tracking-wide transition-all duration-300 cursor-pointer font-display hover:shadow-[0_0_40px_rgba(0,212,255,0.4)] active:glow-burst">
-                  <span className="relative z-10 flex items-center gap-2 led-flicker">Start a Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" /></span>
-                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                </button>
+                <HaloPulse className="inline-flex">
+                  <button onClick={() => onScrollTo('contact')} className="group relative overflow-hidden px-8 py-4 bg-primary text-[#06090F] font-bold text-sm tracking-wide transition-all duration-300 cursor-pointer font-display hover:shadow-[0_0_40px_rgba(0,212,255,0.4)] active:glow-burst">
+                    <span className="relative z-10 flex items-center gap-2 led-flicker">Start a Project <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" /></span>
+                    <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                  </button>
+                </HaloPulse>
                 <button onClick={() => onScrollTo('services')} className="group px-8 py-4 border border-white/10 hover:border-primary/30 text-slate-300 hover:text-white font-medium text-sm tracking-wide transition-all duration-300 cursor-pointer font-display flex items-center gap-2 bg-white/[0.02]">
                   Explore Capabilities <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform duration-300" />
                 </button>

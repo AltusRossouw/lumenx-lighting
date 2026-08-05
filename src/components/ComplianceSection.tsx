@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { COMPLIANCE_ITEMS, WHY_CHOOSE } from '../data';
 import { ShieldCheck, Zap, Package, DollarSign, Clock, Briefcase, Factory } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { LightBloom } from './animations';
 
 const whyIcons: Record<string, LucideIcon> = {
   Zap,
@@ -105,22 +106,23 @@ export const ComplianceSection: React.FC = () => {
             {WHY_CHOOSE.map((reason, i) => {
               const Icon = whyIcons[reason.icon] || Zap;
               return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="gradient-border-card card-lift p-5 text-left"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
-                    <Icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <h4 className="text-sm font-semibold text-[#FFFFFF] mb-2 font-display group-hover:text-primary transition-colors">
-                    {reason.title}
-                  </h4>
-                  <p className="text-xs text-[#64748B] leading-relaxed">{reason.description}</p>
-                </motion.div>
+                <LightBloom key={i} delay={i * 0.08} bloomIntensity={0.25} duration={0.6}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.08 }}
+                    className="gradient-border-card card-lift p-5 text-left"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
+                      <Icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <h4 className="text-sm font-semibold text-[#FFFFFF] mb-2 font-display group-hover:text-primary transition-colors">
+                      {reason.title}
+                    </h4>
+                    <p className="text-xs text-[#64748B] leading-relaxed">{reason.description}</p>
+                  </motion.div>
+                </LightBloom>
               );
             })}
           </div>

@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { PRODUCT_CATEGORIES, INDUSTRIES } from '../data';
 import { Building2, Factory, ShoppingBag, GraduationCap, Hotel, Landmark, Heart, FlaskConical } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { LightBloom } from './animations';
 
 const industryIcons: Record<string, LucideIcon> = {
   'Commercial developments': Building2,
@@ -42,29 +43,28 @@ export const PortfolioSection: React.FC = () => {
         {/* Product Category Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {PRODUCT_CATEGORIES.map((category, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="gradient-border-card card-lift relative overflow-hidden"
-            >
-              {/* Image */}
-              <div className="h-44 overflow-hidden">
-                <div
-                  className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
-                  style={{ backgroundImage: `url(${category.imageUrl})` }}
-                />
-              </div>
-              {/* Content */}
-              <div className="p-5 relative">
-                <h3 className="text-base font-semibold text-[#FFFFFF] mb-2 font-display group-hover:text-primary transition-colors">
-                  {category.title}
-                </h3>
-                <p className="text-sm text-[#64748B] leading-relaxed">{category.description}</p>
-              </div>
-            </motion.div>
+            <LightBloom key={i} delay={i * 0.08} bloomIntensity={0.3}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                  className="gradient-border-card card-lift relative overflow-hidden"
+              >
+                <div className="h-44 overflow-hidden">
+                  <div
+                    className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
+                    style={{ backgroundImage: `url(${category.imageUrl})` }}
+                  />
+                </div>
+                <div className="p-5 relative">
+                  <h3 className="text-base font-semibold text-[#FFFFFF] mb-2 font-display group-hover:text-primary transition-colors">
+                    {category.title}
+                  </h3>
+                  <p className="text-sm text-[#64748B] leading-relaxed">{category.description}</p>
+                </div>
+              </motion.div>
+            </LightBloom>
           ))}
         </div>
 
@@ -86,21 +86,22 @@ export const PortfolioSection: React.FC = () => {
             {INDUSTRIES.map((industry, i) => {
               const Icon = industryIcons[industry.name] || Building2;
               return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="gradient-border-card card-lift p-5 flex flex-col items-center gap-3"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-white/[0.03] flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                    <Icon className="w-5 h-5 text-[#64748B] group-hover:text-primary transition-colors" />
-                  </div>
-                  <span className="text-xs sm:text-sm text-[#64748B] text-center leading-tight font-sans font-light">
-                    {industry.name}
-                  </span>
-                </motion.div>
+                <LightBloom key={i} delay={i * 0.05} bloomIntensity={0.2} duration={0.6}>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.05 }}
+                    className="gradient-border-card card-lift p-5 flex flex-col items-center gap-3"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-white/[0.03] flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+                      <Icon className="w-5 h-5 text-[#64748B] group-hover:text-primary transition-colors" />
+                    </div>
+                    <span className="text-xs sm:text-sm text-[#64748B] text-center leading-tight font-sans font-light">
+                      {industry.name}
+                    </span>
+                  </motion.div>
+                </LightBloom>
               );
             })}
           </div>
