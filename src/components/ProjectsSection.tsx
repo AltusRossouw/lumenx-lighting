@@ -2,13 +2,15 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { FEATURED_PROJECTS } from '../data';
 import { Building2, MapPin, CheckCircle } from 'lucide-react';
+import { PageHeroBackground } from './animations';
 
 export const ProjectsSection: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
   return (
-    <section ref={ref} id="projects" className="relative py-24 sm:py-32 overflow-hidden">
+    <section ref={ref} id="projects" className="relative py-24 sm:py-32 overflow-hidden bg-[#06090F]">
+      <PageHeroBackground rays={false} particles={false} dots={false} />
       {/* Section label */}
       <div className="absolute top-12 right-8 sm:right-16 section-number">02</div>
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { PRODUCT_CATEGORIES, PRODUCTS_BY_CATEGORY } from '../data';
 import { ArrowLeft, ArrowRight, Check, FileDown, FileText } from 'lucide-react';
+import { PageHeroBackground } from './animations';
 
 /** Generate a URL-safe slug from a product name */
 function slugify(name: string): string {
@@ -39,9 +40,8 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
   return (
     <div className="min-h-screen">
       {/* Category Hero */}
-      <section className="relative py-16 sm:py-20 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0A0D14] via-[#0F141C] to-[#0A0D14]" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
+      <section className="relative py-16 sm:py-20 overflow-hidden bg-[#06090F]">
+        <PageHeroBackground />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <button

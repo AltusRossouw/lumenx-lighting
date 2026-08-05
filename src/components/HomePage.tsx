@@ -1,13 +1,11 @@
 import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { COMPANY } from '../data';
 import { ArrowRight, ShieldCheck, Globe } from 'lucide-react';
 
-interface HomePageProps {
-  onNavigate: (page: string) => void;
-}
-
-export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
+export const HomePage: React.FC = () => {
+  const navigate = useNavigate();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start start', 'end start'] });
   const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
@@ -78,7 +76,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
               <div className="flex flex-col sm:flex-row gap-4 mb-16">
                 <button
-                  onClick={() => onNavigate('contact')}
+                  onClick={() => navigate('/contact')}
                   className="group relative overflow-hidden px-8 py-4 bg-primary text-[#06090F] font-bold text-sm tracking-wide transition-all duration-300 cursor-pointer font-display hover:shadow-[0_0_40px_rgba(0,212,255,0.35)]"
                 >
                   <span className="relative z-10 flex items-center gap-2">
@@ -88,7 +86,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                 </button>
                 <button
-                  onClick={() => onNavigate('products')}
+                  onClick={() => navigate('/products')}
                   className="group px-8 py-4 border border-white/10 hover:border-primary/25 text-slate-300 hover:text-white font-medium text-sm tracking-wide transition-all duration-300 cursor-pointer font-display flex items-center gap-2 bg-white/[0.02]"
                 >
                   Explore Products
@@ -139,7 +137,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button
-                onClick={() => onNavigate('contact')}
+                onClick={() => navigate('/contact')}
                 className="group relative overflow-hidden px-8 py-4 bg-primary text-[#06090F] font-bold text-sm tracking-wide transition-all duration-300 cursor-pointer font-display hover:shadow-[0_0_40px_rgba(0,212,255,0.35)]"
               >
                 <span className="relative z-10 flex items-center gap-2">
@@ -149,7 +147,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               </button>
               <button
-                onClick={() => onNavigate('services')}
+                onClick={() => navigate('/services')}
                 className="group px-8 py-4 border border-white/10 hover:border-primary/25 text-slate-300 hover:text-white font-medium text-sm tracking-wide transition-all duration-300 cursor-pointer font-display flex items-center gap-2 bg-white/[0.02]"
               >
                 Explore Our Services

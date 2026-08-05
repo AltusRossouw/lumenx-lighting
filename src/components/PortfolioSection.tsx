@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import { PRODUCT_CATEGORIES, INDUSTRIES } from '../data';
 import { Building2, Factory, ShoppingBag, GraduationCap, Hotel, Landmark, Heart, FlaskConical } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { LightBloom } from './animations';
+import { LightBloom, PageHeroBackground } from './animations';
 
 const industryIcons: Record<string, LucideIcon> = {
   'Commercial developments': Building2,
@@ -17,8 +17,8 @@ const industryIcons: Record<string, LucideIcon> = {
 
 export const PortfolioSection: React.FC = () => {
   return (
-    <section id="portfolio" className="py-20 sm:py-28 relative overflow-hidden">
-        <div className="spotlight" style={{ top: '30%', height: '35%', animationDelay: '3s' }} />
+    <section id="portfolio" className="py-20 sm:py-28 relative overflow-hidden bg-[#06090F]">
+      <PageHeroBackground rays={false} particles={false} dots={false} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div

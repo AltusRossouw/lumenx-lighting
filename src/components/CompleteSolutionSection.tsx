@@ -2,13 +2,15 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { COMPLETE_SOLUTION } from '../data';
 import { ArrowRight } from 'lucide-react';
+import { PageHeroBackground } from './animations';
 
 export const CompleteSolutionSection: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
   return (
-    <section ref={ref} id="complete-solution" className="relative py-24 sm:py-32 overflow-hidden bg-[#080B12]">
+    <section ref={ref} id="complete-solution" className="relative py-24 sm:py-32 overflow-hidden bg-[#06090F]">
+      <PageHeroBackground rays={false} particles={false} dots={false} />
       {/* Subtle top gradient line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 

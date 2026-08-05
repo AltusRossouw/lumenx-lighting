@@ -1,4 +1,5 @@
-import { useState, useCallback } from 'react';
+import { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useNavigate, useParams, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { HomePage } from './components/HomePage';
@@ -7,82 +8,72 @@ import { ProjectsPageWrapper } from './components/ProjectsPageWrapper';
 import { ResourcesPage } from './components/ResourcesPage';
 import { AboutPage } from './components/AboutPage';
 import { ContactPage } from './components/ContactPage';
-import { ProductCategoriesSection } from './components/ProductCategoriesSection';
 import { ProductsPage } from './components/ProductsPage';
 import { ProductDetailPage } from './components/ProductDetailPage';
 import { ShieldCheck } from 'lucide-react';
 
-type PageName = 'home' | 'services' | 'products' | 'projects' | 'resources' | 'about' | 'contact';
-type Page = PageName | { type: 'product-detail'; categoryId: string };
+/** Scroll to top on every route change */
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [pathname]);
+  return null;
+}
 
-export default function App() {
-  const [currentPage, setCurrentPage] = useState<Page>('home');
+/** Scroll to a hash anchor when the URL fragment changes */
+function ScrollToHash() {
+  const { hash } = useLocation();
+  useEffect(() => {
+    if (!hash) return;
+    // Small delay so the DOM has rendered
+    const tid = setTimeout(() => {
+      const el = document.querySelector(hash);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+    return () => clearTimeout(tid);
+  }, [hash]);
+  return null;
+}
 
-  const navigateTo = useCallback((page: string) => {
-    if (page === 'product-detail') return;
-    setCurrentPage(page as PageName);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, []);
+/** Wrapper that reads :categoryId from the URL and renders ProductDetailPage */
+function ProductDetailWrapper() {
+  const { categoryId } = useParams<{ categoryId: string }>();
+  const navigate = useNavigate();
 
-  const selectCategory = useCallback((categoryId: string) => {
-    setCurrentPage({ type: 'product-detail', categoryId });
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, []);
-
-  const handleInquireProduct = useCallback((productName: string) => {
-    setCurrentPage('contact');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, []);
-
-  const isProductDetail = typeof currentPage === 'object' && currentPage.type === 'product-detail';
-  const pageName: PageName = typeof currentPage === 'string' ? currentPage : 'products';
-
-  const renderPage = () => {
-    if (isProductDetail) {
-      return (
-        <ProductDetailPage
-          categoryId={(currentPage as { type: 'product-detail'; categoryId: string }).categoryId}
-          onBack={() => navigateTo('products')}
-          onInquire={handleInquireProduct}
-        />
-      );
-    }
-
-    switch (pageName) {
-      case 'home':
-        return <HomePage onNavigate={navigateTo} />;
-      case 'services':
-        return <ServicesPage onNavigate={navigateTo} />;
-      case 'products':
-        return (
-          <ProductsPage
-            onBackToCompany={() => navigateTo('home')}
-            onScrollToContact={() => navigateTo('contact')}
-            onSelectCategory={selectCategory}
-          />
-        );
-      case 'projects':
-        return <ProjectsPageWrapper onNavigate={navigateTo} />;
-      case 'resources':
-        return <ResourcesPage />;
-      case 'about':
-        return <AboutPage />;
-      case 'contact':
-        return <ContactPage />;
-      default:
-        return <HomePage onNavigate={navigateTo} />;
-    }
-  };
+  if (!categoryId) {
+    return <div className="py-40 text-center text-[#78716C]">Category not found.</div>;
+  }
 
   return (
+    <ProductDetailPage
+      categoryId={categoryId}
+      onBack={() => navigate('/products')}
+      onInquire={() => navigate('/contact')}
+    />
+  );
+}
+
+function AppLayout() {
+  return (
     <div className="min-h-screen bg-[#06090F] text-slate-300 flex flex-col selection:bg-primary/30 selection:text-white">
-      <Header
-        currentPage={pageName}
-        onNavigate={navigateTo}
-      />
+      <ScrollToTop />
+      <ScrollToHash />
+
+      <Header />
 
       <main className="flex-grow">
-        {renderPage()}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:categoryId" element={<ProductDetailWrapper />} />
+          <Route path="/projects" element={<ProjectsPageWrapper />} />
+          <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<HomePage />} />
+        </Routes>
       </main>
 
       {/* Compliance bar */}
@@ -93,7 +84,16 @@ export default function App() {
         <span className="hidden sm:inline">B-BBEE Level 2</span>
       </div>
 
-      <Footer onNavigate={navigateTo} />
+      <Footer />
     </div>
   );
 }
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppLayout />
+    </BrowserRouter>
+  );
+}
+

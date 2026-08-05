@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'motion/react';
 import { FAQS } from '../data';
 import { ChevronDown } from 'lucide-react';
+import { PageHeroBackground } from './animations';
 
 export const FAQSection: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
@@ -11,7 +12,8 @@ export const FAQSection: React.FC = () => {
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section id="faqs" className="relative py-24 sm:py-32 overflow-hidden bg-[#080B12]">
+    <section id="faqs" className="relative py-24 sm:py-32 overflow-hidden bg-[#06090F]">
+      <PageHeroBackground rays={false} particles={false} dots={false} />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { CONTACT } from '../data';
 import { Mail, Phone, MapPin, Send, MessageCircle, User, AtSign, Building2, FileText } from 'lucide-react';
+import { PageHeroBackground } from './animations';
 
 export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -47,8 +48,8 @@ export const ContactSection: React.FC = () => {
   const projectStages = ['Concept / Design', 'Tender / Specification', 'Value Engineering', 'Procurement', 'Installation', 'Other'];
 
   return (
-    <section id="contact" className="py-20 sm:py-28 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/3 via-transparent to-transparent pointer-events-none" />
+    <section id="contact" className="py-20 sm:py-28 relative bg-[#06090F] overflow-hidden">
+      <PageHeroBackground rays={false} particles={false} dots={false} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div

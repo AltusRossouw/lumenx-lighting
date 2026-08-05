@@ -3,6 +3,7 @@ import { motion, useInView } from 'motion/react';
 import { WHY_CHOOSE } from '../data';
 import { Users, Zap, TrendingUp, Truck, Headphones } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { PageHeroBackground } from './animations';
 
 const iconMap: Record<string, LucideIcon> = { Users, Zap, TrendingUp, Truck, Headphones };
 
@@ -11,7 +12,8 @@ export const WhyLumenXSection: React.FC = () => {
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
   return (
-    <section id="why-lumenx" className="relative py-24 sm:py-32 overflow-hidden">
+    <section id="why-lumenx" className="relative py-24 sm:py-32 overflow-hidden bg-[#06090F]">
+      <PageHeroBackground rays={false} particles={false} dots={false} />
       <div className="section-number top-12 right-8 sm:right-16">04</div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

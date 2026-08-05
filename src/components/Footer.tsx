@@ -1,21 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CONTACT } from '../data';
 import { Mail, Phone, Globe, ArrowUp } from 'lucide-react';
 
-interface FooterProps {
-  onNavigate: (page: string) => void;
-}
-
-export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+export const Footer: React.FC = () => {
+  const navigate = useNavigate();
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { label: 'Services', id: 'services' },
-    { label: 'Products', id: 'products' },
-    { label: 'Projects', id: 'projects' },
-    { label: 'Technical Resources', id: 'resources' },
-    { label: 'About', id: 'about' },
-    { label: 'Contact', id: 'contact' },
+    { label: 'Services', path: '/services' },
+    { label: 'Products', path: '/products' },
+    { label: 'Projects', path: '/projects' },
+    { label: 'Technical Resources', path: '/resources' },
+    { label: 'About', path: '/about' },
+    { label: 'Contact', path: '/contact' },
   ];
 
   const legalLinks = [
@@ -46,8 +44,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <h4 className="font-serif text-[11px] font-semibold text-[#78716C] uppercase tracking-[0.2em] mb-4">Navigation</h4>
             <ul className="space-y-2.5">
               {footerLinks.map((link) => (
-                <li key={link.id}>
-                  <button onClick={() => onNavigate(link.id)} className="text-xs text-[#64748B] hover:text-[#FFFFFF] transition-colors duration-200 cursor-pointer font-sans">
+                <li key={link.label}>
+                  <button onClick={() => navigate(link.path)} className="text-xs text-[#64748B] hover:text-[#FFFFFF] transition-colors duration-200 cursor-pointer font-sans">
                     {link.label}
                   </button>
                 </li>

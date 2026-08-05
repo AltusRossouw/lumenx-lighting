@@ -27,7 +27,7 @@ body { background-color: #06090F; color: #CBD5E1; -webkit-font-smoothing: antial
 
 /* Typography */
 .font-display { font-family: "Outfit", sans-serif; letter-spacing: -0.025em; line-height: 0.95; }
-.gradient-text { background: linear-gradient(135deg, #00D4FF, #60A5FA 50%, #5165FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.gradient-text { color: #00D4FF; }
 
 /* Light rays */
 @keyframes light-ray { 0%,100%{opacity:.12;transform:rotate(-15deg) scaleY(1)} 50%{opacity:.3;transform:rotate(-15deg) scaleY(1.4)} }

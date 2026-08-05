@@ -2,13 +2,15 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { AUDIENCE_PROFILES, INDUSTRIES } from '../data';
 import { Building2 } from 'lucide-react';
+import { PageHeroBackground } from './animations';
 
 export const WhoWeWorkWithSection: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
   return (
-    <section id="who-we-work-with" className="relative py-24 sm:py-32 overflow-hidden bg-[#080B12]">
+    <section id="who-we-work-with" className="relative py-24 sm:py-32 overflow-hidden bg-[#06090F]">
+      <PageHeroBackground rays={false} particles={false} dots={false} />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

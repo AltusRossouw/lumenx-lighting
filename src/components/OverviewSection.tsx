@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { COMPANY } from '../data';
 import { Target, Eye, Heart, Users } from 'lucide-react';
-import { LightBloom } from './animations';
+import { LightBloom, PageHeroBackground } from './animations';
 
 export const OverviewSection: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
@@ -21,8 +21,8 @@ export const OverviewSection: React.FC = () => {
   ];
 
   return (
-    <section ref={ref} id="overview" className="relative py-24 sm:py-32 overflow-hidden">
-      <div className="spotlight" style={{ top: '20%', height: '40%', animationDelay: '2s' }} />
+    <section ref={ref} id="overview" className="relative py-24 sm:py-32 overflow-hidden bg-[#06090F]">
+      <PageHeroBackground rays={false} particles={false} dots={false} />
       {/* Section number */}
       <div className="section-number top-8 right-8 sm:right-16">01</div>
 

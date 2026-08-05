@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, FileDown, FileText, ShieldCheck } from 'lucide-react';
+import { PageHeroBackground } from './animations';
 
 export const ResourcesPage: React.FC = () => {
   const downloads = [
@@ -13,10 +14,8 @@ export const ResourcesPage: React.FC = () => {
   return (
     <div className="pt-[88px]">
       {/* Hero */}
-      <section className="relative py-20 sm:py-28 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-primary/[0.02] rounded-full blur-[150px]" />
-        </div>
+      <section className="relative py-20 sm:py-28 overflow-hidden bg-[#06090F]">
+        <PageHeroBackground />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div

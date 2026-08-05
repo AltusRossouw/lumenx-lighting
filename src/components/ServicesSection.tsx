@@ -3,7 +3,7 @@ import { motion, useInView } from 'motion/react';
 import { SERVICES } from '../data';
 import { Lightbulb, ClipboardCheck, TrendingUp, Truck, Users, Cpu, Headphones } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { LightBloom } from './animations';
+import { LightBloom, PageHeroBackground } from './animations';
 
 const iconMap: Record<string, LucideIcon> = { Lightbulb, ClipboardCheck, TrendingUp, Truck, Users, Cpu, Headphones };
 
@@ -12,9 +12,8 @@ export const ServicesSection: React.FC = () => {
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
   return (
-    <section ref={ref} id="services" className="relative py-24 sm:py-32 overflow-hidden">
-      {/* Spotlight sweep */}
-      <div className="spotlight" style={{ top: '10%', height: '50%', animationDelay: '1s' }} />
+    <section ref={ref} id="services" className="relative py-24 sm:py-32 overflow-hidden bg-[#06090F]">
+      <PageHeroBackground rays={false} particles={false} dots={false} />
 
       <div className="section-number top-8 left-8 sm:left-16">02</div>
 

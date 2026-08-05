@@ -1,21 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { PRODUCT_CATEGORIES } from '../data';
 import { ArrowRight, ShieldCheck, Zap, Clock } from 'lucide-react';
+import { PageHeroBackground } from './animations';
 
-interface ProductsPageProps {
-  onBackToCompany: () => void;
-  onScrollToContact: () => void;
-  onSelectCategory: (categoryId: string) => void;
-}
-
-export const ProductsPage: React.FC<ProductsPageProps> = ({ onBackToCompany, onScrollToContact, onSelectCategory }) => {
+export const ProductsPage: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen">
       {/* Products Hero */}
-      <section className="relative py-20 sm:py-24 overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0A0D14] via-[#0F141C] to-[#0A0D14]" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent" />
+      <section className="relative py-20 sm:py-24 overflow-hidden bg-[#06090F]">
+        <PageHeroBackground />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.span
@@ -56,7 +52,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({ onBackToCompany, onS
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
-                onClick={() => onSelectCategory(category.id)}
+                onClick={() => navigate(`/products/${category.id}`)}
                 className="group relative overflow-hidden rounded-2xl bg-[#0A0D14] border border-[#1E293B] hover:border-primary/20 transition-all duration-300 flex flex-col cursor-pointer card-glow gradient-border"
               >
                 {/* Image */}
@@ -83,14 +79,14 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({ onBackToCompany, onS
                   </p>
                   <div className="mt-5 pt-4 border-t border-[#1E293B] flex items-center gap-4">
                     <button
-                      onClick={(e) => { e.stopPropagation(); onSelectCategory(category.id); }}
+                      onClick={(e) => { e.stopPropagation(); navigate(`/products/${category.id}`); }}
                       className="inline-flex items-center gap-2 text-xs font-semibold text-primary hover:text-[#FFFFFF] transition-colors cursor-pointer group/btn"
                     >
                       View Range
                       <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                     </button>
                     <button
-                      onClick={(e) => { e.stopPropagation(); onScrollToContact(); }}
+                      onClick={(e) => { e.stopPropagation(); navigate('/contact'); }}
                       className="text-xs text-[#64748B] hover:text-[#FFFFFF] transition-colors cursor-pointer"
                     >
                       Enquire
@@ -140,7 +136,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({ onBackToCompany, onS
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
-              onClick={onScrollToContact}
+              onClick={() => navigate('/contact')}
               className="group relative overflow-hidden px-8 py-3.5 bg-gradient-to-r from-primary to-[#00A8D5] text-[#FFFFFF] font-normal rounded-lg text-sm shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 transform active:scale-95 cursor-pointer"
             >
               <span className="relative z-10 flex items-center gap-2">
@@ -150,7 +146,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({ onBackToCompany, onS
               <div className="absolute inset-0 bg-[#0A0D14]/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </button>
             <button
-              onClick={onBackToCompany}
+              onClick={() => navigate('/')}
               className="px-8 py-3.5 border border-[#1E293B] hover:border-primary/30 text-[#FFFFFF] hover:text-[#FFFFFF] font-medium rounded-lg text-sm transition-all duration-300 cursor-pointer bg-[#0A0D14]/[0.02] hover:bg-[#0A0D14]/[0.04]"
             >
               Back to Company Profile
