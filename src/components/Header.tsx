@@ -9,6 +9,7 @@ interface HeaderProps {
 }
 
 const NAV_ITEMS: { id: PageName; label: string }[] = [
+  { id: 'home', label: 'Home' },
   { id: 'services', label: 'Services' },
   { id: 'products', label: 'Products' },
   { id: 'projects', label: 'Projects' },

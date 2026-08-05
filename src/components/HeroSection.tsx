@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { COMPANY } from '../data';
 import { ArrowRight, ArrowDown, ShieldCheck, Globe } from 'lucide-react';
-import { LightningBolt, HaloPulse } from './animations';
+
 
 interface HeroSectionProps {
   onScrollTo: (sectionId: string) => void;
@@ -16,9 +16,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollTo, onNavigate
 
   return (
     <section ref={containerRef} id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-[#06090F]" style={{ minHeight: '100svh' }}>
-      {/* Subtle lightning bolt effect */}
-      <LightningBolt boltCount={1} interval={7000} color="#00D4FF" intensity={0.45} />
-
       {/* Blueprint grid mask — softer */}
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: 'linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px)',
@@ -101,18 +98,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollTo, onNavigate
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 mb-16">
-              <HaloPulse className="inline-flex">
-                <button
-                  onClick={() => onScrollTo('contact')}
-                  className="group relative overflow-hidden px-8 py-4 bg-primary text-[#06090F] font-bold text-sm tracking-wide transition-all duration-300 cursor-pointer font-display hover:shadow-[0_0_40px_rgba(0,212,255,0.35)]"
-                >
-                  <span className="relative z-10 flex items-center gap-2">
-                    Discuss a Project
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
-                  </span>
-                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                </button>
-              </HaloPulse>
+              <button
+                onClick={() => onScrollTo('contact')}
+                className="group relative overflow-hidden px-8 py-4 bg-primary text-[#06090F] font-bold text-sm tracking-wide transition-all duration-300 cursor-pointer font-display hover:shadow-[0_0_40px_rgba(0,212,255,0.35)]"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  Discuss a Project
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
+                </span>
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              </button>
               <button
                 onClick={() => onNavigate('products')}
                 className="group px-8 py-4 border border-white/10 hover:border-primary/25 text-slate-300 hover:text-white font-medium text-sm tracking-wide transition-all duration-300 cursor-pointer font-display flex items-center gap-2 bg-white/[0.02]"

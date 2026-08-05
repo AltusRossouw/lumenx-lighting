@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { ArrowRight, FileText } from 'lucide-react';
-import { HaloPulse } from './animations';
 
 interface CTASectionProps {
   onScrollTo: (sectionId: string) => void;
@@ -40,18 +39,16 @@ export const CTASection: React.FC<CTASectionProps> = ({ onScrollTo }) => {
 
           {/* Three CTA buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-            <HaloPulse className="inline-flex">
-              <button
-                onClick={() => onScrollTo('contact')}
-                className="group relative overflow-hidden px-8 py-4 bg-primary text-[#06090F] font-bold text-sm tracking-wide transition-all duration-300 cursor-pointer font-display hover:shadow-[0_0_40px_rgba(0,212,255,0.35)]"
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  Tell Us About Your Project
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
-                </span>
-                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              </button>
-            </HaloPulse>
+            <button
+              onClick={() => onScrollTo('contact')}
+              className="group relative overflow-hidden px-8 py-4 bg-primary text-[#06090F] font-bold text-sm tracking-wide transition-all duration-300 cursor-pointer font-display hover:shadow-[0_0_40px_rgba(0,212,255,0.35)]"
+            >
+              <span className="relative z-10 flex items-center gap-2">
+                Tell Us About Your Project
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
+              </span>
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+            </button>
 
             <button
               onClick={() => onScrollTo('contact')}
