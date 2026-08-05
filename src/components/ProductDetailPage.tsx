@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'motion/react';
 import { PRODUCT_CATEGORIES, PRODUCTS_BY_CATEGORY } from '../data';
 import { ArrowLeft, ArrowRight, Check, FileDown, FileText } from 'lucide-react';

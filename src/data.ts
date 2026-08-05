@@ -7,35 +7,55 @@ import {
   WhyChooseReason,
   CompanyOverview,
   NavSection,
+  CompleteSolutionCapability,
+  ProcessStep,
+  FeaturedProject,
+  AudienceProfile,
+  FAQ,
 } from './types';
 
 export const NAV_SECTIONS: NavSection[] = [
-  { id: 'hero', label: 'Home' },
-  { id: 'overview', label: 'About' },
-  { id: 'services', label: 'Services' },
-  { id: 'portfolio', label: 'Portfolio' },
-  { id: 'compliance', label: 'Compliance' },
+  { id: 'complete-solution', label: 'Services' },
+  { id: 'products', label: 'Products' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'resources', label: 'Technical Resources' },
+  { id: 'about', label: 'About' },
   { id: 'contact', label: 'Contact' },
 ];
 
 export const COMPANY: CompanyOverview = {
   tagline: 'LIGHTING, ENGINEERED FOR REAL PROJECTS',
   intro:
-    'LumenX delivers intelligent lighting solutions that connect design, technology, and performance. LumenX is a technically driven lighting business serving retail, commercial, and industrial projects. We integrate into project teams and take technical ownership of lighting from design through to site delivery. Our work combines engineering depth, design intent, and buildable project execution with consistency, compliance and precision.',
-  mission:
-    'To solve the delivery gap in lighting by bringing technical depth, accountability, and executional precision to every project.',
-  vision:
-    'To become the trusted technical lighting partner for projects — known for buildable design, reliable delivery, and performance-led outcomes.',
-  values:
-    'Technical integrity. Project accountability. Practical innovation. Consistency in delivery. Responsiveness under pressure.',
-  team:
-    'LumenX is built around technically minded project support, combining lighting design, lighting knowledge, specification thinking, simulation, 3D modelling, compliance, and delivery coordination. We work closely with developers, consultants, architects, engineers, contractors, and procurement teams to help keep projects moving from concept through to handover.',
-  coreSpecialisation:
-    'Technically led lighting solutions and building management systems (BMS)',
-  geographicReach:
-    'Available nationwide to support projects across South Africa',
-  marketFocus: 'Retail, commercial, and industrial environments',
+    'LumenX is a South African technical lighting partner for retail, commercial and industrial developments, owning every stage of a project from design to site delivery executed by one accountable team.',
 };
+
+export const COMPLETE_SOLUTION: CompleteSolutionCapability[] = [
+  {
+    title: 'Design',
+    description:
+      'Lighting layouts, calculations and simulations shaped around the project requirements.',
+  },
+  {
+    title: 'Specification',
+    description:
+      'Fit-for-purpose products selected for performance, application and compliance.',
+  },
+  {
+    title: 'Value Engineering',
+    description:
+      'Commercial alternatives that protect the required technical outcome.',
+  },
+  {
+    title: 'Supply',
+    description:
+      'Product sourcing, availability and coordinated delivery aligned to the programme.',
+  },
+  {
+    title: 'Project Coordination',
+    description:
+      'Technical support across the project team from design development through to completion.',
+  },
+];
 
 export const SERVICES: Service[] = [
   {
@@ -85,43 +105,63 @@ export const SERVICES: Service[] = [
 export const PRODUCT_CATEGORIES: ProductCategory[] = [
   {
     id: 'architectural',
-    title: 'Architectural & Commercial Lighting',
+    title: 'Architectural and Commercial Lighting',
     description:
-      'Interior and exterior solutions developed for visual comfort, aesthetics, and performance in built environments.',
+      'Interior and exterior lighting for visual comfort, design quality and dependable performance in commercial environments.',
+    applications: 'Offices, retail, hospitality, healthcare and education',
     imageUrl:
       'https://images.unsplash.com/photo-1565538810844-1e119412e866?auto=format&fit=crop&w=600&q=80',
+    linkLabel: 'Explore Architectural and Commercial Lighting',
   },
   {
     id: 'industrial',
-    title: 'Industrial & Warehouse Lighting',
+    title: 'Industrial and Warehouse Lighting',
     description:
-      'High-output, durable lighting solutions designed for demanding operational spaces and efficient maintenance cycles. Industry-leading guarantees.',
+      'High-output, durable lighting for demanding operational spaces, high ceilings, racking layouts and efficient maintenance cycles.',
+    applications: 'Warehouses, logistics, manufacturing and production facilities',
     imageUrl:
       'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80',
+    linkLabel: 'Explore Industrial and Warehouse Lighting',
   },
   {
     id: 'street',
-    title: 'Street & Outdoor Lighting',
+    title: 'Street and Outdoor Lighting',
     description:
-      'High-output, durable lighting solutions designed for demanding operational spaces and efficient maintenance cycles.',
+      'Reliable exterior lighting designed around roadway performance, security, durability and long-term maintenance.',
+    applications: 'Roads, public spaces, industrial yards and perimeter lighting',
     imageUrl:
       'https://images.unsplash.com/photo-1548345680-f5475ea5df84?auto=format&fit=crop&w=600&q=80',
+    linkLabel: 'Explore Street and Outdoor Lighting',
   },
   {
     id: 'emergency',
-    title: 'Emergency & Compliance Lighting',
+    title: 'Emergency and Compliance Lighting',
     description:
-      'Emergency fittings and compliant solutions that support safety requirements, wayfinding, and statutory obligations.',
+      'Emergency fittings and systems supporting escape routes, wayfinding and project safety requirements.',
+    applications: 'Public buildings, fire stairs, parking structures and industrial egress routes',
     imageUrl:
       'https://images.unsplash.com/photo-1518156677180-95a2893f3e9f?auto=format&fit=crop&w=600&q=80',
+    linkLabel: 'Explore Emergency Lighting',
   },
   {
     id: 'smart',
-    title: 'Smart & Energy-Efficient Systems',
+    title: 'Smart Lighting and Controls',
     description:
-      'LED, controls, sensors, and energy-conscious solutions focused on efficiency, adaptability, and long-term value.',
+      'Controls, sensors and BMS-compatible lighting systems designed to improve energy performance, usability and operational control.',
+    applications: 'Commercial buildings, industrial operations and managed facilities',
     imageUrl:
       'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80',
+    linkLabel: 'Explore Smart Lighting and Controls',
+  },
+  {
+    id: 'orbitx',
+    title: 'OrbitX Direct Drive LED Lighting',
+    description:
+      'Premium South African-engineered lighting for demanding industrial, commercial and mining applications.',
+    applications: 'Projects requiring advanced performance, durability and lifecycle value',
+    imageUrl:
+      'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=600&q=80',
+    linkLabel: 'Explore OrbitX',
   },
 ];
 export const PRODUCTS_BY_CATEGORY: Record<string, ProductDetail[]> = {
@@ -155,6 +195,7 @@ export const PRODUCTS_BY_CATEGORY: Record<string, ProductDetail[]> = {
     { name: 'High Voltage Strip', description: 'Flexible high-voltage LED strip operable directly from 220-240V mains. No driver required — cuttable every metre with IP65 outdoor rating for architectural accent lighting.', specs: [{label:'Wattage',value:'9W/m – 14W/m'},{label:'Lumens',value:'850lm/m – 1,400lm/m'},{label:'IP Rating',value:'IP65'},{label:'CRI',value:'80+'},{label:'CCT',value:'3000K / 4000K / 6000K'},{label:'Voltage',value:'220-240V AC direct'},{label:'Cuttable',value:'Every 1 metre'},{label:'Lifetime',value:'L80B10 > 30,000 hrs'}], applications: ['Facade accent','Cove lighting','Landscape edges','Signage illumination'], imageUrl: '/product-images/High_Voltage_Strip.png', pdfUrl: '/datasheets/LumenX_Datasheet_High Voltage Strip.pdf' },
     { name: 'COB Strip', description: 'Chip-on-board LED strip delivering continuous dot-free linear light. High-density COB technology for seamless illumination in architectural cove and display applications.', specs: [{label:'Wattage',value:'10W'},{label:'Lumens',value:'1,100lm'},{label:'IP Rating',value:'IP20'},{label:'CRI',value:'90+'},{label:'CCT',value:'3000K / 4000K'},{label:'Type',value:'COB (Chip-on-Board)'},{label:'Voltage',value:'24V DC'},{label:'Lifetime',value:'L80B10 > 30,000 hrs'}], applications: ['Display shelving','Cove details','Under-cabinet','Joinery accent'], imageUrl: '/product-images/COB_STRIP.png', pdfUrl: '/datasheets/LumenX_Datasheet_COB STRIP.pdf' },
   ],
+  orbitx: [],
 };
 
 export const INDUSTRIES: Industry[] = [
@@ -197,39 +238,160 @@ export const COMPLIANCE_ITEMS: ComplianceItem[] = [
 
 export const WHY_CHOOSE: WhyChooseReason[] = [
   {
-    title: 'Technical expertise',
+    title: 'One Accountable Technical Team',
     description:
-      'A technically driven approach grounded in specification knowledge, engineering understanding, and practical project delivery. Practical lighting designs and simulations.',
+      'The complete lighting project is coordinated from design through to site delivery rather than fragmented across disconnected providers.',
+    icon: 'Users',
+  },
+  {
+    title: 'Technically Led Decisions',
+    description:
+      'Products and systems are selected around application, performance, compliance, design intent and project requirements.',
     icon: 'Zap',
   },
   {
-    title: 'Reliable stock and supply chain support',
+    title: 'Commercially Practical Solutions',
     description:
-      'Supply coordination designed to support programme certainty, site requirements, and reduced delivery friction.',
-    icon: 'Package',
+      'Value engineering balances technical integrity, project cost, availability and lifecycle value.',
+    icon: 'TrendingUp',
   },
   {
-    title: 'Competitive project pricing',
+    title: 'Project-Led Supply',
     description:
-      'Commercially aware solutions that balance quality, compliance, and cost with real project constraints in mind.',
-    icon: 'DollarSign',
+      'Product availability, technical documentation and delivery are managed around the project programme, not treated as separate transactions.',
+    icon: 'Truck',
   },
   {
-    title: 'Fast quotation turnaround',
+    title: 'Support Beyond Delivery',
     description:
-      'Responsive quoting and technical feedback to help consultants, contractors, and developers move faster.',
-    icon: 'Clock',
+      'Technical assistance and applicable warranty support continue after products reach the site.',
+    icon: 'Headphones',
+  },
+];
+
+export const PROCESS_STEPS: ProcessStep[] = [
+  {
+    number: '01',
+    title: 'Understand the project',
+    description:
+      'We review the brief, drawings, application, programme, design intent and commercial requirements.',
   },
   {
-    title: 'Professional project coordination',
+    number: '02',
+    title: 'Design and specify',
     description:
-      'Active involvement across the project lifecycle, from design alignment and submissions to on-time delivery and after-sales support for the full guarantee duration and beyond.',
-    icon: 'Briefcase',
+      'We develop the lighting solution and select technically appropriate luminaires, controls and systems.',
+  },
+  {
+    number: '03',
+    title: 'Optimise',
+    description:
+      'We value engineer where required while protecting performance, compliance and design intent.',
+  },
+  {
+    number: '04',
+    title: 'Coordinate',
+    description:
+      'We manage technical submissions, product information and communication across the project team.',
+  },
+  {
+    number: '05',
+    title: 'Supply and deliver',
+    description:
+      'We coordinate procurement, availability and delivery in line with site and installation requirements.',
+  },
+  {
+    number: '06',
+    title: 'Support',
+    description:
+      'We assist with commissioning queries, snag resolution, replacements and applicable warranty matters.',
+  },
+];
+
+export const FEATURED_PROJECTS: FeaturedProject[] = [
+  {
+    name: 'Commercial Office Development',
+    location: 'Sandton, Johannesburg',
+    scope: 'Full lighting design, specification, supply and site coordination for 12,000m² Grade-A office',
+    delivered: 'Architectural linear lighting, recessed panels, emergency systems, and smart controls across 8 floors',
+  },
+  {
+    name: 'Distribution Centre',
+    location: 'Gauteng',
+    scope: 'Industrial highbay specification and supply for 25,000m² logistics facility',
+    delivered: 'V200 UFO highbays, linear racking illumination, emergency egress lighting, and external perimeter floods',
+  },
+];
+
+export const AUDIENCE_PROFILES: AudienceProfile[] = [
+  {
+    title: 'Engineers and Consultants',
+    description:
+      'Lighting design support, calculations, simulations, product data and specifications aligned to performance and compliance requirements.',
+  },
+  {
+    title: 'Contractors',
+    description:
+      'Responsive quotations, technically reviewed alternatives, supply coordination and practical support through installation.',
+  },
+  {
+    title: 'Architects and Developers',
+    description:
+      'Lighting solutions that protect design intent while remaining buildable, available and commercially viable.',
+  },
+  {
+    title: 'Procurement Teams',
+    description:
+      'Clear product information, competitive options, documented warranties and selections assessed against technical fit and lifecycle value.',
+  },
+];
+
+export const FAQS: FAQ[] = [
+  {
+    question: 'What does LumenX manage within a lighting project?',
+    answer:
+      'LumenX supports lighting design, specification, value engineering, product selection, supply, technical coordination, site delivery and applicable after-sales support.',
+  },
+  {
+    question: 'Does LumenX work with existing consultants and contractors?',
+    answer:
+      'Yes. LumenX integrates into the existing project team and works alongside engineers, consultants, architects, contractors, developers and procurement teams.',
+  },
+  {
+    question: 'Where does LumenX support lighting projects?',
+    answer:
+      'LumenX supports retail, commercial and industrial lighting projects across South Africa.',
+  },
+  {
+    question: 'Can LumenX quote from an existing BOQ or lighting specification?',
+    answer:
+      'Yes. Project teams can submit a BOQ, specification or drawings for technical review, product selection and quotation.',
+  },
+  {
+    question: 'Does LumenX provide lighting design and simulations?',
+    answer:
+      'Yes. LumenX provides project-specific lighting design support, calculations and simulations according to the agreed project scope.',
+  },
+  {
+    question: 'Does LumenX provide value engineering?',
+    answer:
+      'Yes. LumenX assesses alternative products and solutions to improve commercial value while protecting the required performance, compliance and design intent.',
+  },
+  {
+    question: 'What warranties apply to LumenX products?',
+    answer:
+      'Warranty terms differ by product range and manufacturer. Applicable warranty terms are confirmed in the quotation and supporting technical documentation.',
+  },
+  {
+    question: 'Does LumenX provide after-sales support?',
+    answer:
+      'Yes. Depending on the product and agreed scope, LumenX supports commissioning queries, snag resolution, replacements and warranty matters.',
   },
 ];
 
 export const CONTACT = {
   email: 'kaylen@lumenx.co.za',
+  projectsEmail: 'projects@lumenx.co.za',
   phone: '+27 83 499 5340',
   website: 'www.lumenx.co.za',
   tagline: 'LIGHTING, ENGINEERED FOR REAL PROJECTS',

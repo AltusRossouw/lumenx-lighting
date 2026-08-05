@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'motion/react';
 import { PRODUCT_CATEGORIES } from '../data';
 import { ArrowRight, ShieldCheck, Zap, Clock } from 'lucide-react';

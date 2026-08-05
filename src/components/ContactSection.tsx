@@ -1,25 +1,54 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { CONTACT } from '../data';
-import { Mail, Phone, Globe, MapPin, Send, MessageCircle, User, AtSign, FileText } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageCircle, User, AtSign, Building2, FileText } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    email: '',
+    phone: '',
+    projectName: '',
+    projectType: '',
+    projectStage: '',
+    supportRequired: '',
+    projectDetails: '',
+  });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const mailtoLink = `mailto:${CONTACT.email}?subject=${encodeURIComponent(formData.subject || 'LumenX Inquiry')}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
+    const body = [
+      `Name: ${formData.name}`,
+      `Company: ${formData.company}`,
+      `Email: ${formData.email}`,
+      `Phone: ${formData.phone}`,
+      `Project Name: ${formData.projectName}`,
+      `Project Type: ${formData.projectType}`,
+      `Current Stage: ${formData.projectStage}`,
+      `Support Required: ${formData.supportRequired}`,
+      ``,
+      `Project Details:`,
+      formData.projectDetails,
+    ].join('\n');
+
+    const mailtoLink = `mailto:${CONTACT.projectsEmail || CONTACT.email}?subject=${encodeURIComponent(`Project Inquiry: ${formData.projectName || formData.name}`)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
   };
 
+  const update = (field: string, value: string) => setFormData((p) => ({ ...p, [field]: value }));
+
   const whatsappLink = `https://wa.me/${CONTACT.phone.replace(/[\s\+]/g, '')}?text=${encodeURIComponent('Hi LumenX, I would like to discuss a lighting project.')}`;
+
+  const projectTypes = ['Commercial', 'Industrial', 'Retail', 'Hospitality', 'Education', 'Healthcare', 'Government', 'Other'];
+  const projectStages = ['Concept / Design', 'Tender / Specification', 'Value Engineering', 'Procurement', 'Installation', 'Other'];
 
   return (
     <section id="contact" className="py-20 sm:py-28 relative">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/3 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/3 via-transparent to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -29,13 +58,13 @@ export const ContactSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-mono text-xs tracking-[0.3em] uppercase">Contact</span>
-          <h2 className="font-serif font-semibold text-3xl sm:text-4xl font-normal text-[#FFFFFF] mt-3 mb-4 tracking-[-0.02em]">
-            Let's <span className="text-primary">Talk</span>
+          <span className="text-primary font-mono text-xs tracking-[0.3em] uppercase">Submit Your Lighting Requirement</span>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mt-3 mb-4 tracking-[-0.02em]">
+            Bring LumenX into <span className="gradient-text">the project</span>
           </h2>
-          <p className="text-[#78716C] max-w-xl mx-auto">
-            Ready to discuss your lighting project? Reach out and our team will respond with
-            technical guidance and a competitive quotation.
+          <p className="text-slate-400 max-w-xl mx-auto text-sm">
+            Send us your drawings, BOQ, lighting specification or project brief. Our team will review
+            the requirements and advise on the next technical and commercial step.
           </p>
         </motion.div>
 
@@ -49,61 +78,108 @@ export const ContactSection: React.FC = () => {
             className="lg:col-span-3"
           >
             <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-[#0F141C] to-[#0A0D14] border border-[#1E293B] h-full">
-              <h3 className="font-serif font-semibold text-lg font-semibold text-[#FFFFFF] mb-6 tracking-tight">Send us a message</h3>
+              <h3 className="font-display text-lg font-semibold text-white mb-6 tracking-tight">Project details</h3>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="relative">
-                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B]" />
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
                     <input
-                      type="text"
-                      placeholder="Your name"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData((p) => ({ ...p, name: e.target.value }))}
-                      className="w-full pl-10 pr-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-[#FFFFFF] placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans"
+                      type="text" placeholder="Your name *" required
+                      value={formData.name} onChange={(e) => update('name', e.target.value)}
+                      className="w-full pl-10 pr-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans"
                     />
                   </div>
                   <div className="relative">
-                    <AtSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B]" />
+                    <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
                     <input
-                      type="email"
-                      placeholder="Your email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))}
-                      className="w-full pl-10 pr-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-[#FFFFFF] placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans"
+                      type="text" placeholder="Company"
+                      value={formData.company} onChange={(e) => update('company', e.target.value)}
+                      className="w-full pl-10 pr-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans"
                     />
                   </div>
                 </div>
-                <div className="relative">
-                  <FileText className="absolute left-3 top-3.5 w-4 h-4 text-[#64748B]" />
-                  <input
-                    type="text"
-                    placeholder="Subject (e.g. High Bay Quote Request)"
-                    value={formData.subject}
-                    onChange={(e) => setFormData((p) => ({ ...p, subject: e.target.value }))}
-                    className="w-full pl-10 pr-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-[#FFFFFF] placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans"
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="relative">
+                    <AtSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                    <input
+                      type="email" placeholder="Work email *" required
+                      value={formData.email} onChange={(e) => update('email', e.target.value)}
+                      className="w-full pl-10 pr-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans"
+                    />
+                  </div>
+                  <div className="relative">
+                    <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                    <input
+                      type="tel" placeholder="Phone number"
+                      value={formData.phone} onChange={(e) => update('phone', e.target.value)}
+                      className="w-full pl-10 pr-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans"
+                    />
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="relative">
+                    <FileText className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                    <input
+                      type="text" placeholder="Project name"
+                      value={formData.projectName} onChange={(e) => update('projectName', e.target.value)}
+                      className="w-full pl-10 pr-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans"
+                    />
+                  </div>
+                  <div>
+                    <select
+                      value={formData.projectType} onChange={(e) => update('projectType', e.target.value)}
+                      className="w-full px-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans appearance-none cursor-pointer"
+                    >
+                      <option value="" className="text-slate-500">Project type</option>
+                      {projectTypes.map((t) => <option key={t} value={t} className="bg-[#0A0D14] text-white">{t}</option>)}
+                    </select>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <select
+                      value={formData.projectStage} onChange={(e) => update('projectStage', e.target.value)}
+                      className="w-full px-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans appearance-none cursor-pointer"
+                    >
+                      <option value="" className="text-slate-500">Current project stage</option>
+                      {projectStages.map((s) => <option key={s} value={s} className="bg-[#0A0D14] text-white">{s}</option>)}
+                    </select>
+                  </div>
+                  <div className="relative">
+                    <FileText className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                    <input
+                      type="text" placeholder="Support required (e.g. BOQ quote)"
+                      value={formData.supportRequired} onChange={(e) => update('supportRequired', e.target.value)}
+                      className="w-full pl-10 pr-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans"
+                    />
+                  </div>
                 </div>
                 <textarea
-                  placeholder="Tell us about your project, requirements, or questions..."
+                  placeholder="Project details — tell us about the scope, requirements, quantities, or any specific lighting needs..."
                   required
-                  rows={5}
-                  value={formData.message}
-                  onChange={(e) => setFormData((p) => ({ ...p, message: e.target.value }))}
-                  className="w-full px-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-[#FFFFFF] placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors resize-none font-sans"
+                  rows={4}
+                  value={formData.projectDetails} onChange={(e) => update('projectDetails', e.target.value)}
+                  className="w-full px-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors resize-none font-sans"
                 />
+
+                {/* File upload hint */}
+                <p className="text-[10px] font-mono text-slate-600">
+                  You can attach drawings, BOQ, or specifications by emailing{' '}
+                  <a href={`mailto:${CONTACT.projectsEmail || CONTACT.email}`} className="text-primary/60 hover:text-primary transition-colors">
+                    {CONTACT.projectsEmail || CONTACT.email}
+                  </a>
+                </p>
 
                 <button
                   type="submit"
-                  className="w-full group relative overflow-hidden px-6 py-3.5 bg-gradient-to-r from-primary to-[#00A8D5] text-[#FFFFFF] font-normal rounded-lg text-sm shadow-lg shadow-primary/10 hover:shadow-primary/20 transition-all duration-300 transform active:scale-[0.98] cursor-pointer"
+                  className="w-full group relative overflow-hidden px-6 py-3.5 bg-gradient-to-r from-primary to-[#00A8D5] text-[#06090F] font-semibold rounded-lg text-sm shadow-lg shadow-primary/10 hover:shadow-primary/20 transition-all duration-300 transform active:scale-[0.98] cursor-pointer"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     <Send className="w-4 h-4" />
-                    {submitted ? 'Message Sent! Opening Email…' : 'Send Message'}
+                    {submitted ? 'Submitted! Opening Email…' : 'Submit Your Lighting Requirement'}
                   </span>
-                  <div className="absolute inset-0 bg-[#0A0D14]/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                 </button>
               </form>
             </div>
@@ -127,8 +203,8 @@ export const ContactSection: React.FC = () => {
                   <Mail className="w-4 h-4 text-primary" />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-[10px] text-[#64748B] font-mono uppercase tracking-wider">Email</p>
-                  <p className="text-xs text-[#FFFFFF] truncate group-hover:text-primary transition-colors font-sans">{CONTACT.email}</p>
+                  <p className="text-[10px] text-slate-500 font-mono uppercase tracking-wider">Email</p>
+                  <p className="text-xs text-white truncate group-hover:text-primary transition-colors font-sans">{CONTACT.email}</p>
                 </div>
               </a>
 
@@ -140,8 +216,8 @@ export const ContactSection: React.FC = () => {
                   <Phone className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-[#64748B] font-mono uppercase tracking-wider">Phone</p>
-                  <p className="text-xs text-[#FFFFFF] group-hover:text-primary transition-colors font-sans">{CONTACT.phone}</p>
+                  <p className="text-[10px] text-slate-500 font-mono uppercase tracking-wider">Phone</p>
+                  <p className="text-xs text-white group-hover:text-primary transition-colors font-sans">{CONTACT.phone}</p>
                 </div>
               </a>
 
@@ -150,8 +226,8 @@ export const ContactSection: React.FC = () => {
                   <MapPin className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-[#64748B] font-mono uppercase tracking-wider">Location</p>
-                  <p className="text-xs text-[#FFFFFF] font-sans">South Africa — Nationwide</p>
+                  <p className="text-[10px] text-slate-500 font-mono uppercase tracking-wider">Location</p>
+                  <p className="text-xs text-white font-sans">South Africa — Nationwide</p>
                 </div>
               </div>
             </div>
@@ -167,17 +243,17 @@ export const ContactSection: React.FC = () => {
                 <MessageCircle className="w-5 h-5 text-[#25D366]" />
               </div>
               <div>
-                <p className="font-serif text-xs font-semibold text-[#FFFFFF] tracking-tight group-hover:text-[#25D366] transition-colors">Chat on WhatsApp</p>
-                <p className="text-[10px] text-[#78716C] font-mono">Quick response during business hours</p>
+                <p className="font-display text-xs font-semibold text-white tracking-tight group-hover:text-[#25D366] transition-colors">Chat on WhatsApp</p>
+                <p className="text-[10px] text-slate-500 font-mono">Quick response during business hours</p>
               </div>
             </a>
 
             {/* Brand */}
             <div className="text-center p-4 rounded-2xl bg-gradient-to-b from-[#0F141C] to-[#0A0D14] border border-[#1E293B]">
-              <h3 className="font-serif font-semibold text-lg font-semibold text-[#FFFFFF] tracking-tight">
+              <h3 className="font-display text-lg font-bold text-white tracking-tight">
                 LUMEN<span className="text-primary">X</span>
               </h3>
-              <p className="text-[10px] text-[#64748B] font-mono tracking-widest mt-1">{CONTACT.tagline}</p>
+              <p className="text-[10px] text-slate-500 font-mono tracking-widest mt-1">{CONTACT.tagline}</p>
             </div>
           </motion.div>
         </div>

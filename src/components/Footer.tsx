@@ -1,13 +1,27 @@
 import React from 'react';
-import { NAV_SECTIONS, CONTACT } from '../data';
+import { CONTACT } from '../data';
 import { Mail, Phone, Globe, ArrowUp } from 'lucide-react';
 
 interface FooterProps {
-  onScrollTo: (sectionId: string) => void;
+  onNavigate: (page: string) => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onScrollTo }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   const currentYear = new Date().getFullYear();
+
+  const footerLinks = [
+    { label: 'Services', id: 'services' },
+    { label: 'Products', id: 'products' },
+    { label: 'Projects', id: 'projects' },
+    { label: 'Technical Resources', id: 'resources' },
+    { label: 'About', id: 'about' },
+    { label: 'Contact', id: 'contact' },
+  ];
+
+  const legalLinks = [
+    { label: 'Privacy Policy', href: '#' },
+    { label: 'Terms', href: '#' },
+  ];
 
   return (
     <footer className="relative bg-[#04070D] border-t border-[#1E293B] text-[#64748B] pt-16 pb-8">
@@ -31,10 +45,10 @@ export const Footer: React.FC<FooterProps> = ({ onScrollTo }) => {
           <div className="md:col-span-3">
             <h4 className="font-serif text-[11px] font-semibold text-[#78716C] uppercase tracking-[0.2em] mb-4">Navigation</h4>
             <ul className="space-y-2.5">
-              {NAV_SECTIONS.map((s) => (
-                <li key={s.id}>
-                  <button onClick={() => onScrollTo(s.id)} className="text-xs text-[#64748B] hover:text-[#FFFFFF] transition-colors duration-200 cursor-pointer font-sans">
-                    {s.label}
+              {footerLinks.map((link) => (
+                <li key={link.id}>
+                  <button onClick={() => onNavigate(link.id)} className="text-xs text-[#64748B] hover:text-[#FFFFFF] transition-colors duration-200 cursor-pointer font-sans">
+                    {link.label}
                   </button>
                 </li>
               ))}
@@ -49,6 +63,12 @@ export const Footer: React.FC<FooterProps> = ({ onScrollTo }) => {
                 <Mail className="w-3.5 h-3.5 text-[#64748B] shrink-0" />
                 <a href={`mailto:${CONTACT.email}`} className="text-[#64748B] hover:text-[#FFFFFF] transition-colors duration-200 font-sans">{CONTACT.email}</a>
               </li>
+              {CONTACT.projectsEmail && (
+                <li className="flex items-center gap-3">
+                  <Mail className="w-3.5 h-3.5 text-[#64748B] shrink-0" />
+                  <a href={`mailto:${CONTACT.projectsEmail}`} className="text-[#64748B] hover:text-[#FFFFFF] transition-colors duration-200 font-sans">{CONTACT.projectsEmail}</a>
+                </li>
+              )}
               <li className="flex items-center gap-3">
                 <Phone className="w-3.5 h-3.5 text-[#64748B] shrink-0" />
                 <span className="text-[#64748B] font-sans">{CONTACT.phone}</span>
@@ -69,6 +89,9 @@ export const Footer: React.FC<FooterProps> = ({ onScrollTo }) => {
           <div className="flex items-center gap-6 text-[10px] text-[#64748B] font-mono">
             <span>B-BBEE Level 2</span>
             <span>SABS Compliant</span>
+            {legalLinks.map((link) => (
+              <a key={link.label} href={link.href} className="hover:text-[#FFFFFF] transition-colors">{link.label}</a>
+            ))}
             <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-1.5 text-[#64748B] hover:text-[#FFFFFF] transition-colors cursor-pointer">
               Back to top <ArrowUp className="w-3 h-3" />
             </button>

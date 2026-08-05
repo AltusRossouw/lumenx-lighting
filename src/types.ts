@@ -13,7 +13,9 @@ export interface ProductCategory {
   id: string;
   title: string;
   description: string;
+  applications: string;
   imageUrl: string;
+  linkLabel: string;
 }
 
 export interface ProductDetail {
@@ -44,11 +46,32 @@ export interface WhyChooseReason {
 export interface CompanyOverview {
   tagline: string;
   intro: string;
-  mission: string;
-  vision: string;
-  values: string;
-  team: string;
-  coreSpecialisation: string;
-  geographicReach: string;
-  marketFocus: string;
+}
+
+export interface CompleteSolutionCapability {
+  title: string;
+  description: string;
+}
+
+export interface ProcessStep {
+  number: string;
+  title: string;
+  description: string;
+}
+
+export interface FeaturedProject {
+  name: string;
+  location: string;
+  scope: string;
+  delivered: string;
+}
+
+export interface AudienceProfile {
+  title: string;
+  description: string;
+}
+
+export interface FAQ {
+  question: string;
+  answer: string;
 }
