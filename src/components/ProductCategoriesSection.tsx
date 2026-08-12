@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { PRODUCT_CATEGORIES } from '../data';
 import { ArrowRight } from 'lucide-react';
+import { Button } from './ui/lumenx-button';
 
 interface ProductCategoriesSectionProps {
   onSelectCategory: (categoryId: string) => void;
@@ -90,12 +91,14 @@ export const ProductCategoriesSection: React.FC<ProductCategoriesSectionProps> =
               Premium South African-engineered lighting for demanding industrial, commercial and mining applications requiring advanced performance, durability and lifecycle value.
             </p>
           </div>
-          <button
+          <Button
+            variant="secondary"
+            size="sm"
+            iconTrailing={<ArrowRight className="w-3.5 h-3.5" />}
             onClick={() => onSelectCategory('orbitx')}
-            className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 border border-primary/20 text-primary text-sm font-semibold hover:bg-primary/10 transition-colors duration-300 cursor-pointer font-display"
           >
-            Explore OrbitX <ArrowRight className="w-3.5 h-3.5" />
-          </button>
+            Explore OrbitX
+          </Button>
         </motion.div>
       </div>
     </section>

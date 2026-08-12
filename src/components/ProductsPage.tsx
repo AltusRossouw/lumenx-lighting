@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { PRODUCT_CATEGORIES } from '../data';
 import { ArrowRight, ShieldCheck, Zap, Clock } from 'lucide-react';
 import { PageHeroBackground } from './animations';
+import { Button } from './ui/lumenx-button';
 
 export const ProductsPage: React.FC = () => {
   const navigate = useNavigate();
@@ -135,22 +136,20 @@ export const ProductsPage: React.FC = () => {
             Tell us about your project and we'll provide a competitive quotation with technical specifications.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
+            <Button
+              size="lg"
+              iconTrailing={<ArrowRight className="w-4 h-4" />}
               onClick={() => navigate('/contact')}
-              className="group relative overflow-hidden px-8 py-3.5 bg-gradient-to-r from-primary to-[#00A8D5] text-[#FFFFFF] font-normal rounded-lg text-sm shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 transform active:scale-95 cursor-pointer"
             >
-              <span className="relative z-10 flex items-center gap-2">
-                Request a Quote
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </span>
-              <div className="absolute inset-0 bg-[#0A0D14]/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-            </button>
-            <button
+              Request a Quote
+            </Button>
+            <Button
+              variant="secondary"
+              size="lg"
               onClick={() => navigate('/')}
-              className="px-8 py-3.5 border border-[#1E293B] hover:border-primary/30 text-[#FFFFFF] hover:text-[#FFFFFF] font-medium rounded-lg text-sm transition-all duration-300 cursor-pointer bg-[#0A0D14]/[0.02] hover:bg-[#0A0D14]/[0.04]"
             >
               Back to Company Profile
-            </button>
+            </Button>
           </div>
         </div>
       </section>

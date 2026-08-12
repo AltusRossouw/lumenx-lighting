@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { PRODUCT_CATEGORIES, PRODUCTS_BY_CATEGORY } from '../data';
 import { ArrowLeft, ArrowRight, Check, FileDown, FileText } from 'lucide-react';
 import { PageHeroBackground } from './animations';
+import { Button } from './ui/lumenx-button';
 
 /** Generate a URL-safe slug from a product name */
 function slugify(name: string): string {
@@ -127,13 +128,13 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
 
                     {/* CTA */}
                     <div className="flex flex-wrap items-center gap-3">
-                      <button
+                      <Button
+                        size="sm"
+                        iconTrailing={<ArrowRight className="w-4 h-4" />}
                         onClick={() => onInquire(product.name)}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-[#FFFFFF] font-semibold rounded-lg text-sm hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 cursor-pointer group/btn"
                       >
                         Enquire about {product.name}
-                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                      </button>
+                      </Button>
 
                       {(() => {
                         const urls = getDownloadUrls(product);
@@ -180,16 +181,13 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
             <p className="text-[#78716C] text-sm mb-6 max-w-lg mx-auto">
               Our technical team can help specify the right products for your project. Get a competitive quote with lead times and compliance documentation.
             </p>
-            <button
+            <Button
+              size="lg"
+              iconTrailing={<ArrowRight className="w-4 h-4" />}
               onClick={() => onInquire('Custom Specification')}
-              className="group relative overflow-hidden px-8 py-3.5 bg-gradient-to-r from-primary to-[#00A8D5] text-[#FFFFFF] font-normal rounded-lg text-sm shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 transform active:scale-95 cursor-pointer"
             >
-              <span className="relative z-10 flex items-center gap-2">
-                Request a Quote
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </span>
-              <div className="absolute inset-0 bg-[#0A0D14]/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-            </button>
+              Request a Quote
+            </Button>
           </motion.div>
         </div>
       </section>

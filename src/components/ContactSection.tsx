@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { CONTACT } from '../data';
 import { Mail, Phone, MapPin, Send, MessageCircle, User, AtSign, Building2, FileText } from 'lucide-react';
 import { PageHeroBackground } from './animations';
+import { Button } from './ui/lumenx-button';
 
 export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -172,16 +173,15 @@ export const ContactSection: React.FC = () => {
                   </a>
                 </p>
 
-                <button
+                <Button
                   type="submit"
-                  className="w-full group relative overflow-hidden px-6 py-3.5 bg-gradient-to-r from-primary to-[#00A8D5] text-[#06090F] font-semibold rounded-lg text-sm shadow-lg shadow-primary/10 hover:shadow-primary/20 transition-all duration-300 transform active:scale-[0.98] cursor-pointer"
+                  size="lg"
+                  className="w-full"
+                  iconLeading={<Send className="w-4 h-4" />}
+                  loading={submitted}
                 >
-                  <span className="relative z-10 flex items-center justify-center gap-2">
-                    <Send className="w-4 h-4" />
-                    {submitted ? 'Submitted! Opening Email…' : 'Submit Your Lighting Requirement'}
-                  </span>
-                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                </button>
+                  {submitted ? 'Submitted! Opening Email…' : 'Submit Your Lighting Requirement'}
+                </Button>
               </form>
             </div>
           </motion.div>

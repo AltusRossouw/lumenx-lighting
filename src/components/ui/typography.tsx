@@ -61,7 +61,7 @@ interface SectionLabelProps {
 
 export function SectionLabel({ children, className }: SectionLabelProps) {
   return (
-    <div className={cn("flex items-center gap-3 mb-4", className)}>
+    <div className={cn("flex items-center gap-3", className)}>
       <span className="w-6 h-px bg-primary/30" />
       <span className="text-label-sm text-primary/70">
         {children}

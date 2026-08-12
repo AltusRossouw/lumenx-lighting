@@ -450,6 +450,32 @@ body { background-color: #06090F; color: #CBD5E1; -webkit-font-smoothing: antial
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* ═══════════════════════════════════════════
+   LUMENX BRAND OVERRIDE
+   Override shadcn primary with LumenX cyan brand color
+   ═══════════════════════════════════════════ */
+
+:root {
+  --primary: #00D4FF;
+  --primary-foreground: #06090F;
+}
+
+.dark {
+  --primary: #00D4FF;
+  --primary-foreground: #06090F;
+}
+
+/* Also fix the secondary to use LumenX's indigo for shadcn components */
+:root {
+  --secondary: #5165FF;
+  --secondary-foreground: #FFFFFF;
+}
+
+.dark {
+  --secondary: #5165FF;
+  --secondary-foreground: #FFFFFF;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
