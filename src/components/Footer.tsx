@@ -41,7 +41,7 @@ export const Footer: React.FC = () => {
 
           {/* Nav */}
           <div className="md:col-span-3">
-            <h4 className="font-serif text-[11px] font-semibold text-[#78716C] uppercase tracking-[0.2em] mb-4">Navigation</h4>
+            <h4 className="text-serif-label text-[11px] text-[#78716C] mb-4">Navigation</h4>
             <ul className="space-y-2.5">
               {footerLinks.map((link) => (
                 <li key={link.label}>
@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
 
           {/* Contact */}
           <div className="md:col-span-4">
-            <h4 className="font-serif text-[11px] font-semibold text-[#78716C] uppercase tracking-[0.2em] mb-4">Contact</h4>
+            <h4 className="text-serif-label text-[11px] text-[#78716C] mb-4">Contact</h4>
             <ul className="space-y-3 text-xs">
               <li className="flex items-center gap-3">
                 <Mail className="w-3.5 h-3.5 text-[#64748B] shrink-0" />

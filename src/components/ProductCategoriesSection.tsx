@@ -8,7 +8,7 @@ interface ProductCategoriesSectionProps {
 }
 
 export const ProductCategoriesSection: React.FC<ProductCategoriesSectionProps> = ({ onSelectCategory }) => {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
   return (

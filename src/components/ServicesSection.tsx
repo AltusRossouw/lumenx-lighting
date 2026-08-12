@@ -8,7 +8,7 @@ import { LightBloom, PageHeroBackground } from './animations';
 const iconMap: Record<string, LucideIcon> = { Lightbulb, ClipboardCheck, TrendingUp, Truck, Users, Cpu, Headphones };
 
 export const ServicesSection: React.FC = () => {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
   return (

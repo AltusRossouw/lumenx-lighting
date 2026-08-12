@@ -46,6 +46,13 @@ export interface WhyChooseReason {
 export interface CompanyOverview {
   tagline: string;
   intro: string;
+  coreSpecialisation: string;
+  geographicReach: string;
+  marketFocus: string;
+  mission: string;
+  vision: string;
+  values: string;
+  team: string;
 }
 
 export interface CompleteSolutionCapability {

@@ -5,7 +5,7 @@ import { ChevronDown } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
 export const FAQSection: React.FC = () => {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 

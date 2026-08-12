@@ -5,7 +5,7 @@ import { ShieldCheck, Factory } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
 export const ComplianceSection: React.FC = () => {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (

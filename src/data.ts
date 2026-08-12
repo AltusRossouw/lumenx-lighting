@@ -27,6 +27,13 @@ export const COMPANY: CompanyOverview = {
   tagline: 'LIGHTING, ENGINEERED FOR REAL PROJECTS',
   intro:
     'LumenX is a South African technical lighting partner for retail, commercial and industrial developments, owning every stage of a project from design to site delivery executed by one accountable team.',
+  coreSpecialisation: 'Technically led lighting solutions and building management systems (BMS)',
+  geographicReach: 'Available nationwide to support projects across South Africa',
+  marketFocus: 'Retail, commercial, and industrial environments',
+  mission: 'To solve the delivery gap in lighting by bringing technical depth, accountability, and executional precision to every project.',
+  vision: 'To become the trusted technical lighting partner for projects — known for buildable design, reliable delivery, and performance-led outcomes.',
+  values: 'Technical integrity. Project accountability. Practical innovation. Consistency in delivery. Responsiveness under pressure.',
+  team: 'LumenX is built around technically minded project support, combining lighting design, lighting knowledge, specification thinking, simulation, 3D modelling, compliance, and delivery coordination. We work closely with developers, consultants, architects, engineers, contractors, and procurement teams to help keep projects moving from concept through to handover.',
 };
 
 export const COMPLETE_SOLUTION: CompleteSolutionCapability[] = [

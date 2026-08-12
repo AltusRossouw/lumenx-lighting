@@ -5,7 +5,7 @@ import { Target, Eye, Heart, Users } from 'lucide-react';
 import { LightBloom, PageHeroBackground } from './animations';
 
 export const OverviewSection: React.FC = () => {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
   const quickFacts = [

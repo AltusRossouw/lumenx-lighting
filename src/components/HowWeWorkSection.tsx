@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
 export const HowWeWorkSection: React.FC = () => {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
   return (

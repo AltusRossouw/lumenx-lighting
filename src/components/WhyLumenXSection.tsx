@@ -8,7 +8,7 @@ import { PageHeroBackground } from './animations';
 const iconMap: Record<string, LucideIcon> = { Users, Zap, TrendingUp, Truck, Headphones };
 
 export const WhyLumenXSection: React.FC = () => {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
   return (
