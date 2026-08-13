@@ -10,6 +10,7 @@ import { AboutPage } from './components/AboutPage';
 import { ContactPage } from './components/ContactPage';
 import { ProductsPage } from './components/ProductsPage';
 import { ProductDetailPage } from './components/ProductDetailPage';
+import { FloatingWhatsAppButton } from './components/FloatingWhatsAppButton';
 import { ShieldCheck } from 'lucide-react';
 import { LumenXMark } from './components/ui/lumenx-mark';
 
@@ -62,6 +63,8 @@ function AppLayout() {
       <ScrollToHash />
 
       <Header />
+
+      <FloatingWhatsAppButton />
 
       <main className="flex-grow">
         <Routes>
