@@ -56,12 +56,15 @@ export const CompleteSolutionSection: React.FC = () => {
                 transition={{ delay: 0.4 + i * 0.1, duration: 0.6 }}
                 className="relative flex flex-col items-center text-center group"
               >
-                {/* Step number circle */}
-                <div className="relative z-10 w-24 h-24 rounded-full bg-[#0E131C] border border-[#1E293B] flex items-center justify-center mb-5 group-hover:border-primary/30 transition-colors duration-500">
-                  {/* Connecting dot on the line */}
-                  <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full bg-primary/40 group-hover:bg-primary group-hover:shadow-[0_0_12px_rgba(0,212,255,0.5)] transition-all duration-500" />
-                  <span className="font-display text-2xl font-bold text-white/20 group-hover:text-primary/40 transition-colors duration-500">
-                    {String(i + 1).padStart(2, '0')}
+                {/* Step icon circle — custom generated icon with number badge */}
+                <div className="relative z-10 w-24 h-24 rounded-full bg-[#0E131C] border border-[#1E293B] flex items-center justify-center mb-5 group-hover:border-primary/30 transition-colors duration-500 overflow-visible">
+                  <img
+                    src={cap.icon}
+                    alt=""
+                    className="w-16 h-16 object-contain rounded-full group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <span className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-primary text-[#06090F] font-display text-sm font-extrabold flex items-center justify-center shadow-[0_0_16px_rgba(0,212,255,0.35)]">
+                    {i + 1}
                   </span>
                 </div>
 

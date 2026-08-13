@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { COMPLIANCE_ITEMS, COMPANY } from '../data';
+import { COMPLIANCE_ITEMS } from '../data';
 import { ShieldCheck, Factory } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
@@ -30,61 +30,68 @@ export const ComplianceSection: React.FC = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-          {/* Brands & Partners */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.2, duration: 0.6 }}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-secondary/[0.06] flex items-center justify-center">
-                <Factory className="w-5 h-5 text-secondary/50" />
-              </div>
-              <h3 className="font-display text-xl font-semibold text-white tracking-tight">
-                Brands & Manufacturing Partners
-              </h3>
-            </div>
-            <p className="text-sm text-slate-400 leading-relaxed mb-6 font-sans font-light">
-              LumenX works with trusted manufacturing and supply partners selected for performance, consistency, and project suitability.
-            </p>
+        {/* About LumenX — body text sits directly under the header, no standalone heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.2, duration: 0.7 }}
+          className="max-w-3xl mb-16"
+        >
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-sans font-light">
+            LumenX is a technically driven lighting business founded to bring stronger technical
+            ownership into lighting delivery. Rather than acting only as a product source, we work as
+            a project partner — aligning design intent, engineering requirements, commercial
+            realities, compliance and on-site execution into one accountable lighting solution.
+          </p>
+        </motion.div>
 
-            {/* About LumenX — brief */}
-            <div className="mt-8 pt-8 border-t border-[#1E293B]/60">
-              <h3 className="font-display text-lg font-semibold text-white mb-3 tracking-tight">About LumenX</h3>
-              <p className="text-sm text-slate-400 leading-relaxed font-sans font-light">
-                LumenX is a technically driven lighting business founded to bring stronger technical ownership into lighting delivery. Rather than acting only as a product source, we work as a project partner — aligning design intent, engineering requirements, commercial realities, compliance and on-site execution into one accountable lighting solution.
-              </p>
+        {/* Brands & Manufacturing Partners */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.3, duration: 0.7 }}
+          className="mb-14"
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 bg-secondary/[0.06] flex items-center justify-center">
+              <Factory className="w-5 h-5 text-secondary/50" />
             </div>
-          </motion.div>
+            <h3 className="font-display text-xl font-semibold text-white tracking-tight">
+              Brands & Manufacturing Partners
+            </h3>
+          </div>
+          <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-3xl font-sans font-light">
+            LumenX works with trusted manufacturing and supply partners selected for performance,
+            consistency, and project suitability.
+          </p>
+        </motion.div>
 
-          {/* Compliance & Quality */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.2, duration: 0.6 }}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-primary/[0.06] flex items-center justify-center">
-                <ShieldCheck className="w-5 h-5 text-primary/50" />
-              </div>
-              <h3 className="font-display text-xl font-semibold text-white tracking-tight">
-                Compliance & Quality Assurance
-              </h3>
+        {/* Compliance & Quality Assurance */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.4, duration: 0.7 }}
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 bg-primary/[0.06] flex items-center justify-center">
+              <ShieldCheck className="w-5 h-5 text-primary/50" />
             </div>
-            <div className="space-y-4">
-              {COMPLIANCE_ITEMS.map((item, i) => (
-                <div key={i} className="gradient-border-card p-4">
-                  <div className="flex items-center gap-2 mb-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-primary/50" />
-                    <h4 className="text-sm font-semibold text-white font-display">{item.label}</h4>
-                  </div>
-                  <p className="text-xs text-slate-500 leading-relaxed pl-5.5 font-sans font-light">{item.description}</p>
+            <h3 className="font-display text-xl font-semibold text-white tracking-tight">
+              Compliance & Quality Assurance
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {COMPLIANCE_ITEMS.map((item, i) => (
+              <div key={i} className="gradient-border-card p-5">
+                <div className="flex items-center gap-2 mb-2">
+                  <ShieldCheck className="w-3.5 h-3.5 text-primary/50" />
+                  <h4 className="text-sm font-semibold text-white font-display">{item.label}</h4>
                 </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
+                <p className="text-sm text-slate-400 leading-relaxed pl-5.5 font-sans font-light">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

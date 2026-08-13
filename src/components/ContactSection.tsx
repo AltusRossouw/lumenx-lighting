@@ -174,13 +174,12 @@ export const ContactSection: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full group relative overflow-hidden px-6 py-3.5 bg-gradient-to-r from-primary to-[#00A8D5] text-[#06090F] font-semibold rounded-lg text-sm shadow-lg shadow-primary/10 hover:shadow-primary/20 transition-all duration-300 transform active:scale-[0.98] cursor-pointer"
+                  className="btn btn-primary btn-block"
                 >
-                  <span className="relative z-10 flex items-center justify-center gap-2">
+                  <span className="flex items-center justify-center gap-2">
                     <Send className="w-4 h-4" />
                     {submitted ? 'Submitted! Opening Email…' : 'Submit Your Lighting Requirement'}
                   </span>
-                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                 </button>
               </form>
             </div>

@@ -1,162 +1,312 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'motion/react';
-import { COMPANY } from '../data';
-import { ArrowRight, ShieldCheck, Globe } from 'lucide-react';
+import { motion } from 'motion/react';
+import { HeroSection } from './HeroSection';
+import { CTASection } from './CTASection';
+import { AccreditationBar } from './AccreditationBar';
+import { LumenXMark } from './ui/lumenx-mark';
+import {
+  COMPLETE_SOLUTION,
+  FEATURED_PROJECTS,
+  PROCESS_STEPS,
+  PRODUCT_CATEGORIES,
+  AUDIENCE_PROFILES,
+  INDUSTRIES,
+  WHY_CHOOSE,
+} from '../data';
+import {
+  ArrowRight,
+  Building2,
+  MapPin,
+  CheckCircle,
+} from 'lucide-react';
+
+/* ── Shared teaser shell: label + headline + short copy ── */
+interface TeaserProps {
+  id?: string;
+  label: string;
+  title: React.ReactNode;
+  copy?: string;
+  children?: React.ReactNode;
+}
+
+const Teaser: React.FC<TeaserProps> = ({ id, label, title, copy, children }) => (
+  <section id={id} className="relative py-20 sm:py-28 overflow-hidden bg-[#06090F]">
+    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.7 }}
+      >
+        <div className="flex items-center gap-3 mb-4">
+          <span className="w-8 h-px bg-primary/40" />
+          <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">{label}</span>
+        </div>
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-[-0.02em] max-w-2xl">{title}</h2>
+          {copy && (
+            <p className="text-slate-400 max-w-md text-sm sm:text-base leading-relaxed font-sans font-light lg:text-right">
+              {copy}
+            </p>
+          )}
+        </div>
+      </motion.div>
+      {children}
+    </div>
+  </section>
+);
+
+const TeaserLink: React.FC<{ to: string; label: string }> = ({ to, label }) => {
+  const navigate = useNavigate();
+  return (
+    <button
+      onClick={() => navigate(to)}
+      className="group inline-flex items-center gap-2 text-xs font-semibold text-primary/70 hover:text-primary transition-colors duration-300 cursor-pointer font-display mt-8"
+    >
+      {label}
+      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
+    </button>
+  );
+};
+
+/* ── 1 · The Solution teaser ── */
+const SolutionTeaser: React.FC = () => (
+  <Teaser
+    id="solution"
+    label="The Solution"
+    title={<>One partner, <span className="gradient-text">the complete project</span></>}
+    copy="Design, specification, value engineering, supply and coordination — held by one accountable technical team."
+  >
+    <div className="flex flex-wrap gap-3">
+      {COMPLETE_SOLUTION.map((cap) => (
+        <span
+          key={cap.title}
+          className="inline-flex items-center gap-3 px-5 py-3 border border-[#1E293B]/70 bg-[#0A0F17] hover:border-primary/40 hover:bg-primary/[0.03] transition-colors duration-300"
+        >
+          <img
+            src={cap.heroIcon}
+            alt=""
+            className="w-9 h-9 object-contain drop-shadow-[0_0_12px_rgba(0,212,255,0.35)]"
+          />
+          <span className="font-display text-sm font-semibold text-slate-200">{cap.title}</span>
+        </span>
+      ))}
+    </div>
+    <TeaserLink to="/the-solution" label="See how the complete solution works" />
+  </Teaser>
+);
+
+/* ── 2 · Featured Projects teaser ── */
+const ProjectsTeaser: React.FC = () => (
+  <Teaser
+    id="projects"
+    label="Featured Projects"
+    title={<>Technical proof, <span className="gradient-text">not promises</span></>}
+    copy="A snapshot of commercial and industrial lighting projects delivered end to end."
+  >
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {FEATURED_PROJECTS.map((p) => (
+        <div key={p.name} className="gradient-border-card card-lift p-6">
+          <div className="flex items-start gap-3 mb-4">
+            <div className="w-9 h-9 bg-primary/[0.06] flex items-center justify-center shrink-0">
+              <Building2 className="w-4 h-4 text-primary/50" />
+            </div>
+            <div>
+              <h3 className="font-display text-lg font-semibold text-white tracking-tight">{p.name}</h3>
+              <p className="flex items-center gap-1.5 text-xs font-mono text-slate-500 mt-0.5">
+                <MapPin className="w-3 h-3" /> {p.location}
+              </p>
+            </div>
+          </div>
+          <p className="text-sm text-slate-400 leading-relaxed font-sans font-light">{p.scope}</p>
+        </div>
+      ))}
+    </div>
+    <TeaserLink to="/projects" label="View featured projects" />
+  </Teaser>
+);
+
+/* ── 3 · Technical Proof teaser ── */
+const TechnicalProofTeaser: React.FC = () => (
+  <Teaser
+    id="technical-proof"
+    label="Technical Proof"
+    title={<>Documentation, <span className="gradient-text">standards and warranties</span></>}
+    copy="Every specification is backed by the technical evidence project teams need."
+  >
+    <div className="border border-[#1E293B] bg-[#0A0F17] p-6 flex flex-wrap items-center gap-x-8 gap-y-3">
+      {[
+        'SABS / IEC / OSHACT aligned',
+        'B-BBEE Level 2',
+        'Manufacturer-backed warranties',
+        'Lighting simulations & calculations',
+      ].map((item) => (
+        <span key={item} className="flex items-center gap-2.5">
+          <CheckCircle className="w-4 h-4 text-primary/60" />
+          <span className="text-xs font-mono text-slate-400 uppercase tracking-[0.15em]">{item}</span>
+        </span>
+      ))}
+    </div>
+    <TeaserLink to="/resources" label="Download technical documentation" />
+  </Teaser>
+);
+
+/* ── 4 · How It Works teaser ── */
+const ProcessTeaser: React.FC = () => (
+  <Teaser
+    id="how-it-works"
+    label="How It Works"
+    title={<>A clear process, <span className="gradient-text">brief to delivery</span></>}
+    copy="Six steps that reduce risk and keep the lighting package aligned."
+  >
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-10">
+      {PROCESS_STEPS.map((step) => (
+        <div key={step.number}>
+          <span className="font-display text-5xl sm:text-6xl font-extrabold gradient-text leading-none">
+            {step.number}
+          </span>
+          <img
+            src={step.iconImg}
+            alt=""
+            className="w-8 h-8 object-contain mt-3 drop-shadow-[0_0_10px_rgba(0,212,255,0.3)]"
+          />
+          <h3 className="font-display text-sm font-bold text-white mt-2 tracking-tight">{step.title}</h3>
+        </div>
+      ))}
+    </div>
+    <TeaserLink to="/the-solution" label="Explore the full process" />
+  </Teaser>
+);
+
+/* ── 5 · Product Categories teaser ── */
+const CategoriesTeaser: React.FC = () => {
+  const navigate = useNavigate();
+  return (
+    <Teaser
+      id="product-categories"
+      label="Product Categories"
+      title={<>Lighting selected around <span className="gradient-text">the application</span></>}
+      copy="Commercial, industrial, outdoor, emergency and smart lighting ranges."
+    >
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {PRODUCT_CATEGORIES.map((c) => (
+          <button
+            key={c.id}
+            onClick={() => navigate(`/products/${c.id}`)}
+            className="group relative overflow-hidden h-40 gradient-border-card card-lift cursor-pointer text-left"
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
+              style={{ backgroundImage: `url(${c.imageUrl})` }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#06090F] via-[#06090F]/45 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-4">
+              <span className="font-display text-sm font-semibold text-white group-hover:text-primary transition-colors duration-300">
+                {c.title}
+              </span>
+            </div>
+          </button>
+        ))}
+      </div>
+      <TeaserLink to="/products" label="Browse all products" />
+    </Teaser>
+  );
+};
+
+/* ── 6 · Who It's For teaser ── */
+const WhoItsForTeaser: React.FC = () => (
+  <Teaser
+    id="who-its-for"
+    label="Who It's For"
+    title={<>Built for the teams <span className="gradient-text">delivering projects</span></>}
+    copy="Engineers, contractors, architects, developers and procurement teams."
+  >
+    <div className="flex flex-wrap gap-3 mb-10">
+      {AUDIENCE_PROFILES.map((a) => (
+        <span
+          key={a.title}
+          className="inline-flex items-center gap-3 px-5 py-3 border border-[#1E293B]/70 bg-[#0A0F17]"
+        >
+          <img
+            src={a.iconImg}
+            alt=""
+            className="w-8 h-8 object-contain drop-shadow-[0_0_10px_rgba(0,212,255,0.35)]"
+          />
+          <span className="font-display text-sm font-bold text-white">{a.title}</span>
+        </span>
+      ))}
+    </div>
+    <div className="flex flex-wrap items-center gap-x-4 gap-y-2.5">
+      {INDUSTRIES.map((sector, i) => (
+        <React.Fragment key={sector.name}>
+          {i > 0 && <LumenXMark className="w-2 h-2 text-primary/40" />}
+          <span className="inline-flex items-center gap-2">
+            <img
+              src={sector.iconImg}
+              alt=""
+              className="w-7 h-7 object-contain drop-shadow-[0_0_10px_rgba(0,212,255,0.3)]"
+            />
+            <span className="text-sm font-semibold text-slate-300 font-display">{sector.name}</span>
+          </span>
+        </React.Fragment>
+      ))}
+    </div>
+    <TeaserLink to="/about" label="More about who we work with" />
+  </Teaser>
+);
+
+/* ── 7 · Why LumenX teaser ── */
+const WhyTeaser: React.FC = () => (
+  <Teaser
+    id="why-lumenx"
+    label="Why LumenX"
+    title={<>The <span className="gradient-text">LumenX</span> difference</>}
+    copy="What LumenX does differently — and what that removes from your plate."
+  >
+    <div className="flex flex-wrap gap-3">
+      {WHY_CHOOSE.map((reason) => (
+        <span
+          key={reason.title}
+          className="inline-flex items-center gap-3 pl-4 pr-5 py-3 border border-[#1E293B]/70 bg-[#0A0F17]"
+        >
+          <img
+            src={reason.iconImg}
+            alt=""
+            className="w-8 h-8 object-contain drop-shadow-[0_0_10px_rgba(0,212,255,0.35)]"
+          />
+          <span className="font-display text-sm font-bold text-white">{reason.title}</span>
+        </span>
+      ))}
+    </div>
+    <TeaserLink to="/about" label="The full LumenX difference" />
+  </Teaser>
+);
 
 export const HomePage: React.FC = () => {
-  const navigate = useNavigate();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start start', 'end start'] });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
-
   return (
     <div>
       {/* Hero */}
-      <section ref={containerRef} id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-[#06090F]" style={{ minHeight: '100svh' }}>
-        <div className="absolute inset-0 pointer-events-none" style={{
-          backgroundImage: 'linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px)',
-          backgroundSize: '80px 80px',
-          maskImage: 'radial-gradient(ellipse 70% 60% at 50% 40%, black 25%, transparent 70%)',
-          WebkitMaskImage: 'radial-gradient(ellipse 70% 60% at 50% 40%, black 25%, transparent 70%)',
-        }} />
+      <HeroSection />
 
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="light-ray" style={{ top: '-10%', left: '25%', height: '60%', animationDelay: '0s', opacity: 0.6 }} />
-          <div className="light-ray" style={{ top: '-5%', left: '55%', height: '70%', animationDelay: '2s', opacity: 0.5 }} />
-          <div className="light-ray" style={{ top: '-12%', left: '78%', height: '50%', animationDelay: '3.5s', opacity: 0.4 }} />
-        </div>
+      {/* A/B Variant 1 — accreditation bar: items turn brand blue on hover */}
+      <AccreditationBar variant="hover" />
 
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {Array.from({ length: 18 }).map((_, i) => (
-            <div key={`led-${i}`} className="led-dot absolute" style={{
-              left: `${5 + Math.random() * 90}%`, top: `${5 + Math.random() * 90}%`,
-              ['--led-duration' as string]: `${2.5 + Math.random() * 3}s`,
-              ['--led-delay' as string]: `${Math.random() * 5}s`,
-            }} />
-          ))}
-        </div>
+      {/* Teaser reel — light on content, deep info lives in the dedicated tabs */}
+      <SolutionTeaser />
+      <ProjectsTeaser />
+      <TechnicalProofTeaser />
+      <ProcessTeaser />
+      <CategoriesTeaser />
+      <WhoItsForTeaser />
+      <WhyTeaser />
 
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <div key={`particle-${i}`} className="light-particle" style={{
-              left: `${15 + Math.random() * 70}%`, top: `${25 + Math.random() * 50}%`,
-              ['--px' as string]: `${(Math.random() - .5) * 80}px`,
-              ['--py' as string]: `${-30 - Math.random() * 60}px`,
-              ['--particle-dur' as string]: `${3 + Math.random() * 4}s`,
-              ['--particle-delay' as string]: `${Math.random() * 6}s`,
-            }} />
-          ))}
-        </div>
+      {/* A/B Variant 2 — accreditation bar: solid white strip with bold black text */}
+      <AccreditationBar variant="strip" />
 
-        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-primary/[0.02] rounded-full blur-[180px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-secondary/[0.02] rounded-full blur-[150px] pointer-events-none" />
-
-        <motion.div style={{ y }} className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
-          <div className="max-w-3xl">
-            <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}>
-              <div className="flex items-center gap-3 mb-10">
-                <span className="w-6 h-px bg-primary/30" />
-                <span className="text-[10px] font-mono text-primary/70 tracking-[0.3em] uppercase">South Africa — Nationwide</span>
-              </div>
-
-              <h1 className="font-display text-[clamp(2.5rem,6.5vw,5.5rem)] font-extrabold tracking-[-0.03em] leading-[0.94] text-white mb-8">
-                LIGHTING,<br />
-                <span className="gradient-text">ENGINEERED</span><br />
-                FOR REAL PROJECTS
-              </h1>
-
-              <p className="text-base sm:text-lg text-slate-400 max-w-xl leading-relaxed mb-4 font-sans font-light">
-                {COMPANY.intro}
-              </p>
-
-              <p className="text-[11px] font-mono text-slate-500 tracking-[0.15em] uppercase mb-10">
-                Specification · Value Engineering · Supply · Project Coordination and Completion
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 mb-16">
-                <button
-                  onClick={() => navigate('/contact')}
-                  className="group relative overflow-hidden px-8 py-4 bg-primary text-[#06090F] font-bold text-sm tracking-wide transition-all duration-300 cursor-pointer font-display hover:shadow-[0_0_40px_rgba(0,212,255,0.35)]"
-                >
-                  <span className="relative z-10 flex items-center gap-2">
-                    Discuss a Project
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
-                  </span>
-                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                </button>
-                <button
-                  onClick={() => navigate('/products')}
-                  className="group px-8 py-4 border border-white/10 hover:border-primary/25 text-slate-300 hover:text-white font-medium text-sm tracking-wide transition-all duration-300 cursor-pointer font-display flex items-center gap-2 bg-white/[0.02]"
-                >
-                  Explore Products
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
-              </div>
-
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-mono text-slate-500">
-                <span className="flex items-center gap-1.5"><Globe className="w-3 h-3 text-slate-600" />Nationwide Coverage</span>
-                <span className="text-slate-700 hidden sm:inline">·</span>
-                <span className="flex items-center gap-1.5"><ShieldCheck className="w-3 h-3 text-slate-600" />B-BBEE Level 2</span>
-                <span className="text-slate-700 hidden sm:inline">·</span>
-                <span className="flex items-center gap-1.5"><ShieldCheck className="w-3 h-3 text-slate-600" />SABS / IEC / OSHACT Aligned</span>
-              </div>
-            </motion.div>
-          </div>
-        </motion.div>
-
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#06090F] to-transparent pointer-events-none" />
-      </section>
-
-      {/* CTA Section */}
-      <section className="relative py-24 sm:py-32 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/[0.03] rounded-full blur-[200px]" />
-        </div>
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="w-6 h-px bg-primary/30" />
-              <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">Next Step</span>
-              <span className="w-6 h-px bg-primary/30" />
-            </div>
-
-            <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-[-0.02em] mb-5">
-              Bring LumenX into <span className="gradient-text">the project</span>
-            </h2>
-
-            <p className="text-slate-400 max-w-xl mx-auto text-base leading-relaxed mb-12 font-sans font-light">
-              Send us your drawings, BOQ, lighting specification or project brief. Our team will review the requirements and advise on the next technical and commercial step.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button
-                onClick={() => navigate('/contact')}
-                className="group relative overflow-hidden px-8 py-4 bg-primary text-[#06090F] font-bold text-sm tracking-wide transition-all duration-300 cursor-pointer font-display hover:shadow-[0_0_40px_rgba(0,212,255,0.35)]"
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  Tell Us About Your Project
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
-                </span>
-                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              </button>
-              <button
-                onClick={() => navigate('/services')}
-                className="group px-8 py-4 border border-white/10 hover:border-primary/25 text-slate-300 hover:text-white font-medium text-sm tracking-wide transition-all duration-300 cursor-pointer font-display flex items-center gap-2 bg-white/[0.02]"
-              >
-                Explore Our Services
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <CTASection />
     </div>
   );
 };
+

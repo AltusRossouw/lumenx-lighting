@@ -43,18 +43,25 @@ export const HowWeWorkSection: React.FC = () => {
               transition={{ delay: 0.2 + i * 0.08, duration: 0.6 }}
               className="group relative flex items-start gap-6 sm:gap-10 py-8 border-b border-[#1E293B]/60 last:border-b-0"
             >
-              {/* Step number */}
-              <div className="shrink-0 w-14 sm:w-20 text-right">
-                <span className="font-display text-3xl sm:text-5xl font-extrabold text-white/[0.04] group-hover:text-primary/[0.08] transition-colors duration-500 leading-none">
+              {/* Step number — standard digits, larger and bolder */}
+              <div className="shrink-0 w-16 sm:w-28 text-right">
+                <span className="font-display text-5xl sm:text-7xl font-extrabold gradient-text leading-none">
                   {step.number}
                 </span>
               </div>
 
               {/* Content */}
               <div className="flex-1 pt-1">
-                <h3 className="font-display text-lg sm:text-xl font-semibold text-white mb-2 tracking-tight group-hover:text-primary transition-colors duration-300">
-                  {step.title}
-                </h3>
+                <div className="flex items-center gap-3 mb-2">
+                  <img
+                    src={step.iconImg}
+                    alt=""
+                    className="w-8 h-8 object-contain drop-shadow-[0_0_10px_rgba(0,212,255,0.3)]"
+                  />
+                  <h3 className="font-display text-lg sm:text-xl font-semibold text-white tracking-tight group-hover:text-primary transition-colors duration-300">
+                    {step.title}
+                  </h3>
+                </div>
                 <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-2xl font-sans font-light">
                   {step.description}
                 </p>

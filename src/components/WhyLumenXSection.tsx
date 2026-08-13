@@ -1,14 +1,10 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { WHY_CHOOSE } from '../data';
-import { Users, Zap, TrendingUp, Truck, Headphones } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
-const iconMap: Record<string, LucideIcon> = { Users, Zap, TrendingUp, Truck, Headphones };
-
 export const WhyLumenXSection: React.FC = () => {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
   return (
@@ -37,30 +33,30 @@ export const WhyLumenXSection: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Why pillars — 5 columns, not card-heavy */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5" ref={ref}>
+        {/* Why pillars — 3x2 grid with larger, easier-to-read text blocks */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" ref={ref}>
           {WHY_CHOOSE.map((reason, i) => {
-            const Icon = iconMap[reason.icon] || Zap;
             return (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.1 + i * 0.08, duration: 0.6 }}
-                className="group"
+                className="gradient-border-card card-lift p-6 sm:p-7 group"
               >
-                {/* Icon + title row */}
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-9 h-9 bg-primary/[0.05] flex items-center justify-center shrink-0 group-hover:bg-primary/[0.1] transition-colors duration-300">
-                    <Icon className="w-4 h-4 text-primary/50 group-hover:text-primary/70 transition-colors duration-300" />
-                  </div>
-                  <div className="w-6 h-px bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300" />
+                {/* Custom generated icon */}
+                <div className="w-12 h-12 mb-4 bg-primary/[0.05] flex items-center justify-center shrink-0 group-hover:bg-primary/[0.1] transition-colors duration-300">
+                  <img
+                    src={reason.iconImg}
+                    alt=""
+                    className="w-9 h-9 object-contain drop-shadow-[0_0_10px_rgba(0,212,255,0.35)]"
+                  />
                 </div>
 
-                <h3 className="font-display text-sm font-semibold text-white mb-2 tracking-tight group-hover:text-primary transition-colors duration-300">
+                <h3 className="font-display text-lg sm:text-xl font-bold text-white mb-3 tracking-tight group-hover:text-primary transition-colors duration-300">
                   {reason.title}
                 </h3>
-                <p className="text-xs text-slate-500 leading-relaxed font-sans font-light">
+                <p className="text-sm sm:text-base text-slate-400 leading-relaxed font-sans font-light">
                   {reason.description}
                 </p>
               </motion.div>

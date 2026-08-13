@@ -33,20 +33,20 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
 
   if (!category) {
     return (
-      <div className="py-40 text-center text-[#78716C]">Category not found.</div>
+      <div className="py-40 text-center text-slate-400">Category not found.</div>
     );
   }
 
   return (
     <div className="min-h-screen">
       {/* Category Hero */}
-      <section className="relative py-16 sm:py-20 overflow-hidden bg-[#06090F]">
+      <section className="relative pt-[88px] pb-16 sm:pb-20 overflow-hidden bg-[#06090F]">
         <PageHeroBackground />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <button
             onClick={onBack}
-            className="inline-flex items-center gap-2 text-sm text-[#78716C] hover:text-[#FFFFFF] transition-colors mb-8 cursor-pointer group"
+            className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors mb-8 cursor-pointer group font-sans"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             Back to all products
@@ -59,10 +59,10 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
             <span className="inline-block text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4 border border-primary/20 rounded-full px-4 py-1.5 bg-primary/5">
               Product Range
             </span>
-            <h1 className="font-serif font-semibold text-3xl sm:text-4xl font-normal text-[#FFFFFF] mb-4 tracking-[-0.02em]">
+            <h1 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4 tracking-[-0.02em]">
               {category.title}
             </h1>
-            <p className="text-[#78716C] max-w-2xl text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-400 max-w-2xl text-sm sm:text-base leading-relaxed font-sans font-light">
               {category.description}
             </p>
           </motion.div>
@@ -94,8 +94,8 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
                   <div className="lg:col-span-2 p-6 sm:p-8">
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
                       <div>
-                        <h3 className="font-serif font-semibold text-xl font-semibold text-[#FFFFFF] mb-2 tracking-tight">{product.name}</h3>
-                        <p className="text-sm text-[#78716C] leading-relaxed max-w-xl">{product.description}</p>
+                        <h3 className="font-display text-xl font-bold text-white mb-2 tracking-tight">{product.name}</h3>
+                        <p className="text-sm text-slate-400 leading-relaxed max-w-xl font-sans font-light">{product.description}</p>
                       </div>
                     </div>
 
@@ -103,15 +103,15 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
                       {product.specs.map((spec, j) => (
                         <div key={j} className="p-3 rounded-lg bg-[#0A0D14] border border-[#1E293B]">
-                          <p className="text-[10px] font-mono text-[#64748B] uppercase tracking-wider mb-1">{spec.label}</p>
-                          <p className="text-xs text-[#FFFFFF] font-medium">{spec.value}</p>
+                          <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-1">{spec.label}</p>
+                          <p className="text-xs text-white font-medium">{spec.value}</p>
                         </div>
                       ))}
                     </div>
 
                     {/* Applications */}
                     <div className="mb-6">
-                      <h4 className="text-xs font-mono text-[#64748B] uppercase tracking-wider mb-2">Applications</h4>
+                      <h4 className="text-xs font-mono text-slate-500 uppercase tracking-wider mb-2">Applications</h4>
                       <div className="flex flex-wrap gap-2">
                         {product.applications.map((app, j) => (
                           <span
@@ -125,14 +125,14 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
                       </div>
                     </div>
 
-                    {/* CTA */}
+                    {/* CTA — unified buttons */}
                     <div className="flex flex-wrap items-center gap-3">
                       <button
                         onClick={() => onInquire(product.name)}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-[#FFFFFF] font-semibold rounded-lg text-sm hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 cursor-pointer group/btn"
+                        className="btn btn-primary btn-sm"
                       >
                         Enquire about {product.name}
-                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-4 h-4" />
                       </button>
 
                       {(() => {
@@ -142,20 +142,20 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
                             <a
                               href={urls.pdf}
                               download
-                              className="inline-flex items-center gap-1.5 px-4 py-2.5 border border-[#1E293B] hover:border-primary/30 text-[#FFFFFF] hover:text-[#FFFFFF] font-medium rounded-lg text-sm transition-all duration-200 cursor-pointer bg-[#0A0D14] hover:bg-[#111820] no-underline"
+                              className="btn btn-outline btn-sm no-underline"
                             >
-                              <FileText className="w-4 h-4 text-[#78716C]" />
+                              <FileText className="w-4 h-4 text-slate-400" />
                               <span>Spec Sheet</span>
-                              <span className="text-[10px] text-[#64748B] font-mono">.PDF</span>
+                              <span className="text-[10px] text-slate-500 font-mono">.PDF</span>
                             </a>
                             <a
                               href={urls.ies}
                               download
-                              className="inline-flex items-center gap-1.5 px-4 py-2.5 border border-[#1E293B] hover:border-primary/30 text-[#FFFFFF] hover:text-[#FFFFFF] font-medium rounded-lg text-sm transition-all duration-200 cursor-pointer bg-[#0A0D14] hover:bg-[#111820] no-underline"
+                              className="btn btn-outline btn-sm no-underline"
                             >
-                              <FileDown className="w-4 h-4 text-[#78716C]" />
+                              <FileDown className="w-4 h-4 text-slate-400" />
                               <span>Photometric</span>
-                              <span className="text-[10px] text-[#64748B] font-mono">.IES</span>
+                              <span className="text-[10px] text-slate-500 font-mono">.IES</span>
                             </a>
                           </>
                         );
@@ -174,21 +174,20 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
             transition={{ delay: 0.3 }}
             className="mt-16 text-center p-10 rounded-2xl bg-gradient-to-b from-[#0F141C] to-[#0A0D14] border border-[#1E293B]"
           >
-            <h2 className="font-serif font-semibold text-xl sm:text-2xl font-normal text-[#FFFFFF] mb-3 tracking-[-0.02em]">
+            <h2 className="font-display text-xl sm:text-2xl font-bold text-white mb-3 tracking-[-0.02em]">
               Need a tailored solution?
             </h2>
-            <p className="text-[#78716C] text-sm mb-6 max-w-lg mx-auto">
+            <p className="text-slate-400 text-sm mb-6 max-w-lg mx-auto font-sans font-light">
               Our technical team can help specify the right products for your project. Get a competitive quote with lead times and compliance documentation.
             </p>
             <button
               onClick={() => onInquire('Custom Specification')}
-              className="group relative overflow-hidden px-8 py-3.5 bg-gradient-to-r from-primary to-[#00A8D5] text-[#FFFFFF] font-normal rounded-lg text-sm shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 transform active:scale-95 cursor-pointer"
+              className="btn btn-primary group"
             >
-              <span className="relative z-10 flex items-center gap-2">
+              <span className="flex items-center gap-2">
                 Request a Quote
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
-              <div className="absolute inset-0 bg-[#0A0D14]/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </button>
           </motion.div>
         </div>

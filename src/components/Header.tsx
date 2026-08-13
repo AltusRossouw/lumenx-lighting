@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { LOGO_URL } from '../data';
 
 const NAV_ITEMS: { id: string; label: string; path: string }[] = [
   { id: 'home', label: 'Home', path: '/' },
-  { id: 'services', label: 'Services', path: '/services' },
+  { id: 'services', label: 'The Solution', path: '/the-solution' },
   { id: 'products', label: 'Products', path: '/products' },
   { id: 'projects', label: 'Projects', path: '/projects' },
   { id: 'resources', label: 'Technical Resources', path: '/resources' },
@@ -40,7 +41,7 @@ export const Header: React.FC = () => {
         <div className="flex items-center justify-between h-[88px]">
           <button onClick={() => navigate('/')} className="flex items-center cursor-pointer">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtixXadgYwhrFpYYaLMMI8uPOGQjsG_DLKEAHPRvCRAgNAyGCy7lmjYEH1fvWlL9FygFtBI5PMZwjTHvWdaekRg5hSVnaWyK5JUZixT0tfltpJF47LxVHFh9ZX7PBl9i65v61nci_HTweNE8jid_dOBgjkZMMI-JwlRawshv-poFsQT68QCi3G8_SsZV5Xqya01GgwskWABso8Xz27Pk0ZGdujIo725MFz75FsKbbye49gDJOnhHMT_yfn7_yX72ghPg"
+              src={LOGO_URL}
               alt="LumenX" className="h-20 w-auto object-contain"
               referrerPolicy="no-referrer"
             />
@@ -61,7 +62,7 @@ export const Header: React.FC = () => {
           <div className="hidden md:block">
             <button
               onClick={() => navigate('/contact')}
-              className="px-5 py-2.5 bg-primary text-[#06090F] font-semibold text-[13px] tracking-wide transition-all duration-300 cursor-pointer font-display hover:shadow-[0_0_30px_rgba(0,212,255,0.3)]"
+              className="btn btn-primary"
             >
               Discuss a Project
             </button>
@@ -88,7 +89,7 @@ export const Header: React.FC = () => {
             <div className="pt-4 px-4">
               <button
                 onClick={() => { navigate('/contact'); setIsOpen(false); }}
-                className="w-full px-5 py-3 bg-primary text-[#06090F] font-semibold text-sm text-center cursor-pointer font-display"
+                className="btn btn-primary btn-block"
               >
                 Discuss a Project
               </button>

@@ -14,8 +14,11 @@ import {
   FAQ,
 } from './types';
 
+export const LOGO_URL =
+  'https://lh3.googleusercontent.com/aida-public/AB6AXuCtixXadgYwhrFpYYaLMMI8uPOGQjsG_DLKEAHPRvCRAgNAyGCy7lmjYEH1fvWlL9FygFtBI5PMZwjTHvWdaekRg5hSVnaWyK5JUZixT0tfltpJF47LxVHFh9ZX7PBl9i65v61nci_HTweNE8jid_dOBgjkZMMI-JwlRawshv-poFsQT68QCi3G8_SsZV5Xqya01GgwskWABso8Xz27Pk0ZGdujIo725MFz75FsKbbye49gDJOnhHMT_yfn7_yX72ghPg';
+
 export const NAV_SECTIONS: NavSection[] = [
-  { id: 'complete-solution', label: 'Services' },
+  { id: 'complete-solution', label: 'The Solution' },
   { id: 'products', label: 'Products' },
   { id: 'projects', label: 'Projects' },
   { id: 'resources', label: 'Technical Resources' },
@@ -24,34 +27,56 @@ export const NAV_SECTIONS: NavSection[] = [
 ];
 
 export const COMPANY: CompanyOverview = {
-  tagline: 'LIGHTING, ENGINEERED FOR REAL PROJECTS',
+  tagline: 'LIGHTING ENGINEERED FOR REAL PROJECTS',
   intro:
     'LumenX is a South African technical lighting partner for retail, commercial and industrial developments, owning every stage of a project from design to site delivery executed by one accountable team.',
+  coreSpecialisation:
+    'Technical lighting design, specification, supply and project coordination for commercial, retail and industrial environments.',
+  geographicReach: 'South Africa — nationwide project support.',
+  marketFocus: 'Retail, commercial and industrial lighting projects.',
+  mission:
+    'To bring stronger technical ownership into lighting delivery, so every project is specified, supplied and coordinated to a standard that protects performance and compliance.',
+  vision:
+    'To be the most accountable technical lighting partner in South African construction — known for projects that are technically sound, commercially practical and ready for site.',
+  values:
+    'Technical integrity, commercial practicality, project accountability, and support that continues beyond delivery.',
+  team:
+    'A focused technical and commercial team that owns the lighting package end to end — from first drawing review through to final site support.',
 };
 
 export const COMPLETE_SOLUTION: CompleteSolutionCapability[] = [
   {
     title: 'Design',
+    icon: '/icons/solution-design.svg',
+    heroIcon: '/icons/hero-design.svg',
     description:
       'Lighting layouts, calculations and simulations shaped around the project requirements.',
   },
   {
     title: 'Specification',
+    icon: '/icons/solution-specification.svg',
+    heroIcon: '/icons/hero-specification.svg',
     description:
       'Fit-for-purpose products selected for performance, application and compliance.',
   },
   {
     title: 'Value Engineering',
+    icon: '/icons/solution-value-engineering.svg',
+    heroIcon: '/icons/hero-value-engineering.svg',
     description:
       'Commercial alternatives that protect the required technical outcome.',
   },
   {
     title: 'Supply',
+    icon: '/icons/solution-supply.svg',
+    heroIcon: '/icons/hero-supply.svg',
     description:
       'Product sourcing, availability and coordinated delivery aligned to the programme.',
   },
   {
     title: 'Project Coordination',
+    icon: '/icons/solution-project-coordination.svg',
+    heroIcon: '/icons/hero-project-coordination.svg',
     description:
       'Technical support across the project team from design development through to completion.',
   },
@@ -199,14 +224,14 @@ export const PRODUCTS_BY_CATEGORY: Record<string, ProductDetail[]> = {
 };
 
 export const INDUSTRIES: Industry[] = [
-  { name: 'Commercial developments' },
-  { name: 'Education' },
-  { name: 'Retail centres' },
-  { name: 'Industrial facilities' },
-  { name: 'Hospitality' },
-  { name: 'Government and infrastructure' },
-  { name: 'Healthcare' },
-  { name: 'Explosive Environments' },
+  { name: 'Commercial developments', iconImg: '/icons/sector-commercial.svg' },
+  { name: 'Education', iconImg: '/icons/sector-education.svg' },
+  { name: 'Retail centres', iconImg: '/icons/sector-retail.svg' },
+  { name: 'Industrial facilities', iconImg: '/icons/sector-industrial.svg' },
+  { name: 'Hospitality', iconImg: '/icons/sector-hospitality.svg' },
+  { name: 'Government and infrastructure', iconImg: '/icons/sector-government.svg' },
+  { name: 'Healthcare', iconImg: '/icons/sector-healthcare.svg' },
+  { name: 'Explosive Environments', iconImg: '/icons/sector-explosive.svg' },
 ];
 
 export const COMPLIANCE_ITEMS: ComplianceItem[] = [
@@ -242,67 +267,85 @@ export const WHY_CHOOSE: WhyChooseReason[] = [
     description:
       'The complete lighting project is coordinated from design through to site delivery rather than fragmented across disconnected providers.',
     icon: 'Users',
+    iconImg: '/icons/why-team.svg',
   },
   {
     title: 'Technically Led Decisions',
     description:
       'Products and systems are selected around application, performance, compliance, design intent and project requirements.',
     icon: 'Zap',
+    iconImg: '/icons/why-technical.svg',
   },
   {
     title: 'Commercially Practical Solutions',
     description:
       'Value engineering balances technical integrity, project cost, availability and lifecycle value.',
     icon: 'TrendingUp',
+    iconImg: '/icons/why-commercial.svg',
   },
   {
     title: 'Project-Led Supply',
     description:
       'Product availability, technical documentation and delivery are managed around the project programme, not treated as separate transactions.',
     icon: 'Truck',
+    iconImg: '/icons/why-supply.svg',
   },
   {
     title: 'Support Beyond Delivery',
     description:
       'Technical assistance and applicable warranty support continue after products reach the site.',
     icon: 'Headphones',
+    iconImg: '/icons/why-support.svg',
+  },
+  {
+    title: 'Compliance-Backed Supply',
+    description:
+      'SABS, IEC and OSHACT-aligned documentation, manufacturer-backed warranties and B-BBEE Level 2 credentials support the project from specification to handover.',
+    icon: 'ShieldCheck',
+    iconImg: '/icons/why-compliance.svg',
   },
 ];
 
 export const PROCESS_STEPS: ProcessStep[] = [
   {
-    number: '01',
+    number: '1',
     title: 'Understand the project',
+    iconImg: '/icons/process-understand.svg',
     description:
       'We review the brief, drawings, application, programme, design intent and commercial requirements.',
   },
   {
-    number: '02',
+    number: '2',
     title: 'Design and specify',
+    iconImg: '/icons/hero-design.svg',
     description:
       'We develop the lighting solution and select technically appropriate luminaires, controls and systems.',
   },
   {
-    number: '03',
+    number: '3',
     title: 'Optimise',
+    iconImg: '/icons/hero-value-engineering.svg',
     description:
       'We value engineer where required while protecting performance, compliance and design intent.',
   },
   {
-    number: '04',
+    number: '4',
     title: 'Coordinate',
+    iconImg: '/icons/hero-project-coordination.svg',
     description:
       'We manage technical submissions, product information and communication across the project team.',
   },
   {
-    number: '05',
+    number: '5',
     title: 'Supply and deliver',
+    iconImg: '/icons/hero-supply.svg',
     description:
       'We coordinate procurement, availability and delivery in line with site and installation requirements.',
   },
   {
-    number: '06',
+    number: '6',
     title: 'Support',
+    iconImg: '/icons/why-support.svg',
     description:
       'We assist with commissioning queries, snag resolution, replacements and applicable warranty matters.',
   },
@@ -326,21 +369,25 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
 export const AUDIENCE_PROFILES: AudienceProfile[] = [
   {
     title: 'Engineers and Consultants',
+    iconImg: '/icons/audience-engineers.svg',
     description:
       'Lighting design support, calculations, simulations, product data and specifications aligned to performance and compliance requirements.',
   },
   {
     title: 'Contractors',
+    iconImg: '/icons/audience-contractors.svg',
     description:
       'Responsive quotations, technically reviewed alternatives, supply coordination and practical support through installation.',
   },
   {
     title: 'Architects and Developers',
+    iconImg: '/icons/audience-architects.svg',
     description:
       'Lighting solutions that protect design intent while remaining buildable, available and commercially viable.',
   },
   {
     title: 'Procurement Teams',
+    iconImg: '/icons/audience-procurement.svg',
     description:
       'Clear product information, competitive options, documented warranties and selections assessed against technical fit and lifecycle value.',
   },
@@ -394,5 +441,5 @@ export const CONTACT = {
   projectsEmail: 'projects@lumenx.co.za',
   phone: '+27 83 499 5340',
   website: 'www.lumenx.co.za',
-  tagline: 'LIGHTING, ENGINEERED FOR REAL PROJECTS',
+  tagline: 'LIGHTING ENGINEERED FOR REAL PROJECTS',
 };

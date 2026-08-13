@@ -92,7 +92,7 @@ export const ProductCategoriesSection: React.FC<ProductCategoriesSectionProps> =
           </div>
           <button
             onClick={() => onSelectCategory('orbitx')}
-            className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 border border-primary/20 text-primary text-sm font-semibold hover:bg-primary/10 transition-colors duration-300 cursor-pointer font-display"
+            className="shrink-0 btn btn-outline btn-sm"
           >
             Explore OrbitX <ArrowRight className="w-3.5 h-3.5" />
           </button>

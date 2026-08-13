@@ -1,14 +1,34 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight, FileDown, FileText, ShieldCheck } from 'lucide-react';
+import { ArrowRight, FileDown, FileText, ShieldCheck, Download } from 'lucide-react';
 import { PageHeroBackground } from './animations';
+import { PRODUCTS_BY_CATEGORY } from '../data';
+
+/** Unique datasheet PDFs across every product range */
+function collectDatasheets(): { name: string; href: string }[] {
+  const seen = new Set<string>();
+  const sheets: { name: string; href: string }[] = [];
+  Object.values(PRODUCTS_BY_CATEGORY)
+    .flat()
+    .forEach((product) => {
+      const href = product.pdfUrl;
+      if (!href || seen.has(href)) return;
+      seen.add(href);
+      sheets.push({ name: product.name, href });
+    });
+  return sheets.sort((a, b) => a.name.localeCompare(b.name));
+}
 
 export const ResourcesPage: React.FC = () => {
+  const navigate = useNavigate();
+  const datasheets = collectDatasheets();
+
   const downloads = [
-    { label: 'IES Files', description: 'Photometric data files for lighting simulation software.', href: '/downloads/ies/', icon: FileDown },
-    { label: 'Technical Datasheets', description: 'Product specifications, dimensions, and performance data.', href: '/datasheets/', icon: FileText },
-    { label: 'Compliance Documentation', description: 'SABS, IEC, and OSHACT compliance certificates.', href: '#', icon: ShieldCheck },
-    { label: 'Warranty Terms', description: 'Manufacturer-backed warranty documentation per product range.', href: '#', icon: FileText },
+    { label: 'Technical Datasheets', description: 'Product specifications, dimensions, and performance data — download every datasheet below.', icon: FileText, to: '/resources' },
+    { label: 'IES Files', description: 'Photometric data files for lighting simulation software — supplied per project or on request.', icon: FileDown, to: '/contact' },
+    { label: 'Compliance Documentation', description: 'SABS, IEC, and OSHACT compliance certificates — available with quotations and projects.', icon: ShieldCheck, to: '/contact' },
+    { label: 'Warranty Terms', description: 'Manufacturer-backed warranty documentation per product range, confirmed in quotation.', icon: FileText, to: '/contact' },
   ];
 
   return (
@@ -40,13 +60,19 @@ export const ResourcesPage: React.FC = () => {
             {downloads.map((item, i) => {
               const Icon = item.icon;
               return (
-                <motion.a
+                <motion.button
                   key={i}
-                  href={item.href}
+                  onClick={() => {
+                    if (item.to === '/resources') {
+                      document.getElementById('datasheet-library')?.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      navigate(item.to);
+                    }
+                  }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 + i * 0.08, duration: 0.6 }}
-                  className="gradient-border-card card-lift p-6 group flex items-start gap-5 no-underline cursor-pointer"
+                  className="gradient-border-card card-lift p-6 group flex items-start gap-5 text-left cursor-pointer"
                 >
                   <div className="w-10 h-10 bg-primary/[0.05] flex items-center justify-center shrink-0 group-hover:bg-primary/[0.1] transition-colors duration-300">
                     <Icon className="w-5 h-5 text-primary/50 group-hover:text-primary/70 transition-colors duration-300" />
@@ -58,9 +84,64 @@ export const ResourcesPage: React.FC = () => {
                     <p className="text-sm text-slate-400 leading-relaxed font-sans font-light">{item.description}</p>
                   </div>
                   <ArrowRight className="w-4 h-4 text-slate-600 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300 shrink-0 mt-1" />
-                </motion.a>
+                </motion.button>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Datasheet library — all product documentation in one spot */}
+      <section id="datasheet-library" className="relative py-20 sm:py-24 overflow-hidden bg-[#06090F]">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.7 }}
+            className="mb-12"
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-8 h-px bg-primary/40" />
+              <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">Datasheet Library</span>
+            </div>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-[-0.02em] mb-4">
+              Every datasheet, <span className="gradient-text">one download hub</span>
+            </h2>
+            <p className="text-slate-400 max-w-xl text-base leading-relaxed font-sans font-light">
+              {datasheets.length} product datasheets covering the full LumenX range.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {datasheets.map((sheet, i) => (
+              <motion.div
+                key={sheet.href}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ delay: (i % 9) * 0.05, duration: 0.5 }}
+                className="border border-[#1E293B]/70 bg-[#0A0F17] hover:border-primary/30 transition-colors duration-300 p-4 flex items-center justify-between gap-4"
+              >
+                <div className="flex items-center gap-3 min-w-0">
+                  <FileText className="w-4 h-4 text-primary/50 shrink-0" />
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold text-white truncate font-display">{sheet.name}</p>
+                    <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">PDF Datasheet</p>
+                  </div>
+                </div>
+                <a
+                  href={sheet.href}
+                  download
+                  className="btn btn-outline btn-sm no-underline shrink-0"
+                  aria-label={`Download ${sheet.name} datasheet`}
+                >
+                  <Download className="w-3.5 h-3.5" />
+                </a>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

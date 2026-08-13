@@ -10,35 +10,27 @@ export const ProductsPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Products Hero */}
-      <section className="relative py-20 sm:py-24 overflow-hidden bg-[#06090F]">
+      <section className="relative pt-[88px] pb-16 sm:pb-20 overflow-hidden bg-[#06090F]">
         <PageHeroBackground />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-block text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4 border border-primary/20 rounded-full px-4 py-1.5 bg-primary/5"
-          >
-            Product Portfolio
-          </motion.span>
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="font-serif font-semibold text-3xl sm:text-5xl font-normal text-[#FFFFFF] mb-4 tracking-[-0.02em]"
+            transition={{ duration: 0.7 }}
           >
-            Lighting <span className="text-primary">Solutions</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-[#78716C] max-w-2xl mx-auto text-sm sm:text-base leading-relaxed"
-          >
-            A comprehensive range of fit-for-purpose luminaires and control solutions — from architectural
-            interiors to heavy industrial environments. Every product selected for performance, compliance,
-            and long-term value.
-          </motion.p>
+            <span className="inline-block text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4 border border-primary/20 rounded-full px-4 py-1.5 bg-primary/5">
+              Product Portfolio
+            </span>
+            <h1 className="font-display text-3xl sm:text-5xl font-bold text-white mb-4 tracking-[-0.02em]">
+              Lighting <span className="gradient-text">Solutions</span>
+            </h1>
+            <p className="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed font-sans font-light">
+              A comprehensive range of fit-for-purpose luminaires and control solutions — from architectural
+              interiors to heavy industrial environments. Every product selected for performance, compliance,
+              and long-term value.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -53,7 +45,7 @@ export const ProductsPage: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
                 onClick={() => navigate(`/products/${category.id}`)}
-                className="group relative overflow-hidden rounded-2xl bg-[#0A0D14] border border-[#1E293B] hover:border-primary/20 transition-all duration-300 flex flex-col cursor-pointer card-glow gradient-border"
+                className="group relative overflow-hidden gradient-border-card card-lift flex flex-col cursor-pointer"
               >
                 {/* Image */}
                 <div className="h-52 overflow-hidden relative">
@@ -71,23 +63,23 @@ export const ProductsPage: React.FC = () => {
 
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="font-serif font-semibold text-lg font-semibold text-[#FFFFFF] mb-3 tracking-tight group-hover:text-primary transition-colors">
+                  <h3 className="font-display text-lg font-semibold text-white mb-3 tracking-tight group-hover:text-primary transition-colors duration-300">
                     {category.title}
                   </h3>
-                  <p className="text-sm text-[#78716C] leading-relaxed flex-grow">
+                  <p className="text-sm text-slate-400 leading-relaxed flex-grow font-sans font-light">
                     {category.description}
                   </p>
-                  <div className="mt-5 pt-4 border-t border-[#1E293B] flex items-center gap-4">
+                  <div className="mt-5 pt-4 border-t border-[#1E293B]/70 flex items-center gap-4">
                     <button
                       onClick={(e) => { e.stopPropagation(); navigate(`/products/${category.id}`); }}
-                      className="inline-flex items-center gap-2 text-xs font-semibold text-primary hover:text-[#FFFFFF] transition-colors cursor-pointer group/btn"
+                      className="btn btn-outline btn-sm"
                     >
                       View Range
-                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </button>
                     <button
                       onClick={(e) => { e.stopPropagation(); navigate('/contact'); }}
-                      className="text-xs text-[#64748B] hover:text-[#FFFFFF] transition-colors cursor-pointer"
+                      className="text-xs text-slate-400 hover:text-primary transition-colors cursor-pointer font-sans"
                     >
                       Enquire
                     </button>
@@ -115,8 +107,8 @@ export const ProductsPage: React.FC = () => {
                     <Icon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-serif font-semibold text-sm font-semibold text-[#FFFFFF] mb-1 tracking-tight">{item.title}</h4>
-                    <p className="text-xs text-[#78716C] leading-relaxed">{item.desc}</p>
+                    <h4 className="font-display text-sm font-bold text-white mb-1 tracking-tight">{item.title}</h4>
+                    <p className="text-xs text-slate-400 leading-relaxed font-sans font-light">{item.desc}</p>
                   </div>
                 </div>
               );
@@ -125,31 +117,30 @@ export const ProductsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA — unified design */}
       <section className="py-16 sm:py-20 text-center">
         <div className="max-w-2xl mx-auto px-4">
-          <h2 className="font-serif font-semibold text-2xl sm:text-3xl font-normal text-[#FFFFFF] mb-4 tracking-[-0.02em]">
-            Need a <span className="text-primary">Quote</span>?
+          <h2 className="font-display text-2xl sm:text-4xl font-bold text-white mb-4 tracking-[-0.02em]">
+            Need a <span className="gradient-text">Quote</span>?
           </h2>
-          <p className="text-[#78716C] text-sm mb-8">
+          <p className="text-slate-400 text-sm sm:text-base mb-8 font-sans font-light">
             Tell us about your project and we'll provide a competitive quotation with technical specifications.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={() => navigate('/contact')}
-              className="group relative overflow-hidden px-8 py-3.5 bg-gradient-to-r from-primary to-[#00A8D5] text-[#FFFFFF] font-normal rounded-lg text-sm shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 transform active:scale-95 cursor-pointer"
+              className="btn btn-primary group"
             >
-              <span className="relative z-10 flex items-center gap-2">
+              <span className="flex items-center gap-2">
                 Request a Quote
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
-              <div className="absolute inset-0 bg-[#0A0D14]/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
             </button>
             <button
-              onClick={() => navigate('/')}
-              className="px-8 py-3.5 border border-[#1E293B] hover:border-primary/30 text-[#FFFFFF] hover:text-[#FFFFFF] font-medium rounded-lg text-sm transition-all duration-300 cursor-pointer bg-[#0A0D14]/[0.02] hover:bg-[#0A0D14]/[0.04]"
+              onClick={() => navigate('/resources')}
+              className="btn btn-outline"
             >
-              Back to Company Profile
+              Technical Resources
             </button>
           </div>
         </div>

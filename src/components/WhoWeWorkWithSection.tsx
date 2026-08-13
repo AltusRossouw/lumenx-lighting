@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { AUDIENCE_PROFILES, INDUSTRIES } from '../data';
-import { Building2 } from 'lucide-react';
 import { PageHeroBackground } from './animations';
+import { LumenXMark } from './ui/lumenx-mark';
 
 export const WhoWeWorkWithSection: React.FC = () => {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
   return (
@@ -30,7 +30,7 @@ export const WhoWeWorkWithSection: React.FC = () => {
           </h2>
         </motion.div>
 
-        {/* Audience profiles — 4-column grid */}
+        {/* Audience profiles — 4-column grid, headings designed to stand out on a scan */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16" ref={ref}>
           {AUDIENCE_PROFILES.map((profile, i) => (
             <motion.div
@@ -40,25 +40,42 @@ export const WhoWeWorkWithSection: React.FC = () => {
               transition={{ delay: 0.15 + i * 0.1, duration: 0.6 }}
               className="gradient-border-card p-6"
             >
-              <h3 className="font-display text-base font-semibold text-white mb-3 tracking-tight">{profile.title}</h3>
+              <img
+                src={profile.iconImg}
+                alt=""
+                className="w-10 h-10 object-contain mb-4 drop-shadow-[0_0_10px_rgba(0,212,255,0.3)]"
+              />
+              <h3 className="font-display text-lg sm:text-xl font-extrabold text-white mb-3 tracking-tight group-hover:text-primary transition-colors duration-300">
+                {profile.title}
+              </h3>
               <p className="text-sm text-slate-400 leading-relaxed font-sans font-light">{profile.description}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* Sector strip */}
+        {/* Sector strip — larger, bolder sector headings for quick scanning */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.5, duration: 0.7 }}
           className="text-center"
         >
-          <p className="text-[10px] font-mono text-slate-600 uppercase tracking-[0.25em] mb-6">Sectors</p>
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
-            {INDUSTRIES.map((ind) => (
-              <span key={ind.name} className="text-sm text-slate-400 font-sans font-light">
-                {ind.name}
-              </span>
+          <p className="text-[10px] font-mono text-primary/70 uppercase tracking-[0.25em] mb-6">Sectors</p>
+          <div className="flex flex-wrap justify-center gap-x-5 gap-y-3.5">
+            {INDUSTRIES.map((ind, i) => (
+              <React.Fragment key={ind.name}>
+                {i > 0 && <LumenXMark className="hidden sm:inline-block w-2.5 h-2.5 self-center" />}
+                <span className="inline-flex items-center gap-2.5 cursor-default">
+                  <img
+                    src={ind.iconImg}
+                    alt=""
+                    className="w-8 h-8 object-contain drop-shadow-[0_0_10px_rgba(0,212,255,0.3)]"
+                  />
+                  <span className="font-display text-base sm:text-lg font-bold text-slate-200 hover:text-primary transition-colors duration-300">
+                    {ind.name}
+                  </span>
+                </span>
+              </React.Fragment>
             ))}
           </div>
         </motion.div>

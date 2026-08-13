@@ -30,6 +30,7 @@ export interface ProductDetail {
 
 export interface Industry {
   name: string;
+  iconImg: string;
 }
 
 export interface ComplianceItem {
@@ -41,22 +42,33 @@ export interface WhyChooseReason {
   title: string;
   description: string;
   icon: string;
+  iconImg: string;
 }
 
 export interface CompanyOverview {
   tagline: string;
   intro: string;
+  coreSpecialisation: string;
+  geographicReach: string;
+  marketFocus: string;
+  mission: string;
+  vision: string;
+  values: string;
+  team: string;
 }
 
 export interface CompleteSolutionCapability {
   title: string;
   description: string;
+  icon: string;
+  heroIcon: string;
 }
 
 export interface ProcessStep {
   number: string;
   title: string;
   description: string;
+  iconImg: string;
 }
 
 export interface FeaturedProject {
@@ -69,6 +81,7 @@ export interface FeaturedProject {
 export interface AudienceProfile {
   title: string;
   description: string;
+  iconImg: string;
 }
 
 export interface FAQ {

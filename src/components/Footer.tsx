@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CONTACT } from '../data';
+import { CONTACT, LOGO_URL } from '../data';
 import { Mail, Phone, Globe, ArrowUp } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { label: 'Services', path: '/services' },
+    { label: 'The Solution', path: '/the-solution' },
     { label: 'Products', path: '/products' },
     { label: 'Projects', path: '/projects' },
     { label: 'Technical Resources', path: '/resources' },
@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-5 space-y-5">
             <div className="flex items-center gap-4">
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtixXadgYwhrFpYYaLMMI8uPOGQjsG_DLKEAHPRvCRAgNAyGCy7lmjYEH1fvWlL9FygFtBI5PMZwjTHvWdaekRg5hSVnaWyK5JUZixT0tfltpJF47LxVHFh9ZX7PBl9i65v61nci_HTweNE8jid_dOBgjkZMMI-JwlRawshv-poFsQT68QCi3G8_SsZV5Xqya01GgwskWABso8Xz27Pk0ZGdujIo725MFz75FsKbbye49gDJOnhHMT_yfn7_yX72ghPg"
+                src={LOGO_URL}
                 alt="LumenX" className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
                 referrerPolicy="no-referrer"
               />
@@ -41,7 +41,7 @@ export const Footer: React.FC = () => {
 
           {/* Nav */}
           <div className="md:col-span-3">
-            <h4 className="font-serif text-[11px] font-semibold text-[#78716C] uppercase tracking-[0.2em] mb-4">Navigation</h4>
+            <h4 className="font-mono text-[11px] font-semibold text-slate-500 uppercase tracking-[0.2em] mb-4">Navigation</h4>
             <ul className="space-y-2.5">
               {footerLinks.map((link) => (
                 <li key={link.label}>
@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
 
           {/* Contact */}
           <div className="md:col-span-4">
-            <h4 className="font-serif text-[11px] font-semibold text-[#78716C] uppercase tracking-[0.2em] mb-4">Contact</h4>
+            <h4 className="font-mono text-[11px] font-semibold text-slate-500 uppercase tracking-[0.2em] mb-4">Contact</h4>
             <ul className="space-y-3 text-xs">
               <li className="flex items-center gap-3">
                 <Mail className="w-3.5 h-3.5 text-[#64748B] shrink-0" />

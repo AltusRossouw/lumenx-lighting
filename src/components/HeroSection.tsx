@@ -1,15 +1,17 @@
 import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { COMPANY } from '../data';
+import { COMPANY, LOGO_URL } from '../data';
 import { ArrowRight, ArrowDown, ShieldCheck, Globe } from 'lucide-react';
+import { LumenXMark } from './ui/lumenx-mark';
 
 
 interface HeroSectionProps {
-  onScrollTo: (sectionId: string) => void;
-  onNavigate: (page: 'company' | 'products') => void;
+  onScrollTo?: (sectionId: string) => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollTo, onNavigate }) => {
+export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollTo }) => {
+  const navigate = useNavigate();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start start', 'end start'] });
   const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
@@ -70,18 +72,33 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollTo, onNavigate
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-secondary/[0.02] rounded-full blur-[150px] pointer-events-none" />
 
       {/* Content */}
-      <motion.div style={{ y }} className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
+      <motion.div style={{ y }} className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+        {/* LumenX logo — centered across the hero */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="flex justify-center mb-6"
+        >
+          <img
+            src={LOGO_URL}
+            alt="LumenX"
+            referrerPolicy="no-referrer"
+            className="h-32 sm:h-48 lg:h-64 w-auto object-contain drop-shadow-[0_0_35px_rgba(0,212,255,0.25)]"
+          />
+        </motion.div>
+
         <div className="max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}>
             {/* Location badge */}
-            <div className="flex items-center gap-3 mb-10">
+            <div className="flex items-center gap-3 mb-8">
               <span className="w-6 h-px bg-primary/30" />
               <span className="text-[10px] font-mono text-primary/70 tracking-[0.3em] uppercase">South Africa — Nationwide</span>
             </div>
 
-            {/* Headline */}
-            <h1 className="font-display text-[clamp(2.5rem,6.5vw,5.5rem)] font-extrabold tracking-[-0.03em] leading-[0.94] text-white mb-8">
-              LIGHTING,<br />
+            {/* Headline — smaller and lighter than before, no comma */}
+            <h1 className="font-display text-[clamp(1.9rem,4.2vw,3.4rem)] font-extrabold tracking-[-0.03em] leading-[1.02] text-slate-300 mb-8 drop-shadow-[0_2px_18px_rgba(6,9,15,0.8)]">
+              LIGHTING<br />
               <span className="gradient-text">ENGINEERED</span><br />
               FOR REAL PROJECTS
             </h1>
@@ -91,44 +108,49 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollTo, onNavigate
               {COMPANY.intro}
             </p>
 
-            {/* Service tag strip */}
-            <p className="text-[11px] font-mono text-slate-500 tracking-[0.15em] uppercase mb-10">
-              Specification · Value Engineering · Supply · Project Coordination and Completion
+            {/* Service tag strip — X marks as separators */}
+            <p className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-[11px] font-mono text-slate-500 tracking-[0.15em] uppercase mb-10">
+              Specification
+              <LumenXMark className="w-2 h-2 text-primary/50" />
+              Value Engineering
+              <LumenXMark className="w-2 h-2 text-primary/50" />
+              Supply
+              <LumenXMark className="w-2 h-2 text-primary/50" />
+              Project Coordination and Completion
             </p>
 
-            {/* CTAs */}
+            {/* CTAs — unified button system */}
             <div className="flex flex-col sm:flex-row gap-4 mb-16">
               <button
-                onClick={() => onScrollTo('contact')}
-                className="group relative overflow-hidden px-8 py-4 bg-primary text-[#06090F] font-bold text-sm tracking-wide transition-all duration-300 cursor-pointer font-display hover:shadow-[0_0_40px_rgba(0,212,255,0.35)]"
+                onClick={() => (onScrollTo ? onScrollTo('contact') : navigate('/contact'))}
+                className="btn btn-primary group"
               >
-                <span className="relative z-10 flex items-center gap-2">
+                <span className="flex items-center gap-2">
                   Discuss a Project
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
                 </span>
-                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               </button>
               <button
-                onClick={() => onNavigate('products')}
-                className="group px-8 py-4 border border-white/10 hover:border-primary/25 text-slate-300 hover:text-white font-medium text-sm tracking-wide transition-all duration-300 cursor-pointer font-display flex items-center gap-2 bg-white/[0.02]"
+                onClick={() => navigate('/products')}
+                className="btn btn-outline group"
               >
                 Explore Products
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </div>
 
-            {/* Trust strip — concise horizontal */}
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-mono text-slate-500">
+            {/* Trust strip — X marks as separators */}
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[11px] font-mono text-slate-500">
               <span className="flex items-center gap-1.5">
                 <Globe className="w-3 h-3 text-slate-600" />
                 Nationwide Coverage
               </span>
-              <span className="text-slate-700 hidden sm:inline">·</span>
+              <LumenXMark className="hidden sm:inline-block w-2 h-2 text-primary/40" />
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="w-3 h-3 text-slate-600" />
                 B-BBEE Level 2
               </span>
-              <span className="text-slate-700 hidden sm:inline">·</span>
+              <LumenXMark className="hidden sm:inline-block w-2 h-2 text-primary/40" />
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="w-3 h-3 text-slate-600" />
                 SABS / IEC / OSHACT Aligned
@@ -143,7 +165,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollTo, onNavigate
 
       {/* Scroll indicator */}
       <motion.button
-        onClick={() => onScrollTo('complete-solution')}
+        onClick={() => onScrollTo?.('solution')}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8 }}

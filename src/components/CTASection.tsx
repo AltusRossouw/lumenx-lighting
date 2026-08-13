@@ -35,22 +35,21 @@ export const CTASection: React.FC = () => {
             Send us your drawings, BOQ, lighting specification or project brief. Our team will review the requirements and advise on the next technical and commercial step.
           </p>
 
-          {/* Three CTA buttons */}
+          {/* CTA buttons — unified button system */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
             <button
               onClick={() => navigate('/contact')}
-                className="group relative overflow-hidden px-8 py-4 bg-primary text-[#06090F] font-bold text-sm tracking-wide transition-all duration-300 cursor-pointer font-display hover:shadow-[0_0_40px_rgba(0,212,255,0.35)]"
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  Tell Us About Your Project
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
-                </span>
-                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              </button>
+              className="btn btn-primary group"
+            >
+              <span className="flex items-center gap-2">
+                Tell Us About Your Project
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
+              </span>
+            </button>
 
             <button
               onClick={() => navigate('/contact')}
-              className="group px-8 py-4 border border-white/10 hover:border-primary/25 text-slate-300 hover:text-white font-medium text-sm tracking-wide transition-all duration-300 cursor-pointer font-display flex items-center gap-2 bg-white/[0.02]"
+              className="btn btn-outline"
             >
               <FileText className="w-4 h-4" />
               Submit Your Lighting Requirement
