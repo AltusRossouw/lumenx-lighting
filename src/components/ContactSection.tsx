@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { CONTACT, MANAGING_DIRECTOR } from '../data';
-import { Mail, Phone, MapPin, Send, MessageCircle, User, AtSign, Building2, FileText } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, User, AtSign, Building2, FileText } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
 export const ContactSection: React.FC = () => {
@@ -240,7 +240,11 @@ export const ContactSection: React.FC = () => {
               className="group flex items-center gap-3 p-4 rounded-2xl bg-[#075E54]/20 border border-[#25D366]/30 hover:border-[#25D366]/50 transition-all duration-300 no-underline cursor-pointer hover:bg-[#075E54]/30"
             >
               <div className="w-10 h-10 rounded-xl bg-[#25D366]/20 border border-[#25D366]/30 flex items-center justify-center shrink-0 group-hover:bg-[#25D366]/30 transition-colors">
-                <MessageCircle className="w-5 h-5 text-[#25D366]" />
+                <img
+                  src="/icons/whatsapp.svg"
+                  alt="WhatsApp"
+                  className="w-6 h-6 object-contain drop-shadow-[0_0_8px_rgba(37,211,102,0.4)]"
+                />
               </div>
               <div>
                 <p className="font-display text-xs font-semibold text-white tracking-tight group-hover:text-[#25D366] transition-colors">Chat on WhatsApp</p>
