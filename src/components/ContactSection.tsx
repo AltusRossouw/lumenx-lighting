@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { CONTACT } from '../data';
+import { CONTACT, MANAGING_DIRECTOR } from '../data';
 import { Mail, Phone, MapPin, Send, MessageCircle, User, AtSign, Building2, FileText } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
@@ -247,6 +247,31 @@ export const ContactSection: React.FC = () => {
                 <p className="text-[10px] text-slate-500 font-mono">Quick response during business hours</p>
               </div>
             </a>
+
+            {/* Leadership */}
+            <div className="p-6 rounded-2xl bg-gradient-to-b from-[#0F141C] to-[#0A0D14] border border-[#1E293B]">
+              <p className="text-[10px] text-slate-500 font-mono uppercase tracking-wider mb-4">Leadership</p>
+              <div className="flex items-center gap-3 mb-4">
+                <img
+                  src={MANAGING_DIRECTOR.headshot}
+                  alt={`${MANAGING_DIRECTOR.name}, ${MANAGING_DIRECTOR.role}`}
+                  loading="lazy"
+                  className="w-14 h-14 rounded-full object-cover border-2 border-primary/40 shadow-[0_0_18px_rgba(0,212,255,0.25)] shrink-0"
+                />
+                <div>
+                  <p className="font-display text-sm font-semibold text-white tracking-tight">{MANAGING_DIRECTOR.name}</p>
+                  <p className="text-[10px] text-slate-500 font-mono uppercase tracking-wider">{MANAGING_DIRECTOR.role}</p>
+                </div>
+              </div>
+              <div className="rounded-xl overflow-hidden border border-[#1E293B] bg-[#06090F]">
+                <img
+                  src={MANAGING_DIRECTOR.signatureImage}
+                  alt={MANAGING_DIRECTOR.signatureAlt}
+                  loading="lazy"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
 
             {/* Brand */}
             <div className="text-center p-4 rounded-2xl bg-gradient-to-b from-[#0F141C] to-[#0A0D14] border border-[#1E293B]">

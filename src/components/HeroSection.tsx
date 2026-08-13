@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { COMPANY, LOGO_URL } from '../data';
 import { ArrowRight, ArrowDown, ShieldCheck, Globe } from 'lucide-react';
 import { LumenXMark } from './ui/lumenx-mark';
+import { HeroSlideshow } from './HeroSlideshow';
 
 
 interface HeroSectionProps {
@@ -18,6 +19,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollTo }) => {
 
   return (
     <section ref={containerRef} id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-[#06090F]" style={{ minHeight: '100svh' }}>
+      {/* Installation photography slideshow — full bleed background */}
+      <HeroSlideshow />
+
+      {/* Readability overlays — keep left-side copy and centered logo legible */}
+      <div className="absolute inset-0 bg-[#06090F]/55 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#06090F] via-[#06090F]/45 to-[#06090F]/10 pointer-events-none" />
+      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#06090F]/85 to-transparent pointer-events-none" />
+
       {/* Blueprint grid mask — softer */}
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: 'linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px)',

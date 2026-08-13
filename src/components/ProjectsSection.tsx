@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { FEATURED_PROJECTS } from '../data';
+import { FEATURED_PROJECTS, INSTALLATION_IMAGES } from '../data';
 import { Building2, MapPin, CheckCircle, Image as ImageIcon } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
-/** Prominent case-study card with clearly marked placeholder space for imagery and anonymous copy. */
+/** Prominent case-study card with project photography and anonymous copy. */
 const CaseStudyCard: React.FC<{ project: (typeof FEATURED_PROJECTS)[number]; index: number }> = ({ project, index }) => (
   <motion.article
     initial={{ opacity: 0, y: 20 }}
@@ -13,14 +13,31 @@ const CaseStudyCard: React.FC<{ project: (typeof FEATURED_PROJECTS)[number]; ind
     transition={{ delay: 0.15 + index * 0.15, duration: 0.7 }}
     className="gradient-border-card card-lift overflow-hidden"
   >
-    {/* Imagery placeholder — to be supplied */}
-    <div className="h-64 sm:h-72 relative border-b border-[#1E293B]/60 flex items-center justify-center bg-[#080D15]">
-      <div className="absolute inset-0 m-4 border border-dashed border-[#1E293B] rounded-lg flex flex-col items-center justify-center gap-3">
-        <ImageIcon className="w-8 h-8 text-slate-700" />
-        <span className="text-[10px] font-mono text-slate-600 uppercase tracking-[0.2em]">
-          Project imagery — to be supplied
-        </span>
-      </div>
+    {/* Project photography */}
+    <div className="h-64 sm:h-80 relative border-b border-[#1E293B]/60 overflow-hidden bg-[#080D15] group">
+      {project.imageUrl ? (
+        <>
+          <img
+            src={project.imageUrl}
+            alt={project.imageAlt || project.name}
+            loading="lazy"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#06090F] via-transparent to-transparent" />
+          {project.category && (
+            <span className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-[#06090F]/80 backdrop-blur-sm border border-primary/30 text-[10px] font-mono text-primary uppercase tracking-[0.2em]">
+              {project.category}
+            </span>
+          )}
+        </>
+      ) : (
+        <div className="absolute inset-0 m-4 border border-dashed border-[#1E293B] rounded-lg flex flex-col items-center justify-center gap-3">
+          <ImageIcon className="w-8 h-8 text-slate-700" />
+          <span className="text-[10px] font-mono text-slate-600 uppercase tracking-[0.2em]">
+            Project imagery — to be supplied
+          </span>
+        </div>
+      )}
     </div>
 
     <div className="p-6 sm:p-10">
@@ -99,6 +116,56 @@ export const ProjectsSection: React.FC = () => {
             <CaseStudyCard key={i} project={project} index={i} />
           ))}
         </div>
+
+        {/* Installation applications gallery */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.35, duration: 0.7 }}
+          className="mb-16"
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <span className="w-8 h-px bg-primary/40" />
+            <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">Installation Applications</span>
+          </div>
+          <h2 className="font-display text-2xl sm:text-3xl font-bold text-white tracking-[-0.02em] mb-2">
+            Lighting in the <span className="gradient-text">real world</span>
+          </h2>
+          <p className="text-slate-400 max-w-xl text-sm sm:text-base leading-relaxed font-sans font-light mb-8">
+            Typical environments our specifications are engineered for — from facades and retail interiors
+            to open-plan workspaces and public concourses.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {INSTALLATION_IMAGES.map((img, i) => (
+              <motion.figure
+                key={img.src}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ delay: i * 0.06, duration: 0.5 }}
+                className="gradient-border-card card-lift overflow-hidden group"
+              >
+                <div className="relative h-52 overflow-hidden bg-[#080D15]">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#06090F]/90 via-transparent to-transparent" />
+                  <figcaption className="absolute inset-x-0 bottom-0 p-4">
+                    <span className="inline-block px-2.5 py-1 rounded-full bg-primary/15 border border-primary/30 text-[9px] font-mono text-primary uppercase tracking-[0.18em] mb-2">
+                      {img.category}
+                    </span>
+                    <p className="text-xs text-slate-300 font-sans font-light leading-relaxed">
+                      {img.application}
+                    </p>
+                  </figcaption>
+                </div>
+              </motion.figure>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Technical proof strip */}
         <motion.div

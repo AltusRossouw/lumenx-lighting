@@ -76,6 +76,16 @@ export interface FeaturedProject {
   location: string;
   scope: string;
   delivered: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  category?: string;
+}
+
+export interface InstallationImage {
+  src: string;
+  alt: string;
+  category: string;
+  application: string;
 }
 
 export interface AudienceProfile {
@@ -87,4 +97,14 @@ export interface AudienceProfile {
 export interface FAQ {
   question: string;
   answer: string;
+}
+
+export interface ManagingDirector {
+  name: string;
+  role: string;
+  phone: string;
+  email: string;
+  headshot: string;
+  signatureImage: string;
+  signatureAlt: string;
 }

@@ -12,6 +12,8 @@ import {
   FeaturedProject,
   AudienceProfile,
   FAQ,
+  InstallationImage,
+  ManagingDirector,
 } from './types';
 
 export const LOGO_URL =
@@ -357,12 +359,120 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     location: 'Sandton, Johannesburg',
     scope: 'Full lighting design, specification, supply and site coordination for 12,000m² Grade-A office',
     delivered: 'Architectural linear lighting, recessed panels, emergency systems, and smart controls across 8 floors',
+    category: 'Commercial Office Lighting',
+    imageUrl: '/installation-images/modern-office-cove-lighting.jpeg',
+    imageAlt: 'Modern executive office interior with ambient LED cove lighting and sleek workstation design.',
   },
   {
     name: 'Distribution Centre',
     location: 'Gauteng',
     scope: 'Industrial highbay specification and supply for 25,000m² logistics facility',
     delivered: 'V200 UFO highbays, linear racking illumination, emergency egress lighting, and external perimeter floods',
+    category: 'Industrial & High-Bay Lighting',
+    imageUrl: '/installation-images/industrial-warehouse-led-lighting.jpeg',
+    imageAlt: 'Spacious empty warehouse with high open truss ceiling illuminated by rows of high-bay LED linear lights.',
+  },
+];
+
+/** Real installation photography — application gallery shown on the Projects page. */
+export const INSTALLATION_IMAGES: InstallationImage[] = [
+  {
+    src: '/installation-images/triangular-facade-accent-lighting.jpeg',
+    alt: 'Triangular glass building facade with warm golden LED linear accent lighting at dusk.',
+    category: 'Architectural Exterior',
+    application: 'Dynamic LED facade illumination',
+  },
+  {
+    src: '/installation-images/commercial-facade-slat-lighting.jpeg',
+    alt: 'Multi-story commercial building exterior with vertical louvered LED strip lighting at night.',
+    category: 'Architectural Exterior',
+    application: 'Vertical slat illumination',
+  },
+  {
+    src: '/installation-images/retail-track-lighting.png',
+    alt: 'Luxury retail clothing store illuminated by black ceiling-mounted directional LED track spotlights.',
+    category: 'Retail Lighting',
+    application: 'Accent & spotlight solutions',
+  },
+  {
+    src: '/installation-images/linear-pendant-office-lighting.jpeg',
+    alt: 'Collaborative open office workspace with suspended black linear LED pendant lights over communal desks.',
+    category: 'Office Lighting',
+    application: 'Suspended linear & pendant',
+  },
+  {
+    src: '/installation-images/open-ceiling-office-lighting.jpeg',
+    alt: 'Open ceiling office design with suspended continuous LED linear fixtures over workstations.',
+    category: 'Industrial Office',
+    application: 'Continuous linear LEDs',
+  },
+  {
+    src: '/installation-images/shopping-mall-cove-lighting.jpeg',
+    alt: 'Luxury shopping mall concourse with continuous ceiling LED cove lighting and glass storefronts.',
+    category: 'Public Space',
+    application: 'Mall & concourse cove lighting',
+  },
+];
+
+export const MANAGING_DIRECTOR: ManagingDirector = {
+  name: 'Kaylen Reddy',
+  role: 'Managing Director',
+  phone: '083 499 5340',
+  email: 'kaylen@lumenx.co.za',
+  headshot: '/headshots/Kaylen-Reddy-Headshot.png',
+  signatureImage: '/installation-images/lumenx-email-signature-kaylen.jpeg',
+  signatureAlt: 'LumenX email signature banner for Kaylen Reddy, Managing Director.',
+};
+
+/** Homepage hero slideshow — all installation photography in curated order. */
+export const HERO_SLIDES: InstallationImage[] = [
+  {
+    src: '/installation-images/triangular-facade-accent-lighting.jpeg',
+    alt: 'Triangular glass building facade with warm golden LED linear accent lighting at dusk.',
+    category: 'Architectural Exterior',
+    application: 'Dynamic LED facade illumination',
+  },
+  {
+    src: '/installation-images/modern-office-cove-lighting.jpeg',
+    alt: 'Modern executive office interior with ambient LED cove lighting and sleek workstation design.',
+    category: 'Commercial Office',
+    application: 'Ambient cove lighting',
+  },
+  {
+    src: '/installation-images/retail-track-lighting.png',
+    alt: 'Luxury retail clothing store illuminated by black ceiling-mounted directional LED track spotlights.',
+    category: 'Retail',
+    application: 'Accent & spotlight solutions',
+  },
+  {
+    src: '/installation-images/industrial-warehouse-led-lighting.jpeg',
+    alt: 'Spacious empty warehouse with high open truss ceiling illuminated by rows of high-bay LED linear lights.',
+    category: 'Industrial',
+    application: 'High-bay installations',
+  },
+  {
+    src: '/installation-images/commercial-facade-slat-lighting.jpeg',
+    alt: 'Multi-story commercial building exterior with vertical louvered LED strip lighting at night.',
+    category: 'Architectural Exterior',
+    application: 'Vertical slat illumination',
+  },
+  {
+    src: '/installation-images/linear-pendant-office-lighting.jpeg',
+    alt: 'Collaborative open office workspace with suspended black linear LED pendant lights over communal desks.',
+    category: 'Office',
+    application: 'Suspended linear lighting',
+  },
+  {
+    src: '/installation-images/open-ceiling-office-lighting.jpeg',
+    alt: 'Open ceiling office design with suspended continuous LED linear fixtures over workstations.',
+    category: 'Industrial Office',
+    application: 'Continuous linear LEDs',
+  },
+  {
+    src: '/installation-images/shopping-mall-cove-lighting.jpeg',
+    alt: 'Luxury shopping mall concourse with continuous ceiling LED cove lighting and glass storefronts.',
+    category: 'Public Space',
+    application: 'Concourse cove lighting',
   },
 ];
 
