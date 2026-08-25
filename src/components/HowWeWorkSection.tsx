@@ -29,7 +29,7 @@ export const HowWeWorkSection: React.FC = () => {
             A clear process from <span className="gradient-text">brief to delivery</span>
           </h2>
           <p className="text-slate-400 max-w-xl text-base leading-relaxed font-sans font-light">
-            Process clarity reduces risk and signals operational maturity. Here's what engaging LumenX looks like.
+            A clear process means fewer surprises. Here's what working with us looks like.
           </p>
         </motion.div>
 

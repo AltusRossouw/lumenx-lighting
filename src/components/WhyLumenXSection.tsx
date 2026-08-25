@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { WHY_CHOOSE } from '../data';
 import { PageHeroBackground } from './animations';
+import { LumenXWordmark } from './ui/lumenx-wordmark';
 
 export const WhyLumenXSection: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -20,16 +21,11 @@ export const WhyLumenXSection: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="mb-16 text-center"
         >
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="w-6 h-px bg-primary/30" />
-            <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">Why LumenX</span>
-            <span className="w-6 h-px bg-primary/30" />
-          </div>
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-[-0.02em] mb-4">
-            The <span className="gradient-text">LumenX</span> difference
+            The <LumenXWordmark className="h-[1.05em]" /> difference
           </h2>
           <p className="text-slate-400 max-w-xl mx-auto text-base leading-relaxed font-sans font-light">
-            Each differentiator answers: what does LumenX do differently, why does it matter to the project, and what risk or burden does it remove?
+            Each point answers three questions: what we do differently, why it matters on site, and what risk it removes.
           </p>
         </motion.div>
 

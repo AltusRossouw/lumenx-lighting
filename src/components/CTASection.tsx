@@ -1,10 +1,9 @@
 import React, { useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion, useInView } from 'motion/react';
 import { ArrowRight, FileText } from 'lucide-react';
 
 export const CTASection: React.FC = () => {
-  const navigate = useNavigate();
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -32,28 +31,28 @@ export const CTASection: React.FC = () => {
           </h2>
 
           <p className="text-slate-400 max-w-xl mx-auto text-base leading-relaxed mb-12 font-sans font-light">
-            Send us your drawings, BOQ, lighting specification or project brief. Our team will review the requirements and advise on the next technical and commercial step.
+            Send your drawings, BOQ, spec or brief — we'll review it and advise on the next step.
           </p>
 
           {/* CTA buttons — unified button system */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-            <button
-              onClick={() => navigate('/contact')}
-              className="btn btn-primary group"
+            <Link
+              to="/contact"
+              className="btn btn-primary group no-underline"
             >
               <span className="flex items-center gap-2">
                 Tell Us About Your Project
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
               </span>
-            </button>
+            </Link>
 
-            <button
-              onClick={() => navigate('/contact')}
-              className="btn btn-outline"
+            <Link
+              to="/contact"
+              className="btn btn-outline no-underline"
             >
               <FileText className="w-4 h-4" />
               Submit Your Lighting Requirement
-            </button>
+            </Link>
           </div>
         </motion.div>
       </div>

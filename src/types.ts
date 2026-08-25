@@ -1,14 +1,3 @@
-export interface NavSection {
-  id: string;
-  label: string;
-}
-
-export interface Service {
-  title: string;
-  description: string;
-  icon: string;
-}
-
 export interface ProductCategory {
   id: string;
   title: string;
@@ -16,6 +5,42 @@ export interface ProductCategory {
   applications: string;
   imageUrl: string;
   linkLabel: string;
+}
+
+export interface ProductSpec {
+  label: string;
+  value: string;
+}
+
+/** Full, detailed product record for the catalogue. */
+export interface Product {
+  /** URL-safe unique slug (unique within its category). */
+  slug: string;
+  name: string;
+  /** Category id this product belongs to. */
+  category: string;
+  /** Manufacturer / brand the product is sourced from. */
+  supplier: string;
+  /** Short one-line summary. */
+  summary: string;
+  /** Longer, detailed description. */
+  description: string;
+  /** Primary specification table. */
+  specs: ProductSpec[];
+  /** Key feature bullets. */
+  features: string[];
+  /** Typical applications. */
+  applications: string[];
+  /** Product image or illustrative category image. */
+  imageUrl: string;
+  /** Local datasheet download. */
+  pdfUrl?: string;
+  /** Local photometric (.ies) download. */
+  iesUrl?: string;
+  /** External supplier product page. */
+  supplierUrl?: string;
+  /** Warranty / guarantee statement. */
+  warranty?: string;
 }
 
 export interface ProductDetail {

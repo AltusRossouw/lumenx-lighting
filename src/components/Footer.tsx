@@ -1,24 +1,21 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { CONTACT, LOGO_URL } from '../data';
 import { Mail, Phone, Globe, ArrowUp } from 'lucide-react';
 
 export const Footer: React.FC = () => {
-  const navigate = useNavigate();
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
     { label: 'The Solution', path: '/the-solution' },
     { label: 'Products', path: '/products' },
+    { label: 'Design Tool', path: '/design-tool' },
     { label: 'Projects', path: '/projects' },
     { label: 'Technical Resources', path: '/resources' },
+    { label: 'IES Downloads', path: '/ies' },
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' },
-  ];
-
-  const legalLinks = [
-    { label: 'Privacy Policy', href: '#' },
-    { label: 'Terms', href: '#' },
+    { label: 'Admin', path: '/admin' },
   ];
 
   return (
@@ -45,9 +42,9 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5">
               {footerLinks.map((link) => (
                 <li key={link.label}>
-                  <button onClick={() => navigate(link.path)} className="text-xs text-[#64748B] hover:text-[#FFFFFF] transition-colors duration-200 cursor-pointer font-sans">
+                  <Link to={link.path} className="text-xs text-[#64748B] hover:text-[#FFFFFF] transition-colors duration-200 cursor-pointer font-sans">
                     {link.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -87,9 +84,6 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-6 text-[10px] text-[#64748B] font-mono">
             <span>B-BBEE Level 2</span>
             <span>SABS Compliant</span>
-            {legalLinks.map((link) => (
-              <a key={link.label} href={link.href} className="hover:text-[#FFFFFF] transition-colors">{link.label}</a>
-            ))}
             <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-1.5 text-[#64748B] hover:text-[#FFFFFF] transition-colors cursor-pointer">
               Back to top <ArrowUp className="w-3 h-3" />
             </button>

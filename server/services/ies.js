@@ -1,0 +1,125 @@
+// IES file service — the "walled garden" and design-tool allowlist.
+//
+// Security model:
+//  * Raw IES files live OUTSIDE the public web root (config.iesDir) and are
+//    only ever streamed through the authenticated, approved-only route.
+//  * Every filename is resolved with path.basename() so path traversal is
+//    impossible, then checked against the Luminex allowlist.
+//  * The design tool only accepts files whose `[MANUFAC]` keyword is Luminex —
+//    a scraper uploading (or requesting) a third-party IES file is rejected.
+
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { config } from '../config.js';
+
+const LUMENX_MANUFACTURERS = ['lumenx', 'luminex'];
+
+// Filenames are only considered Luminex when prefixed with the brand marker.
+// This keeps the allowlist explicit rather than trusting arbitrary uploads.
+export const isLuminexFilename = (filename) =>
+  typeof filename === 'string' && /^lumenx[_-]/i.test(filename) && filename.toLowerCase().endsWith('.ies');
+
+// Strip any directory component and return the bare, validated name (or null).
+export const safeIesFilename = (filename) => {
+  if (typeof filename !== 'string') return null;
+  const base = path.basename(filename);
+  return isLuminexFilename(base) ? base : null;
+};
+
+// Parse the key fields we need from an LM-63 IES file.
+export const parseIes = (text) => {
+  const lines = String(text).split(/\r?\n/);
+  let manufacturer = '';
+  let luminaireName = '';
+  let lumensPerLamp = null;
+  let inputWatts = null;
+  let inTilt = false;
+  let headerRead = false;
+  let remaining = null;
+
+  for (let i = 0; i < lines.length; i += 1) {
+    const raw = lines[i].trim();
+    const kw = raw.toUpperCase();
+
+    if (kw.startsWith('[MANUFAC]')) {
+      manufacturer = raw.slice('[MANUFAC]'.length).trim();
+    } else if (kw.startsWith('[LUMCAT]')) {
+      luminaireName = raw.slice('[LUMCAT]'.length).trim();
+    } else if (kw.startsWith('[TEST]') && !luminaireName) {
+      luminaireName = raw.slice('[TEST]'.length).trim();
+    } else if (kw.startsWith('[INPUTWATTS]')) {
+      const w = Number.parseFloat(raw.slice('[INPUTWATTS]'.length).trim());
+      if (Number.isFinite(w)) inputWatts = w;
+    } else if (kw === 'TILT=NONE' || kw.startsWith('TILT=')) {
+      inTilt = true;
+    } else if (inTilt && !headerRead && /^\d/.test(raw)) {
+      // First data line after TILT is the photometric header:
+      // <lamps> <lumens/lamp> <multiplier> <v-angles> <h-angles> <type> <units> <w> <l> <h>
+      const parts = raw.split(/\s+/).map(Number).filter((n) => Number.isFinite(n));
+      if (parts.length >= 2) {
+        lumensPerLamp = parts[1];
+        remaining = parts;
+      }
+      headerRead = true;
+    }
+  }
+
+  return {
+    manufacturer,
+    luminaireName,
+    lumensPerLamp,
+    inputWatts,
+    rawHeader: remaining,
+  };
+};
+
+// Validate that a parsed IES body belongs to a Luminex product.
+export const isLuminexIes = (parsed) =>
+  LUMENX_MANUFACTURERS.includes(String(parsed.manufacturer).toLowerCase());
+
+// Read one allowed IES file, returning { filename, text, parsed } or null.
+export const readLuminexIesFile = async (filename) => {
+  const safe = safeIesFilename(filename);
+  if (!safe) return null;
+  const text = await fs.readFile(path.join(config.iesDir, safe), 'utf8');
+  const parsed = parseIes(text);
+  if (!isLuminexIes(parsed)) return null;
+  return { filename: safe, text, parsed };
+};
+
+// List every Luminex IES file as public-safe metadata (never raw file content).
+export const listLuminexIesFiles = async () => {
+  let entries;
+  try {
+    entries = await fs.readdir(config.iesDir);
+  } catch {
+    return [];
+  }
+
+  const files = [];
+  for (const entry of entries.sort()) {
+    if (!isLuminexFilename(entry)) continue;
+    try {
+      const text = await fs.readFile(path.join(config.iesDir, entry), 'utf8');
+      const parsed = parseIes(text);
+      if (!isLuminexIes(parsed)) continue;
+      files.push({
+        id: entry,
+        filename: entry,
+        name: parsed.luminaireName || entry.replace(/^lumenx[_-]/i, '').replace(/\.ies$/i, ''),
+        lumens: parsed.lumensPerLamp,
+        watts: parsed.inputWatts,
+        manufacturer: parsed.manufacturer,
+      });
+    } catch {
+      // Skip unreadable/corrupt files rather than failing the whole listing.
+    }
+  }
+  return files;
+};
+
+// Full path for an allowed IES file (used by the protected download route).
+export const resolveLuminexIesPath = (filename) => {
+  const safe = safeIesFilename(filename);
+  return safe ? path.join(config.iesDir, safe) : null;
+};

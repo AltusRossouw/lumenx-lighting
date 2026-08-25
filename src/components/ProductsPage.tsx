@@ -1,12 +1,11 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { PRODUCT_CATEGORIES } from '../data';
 import { ArrowRight, ShieldCheck, Zap, Clock } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
 export const ProductsPage: React.FC = () => {
-  const navigate = useNavigate();
   return (
     <div className="min-h-screen">
       {/* Products Hero */}
@@ -40,49 +39,45 @@ export const ProductsPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {PRODUCT_CATEGORIES.map((category, i) => (
               <motion.div
-                key={i}
+                key={category.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
-                onClick={() => navigate(`/products/${category.id}`)}
-                className="group relative overflow-hidden gradient-border-card card-lift flex flex-col cursor-pointer"
+                className="group relative overflow-hidden gradient-border-card card-lift flex flex-col"
               >
                 {/* Image */}
-                <div className="h-52 overflow-hidden relative">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
-                    style={{ backgroundImage: `url(${category.imageUrl})` }}
+                <Link to={`/products/${category.id}`} className="h-52 overflow-hidden relative block" aria-label={category.title}>
+                  <img
+                    src={category.imageUrl}
+                    alt={category.title}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  {/* Category badge */}
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 text-[10px] font-mono tracking-wider uppercase rounded-full bg-primary/10 border border-primary/20 text-primary">
                       Category
                     </span>
                   </div>
-                </div>
+                </Link>
 
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="font-display text-lg font-semibold text-white mb-3 tracking-tight group-hover:text-primary transition-colors duration-300">
-                    {category.title}
-                  </h3>
+                  <Link to={`/products/${category.id}`} className="block">
+                    <h3 className="font-display text-lg font-semibold text-white mb-3 tracking-tight group-hover:text-primary transition-colors duration-300">
+                      {category.title}
+                    </h3>
+                  </Link>
                   <p className="text-sm text-slate-400 leading-relaxed flex-grow font-sans font-light">
                     {category.description}
                   </p>
                   <div className="mt-5 pt-4 border-t border-[#1E293B]/70 flex items-center gap-4">
-                    <button
-                      onClick={(e) => { e.stopPropagation(); navigate(`/products/${category.id}`); }}
-                      className="btn btn-outline btn-sm"
-                    >
+                    <Link to={`/products/${category.id}`} className="btn btn-outline btn-sm no-underline">
                       View Range
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                    </button>
-                    <button
-                      onClick={(e) => { e.stopPropagation(); navigate('/contact'); }}
-                      className="text-xs text-slate-400 hover:text-primary transition-colors cursor-pointer font-sans"
-                    >
+                    </Link>
+                    <Link to="/contact" className="text-xs text-slate-400 hover:text-primary transition-colors cursor-pointer font-sans">
                       Enquire
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </motion.div>
@@ -127,21 +122,15 @@ export const ProductsPage: React.FC = () => {
             Tell us about your project and we'll provide a competitive quotation with technical specifications.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              onClick={() => navigate('/contact')}
-              className="btn btn-primary group"
-            >
+            <Link to="/contact" className="btn btn-primary group no-underline">
               <span className="flex items-center gap-2">
                 Request a Quote
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
-            </button>
-            <button
-              onClick={() => navigate('/resources')}
-              className="btn btn-outline"
-            >
+            </Link>
+            <Link to="/resources" className="btn btn-outline no-underline">
               Technical Resources
-            </button>
+            </Link>
           </div>
         </div>
       </section>

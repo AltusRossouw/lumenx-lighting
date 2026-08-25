@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { CONTACT, MANAGING_DIRECTOR } from '../data';
 import { Mail, Phone, MapPin, Send, User, AtSign, Building2, FileText } from 'lucide-react';
 import { PageHeroBackground } from './animations';
+import { LumenXWordmark } from './ui/lumenx-wordmark';
 
 export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -48,8 +49,9 @@ export const ContactSection: React.FC = () => {
   const projectStages = ['Concept / Design', 'Tender / Specification', 'Value Engineering', 'Procurement', 'Installation', 'Other'];
 
   return (
-    <section id="contact" className="py-20 sm:py-28 relative bg-[#06090F] overflow-hidden">
+    <section id="contact" className="relative py-20 sm:py-28 bg-[#06090F] overflow-hidden">
       <PageHeroBackground rays={false} particles={false} dots={false} />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -59,9 +61,13 @@ export const ContactSection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-mono text-xs tracking-[0.3em] uppercase">Submit Your Lighting Requirement</span>
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mt-3 mb-4 tracking-[-0.02em]">
-            Bring LumenX into <span className="gradient-text">the project</span>
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <span className="w-6 h-px bg-primary/30" />
+            <span className="text-primary font-mono text-xs tracking-[0.3em] uppercase">Submit Your Lighting Requirement</span>
+            <span className="w-6 h-px bg-primary/30" />
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4 tracking-[-0.02em]">
+            Bring <LumenXWordmark className="h-[1.05em]" /> into <span className="gradient-text">the project</span>
           </h2>
           <p className="text-slate-400 max-w-xl mx-auto text-sm">
             Send us your drawings, BOQ, lighting specification or project brief. Our team will review
@@ -86,7 +92,7 @@ export const ContactSection: React.FC = () => {
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
                     <input
-                      type="text" placeholder="Your name *" required
+                      type="text" placeholder="Your name *" required aria-label="Your name" autoComplete="name"
                       value={formData.name} onChange={(e) => update('name', e.target.value)}
                       className="w-full pl-10 pr-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans"
                     />
@@ -94,7 +100,7 @@ export const ContactSection: React.FC = () => {
                   <div className="relative">
                     <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
                     <input
-                      type="text" placeholder="Company"
+                      type="text" placeholder="Company" aria-label="Company" autoComplete="organization"
                       value={formData.company} onChange={(e) => update('company', e.target.value)}
                       className="w-full pl-10 pr-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans"
                     />
@@ -104,7 +110,7 @@ export const ContactSection: React.FC = () => {
                   <div className="relative">
                     <AtSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
                     <input
-                      type="email" placeholder="Work email *" required
+                      type="email" placeholder="Work email *" required aria-label="Work email" autoComplete="email"
                       value={formData.email} onChange={(e) => update('email', e.target.value)}
                       className="w-full pl-10 pr-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans"
                     />
@@ -112,7 +118,7 @@ export const ContactSection: React.FC = () => {
                   <div className="relative">
                     <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
                     <input
-                      type="tel" placeholder="Phone number"
+                      type="tel" placeholder="Phone number" aria-label="Phone number" autoComplete="tel"
                       value={formData.phone} onChange={(e) => update('phone', e.target.value)}
                       className="w-full pl-10 pr-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans"
                     />
@@ -122,13 +128,14 @@ export const ContactSection: React.FC = () => {
                   <div className="relative">
                     <FileText className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
                     <input
-                      type="text" placeholder="Project name"
+                      type="text" placeholder="Project name" aria-label="Project name"
                       value={formData.projectName} onChange={(e) => update('projectName', e.target.value)}
                       className="w-full pl-10 pr-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans"
                     />
                   </div>
                   <div>
                     <select
+                      aria-label="Project type"
                       value={formData.projectType} onChange={(e) => update('projectType', e.target.value)}
                       className="w-full px-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans appearance-none cursor-pointer"
                     >
@@ -140,6 +147,7 @@ export const ContactSection: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <select
+                      aria-label="Current project stage"
                       value={formData.projectStage} onChange={(e) => update('projectStage', e.target.value)}
                       className="w-full px-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans appearance-none cursor-pointer"
                     >
@@ -150,7 +158,7 @@ export const ContactSection: React.FC = () => {
                   <div className="relative">
                     <FileText className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
                     <input
-                      type="text" placeholder="Support required (e.g. BOQ quote)"
+                      type="text" placeholder="Support required (e.g. BOQ quote)" aria-label="Support required"
                       value={formData.supportRequired} onChange={(e) => update('supportRequired', e.target.value)}
                       className="w-full pl-10 pr-4 py-3 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans"
                     />
@@ -158,6 +166,7 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <textarea
                   placeholder="Project details — tell us about the scope, requirements, quantities, or any specific lighting needs..."
+                  aria-label="Project details"
                   required
                   rows={4}
                   value={formData.projectDetails} onChange={(e) => update('projectDetails', e.target.value)}
@@ -279,10 +288,8 @@ export const ContactSection: React.FC = () => {
 
             {/* Brand */}
             <div className="text-center p-4 rounded-2xl bg-gradient-to-b from-[#0F141C] to-[#0A0D14] border border-[#1E293B]">
-              <h3 className="font-display text-lg font-bold text-white tracking-tight">
-                LUMEN<span className="text-primary">X</span>
-              </h3>
-              <p className="text-[10px] text-slate-500 font-mono tracking-widest mt-1">{CONTACT.tagline}</p>
+              <LumenXWordmark className="h-9 mx-auto" />
+              <p className="text-[10px] text-slate-500 font-mono tracking-widest mt-2">{CONTACT.tagline}</p>
             </div>
           </motion.div>
         </div>

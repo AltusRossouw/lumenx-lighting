@@ -1,6 +1,4 @@
-"use client";
-
-import React from "react";
+import React, { useMemo } from "react";
 
 interface PageHeroBackgroundProps {
   /** Extra class names for the container */
@@ -19,6 +17,22 @@ interface PageHeroBackgroundProps {
   gridOpacity?: number;
 }
 
+interface DotSpec {
+  left: string;
+  top: string;
+  duration: string;
+  delay: string;
+}
+
+interface ParticleSpec {
+  left: string;
+  top: string;
+  px: string;
+  py: string;
+  duration: string;
+  delay: string;
+}
+
 /**
  * Reusable page hero background — brings the striking blueprint/tech aesthetic
  * from the home hero to inner pages. All effects are togglable.
@@ -32,6 +46,31 @@ export default function PageHeroBackground({
   glows = true,
   gridOpacity = 0.03,
 }: PageHeroBackgroundProps) {
+  // Positions are random, so memoize them once per mount to avoid re-shuffling on re-render.
+  const dotSpecs = useMemo<DotSpec[]>(
+    () =>
+      Array.from({ length: 12 }).map(() => ({
+        left: `${5 + Math.random() * 90}%`,
+        top: `${5 + Math.random() * 90}%`,
+        duration: `${2.5 + Math.random() * 3}s`,
+        delay: `${Math.random() * 5}s`,
+      })),
+    [],
+  );
+
+  const particleSpecs = useMemo<ParticleSpec[]>(
+    () =>
+      Array.from({ length: 5 }).map(() => ({
+        left: `${15 + Math.random() * 70}%`,
+        top: `${25 + Math.random() * 50}%`,
+        px: `${(Math.random() - 0.5) * 80}px`,
+        py: `${-30 - Math.random() * 60}px`,
+        duration: `${3 + Math.random() * 4}s`,
+        delay: `${Math.random() * 6}s`,
+      })),
+    [],
+  );
+
   return (
     <div className={`absolute inset-0 pointer-events-none overflow-hidden ${className}`}>
       {/* Blueprint grid mask */}
@@ -86,42 +125,36 @@ export default function PageHeroBackground({
       )}
 
       {/* LED dot matrix field */}
-      {dots && (
-        <>
-          {Array.from({ length: 12 }).map((_, i) => (
-            <div
-              key={`led-${i}`}
-              className="led-dot absolute"
-              style={{
-                left: `${5 + Math.random() * 90}%`,
-                top: `${5 + Math.random() * 90}%`,
-                ["--led-duration" as string]: `${2.5 + Math.random() * 3}s`,
-                ["--led-delay" as string]: `${Math.random() * 5}s`,
-              }}
-            />
-          ))}
-        </>
-      )}
+      {dots &&
+        dotSpecs.map((spec, i) => (
+          <div
+            key={`led-${i}`}
+            className="led-dot absolute"
+            style={{
+              left: spec.left,
+              top: spec.top,
+              ["--led-duration" as string]: spec.duration,
+              ["--led-delay" as string]: spec.delay,
+            }}
+          />
+        ))}
 
       {/* Floating light particles */}
-      {particles && (
-        <>
-          {Array.from({ length: 5 }).map((_, i) => (
-            <div
-              key={`particle-${i}`}
-              className="light-particle"
-              style={{
-                left: `${15 + Math.random() * 70}%`,
-                top: `${25 + Math.random() * 50}%`,
-                ["--px" as string]: `${(Math.random() - 0.5) * 80}px`,
-                ["--py" as string]: `${-30 - Math.random() * 60}px`,
-                ["--particle-dur" as string]: `${3 + Math.random() * 4}s`,
-                ["--particle-delay" as string]: `${Math.random() * 6}s`,
-              }}
-            />
-          ))}
-        </>
-      )}
+      {particles &&
+        particleSpecs.map((spec, i) => (
+          <div
+            key={`particle-${i}`}
+            className="light-particle"
+            style={{
+              left: spec.left,
+              top: spec.top,
+              ["--px" as string]: spec.px,
+              ["--py" as string]: spec.py,
+              ["--particle-dur" as string]: spec.duration,
+              ["--particle-delay" as string]: spec.delay,
+            }}
+          />
+        ))}
 
       {/* Ambient glows */}
       {glows && (

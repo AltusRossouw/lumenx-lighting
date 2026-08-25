@@ -1,32 +1,16 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowRight, FileDown, FileText, ShieldCheck, Download } from 'lucide-react';
 import { PageHeroBackground } from './animations';
-import { PRODUCTS_BY_CATEGORY } from '../data';
-
-/** Unique datasheet PDFs across every product range */
-function collectDatasheets(): { name: string; href: string }[] {
-  const seen = new Set<string>();
-  const sheets: { name: string; href: string }[] = [];
-  Object.values(PRODUCTS_BY_CATEGORY)
-    .flat()
-    .forEach((product) => {
-      const href = product.pdfUrl;
-      if (!href || seen.has(href)) return;
-      seen.add(href);
-      sheets.push({ name: product.name, href });
-    });
-  return sheets.sort((a, b) => a.name.localeCompare(b.name));
-}
+import { DATASHEET_LIBRARY, datasheetDownloadUrl } from '../products';
 
 export const ResourcesPage: React.FC = () => {
-  const navigate = useNavigate();
-  const datasheets = collectDatasheets();
+  const datasheets = DATASHEET_LIBRARY;
 
   const downloads = [
     { label: 'Technical Datasheets', description: 'Product specifications, dimensions, and performance data — download every datasheet below.', icon: FileText, to: '/resources' },
-    { label: 'IES Files', description: 'Photometric data files for lighting simulation software — supplied per project or on request.', icon: FileDown, to: '/contact' },
+    { label: 'IES Files', description: 'Photometric data files for lighting simulation software — create a free account and download instantly.', icon: FileDown, to: '/ies' },
     { label: 'Compliance Documentation', description: 'SABS, IEC, and OSHACT compliance certificates — available with quotations and projects.', icon: ShieldCheck, to: '/contact' },
     { label: 'Warranty Terms', description: 'Manufacturer-backed warranty documentation per product range, confirmed in quotation.', icon: FileText, to: '/contact' },
   ];
@@ -59,20 +43,14 @@ export const ResourcesPage: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {downloads.map((item, i) => {
               const Icon = item.icon;
+              const isLibrary = item.to === '/resources';
               return (
-                <motion.button
+                <motion.div
                   key={i}
-                  onClick={() => {
-                    if (item.to === '/resources') {
-                      document.getElementById('datasheet-library')?.scrollIntoView({ behavior: 'smooth' });
-                    } else {
-                      navigate(item.to);
-                    }
-                  }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 + i * 0.08, duration: 0.6 }}
-                  className="gradient-border-card card-lift p-6 group flex items-start gap-5 text-left cursor-pointer"
+                  className="gradient-border-card card-lift p-6 group flex items-start gap-5 text-left relative"
                 >
                   <div className="w-10 h-10 bg-primary/[0.05] flex items-center justify-center shrink-0 group-hover:bg-primary/[0.1] transition-colors duration-300">
                     <Icon className="w-5 h-5 text-primary/50 group-hover:text-primary/70 transition-colors duration-300" />
@@ -84,10 +62,43 @@ export const ResourcesPage: React.FC = () => {
                     <p className="text-sm text-slate-400 leading-relaxed font-sans font-light">{item.description}</p>
                   </div>
                   <ArrowRight className="w-4 h-4 text-slate-600 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300 shrink-0 mt-1" />
-                </motion.button>
+                  {isLibrary ? (
+                    <button
+                      type="button"
+                      aria-label={item.label}
+                      onClick={() => document.getElementById('datasheet-library')?.scrollIntoView({ behavior: 'smooth' })}
+                      className="absolute inset-0 cursor-pointer"
+                    />
+                  ) : (
+                    <Link to={item.to} aria-label={item.label} className="absolute inset-0" />
+                  )}
+                </motion.div>
               );
             })}
           </div>
+
+          {/* Company profile download */}
+          <a
+            href="/downloads/LumenX-Company-Profile.pdf"
+            download
+            className="mt-6 gradient-border-card card-lift p-6 flex flex-col sm:flex-row items-start sm:items-center gap-5 justify-between no-underline"
+          >
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 bg-primary/[0.05] flex items-center justify-center shrink-0">
+                <FileText className="w-5 h-5 text-primary/50" />
+              </div>
+              <div>
+                <h3 className="font-display text-base font-semibold text-white mb-1 tracking-tight">LumenX Company Profile</h3>
+                <p className="text-sm text-slate-400 leading-relaxed font-sans font-light">
+                  Full company overview, capabilities and credentials — download the latest profile.
+                </p>
+              </div>
+            </div>
+            <span className="btn btn-primary btn-sm shrink-0 inline-flex">
+              <Download className="w-3.5 h-3.5" />
+              Download PDF
+            </span>
+          </a>
         </div>
       </section>
 
@@ -133,7 +144,7 @@ export const ResourcesPage: React.FC = () => {
                   </div>
                 </div>
                 <a
-                  href={sheet.href}
+                  href={datasheetDownloadUrl(sheet.href)}
                   download
                   className="btn btn-outline btn-sm no-underline shrink-0"
                   aria-label={`Download ${sheet.name} datasheet`}

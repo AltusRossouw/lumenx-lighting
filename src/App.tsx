@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate, useNavigate, useParams, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useParams, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { HomePage } from './components/HomePage';
@@ -10,6 +10,12 @@ import { AboutPage } from './components/AboutPage';
 import { ContactPage } from './components/ContactPage';
 import { ProductsPage } from './components/ProductsPage';
 import { ProductDetailPage } from './components/ProductDetailPage';
+import { ProductPage } from './components/ProductPage';
+import { DesignToolPage } from './components/DesignToolPage';
+import { AuthPage } from './components/AuthPage';
+import { AdminPage } from './components/AdminPage';
+import { IESLibraryPage } from './components/IESLibraryPage';
+import { NotFoundPage } from './components/NotFoundPage';
 import { FloatingWhatsAppButton } from './components/FloatingWhatsAppButton';
 import { ShieldCheck } from 'lucide-react';
 import { LumenXMark } from './components/ui/lumenx-mark';
@@ -41,19 +47,23 @@ function ScrollToHash() {
 /** Wrapper that reads :categoryId from the URL and renders ProductDetailPage */
 function ProductDetailWrapper() {
   const { categoryId } = useParams<{ categoryId: string }>();
-  const navigate = useNavigate();
 
   if (!categoryId) {
     return <div className="py-40 text-center text-[#78716C]">Category not found.</div>;
   }
 
-  return (
-    <ProductDetailPage
-      categoryId={categoryId}
-      onBack={() => navigate('/products')}
-      onInquire={() => navigate('/contact')}
-    />
-  );
+  return <ProductDetailPage categoryId={categoryId} />;
+}
+
+/** Wrapper that reads :categoryId and :slug from the URL and renders ProductPage */
+function ProductPageWrapper() {
+  const { categoryId, slug } = useParams<{ categoryId: string; slug: string }>();
+
+  if (!categoryId || !slug) {
+    return <div className="py-40 text-center text-[#78716C]">Product not found.</div>;
+  }
+
+  return <ProductPage categoryId={categoryId} slug={slug} />;
 }
 
 function AppLayout() {
@@ -72,12 +82,17 @@ function AppLayout() {
           <Route path="/the-solution" element={<ServicesPage />} />
           <Route path="/services" element={<Navigate to="/the-solution" replace />} />
           <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:categoryId/:slug" element={<ProductPageWrapper />} />
           <Route path="/products/:categoryId" element={<ProductDetailWrapper />} />
           <Route path="/projects" element={<ProjectsPageWrapper />} />
           <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/design-tool" element={<DesignToolPage />} />
+          <Route path="/ies" element={<IESLibraryPage />} />
+          <Route path="/account" element={<AuthPage />} />
+          <Route path="/admin" element={<AdminPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="*" element={<HomePage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
 

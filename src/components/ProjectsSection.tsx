@@ -102,7 +102,7 @@ export const ProjectsSection: React.FC = () => {
             <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">Featured Projects</span>
           </div>
           <h1 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-[-0.02em] mb-4">
-            Technical proof, <span className="gradient-text">not promises</span>
+            Technical proof <span className="gradient-text">not promises</span>
           </h1>
           <p className="text-slate-400 max-w-xl text-base leading-relaxed font-sans font-light">
             Every project is supported by lighting design, specification discipline, compliance

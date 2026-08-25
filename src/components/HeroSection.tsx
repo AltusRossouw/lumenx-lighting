@@ -1,21 +1,40 @@
-import React, { useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useMemo, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { COMPANY, LOGO_URL } from '../data';
-import { ArrowRight, ArrowDown, ShieldCheck, Globe } from 'lucide-react';
+import { ArrowRight, ArrowDown, ShieldCheck, Globe, SlidersHorizontal } from 'lucide-react';
 import { LumenXMark } from './ui/lumenx-mark';
 import { HeroSlideshow } from './HeroSlideshow';
 
 
-interface HeroSectionProps {
-  onScrollTo?: (sectionId: string) => void;
-}
-
-export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollTo }) => {
-  const navigate = useNavigate();
+export const HeroSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start start', 'end start'] });
   const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
+
+  // Random positions are memoized once per mount so dots/particles don't re-shuffle on re-render.
+  const heroDots = useMemo(
+    () =>
+      Array.from({ length: 18 }).map(() => ({
+        left: `${5 + Math.random() * 90}%`,
+        top: `${5 + Math.random() * 90}%`,
+        duration: `${2.5 + Math.random() * 3}s`,
+        delay: `${Math.random() * 5}s`,
+      })),
+    [],
+  );
+  const heroParticles = useMemo(
+    () =>
+      Array.from({ length: 6 }).map(() => ({
+        left: `${15 + Math.random() * 70}%`,
+        top: `${25 + Math.random() * 50}%`,
+        px: `${(Math.random() - 0.5) * 80}px`,
+        py: `${-30 - Math.random() * 60}px`,
+        duration: `${3 + Math.random() * 4}s`,
+        delay: `${Math.random() * 6}s`,
+      })),
+    [],
+  );
 
   return (
     <section ref={containerRef} id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-[#06090F]" style={{ minHeight: '100svh' }}>
@@ -44,15 +63,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollTo }) => {
 
       {/* LED dot matrix field — fewer dots */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {Array.from({ length: 18 }).map((_, i) => (
+        {heroDots.map((dot, i) => (
           <div
             key={`led-${i}`}
             className="led-dot absolute"
             style={{
-              left: `${5 + Math.random() * 90}%`,
-              top: `${5 + Math.random() * 90}%`,
-              ['--led-duration' as string]: `${2.5 + Math.random() * 3}s`,
-              ['--led-delay' as string]: `${Math.random() * 5}s`,
+              left: dot.left,
+              top: dot.top,
+              ['--led-duration' as string]: dot.duration,
+              ['--led-delay' as string]: dot.delay,
             }}
           />
         ))}
@@ -60,17 +79,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollTo }) => {
 
       {/* Floating light particles — reduced */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {Array.from({ length: 6 }).map((_, i) => (
+        {heroParticles.map((particle, i) => (
           <div
             key={`particle-${i}`}
             className="light-particle"
             style={{
-              left: `${15 + Math.random() * 70}%`,
-              top: `${25 + Math.random() * 50}%`,
-              ['--px' as string]: `${(Math.random() - .5) * 80}px`,
-              ['--py' as string]: `${-30 - Math.random() * 60}px`,
-              ['--particle-dur' as string]: `${3 + Math.random() * 4}s`,
-              ['--particle-delay' as string]: `${Math.random() * 6}s`,
+              left: particle.left,
+              top: particle.top,
+              ['--px' as string]: particle.px,
+              ['--py' as string]: particle.py,
+              ['--particle-dur' as string]: particle.duration,
+              ['--particle-delay' as string]: particle.delay,
             }}
           />
         ))}
@@ -130,22 +149,29 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollTo }) => {
 
             {/* CTAs — unified button system */}
             <div className="flex flex-col sm:flex-row gap-4 mb-16">
-              <button
-                onClick={() => (onScrollTo ? onScrollTo('contact') : navigate('/contact'))}
-                className="btn btn-primary group"
+              <Link
+                to="/contact"
+                className="btn btn-primary group no-underline"
               >
                 <span className="flex items-center gap-2">
                   Discuss a Project
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
                 </span>
-              </button>
-              <button
-                onClick={() => navigate('/products')}
-                className="btn btn-outline group"
+              </Link>
+              <Link
+                to="/products"
+                className="btn btn-outline group no-underline"
               >
                 Explore Products
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
+              </Link>
+              <Link
+                to="/design-tool"
+                className="btn btn-outline group no-underline"
+              >
+                <SlidersHorizontal className="w-4 h-4 text-slate-400 group-hover:text-primary transition-colors" />
+                Design Tool
+              </Link>
             </div>
 
             {/* Trust strip — X marks as separators */}
@@ -174,7 +200,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollTo }) => {
 
       {/* Scroll indicator */}
       <motion.button
-        onClick={() => onScrollTo?.('solution')}
+        onClick={() => document.getElementById('solution')?.scrollIntoView({ behavior: 'smooth' })}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8 }}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { LOGO_URL } from '../data';
 
@@ -14,7 +14,6 @@ const NAV_ITEMS: { id: string; label: string; path: string }[] = [
 ];
 
 export const Header: React.FC = () => {
-  const navigate = useNavigate();
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -39,62 +38,68 @@ export const Header: React.FC = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#06090F]/95 backdrop-blur-xl border-b border-white/[0.04]' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-[88px]">
-          <button onClick={() => navigate('/')} className="flex items-center cursor-pointer">
+          <Link to="/" className="flex items-center cursor-pointer">
             <img
               src={LOGO_URL}
               alt="LumenX" className="h-20 w-auto object-contain"
               referrerPolicy="no-referrer"
             />
-          </button>
+          </Link>
 
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1" aria-label="Primary">
             {NAV_ITEMS.map((item) => (
-              <button
+              <Link
                 key={item.id}
-                onClick={() => navigate(item.path)}
+                to={item.path}
                 className={`px-3.5 py-2 text-[13px] font-medium transition-colors duration-200 cursor-pointer font-sans ${isActive(item.path) ? 'text-white' : 'text-slate-500 hover:text-white'}`}
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </nav>
 
-          <div className="hidden md:block">
-            <button
-              onClick={() => navigate('/contact')}
-              className="btn btn-primary"
-            >
+          <div className="hidden lg:flex items-center gap-2">
+            <Link to="/design-tool" className="btn btn-outline btn-sm">
+              Design Tool
+            </Link>
+            <Link to="/contact" className="btn btn-primary">
               Discuss a Project
-            </button>
+            </Link>
           </div>
 
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2.5 text-slate-500 hover:text-white transition-colors cursor-pointer">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden p-2.5 text-slate-500 hover:text-white transition-colors cursor-pointer"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
+          >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-[#0A0D14] border-b border-[#1E293B]">
-          <div className="px-4 py-6 space-y-1">
+        <div className="lg:hidden bg-[#0A0D14] border-b border-[#1E293B]">
+          <nav className="px-4 py-6 space-y-1" aria-label="Mobile">
             {NAV_ITEMS.map((item) => (
-              <button
+              <Link
                 key={item.id}
-                onClick={() => { navigate(item.path); setIsOpen(false); }}
+                to={item.path}
+                onClick={() => setIsOpen(false)}
                 className={`block w-full text-left px-4 py-3 text-[15px] font-medium transition-colors cursor-pointer font-sans ${isActive(item.path) ? 'text-primary' : 'text-white hover:text-primary'}`}
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
-            <div className="pt-4 px-4">
-              <button
-                onClick={() => { navigate('/contact'); setIsOpen(false); }}
-                className="btn btn-primary btn-block"
-              >
+            <div className="pt-4 px-4 space-y-2">
+              <Link to="/design-tool" onClick={() => setIsOpen(false)} className="btn btn-outline btn-block">
+                Design Tool
+              </Link>
+              <Link to="/contact" onClick={() => setIsOpen(false)} className="btn btn-primary btn-block">
                 Discuss a Project
-              </button>
+              </Link>
             </div>
-          </div>
+          </nav>
         </div>
       )}
     </header>

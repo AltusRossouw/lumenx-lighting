@@ -3,6 +3,7 @@ import { motion, useInView } from 'motion/react';
 import { FAQS } from '../data';
 import { ChevronDown } from 'lucide-react';
 import { PageHeroBackground } from './animations';
+import { renderWithLogo } from './ui/lumenx-wordmark';
 
 export const FAQSection: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -44,16 +45,18 @@ export const FAQSection: React.FC = () => {
             >
               <button
                 onClick={() => toggle(i)}
+                aria-expanded={openIndex === i}
+                aria-controls={`faq-answer-${i}`}
                 className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left cursor-pointer"
               >
-                <span className="text-sm font-medium text-slate-200 font-sans">{faq.question}</span>
+                <span className="text-sm font-medium text-slate-200 font-sans">{renderWithLogo(faq.question)}</span>
                 <ChevronDown
                   className={`w-4 h-4 text-slate-500 shrink-0 transition-transform duration-300 ${openIndex === i ? 'rotate-180' : ''}`}
                 />
               </button>
               {openIndex === i && (
-                <div className="px-5 pb-4">
-                  <p className="text-sm text-slate-400 leading-relaxed font-sans font-light">{faq.answer}</p>
+                <div id={`faq-answer-${i}`} className="px-5 pb-4">
+                  <p className="text-sm text-slate-400 leading-relaxed font-sans font-light">{renderWithLogo(faq.answer)}</p>
                 </div>
               )}
             </motion.div>

@@ -1,7 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { HeroSection } from './HeroSection';
+import { DifferenceCarousel } from './DifferenceCarousel';
 import { CTASection } from './CTASection';
 import { AccreditationBar } from './AccreditationBar';
 import { LumenXMark } from './ui/lumenx-mark';
@@ -12,7 +13,6 @@ import {
   PRODUCT_CATEGORIES,
   AUDIENCE_PROFILES,
   INDUSTRIES,
-  WHY_CHOOSE,
 } from '../data';
 import {
   ArrowRight,
@@ -21,10 +21,10 @@ import {
   CheckCircle,
 } from 'lucide-react';
 
-/* ── Shared teaser shell: label + headline + short copy ── */
+/* ── Shared teaser shell: headline + short copy (body sits under the heading) ── */
 interface TeaserProps {
   id?: string;
-  label: string;
+  label?: string;
   title: React.ReactNode;
   copy?: string;
   children?: React.ReactNode;
@@ -40,14 +40,16 @@ const Teaser: React.FC<TeaserProps> = ({ id, label, title, copy, children }) => 
         viewport={{ once: true, margin: '-100px' }}
         transition={{ duration: 0.7 }}
       >
-        <div className="flex items-center gap-3 mb-4">
-          <span className="w-8 h-px bg-primary/40" />
-          <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">{label}</span>
-        </div>
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-[-0.02em] max-w-2xl">{title}</h2>
+        {label && (
+          <div className="flex items-center gap-3 mb-4">
+            <span className="w-8 h-px bg-primary/40" />
+            <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">{label}</span>
+          </div>
+        )}
+        <div className="mb-10">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-[-0.02em] max-w-2xl mb-4">{title}</h2>
           {copy && (
-            <p className="text-slate-400 max-w-md text-sm sm:text-base leading-relaxed font-sans font-light lg:text-right">
+            <p className="text-slate-400 max-w-2xl text-sm sm:text-base leading-relaxed font-sans font-light">
               {copy}
             </p>
           )}
@@ -59,15 +61,14 @@ const Teaser: React.FC<TeaserProps> = ({ id, label, title, copy, children }) => 
 );
 
 const TeaserLink: React.FC<{ to: string; label: string }> = ({ to, label }) => {
-  const navigate = useNavigate();
   return (
-    <button
-      onClick={() => navigate(to)}
+    <Link
+      to={to}
       className="group inline-flex items-center gap-2 text-xs font-semibold text-primary/70 hover:text-primary transition-colors duration-300 cursor-pointer font-display mt-8"
     >
       {label}
       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
-    </button>
+    </Link>
   );
 };
 
@@ -75,9 +76,8 @@ const TeaserLink: React.FC<{ to: string; label: string }> = ({ to, label }) => {
 const SolutionTeaser: React.FC = () => (
   <Teaser
     id="solution"
-    label="The Solution"
-    title={<>One partner, <span className="gradient-text">the complete project</span></>}
-    copy="Design, specification, value engineering, supply and coordination — held by one accountable technical team."
+    title={<>One partner <span className="gradient-text">the complete project</span></>}
+    copy="Design, specification, supply and coordination — one team from first drawing to handover."
   >
     <div className="flex flex-wrap gap-3">
       {COMPLETE_SOLUTION.map((cap) => (
@@ -103,8 +103,8 @@ const ProjectsTeaser: React.FC = () => (
   <Teaser
     id="projects"
     label="Featured Projects"
-    title={<>Technical proof, <span className="gradient-text">not promises</span></>}
-    copy="A snapshot of commercial and industrial lighting projects delivered end to end."
+    title={<>Technical proof <span className="gradient-text">not promises</span></>}
+    copy="Commercial and industrial lighting projects we've delivered, end to end."
   >
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {FEATURED_PROJECTS.map((p) => (
@@ -151,8 +151,8 @@ const TechnicalProofTeaser: React.FC = () => (
   <Teaser
     id="technical-proof"
     label="Technical Proof"
-    title={<>Documentation, <span className="gradient-text">standards and warranties</span></>}
-    copy="Every specification is backed by the technical evidence project teams need."
+    title={<>Documentation <span className="gradient-text">standards and warranties</span></>}
+    copy="Specs backed by data, simulations and compliance docs."
   >
     <div className="border border-[#1E293B] bg-[#0A0F17] p-6 flex flex-wrap items-center gap-x-8 gap-y-3">
       {[
@@ -176,8 +176,8 @@ const ProcessTeaser: React.FC = () => (
   <Teaser
     id="how-it-works"
     label="How It Works"
-    title={<>A clear process, <span className="gradient-text">brief to delivery</span></>}
-    copy="Six steps that reduce risk and keep the lighting package aligned."
+    title={<>A clear process <span className="gradient-text">brief to delivery</span></>}
+    copy="Six steps, brief to delivery."
   >
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-10">
       {PROCESS_STEPS.map((step) => (
@@ -200,7 +200,6 @@ const ProcessTeaser: React.FC = () => (
 
 /* ── 5 · Product Categories teaser ── */
 const CategoriesTeaser: React.FC = () => {
-  const navigate = useNavigate();
   return (
     <Teaser
       id="product-categories"
@@ -210,14 +209,16 @@ const CategoriesTeaser: React.FC = () => {
     >
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {PRODUCT_CATEGORIES.map((c) => (
-          <button
+          <Link
             key={c.id}
-            onClick={() => navigate(`/products/${c.id}`)}
-            className="group relative overflow-hidden h-40 gradient-border-card card-lift cursor-pointer text-left"
+            to={`/products/${c.id}`}
+            className="group relative overflow-hidden h-40 gradient-border-card card-lift text-left"
           >
-            <div
-              className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
-              style={{ backgroundImage: `url(${c.imageUrl})` }}
+            <img
+              src={c.imageUrl}
+              alt={c.title}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#06090F] via-[#06090F]/45 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -225,7 +226,7 @@ const CategoriesTeaser: React.FC = () => {
                 {c.title}
               </span>
             </div>
-          </button>
+          </Link>
         ))}
       </div>
       <TeaserLink to="/products" label="Browse all products" />
@@ -275,38 +276,14 @@ const WhoItsForTeaser: React.FC = () => (
   </Teaser>
 );
 
-/* ── 7 · Why LumenX teaser ── */
-const WhyTeaser: React.FC = () => (
-  <Teaser
-    id="why-lumenx"
-    label="Why LumenX"
-    title={<>The <span className="gradient-text">LumenX</span> difference</>}
-    copy="What LumenX does differently — and what that removes from your plate."
-  >
-    <div className="flex flex-wrap gap-3">
-      {WHY_CHOOSE.map((reason) => (
-        <span
-          key={reason.title}
-          className="inline-flex items-center gap-3 pl-4 pr-5 py-3 border border-[#1E293B]/70 bg-[#0A0F17]"
-        >
-          <img
-            src={reason.iconImg}
-            alt=""
-            className="w-8 h-8 object-contain drop-shadow-[0_0_10px_rgba(0,212,255,0.35)]"
-          />
-          <span className="font-display text-sm font-bold text-white">{reason.title}</span>
-        </span>
-      ))}
-    </div>
-    <TeaserLink to="/about" label="The full LumenX difference" />
-  </Teaser>
-);
-
 export const HomePage: React.FC = () => {
   return (
     <div>
       {/* Hero */}
       <HeroSection />
+
+      {/* The consolidated "LumenX difference" text carousel — directly below the hero */}
+      <DifferenceCarousel />
 
       {/* A/B Variant 1 — accreditation bar: items turn brand blue on hover */}
       <AccreditationBar variant="hover" />
@@ -318,7 +295,6 @@ export const HomePage: React.FC = () => {
       <ProcessTeaser />
       <CategoriesTeaser />
       <WhoItsForTeaser />
-      <WhyTeaser />
 
       {/* A/B Variant 2 — accreditation bar: solid white strip with bold black text */}
       <AccreditationBar variant="strip" />

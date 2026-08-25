@@ -76,6 +76,9 @@ export const HeroSlideshow: React.FC = () => {
               src={slide.src}
               alt={slide.alt}
               draggable={false}
+              loading={i === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+              fetchPriority={i === 0 ? 'high' : 'auto'}
               className="w-full h-full object-cover"
             />
           </motion.div>

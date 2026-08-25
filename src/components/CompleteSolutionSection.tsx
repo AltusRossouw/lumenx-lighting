@@ -12,7 +12,7 @@ export const CompleteSolutionSection: React.FC = () => {
     <section ref={ref} id="complete-solution" className="relative py-24 sm:py-32 overflow-hidden bg-[#06090F]">
       <PageHeroBackground rays={false} particles={false} dots={false} />
       {/* Subtle top gradient line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -22,17 +22,12 @@ export const CompleteSolutionSection: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="mb-20 text-center"
         >
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="w-6 h-px bg-primary/30" />
-            <span className="text-[10px] font-mono text-primary/70 tracking-[0.25em] uppercase">The Complete Solution</span>
-            <span className="w-6 h-px bg-primary/30" />
-          </div>
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-[-0.02em] mb-5">
-            One technical partner manages the complete<br className="hidden sm:block" />
-            lighting project from design through to delivery.
+            One team manages the whole lighting project<br className="hidden sm:block" />
+            from design through to delivery.
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-base leading-relaxed font-sans font-light">
-            LumenX brings design, specification, value engineering, supply and project coordination together through one accountable team — ensuring the lighting project is technically sound, commercially practical and ready for site.
+            Design, specification, value engineering, supply and coordination — one accountable team, from first drawing to site.
           </p>
         </motion.div>
 

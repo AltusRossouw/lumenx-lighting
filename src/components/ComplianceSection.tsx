@@ -3,6 +3,7 @@ import { motion, useInView } from 'motion/react';
 import { COMPLIANCE_ITEMS } from '../data';
 import { ShieldCheck, Factory } from 'lucide-react';
 import { PageHeroBackground } from './animations';
+import { LumenXWordmark } from './ui/lumenx-wordmark';
 
 export const ComplianceSection: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
@@ -38,10 +39,10 @@ export const ComplianceSection: React.FC = () => {
           className="max-w-3xl mb-16"
         >
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-sans font-light">
-            LumenX is a technically driven lighting business founded to bring stronger technical
-            ownership into lighting delivery. Rather than acting only as a product source, we work as
-            a project partner — aligning design intent, engineering requirements, commercial
-            realities, compliance and on-site execution into one accountable lighting solution.
+            <LumenXWordmark className="h-[1.1em]" /> started with one idea: lighting projects need stronger
+            technical ownership. We're not just a product source. We work as a project partner — tying
+            together design intent, engineering, budget, compliance and site execution into one
+            accountable solution.
           </p>
         </motion.div>
 
@@ -61,8 +62,8 @@ export const ComplianceSection: React.FC = () => {
             </h3>
           </div>
           <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-3xl font-sans font-light">
-            LumenX works with trusted manufacturing and supply partners selected for performance,
-            consistency, and project suitability.
+            <LumenXWordmark className="h-[1em]" /> works with manufacturing and supply partners chosen
+            for performance, consistency and project fit.
           </p>
         </motion.div>
 
