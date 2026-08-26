@@ -59,8 +59,8 @@ export const Header: React.FC = () => {
           </nav>
 
           <div className="hidden lg:flex items-center gap-2">
-            <Link to="/design-tool" className="btn btn-outline btn-sm">
-              Design Tool
+            <Link to="/planner" className="btn btn-outline btn-sm">
+              Lighting Planner
             </Link>
             <Link to="/contact" className="btn btn-primary">
               Discuss a Project
@@ -92,8 +92,8 @@ export const Header: React.FC = () => {
               </Link>
             ))}
             <div className="pt-4 px-4 space-y-2">
-              <Link to="/design-tool" onClick={() => setIsOpen(false)} className="btn btn-outline btn-block">
-                Design Tool
+              <Link to="/planner" onClick={() => setIsOpen(false)} className="btn btn-outline btn-block">
+                Lighting Planner
               </Link>
               <Link to="/contact" onClick={() => setIsOpen(false)} className="btn btn-primary btn-block">
                 Discuss a Project

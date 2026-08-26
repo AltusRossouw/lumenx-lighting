@@ -1,6 +1,11 @@
-// IES walled-garden routes — the ONLY place raw IES files can be downloaded.
-// Both handlers sit behind `requireAuth`: any signed-in account may download
-// (sign-up is self-serve with no approval gate).
+// IES routes.
+//
+//  * GET /api/ies            — OPEN metadata listing (files + planner profiles).
+//  * GET /api/ies/:filename  — gated raw-file download (signed-in account only).
+//
+// Raw photometry for the OrbitX planner is streamed from the separate
+// `/api/planner/ies/:filename` route so the public planner never exposes the
+// gated download path.
 
 import { Router } from 'express';
 import fs from 'node:fs';
@@ -9,24 +14,39 @@ import { requireAuth } from '../middleware/auth.js';
 import { listLuminexIesFiles, resolveLuminexIesPath } from '../services/ies.js';
 import { recordDownload } from '../services/downloads.js';
 
+const slugify = (value) =>
+  String(value)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
+// Map a Luminex IES file to the OrbitX planner's profile shape.
+const toPlannerProfile = (file) => ({
+  id: file.filename,
+  productSlug: slugify(file.name) || file.filename,
+  productName: file.name,
+  variantLabel: file.name,
+  url: `/api/planner/ies/${encodeURIComponent(file.filename)}`,
+  lumens: file.lumens,
+  beamAngle: null,
+});
+
 export const iesRouter = () => {
   const router = Router();
 
-  // Every IES route requires a signed-in account.
-  router.use(requireAuth);
-
-  // GET /api/ies — approved-only metadata listing (no raw file content).
+  // GET /api/ies — open metadata (wall garden `files` + planner `profiles`).
   router.get('/', async (_req, res, next) => {
     try {
       const files = await listLuminexIesFiles();
-      return res.json({ files });
+      const profiles = files.map(toPlannerProfile);
+      return res.json({ files, profiles });
     } catch (err) {
       return next(err);
     }
   });
 
-  // GET /api/ies/:filename — stream a single approved IES file.
-  router.get('/:filename', (req, res, next) => {
+  // GET /api/ies/:filename — gated raw download (signed-in account).
+  router.get('/:filename', requireAuth, (req, res, next) => {
     try {
       const filePath = resolveLuminexIesPath(req.params.filename);
       if (!filePath) {
@@ -38,7 +58,7 @@ export const iesRouter = () => {
         return res.status(404).json({ error: 'IES file not found.' });
       }
 
-      // Track the download against the authenticated, approved user.
+      // Track the download against the authenticated user.
       recordDownload({
         userId: req.user?.id ?? null,
         email: req.user?.email ?? null,

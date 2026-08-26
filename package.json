@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.3.0",
+    "@orbitx/planner": "github:AltusRossouw/Orbitx-Planner",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",

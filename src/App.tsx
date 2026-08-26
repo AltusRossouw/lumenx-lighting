@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useParams, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -19,6 +19,11 @@ import { NotFoundPage } from './components/NotFoundPage';
 import { FloatingWhatsAppButton } from './components/FloatingWhatsAppButton';
 import { ShieldCheck } from 'lucide-react';
 import { LumenXMark } from './components/ui/lumenx-mark';
+
+// Lazy-loaded so the OrbitX planner (and its self-contained Tailwind v3
+// stylesheet) never loads on the rest of the site.
+const PlannerPage = lazy(() => import('./components/PlannerPage'));
+const PlannerProPage = lazy(() => import('./components/PlannerProPage'));
 
 /** Scroll to top on every route change */
 function ScrollToTop() {
@@ -67,14 +72,18 @@ function ProductPageWrapper() {
 }
 
 function AppLayout() {
+  const location = useLocation();
+  // The OrbitX planner is a full-screen tool with its own header/chrome.
+  const isFullscreenTool = location.pathname.startsWith('/planner');
+
   return (
     <div className="min-h-screen bg-[#06090F] text-slate-300 flex flex-col selection:bg-primary/30 selection:text-white">
       <ScrollToTop />
       <ScrollToHash />
 
-      <Header />
+      {!isFullscreenTool && <Header />}
 
-      <FloatingWhatsAppButton />
+      {!isFullscreenTool && <FloatingWhatsAppButton />}
 
       <main className="flex-grow">
         <Routes>
@@ -90,6 +99,22 @@ function AppLayout() {
           <Route path="/ies" element={<IESLibraryPage />} />
           <Route path="/account" element={<AuthPage />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route
+            path="/planner"
+            element={
+              <Suspense fallback={<div className="flex items-center justify-center py-40 text-slate-400">Loading planner…</div>}>
+                <PlannerPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/planner/pro"
+            element={
+              <Suspense fallback={<div className="flex items-center justify-center py-40 text-slate-400">Loading planner…</div>}>
+                <PlannerProPage />
+              </Suspense>
+            }
+          />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFoundPage />} />
@@ -97,14 +122,16 @@ function AppLayout() {
       </main>
 
       {/* Compliance bar */}
-      <div className="bg-[#080B10] border-t border-[#1E293B]/60 text-slate-500 text-[10px] font-mono py-2.5 px-4 flex items-center justify-center space-x-2 shrink-0">
-        <ShieldCheck className="w-3.5 h-3.5 text-primary mr-1" />
-        <span>SANS 10114 & SABS Sourcing Compliance Certified</span>
-        <LumenXMark className="hidden sm:inline-block w-2 h-2" />
-        <span className="hidden sm:inline">B-BBEE Level 2</span>
-      </div>
+      {!isFullscreenTool && (
+        <div className="bg-[#080B10] border-t border-[#1E293B]/60 text-slate-500 text-[10px] font-mono py-2.5 px-4 flex items-center justify-center space-x-2 shrink-0">
+          <ShieldCheck className="w-3.5 h-3.5 text-primary mr-1" />
+          <span>SANS 10114 & SABS Sourcing Compliance Certified</span>
+          <LumenXMark className="hidden sm:inline-block w-2 h-2" />
+          <span className="hidden sm:inline">B-BBEE Level 2</span>
+        </div>
+      )}
 
-      <Footer />
+      {!isFullscreenTool && <Footer />}
     </div>
   );
 }

@@ -41,9 +41,23 @@ CREATE TABLE IF NOT EXISTS downloads (
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
+-- Quote requests from the OrbitX lighting planner.
+CREATE TABLE IF NOT EXISTS quote_requests (
+  id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name       TEXT NOT NULL,
+  email      TEXT NOT NULL,
+  phone      TEXT,
+  company    TEXT,
+  message    TEXT,
+  project    JSONB NOT NULL DEFAULT '{}'::jsonb,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
 CREATE INDEX IF NOT EXISTS users_email_idx            ON users (email);
 CREATE INDEX IF NOT EXISTS design_exports_email_idx   ON design_exports (email);
 CREATE INDEX IF NOT EXISTS design_exports_created_idx ON design_exports (created_at DESC);
 CREATE INDEX IF NOT EXISTS downloads_created_idx      ON downloads (created_at DESC);
 CREATE INDEX IF NOT EXISTS downloads_user_idx         ON downloads (user_id);
 CREATE INDEX IF NOT EXISTS downloads_kind_idx         ON downloads (kind);
+CREATE INDEX IF NOT EXISTS quote_requests_created_idx ON quote_requests (created_at DESC);
+CREATE INDEX IF NOT EXISTS quote_requests_email_idx   ON quote_requests (email);

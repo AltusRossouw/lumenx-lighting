@@ -13,6 +13,8 @@ import { adminRouter } from './routes/admin.js';
 import { iesRouter } from './routes/ies.js';
 import { designRouter } from './routes/design.js';
 import { downloadsRouter } from './routes/downloads.js';
+import { plannerRouter } from './routes/planner.js';
+import { quoteRouter } from './routes/quote.js';
 
 // Map known database errors to a clean 503 so the API never leaks internals.
 const isDbError = (err) =>
@@ -59,6 +61,8 @@ export const createApp = () => {
   app.use('/api/ies', iesRouter());
   app.use('/api/design', designRouter());
   app.use('/api/download', downloadsRouter());
+  app.use('/api/planner', plannerRouter());
+  app.use('/api/quote', quoteRouter());
 
   app.use('/api', notFoundHandler);
 

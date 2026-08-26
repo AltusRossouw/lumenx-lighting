@@ -11,6 +11,16 @@ export default defineConfig(() => {
         '@': path.resolve(__dirname, '.'),
       },
     },
+    // OrbitX planner ships TypeScript source; let Vite pre-bundle it.
+    optimizeDeps: {
+      include: ['@orbitx/planner'],
+    },
+    build: {
+      rollupOptions: {
+        // The DWG converter loads its WASM at runtime from /wasm/.
+        external: [/^\/wasm\//],
+      },
+    },
     server: {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
