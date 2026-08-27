@@ -6,3 +6,10 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Raw supplier IES source dumps — redundant with server/files/ies/ (already
+# normalised there) and contain "Don't Send" internal test reports. Kept out of
+# version control and out of the public web root.
+public/downloads/ies/OrbitX/
+public/downloads/ies/Pioled/
+public/downloads/ies/Rubicon/

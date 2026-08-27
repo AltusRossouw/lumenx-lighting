@@ -11,7 +11,7 @@ import { Router } from 'express';
 import fs from 'node:fs';
 import path from 'node:path';
 import { requireAuth } from '../middleware/auth.js';
-import { listLuminexIesFiles, resolveLuminexIesPath } from '../services/ies.js';
+import { listIesFiles, resolveIesPath } from '../services/ies.js';
 import { recordDownload } from '../services/downloads.js';
 
 const slugify = (value) =>
@@ -37,7 +37,7 @@ export const iesRouter = () => {
   // GET /api/ies — open metadata (wall garden `files` + planner `profiles`).
   router.get('/', async (_req, res, next) => {
     try {
-      const files = await listLuminexIesFiles();
+      const files = await listIesFiles();
       const profiles = files.map(toPlannerProfile);
       return res.json({ files, profiles });
     } catch (err) {
@@ -48,7 +48,7 @@ export const iesRouter = () => {
   // GET /api/ies/:filename — gated raw download (signed-in account).
   router.get('/:filename', requireAuth, (req, res, next) => {
     try {
-      const filePath = resolveLuminexIesPath(req.params.filename);
+      const filePath = resolveIesPath(req.params.filename);
       if (!filePath) {
         return res.status(404).json({ error: 'IES file not found.' });
       }

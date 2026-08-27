@@ -22,6 +22,9 @@ const IMG = {
   flood: '/product-images/Performance_Floods.png',
   strip: '/product-images/COB_STRIP.png',
   track: '/product-images/35W_Track_Spot.png',
+  panel300x1200: '/product-images/300x1200_Recessed_Panel.png',
+  streetLight: '/product-images/60W_Street_light.png',
+  highVoltageStrip: '/product-images/High_Voltage_Strip.png',
   // illustrative / installation imagery
   office: '/installation-images/modern-office-cove-lighting.jpeg',
   industrial: '/installation-images/industrial-warehouse-led-lighting.jpeg',
@@ -168,6 +171,7 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['Corridors', 'Stairwells', 'Plant rooms', 'Utility areas'],
     imageUrl: IMG.bulkheadPC,
+    iesUrl: '/api/ies/orbitx-rhea-15w.ies',
     warranty: '6-year operational guarantee (24/7)',
   },
   {
@@ -201,6 +205,7 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['Exterior entrances', 'Under-cover walkways', 'Wet areas', 'External circulation'],
     imageUrl: IMG.bulkheadALU,
+    iesUrl: '/api/ies/orbitx-phoebe-15w.ies',
     warranty: '8-year operational guarantee (24/7)',
   },
   {
@@ -227,6 +232,7 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['Refurbishment projects', 'Corridors', 'Stairwells', 'Utility areas'],
     imageUrl: IMG.bulkheadPC,
+    iesUrl: '/api/ies/orbitx-bulkhead-retrofit-15w.ies',
     warranty: 'OrbitX Direct Drive guarantee',
   },
   {
@@ -285,6 +291,68 @@ export const PRODUCTS: Product[] = [
     imageUrl: IMG.bulkheadALU,
     warranty: 'Pioled manufacturer warranty',
   },
+  {
+    slug: 'alu-bulkhead',
+    name: 'ALU Bulkhead',
+    category: 'bulkheads',
+    supplier: 'LumenX',
+    summary: 'Die-cast aluminium bulkhead with polycarbonate diffuser for reliable exterior and interior circulation lighting.',
+    description:
+      "The LumenX ALU Bulkhead pairs a die-cast aluminium body with a durable polycarbonate diffuser for robust, low-maintenance lighting. Available in 12W, 16W and 18W with a 100° beam and UGR<20, its simple, modern design suits corridors, entrances and plant rooms where dependable performance matters.",
+    specs: [
+      { label: 'Wattage', value: '12W / 16W / 18W' },
+      { label: 'Lumens', value: '1,560lm – 2,340lm' },
+      { label: 'Efficacy', value: '120 lm/W' },
+      { label: 'CCT', value: '4000K' },
+      { label: 'CRI', value: '> 80' },
+      { label: 'Beam Angle', value: '100°' },
+      { label: 'IP Rating', value: 'IP65' },
+      { label: 'Voltage', value: '220–240V AC' },
+      { label: 'Surge Protection', value: '1.5kV' },
+      { label: 'Lifetime', value: 'L70B10 @ 50,000 hrs' },
+    ],
+    features: [
+      'Die-cast aluminium body with polycarbonate diffuser',
+      'UGR<20 low-glare output',
+      'Optional dimmable driver',
+      'Flicker-free operation',
+    ],
+    applications: ['Corridors', 'Entrances', 'Plant rooms', 'Exterior circulation'],
+    imageUrl: IMG.bulkheadALU,
+    pdfUrl: '/datasheets/LumenX_Datasheet_ALU BLUKHEAD.pdf',
+    warranty: '5-year warranty',
+  },
+  {
+    slug: 'pc-bulkhead',
+    name: 'PC Bulkhead',
+    category: 'bulkheads',
+    supplier: 'LumenX',
+    summary: 'Coastal-grade polycarbonate bulkhead in square or round form with opal diffused cover.',
+    description:
+      "The LumenX PC Bulkhead features a contemporary coastal-grade polycarbonate housing in square or round form with white or black trims. An opal diffused LED cover softens glare, while the 12W–24W range with 3000K–6000K options suits entrances, stairwells and utility areas.",
+    specs: [
+      { label: 'Wattage', value: '12W / 18W / 24W' },
+      { label: 'Lumens', value: '1,260lm – 2,280lm' },
+      { label: 'Efficacy', value: 'Up to 105 lm/W' },
+      { label: 'CCT', value: '3000K / 4000K / 6000K' },
+      { label: 'CRI', value: '> 80' },
+      { label: 'Beam Angle', value: '140°' },
+      { label: 'IP Rating', value: 'IP65' },
+      { label: 'Voltage', value: '220–240V AC' },
+      { label: 'Surge Protection', value: '1kV' },
+      { label: 'Lifetime', value: 'L70B50 @ 50,000 hrs' },
+    ],
+    features: [
+      'Coastal-grade polycarbonate housing',
+      'Square or round, white or black trims',
+      'Opal diffused cover for glare reduction',
+      'Flicker-free operation',
+    ],
+    applications: ['Entrances', 'Stairwells', 'Utility areas', 'Exterior circulation'],
+    imageUrl: IMG.bulkheadPC,
+    pdfUrl: '/datasheets/LumenX_Datasheet_PC BLUKHEAD.pdf',
+    warranty: '5-year warranty',
+  },
 
   /* ══════════════════════ DOWNLIGHTS ══════════════════════ */
   {
@@ -315,6 +383,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Corporate offices', 'Healthcare', 'Education', 'High-end retail'],
     imageUrl: IMG.downlight,
     pdfUrl: '/datasheets/LumenX_Datasheet_Aegeon Downlight.pdf',
+    iesUrl: '/api/ies/rubicon-aegeon-coi-25w-4000k.ies',
     warranty: 'Rubicon manufacturer warranty',
   },
   {
@@ -517,6 +586,7 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['Offices', 'Retail', 'Healthcare', 'Commercial interiors'],
     imageUrl: IMG.downlight,
+    iesUrl: '/api/ies/pioled-3000k-25w-sauron-downlight.ies',
     warranty: '5-year warranty',
   },
   {
@@ -541,6 +611,7 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['Commercial', 'Retail', 'Offices', 'Hospitality'],
     imageUrl: IMG.downlight,
+    iesUrl: '/api/ies/pioled-legend-20w-4k.ies',
     warranty: 'Pioled manufacturer warranty',
   },
   {
@@ -612,6 +683,37 @@ export const PRODUCTS: Product[] = [
     imageUrl: IMG.downlight,
     warranty: 'Pioled manufacturer warranty',
   },
+  {
+    slug: 'surface-downlight-9w',
+    name: '9W Surface Downlight',
+    category: 'downlights',
+    supplier: 'LumenX',
+    summary: 'Compact COB surface-mount downlight with anti-glare output and emergency-ready options.',
+    description:
+      "The LumenX 9W Surface Downlight is a compact COB LED luminaire for commercial and retail interiors. With 8–11W power consumption, CRI>80 and UGR<19, it delivers consistent anti-glare illumination across offices, corridors and reception areas. Dimmable and emergency-ready options make it a versatile energy-efficient choice.",
+    specs: [
+      { label: 'Wattage', value: '9W (8–11W)' },
+      { label: 'Lumens', value: '1,250lm' },
+      { label: 'Efficacy', value: '125 lm/W' },
+      { label: 'CCT', value: '3000K / 3500K / 4000K / 5000K' },
+      { label: 'CRI', value: '> 80' },
+      { label: 'Beam Angle', value: '45°' },
+      { label: 'UGR', value: '< 19' },
+      { label: 'IP Rating', value: 'IP20' },
+      { label: 'Voltage', value: '220–240V AC' },
+      { label: 'Surge Protection', value: '3kV' },
+    ],
+    features: [
+      'Anti-glare COB illumination',
+      'Dimmable with optional driver',
+      'Emergency-ready option',
+      'Flicker-free operation',
+    ],
+    applications: ['Offices', 'Corridors', 'Reception areas', 'Retail'],
+    imageUrl: IMG.surface,
+    pdfUrl: '/datasheets/LumenX_Datasheet_9w Surface downlight.pdf',
+    warranty: '5-year warranty',
+  },
 
   /* ══════════════════════ FLOODLIGHTS ══════════════════════ */
   {
@@ -636,6 +738,7 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['Facades', 'Perimeter security', 'Yards', 'Area lighting'],
     imageUrl: IMG.flood,
+    iesUrl: '/api/ies/orbitx-floodlight-150w-18900lm.ies',
     warranty: 'OrbitX Direct Drive guarantee',
   },
   {
@@ -667,6 +770,67 @@ export const PRODUCTS: Product[] = [
     pdfUrl: '/datasheets/LumenX_Datasheet_Performance Floods.pdf',
     warranty: 'LEDVANCE manufacturer warranty',
   },
+  {
+    slug: 'modular-flood-240w',
+    name: '240W Modular Flood',
+    category: 'floods',
+    supplier: 'LumenX',
+    summary: 'High-output modular floodlight with coastal-grade aluminium frame and 10kV surge protection.',
+    description:
+      "The LumenX 240W Modular Flood delivers 38,400 lumens at 160 lm/W for large-area exterior lighting. A coastal-grade 1100 powder-coated aluminium frame with 1060 pure aluminium radiating modules dissipates heat through hollowed rivets, while a 316 stainless steel 3-part bracket speeds installation and resists corrosion.",
+    specs: [
+      { label: 'Wattage', value: '240W' },
+      { label: 'Lumens', value: '38,400lm' },
+      { label: 'Efficacy', value: '160 lm/W' },
+      { label: 'CCT', value: '5700K' },
+      { label: 'IP Rating', value: 'IP65' },
+      { label: 'Voltage', value: '220–240V AC' },
+      { label: 'Power Factor', value: '> 0.9' },
+      { label: 'Surge Protection', value: '10kV' },
+      { label: 'Lifetime', value: 'L80B20 @ 50,000 hrs' },
+      { label: 'Operating Temp', value: '-20 ~ 40°C' },
+    ],
+    features: [
+      'Coastal-grade 1100 aluminium frame',
+      '316 stainless steel 3-part bracket',
+      '10kV surge protection',
+      'Flicker-free operation',
+    ],
+    applications: ['Area lighting', 'Facades', 'Perimeter security', 'Industrial exteriors'],
+    imageUrl: IMG.flood,
+    warranty: '5-year warranty',
+  },
+  {
+    slug: 'street-light-60w',
+    name: '60W Street Light',
+    category: 'floods',
+    supplier: 'LumenX',
+    summary: 'Die-cast aluminium street light with 170 lm/W efficacy and 10kV surge protection.',
+    description:
+      "The LumenX 60W Street Light combines a die-cast aluminium housing with a PC lens for durable road and area lighting. Delivering 10,200 lumens at 170 lm/W with 10kV surge protection, it fits a standard D40–60mm pole for straightforward installation on streets, parking areas and estates.",
+    specs: [
+      { label: 'Wattage', value: '60W' },
+      { label: 'Lumens', value: '10,200lm' },
+      { label: 'Efficacy', value: '170 lm/W' },
+      { label: 'CCT', value: '4000K / 5700K' },
+      { label: 'CRI', value: '> 83' },
+      { label: 'IP Rating', value: 'IP66' },
+      { label: 'Voltage', value: '200–265V AC' },
+      { label: 'Surge Protection', value: '10kV' },
+      { label: 'Lifetime', value: 'L80B10 @ 50,000 hrs' },
+      { label: 'Mounting', value: 'Standard D40–60mm pole' },
+    ],
+    features: [
+      'Die-cast aluminium housing with PC lens',
+      '170 lm/W efficacy',
+      '10kV surge protection',
+      'Flicker-free operation',
+    ],
+    applications: ['Streets', 'Parking areas', 'Estates', 'Perimeter lighting'],
+    imageUrl: IMG.streetLight,
+    pdfUrl: '/datasheets/LumenX_Datasheet_60W Street light.pdf',
+    warranty: '5-year warranty',
+  },
 
   /* ══════════════════════ HIGHBAYS ══════════════════════ */
   {
@@ -690,6 +854,7 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['Warehouses', 'Factories', 'Logistics', 'Manufacturing'],
     imageUrl: IMG.highbay,
+    iesUrl: '/api/ies/orbitx-jupiter-1200mm-200w-25000lm.ies',
     warranty: 'OrbitX Direct Drive guarantee',
   },
   {
@@ -772,6 +937,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Warehouse racking', 'Production lines', 'Workshops', 'Retail spaces'],
     imageUrl: IMG.thermisto,
     pdfUrl: '/datasheets/LumenX_Datasheet_Thermisto.pdf',
+    iesUrl: '/api/ies/rubicon-themisto-50w-500ma-60deg-4000k-1200mm.ies',
     warranty: 'Rubicon manufacturer warranty',
   },
   {
@@ -803,6 +969,7 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['High-ceiling industrial', 'Warehouses', 'Manufacturing', 'Logistics'],
     imageUrl: IMG.highbay,
+    iesUrl: '/api/ies/pioled-delta-240w-170lm-5700k-70ra-110x60d-iesna2002.ies',
     warranty: '5-year warranty',
   },
   {
@@ -827,7 +994,39 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['Warehouses', 'Factories', 'Workshops', 'High-ceiling spaces'],
     imageUrl: IMG.highbay,
+    iesUrl: '/api/ies/pioled-raptor-120d-4000k-200w-ufo-hbay.ies',
     warranty: 'Pioled manufacturer warranty',
+  },
+  {
+    slug: 'v200-highbay',
+    name: 'V200 Highbay',
+    category: 'highbays',
+    supplier: 'LumenX',
+    summary: 'UFO highbay delivering 32,000 lumens at 200 lm/W with 3-in-1 dimmable driver.',
+    description:
+      "The LumenX V200 UFO Highbay delivers 32,000 lumens at 200 lm/W for high-ceiling industrial spaces. A Sosen 3-in-1 dimmable driver (1-10V, PWM, resistance), Philips SMD LED chips and an included anti-glare reflector provide powerful, comfortable illumination across warehouses and manufacturing facilities.",
+    specs: [
+      { label: 'Wattage', value: '160W' },
+      { label: 'Lumens', value: '32,000lm' },
+      { label: 'Efficacy', value: '200 lm/W' },
+      { label: 'CCT', value: '4000K / 5700K' },
+      { label: 'CRI', value: '> 80' },
+      { label: 'Beam Angle', value: '90°' },
+      { label: 'IP Rating', value: 'IP65' },
+      { label: 'Voltage', value: '180–260V AC' },
+      { label: 'Surge Protection', value: '6kV' },
+      { label: 'Dimming', value: '3-in-1 (1-10V / PWM / resistance)' },
+    ],
+    features: [
+      'Sosen 3-in-1 dimmable driver',
+      'Philips SMD LED chips',
+      'Anti-glare reflector included',
+      'Flicker-free operation',
+    ],
+    applications: ['Warehouses', 'Factories', 'Logistics', 'High-ceiling industrial'],
+    imageUrl: IMG.highbay,
+    pdfUrl: '/datasheets/LumenX_Datasheet_V200 Highbay.pdf',
+    warranty: '5-year warranty',
   },
 
   /* ══════════════════════ LINEAR LIGHTING ══════════════════════ */
@@ -859,6 +1058,7 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['Offices', 'Retail', 'Workspaces', 'Architectural interiors'],
     imageUrl: IMG.linear,
+    iesUrl: '/api/ies/orbitx-puck-2400mm-116w.ies',
     warranty: '6-year operational guarantee (24/7)',
   },
   {
@@ -882,6 +1082,7 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['Architectural interiors', 'Offices', 'Retail', 'Commercial'],
     imageUrl: IMG.linear,
+    iesUrl: '/api/ies/orbitx-puck-profile-70x36-2400mm-116w-12000lm.ies',
     warranty: 'OrbitX Direct Drive guarantee',
   },
   {
@@ -905,6 +1106,7 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['Architectural interiors', 'Offices', 'Retail', 'Cove lighting'],
     imageUrl: IMG.linear,
+    iesUrl: '/api/ies/orbitx-puck-profile-40x43-1200mm-32w-4000lm.ies',
     warranty: 'OrbitX Direct Drive guarantee',
   },
   {
@@ -928,6 +1130,7 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['Offices', 'Retail', 'Workspaces', 'Architectural interiors'],
     imageUrl: IMG.linear,
+    iesUrl: '/api/ies/orbitx-kepler-1200mm-52w.ies',
     warranty: 'OrbitX Direct Drive guarantee',
   },
   {
@@ -1192,6 +1395,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Warehouses', 'Workshops', 'Retail spaces', 'Racking aisles'],
     imageUrl: IMG.thermisto,
     pdfUrl: '/datasheets/LumenX_Datasheet_Thermisto.pdf',
+    iesUrl: '/api/ies/rubicon-themisto-50w-500ma-60deg-4000k-1200mm.ies',
     warranty: 'Rubicon manufacturer warranty',
   },
   {
@@ -1215,6 +1419,7 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['Offices', 'Retail', 'Architectural interiors', 'Cove lighting'],
     imageUrl: IMG.linear,
+    iesUrl: '/api/ies/pioled-40w-soniq-120.ies',
     warranty: 'Pioled manufacturer warranty',
   },
 
@@ -1239,6 +1444,7 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['Offices', 'Commercial', 'Education', 'Healthcare'],
     imageUrl: IMG.panel,
+    iesUrl: '/api/ies/orbitx-puck-panel-1200mm-60w-6000lm.ies',
     warranty: 'OrbitX Direct Drive guarantee',
   },
   {
@@ -1264,6 +1470,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Offices', 'Education', 'Hospitals', 'Corporate interiors'],
     imageUrl: IMG.panel,
     pdfUrl: '/datasheets/LumenX_Datasheet_Recessed Panel.pdf',
+    iesUrl: '/api/ies/rubicon-veris-30w-600x600-backlit-4000k.ies',
     warranty: 'Rubicon manufacturer warranty',
   },
   {
@@ -1286,6 +1493,37 @@ export const PRODUCTS: Product[] = [
     applications: ['Premium offices', 'Boardrooms', 'Hospitality', 'Architectural interiors'],
     imageUrl: IMG.panel,
     warranty: 'Mez manufacturer warranty',
+  },
+  {
+    slug: 'panel-300x1200',
+    name: '300x1200 Recessed Panel',
+    category: 'panels',
+    supplier: 'LumenX',
+    summary: 'Back-lit 300×1200mm recessed panel with UGR<19 and flicker-free operation.',
+    description:
+      "The LumenX 300×1200 Recessed Panel is a back-lit panel for general lighting with low glare. With UGR<19, flicker-free operation and 150 lm/W efficacy, it suits offices, education and hospital spaces where a clean finish and visual comfort are priorities.",
+    specs: [
+      { label: 'Wattage', value: '24W' },
+      { label: 'Lumens', value: '3,600lm' },
+      { label: 'Efficacy', value: '150 lm/W' },
+      { label: 'CCT', value: '4000K / 5000K / 6000K' },
+      { label: 'CRI', value: '> 80' },
+      { label: 'Beam Angle', value: '120°' },
+      { label: 'UGR', value: '< 19' },
+      { label: 'IP Rating', value: 'IP40' },
+      { label: 'Dimensions', value: '1195 × 295 × 32mm' },
+      { label: 'Dimming', value: 'Optional DALI / phase-cut' },
+    ],
+    features: [
+      'Back-lit, low-glare UGR<19 design',
+      'Flicker-free operation',
+      'Optional DALI or phase-cut dimming',
+      'Clean architectural finish',
+    ],
+    applications: ['Offices', 'Education', 'Healthcare', 'Commercial interiors'],
+    imageUrl: IMG.panel300x1200,
+    pdfUrl: '/datasheets/LumenX_Datasheet_300x1200 Recessed Panel.pdf',
+    warranty: '5-year warranty',
   },
 
   /* ══════════════════════ SENSORS & CONTROLS ══════════════════════ */
@@ -1679,6 +1917,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Cove lighting', 'Display shelving', 'Joinery accent', 'Under-cabinet'],
     imageUrl: IMG.strip,
     pdfUrl: '/datasheets/LumenX_Datasheet_COB STRIP.pdf',
+    iesUrl: '/api/ies/orbitx-strip-light-12w-1200lm-orbitx-strip-light-cob-12w-1200lm.ies',
     warranty: 'OrbitX manufacturer warranty',
   },
   {
@@ -1711,6 +1950,37 @@ export const PRODUCTS: Product[] = [
     imageUrl: IMG.strip,
     pdfUrl: '/datasheets/LumenX_Datasheet_COB STRIP.pdf',
     warranty: '3-year warranty',
+  },
+  {
+    slug: 'high-voltage-strip',
+    name: 'High Voltage Strip',
+    category: 'strips',
+    supplier: 'LumenX',
+    summary: 'Mains-powered LED strip with no external driver — connect directly to 220V.',
+    description:
+      "The LumenX High Voltage Strip needs no external driver — it connects directly to 220V mains for consistent light over runs up to 50m. With 9/14W per metre, IP65 protection and 100mm or 167mm cutting points, it provides a versatile, robust cove and accent lighting solution.",
+    specs: [
+      { label: 'Wattage', value: '9W / 14W per metre' },
+      { label: 'Lumens', value: '850 / 1,400lm per metre' },
+      { label: 'Efficacy', value: '100 lm/W' },
+      { label: 'CCT', value: '3000K / 4000K / 5000K' },
+      { label: 'CRI', value: '> 80' },
+      { label: 'Beam Angle', value: '117°' },
+      { label: 'IP Rating', value: 'IP65' },
+      { label: 'Voltage', value: '200–240V AC (no driver)' },
+      { label: 'Cutting Length', value: '100mm or 167mm' },
+      { label: 'Max Run', value: '50m consistent' },
+    ],
+    features: [
+      'No external driver required',
+      'Consistent light over 50m',
+      'IP65 rated silicone housing',
+      'Flicker-free operation',
+    ],
+    applications: ['Cove lighting', 'Accent lighting', 'Display', 'Architectural detail'],
+    imageUrl: IMG.highVoltageStrip,
+    pdfUrl: '/datasheets/LumenX_Datasheet_High Voltage Strip.pdf',
+    warranty: '6-year warranty',
   },
 
   /* ══════════════════════ TRACK LIGHTING ══════════════════════ */
@@ -1855,6 +2125,37 @@ export const PRODUCTS: Product[] = [
     imageUrl: IMG.track,
     warranty: 'Spazio manufacturer warranty',
   },
+  {
+    slug: 'track-spot-35w',
+    name: '35W Track Spot',
+    category: 'track',
+    supplier: 'LumenX',
+    summary: '35W 3-wire track spot with dual heat sink and 36° deep reflector.',
+    description:
+      "The LumenX 35W Track Spot features a dynamic dual heat sink that ensures longevity and reduced lumen depreciation. A deep 36° reflector cuts glare without sacrificing output, while a matt black or chic white powder-coated finish and 3kV surge protection suit demanding retail and commercial environments.",
+    specs: [
+      { label: 'Wattage', value: '35W' },
+      { label: 'Lumens', value: '3,500lm' },
+      { label: 'Efficacy', value: '100 lm/W' },
+      { label: 'CCT', value: '3000K / 4000K / 6000K' },
+      { label: 'CRI', value: '> 83' },
+      { label: 'Beam Angle', value: '36°' },
+      { label: 'IP Rating', value: 'IP20' },
+      { label: 'Voltage', value: '200–265V AC' },
+      { label: 'Surge Protection', value: '3kV' },
+      { label: 'Mounting', value: '3-wire track' },
+    ],
+    features: [
+      'Dual heat sink for longevity',
+      'Deep 36° reflector for glare control',
+      '3kV surge protection',
+      'Dimmable with optional driver',
+    ],
+    applications: ['Retail', 'Galleries', 'Showrooms', 'Accent lighting'],
+    imageUrl: IMG.track,
+    pdfUrl: '/datasheets/LumenX_Datasheet_35W Track Spot.pdf',
+    warranty: '5-year warranty',
+  },
 
   /* ══════════════════════ VAPOUR PROOF ══════════════════════ */
   {
@@ -1886,6 +2187,7 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['Parking structures', 'Washdown areas', 'Food processing', 'Industrial'],
     imageUrl: IMG.triproof,
+    iesUrl: '/api/ies/orbitx-neptune-1200mm-80w-10000lm.ies',
     warranty: '8-year operational guarantee (24/7)',
   },
   {
@@ -1917,6 +2219,7 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['Parking structures', 'Industrial', 'Washdown areas', 'Food processing'],
     imageUrl: IMG.triproof,
+    iesUrl: '/api/ies/orbitx-titan-1200mm-48w.ies',
     warranty: '6-year operational guarantee (24/7)',
   },
   {
@@ -2023,7 +2326,39 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['Parking structures', 'Canopies', 'Industrial corridors', 'Utility areas'],
     imageUrl: IMG.triproof,
+    iesUrl: '/api/ies/pioled-kuda-5ft-50w-4k-iesna2002.ies',
     warranty: 'Pioled manufacturer warranty',
+  },
+  {
+    slug: 'triproof-48w-3cct',
+    name: '48W 3 CCT Triproof',
+    category: 'vapourproof',
+    supplier: 'LumenX',
+    summary: 'IP65 5ft tri-proof linear with 3CCT switching and coastal-grade PC housing.',
+    description:
+      "The LumenX 48W 3 CCT Tri-proof is a 5ft linear engineered for demanding environments. Its IP65 coastal-spec polycarbonate housing with stainless steel clips and UV-protected PC lens delivers 7,200 lumens at 150 lm/W, with selectable 3000K / 4000K / 6000K colour temperature.",
+    specs: [
+      { label: 'Wattage', value: '48W' },
+      { label: 'Lumens', value: '7,200lm' },
+      { label: 'Efficacy', value: '150 lm/W' },
+      { label: 'CCT', value: '3CCT (3000K / 4000K / 6000K)' },
+      { label: 'CRI', value: '> 80' },
+      { label: 'Beam Angle', value: '120°' },
+      { label: 'IP Rating', value: 'IP65' },
+      { label: 'Voltage', value: '220–240V AC' },
+      { label: 'Surge Protection', value: '1.5kV' },
+      { label: 'Operating Temp', value: '-20 ~ 40°C' },
+    ],
+    features: [
+      'Coastal-spec PC housing with stainless steel clips',
+      'UV-protected polycarbonate lens',
+      '3CCT selectable colour temperature',
+      'Flicker-free operation',
+    ],
+    applications: ['Parking structures', 'Industrial', 'Washdown areas', 'Food processing'],
+    imageUrl: IMG.triproof,
+    pdfUrl: '/datasheets/LumenX_Datasheet_48W 3 CCT Triproof.pdf',
+    warranty: '5-year warranty',
   },
 ];
 

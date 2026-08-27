@@ -31,6 +31,7 @@ export const parseIes = (text) => {
   const lines = String(text).split(/\r?\n/);
   let manufacturer = '';
   let luminaireName = '';
+  let luminaire = '';
   let lumensPerLamp = null;
   let inputWatts = null;
   let inTilt = false;
@@ -45,6 +46,8 @@ export const parseIes = (text) => {
       manufacturer = raw.slice('[MANUFAC]'.length).trim();
     } else if (kw.startsWith('[LUMCAT]')) {
       luminaireName = raw.slice('[LUMCAT]'.length).trim();
+    } else if (kw.startsWith('[LUMINAIRE]')) {
+      luminaire = raw.slice('[LUMINAIRE]'.length).trim();
     } else if (kw.startsWith('[TEST]') && !luminaireName) {
       luminaireName = raw.slice('[TEST]'.length).trim();
     } else if (kw.startsWith('[INPUTWATTS]')) {
@@ -67,6 +70,7 @@ export const parseIes = (text) => {
   return {
     manufacturer,
     luminaireName,
+    luminaire,
     lumensPerLamp,
     inputWatts,
     rawHeader: remaining,
@@ -121,5 +125,79 @@ export const listLuminexIesFiles = async () => {
 // Full path for an allowed IES file (used by the protected download route).
 export const resolveLuminexIesPath = (filename) => {
   const safe = safeIesFilename(filename);
+  return safe ? path.join(config.iesDir, safe) : null;
+};
+
+// ── Broad IES catalogue (every distributed brand) ─────────────────────────
+// The IES walled garden serves every brand LumenX distributes — LumenX,
+// OrbitX, Pioled and Rubicon. Files are brand-prefixed at import time, so the
+// allowlist is the trusted brand prefix rather than the free-text [MANUFAC]
+// keyword (which is inconsistent across supplier files).
+
+const BRAND_PREFIX_RE = /^(lumenx|orbitx|pioled|rubicon)[_-]/i;
+
+const BRAND_LABELS = {
+  lumenx: 'LumenX',
+  orbitx: 'OrbitX',
+  pioled: 'Pioled',
+  rubicon: 'Rubicon',
+};
+
+export const isIesFilename = (filename) =>
+  typeof filename === 'string' &&
+  BRAND_PREFIX_RE.test(filename) &&
+  filename.toLowerCase().endsWith('.ies');
+
+const safeAllowedIesFilename = (filename) => {
+  if (typeof filename !== 'string') return null;
+  const base = path.basename(filename);
+  return isIesFilename(base) ? base : null;
+};
+
+const brandOf = (filename) => {
+  const match = BRAND_PREFIX_RE.exec(filename);
+  return match ? match[1].toLowerCase() : null;
+};
+
+const nameFromFilename = (filename) =>
+  filename
+    .replace(BRAND_PREFIX_RE, '')
+    .replace(/\.ies$/i, '')
+    .replace(/[-_]+/g, ' ')
+    .trim();
+
+// List every IES file across all distributed brands (public-safe metadata).
+export const listIesFiles = async () => {
+  let entries;
+  try {
+    entries = await fs.readdir(config.iesDir);
+  } catch {
+    return [];
+  }
+
+  const files = [];
+  for (const entry of entries.sort()) {
+    if (!isIesFilename(entry)) continue;
+    try {
+      const text = await fs.readFile(path.join(config.iesDir, entry), 'utf8');
+      const parsed = parseIes(text);
+      files.push({
+        id: entry,
+        filename: entry,
+        name: parsed.luminaire || parsed.luminaireName || nameFromFilename(entry),
+        lumens: parsed.lumensPerLamp,
+        watts: parsed.inputWatts,
+        manufacturer: BRAND_LABELS[brandOf(entry)] || parsed.manufacturer || 'LumenX',
+      });
+    } catch {
+      // Skip unreadable/corrupt files rather than failing the whole listing.
+    }
+  }
+  return files;
+};
+
+// Full path for any allowed IES file (used by the protected download route).
+export const resolveIesPath = (filename) => {
+  const safe = safeAllowedIesFilename(filename);
   return safe ? path.join(config.iesDir, safe) : null;
 };
