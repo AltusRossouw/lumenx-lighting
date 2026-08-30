@@ -45,7 +45,7 @@ services:
       # this line) to use an external database instead.
       DATABASE_URL: postgres://lumenx:${POSTGRES_PASSWORD:-lumenx}@db:5432/lumenx
     ports:
-      - "127.0.0.1:4000:4000" # only localhost — NPM proxies externally
+      - "4000:4000" # NPM (separate container) proxies to host:4000
     healthcheck:
       test: ["CMD-SHELL", "node -e 'fetch(\"http://127.0.0.1:4000/api/health\").then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))'"]
       interval: 30s
