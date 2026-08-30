@@ -16,6 +16,7 @@ import { AuthPage } from './components/AuthPage';
 import { AdminPage } from './components/AdminPage';
 import { IESLibraryPage } from './components/IESLibraryPage';
 import { NotFoundPage } from './components/NotFoundPage';
+import { PrivacyPage } from './components/PrivacyPage';
 import { FloatingWhatsAppButton } from './components/FloatingWhatsAppButton';
 import { ShieldCheck } from 'lucide-react';
 import { LumenXMark } from './components/ui/lumenx-mark';
@@ -46,6 +47,46 @@ function ScrollToHash() {
     }, 100);
     return () => clearTimeout(tid);
   }, [hash]);
+  return null;
+}
+
+/** Set per-route <title> and meta description (the SPA ships one static index). */
+const SEO_MAP: { match: RegExp; title: string; description?: string }[] = [
+  {
+    match: /^\/$/,
+    title: 'LumenX Lighting — Engineered for Real Projects | Industrial & Commercial LED Solutions',
+    description: 'LumenX delivers intelligent LED lighting solutions for retail, commercial, and industrial projects across South Africa.',
+  },
+  { match: /^\/the-solution(\/|$)/, title: 'The Solution — LumenX Lighting', description: 'Design, specification, value engineering, supply and project coordination — one accountable team.' },
+  { match: /^\/products\/[^/]+\/[^/]+$/, title: 'Product Details — LumenX Lighting' },
+  { match: /^\/products\/[^/]+$/, title: 'Product Range — LumenX Lighting' },
+  { match: /^\/products(\/|$)/, title: 'Products — LumenX Lighting', description: 'Explore the LumenX LED lighting catalogue — bulkheads, downlights, floodlights, highbays, linears, panels and more.' },
+  { match: /^\/projects(\/|$)/, title: 'Projects — LumenX Lighting' },
+  { match: /^\/resources(\/|$)/, title: 'Technical Resources — LumenX Lighting' },
+  { match: /^\/design-tool(\/|$)/, title: 'Lighting Design Tool — LumenX Lighting' },
+  { match: /^\/ies(\/|$)/, title: 'IES Downloads — LumenX Lighting' },
+  { match: /^\/planner(\/|$)/, title: 'Lighting Planner — LumenX Lighting' },
+  { match: /^\/about(\/|$)/, title: 'About — LumenX Lighting' },
+  { match: /^\/contact(\/|$)/, title: 'Contact — LumenX Lighting' },
+  { match: /^\/privacy(\/|$)/, title: 'Privacy Policy — LumenX Lighting' },
+];
+
+function SeoManager() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    const entry = SEO_MAP.find((e) => e.match.test(pathname));
+    if (!entry) return;
+    document.title = entry.title;
+    if (entry.description) {
+      let tag = document.querySelector('meta[name="description"]');
+      if (!tag) {
+        tag = document.createElement('meta');
+        tag.setAttribute('name', 'description');
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute('content', entry.description);
+    }
+  }, [pathname]);
   return null;
 }
 
@@ -80,6 +121,7 @@ function AppLayout() {
     <div className="min-h-screen bg-[#06090F] text-slate-300 flex flex-col selection:bg-primary/30 selection:text-white">
       <ScrollToTop />
       <ScrollToHash />
+      <SeoManager />
 
       {!isFullscreenTool && <Header />}
 
@@ -117,6 +159,7 @@ function AppLayout() {
           />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

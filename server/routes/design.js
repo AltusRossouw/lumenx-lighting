@@ -12,6 +12,7 @@ import { queryOne } from '../db.js';
 import { listLuminexIesFiles, readLuminexIesFile } from '../services/ies.js';
 import { calculateLuminaireCount } from '../services/design.js';
 import { isValidEmail, normalizeEmail, numberInRange } from '../middleware/validation.js';
+import { notifyLead } from '../services/mail.js';
 
 const sanitizeProduct = (f) => ({
   id: f.id,
@@ -106,10 +107,27 @@ export const designRouter = () => {
         [email, JSON.stringify(report)],
       );
 
+      // Best-effort notification — never fail the request over email.
+      try {
+        await notifyLead({
+          kind: 'design-tool export',
+          subject: `Design tool export: ${email}`,
+          lines: [
+            `Email: ${email}`,
+            `Product: ${report?.product?.name || '—'}`,
+            `Room: ${report?.room ? `${report.room.length}m × ${report.room.width}m` : '—'}`,
+            `Target: ${report?.targetLux ? `${report.targetLux} lx` : '—'}`,
+            `Required count: ${report?.result?.requiredCount ?? '—'}`,
+          ],
+        });
+      } catch (err) {
+        console.error('[design] notify failed:', err.message);
+      }
+
       return res.status(201).json({
         ok: true,
         exportId: inserted.id,
-        message: 'Report export logged. Check your inbox for your design summary.',
+        message: 'Report exported. Thank you — our team will be in touch.',
       });
     } catch (err) {
       return next(err);

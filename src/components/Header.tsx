@@ -59,6 +59,9 @@ export const Header: React.FC = () => {
           </nav>
 
           <div className="hidden lg:flex items-center gap-2">
+            <Link to="/account" className="btn btn-outline btn-sm">
+              Login
+            </Link>
             <Link to="/planner" className="btn btn-outline btn-sm">
               Lighting Planner
             </Link>
@@ -92,6 +95,9 @@ export const Header: React.FC = () => {
               </Link>
             ))}
             <div className="pt-4 px-4 space-y-2">
+              <Link to="/account" onClick={() => setIsOpen(false)} className="btn btn-outline btn-block">
+                Login
+              </Link>
               <Link to="/planner" onClick={() => setIsOpen(false)} className="btn btn-outline btn-block">
                 Lighting Planner
               </Link>

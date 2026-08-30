@@ -15,6 +15,7 @@ import { designRouter } from './routes/design.js';
 import { downloadsRouter } from './routes/downloads.js';
 import { plannerRouter } from './routes/planner.js';
 import { quoteRouter } from './routes/quote.js';
+import { contactRouter } from './routes/contact.js';
 
 // Map known database errors to a clean 503 so the API never leaks internals.
 const isDbError = (err) =>
@@ -63,6 +64,7 @@ export const createApp = () => {
   app.use('/api/download', downloadsRouter());
   app.use('/api/planner', plannerRouter());
   app.use('/api/quote', quoteRouter());
+  app.use('/api/contact', contactRouter());
 
   app.use('/api', notFoundHandler);
 

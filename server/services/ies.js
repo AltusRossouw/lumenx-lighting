@@ -128,19 +128,17 @@ export const resolveLuminexIesPath = (filename) => {
   return safe ? path.join(config.iesDir, safe) : null;
 };
 
-// ── Broad IES catalogue (every distributed brand) ─────────────────────────
-// The IES walled garden serves every brand LumenX distributes — LumenX,
-// OrbitX, Pioled and Rubicon. Files are brand-prefixed at import time, so the
-// allowlist is the trusted brand prefix rather than the free-text [MANUFAC]
-// keyword (which is inconsistent across supplier files).
+// ── Broad IES catalogue (LumenX + partner brands) ─────────────────────────
+// The IES walled garden serves LumenX-branded files plus the OrbitX partner
+// brand. Files are brand-prefixed at import time, so the allowlist is the
+// trusted brand prefix rather than the free-text [MANUFAC] keyword (which is
+// inconsistent across supplier files).
 
-const BRAND_PREFIX_RE = /^(lumenx|orbitx|pioled|rubicon)[_-]/i;
+const BRAND_PREFIX_RE = /^(lumenx|orbitx)[_-]/i;
 
 const BRAND_LABELS = {
   lumenx: 'LumenX',
   orbitx: 'OrbitX',
-  pioled: 'Pioled',
-  rubicon: 'Rubicon',
 };
 
 export const isIesFilename = (filename) =>

@@ -68,15 +68,6 @@ const CaseStudyCard: React.FC<{ project: (typeof FEATURED_PROJECTS)[number]; ind
         </div>
       </div>
 
-      {/* Anonymous copy placeholder */}
-      <div className="border border-dashed border-[#1E293B] rounded-lg p-4">
-        <p className="text-[10px] font-mono text-slate-600 uppercase tracking-[0.2em] mb-1.5">
-          Anonymous client copy — placeholder
-        </p>
-        <p className="text-xs text-slate-600 font-sans font-light italic">
-          Reserved for anonymised client testimonial and project outcome copy.
-        </p>
-      </div>
     </div>
   </motion.article>
 );

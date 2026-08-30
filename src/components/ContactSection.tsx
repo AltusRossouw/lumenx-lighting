@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { api } from '../lib/api';
 import { CONTACT, MANAGING_DIRECTOR } from '../data';
 import { Mail, Phone, MapPin, Send, User, AtSign, Building2, FileText } from 'lucide-react';
 import { PageHeroBackground } from './animations';
@@ -17,28 +19,36 @@ export const ContactSection: React.FC = () => {
     supportRequired: '',
     projectDetails: '',
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [error, setError] = useState<string | null>(null);
+  const [consent, setConsent] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const body = [
-      `Name: ${formData.name}`,
-      `Company: ${formData.company}`,
-      `Email: ${formData.email}`,
-      `Phone: ${formData.phone}`,
-      `Project Name: ${formData.projectName}`,
-      `Project Type: ${formData.projectType}`,
-      `Current Stage: ${formData.projectStage}`,
-      `Support Required: ${formData.supportRequired}`,
-      ``,
-      `Project Details:`,
-      formData.projectDetails,
-    ].join('\n');
-
-    const mailtoLink = `mailto:${CONTACT.projectsEmail || CONTACT.email}?subject=${encodeURIComponent(`Project Inquiry: ${formData.projectName || formData.name}`)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    if (!consent) {
+      setError('Please confirm you agree to the privacy policy before submitting.');
+      setStatus('error');
+      return;
+    }
+    setStatus('sending');
+    setError(null);
+    try {
+      await api.contact({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        projectName: formData.projectName,
+        projectType: formData.projectType,
+        projectStage: formData.projectStage,
+        supportRequired: formData.supportRequired,
+        message: formData.projectDetails,
+      });
+      setStatus('sent');
+    } catch (err) {
+      setError((err as Error).message || 'Something went wrong. Please email us directly instead.');
+      setStatus('error');
+    }
   };
 
   const update = (field: string, value: string) => setFormData((p) => ({ ...p, [field]: value }));
@@ -175,19 +185,43 @@ export const ContactSection: React.FC = () => {
 
                 {/* File upload hint */}
                 <p className="text-[10px] font-mono text-slate-600">
-                  You can attach drawings, BOQ, or specifications by emailing{' '}
+                  Need to attach drawings, a BOQ, or a spec? Email them to{' '}
                   <a href={`mailto:${CONTACT.projectsEmail || CONTACT.email}`} className="text-primary/60 hover:text-primary transition-colors">
                     {CONTACT.projectsEmail || CONTACT.email}
                   </a>
+                  , or submit below and our team will reply with next steps.
                 </p>
+
+                {/* POPIA consent */}
+                <label className="flex items-start gap-3 text-xs text-slate-400 font-sans cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                    className="mt-0.5 shrink-0 accent-[#00D4FF]"
+                    aria-label="Privacy consent"
+                  />
+                  <span>
+                    I consent to LumenX processing my details to respond to this enquiry, in line with the{' '}
+                    <Link to="/privacy" className="text-primary/70 hover:text-primary underline">Privacy Policy</Link>.
+                  </span>
+                </label>
+
+                {status === 'sent' && (
+                  <p className="text-xs text-emerald-400 font-sans">
+                    Thank you — your enquiry has been received. Our team will be in touch shortly.
+                  </p>
+                )}
+                {error && <p className="text-xs text-red-400 font-sans">{error}</p>}
 
                 <button
                   type="submit"
+                  disabled={status === 'sending'}
                   className="btn btn-primary btn-block"
                 >
                   <span className="flex items-center justify-center gap-2">
                     <Send className="w-4 h-4" />
-                    {submitted ? 'Submitted! Opening Email…' : 'Submit Your Lighting Requirement'}
+                    {status === 'sending' ? 'Sending…' : status === 'sent' ? 'Submitted — thank you!' : 'Submit Your Lighting Requirement'}
                   </span>
                 </button>
               </form>

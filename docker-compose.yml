@@ -1,0 +1,57 @@
+# LumenX Lighting — docker-compose stack for Portainer / Proxmox.
+#
+# Nginx Proxy Manager (separate container) reverse-proxies HTTPS to the `app`
+# service on port 4000. The app serves its own API and the built SPA on that
+# single port.
+#
+# Setup:
+#   1. Copy .env.example to .env and fill in real secrets.
+#   2. docker compose up -d --build
+#   3. In Nginx Proxy Manager, point your host (www.lumenx.co.za) at
+#      http://<proxmox-host>:4000 (or the container `lumenx-web` on a shared
+#      network) with WebSocket support enabled.
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: lumenx-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: lumenx
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-lumenx}
+      POSTGRES_DB: lumenx
+    volumes:
+      - lumenx_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lumenx -d lumenx"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    container_name: lumenx-web
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: "4000"
+      # Wired to the bundled Postgres service. Override DATABASE_URL (or edit
+      # this line) to use an external database instead.
+      DATABASE_URL: postgres://lumenx:${POSTGRES_PASSWORD:-lumenx}@db:5432/lumenx
+    ports:
+      - "127.0.0.1:4000:4000" # only localhost — NPM proxies externally
+    healthcheck:
+      test: ["CMD-SHELL", "node -e 'fetch(\"http://127.0.0.1:4000/api/health\").then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))'"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  lumenx_pgdata:

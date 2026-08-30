@@ -4,6 +4,7 @@
 import { Router } from 'express';
 import { queryOne } from '../db.js';
 import { normalizeEmail, isValidEmail } from '../middleware/validation.js';
+import { notifyLead } from '../services/mail.js';
 
 export const quoteRouter = () => {
   const router = Router();
@@ -45,6 +46,28 @@ export const quoteRouter = () => {
           JSON.stringify(project),
         ],
       );
+
+      // Best-effort notification — never fail the request over email.
+      try {
+        await notifyLead({
+          kind: 'planner quote',
+          subject: `Planner quote: ${body.projectName || name}`,
+          lines: [
+            `Name: ${name}`,
+            `Email: ${email}`,
+            `Phone: ${body.phone || '—'}`,
+            `Company: ${body.company || '—'}`,
+            `Project: ${body.projectName || '—'}`,
+            `Area: ${body.roomArea ? `${body.roomArea} m²` : '—'}`,
+            `Luminaires: ${body.luminaireCount ?? '—'}`,
+            `Summary: ${body.luminaireSummary || '—'}`,
+            '',
+            body.message || '—',
+          ],
+        });
+      } catch (err) {
+        console.error('[quote] notify failed:', err.message);
+      }
 
       return res.status(201).json({ ok: true, quoteId: row.id });
     } catch (err) {

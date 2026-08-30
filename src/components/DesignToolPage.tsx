@@ -204,7 +204,7 @@ export const DesignToolPage: React.FC = () => {
               Plan your layout, <span className="gradient-text">quantify your light</span>
             </h1>
             <p className="text-slate-400 max-w-2xl text-base leading-relaxed font-sans font-light">
-              Estimate the number of Luminex luminaires required to hit your target illuminance.
+              Estimate the number of LumenX luminaires required to hit your target illuminance.
               No account needed — export your final report with an email.
             </p>
             {serverOnline === false && (
@@ -251,7 +251,7 @@ export const DesignToolPage: React.FC = () => {
             </div>
 
             <label className="block mt-5">
-              <span className="block text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-1.5">Luminex product</span>
+              <span className="block text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-1.5">LumenX product</span>
               <select
                 value={form.productId}
                 onChange={(e) => update('productId', e.target.value)}

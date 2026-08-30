@@ -110,7 +110,7 @@ export const IESLibraryPage: React.FC = () => {
                           <div className="min-w-0">
                             <p className="text-sm font-semibold text-white truncate font-display">{file.name}</p>
                             <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">
-                              {file.lumens ? `${file.lumens.toLocaleString()} lm` : 'Luminex'} · .IES
+                              {file.lumens ? `${file.lumens.toLocaleString()} lm` : 'LumenX'} · .IES
                             </p>
                           </div>
                         </div>

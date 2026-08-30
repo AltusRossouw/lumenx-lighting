@@ -1,0 +1,14 @@
+node_modules
+dist
+.git
+.gitignore
+.DS_Store
+*.log
+.env
+.env.*
+design-system
+coverage
+# Raw supplier IES source dumps — must never enter the image.
+public/downloads/ies/OrbitX
+public/downloads/ies/Pioled
+public/downloads/ies/Rubicon

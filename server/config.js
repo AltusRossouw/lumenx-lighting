@@ -55,6 +55,14 @@ export const config = Object.freeze({
   // Static frontend build directory (served in production).
   clientDistDir: path.resolve(__dirname, '..', 'dist'),
 
+  // Public site URL (canonical links, email footers).
+  publicUrl: process.env.PUBLIC_URL || 'https://www.lumenx.co.za',
+
+  // Transactional email (Resend). Notifications are skipped when no API key.
+  resendApiKey: process.env.RESEND_API_KEY || '',
+  resendFrom: process.env.RESEND_FROM || 'LumenX Lighting <leads@lumenx.co.za>',
+  leadNotifyEmail: process.env.LEAD_NOTIFY_EMAIL || 'projects@lumenx.co.za',
+
   // Rate limiting
   rateLimitWindowMs: toInt(process.env.RATE_LIMIT_WINDOW_MS, 15 * 60 * 1000),
   rateLimitMax: toInt(process.env.RATE_LIMIT_MAX, 200),

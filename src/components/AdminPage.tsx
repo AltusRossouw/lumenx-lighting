@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
-import { api, AdminUser, DownloadRecord, DownloadStats } from '../lib/api';
+import { api, AdminUser, DownloadRecord, DownloadStats, Lead } from '../lib/api';
 import { PageHeroBackground } from './animations';
 import {
   AtSign,
   FileDown,
+  Inbox,
   Loader2,
   Lock,
   LogOut,
@@ -16,7 +17,7 @@ import {
 
 type AuthState = 'loading' | 'login' | 'authenticated';
 type Filter = 'all' | 'admins';
-type Tab = 'users' | 'downloads';
+type Tab = 'users' | 'downloads' | 'leads';
 
 export const AdminPage: React.FC = () => {
   const [authState, setAuthState] = useState<AuthState>('loading');
@@ -24,6 +25,7 @@ export const AdminPage: React.FC = () => {
   const [users, setUsers] = useState<AdminUser[]>([]);
   const [downloads, setDownloads] = useState<DownloadRecord[]>([]);
   const [stats, setStats] = useState<DownloadStats | null>(null);
+  const [leads, setLeads] = useState<Lead[]>([]);
   const [tab, setTab] = useState<Tab>('users');
 
   const [email, setEmail] = useState('');
@@ -48,6 +50,11 @@ export const AdminPage: React.FC = () => {
     setStats(s);
   };
 
+  const loadLeads = async () => {
+    const { leads: list } = await api.adminLeads();
+    setLeads(list);
+  };
+
   useEffect(() => {
     let active = true;
     (async () => {
@@ -57,7 +64,7 @@ export const AdminPage: React.FC = () => {
         if (me.role === 'admin') {
           setAdminEmail(me.email);
           setAuthState('authenticated');
-          await Promise.all([loadUsers(), loadDownloads()]);
+          await Promise.all([loadUsers(), loadDownloads(), loadLeads()]);
         } else {
           setAuthState('login');
         }
@@ -79,7 +86,7 @@ export const AdminPage: React.FC = () => {
       const { user } = await api.adminLogin(email.trim(), password);
       setAdminEmail(user.email);
       setAuthState('authenticated');
-      await Promise.all([loadUsers(), loadDownloads()]);
+      await Promise.all([loadUsers(), loadDownloads(), loadLeads()]);
     } catch (err) {
       setError((err as Error).message || 'Sign-in failed.');
     } finally {
@@ -93,6 +100,7 @@ export const AdminPage: React.FC = () => {
     setUsers([]);
     setDownloads([]);
     setStats(null);
+    setLeads([]);
     setAdminEmail('');
     setEmail('');
     setPassword('');
@@ -213,6 +221,7 @@ export const AdminPage: React.FC = () => {
                 {(
                   [
                     { id: 'users', label: 'Users', icon: Users },
+                    { id: 'leads', label: 'Leads', icon: Inbox },
                     { id: 'downloads', label: 'Downloads', icon: FileDown },
                   ] as { id: Tab; label: string; icon: React.ComponentType<{ className?: string }> }[]
                 ).map((t) => {
@@ -323,7 +332,7 @@ export const AdminPage: React.FC = () => {
                     )}
                   </div>
                 </>
-              ) : (
+              ) : tab === 'downloads' ? (
                 <>
                   {/* Download stats */}
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
@@ -378,6 +387,48 @@ export const AdminPage: React.FC = () => {
                               <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-white/[0.03] border border-white/10 text-[10px] font-mono text-slate-400">
                                 <FileDown className="w-3 h-3" /> PDF
                               </span>
+                            )}
+                          </div>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </>
+              ) : (
+                <>
+                  {/* Leads */}
+                  <div className="overflow-hidden rounded-2xl border border-[#1E293B] bg-[#0A0D14]">
+                    <div className="hidden sm:grid grid-cols-[140px_1fr_120px] gap-4 px-6 py-3 border-b border-[#1E293B] bg-white/[0.02]">
+                      {['When', 'Lead', 'Source'].map((h) => (
+                        <span key={h} className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">{h}</span>
+                      ))}
+                    </div>
+
+                    {leads.length === 0 ? (
+                      <p className="px-6 py-10 text-center text-sm text-slate-500 font-mono">No leads yet.</p>
+                    ) : (
+                      leads.map((l) => (
+                        <div
+                          key={`${l.source}-${l.id}`}
+                          className="grid grid-cols-1 sm:grid-cols-[140px_1fr_120px] gap-3 sm:gap-4 px-6 py-4 border-b border-[#1E293B]/60 last:border-b-0 items-start"
+                        >
+                          <div className="text-[11px] font-mono text-slate-500">{fmt(l.created_at)}</div>
+                          <div className="min-w-0">
+                            <p className="text-sm font-medium text-white truncate font-sans">{l.subject}</p>
+                            <p className="text-xs text-slate-400 truncate font-sans">
+                              {l.name ? `${l.name} · ` : ''}{l.email}
+                            </p>
+                            {l.phone && <p className="text-[10px] font-mono text-slate-600">{l.phone}</p>}
+                            {l.company && <p className="text-[10px] font-mono text-slate-600">{l.company}</p>}
+                            {l.detail && <p className="text-xs text-slate-500 mt-1 whitespace-pre-wrap font-sans font-light">{l.detail}</p>}
+                          </div>
+                          <div>
+                            {l.source === 'contact' ? (
+                              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary/10 border border-primary/20 text-[10px] font-mono text-primary">Contact</span>
+                            ) : l.source === 'quote' ? (
+                              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary/10 border border-secondary/20 text-[10px] font-mono text-secondary">Quote</span>
+                            ) : (
+                              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-white/[0.03] border border-white/10 text-[10px] font-mono text-slate-400">Design</span>
                             )}
                           </div>
                         </div>

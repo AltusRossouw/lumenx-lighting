@@ -35,6 +35,32 @@ walled garden and the lighting design tool.
    npm run build && npm start   # http://localhost:4000
    ```
 
+## Deploy (Docker)
+
+Production runs Node + Express in a single container that serves both the API
+and the built frontend on port 4000, behind Nginx Proxy Manager (SSL).
+
+1. Create `.env` from `.env.example` and fill in real values (`JWT_SECRET`,
+   `ADMIN_API_KEY`, `RESEND_API_KEY`, `COOKIE_SECURE=true`).
+2. Build and start the stack:
+   ```bash
+   docker compose up -d --build
+   ```
+   The `db` service (PostgreSQL 16) is provisioned automatically and the app
+   applies `db/schema.sql` on start (idempotent).
+3. Point Nginx Proxy Manager at `http://<host>:4000` for `www.lumenx.co.za`
+   with WebSocket support enabled.
+4. Create an admin account to view leads and download activity:
+   ```bash
+   docker compose exec app node server/scripts/make-admin.js you@lumenx.co.za
+   ```
+
+Notes:
+- To use an external database, override `DATABASE_URL` in `.env` (or edit
+  `docker-compose.yml`) and remove/ignore the `db` service.
+- Email notifications require a verified `RESEND_FROM` domain in Resend. Leave
+  `RESEND_API_KEY` empty to disable email — leads still appear in `/admin`.
+
 ## Scripts
 
 | Command              | Description                                          |
@@ -47,7 +73,7 @@ walled garden and the lighting design tool.
 | `npm run preview`    | Preview the production build                         |
 | `npm run lint`       | TypeScript check (`tsc --noEmit`)                    |
 | `npm run db:migrate` | Apply `db/schema.sql`                                |
-| `npm run ies:seed`   | Generate sample Luminex IES files                    |
+| `npm run ies:seed`   | Generate sample LumenX IES files                     |
 
 ## Environment
 
@@ -83,7 +109,7 @@ See `.env.example`. The key values:
 ## Lighting design tool (`/design-tool`)
 
 - Open to everyone — no account required.
-- The backend only processes **Luminex** IES files (filename + `[MANUFAC]` allowlist);
+- The backend only processes **LumenX** IES files (filename + `[MANUFAC]` allowlist);
   raw files are never returned, so scrapers cannot extract them from the tool's directory.
 - Exporting the final report requires a valid email, which is logged to `design_exports`
   via `POST /api/design/export`.

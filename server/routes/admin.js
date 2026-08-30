@@ -67,5 +67,35 @@ export const adminRouter = () => {
     }
   });
 
+  // GET /api/admin/leads — unified inbound leads (contact form, planner quotes,
+  // design-tool exports), most recent first.
+  router.get('/leads', async (_req, res, next) => {
+    try {
+      const result = await query(
+        `SELECT * FROM (
+           SELECT 'contact' AS source, id, name, email, phone, company,
+                  COALESCE(NULLIF(support_required, ''), NULLIF(project_name, ''), 'Contact enquiry') AS subject,
+                  message AS detail, created_at
+           FROM contact_requests
+           UNION ALL
+           SELECT 'quote' AS source, id, name, email, phone, company,
+                  COALESCE(NULLIF(project->>'projectName', ''), 'Planner quote request') AS subject,
+                  message AS detail, created_at
+           FROM quote_requests
+           UNION ALL
+           SELECT 'design' AS source, id, NULL AS name, email, NULL AS phone, NULL AS company,
+                  'Design tool export' AS subject,
+                  NULL AS detail, created_at
+           FROM design_exports
+         ) leads
+         ORDER BY created_at DESC
+         LIMIT 300`,
+      );
+      return res.json({ leads: result.rows });
+    } catch (err) {
+      return next(err);
+    }
+  });
+
   return router;
 };

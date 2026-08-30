@@ -34,6 +34,18 @@ export interface DownloadStats {
   datasheet: number;
 }
 
+export interface Lead {
+  id: string;
+  source: 'contact' | 'quote' | 'design';
+  name: string | null;
+  email: string;
+  phone: string | null;
+  company: string | null;
+  subject: string;
+  detail: string | null;
+  created_at: string;
+}
+
 export interface DesignProduct {
   id: string;
   name: string;
@@ -112,6 +124,14 @@ export const api = {
     request<{ stats: DownloadStats; top: { filename: string; kind: string; count: number }[] }>(
       '/api/admin/downloads/stats',
     ),
+  adminLeads: () => request<{ leads: Lead[] }>('/api/admin/leads'),
+
+  // Contact form
+  contact: (payload: Record<string, unknown>) =>
+    request<{ ok: boolean; id: string }>('/api/contact', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    }),
 
   // IES walled garden
   listIes: () => request<{ files: IesFile[] }>('/api/ies'),

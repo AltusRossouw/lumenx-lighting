@@ -16,6 +16,7 @@ export const Footer: React.FC = () => {
     { label: 'IES Downloads', path: '/ies' },
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' },
+    { label: 'Privacy Policy', path: '/privacy' },
     { label: 'Admin', path: '/admin' },
   ];
 
