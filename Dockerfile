@@ -1,13 +1,14 @@
 # ── LumenX Lighting — production image ─────────────────────────────────────
-# Multi-stage: build the Vite SPA, then run Node + Express (serves the SPA and
-# the API from a single process on :4000).
+# Single dependency install (build stage), then reuse node_modules in the
+# runtime stage. This avoids a second `npm ci` (and a second git clone of the
+# GitHub-hosted @orbitx/planner dependency) during image build.
 
 # ── Build stage ────────────────────────────────────────────────────────────
 FROM node:20-alpine AS build
 WORKDIR /app
 
-# git is required to install the GitHub-hosted @orbitx/planner dependency.
-RUN apk add --no-cache git
+# git + CA certs are required to install the GitHub-hosted @orbitx/planner dep.
+RUN apk add --no-cache git ca-certificates
 
 COPY package.json package-lock.json ./
 RUN npm ci
@@ -23,12 +24,8 @@ ENV NODE_ENV=production \
     HOST=0.0.0.0 \
     PORT=4000
 
-RUN apk add --no-cache git
-
-COPY package.json package-lock.json ./
-RUN npm ci --omit=dev && npm cache clean --force
-
-# Built frontend + backend + schema + server-read public assets (datasheets).
+# Reuse the full dependency tree installed in the build stage.
+COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
 COPY server ./server
 COPY db ./db
