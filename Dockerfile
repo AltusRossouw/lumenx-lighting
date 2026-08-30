@@ -11,6 +11,7 @@ WORKDIR /app
 RUN apk add --no-cache git ca-certificates
 
 COPY package.json package-lock.json ./
+COPY vendor ./vendor
 RUN npm ci
 
 COPY . .
