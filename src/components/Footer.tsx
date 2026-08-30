@@ -60,12 +60,6 @@ export const Footer: React.FC = () => {
                 <Mail className="w-3.5 h-3.5 text-[#64748B] shrink-0" />
                 <a href={`mailto:${CONTACT.email}`} className="text-[#64748B] hover:text-[#FFFFFF] transition-colors duration-200 font-sans">{CONTACT.email}</a>
               </li>
-              {CONTACT.projectsEmail && (
-                <li className="flex items-center gap-3">
-                  <Mail className="w-3.5 h-3.5 text-[#64748B] shrink-0" />
-                  <a href={`mailto:${CONTACT.projectsEmail}`} className="text-[#64748B] hover:text-[#FFFFFF] transition-colors duration-200 font-sans">{CONTACT.projectsEmail}</a>
-                </li>
-              )}
               <li className="flex items-center gap-3">
                 <Phone className="w-3.5 h-3.5 text-[#64748B] shrink-0" />
                 <span className="text-[#64748B] font-sans">{CONTACT.phone}</span>

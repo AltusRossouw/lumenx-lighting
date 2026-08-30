@@ -43,7 +43,7 @@ services:
       COOKIE_SECURE: "true"
       RESEND_API_KEY: ${RESEND_API_KEY}
       RESEND_FROM: "LumenX Lighting <leads@lumenx.co.za>"
-      LEAD_NOTIFY_EMAIL: projects@lumenx.co.za
+      LEAD_NOTIFY_EMAIL: kaylen@lumenx.co.za
       CORS_ORIGINS: https://www.lumenx.co.za
     ports:
       - "4000:4000" # NPM (separate container) proxies to host:4000
