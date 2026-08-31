@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { WHY_CHOOSE } from '../data';
+import { useSiteContent } from '../content';
 import { PageHeroBackground } from './animations';
 import { LumenXWordmark } from './ui/lumenx-wordmark';
 
 export const WhyLumenXSection: React.FC = () => {
+  const { whyChooseSubcopy, whyChoose } = useSiteContent();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
@@ -25,13 +26,13 @@ export const WhyLumenXSection: React.FC = () => {
             The <LumenXWordmark className="h-[1.05em]" /> difference
           </h2>
           <p className="text-slate-400 max-w-xl mx-auto text-base leading-relaxed font-sans font-light">
-            Each point answers three questions: what we do differently, why it matters on site, and what risk it removes.
+            {whyChooseSubcopy}
           </p>
         </motion.div>
 
         {/* Why pillars — 3x2 grid with larger, easier-to-read text blocks */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" ref={ref}>
-          {WHY_CHOOSE.map((reason, i) => {
+          {whyChoose.map((reason, i) => {
             return (
               <motion.div
                 key={i}

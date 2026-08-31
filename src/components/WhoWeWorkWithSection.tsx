@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { AUDIENCE_PROFILES, INDUSTRIES } from '../data';
+import { useSiteContent } from '../content';
 import { PageHeroBackground } from './animations';
 import { LumenXMark } from './ui/lumenx-mark';
 
 export const WhoWeWorkWithSection: React.FC = () => {
+  const { audience, audienceProfiles, industries } = useSiteContent();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
@@ -23,16 +24,16 @@ export const WhoWeWorkWithSection: React.FC = () => {
         >
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-px bg-primary/40" />
-            <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">Built for the Teams Delivering the Project</span>
+            <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">{audience.label}</span>
           </div>
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-[-0.02em] mb-4">
-            Lighting across <span className="gradient-text">demanding environments</span>
+            {audience.heading.lead}<span className="gradient-text">{audience.heading.accent}</span>{audience.heading.tail}
           </h2>
         </motion.div>
 
         {/* Audience profiles — 4-column grid, headings designed to stand out on a scan */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16" ref={ref}>
-          {AUDIENCE_PROFILES.map((profile, i) => (
+          {audienceProfiles.map((profile, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
@@ -62,7 +63,7 @@ export const WhoWeWorkWithSection: React.FC = () => {
         >
           <p className="text-[10px] font-mono text-primary/70 uppercase tracking-[0.25em] mb-6">Sectors</p>
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-3.5">
-            {INDUSTRIES.map((ind, i) => (
+            {industries.map((ind, i) => (
               <React.Fragment key={ind.name}>
                 {i > 0 && <LumenXMark className="hidden sm:inline-block w-2.5 h-2.5 self-center" />}
                 <span className="inline-flex items-center gap-2.5 cursor-default">

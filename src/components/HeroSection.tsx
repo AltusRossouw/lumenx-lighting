@@ -1,13 +1,15 @@
 import React, { useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { COMPANY, LOGO_URL } from '../data';
+import { LOGO_URL } from '../data';
+import { useSiteContent } from '../content';
 import { ArrowRight, ArrowDown, ShieldCheck, Globe } from 'lucide-react';
 import { LumenXMark } from './ui/lumenx-mark';
 import { HeroSlideshow } from './HeroSlideshow';
 
 
 export const HeroSection: React.FC = () => {
+  const { hero, company } = useSiteContent();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start start', 'end start'] });
   const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
@@ -121,30 +123,29 @@ export const HeroSection: React.FC = () => {
             {/* Location badge */}
             <div className="flex items-center gap-3 mb-8">
               <span className="w-6 h-px bg-primary/30" />
-              <span className="text-[10px] font-mono text-primary/70 tracking-[0.3em] uppercase">South Africa — Nationwide</span>
+              <span className="text-[10px] font-mono text-primary/70 tracking-[0.3em] uppercase">{hero.badge}</span>
             </div>
 
             {/* Headline — smaller and lighter than before, no comma */}
             <h1 className="font-display text-[clamp(1.9rem,4.2vw,3.4rem)] font-extrabold tracking-[-0.03em] leading-[1.02] text-slate-300 mb-8 drop-shadow-[0_2px_18px_rgba(6,9,15,0.8)]">
-              LIGHTING<br />
-              <span className="gradient-text">ENGINEERED</span><br />
-              FOR REAL PROJECTS
+              {hero.headlineLead}<br />
+              <span className="gradient-text">{hero.headlineAccent}</span><br />
+              {hero.headlineTail}
             </h1>
 
             {/* Supporting sentence — within easy reading width */}
             <p className="text-base sm:text-lg text-slate-400 max-w-xl leading-relaxed mb-4 font-sans font-light">
-              {COMPANY.intro}
+              {company.intro}
             </p>
 
             {/* Service tag strip — X marks as separators */}
             <p className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-[11px] font-mono text-slate-500 tracking-[0.15em] uppercase mb-10">
-              Specification
-              <LumenXMark className="w-2 h-2 text-primary/50" />
-              Value Engineering
-              <LumenXMark className="w-2 h-2 text-primary/50" />
-              Supply
-              <LumenXMark className="w-2 h-2 text-primary/50" />
-              Project Coordination and Completion
+              {hero.serviceTags.map((tag, i) => (
+                <React.Fragment key={tag}>
+                  {i > 0 && <LumenXMark className="w-2 h-2 text-primary/50" />}
+                  {tag}
+                </React.Fragment>
+              ))}
             </p>
 
             {/* CTAs — unified button system */}
@@ -154,7 +155,7 @@ export const HeroSection: React.FC = () => {
                 className="btn btn-primary group no-underline"
               >
                 <span className="flex items-center gap-2">
-                  Submit your lighting requirement
+                  {hero.primaryCta}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
                 </span>
               </Link>
@@ -162,7 +163,7 @@ export const HeroSection: React.FC = () => {
                 to="/products"
                 className="btn btn-outline group no-underline"
               >
-                Explore Products
+                {hero.secondaryCta}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
               {/* Design Tool temporarily disabled for testing.
@@ -175,20 +176,19 @@ export const HeroSection: React.FC = () => {
 
             {/* Trust strip — X marks as separators */}
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[11px] font-mono text-slate-500">
-              <span className="flex items-center gap-1.5">
-                <Globe className="w-3 h-3 text-slate-600" />
-                Nationwide Coverage
-              </span>
-              <LumenXMark className="hidden sm:inline-block w-2 h-2 text-primary/40" />
-              <span className="flex items-center gap-1.5">
-                <ShieldCheck className="w-3 h-3 text-slate-600" />
-                B-BBEE Level 2
-              </span>
-              <LumenXMark className="hidden sm:inline-block w-2 h-2 text-primary/40" />
-              <span className="flex items-center gap-1.5">
-                <ShieldCheck className="w-3 h-3 text-slate-600" />
-                SABS / IEC / OSHACT Aligned
-              </span>
+              {hero.trustItems.map((item, i) => (
+                <React.Fragment key={item}>
+                  {i > 0 && <LumenXMark className="hidden sm:inline-block w-2 h-2 text-primary/40" />}
+                  <span className="flex items-center gap-1.5">
+                    {i === 0 ? (
+                      <Globe className="w-3 h-3 text-slate-600" />
+                    ) : (
+                      <ShieldCheck className="w-3 h-3 text-slate-600" />
+                    )}
+                    {item}
+                  </span>
+                </React.Fragment>
+              ))}
             </div>
           </motion.div>
         </div>

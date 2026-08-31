@@ -1,11 +1,12 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { COMPLIANCE_ITEMS } from '../data';
+import { useSiteContent } from '../content';
 import { ShieldCheck, Factory } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 import { LumenXWordmark } from './ui/lumenx-wordmark';
 
 export const ComplianceSection: React.FC = () => {
+  const { compliance, complianceItems } = useSiteContent();
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -24,10 +25,10 @@ export const ComplianceSection: React.FC = () => {
         >
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-px bg-primary/40" />
-            <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">Compliance & Technical Assurance</span>
+            <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">{compliance.label}</span>
           </div>
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-[-0.02em] mb-4">
-            Standards and <span className="gradient-text">quality</span> you can rely on
+            {compliance.heading.lead}<span className="gradient-text">{compliance.heading.accent}</span>{compliance.heading.tail}
           </h2>
         </motion.div>
 
@@ -39,10 +40,7 @@ export const ComplianceSection: React.FC = () => {
           className="max-w-3xl mb-16"
         >
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-sans font-light">
-            <LumenXWordmark className="h-[1.1em]" /> started with one idea: lighting projects need stronger
-            technical ownership. We're not just a product source. We work as a project partner — tying
-            together design intent, engineering, budget, compliance and site execution into one
-            accountable solution.
+            <LumenXWordmark className="h-[1.1em]" /> {compliance.about}
           </p>
         </motion.div>
 
@@ -58,12 +56,11 @@ export const ComplianceSection: React.FC = () => {
               <Factory className="w-5 h-5 text-secondary/50" />
             </div>
             <h3 className="font-display text-xl font-semibold text-white tracking-tight">
-              Brands & Manufacturing Partners
+              {compliance.partnersHeading}
             </h3>
           </div>
           <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-3xl font-sans font-light">
-            <LumenXWordmark className="h-[1em]" /> works with manufacturing and supply partners chosen
-            for performance, consistency and project fit.
+            <LumenXWordmark className="h-[1em]" /> {compliance.partnersCopy}
           </p>
         </motion.div>
 
@@ -78,11 +75,11 @@ export const ComplianceSection: React.FC = () => {
               <ShieldCheck className="w-5 h-5 text-primary/50" />
             </div>
             <h3 className="font-display text-xl font-semibold text-white tracking-tight">
-              Compliance & Quality Assurance
+              {compliance.qaHeading}
             </h3>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {COMPLIANCE_ITEMS.map((item, i) => (
+            {complianceItems.map((item, i) => (
               <div key={i} className="gradient-border-card p-5">
                 <div className="flex items-center gap-2 mb-2">
                   <ShieldCheck className="w-3.5 h-3.5 text-primary/50" />

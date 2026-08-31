@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { PRODUCT_CATEGORIES } from '../data';
+import { useSiteContent } from '../content';
 import { ArrowRight, ShieldCheck, Zap, Clock } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
 export const ProductsPage: React.FC = () => {
+  const { products } = useSiteContent();
   return (
     <div className="min-h-screen">
       {/* Products Hero */}
@@ -19,15 +21,13 @@ export const ProductsPage: React.FC = () => {
             transition={{ duration: 0.7 }}
           >
             <span className="inline-block text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4 border border-primary/20 rounded-full px-4 py-1.5 bg-primary/5">
-              Product Portfolio
+              {products.badge}
             </span>
             <h1 className="font-display text-3xl sm:text-5xl font-bold text-white mb-4 tracking-[-0.02em]">
-              Lighting <span className="gradient-text">Solutions</span>
+              {products.heading.lead}<span className="gradient-text">{products.heading.accent}</span>{products.heading.tail}
             </h1>
             <p className="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed font-sans font-light">
-              A comprehensive range of fit-for-purpose luminaires and control solutions — from architectural
-              interiors to heavy industrial environments. Every product selected for performance, compliance,
-              and long-term value.
+              {products.subcopy}
             </p>
           </motion.div>
         </div>

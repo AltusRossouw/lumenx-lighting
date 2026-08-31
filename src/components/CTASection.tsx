@@ -2,8 +2,10 @@ import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import { useSiteContent } from '../content';
 
 export const CTASection: React.FC = () => {
+  const { cta } = useSiteContent();
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -22,16 +24,16 @@ export const CTASection: React.FC = () => {
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="w-6 h-px bg-primary/30" />
-            <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">Next Step</span>
+            <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">{cta.label}</span>
             <span className="w-6 h-px bg-primary/30" />
           </div>
 
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-[-0.02em] mb-5">
-            Bring LumenX into <span className="gradient-text">the project</span>
+            {cta.heading.lead}<span className="gradient-text">{cta.heading.accent}</span>{cta.heading.tail}
           </h2>
 
           <p className="text-slate-400 max-w-xl mx-auto text-base leading-relaxed mb-12 font-sans font-light">
-            Send your drawings, BOQ, spec or brief — we'll review it and advise on the next step.
+            {cta.subcopy}
           </p>
 
           {/* CTA buttons — unified button system */}
@@ -41,7 +43,7 @@ export const CTASection: React.FC = () => {
               className="btn btn-primary group no-underline"
             >
               <span className="flex items-center gap-2">
-                Submit your lighting requirement
+                {cta.button}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
               </span>
             </Link>

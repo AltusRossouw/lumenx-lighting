@@ -4,8 +4,10 @@ import { CompleteSolutionSection } from './CompleteSolutionSection';
 import { HowWeWorkSection } from './HowWeWorkSection';
 import { CTASection } from './CTASection';
 import { PageHeroBackground } from './animations';
+import { useSiteContent } from '../content';
 
 export const ServicesPage: React.FC = () => {
+  const { services } = useSiteContent();
   return (
     <div className="pt-[104px]">
       {/* Page title */}
@@ -19,10 +21,10 @@ export const ServicesPage: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-[-0.02em] mb-4">
-              One technical partner <span className="gradient-text">the complete lighting project</span>
+              {services.heading.lead}<span className="gradient-text">{services.heading.accent}</span>{services.heading.tail}
             </h1>
             <p className="text-slate-400 max-w-2xl text-base leading-relaxed font-sans font-light">
-              Design, specification, value engineering, supply and coordination — one team, from first drawing to site.
+              {services.subcopy}
             </p>
           </motion.div>
         </div>

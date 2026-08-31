@@ -2,6 +2,8 @@
 // through Vite in development. Cookies are sent automatically so the session
 // cookie keeps auth state.
 
+import type { SiteContent } from '../content';
+
 export interface ApiError extends Error {
   status?: number;
 }
@@ -125,6 +127,21 @@ export const api = {
       '/api/admin/downloads/stats',
     ),
   adminLeads: () => request<{ leads: Lead[] }>('/api/admin/leads'),
+
+  // Site content (CMS)
+  content: () => request<{ content: SiteContent | null }>('/api/content'),
+  adminContent: () =>
+    request<{
+      content: SiteContent | null;
+      updated_at: string | null;
+      updated_by: string | null;
+      revisions: { id: string; created_at: string; created_by: string | null }[];
+    }>('/api/admin/content'),
+  saveContent: (content: SiteContent) =>
+    request<{ ok: boolean; updated_at: string; updated_by: string }>('/api/admin/content', {
+      method: 'PUT',
+      body: JSON.stringify(content),
+    }),
 
   // Contact form
   contact: (payload: Record<string, unknown>) =>

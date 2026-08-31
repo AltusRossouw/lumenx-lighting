@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { COMPLETE_SOLUTION } from '../data';
+import { useSiteContent } from '../content';
 import { ArrowRight } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
 export const CompleteSolutionSection: React.FC = () => {
+  const { solution, completeSolution } = useSiteContent();
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
@@ -23,11 +24,11 @@ export const CompleteSolutionSection: React.FC = () => {
           className="mb-20 text-center"
         >
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-[-0.02em] mb-5">
-            One team manages the whole lighting project<br className="hidden sm:block" />
-            from design through to delivery.
+            {solution.headingTop}<br className="hidden sm:block" />
+            {solution.headingBottom}
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-base leading-relaxed font-sans font-light">
-            Design, specification, value engineering, supply and coordination — one accountable team, from first drawing to site.
+            {solution.subcopy}
           </p>
         </motion.div>
 
@@ -43,7 +44,7 @@ export const CompleteSolutionSection: React.FC = () => {
 
           {/* Step markers */}
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-0">
-            {COMPLETE_SOLUTION.map((cap, i) => (
+            {completeSolution.map((cap, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -64,7 +65,7 @@ export const CompleteSolutionSection: React.FC = () => {
                 </div>
 
                 {/* Arrow connector between steps on mobile */}
-                {i < COMPLETE_SOLUTION.length - 1 && (
+                {i < completeSolution.length - 1 && (
                   <div className="lg:hidden flex justify-center mb-2">
                     <ArrowRight className="w-4 h-4 text-slate-600 rotate-90" />
                   </div>

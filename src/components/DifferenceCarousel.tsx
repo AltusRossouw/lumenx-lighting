@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { WHY_CHOOSE } from '../data';
+import { useSiteContent } from '../content';
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 
 const AUTO_ADVANCE_MS = 5000;
@@ -11,10 +11,11 @@ const AUTO_ADVANCE_MS = 5000;
  * at a time with manual controls and auto-advance.
  */
 export const DifferenceCarousel: React.FC = () => {
+  const { whyChoose } = useSiteContent();
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const timerRef = useRef<number | null>(null);
-  const count = WHY_CHOOSE.length;
+  const count = whyChoose.length;
 
   const goTo = useCallback((i: number) => setIndex(((i % count) + count) % count), [count]);
   const next = useCallback(() => setIndex((i) => (i + 1) % count), [count]);
@@ -30,7 +31,7 @@ export const DifferenceCarousel: React.FC = () => {
     };
   }, [paused, count, index]);
 
-  const active = WHY_CHOOSE[index];
+  const active = whyChoose[index];
 
   return (
     <section
@@ -106,7 +107,7 @@ export const DifferenceCarousel: React.FC = () => {
 
         {/* Dots */}
         <div className="flex items-center gap-2 mt-8">
-          {WHY_CHOOSE.map((reason, i) => (
+          {whyChoose.map((reason, i) => (
             <button
               key={reason.title}
               type="button"

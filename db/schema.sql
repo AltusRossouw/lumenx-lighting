@@ -68,6 +68,25 @@ CREATE TABLE IF NOT EXISTS contact_requests (
   created_at       TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
+-- Editable site copy ("Content" tab in /admin). A single-row JSONB document
+-- holds the live copy; every save snapshots the previous document into
+-- content_revisions so a mistake is one click from being undone.
+CREATE TABLE IF NOT EXISTS site_content (
+  id         INT PRIMARY KEY DEFAULT 1,
+  data       JSONB NOT NULL DEFAULT '{}'::jsonb,
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_by TEXT
+);
+
+CREATE TABLE IF NOT EXISTS content_revisions (
+  id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  data       JSONB NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  created_by TEXT
+);
+
+CREATE INDEX IF NOT EXISTS content_revisions_created_idx ON content_revisions (created_at DESC);
+
 CREATE INDEX IF NOT EXISTS users_email_idx            ON users (email);
 CREATE INDEX IF NOT EXISTS design_exports_email_idx   ON design_exports (email);
 CREATE INDEX IF NOT EXISTS design_exports_created_idx ON design_exports (created_at DESC);

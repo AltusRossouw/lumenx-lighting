@@ -1,5 +1,6 @@
 import { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useParams, useLocation } from 'react-router-dom';
+import { useSiteContent, loadSiteContent } from './content';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { HomePage } from './components/HomePage';
@@ -51,28 +52,30 @@ function ScrollToHash() {
 }
 
 /** Set per-route <title> and meta description (the SPA ships one static index). */
-const SEO_MAP: { match: RegExp; title: string; description?: string }[] = [
-  {
-    match: /^\/$/,
-    title: 'LumenX Lighting — Engineered for Real Projects | Industrial & Commercial LED Solutions',
-    description: 'LumenX delivers intelligent LED lighting solutions for retail, commercial, and industrial projects across South Africa.',
-  },
-  { match: /^\/the-solution(\/|$)/, title: 'The Solution — LumenX Lighting', description: 'Design, specification, value engineering, supply and project coordination — one accountable team.' },
-  { match: /^\/products\/[^/]+\/[^/]+$/, title: 'Product Details — LumenX Lighting' },
-  { match: /^\/products\/[^/]+$/, title: 'Product Range — LumenX Lighting' },
-  { match: /^\/products(\/|$)/, title: 'Products — LumenX Lighting', description: 'Explore the LumenX LED lighting catalogue — bulkheads, downlights, floodlights, highbays, linears, panels and more.' },
-  { match: /^\/projects(\/|$)/, title: 'Projects — LumenX Lighting' },
-  { match: /^\/resources(\/|$)/, title: 'Technical Resources — LumenX Lighting' },
-  { match: /^\/design-tool(\/|$)/, title: 'Lighting Design Tool — LumenX Lighting' },
-  { match: /^\/ies(\/|$)/, title: 'IES Downloads — LumenX Lighting' },
-  { match: /^\/planner(\/|$)/, title: 'Lighting Planner — LumenX Lighting' },
-  { match: /^\/about(\/|$)/, title: 'About — LumenX Lighting' },
-  { match: /^\/contact(\/|$)/, title: 'Contact — LumenX Lighting' },
-  { match: /^\/privacy(\/|$)/, title: 'Privacy Policy — LumenX Lighting' },
-];
-
 function SeoManager() {
+  const { seo } = useSiteContent();
   const { pathname } = useLocation();
+
+  const SEO_MAP: { match: RegExp; title: string; description?: string }[] = [
+    {
+      match: /^\/$/,
+      title: seo.homeTitle,
+      description: seo.homeDescription,
+    },
+    { match: /^\/the-solution(\/|$)/, title: seo.solutionTitle, description: seo.solutionDescription },
+    { match: /^\/products\/[^/]+\/[^/]+$/, title: 'Product Details — LumenX Lighting' },
+    { match: /^\/products\/[^/]+$/, title: 'Product Range — LumenX Lighting' },
+    { match: /^\/products(\/|$)/, title: seo.productsTitle, description: seo.productsDescription },
+    { match: /^\/projects(\/|$)/, title: 'Projects — LumenX Lighting' },
+    { match: /^\/resources(\/|$)/, title: 'Technical Resources — LumenX Lighting' },
+    { match: /^\/design-tool(\/|$)/, title: 'Lighting Design Tool — LumenX Lighting' },
+    { match: /^\/ies(\/|$)/, title: 'IES Downloads — LumenX Lighting' },
+    { match: /^\/planner(\/|$)/, title: 'Lighting Planner — LumenX Lighting' },
+    { match: /^\/about(\/|$)/, title: 'About — LumenX Lighting' },
+    { match: /^\/contact(\/|$)/, title: 'Contact — LumenX Lighting' },
+    { match: /^\/privacy(\/|$)/, title: 'Privacy Policy — LumenX Lighting' },
+  ];
+
   useEffect(() => {
     const entry = SEO_MAP.find((e) => e.match.test(pathname));
     if (!entry) return;
@@ -86,7 +89,7 @@ function SeoManager() {
       }
       tag.setAttribute('content', entry.description);
     }
-  }, [pathname]);
+  }, [pathname, seo]);
   return null;
 }
 
@@ -114,6 +117,12 @@ function ProductPageWrapper() {
 
 function AppLayout() {
   const location = useLocation();
+  const { complianceBar } = useSiteContent();
+
+  useEffect(() => {
+    loadSiteContent();
+  }, []);
+
   // The OrbitX planner is a full-screen tool with its own header/chrome.
   const isFullscreenTool = location.pathname.startsWith('/planner');
 
@@ -168,7 +177,7 @@ function AppLayout() {
       {!isFullscreenTool && (
         <div className="bg-[#080B10] border-t border-[#1E293B]/60 text-slate-500 text-[10px] font-mono py-2.5 px-4 flex items-center justify-center space-x-2 shrink-0">
           <ShieldCheck className="w-3.5 h-3.5 text-primary mr-1" />
-          <span>SANS 10114 & SABS Sourcing Compliance Certified</span>
+          <span>{complianceBar.text}</span>
           <LumenXMark className="hidden sm:inline-block w-2 h-2" />
           <span className="hidden sm:inline">B-BBEE Level 2</span>
         </div>

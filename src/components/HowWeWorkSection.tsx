@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { PROCESS_STEPS } from '../data';
+import { useSiteContent } from '../content';
 import { ArrowRight } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
 export const HowWeWorkSection: React.FC = () => {
+  const { process, processSteps } = useSiteContent();
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
@@ -23,19 +24,19 @@ export const HowWeWorkSection: React.FC = () => {
         >
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-px bg-primary/40" />
-            <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">How We Manage Your Lighting Project</span>
+            <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">{process.label}</span>
           </div>
           <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-[-0.02em] mb-4">
-            A clear process from <span className="gradient-text">brief to delivery</span>
+            {process.heading.lead}<span className="gradient-text">{process.heading.accent}</span>{process.heading.tail}
           </h2>
           <p className="text-slate-400 max-w-xl text-base leading-relaxed font-sans font-light">
-            A clear process means fewer surprises. Here's what working with us looks like.
+            {process.subcopy}
           </p>
         </motion.div>
 
         {/* Numbered steps */}
         <div className="space-y-0">
-          {PROCESS_STEPS.map((step, i) => (
+          {processSteps.map((step, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, x: -10 }}

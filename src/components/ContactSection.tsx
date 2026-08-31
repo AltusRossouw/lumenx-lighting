@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { api } from '../lib/api';
-import { CONTACT, MANAGING_DIRECTOR } from '../data';
+import { MANAGING_DIRECTOR } from '../data';
+import { useSiteContent } from '../content';
 import { Mail, Phone, MapPin, Send, User, AtSign, Building2, FileText } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 import { LumenXWordmark } from './ui/lumenx-wordmark';
 
 export const ContactSection: React.FC = () => {
+  const { contact } = useSiteContent();
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -53,7 +55,7 @@ export const ContactSection: React.FC = () => {
 
   const update = (field: string, value: string) => setFormData((p) => ({ ...p, [field]: value }));
 
-  const whatsappLink = `https://wa.me/${CONTACT.phone.replace(/[\s\+]/g, '')}?text=${encodeURIComponent('Hi LumenX, I would like to discuss a lighting project.')}`;
+  const whatsappLink = `https://wa.me/${contact.phone.replace(/[\s\+]/g, '')}?text=${encodeURIComponent('Hi LumenX, I would like to discuss a lighting project.')}`;
 
   const projectTypes = ['Commercial', 'Industrial', 'Retail', 'Hospitality', 'Education', 'Healthcare', 'Government', 'Other'];
   const projectStages = ['Concept / Design', 'Tender / Specification', 'Value Engineering', 'Procurement', 'Installation', 'Other'];
@@ -186,8 +188,8 @@ export const ContactSection: React.FC = () => {
                 {/* File upload hint */}
                 <p className="text-[10px] font-mono text-slate-600">
                   Need to attach drawings, a BOQ, or a spec? Email them to{' '}
-                  <a href={`mailto:${CONTACT.projectsEmail || CONTACT.email}`} className="text-primary/60 hover:text-primary transition-colors">
-                    {CONTACT.projectsEmail || CONTACT.email}
+                  <a href={`mailto:${contact.projectsEmail || contact.email}`} className="text-primary/60 hover:text-primary transition-colors">
+                    {contact.projectsEmail || contact.email}
                   </a>
                   , or submit below and our team will reply with next steps.
                 </p>
@@ -239,7 +241,7 @@ export const ContactSection: React.FC = () => {
             {/* Quick Contact Cards */}
             <div className="p-6 rounded-2xl bg-gradient-to-b from-[#0F141C] to-[#0A0D14] border border-[#1E293B] space-y-4">
               <a
-                href={`mailto:${CONTACT.email}`}
+                href={`mailto:${contact.email}`}
                 className="group flex items-center gap-3 p-3 rounded-xl bg-[#0A0D14] border border-[#1E293B] hover:border-primary/20 transition-all duration-300 no-underline"
               >
                 <div className="w-9 h-9 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
@@ -247,12 +249,12 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <div className="min-w-0">
                   <p className="text-[10px] text-slate-500 font-mono uppercase tracking-wider">Email</p>
-                  <p className="text-xs text-white truncate group-hover:text-primary transition-colors font-sans">{CONTACT.email}</p>
+                  <p className="text-xs text-white truncate group-hover:text-primary transition-colors font-sans">{contact.email}</p>
                 </div>
               </a>
 
               <a
-                href={`tel:${CONTACT.phone.replace(/\s/g, '')}`}
+                href={`tel:${contact.phone.replace(/\s/g, '')}`}
                 className="group flex items-center gap-3 p-3 rounded-xl bg-[#0A0D14] border border-[#1E293B] hover:border-primary/20 transition-all duration-300 no-underline"
               >
                 <div className="w-9 h-9 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
@@ -260,7 +262,7 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-[10px] text-slate-500 font-mono uppercase tracking-wider">Phone</p>
-                  <p className="text-xs text-white group-hover:text-primary transition-colors font-sans">{CONTACT.phone}</p>
+                  <p className="text-xs text-white group-hover:text-primary transition-colors font-sans">{contact.phone}</p>
                 </div>
               </a>
 
@@ -323,7 +325,7 @@ export const ContactSection: React.FC = () => {
             {/* Brand */}
             <div className="text-center p-4 rounded-2xl bg-gradient-to-b from-[#0F141C] to-[#0A0D14] border border-[#1E293B]">
               <LumenXWordmark className="h-9 mx-auto" />
-              <p className="text-[10px] text-slate-500 font-mono tracking-widest mt-2">{CONTACT.tagline}</p>
+              <p className="text-[10px] text-slate-500 font-mono tracking-widest mt-2">{contact.tagline}</p>
             </div>
           </motion.div>
         </div>

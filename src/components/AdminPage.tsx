@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { api, AdminUser, DownloadRecord, DownloadStats, Lead } from '../lib/api';
 import { PageHeroBackground } from './animations';
+import { ContentEditor } from './ContentEditor';
 import {
   AtSign,
   FileDown,
+  FileText,
   Inbox,
   Loader2,
   Lock,
@@ -17,7 +19,7 @@ import {
 
 type AuthState = 'loading' | 'login' | 'authenticated';
 type Filter = 'all' | 'admins';
-type Tab = 'users' | 'downloads' | 'leads';
+type Tab = 'users' | 'downloads' | 'leads' | 'content';
 
 export const AdminPage: React.FC = () => {
   const [authState, setAuthState] = useState<AuthState>('loading');
@@ -223,6 +225,7 @@ export const AdminPage: React.FC = () => {
                     { id: 'users', label: 'Users', icon: Users },
                     { id: 'leads', label: 'Leads', icon: Inbox },
                     { id: 'downloads', label: 'Downloads', icon: FileDown },
+                    { id: 'content', label: 'Content', icon: FileText },
                   ] as { id: Tab; label: string; icon: React.ComponentType<{ className?: string }> }[]
                 ).map((t) => {
                   const Icon = t.icon;
@@ -394,6 +397,8 @@ export const AdminPage: React.FC = () => {
                     )}
                   </div>
                 </>
+              ) : tab === 'content' ? (
+                <ContentEditor />
               ) : (
                 <>
                   {/* Leads */}

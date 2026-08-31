@@ -1,11 +1,12 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'motion/react';
-import { FAQS } from '../data';
+import { useSiteContent } from '../content';
 import { ChevronDown } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 import { renderWithLogo } from './ui/lumenx-wordmark';
 
 export const FAQSection: React.FC = () => {
+  const { faqs, faqItems } = useSiteContent();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -26,16 +27,16 @@ export const FAQSection: React.FC = () => {
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="w-6 h-px bg-primary/30" />
-            <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">Frequently Asked Questions</span>
+            <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">{faqs.label}</span>
             <span className="w-6 h-px bg-primary/30" />
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-[-0.02em]">
-            Common questions <span className="gradient-text">answered</span>
+            {faqs.heading.lead}<span className="gradient-text">{faqs.heading.accent}</span>{faqs.heading.tail}
           </h2>
         </motion.div>
 
         <div className="space-y-3" ref={ref}>
-          {FAQS.map((faq, i) => (
+          {faqItems.map((faq, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 10 }}

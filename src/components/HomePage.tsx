@@ -6,14 +6,8 @@ import { DifferenceCarousel } from './DifferenceCarousel';
 import { CTASection } from './CTASection';
 import { AccreditationBar } from './AccreditationBar';
 import { LumenXMark } from './ui/lumenx-mark';
-import {
-  COMPLETE_SOLUTION,
-  FEATURED_PROJECTS,
-  PROCESS_STEPS,
-  PRODUCT_CATEGORIES,
-  AUDIENCE_PROFILES,
-  INDUSTRIES,
-} from '../data';
+import { FEATURED_PROJECTS, PRODUCT_CATEGORIES } from '../data';
+import { useSiteContent } from '../content';
 import {
   ArrowRight,
   Building2,
@@ -73,39 +67,46 @@ const TeaserLink: React.FC<{ to: string; label: string }> = ({ to, label }) => {
 };
 
 /* ── 1 · The Solution teaser ── */
-const SolutionTeaser: React.FC = () => (
-  <Teaser
-    id="solution"
-    title={<>One partner <span className="gradient-text">the complete project</span></>}
-    copy="Design, specification, supply and coordination — one team from first drawing to handover."
-  >
-    <div className="flex flex-wrap gap-3">
-      {COMPLETE_SOLUTION.map((cap) => (
-        <span
-          key={cap.title}
-          className="inline-flex items-center gap-3 px-5 py-3 border border-[#1E293B]/70 bg-[#0A0F17] hover:border-primary/40 hover:bg-primary/[0.03] transition-colors duration-300"
-        >
-          <img
-            src={cap.heroIcon}
-            alt=""
-            className="w-9 h-9 object-contain drop-shadow-[0_0_12px_rgba(0,212,255,0.35)]"
-          />
-          <span className="font-display text-sm font-semibold text-slate-200">{cap.title}</span>
-        </span>
-      ))}
-    </div>
-    <TeaserLink to="/the-solution" label="See how the complete solution works" />
-  </Teaser>
-);
+const SolutionTeaser: React.FC = () => {
+  const { home, completeSolution } = useSiteContent();
+  const t = home.solution;
+  return (
+    <Teaser
+      id="solution"
+      title={<>{t.title.lead}<span className="gradient-text">{t.title.accent}</span>{t.title.tail}</>}
+      copy={t.copy}
+    >
+      <div className="flex flex-wrap gap-3">
+        {completeSolution.map((cap) => (
+          <span
+            key={cap.title}
+            className="inline-flex items-center gap-3 px-5 py-3 border border-[#1E293B]/70 bg-[#0A0F17] hover:border-primary/40 hover:bg-primary/[0.03] transition-colors duration-300"
+          >
+            <img
+              src={cap.heroIcon}
+              alt=""
+              className="w-9 h-9 object-contain drop-shadow-[0_0_12px_rgba(0,212,255,0.35)]"
+            />
+            <span className="font-display text-sm font-semibold text-slate-200">{cap.title}</span>
+          </span>
+        ))}
+      </div>
+      <TeaserLink to="/the-solution" label={t.link} />
+    </Teaser>
+  );
+};
 
 /* ── 2 · Featured Projects teaser ── */
-const ProjectsTeaser: React.FC = () => (
-  <Teaser
-    id="projects"
-    label="Featured Projects"
-    title={<>Technical proof <span className="gradient-text">not promises</span></>}
-    copy="Commercial and industrial lighting projects we've delivered, end to end."
-  >
+const ProjectsTeaser: React.FC = () => {
+  const { home } = useSiteContent();
+  const t = home.projects;
+  return (
+    <Teaser
+      id="projects"
+      label={t.label}
+      title={<>{t.title.lead}<span className="gradient-text">{t.title.accent}</span>{t.title.tail}</>}
+      copy={t.copy}
+    >
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {FEATURED_PROJECTS.map((p) => (
         <div key={p.name} className="gradient-border-card card-lift overflow-hidden group">
@@ -142,70 +143,76 @@ const ProjectsTeaser: React.FC = () => (
         </div>
       ))}
     </div>
-    <TeaserLink to="/projects" label="View featured projects" />
+    <TeaserLink to="/projects" label={t.link} />
   </Teaser>
-);
+  );
+};
 
 /* ── 3 · Technical Proof teaser ── */
-const TechnicalProofTeaser: React.FC = () => (
-  <Teaser
-    id="technical-proof"
-    label="Technical Proof"
-    title={<>Documentation <span className="gradient-text">standards and warranties</span></>}
-    copy="Specs backed by data, simulations and compliance docs."
-  >
-    <div className="border border-[#1E293B] bg-[#0A0F17] p-6 flex flex-wrap items-center gap-x-8 gap-y-3">
-      {[
-        'SABS / IEC / OSHACT aligned',
-        'B-BBEE Level 2',
-        'Manufacturer-backed warranties',
-        'Lighting simulations & calculations',
-      ].map((item) => (
-        <span key={item} className="flex items-center gap-2.5">
-          <CheckCircle className="w-4 h-4 text-primary/60" />
-          <span className="text-xs font-mono text-slate-400 uppercase tracking-[0.15em]">{item}</span>
-        </span>
-      ))}
-    </div>
-    <TeaserLink to="/resources" label="Download technical documentation" />
-  </Teaser>
-);
+const TechnicalProofTeaser: React.FC = () => {
+  const { home } = useSiteContent();
+  const t = home.technicalProof;
+  return (
+    <Teaser
+      id="technical-proof"
+      label={t.label}
+      title={<>{t.title.lead}<span className="gradient-text">{t.title.accent}</span>{t.title.tail}</>}
+      copy={t.copy}
+    >
+      <div className="border border-[#1E293B] bg-[#0A0F17] p-6 flex flex-wrap items-center gap-x-8 gap-y-3">
+        {t.bullets.map((item) => (
+          <span key={item} className="flex items-center gap-2.5">
+            <CheckCircle className="w-4 h-4 text-primary/60" />
+            <span className="text-xs font-mono text-slate-400 uppercase tracking-[0.15em]">{item}</span>
+          </span>
+        ))}
+      </div>
+      <TeaserLink to="/resources" label={t.link} />
+    </Teaser>
+  );
+};
 
 /* ── 4 · How It Works teaser ── */
-const ProcessTeaser: React.FC = () => (
-  <Teaser
-    id="how-it-works"
-    label="How It Works"
-    title={<>A clear process <span className="gradient-text">brief to delivery</span></>}
-    copy="Six steps, brief to delivery."
-  >
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-10">
-      {PROCESS_STEPS.map((step) => (
-        <div key={step.number}>
-          <span className="font-display text-5xl sm:text-6xl font-extrabold gradient-text leading-none">
-            {step.number}
-          </span>
-          <img
-            src={step.iconImg}
-            alt=""
-            className="w-8 h-8 object-contain mt-3 drop-shadow-[0_0_10px_rgba(0,212,255,0.3)]"
-          />
-          <h3 className="font-display text-sm font-bold text-white mt-2 tracking-tight">{step.title}</h3>
-        </div>
-      ))}
-    </div>
-    <TeaserLink to="/the-solution" label="Explore the full process" />
-  </Teaser>
-);
+const ProcessTeaser: React.FC = () => {
+  const { home, processSteps } = useSiteContent();
+  const t = home.process;
+  return (
+    <Teaser
+      id="how-it-works"
+      label={t.label}
+      title={<>{t.title.lead}<span className="gradient-text">{t.title.accent}</span>{t.title.tail}</>}
+      copy={t.copy}
+    >
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-10">
+        {processSteps.map((step) => (
+          <div key={step.number}>
+            <span className="font-display text-5xl sm:text-6xl font-extrabold gradient-text leading-none">
+              {step.number}
+            </span>
+            <img
+              src={step.iconImg}
+              alt=""
+              className="w-8 h-8 object-contain mt-3 drop-shadow-[0_0_10px_rgba(0,212,255,0.3)]"
+            />
+            <h3 className="font-display text-sm font-bold text-white mt-2 tracking-tight">{step.title}</h3>
+          </div>
+        ))}
+      </div>
+      <TeaserLink to="/the-solution" label={t.link} />
+    </Teaser>
+  );
+};
 
 /* ── 5 · Product Categories teaser ── */
 const CategoriesTeaser: React.FC = () => {
+  const { home } = useSiteContent();
+  const t = home.categories;
   return (
     <Teaser
       id="product-categories"
-      label="Product Categories"
-      title={<>Lighting selected around <span className="gradient-text">the application</span></>}
-      copy="Commercial, industrial, outdoor, emergency and smart lighting ranges."
+      label={t.label}
+      title={<>{t.title.lead}<span className="gradient-text">{t.title.accent}</span>{t.title.tail}</>}
+      copy={t.copy}
     >
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {PRODUCT_CATEGORIES.map((c) => (
@@ -229,52 +236,56 @@ const CategoriesTeaser: React.FC = () => {
           </Link>
         ))}
       </div>
-      <TeaserLink to="/products" label="Browse all products" />
+      <TeaserLink to="/products" label={t.link} />
     </Teaser>
   );
 };
 
 /* ── 6 · Who It's For teaser ── */
-const WhoItsForTeaser: React.FC = () => (
-  <Teaser
-    id="who-its-for"
-    label="Who It's For"
-    title={<>Built for the teams <span className="gradient-text">delivering projects</span></>}
-    copy="Engineers, contractors, architects, developers and procurement teams."
-  >
-    <div className="flex flex-wrap gap-3 mb-10">
-      {AUDIENCE_PROFILES.map((a) => (
-        <span
-          key={a.title}
-          className="inline-flex items-center gap-3 px-5 py-3 border border-[#1E293B]/70 bg-[#0A0F17]"
-        >
-          <img
-            src={a.iconImg}
-            alt=""
-            className="w-8 h-8 object-contain drop-shadow-[0_0_10px_rgba(0,212,255,0.35)]"
-          />
-          <span className="font-display text-sm font-bold text-white">{a.title}</span>
-        </span>
-      ))}
-    </div>
-    <div className="flex flex-wrap items-center gap-x-4 gap-y-2.5">
-      {INDUSTRIES.map((sector, i) => (
-        <React.Fragment key={sector.name}>
-          {i > 0 && <LumenXMark className="w-2 h-2 text-primary/40" />}
-          <span className="inline-flex items-center gap-2">
+const WhoItsForTeaser: React.FC = () => {
+  const { home, audienceProfiles, industries } = useSiteContent();
+  const t = home.who;
+  return (
+    <Teaser
+      id="who-its-for"
+      label={t.label}
+      title={<>{t.title.lead}<span className="gradient-text">{t.title.accent}</span>{t.title.tail}</>}
+      copy={t.copy}
+    >
+      <div className="flex flex-wrap gap-3 mb-10">
+        {audienceProfiles.map((a) => (
+          <span
+            key={a.title}
+            className="inline-flex items-center gap-3 px-5 py-3 border border-[#1E293B]/70 bg-[#0A0F17]"
+          >
             <img
-              src={sector.iconImg}
+              src={a.iconImg}
               alt=""
-              className="w-7 h-7 object-contain drop-shadow-[0_0_10px_rgba(0,212,255,0.3)]"
+              className="w-8 h-8 object-contain drop-shadow-[0_0_10px_rgba(0,212,255,0.35)]"
             />
-            <span className="text-sm font-semibold text-slate-300 font-display">{sector.name}</span>
+            <span className="font-display text-sm font-bold text-white">{a.title}</span>
           </span>
-        </React.Fragment>
-      ))}
-    </div>
-    <TeaserLink to="/about" label="More about who we work with" />
-  </Teaser>
-);
+        ))}
+      </div>
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2.5">
+        {industries.map((sector, i) => (
+          <React.Fragment key={sector.name}>
+            {i > 0 && <LumenXMark className="w-2 h-2 text-primary/40" />}
+            <span className="inline-flex items-center gap-2">
+              <img
+                src={sector.iconImg}
+                alt=""
+                className="w-7 h-7 object-contain drop-shadow-[0_0_10px_rgba(0,212,255,0.3)]"
+              />
+              <span className="text-sm font-semibold text-slate-300 font-display">{sector.name}</span>
+            </span>
+          </React.Fragment>
+        ))}
+      </div>
+      <TeaserLink to="/about" label={t.link} />
+    </Teaser>
+  );
+};
 
 export const HomePage: React.FC = () => {
   return (

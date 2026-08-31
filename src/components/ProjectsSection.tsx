@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
 import { FEATURED_PROJECTS, INSTALLATION_IMAGES } from '../data';
+import { useSiteContent } from '../content';
 import { Building2, MapPin, CheckCircle, Image as ImageIcon } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
@@ -73,6 +74,7 @@ const CaseStudyCard: React.FC<{ project: (typeof FEATURED_PROJECTS)[number]; ind
 );
 
 export const ProjectsSection: React.FC = () => {
+  const { projects } = useSiteContent();
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
@@ -90,14 +92,13 @@ export const ProjectsSection: React.FC = () => {
         >
           <div className="flex items-center gap-3 mb-4">
             <span className="w-8 h-px bg-primary/40" />
-            <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">Featured Projects</span>
+            <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">{projects.label}</span>
           </div>
           <h1 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-[-0.02em] mb-4">
-            Technical proof <span className="gradient-text">not promises</span>
+            {projects.heading.lead}<span className="gradient-text">{projects.heading.accent}</span>{projects.heading.tail}
           </h1>
           <p className="text-slate-400 max-w-xl text-base leading-relaxed font-sans font-light">
-            Every project is supported by lighting design, specification discipline, compliance
-            documentation and coordinated delivery.
+            {projects.subcopy}
           </p>
         </motion.div>
 

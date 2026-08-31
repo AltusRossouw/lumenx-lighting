@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CONTACT, LOGO_URL } from '../data';
+import { LOGO_URL } from '../data';
+import { useSiteContent } from '../content';
 import { Mail, Phone, Globe, ArrowUp } from 'lucide-react';
 
 export const Footer: React.FC = () => {
+  const { contact } = useSiteContent();
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
@@ -34,7 +36,7 @@ export const Footer: React.FC = () => {
               />
             </div>
             <p className="text-xs text-[#64748B] leading-relaxed max-w-sm font-sans font-light">
-              {CONTACT.tagline}. Technically driven lighting solutions serving retail, commercial, and industrial projects across South Africa.
+              {contact.tagline}. {contact.footerBlurb}
             </p>
           </div>
 
@@ -58,15 +60,15 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3 text-xs">
               <li className="flex items-center gap-3">
                 <Mail className="w-3.5 h-3.5 text-[#64748B] shrink-0" />
-                <a href={`mailto:${CONTACT.email}`} className="text-[#64748B] hover:text-[#FFFFFF] transition-colors duration-200 font-sans">{CONTACT.email}</a>
+                <a href={`mailto:${contact.email}`} className="text-[#64748B] hover:text-[#FFFFFF] transition-colors duration-200 font-sans">{contact.email}</a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-3.5 h-3.5 text-[#64748B] shrink-0" />
-                <span className="text-[#64748B] font-sans">{CONTACT.phone}</span>
+                <span className="text-[#64748B] font-sans">{contact.phone}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Globe className="w-3.5 h-3.5 text-[#64748B] shrink-0" />
-                <span className="text-[#64748B] font-sans">{CONTACT.website}</span>
+                <span className="text-[#64748B] font-sans">{contact.website}</span>
               </li>
             </ul>
           </div>
