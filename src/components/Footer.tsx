@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
   const footerLinks = [
     { label: 'The Solution', path: '/the-solution' },
     { label: 'Products', path: '/products' },
-    { label: 'Design Tool', path: '/design-tool' },
+    // Design Tool temporarily disabled for testing — re-add when ready.
     // Lighting Planner temporarily disabled for testing — re-add when ready.
     { label: 'Projects', path: '/projects' },
     { label: 'Technical Resources', path: '/resources' },

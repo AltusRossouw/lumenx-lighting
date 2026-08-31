@@ -2,7 +2,7 @@ import React, { useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { COMPANY, LOGO_URL } from '../data';
-import { ArrowRight, ArrowDown, ShieldCheck, Globe, SlidersHorizontal } from 'lucide-react';
+import { ArrowRight, ArrowDown, ShieldCheck, Globe } from 'lucide-react';
 import { LumenXMark } from './ui/lumenx-mark';
 import { HeroSlideshow } from './HeroSlideshow';
 
@@ -165,13 +165,12 @@ export const HeroSection: React.FC = () => {
                 Explore Products
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
-              <Link
-                to="/design-tool"
-                className="btn btn-outline group no-underline"
-              >
-                <SlidersHorizontal className="w-4 h-4 text-slate-400 group-hover:text-primary transition-colors" />
-                Design Tool
-              </Link>
+              {/* Design Tool temporarily disabled for testing.
+                  Re-enable by re-adding:
+                  <Link to="/design-tool" className="btn btn-outline group no-underline">
+                    <SlidersHorizontal className="w-4 h-4 text-slate-400 group-hover:text-primary transition-colors" />
+                    Design Tool
+                  </Link> */}
             </div>
 
             {/* Trust strip — X marks as separators */}
