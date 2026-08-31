@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { api } from '../lib/api';
-import { DEFAULT_CONTENT, SiteContent, setSiteContent } from '../content';
+import { DEFAULT_CONTENT, mergeSiteContent, SiteContent, setSiteContent } from '../content';
 import { CONTENT_SCHEMA, FieldDef, Group } from '../content-schema';
 import { Check, Loader2, Plus, RotateCcw, Save, Trash2 } from 'lucide-react';
 
@@ -247,7 +247,7 @@ export const ContentEditor: React.FC = () => {
       try {
         const res = await api.adminContent();
         if (!active) return;
-        setDraft(res.content ? clone(res.content as SiteContent) : clone(DEFAULT_CONTENT));
+        setDraft(res.content ? clone(mergeSiteContent(res.content)) : clone(DEFAULT_CONTENT));
         setMeta({ updated_at: res.updated_at, updated_by: res.updated_by });
       } catch (err) {
         if (active) setStatus({ type: 'error', msg: (err as Error).message || 'Failed to load content.' });
