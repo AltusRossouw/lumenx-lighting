@@ -396,8 +396,8 @@ export const FAQS: FAQ[] = [
 ];
 
 export const CONTACT = {
-  email: 'kaylen@lumenx.co.za',
-  projectsEmail: 'kaylen@lumenx.co.za',
+  email: 'info@lumenx.co.za',
+  projectsEmail: 'info@lumenx.co.za',
   phone: '+27 83 499 5340',
   website: 'www.lumenx.co.za',
   tagline: 'LIGHTING ENGINEERED FOR REAL PROJECTS',

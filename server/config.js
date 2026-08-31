@@ -61,7 +61,7 @@ export const config = Object.freeze({
   // Transactional email (Resend). Notifications are skipped when no API key.
   resendApiKey: process.env.RESEND_API_KEY || '',
   resendFrom: process.env.RESEND_FROM || 'LumenX Lighting <leads@lumenx.co.za>',
-  leadNotifyEmail: process.env.LEAD_NOTIFY_EMAIL || 'kaylen@lumenx.co.za',
+  leadNotifyEmail: process.env.LEAD_NOTIFY_EMAIL || 'info@lumenx.co.za',
 
   // Rate limiting
   rateLimitWindowMs: toInt(process.env.RATE_LIMIT_WINDOW_MS, 15 * 60 * 1000),
