@@ -127,7 +127,6 @@ export const PRODUCTS: Product[] = [
     name: 'Rhea',
     category: 'bulkheads',
     supplier: 'OrbitX',
-    supplierUrl: 'https://www.orbitx.co.za/products/rhea-bulkhead',
     summary: 'Integrated surface-mount bulkhead built on OrbitX Direct Drive technology with a rust-free polycarbonate housing.',
     description:
       'The Rhea is a compact integrated LED bulkhead engineered around OrbitX Direct Drive technology — no external driver, no metal and no glass. Its 1mm extruded polycarbonate housing eliminates corrosion risk and breakage, making it a good fit for corridors, stairwells and utility areas where durability and low maintenance matter. Type A light quality (LRC, New York) gives accurate, comfortable colour rendering with immediate full-brightness switching.',
@@ -161,7 +160,6 @@ export const PRODUCTS: Product[] = [
     name: 'Phoebe',
     category: 'bulkheads',
     supplier: 'OrbitX',
-    supplierUrl: 'https://www.orbitx.co.za/products/phoebe-bulkhead',
     summary: 'IP65 integrated bulkhead for outdoor and wet locations with Type A light quality and an 8-year guarantee.',
     description:
       'The Phoebe extends the Direct Drive bulkhead family to exterior and wet environments with an IP65 rating. The same rust-free polycarbonate construction protects against corrosion and breakage, while Type A light quality maintains accurate colour and visual comfort. Suitable for entrances, under-cover walkways and exterior circulation where weather resistance is required.',
@@ -689,7 +687,6 @@ export const PRODUCTS: Product[] = [
     name: 'Flood',
     category: 'floods',
     supplier: 'OrbitX',
-    supplierUrl: 'https://www.orbitx.co.za/pdfs/OrbitX-Floodlight-small.pdf',
     summary: 'OrbitX Direct Drive floodlight for exterior area, facade and perimeter lighting.',
     description:
       "OrbitX's Direct Drive floodlight provides dependable exterior light for facades, yards and perimeter security. Built on the same driverless Direct Drive platform as the wider OrbitX range, it offers robust, weather-resistant performance with immediate full-brightness switching and a low-maintenance design.",
@@ -998,7 +995,6 @@ export const PRODUCTS: Product[] = [
     name: 'Puck Seamless',
     category: 'linears',
     supplier: 'OrbitX',
-    supplierUrl: 'https://www.orbitx.co.za/products/puck-seamless',
     summary: 'Integrated seamless linear with a <3mm end-cap line for continuous runs, in 1200mm and 2400mm.',
     description:
       "OrbitX's Puck Seamless is an integrated linear LED light with a thin (<3mm) end-cap line for a near-continuous look when mounted end-to-end. Available in 1200mm and 2400mm lengths, it pairs Direct Drive technology with Type A light quality for architectural and workspace applications.",
@@ -1029,7 +1025,6 @@ export const PRODUCTS: Product[] = [
     name: 'Puck Profile 70x36',
     category: 'linears',
     supplier: 'OrbitX',
-    supplierUrl: 'https://www.orbitx.co.za/pdfs/OrbitX-Puck-Profile-70x36-specifications.pdf',
     summary: '70×36mm Puck profile linear system for recessed, surface and suspended applications.',
     description:
       "The Puck Profile 70×36 is a versatile linear profile system from OrbitX's Puck range. Its 70×36mm profile supports a range of mounting styles, making it suitable for architectural and commercial applications where a larger, higher-output linear form is required.",
@@ -1053,7 +1048,6 @@ export const PRODUCTS: Product[] = [
     name: 'Puck Profile 40x43',
     category: 'linears',
     supplier: 'OrbitX',
-    supplierUrl: 'https://www.orbitx.co.za/pdfs/OrbitX-Puck-Profile-40x43-specifications.pdf',
     summary: '40×43mm Puck profile linear system for compact architectural runs.',
     description:
       "The Puck Profile 40×43 is a compact linear profile from OrbitX's Puck range. Its 40×43mm form suits narrower architectural details and continuous runs where a slim, discreet profile is preferred.",
@@ -1077,7 +1071,6 @@ export const PRODUCTS: Product[] = [
     name: 'Kepler',
     category: 'linears',
     supplier: 'OrbitX',
-    supplierUrl: 'https://www.orbitx.co.za/pdfs/OrbitX-Kepler-specifications.pdf',
     summary: 'OrbitX Kepler linear system for continuous architectural illumination.',
     description:
       "The Kepler is an OrbitX linear lighting system designed for continuous architectural and commercial illumination. Direct Drive technology and clean continuous-run capability make it well suited to offices, retail and workspace environments where seamless lines of light are part of the design intent.",
@@ -1739,7 +1732,6 @@ export const PRODUCTS: Product[] = [
     name: 'Neptune',
     category: 'vapourproof',
     supplier: 'OrbitX',
-    supplierUrl: 'https://www.orbitx.co.za/products/neptune',
     summary: 'IP65 integrated vapour-proof linear with 8-year operational guarantee.',
     description:
       "OrbitX's Neptune is a weather-resistant IP65 integrated linear built on Direct Drive technology. Dust, moisture and vapour proof, it is engineered for demanding environments — with a UL-94 V0 fire rating, Type A light quality and an 8-year operational guarantee.",
@@ -1771,7 +1763,6 @@ export const PRODUCTS: Product[] = [
     name: 'Titan',
     category: 'vapourproof',
     supplier: 'OrbitX',
-    supplierUrl: 'https://www.orbitx.co.za/products/titan',
     summary: 'IP65 integrated vapour-proof linear with UL-94 V0 fire safety.',
     description:
       "OrbitX's Titan is an IP65 integrated linear built for dust, moisture and vapour-proof environments. Direct Drive technology, UL-94 V0 fire safety (no flaming droplets) and Type A light quality make it a dependable choice for demanding industrial applications.",

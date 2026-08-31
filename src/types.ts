@@ -37,8 +37,6 @@ export interface Product {
   pdfUrl?: string;
   /** Local photometric (.ies) download. */
   iesUrl?: string;
-  /** External supplier product page. */
-  supplierUrl?: string;
   /** Warranty / guarantee statement. */
   warranty?: string;
 }

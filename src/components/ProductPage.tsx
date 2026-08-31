@@ -7,7 +7,6 @@ import {
   ArrowLeft,
   ArrowRight,
   Check,
-  ExternalLink,
   FileDown,
   FileText,
   ShieldCheck,
@@ -115,17 +114,6 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Link>
-                {product.supplierUrl && (
-                  <a
-                    href={product.supplierUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-outline no-underline"
-                  >
-                    <ExternalLink className="w-4 h-4 text-slate-400" />
-                    <span>View at {product.supplier}</span>
-                  </a>
-                )}
               </div>
             </motion.div>
 
