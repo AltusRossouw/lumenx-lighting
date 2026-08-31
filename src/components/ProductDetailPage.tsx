@@ -25,7 +25,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
   return (
     <div className="min-h-screen">
       {/* Category Hero */}
-      <section className="relative pt-[88px] pb-16 sm:pb-20 overflow-hidden bg-[#06090F]">
+      <section className="relative pt-[104px] pb-16 sm:pb-20 overflow-hidden bg-[#06090F]">
         <PageHeroBackground />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -69,11 +69,11 @@ export const Header: React.FC = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#06090F]/95 backdrop-blur-xl border-b border-white/[0.04]' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[88px]">
+        <div className="flex items-center justify-between h-[104px]">
           <Link to="/" className="flex items-center cursor-pointer">
             <img
               src={LOGO_URL}
-              alt="LumenX" className="h-20 w-auto object-contain"
+              alt="LumenX" className="h-24 w-auto object-contain"
               referrerPolicy="no-referrer"
             />
           </Link>
@@ -83,7 +83,7 @@ export const Header: React.FC = () => {
               <Link
                 key={item.id}
                 to={item.path}
-                className={`px-3.5 py-2 text-[13px] font-medium transition-colors duration-200 cursor-pointer font-sans ${isActive(item.path) ? 'text-white' : 'text-slate-500 hover:text-white'}`}
+                className={`px-3.5 py-2 text-[15px] font-medium transition-colors duration-200 cursor-pointer font-sans ${isActive(item.path) ? 'text-white' : 'text-slate-500 hover:text-white'}`}
               >
                 {item.label}
               </Link>

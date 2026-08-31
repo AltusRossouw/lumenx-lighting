@@ -5,7 +5,7 @@ import { PageHeroBackground } from './animations';
 
 export const NotFoundPage: React.FC = () => {
   return (
-    <div className="pt-[88px] min-h-screen">
+    <div className="pt-[104px] min-h-screen">
       <section className="relative py-24 sm:py-32 overflow-hidden bg-[#06090F]">
         <PageHeroBackground rays={false} particles={false} dots={false} />
 

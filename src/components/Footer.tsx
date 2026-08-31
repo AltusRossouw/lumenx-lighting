@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-4">
               <img
                 src={LOGO_URL}
-                alt="LumenX" className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                alt="LumenX" className="h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
                 referrerPolicy="no-referrer"
               />
             </div>

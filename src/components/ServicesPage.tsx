@@ -7,7 +7,7 @@ import { PageHeroBackground } from './animations';
 
 export const ServicesPage: React.FC = () => {
   return (
-    <div className="pt-[88px]">
+    <div className="pt-[104px]">
       {/* Page title */}
       <section className="relative py-20 sm:py-24 overflow-hidden bg-[#06090F]">
         <PageHeroBackground />

@@ -192,7 +192,7 @@ export const DesignToolPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative pt-[88px] pb-14 sm:pb-16 overflow-hidden bg-[#06090F]">
+      <section className="relative pt-[104px] pb-14 sm:pb-16 overflow-hidden bg-[#06090F]">
         <PageHeroBackground />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>

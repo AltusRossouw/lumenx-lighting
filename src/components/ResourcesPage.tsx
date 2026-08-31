@@ -16,7 +16,7 @@ export const ResourcesPage: React.FC = () => {
   ];
 
   return (
-    <div className="pt-[88px]">
+    <div className="pt-[104px]">
       {/* Hero */}
       <section className="relative py-20 sm:py-28 overflow-hidden bg-[#06090F]">
         <PageHeroBackground />

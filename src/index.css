@@ -16,6 +16,13 @@
 
 body { background-color: #06090F; color: #CBD5E1; -webkit-font-smoothing: antialiased; }
 
+/* Desktop — scale the whole UI up (larger type, spacing and layout). */
+@media (min-width: 1024px) {
+  html {
+    font-size: 20px;
+  }
+}
+
 /* Blueprint grid */
 #root::before {
   content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.022;

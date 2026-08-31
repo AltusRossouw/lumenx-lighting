@@ -4,7 +4,7 @@ import { FAQSection } from './FAQSection';
 
 export const ContactPage: React.FC = () => {
   return (
-    <div className="pt-[88px]">
+    <div className="pt-[104px]">
       <ContactSection />
       <FAQSection />
     </div>

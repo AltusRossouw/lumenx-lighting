@@ -129,7 +129,7 @@ export const AdminPage: React.FC = () => {
     });
 
   return (
-    <div className="pt-[88px] min-h-screen">
+    <div className="pt-[104px] min-h-screen">
       <section className="relative py-16 sm:py-20 overflow-hidden bg-[#06090F]">
         <PageHeroBackground rays={false} particles={false} dots={false} />
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
