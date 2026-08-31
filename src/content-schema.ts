@@ -45,15 +45,7 @@ export const CONTENT_SCHEMA: Group[] = [
     title: 'Company & brand',
     description: 'The core positioning statements used across the site.',
     fields: [
-      { kind: 'text', label: 'Tagline', path: ['company', 'tagline'] },
       { kind: 'textarea', label: 'Intro', path: ['company', 'intro'] },
-      { kind: 'textarea', label: 'Core specialisation', path: ['company', 'coreSpecialisation'] },
-      { kind: 'text', label: 'Geographic reach', path: ['company', 'geographicReach'] },
-      { kind: 'text', label: 'Market focus', path: ['company', 'marketFocus'] },
-      { kind: 'textarea', label: 'Mission', path: ['company', 'mission'] },
-      { kind: 'textarea', label: 'Vision', path: ['company', 'vision'] },
-      { kind: 'textarea', label: 'Values', path: ['company', 'values'] },
-      { kind: 'textarea', label: 'Team', path: ['company', 'team'] },
     ],
   },
   {
