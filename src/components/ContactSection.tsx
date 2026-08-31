@@ -77,7 +77,7 @@ export const ContactSection: React.FC = () => {
             <span className="w-6 h-px bg-primary/30" />
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4 tracking-[-0.02em]">
-            Bring <LumenXWordmark className="h-[1.05em]" /> into <span className="gradient-text">the project</span>
+            Bring <LumenXWordmark className="!h-20 !align-middle" /> into <span className="gradient-text">the project</span>
           </h2>
           <p className="text-slate-400 max-w-xl mx-auto text-sm">
             Send us your drawings, BOQ, lighting specification or project brief. Our team will review
@@ -322,7 +322,7 @@ export const ContactSection: React.FC = () => {
 
             {/* Brand */}
             <div className="text-center p-4 rounded-2xl bg-gradient-to-b from-[#0F141C] to-[#0A0D14] border border-[#1E293B]">
-              <LumenXWordmark className="!h-20 mx-auto" />
+              <LumenXWordmark className="h-9 mx-auto" />
               <p className="text-[10px] text-slate-500 font-mono tracking-widest mt-2">{CONTACT.tagline}</p>
             </div>
           </motion.div>
