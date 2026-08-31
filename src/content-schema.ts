@@ -176,6 +176,8 @@ export const CONTENT_SCHEMA: Group[] = [
       { kind: 'text', label: 'Website', path: ['contact', 'website'] },
       { kind: 'text', label: 'Tagline', path: ['contact', 'tagline'] },
       { kind: 'textarea', label: 'Footer blurb', path: ['contact', 'footerBlurb'] },
+      { kind: 'text', label: 'Form eyebrow', path: ['contact', 'eyebrow'] },
+      { kind: 'textarea', label: 'Form subcopy', path: ['contact', 'subcopy'] },
     ],
   },
   {
@@ -197,6 +199,17 @@ export const CONTENT_SCHEMA: Group[] = [
       { kind: 'text', label: 'Badge', path: ['products', 'badge'] },
       heading('Heading', ['products', 'heading']),
       { kind: 'textarea', label: 'Subcopy', path: ['products', 'subcopy'] },
+      {
+        kind: 'objectList',
+        label: 'Value propositions',
+        path: ['products', 'valueProps'],
+        addable: false,
+        itemFields: [textItem, descriptionItem],
+      },
+      heading('Quote CTA heading', ['products', 'quoteCta', 'heading']),
+      { kind: 'textarea', label: 'Quote CTA subcopy', path: ['products', 'quoteCta', 'subcopy'] },
+      { kind: 'text', label: 'Quote CTA button', path: ['products', 'quoteCta', 'button'] },
+      { kind: 'text', label: 'Quote CTA secondary link', path: ['products', 'quoteCta', 'secondary'] },
     ],
   },
   {
@@ -205,6 +218,13 @@ export const CONTENT_SCHEMA: Group[] = [
       { kind: 'text', label: 'Eyebrow label', path: ['resources', 'label'] },
       heading('Heading', ['resources', 'heading']),
       { kind: 'textarea', label: 'Subcopy', path: ['resources', 'subcopy'] },
+      {
+        kind: 'objectList',
+        label: 'Download cards',
+        path: ['resources', 'cards'],
+        addable: false,
+        itemFields: [labelItem, descriptionItem],
+      },
     ],
   },
   {
@@ -230,5 +250,15 @@ export const CONTENT_SCHEMA: Group[] = [
   {
     title: 'Compliance bar',
     fields: [{ kind: 'text', label: 'Text', path: ['complianceBar', 'text'] }],
+  },
+  {
+    title: 'Managing director',
+    description: 'Name and role shown with the headshot (photo and signature stay fixed).',
+    fields: [
+      { kind: 'text', label: 'Name', path: ['managingDirector', 'name'] },
+      { kind: 'text', label: 'Role', path: ['managingDirector', 'role'] },
+      { kind: 'text', label: 'Phone', path: ['managingDirector', 'phone'] },
+      { kind: 'text', label: 'Email', path: ['managingDirector', 'email'] },
+    ],
   },
 ];

@@ -13,6 +13,7 @@ import {
   COMPANY,
   COMPLETE_SOLUTION,
   INDUSTRIES,
+  MANAGING_DIRECTOR,
   COMPLIANCE_ITEMS,
   WHY_CHOOSE,
   PROCESS_STEPS,
@@ -110,6 +111,8 @@ export interface SiteContent {
     website: string;
     tagline: string;
     footerBlurb: string;
+    eyebrow: string;
+    subcopy: string;
   };
   cta: { label: string; heading: Heading; subcopy: string; button: string };
   home: {
@@ -121,8 +124,14 @@ export interface SiteContent {
     who: Teaser;
   };
   services: { heading: Heading; subcopy: string };
-  products: { badge: string; heading: Heading; subcopy: string };
-  resources: { label: string; heading: Heading; subcopy: string };
+  products: {
+    badge: string;
+    heading: Heading;
+    subcopy: string;
+    valueProps: TextItem[];
+    quoteCta: { heading: Heading; subcopy: string; button: string; secondary: string };
+  };
+  resources: { label: string; heading: Heading; subcopy: string; cards: LabelItem[] };
   projects: { label: string; heading: Heading; subcopy: string };
   seo: {
     homeTitle: string;
@@ -133,6 +142,7 @@ export interface SiteContent {
     productsDescription: string;
   };
   complianceBar: { text: string };
+  managingDirector: { name: string; role: string; phone: string; email: string };
 }
 
 /* ── Defaults (current hardcoded copy) ─────────────────────────────────── */
@@ -196,6 +206,9 @@ export const DEFAULT_CONTENT: SiteContent = {
     tagline: CONTACT.tagline,
     footerBlurb:
       'Technically driven lighting solutions serving retail, commercial, and industrial projects across South Africa.',
+    eyebrow: 'Submit Your Lighting Requirement',
+    subcopy:
+      'Send us your drawings, BOQ, lighting specification or project brief. Our team will review the requirements and advise on the next technical and commercial step.',
   },
   cta: {
     label: 'Next Step',
@@ -256,12 +269,39 @@ export const DEFAULT_CONTENT: SiteContent = {
     heading: { lead: 'Lighting ', accent: 'Solutions', tail: '' },
     subcopy:
       'A comprehensive range of fit-for-purpose luminaires and control solutions — from architectural interiors to heavy industrial environments. Every product selected for performance, compliance, and long-term value.',
+    valueProps: [
+      {
+        title: 'Industry-Leading Warranties',
+        description: 'Manufacturer-backed terms up to 8 years, clearly communicated per product range.',
+      },
+      {
+        title: 'Technical Specification Support',
+        description: 'Expert guidance on luminaire selection, photometric design, and compliance.',
+      },
+      {
+        title: 'Fast Quotation Turnaround',
+        description: 'Responsive quoting to keep your project moving without delay.',
+      },
+    ],
+    quoteCta: {
+      heading: { lead: 'Need a ', accent: 'Quote', tail: '?' },
+      subcopy:
+        "Tell us about your project and we'll provide a competitive quotation with technical specifications.",
+      button: 'Submit your lighting requirement',
+      secondary: 'Technical Resources',
+    },
   },
   resources: {
     label: 'Technical Resources',
     heading: { lead: 'Documentation and ', accent: 'downloads', tail: '' },
     subcopy:
       'Technical datasheets, IES files, compliance documentation, and warranty information for specifiers, engineers, and contractors.',
+    cards: [
+      { label: 'Technical Datasheets', description: 'Product specifications, dimensions, and performance data — download every datasheet below.' },
+      { label: 'IES Files', description: 'Photometric data files for lighting simulation software — create a free account and download instantly.' },
+      { label: 'Compliance Documentation', description: 'SABS, IEC, and OSHACT compliance certificates — available with quotations and projects.' },
+      { label: 'Warranty Terms', description: 'Manufacturer-backed warranty documentation per product range, confirmed in quotation.' },
+    ],
   },
   projects: {
     label: 'Featured Projects',
@@ -280,6 +320,12 @@ export const DEFAULT_CONTENT: SiteContent = {
       'Explore the LumenX LED lighting catalogue — bulkheads, downlights, floodlights, highbays, linears, panels and more.',
   },
   complianceBar: { text: 'SANS 10114 & SABS Sourcing Compliance Certified' },
+  managingDirector: {
+    name: MANAGING_DIRECTOR.name,
+    role: MANAGING_DIRECTOR.role,
+    phone: MANAGING_DIRECTOR.phone,
+    email: MANAGING_DIRECTOR.email,
+  },
 };
 
 /* ── Resolved shape (what components consume) ──────────────────────────── */
@@ -316,6 +362,7 @@ export interface ResolvedContent {
   projects: SiteContent['projects'];
   seo: SiteContent['seo'];
   complianceBar: SiteContent['complianceBar'];
+  managingDirector: SiteContent['managingDirector'];
 }
 
 /** Recursively merge a stored (possibly partial) document over DEFAULT_CONTENT. */
@@ -398,6 +445,7 @@ const resolve = (content: SiteContent): ResolvedContent => ({
   projects: content.projects,
   seo: content.seo,
   complianceBar: content.complianceBar,
+  managingDirector: content.managingDirector,
 });
 
 /* ── Reactive store ────────────────────────────────────────────────────── */

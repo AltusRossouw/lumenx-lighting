@@ -90,12 +90,9 @@ export const ProductsPage: React.FC = () => {
       <section className="py-16 bg-[#04070D] border-y border-[#1E293B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {[
-              { icon: ShieldCheck, title: 'Industry-Leading Warranties', desc: 'Manufacturer-backed terms up to 8 years, clearly communicated per product range.' },
-              { icon: Zap, title: 'Technical Specification Support', desc: 'Expert guidance on luminaire selection, photometric design, and compliance.' },
-              { icon: Clock, title: 'Fast Quotation Turnaround', desc: 'Responsive quoting to keep your project moving without delay.' },
-            ].map((item, i) => {
-              const Icon = item.icon;
+            {[ShieldCheck, Zap, Clock].map((Icon, i) => {
+              const item = products.valueProps[i];
+              if (!item) return null;
               return (
                 <div key={i} className="flex gap-4">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
@@ -103,7 +100,7 @@ export const ProductsPage: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-display text-sm font-bold text-white mb-1 tracking-tight">{item.title}</h4>
-                    <p className="text-xs text-slate-400 leading-relaxed font-sans font-light">{item.desc}</p>
+                    <p className="text-xs text-slate-400 leading-relaxed font-sans font-light">{item.description}</p>
                   </div>
                 </div>
               );
@@ -116,20 +113,20 @@ export const ProductsPage: React.FC = () => {
       <section className="py-16 sm:py-20 text-center">
         <div className="max-w-2xl mx-auto px-4">
           <h2 className="font-display text-2xl sm:text-4xl font-bold text-white mb-4 tracking-[-0.02em]">
-            Need a <span className="gradient-text">Quote</span>?
+            {products.quoteCta.heading.lead}<span className="gradient-text">{products.quoteCta.heading.accent}</span>{products.quoteCta.heading.tail}
           </h2>
           <p className="text-slate-400 text-sm sm:text-base mb-8 font-sans font-light">
-            Tell us about your project and we'll provide a competitive quotation with technical specifications.
+            {products.quoteCta.subcopy}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/contact" className="btn btn-primary group no-underline">
               <span className="flex items-center gap-2">
-                Submit your lighting requirement
+                {products.quoteCta.button}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
             </Link>
             <Link to="/resources" className="btn btn-outline no-underline">
-              Technical Resources
+              {products.quoteCta.secondary}
             </Link>
           </div>
         </div>

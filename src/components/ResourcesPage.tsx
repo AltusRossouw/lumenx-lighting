@@ -10,12 +10,19 @@ export const ResourcesPage: React.FC = () => {
   const { resources } = useSiteContent();
   const datasheets = DATASHEET_LIBRARY;
 
-  const downloads = [
-    { label: 'Technical Datasheets', description: 'Product specifications, dimensions, and performance data — download every datasheet below.', icon: FileText, to: '/resources' },
-    { label: 'IES Files', description: 'Photometric data files for lighting simulation software — create a free account and download instantly.', icon: FileDown, to: '/ies' },
-    { label: 'Compliance Documentation', description: 'SABS, IEC, and OSHACT compliance certificates — available with quotations and projects.', icon: ShieldCheck, to: '/contact' },
-    { label: 'Warranty Terms', description: 'Manufacturer-backed warranty documentation per product range, confirmed in quotation.', icon: FileText, to: '/contact' },
+  const cardMeta = [
+    { icon: FileText, to: '/resources' },
+    { icon: FileDown, to: '/ies' },
+    { icon: ShieldCheck, to: '/contact' },
+    { icon: FileText, to: '/contact' },
   ];
+
+  const downloads = resources.cards.map((card, i) => ({
+    label: card.label,
+    description: card.description,
+    icon: cardMeta[i]?.icon ?? FileText,
+    to: cardMeta[i]?.to ?? '/contact',
+  }));
 
   return (
     <div className="pt-[104px]">

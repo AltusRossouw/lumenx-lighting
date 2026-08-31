@@ -9,7 +9,7 @@ import { PageHeroBackground } from './animations';
 import { LumenXWordmark } from './ui/lumenx-wordmark';
 
 export const ContactSection: React.FC = () => {
-  const { contact } = useSiteContent();
+  const { contact, managingDirector } = useSiteContent();
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -75,15 +75,14 @@ export const ContactSection: React.FC = () => {
         >
           <div className="flex items-center justify-center gap-3 mb-3">
             <span className="w-6 h-px bg-primary/30" />
-            <span className="text-primary font-mono text-xs tracking-[0.3em] uppercase">Submit Your Lighting Requirement</span>
+            <span className="text-primary font-mono text-xs tracking-[0.3em] uppercase">{contact.eyebrow}</span>
             <span className="w-6 h-px bg-primary/30" />
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4 tracking-[-0.02em]">
             Bring <LumenXWordmark className="!h-20 !align-middle" /> into <span className="gradient-text">the project</span>
           </h2>
           <p className="text-slate-400 max-w-xl mx-auto text-sm">
-            Send us your drawings, BOQ, lighting specification or project brief. Our team will review
-            the requirements and advise on the next technical and commercial step.
+            {contact.subcopy}
           </p>
         </motion.div>
 
@@ -303,13 +302,19 @@ export const ContactSection: React.FC = () => {
               <div className="flex items-center gap-3 mb-4">
                 <img
                   src={MANAGING_DIRECTOR.headshot}
-                  alt={`${MANAGING_DIRECTOR.name}, ${MANAGING_DIRECTOR.role}`}
+                  alt={`${managingDirector.name}, ${managingDirector.role}`}
                   loading="lazy"
                   className="w-14 h-14 rounded-full object-cover border-2 border-primary/40 shadow-[0_0_18px_rgba(0,212,255,0.25)] shrink-0"
                 />
                 <div>
-                  <p className="font-display text-sm font-semibold text-white tracking-tight">{MANAGING_DIRECTOR.name}</p>
-                  <p className="text-[10px] text-slate-500 font-mono uppercase tracking-wider">{MANAGING_DIRECTOR.role}</p>
+                  <p className="font-display text-sm font-semibold text-white tracking-tight">{managingDirector.name}</p>
+                  <p className="text-[10px] text-slate-500 font-mono uppercase tracking-wider">{managingDirector.role}</p>
+                  <a href={`mailto:${managingDirector.email}`} className="block text-[10px] text-slate-500 hover:text-primary transition-colors font-sans no-underline mt-1">
+                    {managingDirector.email}
+                  </a>
+                  <a href={`tel:${managingDirector.phone.replace(/\s/g, '')}`} className="block text-[10px] text-slate-500 hover:text-primary transition-colors font-sans no-underline">
+                    {managingDirector.phone}
+                  </a>
                 </div>
               </div>
               <div className="rounded-xl overflow-hidden border border-[#1E293B] bg-[#06090F]">
