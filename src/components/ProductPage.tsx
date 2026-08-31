@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { getCategory, getProduct, getProductsByCategory, datasheetDownloadUrl } from '../products';
+import { api } from '../lib/api';
 import {
   ArrowLeft,
   ArrowRight,
@@ -12,6 +13,7 @@ import {
   ShieldCheck,
   Factory,
   Layers,
+  Lock,
   Target,
 } from 'lucide-react';
 import { PageHeroBackground } from './animations';
@@ -22,6 +24,21 @@ interface ProductPageProps {
 }
 
 export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) => {
+  const [iesAuthed, setIesAuthed] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+    api
+      .me()
+      .then(() => {
+        if (active) setIesAuthed(true);
+      })
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
+  }, []);
+
   const category = getCategory(categoryId);
   const product = getProduct(categoryId, slug);
 
@@ -186,13 +203,23 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
                       <span className="text-[10px] text-slate-500 font-mono">.PDF</span>
                     </a>
                   )}
-                  {product.iesUrl && (
-                    <a href={product.iesUrl} download className="btn btn-outline btn-sm no-underline">
-                      <FileDown className="w-4 h-4 text-slate-400" />
-                      <span>Photometric</span>
-                      <span className="text-[10px] text-slate-500 font-mono">.IES</span>
-                    </a>
-                  )}
+                  {product.iesUrl &&
+                    (iesAuthed ? (
+                      <a href={product.iesUrl} download className="btn btn-outline btn-sm no-underline">
+                        <FileDown className="w-4 h-4 text-slate-400" />
+                        <span>Photometric</span>
+                        <span className="text-[10px] text-slate-500 font-mono">.IES</span>
+                      </a>
+                    ) : (
+                      <Link
+                        to="/account"
+                        state={{ from: `/products/${categoryId}/${slug}` }}
+                        className="btn btn-outline btn-sm no-underline"
+                      >
+                        <Lock className="w-4 h-4 text-slate-400" />
+                        <span>Login for .IES</span>
+                      </Link>
+                    ))}
                 </div>
               )}
             </div>
