@@ -322,7 +322,7 @@ export const ContactSection: React.FC = () => {
 
             {/* Brand */}
             <div className="text-center p-4 rounded-2xl bg-gradient-to-b from-[#0F141C] to-[#0A0D14] border border-[#1E293B]">
-              <LumenXWordmark className="h-9 mx-auto" />
+              <LumenXWordmark className="!h-20 mx-auto" />
               <p className="text-[10px] text-slate-500 font-mono tracking-widest mt-2">{CONTACT.tagline}</p>
             </div>
           </motion.div>
