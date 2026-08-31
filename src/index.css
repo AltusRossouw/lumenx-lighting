@@ -47,14 +47,25 @@ body { background-color: #06090F; color: #CBD5E1; -webkit-font-smoothing: antial
   letter-spacing: 0.04em;
   line-height: 1;
   white-space: nowrap;
+  text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+.btn:focus-visible {
+  outline: 2px solid #00D4FF;
+  outline-offset: 2px;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 .btn-primary {
   background-color: #00D4FF;
   color: #06090F;
 }
-.btn-primary:hover {
+.btn-primary:hover:not(:disabled) {
   background-color: #18DAFF;
   box-shadow: 0 0 40px rgba(0, 212, 255, 0.35);
   transform: translateY(-1px);
@@ -64,14 +75,15 @@ body { background-color: #06090F; color: #CBD5E1; -webkit-font-smoothing: antial
   border-color: rgba(255, 255, 255, 0.12);
   color: #CBD5E1;
 }
-.btn-outline:hover {
+.btn-outline:hover:not(:disabled) {
   border-color: rgba(0, 212, 255, 0.3);
   color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.04);
+  transform: translateY(-1px);
 }
 .btn-sm {
   padding: 0.6rem 1.25rem;
   font-size: 0.75rem;
-  border-radius: 8px;
 }
 .btn-block { width: 100%; }
 

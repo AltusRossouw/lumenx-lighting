@@ -65,7 +65,7 @@ export const Header: React.FC = () => {
             <Link to="/planner" className="btn btn-outline btn-sm">
               Lighting Planner
             </Link>
-            <Link to="/contact" className="btn btn-primary">
+            <Link to="/contact" className="btn btn-primary btn-sm">
               Discuss a Project
             </Link>
           </div>
