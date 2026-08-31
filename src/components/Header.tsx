@@ -62,9 +62,9 @@ export const Header: React.FC = () => {
             <Link to="/account" className="btn btn-outline btn-sm">
               Login
             </Link>
-            <Link to="/planner" className="btn btn-outline btn-sm">
-              Lighting Planner
-            </Link>
+            {/* Lighting Planner temporarily disabled for testing.
+                Re-enable by re-adding:
+                <Link to="/planner" className="btn btn-outline btn-sm">Lighting Planner</Link> */}
             <Link to="/contact" className="btn btn-primary btn-sm">
               Discuss a Project
             </Link>
@@ -98,9 +98,7 @@ export const Header: React.FC = () => {
               <Link to="/account" onClick={() => setIsOpen(false)} className="btn btn-outline btn-block">
                 Login
               </Link>
-              <Link to="/planner" onClick={() => setIsOpen(false)} className="btn btn-outline btn-block">
-                Lighting Planner
-              </Link>
+              {/* Lighting Planner temporarily disabled for testing. */}
               <Link to="/contact" onClick={() => setIsOpen(false)} className="btn btn-primary btn-block">
                 Discuss a Project
               </Link>
