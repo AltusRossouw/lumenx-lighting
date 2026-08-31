@@ -65,7 +65,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
               </p>
               <Link to="/contact" className="btn btn-primary group inline-flex">
                 <span className="flex items-center gap-2">
-                  Request Information
+                  Submit your lighting requirement
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </Link>
@@ -174,7 +174,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
             </p>
             <Link to="/contact" className="btn btn-primary group inline-flex no-underline">
               <span className="flex items-center gap-2">
-                Request a Quote
+                Submit your lighting requirement
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
             </Link>

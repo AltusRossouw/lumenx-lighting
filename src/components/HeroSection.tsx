@@ -154,7 +154,7 @@ export const HeroSection: React.FC = () => {
                 className="btn btn-primary group no-underline"
               >
                 <span className="flex items-center gap-2">
-                  Discuss a Project
+                  Submit your lighting requirement
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
                 </span>
               </Link>

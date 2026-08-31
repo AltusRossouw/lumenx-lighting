@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'motion/react';
-import { ArrowRight, FileText } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export const CTASection: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
@@ -41,17 +41,9 @@ export const CTASection: React.FC = () => {
               className="btn btn-primary group no-underline"
             >
               <span className="flex items-center gap-2">
-                Tell Us About Your Project
+                Submit your lighting requirement
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
               </span>
-            </Link>
-
-            <Link
-              to="/contact"
-              className="btn btn-outline no-underline"
-            >
-              <FileText className="w-4 h-4" />
-              Submit Your Lighting Requirement
             </Link>
           </div>
         </motion.div>

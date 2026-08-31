@@ -124,7 +124,7 @@ export const ProductsPage: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/contact" className="btn btn-primary group no-underline">
               <span className="flex items-center gap-2">
-                Request a Quote
+                Submit your lighting requirement
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
             </Link>

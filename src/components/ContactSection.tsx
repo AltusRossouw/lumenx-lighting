@@ -221,7 +221,7 @@ export const ContactSection: React.FC = () => {
                 >
                   <span className="flex items-center justify-center gap-2">
                     <Send className="w-4 h-4" />
-                    {status === 'sending' ? 'Sending…' : status === 'sent' ? 'Submitted — thank you!' : 'Submit Your Lighting Requirement'}
+                    {status === 'sending' ? 'Sending…' : status === 'sent' ? 'Submitted — thank you!' : 'Submit your lighting requirement'}
                   </span>
                 </button>
               </form>

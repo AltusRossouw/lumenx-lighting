@@ -110,7 +110,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <Link to="/contact" className="btn btn-primary no-underline group">
                   <span className="flex items-center gap-2">
-                    Enquire about {product.name}
+                    Submit your lighting requirement
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Link>
@@ -290,7 +290,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
             </p>
             <Link to="/contact" className="btn btn-primary group inline-flex no-underline">
               <span className="flex items-center gap-2">
-                Request a Quote
+                Submit your lighting requirement
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
             </Link>

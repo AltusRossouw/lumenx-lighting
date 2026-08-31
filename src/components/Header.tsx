@@ -105,7 +105,7 @@ export const Header: React.FC = () => {
                 Re-enable by re-adding:
                 <Link to="/planner" className="btn btn-outline btn-sm">Lighting Planner</Link> */}
             <Link to="/contact" className="btn btn-primary btn-sm">
-              Discuss a Project
+              Submit your lighting requirement
             </Link>
           </div>
 
@@ -146,7 +146,7 @@ export const Header: React.FC = () => {
               )}
               {/* Lighting Planner temporarily disabled for testing. */}
               <Link to="/contact" onClick={() => setIsOpen(false)} className="btn btn-primary btn-block">
-                Discuss a Project
+                Submit your lighting requirement
               </Link>
             </div>
           </nav>
