@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { WHY_CHOOSE } from '../data';
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
-import { LumenXMark } from './ui/lumenx-mark';
 
 const AUTO_ADVANCE_MS = 5000;
 
@@ -29,7 +28,7 @@ export const DifferenceCarousel: React.FC = () => {
     return () => {
       if (timerRef.current !== null) window.clearInterval(timerRef.current);
     };
-  }, [paused, count]);
+  }, [paused, count, index]);
 
   const active = WHY_CHOOSE[index];
 
@@ -37,13 +36,11 @@ export const DifferenceCarousel: React.FC = () => {
     <section
       aria-label="The LumenX difference"
       className="relative py-14 sm:py-16 overflow-hidden bg-[#04070D] border-b border-[#1E293B]/60"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-6 mb-8">
           <div className="flex items-center gap-3">
-            <LumenXMark className="w-3 h-3 text-primary" />
+            <span className="w-8 h-px bg-primary/40" />
             <h2 className="font-display text-sm sm:text-base font-bold tracking-[0.14em] uppercase text-slate-300">
               The <span className="gradient-text">LumenX</span> difference
             </h2>
