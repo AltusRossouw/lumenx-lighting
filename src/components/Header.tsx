@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, LogOut } from 'lucide-react';
 import { LOGO_URL } from '../data';
+import { api, User } from '../lib/api';
 
 const NAV_ITEMS: { id: string; label: string; path: string }[] = [
   { id: 'home', label: 'Home', path: '/' },
@@ -17,6 +18,8 @@ export const Header: React.FC = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [authed, setAuthed] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -29,9 +32,38 @@ export const Header: React.FC = () => {
     setIsOpen(false);
   }, [location.pathname]);
 
+  // Refresh auth state on route change (e.g., after login/logout).
+  useEffect(() => {
+    let active = true;
+    api
+      .me()
+      .then(({ user: me }) => {
+        if (active) {
+          setAuthed(true);
+          setUser(me);
+        }
+      })
+      .catch(() => {
+        if (active) {
+          setAuthed(false);
+          setUser(null);
+        }
+      });
+    return () => {
+      active = false;
+    };
+  }, [location.pathname]);
+
   const isActive = (path: string) => {
     if (path === '/') return location.pathname === '/';
     return location.pathname.startsWith(path);
+  };
+
+  const handleLogout = async () => {
+    await api.logout().catch(() => {});
+    setAuthed(false);
+    setUser(null);
+    setIsOpen(false);
   };
 
   return (
@@ -59,9 +91,16 @@ export const Header: React.FC = () => {
           </nav>
 
           <div className="hidden lg:flex items-center gap-2">
-            <Link to="/account" className="btn btn-outline btn-sm">
-              Login
-            </Link>
+            {authed ? (
+              <button onClick={handleLogout} className="btn btn-outline btn-sm" title={user?.email}>
+                <LogOut className="w-3.5 h-3.5" />
+                Sign out
+              </button>
+            ) : (
+              <Link to="/account" className="btn btn-outline btn-sm">
+                Login
+              </Link>
+            )}
             {/* Lighting Planner temporarily disabled for testing.
                 Re-enable by re-adding:
                 <Link to="/planner" className="btn btn-outline btn-sm">Lighting Planner</Link> */}
@@ -95,9 +134,16 @@ export const Header: React.FC = () => {
               </Link>
             ))}
             <div className="pt-4 px-4 space-y-2">
-              <Link to="/account" onClick={() => setIsOpen(false)} className="btn btn-outline btn-block">
-                Login
-              </Link>
+              {authed ? (
+                <button onClick={handleLogout} className="btn btn-outline btn-block">
+                  <LogOut className="w-4 h-4" />
+                  Sign out
+                </button>
+              ) : (
+                <Link to="/account" onClick={() => setIsOpen(false)} className="btn btn-outline btn-block">
+                  Login
+                </Link>
+              )}
               {/* Lighting Planner temporarily disabled for testing. */}
               <Link to="/contact" onClick={() => setIsOpen(false)} className="btn btn-primary btn-block">
                 Discuss a Project
