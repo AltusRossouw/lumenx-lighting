@@ -9,7 +9,7 @@ import { LumenXMark } from './ui/lumenx-mark';
 export const ACCREDITATIONS = [
   'Nationwide Delivery',
   'B-BBEE Level 2',
-  'SABS, IEC and OSHACT Aligned',
+  'SABS, IEC and OHSACT Aligned',
   'Manufacturer-Backed Warranties',
   'Lighting Simulations & Calculations',
   'Specification & Value Engineering',

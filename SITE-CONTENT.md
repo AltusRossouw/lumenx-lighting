@@ -84,7 +84,7 @@ Active involvement across the project lifecycle, from design alignment and submi
 ## Compliance & Quality
 
 ### Standards alignment
-Products selected and supplied with consideration for applicable SABS, IEC, OSHACT and relevant project compliance requirements.
+Products selected and supplied with consideration for applicable SABS, IEC, OHSACT and relevant project compliance requirements.
 
 ### Energy performance
 Focus on efficient LED and control-based solutions that support project energy targets and lifecycle value.

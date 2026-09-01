@@ -16,7 +16,7 @@ LumenX is a South African technical lighting partner for retail, commercial and 
 
  CTA button :Discuss a Project  CTA button: Explore Products
 
-**Trust strip:** Nationwide Coverage · B-BBEE Level 2 · SABS / IEC / OSHACT Aligned
+**Trust strip:** Nationwide Coverage · B-BBEE Level 2 · SABS / IEC / OHSACT Aligned
 
 **~~Mission:~~** ~~To solve the delivery gap in lighting by bringing technical depth, accountability, and executional precision to every project.~~  
 **~~Vision:~~** ~~To become the trusted technical lighting partner for projects — known for buildable design, reliable delivery, and performance-led outcomes.~~  
@@ -144,7 +144,7 @@ Active involvement across the project lifecycle, from design alignment and submi
 
 ### **Standards alignment**
 
-Products selected and supplied with consideration for applicable SABS, IEC, OSHACT and relevant project compliance requirements.
+Products selected and supplied with consideration for applicable SABS, IEC, OHSACT and relevant project compliance requirements.
 
 ### **Energy performance**
 
@@ -710,7 +710,7 @@ LumenX is a South African technical lighting partner for retail, commercial and 
 
  CTA button :Discuss a Project  CTA button: Explore Products
 
-**Trust strip:** Nationwide Coverage · B-BBEE Level 2 · SABS / IEC / OSHACT Aligned
+**Trust strip:** Nationwide Coverage · B-BBEE Level 2 · SABS / IEC / OHSACT Aligned
 
 ## *Design notes*
 

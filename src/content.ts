@@ -155,7 +155,7 @@ export const DEFAULT_CONTENT: SiteContent = {
     serviceTags: ['Specification', 'Value Engineering', 'Supply', 'Project Coordination and Completion'],
     primaryCta: 'Send Us Your Project',
     secondaryCta: 'Explore Lighting Solutions',
-    trustItems: ['Nationwide Delivery', 'B-BBEE Level 2', 'SABS, IEC and OSHACT Aligned', 'Manufacturer-Backed Warranties'],
+    trustItems: ['Nationwide Delivery', 'B-BBEE Level 2', 'SABS, IEC and OHSACT Aligned', 'Manufacturer-Backed Warranties'],
   },
   solution: {
     headingTop: 'One team manages the whole lighting project',
@@ -280,7 +280,7 @@ export const DEFAULT_CONTENT: SiteContent = {
     cards: [
       { label: 'Technical Datasheets', description: 'Product specifications, dimensions, and performance data — download every datasheet below.' },
       { label: 'IES Files', description: 'Photometric data files for lighting simulation software — create a free account and download instantly.' },
-      { label: 'Compliance Documentation', description: 'SABS, IEC, and OSHACT compliance certificates — available with quotations and projects.' },
+      { label: 'Compliance Documentation', description: 'SABS, IEC, and OHSACT compliance certificates — available with quotations and projects.' },
       { label: 'Warranty Terms', description: 'Manufacturer-backed warranty documentation per product range, confirmed in quotation.' },
     ],
   },

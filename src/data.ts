@@ -96,7 +96,7 @@ export const COMPLIANCE_ITEMS: ComplianceItem[] = [
   {
     label: 'Standards alignment',
     description:
-      'Products selected and supplied against SABS, IEC and OSHACT requirements.',
+      'Products selected and supplied against SABS, IEC and OHSACT requirements.',
   },
   {
     label: 'Energy performance',
@@ -158,7 +158,7 @@ export const WHY_CHOOSE: WhyChooseReason[] = [
   {
     title: 'Compliance-Backed Supply',
     description:
-      'SABS, IEC and OSHACT-aligned documentation, manufacturer warranties and B-BBEE Level 2 — from specification to handover.',
+      'SABS, IEC and OHSACT-aligned documentation, manufacturer warranties and B-BBEE Level 2 — from specification to handover.',
     icon: 'ShieldCheck',
     iconImg: '/icons/why-compliance.svg',
   },

@@ -175,7 +175,7 @@ export const ProjectsSection: React.FC = () => {
             <span className="hidden sm:inline text-slate-700">|</span>
             <span>B-BBEE Level 2</span>
             <span className="hidden sm:inline text-slate-700">|</span>
-            <span>SABS / IEC / OSHACT aligned</span>
+            <span>SABS / IEC / OHSACT aligned</span>
             <span className="hidden sm:inline text-slate-700">|</span>
             <span>Manufacturer-backed warranties</span>
             <span className="hidden sm:inline text-slate-700">|</span>
