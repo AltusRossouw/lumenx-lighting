@@ -42,7 +42,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     description:
       'Robust wall and ceiling luminaires for corridors, stairwells, entrances and wet areas. Impact-resistant housings with IP ratings for indoor and outdoor use.',
     applications: 'Corridors, stairwells, entrances, plant rooms and exterior walkways',
-    imageUrl: '/installation-images/commercial-facade-slat-lighting.jpeg',
+    imageUrl: '/product-images/categories/bulkheads.jpg',
     linkLabel: 'Explore Bulkheads',
   },
   {
@@ -51,7 +51,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     description:
       'Recessed and surface downlights delivering precise, comfortable illumination — from trimless architectural details to high-output commercial fittings.',
     applications: 'Offices, retail, hospitality, healthcare and residential interiors',
-    imageUrl: '/installation-images/modern-office-cove-lighting.jpeg',
+    imageUrl: '/product-images/categories/downlights.jpg',
     linkLabel: 'Explore Downlights',
   },
   {
@@ -60,7 +60,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     description:
       'High-output exterior luminaires for area lighting, security, facades and perimeters with asymmetric and symmetric beam options.',
     applications: 'Facades, sports facilities, yards, perimeters and area lighting',
-    imageUrl: '/installation-images/triangular-facade-accent-lighting.jpeg',
+    imageUrl: '/product-images/categories/floods.jpg',
     linkLabel: 'Explore Floodlights',
   },
   {
@@ -69,7 +69,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     description:
       'High-output luminaires engineered for high ceilings, racking aisles and demanding industrial environments with industry-leading guarantees.',
     applications: 'Warehouses, factories, logistics and manufacturing facilities',
-    imageUrl: '/installation-images/industrial-warehouse-led-lighting.jpeg',
+    imageUrl: '/product-images/categories/highbays.jpg',
     linkLabel: 'Explore Highbays',
   },
   {
@@ -78,7 +78,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     description:
       'Continuous, seamless and profile linear systems for architectural, retail and workspace environments — surface, suspended or recessed.',
     applications: 'Offices, retail, education and architectural interiors',
-    imageUrl: '/installation-images/linear-pendant-office-lighting.jpeg',
+    imageUrl: '/product-images/categories/linears.jpg',
     linkLabel: 'Explore Linear Lighting',
   },
   {
@@ -87,7 +87,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     description:
       'Low-glare, flicker-free LED panels for clean general illumination across offices, education and healthcare environments.',
     applications: 'Offices, education, healthcare and corporate interiors',
-    imageUrl: '/installation-images/open-ceiling-office-lighting.jpeg',
+    imageUrl: '/product-images/categories/panels.jpg',
     linkLabel: 'Explore Panels',
   },
   {
@@ -96,7 +96,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     description:
       'Flexible and COB dotless strip lighting for seamless cove, display, under-cabinet and joinery accent illumination.',
     applications: 'Cove lighting, display shelving, signage and joinery accent',
-    imageUrl: '/installation-images/shopping-mall-cove-lighting.jpeg',
+    imageUrl: '/product-images/categories/strips.jpg',
     linkLabel: 'Explore LED Strips',
   },
   {
@@ -105,7 +105,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     description:
       'Adjustable track spots and linear track fittings for retail, gallery and display applications with precise aiming control.',
     applications: 'Retail, galleries, showrooms and hospitality displays',
-    imageUrl: '/installation-images/retail-track-lighting.png',
+    imageUrl: '/product-images/categories/track.jpg',
     linkLabel: 'Explore Track Lighting',
   },
   {
@@ -114,7 +114,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     description:
       'Sealed IP65/IP66 luminaires resistant to dust, moisture and vapour for demanding industrial, parking and washdown environments.',
     applications: 'Parking structures, food processing, warehousing and washdown areas',
-    imageUrl: '/installation-images/industrial-warehouse-led-lighting.jpeg',
+    imageUrl: '/product-images/categories/vapourproof.jpg',
     linkLabel: 'Explore Vapour Proof Lighting',
   },
 ];
