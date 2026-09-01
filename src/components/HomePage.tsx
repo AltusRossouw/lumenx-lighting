@@ -21,10 +21,12 @@ interface TeaserProps {
   title: React.ReactNode;
   copy?: string;
   children?: React.ReactNode;
+  /** Reduce bottom padding to pull the following section up. */
+  tightBottom?: boolean;
 }
 
-const Teaser: React.FC<TeaserProps> = ({ id, label, title, copy, children }) => (
-  <section id={id} className="relative py-20 sm:py-28 overflow-hidden bg-[#06090F]">
+const Teaser: React.FC<TeaserProps> = ({ id, label, title, copy, children, tightBottom }) => (
+  <section id={id} className={`relative overflow-hidden bg-[#06090F] ${tightBottom ? 'pt-20 sm:pt-28 pb-8 sm:pb-12' : 'py-20 sm:py-28'}`}>
     <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <motion.div
@@ -74,20 +76,21 @@ const SolutionTeaser: React.FC = () => {
       id="solution"
       title={<>{t.title.lead}<span className="gradient-text">{t.title.accent}</span>{t.title.tail}</>}
       copy={t.copy}
+      tightBottom
     >
-      <div className="flex flex-wrap gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
         {completeSolution.map((cap) => (
-          <span
+          <div
             key={cap.title}
-            className="inline-flex items-center gap-3 px-5 py-3 border border-[#1E293B]/70 bg-[#0A0F17] hover:border-primary/40 hover:bg-primary/[0.03] transition-colors duration-300"
+            className="flex items-center gap-3 px-5 py-4 border border-[#1E293B]/70 bg-[#0A0F17] hover:border-primary/40 hover:bg-primary/[0.03] transition-colors duration-300"
           >
             <img
               src={cap.heroIcon}
               alt=""
-              className="w-9 h-9 object-contain drop-shadow-[0_0_12px_rgba(0,212,255,0.35)]"
+              className="w-9 h-9 object-contain drop-shadow-[0_0_12px_rgba(0,212,255,0.35)] shrink-0"
             />
             <span className="font-display text-sm font-semibold text-slate-200">{cap.title}</span>
-          </span>
+          </div>
         ))}
       </div>
       <TeaserLink to="/the-solution" label={t.link} />

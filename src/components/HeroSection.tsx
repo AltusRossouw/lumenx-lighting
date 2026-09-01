@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { LOGO_URL } from '../data';
 import { useSiteContent } from '../content';
 import { ArrowRight, ArrowDown } from 'lucide-react';
-import { LumenXMark } from './ui/lumenx-mark';
 import { HeroSlideshow } from './HeroSlideshow';
 
 
@@ -132,18 +131,8 @@ export const HeroSection: React.FC = () => {
             </h1>
 
             {/* Supporting sentence — within easy reading width */}
-            <p className="text-base sm:text-lg text-slate-400 max-w-xl leading-relaxed mb-4 font-sans font-light">
+            <p className="text-base sm:text-lg text-slate-400 max-w-xl leading-relaxed mb-8 font-sans font-light">
               {company.intro}
-            </p>
-
-            {/* Service tag strip — X marks as separators */}
-            <p className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-[11px] font-mono text-slate-500 tracking-[0.15em] uppercase mb-10">
-              {hero.serviceTags.map((tag, i) => (
-                <React.Fragment key={tag}>
-                  {i > 0 && <LumenXMark className="w-2 h-2 text-primary/50" />}
-                  {tag}
-                </React.Fragment>
-              ))}
             </p>
 
             {/* CTAs — unified button system */}

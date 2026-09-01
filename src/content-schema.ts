@@ -55,7 +55,6 @@ export const CONTENT_SCHEMA: Group[] = [
       { kind: 'text', label: 'Headline — line 1', path: ['hero', 'headlineLead'] },
       { kind: 'text', label: 'Headline — highlighted line', path: ['hero', 'headlineAccent'] },
       { kind: 'text', label: 'Headline — line 3', path: ['hero', 'headlineTail'] },
-      { kind: 'stringList', label: 'Service tags', path: ['hero', 'serviceTags'] },
       { kind: 'text', label: 'Primary button', path: ['hero', 'primaryCta'] },
       { kind: 'text', label: 'Secondary button', path: ['hero', 'secondaryCta'] },
     ],
