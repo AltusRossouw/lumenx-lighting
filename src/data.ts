@@ -233,37 +233,37 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
 /** Real installation photography — application gallery shown on the Projects page. */
 export const INSTALLATION_IMAGES: InstallationImage[] = [
   {
-    src: '/installation-images/triangular-facade-accent-lighting.jpeg',
+    src: '/installation-images/generated/facade-triangular.jpg',
     alt: 'Triangular glass building facade with warm golden LED linear accent lighting at dusk.',
     category: 'Architectural Exterior',
     application: 'Dynamic LED facade illumination',
   },
   {
-    src: '/installation-images/commercial-facade-slat-lighting.jpeg',
+    src: '/installation-images/generated/facade-slats.jpg',
     alt: 'Multi-story commercial building exterior with vertical louvered LED strip lighting at night.',
     category: 'Architectural Exterior',
     application: 'Vertical slat illumination',
   },
   {
-    src: '/installation-images/retail-track-lighting.png',
+    src: '/installation-images/generated/retail-track.jpg',
     alt: 'Luxury retail clothing store illuminated by black ceiling-mounted directional LED track spotlights.',
     category: 'Retail Lighting',
     application: 'Accent & spotlight solutions',
   },
   {
-    src: '/installation-images/linear-pendant-office-lighting.jpeg',
+    src: '/installation-images/generated/office-pendant.jpg',
     alt: 'Collaborative open office workspace with suspended black linear LED pendant lights over communal desks.',
     category: 'Office Lighting',
     application: 'Suspended linear & pendant',
   },
   {
-    src: '/installation-images/open-ceiling-office-lighting.jpeg',
+    src: '/installation-images/generated/office-linear.jpg',
     alt: 'Open ceiling office design with suspended continuous LED linear fixtures over workstations.',
     category: 'Industrial Office',
     application: 'Continuous linear LEDs',
   },
   {
-    src: '/installation-images/shopping-mall-cove-lighting.jpeg',
+    src: '/installation-images/generated/mall-cove.jpg',
     alt: 'Luxury shopping mall concourse with continuous ceiling LED cove lighting and glass storefronts.',
     category: 'Public Space',
     application: 'Mall & concourse cove lighting',
