@@ -12,7 +12,6 @@ import {
   ArrowRight,
   Building2,
   MapPin,
-  CheckCircle,
 } from 'lucide-react';
 
 /* ── Shared teaser shell: headline + short copy (body sits under the heading) ── */
@@ -148,61 +147,6 @@ const ProjectsTeaser: React.FC = () => {
   );
 };
 
-/* ── 3 · Technical Proof teaser ── */
-const TechnicalProofTeaser: React.FC = () => {
-  const { home } = useSiteContent();
-  const t = home.technicalProof;
-  return (
-    <Teaser
-      id="technical-proof"
-      label={t.label}
-      title={<>{t.title.lead}<span className="gradient-text">{t.title.accent}</span>{t.title.tail}</>}
-      copy={t.copy}
-    >
-      <div className="border border-[#1E293B] bg-[#0A0F17] p-6 flex flex-wrap items-center gap-x-8 gap-y-3">
-        {t.bullets.map((item) => (
-          <span key={item} className="flex items-center gap-2.5">
-            <CheckCircle className="w-4 h-4 text-primary/60" />
-            <span className="text-xs font-mono text-slate-400 uppercase tracking-[0.15em]">{item}</span>
-          </span>
-        ))}
-      </div>
-      <TeaserLink to="/resources" label={t.link} />
-    </Teaser>
-  );
-};
-
-/* ── 4 · How It Works teaser ── */
-const ProcessTeaser: React.FC = () => {
-  const { home, processSteps } = useSiteContent();
-  const t = home.process;
-  return (
-    <Teaser
-      id="how-it-works"
-      label={t.label}
-      title={<>{t.title.lead}<span className="gradient-text">{t.title.accent}</span>{t.title.tail}</>}
-      copy={t.copy}
-    >
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-10">
-        {processSteps.map((step) => (
-          <div key={step.number}>
-            <span className="font-display text-5xl sm:text-6xl font-extrabold gradient-text leading-none">
-              {step.number}
-            </span>
-            <img
-              src={step.iconImg}
-              alt=""
-              className="w-8 h-8 object-contain mt-3 drop-shadow-[0_0_10px_rgba(0,212,255,0.3)]"
-            />
-            <h3 className="font-display text-sm font-bold text-white mt-2 tracking-tight">{step.title}</h3>
-          </div>
-        ))}
-      </div>
-      <TeaserLink to="/the-solution" label={t.link} />
-    </Teaser>
-  );
-};
-
 /* ── 5 · Product Categories teaser ── */
 const CategoriesTeaser: React.FC = () => {
   const { home } = useSiteContent();
@@ -243,7 +187,7 @@ const CategoriesTeaser: React.FC = () => {
 
 /* ── 6 · Who It's For teaser ── */
 const WhoItsForTeaser: React.FC = () => {
-  const { home, audienceProfiles, industries } = useSiteContent();
+  const { home, industries } = useSiteContent();
   const t = home.who;
   return (
     <Teaser
@@ -252,21 +196,6 @@ const WhoItsForTeaser: React.FC = () => {
       title={<>{t.title.lead}<span className="gradient-text">{t.title.accent}</span>{t.title.tail}</>}
       copy={t.copy}
     >
-      <div className="flex flex-wrap gap-3 mb-10">
-        {audienceProfiles.map((a) => (
-          <span
-            key={a.title}
-            className="inline-flex items-center gap-3 px-5 py-3 border border-[#1E293B]/70 bg-[#0A0F17]"
-          >
-            <img
-              src={a.iconImg}
-              alt=""
-              className="w-8 h-8 object-contain drop-shadow-[0_0_10px_rgba(0,212,255,0.35)]"
-            />
-            <span className="font-display text-sm font-bold text-white">{a.title}</span>
-          </span>
-        ))}
-      </div>
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2.5">
         {industries.map((sector, i) => (
           <React.Fragment key={sector.name}>
@@ -293,22 +222,19 @@ export const HomePage: React.FC = () => {
       {/* Hero */}
       <HeroSection />
 
-      {/* The consolidated "LumenX difference" text carousel — directly below the hero */}
-      <DifferenceCarousel />
+      {/* Single consolidated social-proof bar — directly under the hero */}
+      <AccreditationBar />
 
-      {/* A/B Variant 1 — accreditation bar: items turn brand blue on hover */}
-      <AccreditationBar variant="hover" />
+      {/* The "LumenX difference" carousel */}
+      <DifferenceCarousel />
 
       {/* Teaser reel — light on content, deep info lives in the dedicated tabs */}
       <SolutionTeaser />
-      <ProjectsTeaser />
-      <TechnicalProofTeaser />
-      <ProcessTeaser />
       <CategoriesTeaser />
       <WhoItsForTeaser />
 
-      {/* A/B Variant 2 — accreditation bar: solid white strip with bold black text */}
-      <AccreditationBar variant="strip" />
+      {/* Technical proof — moved directly above the final CTA */}
+      <ProjectsTeaser />
 
       <CTASection />
     </div>

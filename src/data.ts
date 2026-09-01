@@ -17,7 +17,7 @@ export const LOGO_URL = '/logo-wide.png';
 export const COMPANY: CompanyOverview = {
   tagline: 'LIGHTING ENGINEERED FOR REAL PROJECTS',
   intro:
-    'LumenX is a South African lighting partner for retail, commercial and industrial projects. One team, from design to site delivery — no handoffs.',
+    'From design and specification to supply and site delivery, LumenX brings the technical and commercial sides of project lighting together through one accountable team.',
   coreSpecialisation:
     'Lighting design, specification, supply and coordination for commercial, retail and industrial projects.',
   geographicReach: 'South Africa — nationwide project support.',
@@ -67,6 +67,13 @@ export const COMPLETE_SOLUTION: CompleteSolutionCapability[] = [
     heroIcon: '/icons/hero-project-coordination.svg',
     description:
       'Technical support across the project team, from design through to completion.',
+  },
+  {
+    title: 'After-Sales Support',
+    icon: '/icons/why-support.svg',
+    heroIcon: '/icons/why-support.svg',
+    description:
+      'Commissioning, snags, replacements and warranty support after the products reach site.',
   },
 ];
 

@@ -58,17 +58,14 @@ export const CONTENT_SCHEMA: Group[] = [
       { kind: 'stringList', label: 'Service tags', path: ['hero', 'serviceTags'] },
       { kind: 'text', label: 'Primary button', path: ['hero', 'primaryCta'] },
       { kind: 'text', label: 'Secondary button', path: ['hero', 'secondaryCta'] },
-      { kind: 'stringList', label: 'Trust strip', path: ['hero', 'trustItems'] },
     ],
   },
   {
     title: 'Homepage teasers',
-    description: 'The six headline/copy blocks on the home page.',
+    description: 'The four headline/copy blocks on the home page.',
     fields: [
       ...teaserFields(['home', 'solution']),
       ...teaserFields(['home', 'projects'], { withLabel: true }),
-      ...teaserFields(['home', 'technicalProof'], { withLabel: true, withBullets: true }),
-      ...teaserFields(['home', 'process'], { withLabel: true }),
       ...teaserFields(['home', 'categories'], { withLabel: true }),
       ...teaserFields(['home', 'who'], { withLabel: true }),
     ],

@@ -121,6 +121,11 @@ body { background-color: #06090F; color: #CBD5E1; -webkit-font-smoothing: antial
 @keyframes reveal-up { from{opacity:0;transform:translateY(36px)} to{opacity:1;transform:translateY(0)} }
 .reveal-up { animation: reveal-up .8s cubic-bezier(.16,1,.3,1) forwards; }
 
+/* Marquee — seamless horizontal scroll for the social-proof bar */
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+.marquee-track { display:flex; width:max-content; animation:marquee 30s linear infinite; }
+.marquee-track:hover { animation-play-state:paused; }
+
 /* Section numbers */
 .section-number { font-family:"Outfit",sans-serif; font-size:clamp(5rem,15vw,11rem); font-weight:800; line-height:1; color:rgba(255,255,255,.012); position:absolute; user-select:none; pointer-events:none; }
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { LOGO_URL } from '../data';
 import { useSiteContent } from '../content';
-import { ArrowRight, ArrowDown, ShieldCheck, Globe } from 'lucide-react';
+import { ArrowRight, ArrowDown } from 'lucide-react';
 import { LumenXMark } from './ui/lumenx-mark';
 import { HeroSlideshow } from './HeroSlideshow';
 
@@ -126,11 +126,9 @@ export const HeroSection: React.FC = () => {
               <span className="text-[10px] font-mono text-primary/70 tracking-[0.3em] uppercase">{hero.badge}</span>
             </div>
 
-            {/* Headline — smaller and lighter than before, no comma */}
-            <h1 className="font-display text-[clamp(1.9rem,4.2vw,3.4rem)] font-extrabold tracking-[-0.03em] leading-[1.02] text-slate-300 mb-8 drop-shadow-[0_2px_18px_rgba(6,9,15,0.8)]">
-              {hero.headlineLead}<br />
-              <span className="gradient-text">{hero.headlineAccent}</span><br />
-              {hero.headlineTail}
+            {/* Headline */}
+            <h1 className="font-display text-[clamp(1.9rem,4.2vw,3.4rem)] font-extrabold tracking-[-0.03em] leading-[1.05] text-slate-300 mb-8 drop-shadow-[0_2px_18px_rgba(6,9,15,0.8)]">
+              {hero.headlineLead}<span className="gradient-text">{hero.headlineAccent}</span>{hero.headlineTail}
             </h1>
 
             {/* Supporting sentence — within easy reading width */}
@@ -172,23 +170,6 @@ export const HeroSection: React.FC = () => {
                     <SlidersHorizontal className="w-4 h-4 text-slate-400 group-hover:text-primary transition-colors" />
                     Design Tool
                   </Link> */}
-            </div>
-
-            {/* Trust strip — X marks as separators */}
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[11px] font-mono text-slate-500">
-              {hero.trustItems.map((item, i) => (
-                <React.Fragment key={item}>
-                  {i > 0 && <LumenXMark className="hidden sm:inline-block w-2 h-2 text-primary/40" />}
-                  <span className="flex items-center gap-1.5">
-                    {i === 0 ? (
-                      <Globe className="w-3 h-3 text-slate-600" />
-                    ) : (
-                      <ShieldCheck className="w-3 h-3 text-slate-600" />
-                    )}
-                    {item}
-                  </span>
-                </React.Fragment>
-              ))}
             </div>
           </motion.div>
         </div>

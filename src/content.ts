@@ -118,8 +118,6 @@ export interface SiteContent {
   home: {
     solution: Teaser;
     projects: Teaser;
-    technicalProof: Teaser & { bullets: string[] };
-    process: Teaser;
     categories: Teaser;
     who: Teaser;
   };
@@ -150,14 +148,14 @@ export interface SiteContent {
 export const DEFAULT_CONTENT: SiteContent = {
   company: { ...COMPANY },
   hero: {
-    badge: 'South Africa — Nationwide',
-    headlineLead: 'LIGHTING',
-    headlineAccent: 'ENGINEERED',
-    headlineTail: 'FOR REAL PROJECTS',
+    badge: 'Project Lighting | South Africa',
+    headlineLead: 'Lighting, engineered for ',
+    headlineAccent: 'real projects',
+    headlineTail: '.',
     serviceTags: ['Specification', 'Value Engineering', 'Supply', 'Project Coordination and Completion'],
-    primaryCta: 'Submit your lighting requirement',
-    secondaryCta: 'Explore Products',
-    trustItems: ['Nationwide Coverage', 'B-BBEE Level 2', 'SABS / IEC / OSHACT Aligned'],
+    primaryCta: 'Send Us Your Project',
+    secondaryCta: 'Explore Lighting Solutions',
+    trustItems: ['Nationwide Delivery', 'B-BBEE Level 2', 'SABS, IEC and OSHACT Aligned', 'Manufacturer-Backed Warranties'],
   },
   solution: {
     headingTop: 'One team manages the whole lighting project',
@@ -219,7 +217,8 @@ export const DEFAULT_CONTENT: SiteContent = {
   home: {
     solution: {
       title: { lead: 'One partner ', accent: 'the complete project', tail: '' },
-      copy: 'Design, specification, supply and coordination — one team from first drawing to handover.',
+      copy:
+        'Lighting projects involve more than choosing a fitting. LumenX helps project teams turn design intent into a technically sound, commercially workable lighting solution that can be delivered on site.',
       link: 'See how the complete solution works',
     },
     projects: {
@@ -227,24 +226,6 @@ export const DEFAULT_CONTENT: SiteContent = {
       title: { lead: 'Technical proof ', accent: 'not promises', tail: '' },
       copy: "Commercial and industrial lighting projects we've delivered, end to end.",
       link: 'View featured projects',
-    },
-    technicalProof: {
-      label: 'Technical Proof',
-      title: { lead: 'Documentation ', accent: 'standards and warranties', tail: '' },
-      copy: 'Specs backed by data, simulations and compliance docs.',
-      link: 'Download technical documentation',
-      bullets: [
-        'SABS / IEC / OSHACT aligned',
-        'B-BBEE Level 2',
-        'Manufacturer-backed warranties',
-        'Lighting simulations & calculations',
-      ],
-    },
-    process: {
-      label: 'How It Works',
-      title: { lead: 'A clear process ', accent: 'brief to delivery', tail: '' },
-      copy: 'Six steps, brief to delivery.',
-      link: 'Explore the full process',
     },
     categories: {
       label: 'Product Categories',

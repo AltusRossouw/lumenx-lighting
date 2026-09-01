@@ -43,7 +43,7 @@ export const CompleteSolutionSection: React.FC = () => {
           <div className="hidden lg:block absolute top-12 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
           {/* Step markers */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-0">
+          <div className="grid grid-cols-1 lg:grid-cols-6 gap-6 lg:gap-0">
             {completeSolution.map((cap, i) => (
               <motion.div
                 key={i}

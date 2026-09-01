@@ -39,10 +39,10 @@ export const DifferenceCarousel: React.FC = () => {
       className="relative py-14 sm:py-16 overflow-hidden bg-[#04070D] border-b border-[#1E293B]/60"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-6 mb-8">
+        <div className="flex items-end justify-between gap-6 mb-8">
           <div className="flex items-center gap-3">
             <span className="w-8 h-px bg-primary/40" />
-            <h2 className="font-display text-sm sm:text-base font-bold tracking-[0.14em] uppercase text-slate-300">
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-[-0.02em]">
               The <span className="gradient-text">LumenX</span> difference
             </h2>
           </div>
