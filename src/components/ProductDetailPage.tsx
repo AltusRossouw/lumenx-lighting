@@ -83,9 +83,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
                   {/* Image */}
                   <Link
                     to={`/products/${category.id}/${product.slug}`}
-                    className={`relative h-56 overflow-hidden block ${
-                      product.imageUrl.startsWith('/product-images/') ? 'bg-white' : ''
-                    }`}
+                    className="relative h-56 overflow-hidden block"
                     aria-label={product.name}
                   >
                     <img

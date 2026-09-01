@@ -122,7 +122,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7 }}
-              className={`relative overflow-hidden rounded-2xl gradient-border-card card-lift ${isRender ? 'bg-white' : ''}`}
+              className="relative overflow-hidden rounded-2xl gradient-border-card card-lift"
             >
               <img
                 src={product.imageUrl}
@@ -133,13 +133,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#06090F]/70 via-transparent to-transparent pointer-events-none" />
               )}
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                <span
-                  className={`px-3 py-1 text-[10px] font-mono tracking-wider uppercase rounded-full border backdrop-blur ${
-                    isRender
-                      ? 'bg-white/90 border-black/10 text-slate-700'
-                      : 'bg-[#06090F]/80 border-white/10 text-slate-300'
-                  }`}
-                >
+                <span className="px-3 py-1 text-[10px] font-mono tracking-wider uppercase rounded-full border backdrop-blur bg-[#06090F]/80 border-white/10 text-slate-300">
                   {product.supplier} · {category.title}
                 </span>
               </div>
