@@ -283,49 +283,49 @@ export const MANAGING_DIRECTOR: ManagingDirector = {
 /** Homepage hero slideshow — all installation photography in curated order. */
 export const HERO_SLIDES: InstallationImage[] = [
   {
-    src: '/installation-images/triangular-facade-accent-lighting.jpeg',
+    src: '/installation-images/hero/facade-triangular.jpg',
     alt: 'Triangular glass building facade with warm golden LED linear accent lighting at dusk.',
     category: 'Architectural Exterior',
     application: 'Dynamic LED facade illumination',
   },
   {
-    src: '/installation-images/modern-office-cove-lighting.jpeg',
+    src: '/installation-images/hero/office-cove.jpg',
     alt: 'Modern executive office interior with ambient LED cove lighting and sleek workstation design.',
     category: 'Commercial Office',
     application: 'Ambient cove lighting',
   },
   {
-    src: '/installation-images/retail-track-lighting.png',
+    src: '/installation-images/hero/retail-track.jpg',
     alt: 'Luxury retail clothing store illuminated by black ceiling-mounted directional LED track spotlights.',
     category: 'Retail',
     application: 'Accent & spotlight solutions',
   },
   {
-    src: '/installation-images/industrial-warehouse-led-lighting.jpeg',
+    src: '/installation-images/hero/warehouse-highbay.jpg',
     alt: 'Spacious empty warehouse with high open truss ceiling illuminated by rows of high-bay LED linear lights.',
     category: 'Industrial',
     application: 'High-bay installations',
   },
   {
-    src: '/installation-images/commercial-facade-slat-lighting.jpeg',
+    src: '/installation-images/hero/facade-slats.jpg',
     alt: 'Multi-story commercial building exterior with vertical louvered LED strip lighting at night.',
     category: 'Architectural Exterior',
     application: 'Vertical slat illumination',
   },
   {
-    src: '/installation-images/linear-pendant-office-lighting.jpeg',
+    src: '/installation-images/hero/office-pendant.jpg',
     alt: 'Collaborative open office workspace with suspended black linear LED pendant lights over communal desks.',
     category: 'Office',
     application: 'Suspended linear lighting',
   },
   {
-    src: '/installation-images/open-ceiling-office-lighting.jpeg',
+    src: '/installation-images/hero/office-linear.jpg',
     alt: 'Open ceiling office design with suspended continuous LED linear fixtures over workstations.',
     category: 'Industrial Office',
     application: 'Continuous linear LEDs',
   },
   {
-    src: '/installation-images/shopping-mall-cove-lighting.jpeg',
+    src: '/installation-images/hero/mall-cove.jpg',
     alt: 'Luxury shopping mall concourse with continuous ceiling LED cove lighting and glass storefronts.',
     category: 'Public Space',
     application: 'Concourse cove lighting',
