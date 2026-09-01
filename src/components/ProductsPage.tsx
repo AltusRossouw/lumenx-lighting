@@ -51,7 +51,12 @@ export const ProductsPage: React.FC = () => {
                     src={category.imageUrl}
                     alt={category.title}
                     loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-out group-hover:scale-105 group-hover:brightness-[1.32] group-hover:saturate-[1.15] group-hover:drop-shadow-[0_0_28px_rgba(0,212,255,0.5)]"
+                  />
+                  {/* Ambient glow on hover — the fixture "switches on" */}
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                    style={{ background: 'radial-gradient(ellipse 65% 55% at 50% 45%, rgba(0,212,255,0.16), transparent 72%)' }}
                   />
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 text-[10px] font-mono tracking-wider uppercase rounded-full bg-primary/10 border border-primary/20 text-primary">
