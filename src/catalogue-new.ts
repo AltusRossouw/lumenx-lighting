@@ -58,7 +58,7 @@ export const NEW_PRODUCTS: Product[] = [
     slug: "profiles",
     name: "Profiles",
     category: "profiles",
-    supplier: "LBY",
+    supplier: "LumenX",
     summary: "Profiles — Profiles supplied by LumenX.",
     description: "Profiles — Profiles supplied by LumenX.",
     specs: [
@@ -68,12 +68,12 @@ export const NEW_PRODUCTS: Product[] = [
     imageUrl: "/product-images/placeholder-product.svg",
   },
   {
-    slug: "sunfor-solar-range",
+    slug: "LumenX-solar-range",
     name: "Sunfor",
     category: "solar",
-    supplier: "Sunfor",
-    summary: "Sunfor — supplied by LumenX.",
-    description: "Sunfor — supplied by LumenX.",
+    supplier: "LumenX",
+    summary: "LumenX — supplied by LumenX.",
+    description: "LumenX — supplied by LumenX.",
     specs: [
     ],
     features: [],
@@ -84,7 +84,7 @@ export const NEW_PRODUCTS: Product[] = [
     slug: "sky-ele-15-solar-post-top",
     name: "Sky ELE-15 Solar Post Top",
     category: "solar",
-    supplier: "Superlume",
+    supplier: "LumenX",
     summary: "All-in-one solar-powered LED post top fitting for areas with no electrical infrastructure — fully integrated battery, zero wirin…",
     description: "All-in-one solar-powered LED post top fitting for areas with no electrical infrastructure — fully integrated battery, zero wiring and minimal maintenance. Ideal for estates, public parks, isolated streets and gate posts.",
     specs: [
@@ -109,7 +109,7 @@ export const NEW_PRODUCTS: Product[] = [
     slug: "sky-spt-150-solar-post-top",
     name: "Sky SPT-150 Solar Post Top",
     category: "solar",
-    supplier: "Superlume",
+    supplier: "LumenX",
     summary: "Self-sustaining solar-powered post top light delivering reliable performance for estates, isolated areas and security perimeters…",
     description: "Self-sustaining solar-powered post top light delivering reliable performance for estates, isolated areas and security perimeters — no electrical connection required.",
     specs: [
@@ -130,9 +130,9 @@ export const NEW_PRODUCTS: Product[] = [
     slug: "vista-solar-post-top",
     name: "Vista Solar Post Top",
     category: "solar",
-    supplier: "Pioled",
-    summary: "Pioled — supplied by LumenX.",
-    description: "Pioled — supplied by LumenX.",
+    supplier: "LumenX",
+    summary: "LumenX — supplied by LumenX.",
+    description: "LumenX — supplied by LumenX.",
     specs: [
     ],
     features: [],
@@ -141,12 +141,12 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/vista-solar-post-top",
   },
   {
-    slug: "steinel-is-2360-r",
+    slug: "LumenX-is-2360-r",
     name: "IS 2360 R",
     category: "sensors",
-    supplier: "Steinel",
-    summary: "STEINEL inside. Intelligent technology for installation. The perfect infrared sensor for installing in projecting roofs and susp…",
-    description: "STEINEL inside. Intelligent technology for installation. The perfect infrared sensor for installing in projecting roofs and suspended ceilings. The IS 2360 DE ECO has a reach of up to 8 m in diameter and an impressive 360° angle of coverage. The detection zone can be adjusted where necessary by using shrouds.",
+    supplier: "LumenX",
+    summary: "LumenX inside. Intelligent technology for installation. The perfect infrared sensor for installing in projecting roofs and susp…",
+    description: "LumenX inside. Intelligent technology for installation. The perfect infrared sensor for installing in projecting roofs and suspended ceilings. The IS 2360 DE ECO has a reach of up to 8 m in diameter and an impressive 360° angle of coverage. The detection zone can be adjusted where necessary by using shrouds.",
     specs: [
       { label: "Application, place", value: "Outdoors, Indoors" },
       { label: "Installation", value: "In-ceiling installation" },
@@ -159,7 +159,7 @@ export const NEW_PRODUCTS: Product[] = [
       { label: "infrared sensor 360°", value: "max. 4 m" },
       { label: "1000 W max.", value: "IP54" },
       { label: "2 - 2000 lux", value: "8 sec - 35 min" },
-      { label: "manufacturer's warranty steinel.de/garantie", value: "CE" },
+      { label: "manufacturer's warranty LumenX.de/garantie", value: "CE" },
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
@@ -167,10 +167,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/steinel-is-2360-r",
   },
   {
-    slug: "steinel-is-2360-s",
+    slug: "LumenX-is-2360-s",
     name: "IS 2360 S",
     category: "sensors",
-    supplier: "Steinel",
+    supplier: "LumenX",
     summary: "Slips into the background. And detects every movement. Stylish infrared ceiling sensor with an unobtrusive compact look. The sur…",
     description: "Slips into the background. And detects every movement. Stylish infrared ceiling sensor with an unobtrusive compact look. The surface-mounted IS 2360 motion detector with passive infrared sensor technology is the perfect choice for porches and small rooms. With a reach of 7 m and 360° detection zone, it reliably detects all movements with absolute precision. The precision IR sensor also impresses with its ease of installation.",
     specs: [
@@ -185,7 +185,7 @@ export const NEW_PRODUCTS: Product[] = [
       { label: "infrared sensor 360°", value: "max. 7 m" },
       { label: "max. 2000 W", value: "IP54" },
       { label: "2 - 2000 lux", value: "8 sec - 35 min" },
-      { label: "manufacturer's warranty steinel.de/garantie", value: "CE" },
+      { label: "manufacturer's warranty LumenX.de/garantie", value: "CE" },
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
@@ -193,10 +193,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/steinel-is-2360-s",
   },
   {
-    slug: "steinel-light-sensor",
+    slug: "LumenX-light-sensor",
     name: "Light Sensor",
     category: "sensors",
-    supplier: "Steinel",
+    supplier: "LumenX",
     summary: "Light Sensor — Light Sensor supplied by LumenX.",
     description: "Light Sensor — Light Sensor supplied by LumenX.",
     specs: [
@@ -215,10 +215,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/steinel-light-sensor",
   },
   {
-    slug: "steinel-dualtech",
+    slug: "LumenX-dualtech",
     name: "DualTech",
     category: "sensors",
-    supplier: "Steinel",
+    supplier: "LumenX",
     summary: "Risk of electric shock! 230 V means danger to life! Disconnect the power supply before attempting any work on the product. Durin…",
     description: "Risk of electric shock! 230 V means danger to life! Disconnect the power supply before attempting any work on the product. During installation, the electric power cable being connected may not be live. Therefore, switch off the power first and use a voltage tester to make sure the wiring is off-circuit. Installing the sensor involves work on the mains power supply. This work must therefore be carried out professionally in accordance with national wiring regulations and electrical operating conditions. (e.g. DE - VDE 0100, AT - ÖVE / ÖNORM E8001-1, CH - SEV 1000) For products with COM2 port: connection B1, B2 is a switching contact for low-energy circuits. This must be fuse-protected in line with the technical specifications. Only electronic ballasts with a floating control signal may be used at the DIM 1 to 10 V control output. No mains voltage may be connected to control output/input DA+ / DA-. Only use genuine replacement parts. Repairs may only be made by specialist workshops.",
     specs: [
@@ -241,10 +241,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/steinel-dualtech",
   },
   {
-    slug: "steinel-is-3360",
+    slug: "LumenX-is-3360",
     name: "IS 3360",
     category: "sensors",
-    supplier: "Steinel",
+    supplier: "LumenX",
     summary: "Higher, further, faster. Infrared presence detector IS 3360 for indoors and out, ideal for watching over high spaces and large a…",
     description: "Higher, further, faster. Infrared presence detector IS 3360 for indoors and out, ideal for watching over high spaces and large areas, such as multi-storey and underground car parks, installation height up to 4 m, 360° angle of coverage, reach 20 m max. (tangential), heavy-duty relay for high switching capacity. Available either in round or square surface-mounted, concealed or In-ceiling installation.",
     specs: [
@@ -267,10 +267,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/steinel-is-3360",
   },
   {
-    slug: "steinel-is-3360-highbay",
+    slug: "LumenX-is-3360-highbay",
     name: "IS 3360 Highbay",
     category: "sensors",
-    supplier: "Steinel",
+    supplier: "LumenX",
     summary: "A head for heights. Powerful reach. Reliable. IS 3360 MX Highbay motion detector – ideal for high ceilings in industrial buildin…",
     description: "A head for heights. Powerful reach. Reliable. IS 3360 MX Highbay motion detector – ideal for high ceilings in industrial buildings or commercial properties. For mounting heights of up to 14 m. High-precision 360° infrared sensor. Maximum reach: 18 m. For watching over up to 1000 sq.m. Available as square surface-mounted and concealed version.",
     specs: [
@@ -293,10 +293,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/steinel-is-3360-highbay",
   },
   {
-    slug: "steinel-is-345-highbay",
+    slug: "LumenX-is-345-highbay",
     name: "IS 345 Highbay",
     category: "sensors",
-    supplier: "Steinel",
+    supplier: "LumenX",
     summary: "Surveillance on the highest level. Infrared motion detector IS 345 MX Highbay for indoors, ideal for large heights in depots, hi…",
     description: "Surveillance on the highest level. Infrared motion detector IS 345 MX Highbay for indoors, ideal for large heights in depots, high-bay warehouses, machine shops, check-in areas and departure lounges, installation height 16 m, detection zone 30 x 4 m (radial), large terminal compartment for easy installation, heavy-duty relay for high switching capacity. Available as square surface-mounted and concealed version.",
     specs: [
@@ -319,10 +319,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/steinel-is-345-highbay",
   },
   {
-    slug: "steinel-dual-hf-corridor",
+    slug: "LumenX-dual-hf-corridor",
     name: "Dual HF Corridor",
     category: "sensors",
-    supplier: "Steinel",
+    supplier: "LumenX",
     summary: "Twice as vigilant! High-frequency corridor sensor Presence Control PRO Dual HF COM1 for indoors, ideal for passageways and long …",
     description: "Twice as vigilant! High-frequency corridor sensor Presence Control PRO Dual HF COM1 for indoors, ideal for passageways and long corridors, installation height up to 3.5 m, for switching light 'ON' and 'OFF', DUAL-HF technology for detecting radial movement over up to 20 m in two directions, detection regardless of temperature, HF-sensor technology detects movement through glass, wood and stud walls, switches light 'ON' almost instantly.",
     specs: [
@@ -345,10 +345,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/steinel-dual-hf-corridor",
   },
   {
-    slug: "steinel-hf-360",
+    slug: "LumenX-hf-360",
     name: "HF 360",
     category: "sensors",
-    supplier: "Steinel",
+    supplier: "LumenX",
     summary: "Doesn't miss a thing. HF-presence detector Presence Control PRO HF 360 COM1 for indoors, ideal for WCs with toilet cubicles, cha…",
     description: "Doesn't miss a thing. HF-presence detector Presence Control PRO HF 360 COM1 for indoors, ideal for WCs with toilet cubicles, changing rooms, stairwells, multi-storey car parks, kitchens, installation height up to 3.5 m, for switching light 'ON' and 'OFF', 1 – 12 m reach, reach is electronically adjustable and can be limited in two directions, detection regardless of temperature, HF-sensor technology also detects movement through glass, wood and stud walls.",
     specs: [
@@ -371,10 +371,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/steinel-hf-360",
   },
   {
-    slug: "steinel-is-2180",
+    slug: "LumenX-is-2180",
     name: "IS 2180",
     category: "sensors",
-    supplier: "Steinel",
+    supplier: "LumenX",
     summary: "Attractive, clever, efficient. Infrared motion detector IS 2180-2 for outdoors, ideal for building fronts and properties, medium…",
     description: "Attractive, clever, efficient. Infrared motion detector IS 2180-2 for outdoors, ideal for building fronts and properties, medium-sized business and outdoor spaces, ideal installation height 2 m, 180° angle of coverage, reach. 12 m max. or 5 m max. (tangential), selectable time and twilight threshold, manual override, for outdoor and indoor installation .",
     specs: [
@@ -389,7 +389,7 @@ export const NEW_PRODUCTS: Product[] = [
       { label: "infrared sensor 180°", value: "max. Ø 12 m" },
       { label: "1000 W max.", value: "IP54" },
       { label: "2 - 2000 lux", value: "5 sec - 15 min" },
-      { label: "manufacturer's warranty steinel.de/garantie", value: "CE" },
+      { label: "manufacturer's warranty LumenX.de/garantie", value: "CE" },
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
@@ -397,10 +397,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/steinel-is-2180",
   },
   {
-    slug: "steinel-ir-quattro-micro",
+    slug: "LumenX-ir-quattro-micro",
     name: "IR Quattro Micro",
     category: "sensors",
-    supplier: "Steinel",
+    supplier: "LumenX",
     summary: "Noticeably Inconspicuous. IR Quattro SLIM XS, the extra-slim presence detector in concealed-box format. Fits into any standard c…",
     description: "Noticeably Inconspicuous. IR Quattro SLIM XS, the extra-slim presence detector in concealed-box format. Fits into any standard concealed box. Overall height of just 6 mm. High-precision 360° infrared senor with globally unique retina lens and 16 sq.m square presence detection zone (4 x 4 m). Adjustment via remote control or Smart Remote. Round aperture is additionally enclosed.",
     specs: [
@@ -423,10 +423,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/steinel-ir-quattro-micro",
   },
   {
-    slug: "steinel-ir-quattro-hd",
+    slug: "LumenX-ir-quattro-hd",
     name: "IR Quattro HD",
     category: "sensors",
-    supplier: "Steinel",
+    supplier: "LumenX",
     summary: "Detection no finer! Infrared presence detector Presence Control PRO IR Quattro HD COM1 for indoors, ideal for medium to large-si…",
     description: "Detection no finer! Infrared presence detector Presence Control PRO IR Quattro HD COM1 for indoors, ideal for medium to large-size offices, conference and meeting rooms, classrooms and lecture theatres, sports halls and warehouses, installation height up to 10 m, for switching light 'ON' and 'OFF', 4800 switching zones for the ultimate in detection quality, presence detection over a true 64 m2, square detection zone, mechanically scalable.",
     specs: [
@@ -441,7 +441,7 @@ export const NEW_PRODUCTS: Product[] = [
       { label: "infrared sensor", value: "max. 8m x 8m presence" },
       { label: "4800 zones", value: "max. 2000 W" },
       { label: "ideal 2,5 - 10 m", value: "indoor sensor" },
-      { label: "manufacturer's warranty steinel.de/garantie", value: "CE" },
+      { label: "manufacturer's warranty LumenX.de/garantie", value: "CE" },
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
@@ -449,10 +449,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/steinel-ir-quattro-hd",
   },
   {
-    slug: "steinel-sensiq-s",
+    slug: "LumenX-sensiq-s",
     name: "Sens IQ S",
     category: "sensors",
-    supplier: "Steinel",
+    supplier: "LumenX",
     summary: "Sens IQ S — Sens IQ S supplied by LumenX.",
     description: "Sens IQ S — Sens IQ S supplied by LumenX.",
     specs: [
@@ -475,10 +475,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/steinel-sensiq-s",
   },
   {
-    slug: "steinel-smart-remote",
+    slug: "LumenX-smart-remote",
     name: "Smart Remote",
     category: "sensors",
-    supplier: "Steinel",
+    supplier: "LumenX",
     summary: "Smart Remote — Smart Remote supplied by LumenX.",
     description: "Smart Remote — Smart Remote supplied by LumenX.",
     specs: [
@@ -490,10 +490,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/steinel-smart-remote",
   },
   {
-    slug: "steinel-service-remote",
+    slug: "LumenX-service-remote",
     name: "Service Remote",
     category: "sensors",
-    supplier: "Steinel",
+    supplier: "LumenX",
     summary: "The full works at the press of a button. User remote control RC7 KNX for Presence Control PRO presence detectors and motion dete…",
     description: "The full works at the press of a button. User remote control RC7 KNX for Presence Control PRO presence detectors and motion detectors in conjunction with KNX interface.",
     specs: [
@@ -505,10 +505,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/steinel-service-remote",
   },
   {
-    slug: "kinglong-cloud-bell-series",
+    slug: "LumenX-cloud-bell-series",
     name: "Cloud Bell",
     category: "decorative",
-    supplier: "KingLong",
+    supplier: "LumenX",
     summary: "The Cloud Bell Series draws its vocabulary from the gentle curves of hanging bells and the soft fullness of clouds at dusk — org…",
     description: "The Cloud Bell Series draws its vocabulary from the gentle curves of hanging bells and the soft fullness of clouds at dusk — organic forms that carry both visual weight and an inherent sense of movement. Each bell element is individually crafted from layered acrylic and crystal, achieving a depth of luminous translucency that flat surfaces cannot replicate. Deployed in clusters of varying heights, the Cloud Bell Series creates installations that feel more like kinetic sculpture than conventional lighting — ideal for clients who treat their spaces as galleries of lived experience.",
     specs: [
@@ -530,10 +530,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/kinglong-cloud-bell-series",
   },
   {
-    slug: "kinglong-pearl-series",
+    slug: "LumenX-pearl-series",
     name: "Pearl Series",
     category: "decorative",
-    supplier: "KingLong",
+    supplier: "LumenX",
     summary: "Pearls have symbolised purity and refinement across cultures for millennia — and the Pearl Series channels that same quiet confi…",
     description: "Pearls have symbolised purity and refinement across cultures for millennia — and the Pearl Series channels that same quiet confidence into decorative lighting. Each sphere is crafted from high-quality mouth-blown glass, achieving a uniformity of form and a translucency that mass-produced alternatives cannot match. Arranged in cascading cluster configurations that echo the natural randomness of a pearl strand, the series brings an organic, timeless elegance to any interior. Versatile enough for both intimate residential dining rooms and the public areas of boutique hotels, the Pearl Series is a perennial bestseller.",
     specs: [
@@ -558,10 +558,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/kinglong-pearl-series",
   },
   {
-    slug: "kinglong-dream-pen-series",
+    slug: "LumenX-dream-pen-series",
     name: "Dream Pen",
     category: "decorative",
-    supplier: "KingLong",
+    supplier: "LumenX",
     summary: "Dream Pen — Dream Pen supplied by LumenX.",
     description: "Dream Pen — Dream Pen supplied by LumenX.",
     specs: [
@@ -572,10 +572,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/kinglong-dream-pen-series",
   },
   {
-    slug: "kinglong-jiangnan-series",
+    slug: "LumenX-jiangnan-series",
     name: "Jiangnan",
     category: "decorative",
-    supplier: "KingLong",
+    supplier: "LumenX",
     summary: "Inspired by the poetic mist-veiled landscapes of Jiangnan — southern China's storied water towns — this collection translates Ea…",
     description: "Inspired by the poetic mist-veiled landscapes of Jiangnan — southern China's storied water towns — this collection translates Eastern sensibility into a thoroughly contemporary design language. High-quality eco-leather wraps a precision metal armature, creating a signature softness that diffuses light with warmth and intimacy. The Champagne Gold PVD-finished metal structure offers outstanding durability and corrosion resistance, making it ideal for demanding hospitality environments. Recognized by international design awards, the Jiangnan Series redefines what modern Chinese-inspired lighting can be.",
     specs: [
@@ -600,10 +600,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/kinglong-jiangnan-series",
   },
   {
-    slug: "kinglong-crystal-cloud-series",
+    slug: "LumenX-crystal-cloud-series",
     name: "Crystal Cloud",
     category: "decorative",
-    supplier: "KingLong",
+    supplier: "LumenX",
     summary: "The Crystal Cloud Series is pure poetry rendered in light. Thousands of individually placed crystal elements are suspended at va…",
     description: "The Crystal Cloud Series is pure poetry rendered in light. Thousands of individually placed crystal elements are suspended at varied heights, creating an immersive three-dimensional cloud formation that hovers above the space below. In motion with air currents, the installation breathes and shimmers — transforming any room it occupies into an experiential destination. Designed for the most ambitious architectural briefs, the Crystal Cloud Series has graced the lobbies of Ritz-Carlton, Four Seasons, and Shangri-La properties worldwide.",
     specs: [
@@ -627,10 +627,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/kinglong-crystal-cloud-series",
   },
   {
-    slug: "ledsc4-circular-10002",
+    slug: "LumenX-circular-10002",
     name: "Circular",
     category: "indoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Harmony closes in a circle.",
     description: "Harmony closes in a circle.",
     specs: [
@@ -646,10 +646,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-circular-10002",
   },
   {
-    slug: "ledsc4-circular-vertical-10374",
+    slug: "LumenX-circular-vertical-10374",
     name: "Circular Vertical",
     category: "indoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Harmony closes in a circle.",
     description: "Harmony closes in a circle.",
     specs: [
@@ -665,10 +665,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-circular-vertical-10374",
   },
   {
-    slug: "ledsc4-attic-10009",
+    slug: "LumenX-attic-10009",
     name: "Attic",
     category: "indoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Attic — Attic supplied by LumenX.",
     description: "Attic — Attic supplied by LumenX.",
     specs: [
@@ -680,10 +680,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-attic-10009",
   },
   {
-    slug: "ledsc4-vetro-10124",
+    slug: "LumenX-vetro-10124",
     name: "Vetro",
     category: "indoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Essential that resists moisture",
     description: "Essential that resists moisture",
     specs: [
@@ -700,10 +700,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-vetro-10124",
   },
   {
-    slug: "superlume-fabric-tape",
+    slug: "LumenX-fabric-tape",
     name: "Fabric Tape",
     category: "indoor-architectural",
-    supplier: "Superlume",
+    supplier: "LumenX",
     summary: "Fabric Tape — Fabric Tape supplied by LumenX.",
     description: "Fabric Tape — Fabric Tape supplied by LumenX.",
     specs: [
@@ -713,10 +713,10 @@ export const NEW_PRODUCTS: Product[] = [
     imageUrl: "/product-images/placeholder-product.svg",
   },
   {
-    slug: "ledsc4-eko-10141",
+    slug: "LumenX-eko-10141",
     name: "Eko",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Essential with a filter that softens the light effect",
     description: "Essential with a filter that softens the light effect",
     specs: [
@@ -729,10 +729,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-eko-10141",
   },
   {
-    slug: "ledsc4-cube-spot-10301",
+    slug: "LumenX-cube-spot-10301",
     name: "Cube",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Maximum precision for high-rise facades",
     description: "Maximum precision for high-rise facades",
     specs: [
@@ -748,10 +748,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-cube-spot-10301",
   },
   {
-    slug: "ledsc4-hubble-10143",
+    slug: "LumenX-hubble-10143",
     name: "Hubble",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Collection of versatile and highly efficient projectors",
     description: "Collection of versatile and highly efficient projectors",
     specs: [
@@ -767,10 +767,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-hubble-10143",
   },
   {
-    slug: "ledsc4-eko-10195",
+    slug: "LumenX-eko-10195",
     name: "Eko",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Essential with premium features",
     description: "Essential with premium features",
     specs: [
@@ -783,10 +783,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-eko-10195",
   },
   {
-    slug: "ledsc4-ele-10311",
+    slug: "LumenX-ele-10311",
     name: "Ele",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Pure aesthetics for greater comfort",
     description: "Pure aesthetics for greater comfort",
     specs: [
@@ -802,10 +802,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-ele-10311",
   },
   {
-    slug: "ledsc4-modis-10316",
+    slug: "LumenX-modis-10316",
     name: "Modis",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Modis — Modis supplied by LumenX.",
     description: "Modis — Modis supplied by LumenX.",
     specs: [
@@ -819,10 +819,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-modis-10316",
   },
   {
-    slug: "ledsc4-moal-10202",
+    slug: "LumenX-moal-10202",
     name: "Moal",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Furniture and light beacon",
     description: "Furniture and light beacon",
     specs: [
@@ -839,10 +839,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-moal-10202",
   },
   {
-    slug: "ledsc4-row-10319",
+    slug: "LumenX-row-10319",
     name: "Row",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Integration in cement",
     description: "Integration in cement",
     specs: [
@@ -859,10 +859,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-row-10319",
   },
   {
-    slug: "ledsc4-ele-10218",
+    slug: "LumenX-ele-10218",
     name: "Ele",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Pure aesthetics for greater comfort",
     description: "Pure aesthetics for greater comfort",
     specs: [
@@ -879,10 +879,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-ele-10218",
   },
   {
-    slug: "ledsc4-proud-10224",
+    slug: "LumenX-proud-10224",
     name: "Proud",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Adaptable personality",
     description: "Adaptable personality",
     specs: [
@@ -898,10 +898,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-proud-10224",
   },
   {
-    slug: "ledsc4-lyon-10221",
+    slug: "LumenX-lyon-10221",
     name: "Lyon",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Extensive lighting",
     description: "Extensive lighting",
     specs: [
@@ -918,10 +918,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-lyon-10221",
   },
   {
-    slug: "ledsc4-zigzag-10225",
+    slug: "LumenX-zigzag-10225",
     name: "Zig Zag",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Español English Deutsch Français Italiano Português Polski Русский",
     description: "Español English Deutsch Français Italiano Português Polski Русский",
     specs: [
@@ -937,10 +937,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-zigzag-10225",
   },
   {
-    slug: "ledsc4-helion-10219",
+    slug: "LumenX-helion-10219",
     name: "Helion",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Evocative lights and shadows",
     description: "Evocative lights and shadows",
     specs: [
@@ -956,10 +956,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-helion-10219",
   },
   {
-    slug: "ledsc4-cube-linear-recessed-10128",
+    slug: "LumenX-cube-linear-recessed-10128",
     name: "Cube Linear",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Maximum precision to wash high-rise facades",
     description: "Maximum precision to wash high-rise facades",
     specs: [
@@ -975,10 +975,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-cube-linear-recessed-10128",
   },
   {
-    slug: "ledsc4-gea-cob-10155",
+    slug: "LumenX-gea-cob-10155",
     name: "Gea Cob",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Ideal swivel solution for vegetation",
     description: "Ideal swivel solution for vegetation",
     specs: [
@@ -991,10 +991,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-gea-cob-10155",
   },
   {
-    slug: "ledsc4-finestra-10183",
+    slug: "LumenX-finestra-10183",
     name: "Finestra",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Customizable facades",
     description: "Customizable facades",
     specs: [
@@ -1011,10 +1011,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-finestra-10183",
   },
   {
-    slug: "ledsc4-cosmos-10172",
+    slug: "LumenX-cosmos-10172",
     name: "Cosmos",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Elegance and versatility",
     description: "Elegance and versatility",
     specs: [
@@ -1030,10 +1030,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-cosmos-10172",
   },
   {
-    slug: "ledsc4-afrodita-led-10168",
+    slug: "LumenX-afrodita-led-10168",
     name: "Afrodita",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Afrodita — Afrodita supplied by LumenX.",
     description: "Afrodita — Afrodita supplied by LumenX.",
     specs: [
@@ -1047,10 +1047,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-afrodita-led-10168",
   },
   {
-    slug: "ledsc4-mega-10230",
+    slug: "LumenX-mega-10230",
     name: "Mega",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Lighting of large surfaces",
     description: "Lighting of large surfaces",
     specs: [
@@ -1066,10 +1066,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-mega-10230",
   },
   {
-    slug: "ledsc4-cisne-colgante-10231",
+    slug: "LumenX-cisne-colgante-10231",
     name: "Cisne Colgante",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
+    supplier: "LumenX",
     summary: "Warmth and magnetism",
     description: "Warmth and magnetism",
     specs: [
@@ -1086,10 +1086,10 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/ledsc4-cisne-colgante-10231",
   },
   {
-    slug: "superlume-palm-and-coco",
+    slug: "LumenX-palm-and-coco",
     name: "Palm & Coco",
     category: "outdoor-architectural",
-    supplier: "Superlume",
+    supplier: "LumenX",
     summary: "Palm & Coco — Palm & Coco supplied by LumenX.",
     description: "Palm & Coco — Palm & Coco supplied by LumenX.",
     specs: [
@@ -1102,7 +1102,7 @@ export const NEW_PRODUCTS: Product[] = [
     slug: "fuji-bollard-square",
     name: "Fuji Square",
     category: "outdoor-architectural",
-    supplier: "Pioled",
+    supplier: "LumenX",
     summary: "Fuji Square — Fuji Square supplied by LumenX.",
     description: "Fuji Square — Fuji Square supplied by LumenX.",
     specs: [
@@ -1116,7 +1116,7 @@ export const NEW_PRODUCTS: Product[] = [
     slug: "fuji-bollard-round",
     name: "Fuji Round",
     category: "outdoor-architectural",
-    supplier: "Pioled",
+    supplier: "LumenX",
     summary: "Fuji Round — Fuji Round supplied by LumenX.",
     description: "Fuji Round — Fuji Round supplied by LumenX.",
     specs: [
@@ -1130,7 +1130,7 @@ export const NEW_PRODUCTS: Product[] = [
     slug: "everest-bollard-square",
     name: "Everest Square",
     category: "outdoor-architectural",
-    supplier: "Pioled",
+    supplier: "LumenX",
     summary: "Everest Square — Everest Square supplied by LumenX.",
     description: "Everest Square — Everest Square supplied by LumenX.",
     specs: [
@@ -1144,7 +1144,7 @@ export const NEW_PRODUCTS: Product[] = [
     slug: "everest-bollard-round",
     name: "Everest Round",
     category: "outdoor-architectural",
-    supplier: "Pioled",
+    supplier: "LumenX",
     summary: "Everest Round — Everest Round supplied by LumenX.",
     description: "Everest Round — Everest Round supplied by LumenX.",
     specs: [
@@ -1158,9 +1158,9 @@ export const NEW_PRODUCTS: Product[] = [
     slug: "zod101-square-led-wall",
     name: "ZOD101 Square LED Wall",
     category: "outdoor-architectural",
-    supplier: "Superlume",
-    summary: "ZOD101 Square LED Wall — decorative wall light from Superlume: IP65 rated, 12W with up to 1200 lm in 4000K, designed for covered…",
-    description: "ZOD101 Square LED Wall — decorative wall light from Superlume: IP65 rated, 12W with up to 1200 lm in 4000K, designed for covered and outdoor wall mounting.",
+    supplier: "LumenX",
+    summary: "ZOD101 Square LED Wall — decorative wall light from LumenX: IP65 rated, 12W with up to 1200 lm in 4000K, designed for covered…",
+    description: "ZOD101 Square LED Wall — decorative wall light from LumenX: IP65 rated, 12W with up to 1200 lm in 4000K, designed for covered and outdoor wall mounting.",
     specs: [
       { label: "Nominal Flux", value: "Up to 1200 lm" },
       { label: "Efficacy", value: "Up to 100 lm/w" },
@@ -1186,9 +1186,9 @@ export const NEW_PRODUCTS: Product[] = [
     slug: "zod102-round-led-wall",
     name: "ZOD102 Round LED Wall",
     category: "outdoor-architectural",
-    supplier: "Superlume",
-    summary: "ZOD102 Round LED Wall — decorative coastal-ready wall light from Superlume: IP65 rated, 12W with up to 1200 lm in 4000K, designe…",
-    description: "ZOD102 Round LED Wall — decorative coastal-ready wall light from Superlume: IP65 rated, 12W with up to 1200 lm in 4000K, designed for covered and outdoor wall mounting.",
+    supplier: "LumenX",
+    summary: "ZOD102 Round LED Wall — decorative coastal-ready wall light from LumenX: IP65 rated, 12W with up to 1200 lm in 4000K, designe…",
+    description: "ZOD102 Round LED Wall — decorative coastal-ready wall light from LumenX: IP65 rated, 12W with up to 1200 lm in 4000K, designed for covered and outdoor wall mounting.",
     specs: [
       { label: "Nominal Flux", value: "Up to 1200 lm" },
       { label: "Efficacy", value: "Up to 100 lm/w" },
@@ -1214,9 +1214,9 @@ export const NEW_PRODUCTS: Product[] = [
     slug: "orbit-post-top",
     name: "Orbit Post Top",
     category: "outdoor-architectural",
-    supplier: "Pioled",
-    summary: "Orbit Post Top — outdoor LED luminaire from PioLED, supplied by LumenX.",
-    description: "Orbit Post Top — outdoor LED luminaire from PioLED, supplied by LumenX.",
+    supplier: "LumenX",
+    summary: "Orbit Post Top — outdoor LED luminaire from LumenX, supplied by LumenX.",
+    description: "Orbit Post Top — outdoor LED luminaire from LumenX, supplied by LumenX.",
     specs: [
       { label: "Colour Temperature", value: "3CCT (6000K/4000K/3000K)" },
       { label: "Lumen Output", value: "36W = 4680 Lumens | 48W=6240 Lumens | 60W=7800 Lumens" },
@@ -1241,9 +1241,9 @@ export const NEW_PRODUCTS: Product[] = [
     slug: "vista-post-top",
     name: "Vista Post Top",
     category: "outdoor-architectural",
-    supplier: "Pioled",
-    summary: "Vista Post Top — outdoor LED luminaire from PioLED, supplied by LumenX.",
-    description: "Vista Post Top — outdoor LED luminaire from PioLED, supplied by LumenX.",
+    supplier: "LumenX",
+    summary: "Vista Post Top — outdoor LED luminaire from LumenX, supplied by LumenX.",
+    description: "Vista Post Top — outdoor LED luminaire from LumenX, supplied by LumenX.",
     specs: [
       { label: "Colour Temperature", value: "3CCT (3000K/4000K/6000K)" },
       { label: "Lumen Output", value: "20W = 2 600lm | 35W = 4 540lm" },

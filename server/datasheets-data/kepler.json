@@ -5,14 +5,14 @@
   },
   "name": "KEPLER",
   "category": "LINEAR LIGHTING",
-  "variant": "OrbitX Kepler linear system for continuous architectural illumination.",
+  "variant": "LumenX Kepler linear system for continuous architectural illumination.",
   "stats": [],
   "heroImage": {
     "src": "../public/product-images/kepler.png",
     "alt": "KEPLER"
   },
   "overview": [
-    "OrbitX Kepler linear system for continuous architectural illumination."
+    "LumenX Kepler linear system for continuous architectural illumination."
   ],
   "features": [
     "Continuous seamless runs",

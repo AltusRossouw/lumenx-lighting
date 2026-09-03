@@ -5,7 +5,7 @@
   },
   "name": "RHEA",
   "category": "BULKHEADS",
-  "variant": "Integrated surface-mount bulkhead built on OrbitX Direct Drive technology with a rust-free polycarbonate housing.",
+  "variant": "Integrated surface-mount bulkhead built on LumenX Direct Drive technology with a rust-free polycarbonate housing.",
   "stats": [
     {
       "label": "Power",
@@ -23,7 +23,7 @@
     "alt": "RHEA"
   },
   "overview": [
-    "The Rhea is a compact integrated LED bulkhead engineered around OrbitX Direct Drive technology — no external driver, no metal and no glass. Its 1mm extruded polycarbonate housing eliminates corrosion risk and breakage, making it a good fit for corridors, stairwells and utility areas where durability and low maintenance matter. Type A light quality (LRC, New York) gives accurate, comfortable colour rendering with immediate full-brightness switching."
+    "The Rhea is a compact integrated LED bulkhead engineered around LumenX Direct Drive technology — no external driver, no metal and no glass. Its 1mm extruded polycarbonate housing eliminates corrosion risk and breakage, making it a good fit for corridors, stairwells and utility areas where durability and low maintenance matter. Type A light quality (LRC, New York) gives accurate, comfortable colour rendering with immediate full-brightness switching."
   ],
   "features": [
     "Direct Drive — no external driver required",
