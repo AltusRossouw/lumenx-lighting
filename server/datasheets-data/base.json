@@ -19,8 +19,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/base.jpg",
+    "alt": "BASE"
   },
   "overview": [
     "BACE base linear profile offering 135 lm/W efficacy in single or continuous form."

@@ -14,8 +14,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/leda.jpg",
+    "alt": "LEDA"
   },
   "overview": [
     "3-wire track tilt IP20 linear for directional linear accent lighting."

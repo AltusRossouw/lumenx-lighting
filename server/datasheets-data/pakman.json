@@ -14,8 +14,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/pakman.jpg",
+    "alt": "PAKMAN"
   },
   "overview": [
     "The Pakman is a 3CCT tiltable round downlighter that combines adjustable aiming with colour-temperature flexibility. Its IP20 rating and tilt mechanism make it suited to accent lighting and general illumination where direction needs to be fine-tuned after installation."

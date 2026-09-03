@@ -19,8 +19,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/ldr-6563.jpg",
+    "alt": "LDR6563"
   },
   "overview": [
     "65×63mm linear profile for higher-output continuous and single applications."

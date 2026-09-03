@@ -14,8 +14,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/metropolis.jpg",
+    "alt": "METROPOLIS"
   },
   "overview": [
     "IP66 vapour-proof linear with chemical resistance and interchangeable gear tray."

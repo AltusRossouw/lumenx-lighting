@@ -24,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/delta.jpg",
+    "alt": "DELTA"
   },
   "overview": [
     "240W linear IP65 highbay delivering 40,800 lumens with 3CCT switching."

@@ -24,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/thermisto.jpg",
+    "alt": "THERMISTO"
   },
   "overview": [
     "Lensed LED linear delivering controlled illumination with multiple mounting options."

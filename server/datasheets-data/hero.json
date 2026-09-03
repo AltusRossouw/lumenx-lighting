@@ -19,8 +19,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/hero.jpg",
+    "alt": "HERO"
   },
   "overview": [
     "All-in-one IP65 bulkhead with selectable wattage and 3CCT in a round or square polycarbonate housing."

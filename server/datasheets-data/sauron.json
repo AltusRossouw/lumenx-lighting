@@ -19,8 +19,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/sauron.jpg",
+    "alt": "SAURON"
   },
   "overview": [
     "3CCT round COB downlight from 16W to 25W with UGR<19 and Bridgelux LED chips."

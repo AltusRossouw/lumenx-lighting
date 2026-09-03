@@ -24,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/cob-strip-lumenx.jpg",
+    "alt": "COB"
   },
   "overview": [
     "5/10W 24V IP20 COB dotless strip (8mm) with 5cm cutting points."

@@ -19,8 +19,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/rhea.png",
+    "alt": "RHEA"
   },
   "overview": [
     "The Rhea is a compact integrated LED bulkhead engineered around OrbitX Direct Drive technology — no external driver, no metal and no glass. Its 1mm extruded polycarbonate housing eliminates corrosion risk and breakage, making it a good fit for corridors, stairwells and utility areas where durability and low maintenance matter. Type A light quality (LRC, New York) gives accurate, comfortable colour rendering with immediate full-brightness switching."

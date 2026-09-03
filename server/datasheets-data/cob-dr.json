@@ -24,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/cob-dr.jpg",
+    "alt": "COB-DR"
   },
   "overview": [
     "Round COB recessed downlight range from 7W to 35W with deep-recessed reflector optics."

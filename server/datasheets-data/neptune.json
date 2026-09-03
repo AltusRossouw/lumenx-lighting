@@ -14,8 +14,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/neptune.png",
+    "alt": "NEPTUNE"
   },
   "overview": [
     "IP65 integrated vapour-proof linear with 8-year operational guarantee."

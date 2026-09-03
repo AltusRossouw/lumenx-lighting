@@ -8,8 +8,8 @@
   "variant": "Compact LED track light with adjustable beam and special colour options.",
   "stats": [],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/standard.jpg",
+    "alt": "STANDARD"
   },
   "overview": [
     "Compact LED track light with adjustable beam and special colour options."

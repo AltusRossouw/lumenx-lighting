@@ -24,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/saxa.jpg",
+    "alt": "SAXA"
   },
   "overview": [
     "IP65 tri-proof linear with high performance and emergency backup option."

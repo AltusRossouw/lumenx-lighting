@@ -14,8 +14,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/legend.jpg",
+    "alt": "LEGEND"
   },
   "overview": [
     "High-powered 3CCT round downlight range for demanding commercial applications."

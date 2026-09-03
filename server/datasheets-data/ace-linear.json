@@ -19,8 +19,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/ace-linear.jpg",
+    "alt": "ACE"
   },
   "overview": [
     "ACE linear with aisle and oval optics for task-oriented commercial illumination."

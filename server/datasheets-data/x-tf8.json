@@ -24,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/x-tf8.jpg",
+    "alt": "X-TF8"
   },
   "overview": [
     "Trimless reflector downlight with fixed and swivel trim variants and <3 SDCM colour consistency."

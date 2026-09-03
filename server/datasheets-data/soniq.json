@@ -14,8 +14,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/soniq.jpg",
+    "alt": "SONIQ"
   },
   "overview": [
     "3-wattage seamless linkable linear for continuous runs with flexible output."

@@ -14,8 +14,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/kuda.jpg",
+    "alt": "KUDA"
   },
   "overview": [
     "IP65 wattage-selectable linear for flexible vapour-proof lighting."

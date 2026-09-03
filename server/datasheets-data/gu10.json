@@ -14,8 +14,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/gu10.jpg",
+    "alt": "GU10"
   },
   "overview": [
     "The GU10 range covers fixtures and accessories built around the universal GU10 lamp format, providing a simple, serviceable solution for accent and downlighting applications where lamp replacement flexibility is required."

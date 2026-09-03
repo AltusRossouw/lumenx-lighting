@@ -19,8 +19,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/blaster.jpg",
+    "alt": "BLASTER"
   },
   "overview": [
     "35/30/28W 3-wire track spot with 340° rotation and CRI>90."

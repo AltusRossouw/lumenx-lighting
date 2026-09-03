@@ -24,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/vp.jpg",
+    "alt": "VP"
   },
   "overview": [
     "IP65 polycarbonate vapour-proof linear with emergency and motion sensor options."

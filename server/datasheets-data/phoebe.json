@@ -19,8 +19,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/phoebe.png",
+    "alt": "PHOEBE"
   },
   "overview": [
     "The Phoebe extends the Direct Drive bulkhead family to exterior and wet environments with an IP65 rating. The same rust-free polycarbonate construction protects against corrosion and breakage, while Type A light quality maintains accurate colour and visual comfort. Suitable for entrances, under-cover walkways and exterior circulation where weather resistance is required."

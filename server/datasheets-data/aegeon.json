@@ -24,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/aegeon.jpg",
+    "alt": "AEGEON"
   },
   "overview": [
     "Diffused recessed LED downlight with low-glare output and passive die-cast cooling."

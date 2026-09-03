@@ -24,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/lds-5083.png",
+    "alt": "LDS5083"
   },
   "overview": [
     "50×83mm linear profile available as single or continuous runs with 30–50W/m output."

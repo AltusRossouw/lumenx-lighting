@@ -14,8 +14,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/bunker.jpg",
+    "alt": "BUNKER"
   },
   "overview": [
     "The Bunker is a die-cast aluminium IP65 bulkhead engineered for exterior and semi-exterior environments. Its 4CCT switch provides four selectable colour temperatures, while the aluminium body dissipates heat and resists impact better than polycarbonate alternatives. A tamper-resistant construction suits public and semi-public installations."

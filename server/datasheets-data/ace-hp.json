@@ -19,8 +19,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/ace-hp.jpg",
+    "alt": "ACE"
   },
   "overview": [
     "ACE-HP-S high-power linear highbay from 75W to 206W with aisle and oval optics."

@@ -24,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/mario.jpg",
+    "alt": "MARIO"
   },
   "overview": [
     "Round-tilt LED downlighter delivering uniform spot, decorative and soft lighting in a single fitting. High-lumen Bridgelux COB engine with selectable colour temperature and tool-free tilt adjustment for accent and general lighting."

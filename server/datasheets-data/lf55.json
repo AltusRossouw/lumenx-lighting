@@ -24,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/lf55.jpg",
+    "alt": "LF55"
   },
   "overview": [
     "55×80mm Light Frame family linear for high-output industrial and commercial use."

@@ -14,8 +14,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/titan.png",
+    "alt": "TITAN"
   },
   "overview": [
     "IP65 integrated vapour-proof linear with UL-94 V0 fire safety."

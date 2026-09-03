@@ -24,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/veris.jpg",
+    "alt": "VERIS"
   },
   "overview": [
     "Back-lit low-glare LED panel with UGR<19 and flicker-free operation."

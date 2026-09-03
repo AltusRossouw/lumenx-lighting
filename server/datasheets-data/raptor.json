@@ -14,8 +14,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/raptor.jpg",
+    "alt": "RAPTOR"
   },
   "overview": [
     "IP65 3-in-1 UFO highbay with selectable wattage and CCT for flexible specification."
