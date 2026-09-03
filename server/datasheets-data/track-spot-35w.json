@@ -70,11 +70,7 @@
     ]
   },
 
-  "drawing": {
-    "src": "",
-    "alt": "Dimension drawing",
-    "placeholder": "Dimension drawing — export per-product line art (.png / .svg)"
-  },
+  "drawing": { "src": "", "alt": "Dimension drawing" },
 
   "notes": [
     "E &amp; O.E (Errors And Omissions Excepted).",

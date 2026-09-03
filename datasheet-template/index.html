@@ -84,19 +84,20 @@
     background: var(--band); color: var(--band-ink);
     padding: 0 10.5mm;
   }
-  .band-top    { height: 18mm; }
-  .band-bottom { height: 18mm; }
-  .band img.logo { height: 13mm; width: auto; display: block; }
+  .band-top    { height: 28mm; }
+  .band-bottom { height: 24mm; }
+  .band img.logo { height: 17mm; width: auto; display: block; }
+  .band-top img.logo { height: 19mm; }
   .sheet-meta {
     font-family: var(--font-head);
-    font-size: 8.5pt; font-weight: 700;
-    letter-spacing: 2px; text-transform: uppercase; color: var(--band-ink);
+    font-size: 9pt; font-weight: 700;
+    letter-spacing: 2.2px; text-transform: uppercase; color: var(--band-ink);
   }
   .sheet-meta em { font-style: normal; color: var(--accent); }
   .foot-line {
     display: flex; align-items: center; gap: 5mm; min-width: 0;
     font-family: var(--font-head);
-    font-size: 9.5pt; letter-spacing: 1.2px; color: var(--band-ink);
+    font-size: 10.5pt; letter-spacing: 1.3px; color: var(--band-ink);
     white-space: nowrap; overflow: hidden;
   }
   .foot-line .dot { color: var(--accent); }
@@ -107,8 +108,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    min-height: 46mm;
-    padding: 4mm 10.5mm 3.5mm;
+    min-height: 36mm;
+    padding: 3mm 10.5mm 2.5mm;
     background:
       linear-gradient(90deg, var(--accent-soft), transparent 55%),
       var(--paper);
@@ -234,23 +235,18 @@
     border-top: 0.4mm solid var(--rule);
     margin: 0 10.5mm;
   }
+  /* No dimension drawing for this product → drop the left cell, let the
+     legal notes span the full content width. */
+  .bottom.notes-only { grid-template-columns: 1fr; }
   .dims-frame {
     margin-top: 1.6mm;
-    height: 27mm;
+    height: 24mm;
     display: flex; align-items: center; justify-content: center;
-    border: 0.3mm dashed var(--faint);
-    background:
-      linear-gradient(var(--faint) 0.2mm, transparent 0.2mm) 0 0 / 8mm 8mm,
-      linear-gradient(90deg, var(--faint) 0.2mm, transparent 0.2mm) 0 0 / 8mm 8mm,
-      #fafbfc;
+    border: 0.3mm solid var(--lineStrong);
+    background: #fafbfc;
     overflow: hidden;
   }
   .dims-frame img { max-width: 100%; max-height: 100%; object-fit: contain; }
-  .dims-frame .ph {
-    font-family: var(--font-head);
-    font-size: 6.8pt; letter-spacing: 1.5px; text-transform: uppercase;
-    color: var(--muted); text-align: center; padding: 0 4mm;
-  }
 
   ul.notes { list-style: none; padding-top: 2.6mm; }
   ul.notes li {
@@ -366,11 +362,7 @@
     ]
   },
 
-  "drawing": {
-    "src": "",
-    "alt": "Dimension drawing",
-    "placeholder": "Dimension drawing — export per-product line art (.png / .svg)"
-  },
+  "drawing": { "src": "", "alt": "Dimension drawing" },
 
   "notes": [
     "E &amp; O.E (Errors And Omissions Excepted).",
@@ -416,12 +408,9 @@
     <div class="col col-right" id="colRight"></div>
   </main>
 
-  <!-- Bottom: dimension drawing + legal notes -->
-  <section class="bottom">
-    <div>
-      <h2 class="sec-h">Dimension Drawing</h2>
-      <div class="dims-frame" id="dimsFrame"></div>
-    </div>
+  <!-- Bottom: dimension drawing (left, only when present) + legal notes -->
+  <section class="bottom" id="bottom">
+    <div class="dims-col" id="dimsWrap"></div>
     <ul class="notes" id="notes"></ul>
   </section>
 
@@ -576,20 +565,28 @@
   buildLeft();
   buildRight();
 
-  /* dimension drawing */
-  var frame = document.getElementById("dimsFrame");
-  frame.innerHTML = "";
-  if (data.drawing && data.drawing.src) {
+  /* dimension drawing — the whole section is dropped when the product has no
+     drawing art, and the legal notes then span the full content width */
+  var bottom = document.getElementById("bottom");
+  var dimsWrap = document.getElementById("dimsWrap");
+  dimsWrap.innerHTML = "";
+  var hasDrawing = !!(data.drawing && data.drawing.src);
+  if (hasDrawing) {
+    bottom.classList.remove("notes-only");
+    var h = document.createElement("h2");
+    h.className = "sec-h";
+    h.textContent = "Dimension Drawing";
+    var frame = document.createElement("div");
+    frame.className = "dims-frame";
     var img = document.createElement("img");
     img.src = data.drawing.src;
-    img.alt = (data.drawing && data.drawing.alt) || "Dimension drawing";
+    img.alt = data.drawing.alt || "Dimension drawing";
     frame.appendChild(img);
+    dimsWrap.appendChild(h);
+    dimsWrap.appendChild(frame);
   } else {
-    var ph = document.createElement("div");
-    ph.className = "ph";
-    ph.textContent = (data.drawing && data.drawing.placeholder) ||
-      "Dimension drawing — export per-product line art (.png / .svg)";
-    frame.appendChild(ph);
+    bottom.classList.add("notes-only");
+    dimsWrap.remove();
   }
 
   /* legal notes */

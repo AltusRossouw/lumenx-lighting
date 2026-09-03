@@ -147,7 +147,8 @@ Keep `print-color-adjust: exact` (already in the CSS) so the dark bands print.
 2. Hero chips: pick 3 stats (`POWER`, `LUMENS`, `IP RATING`) — value + optional
    unit — as in the reference sheets.
 3. Regroup `specs` into the four table groups; leave a group empty to hide it.
-4. Export a clean dimension line-art image (PNG/SVG) → `drawing.src`, or leave
-   empty to show the placeholder frame.
+4. Export a clean dimension line-art image (PNG/SVG) → `drawing.src`. Products
+   without a drawing simply leave `drawing.src` empty — the whole
+   **Dimension Drawing** section disappears (legal notes then span the width).
 5. Render → confirm single A4 page (template is fixed-height; content flows to
    page 2 automatically if a product genuinely needs more room).
