@@ -1,0 +1,116 @@
+{
+  "fileStem": "Delta",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "DELTA",
+  "category": "HIGH BAYS",
+  "variant": "240W linear IP65 highbay delivering 40,800 lumens with 3CCT switching.",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "240",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "40800",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP65",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "240W linear IP65 highbay delivering 40,800 lumens with 3CCT switching."
+  ],
+  "features": [
+    "Very high 40,800lm output",
+    "IP65 + IK09 durability",
+    "6kV surge protection",
+    "Mounting bracket included"
+  ],
+  "applications": [
+    "High-ceiling industrial",
+    "Warehouses",
+    "Manufacturing",
+    "Logistics"
+  ],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "40,800lm"
+          },
+          {
+            "label": "CCT",
+            "value": "3CCT (incl. 5700K)"
+          },
+          {
+            "label": "CRI",
+            "value": "> 80"
+          },
+          {
+            "label": "Beam",
+            "value": "90°"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP65"
+          },
+          {
+            "label": "IK Rating",
+            "value": "IK09"
+          },
+          {
+            "label": "LED Chips",
+            "value": "Lumileds 3030"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "6kV"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "240W"
+          },
+          {
+            "label": "Dimming",
+            "value": "Yes"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

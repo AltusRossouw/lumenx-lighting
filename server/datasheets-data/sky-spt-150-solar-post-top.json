@@ -1,0 +1,94 @@
+{
+  "fileStem": "Sky SPT-150 Solar Post Top",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "SKY SPT-150 SOLAR POST TOP",
+  "category": "SOLAR LIGHTING",
+  "variant": "",
+  "stats": [
+    {
+      "label": "Lumens",
+      "value": "1100",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP65",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "Self-sustaining solar-powered post top light delivering reliable performance for estates, isolated areas and security perimeters — no electrical connection required."
+  ],
+  "features": [],
+  "applications": [
+    "Estates",
+    "Isolated areas",
+    "Security perimeters"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Product Size (L × W × H)",
+            "value": "420 × 420 × 130mm"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Nominal Flux",
+            "value": "Up to 1100 lm"
+          },
+          {
+            "label": "Colour Temperature",
+            "value": "6000K"
+          },
+          {
+            "label": "Storage Capacity",
+            "value": "3.2V / 15000 mAh"
+          },
+          {
+            "label": "Charging Time",
+            "value": "7-8 h"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP65"
+          },
+          {
+            "label": "Solar Panel",
+            "value": "6V / 15W"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

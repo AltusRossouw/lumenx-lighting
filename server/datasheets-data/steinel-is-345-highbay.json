@@ -1,0 +1,109 @@
+{
+  "fileStem": "IS 345 Highbay",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "IS 345 HIGHBAY",
+  "category": "SENSORS",
+  "variant": "",
+  "stats": [
+    {
+      "label": "Reach",
+      "value": "4",
+      "unit": "m"
+    },
+    {
+      "label": "Angle",
+      "value": "360",
+      "unit": "°"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP54",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "Surveillance on the highest level. Infrared motion detector IS 345 MX Highbay for indoors, ideal for large heights in depots, high-bay warehouses, machine shops, check-in areas and departure lounges, installation height 16 m, detection zone 30 x 4 m (radial), large terminal compartment for easy installation, heavy-duty relay for high switching capacity. Available as square surface-mounted and concealed version."
+  ],
+  "features": [],
+  "applications": [],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Application, place",
+            "value": "Indoors"
+          },
+          {
+            "label": "Installation",
+            "value": "Surface wiring"
+          },
+          {
+            "label": "Detection angle",
+            "value": "360 °"
+          },
+          {
+            "label": "Reach, tangential",
+            "value": "30 x 4 m (120 m²)"
+          },
+          {
+            "label": "Mounting height max.",
+            "value": "16,00 m"
+          },
+          {
+            "label": "Interconnection via",
+            "value": "Cable"
+          },
+          {
+            "label": "Version",
+            "value": "COM1 - surface, sq."
+          },
+          {
+            "label": "PU1, net weight",
+            "value": "0,176 kg"
+          },
+          {
+            "label": "infrared sensor 360°",
+            "value": "max. 30 x 4 m"
+          },
+          {
+            "label": "max. 2000 W",
+            "value": "IP54"
+          },
+          {
+            "label": "2 - 1000 lux",
+            "value": "5 sec - 15 min"
+          },
+          {
+            "label": "manual override",
+            "value": "Teach mode"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

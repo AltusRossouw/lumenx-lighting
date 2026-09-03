@@ -1,0 +1,129 @@
+{
+  "fileStem": "Crystal Cloud",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "CRYSTAL CLOUD",
+  "category": "INDOOR DECORATIVE",
+  "variant": "",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "40–1200",
+      "unit": "W"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "The Crystal Cloud Series is pure poetry rendered in light. Thousands of individually placed crystal elements are suspended at varied heights, creating an immersive three-dimensional cloud formation that hovers above the space below. In motion with air currents, the installation breathes and shimmers — transforming any room it occupies into an experiential destination. Designed for the most ambitious architectural briefs, the Crystal Cloud Series has graced the lobbies of Ritz-Carlton, Four Seasons, and Shangri-La properties worldwide."
+  ],
+  "features": [],
+  "applications": [
+    "Hospitality",
+    "Residential",
+    "Lobbies",
+    "Retail"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Primary Material",
+            "value": "Premium K9 Crystal Pendants (multi-cut facets)"
+          },
+          {
+            "label": "Frame",
+            "value": "Stainless Steel 304, PVD finished"
+          },
+          {
+            "label": "Finish Options",
+            "value": "Champagne Gold PVD · Chrome · Rose Gold"
+          },
+          {
+            "label": "Installation Scale",
+            "value": "Ø1200mm single cluster to full atrium bespoke installation"
+          },
+          {
+            "label": "Crystal Count",
+            "value": "200 pcs (small) to 20,000+ pcs (grand installation)"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Warranty",
+            "value": "3 Years · LED Driver: 5 Years"
+          },
+          {
+            "label": "Certifications",
+            "value": "UL · CE · SASO · CNAS-accredited test reports available"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Light Source",
+            "value": "Integrated LED, 2700K / 3000K CCT, CRI > 90"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP20 standard"
+          },
+          {
+            "label": "Lead Time",
+            "value": "Standard: 6–8 weeks · Grand Installation: 12–20 weeks"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "40W – 1200W+ (installation-scale dependent)"
+          },
+          {
+            "label": "Voltage",
+            "value": "110V – 240V, 50/60Hz Universal Input"
+          },
+          {
+            "label": "Dimming",
+            "value": "DALI · 0–10V · DMX (for dynamic scene control)"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "fileStem": "COB",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "COB",
+  "category": "LED STRIPS",
+  "variant": "5/10W 24V IP20 COB dotless strip (8mm) with 5cm cutting points.",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "10",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "1100",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "5/10W 24V IP20 COB dotless strip (8mm) with 5cm cutting points."
+  ],
+  "features": [
+    "Dotless COB for seamless light",
+    "5cm cutting points",
+    "Up to 5m series with no voltage drop",
+    "CRI>90 accurate colour"
+  ],
+  "applications": [
+    "Cove lighting",
+    "Display shelving",
+    "Under-cabinet",
+    "Joinery accent"
+  ],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "1,100 lm/m"
+          },
+          {
+            "label": "Efficacy",
+            "value": "110 lm/W"
+          },
+          {
+            "label": "CCT",
+            "value": "3000K / 4000K / 6000K"
+          },
+          {
+            "label": "CRI",
+            "value": ">90"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "180°"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          },
+          {
+            "label": "LED Density",
+            "value": "480 LED/m"
+          },
+          {
+            "label": "Cutting Point",
+            "value": "50mm"
+          },
+          {
+            "label": "Lifetime",
+            "value": "L70B10 @ 50,000 hrs"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "10W/m"
+          },
+          {
+            "label": "Voltage",
+            "value": "24V DC"
+          },
+          {
+            "label": "Dimming",
+            "value": "Yes"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

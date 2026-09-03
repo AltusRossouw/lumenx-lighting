@@ -1,0 +1,132 @@
+{
+  "fileStem": "ZOD102 Round LED Wall",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "ZOD102 ROUND LED WALL",
+  "category": "OUTDOOR WALL LIGHT",
+  "variant": "",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "12",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "1200",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP65",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "ZOD102 Round LED Wall — decorative coastal-ready wall light from Superlume: IP65 rated, 12W with up to 1200 lm in 4000K, designed for covered and outdoor wall mounting."
+  ],
+  "features": [],
+  "applications": [
+    "Outdoor walls",
+    "Facades",
+    "Coastal areas"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Body",
+            "value": "Polycarbonate"
+          },
+          {
+            "label": "Diffuser",
+            "value": "Polycarbonate"
+          },
+          {
+            "label": "Mounting",
+            "value": "Wall Mount"
+          },
+          {
+            "label": "Colour",
+            "value": "Black"
+          },
+          {
+            "label": "Product Size (L × W × H)",
+            "value": "169mm x 67mm x 169mm"
+          },
+          {
+            "label": "Product Weight",
+            "value": "0,65kg"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Nominal Flux",
+            "value": "Up to 1200 lm"
+          },
+          {
+            "label": "Efficacy",
+            "value": "Up to 100 lm/w"
+          },
+          {
+            "label": "Colour Temperature",
+            "value": "4000k"
+          },
+          {
+            "label": "CRI",
+            "value": ">80"
+          },
+          {
+            "label": "Power Factor",
+            "value": "0,9"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP65"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "12W"
+          },
+          {
+            "label": "Input Voltage",
+            "value": "220-240V"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

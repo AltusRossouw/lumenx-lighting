@@ -1,0 +1,122 @@
+{
+  "fileStem": "Phoebe",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "PHOEBE",
+  "category": "BULKHEADS",
+  "variant": "IP65 integrated bulkhead for outdoor and wet locations with Type A light quality and an 8-year guarantee.",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "15",
+      "unit": "W"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP65",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "The Phoebe extends the Direct Drive bulkhead family to exterior and wet environments with an IP65 rating. The same rust-free polycarbonate construction protects against corrosion and breakage, while Type A light quality maintains accurate colour and visual comfort. Suitable for entrances, under-cover walkways and exterior circulation where weather resistance is required."
+  ],
+  "features": [
+    "IP65 rated for outdoor and wet locations",
+    "Rust-free, breakage-resistant polycarbonate housing",
+    "Optional radar motion sensor with programmable settings",
+    "Optional day/night sensor",
+    "8-year operational guarantee (24/7)"
+  ],
+  "applications": [
+    "Exterior entrances",
+    "Under-cover walkways",
+    "Wet areas",
+    "External circulation"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Guarantee",
+            "value": "8 years operational"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Efficacy",
+            "value": "113 lm/W"
+          },
+          {
+            "label": "CCT",
+            "value": "5000K (options available)"
+          },
+          {
+            "label": "CRI",
+            "value": "83 (GAI 96)"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "160°"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP65"
+          },
+          {
+            "label": "Power Factor",
+            "value": "> 0.98"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "1.5kV"
+          },
+          {
+            "label": "Nominal Lifetime",
+            "value": "L70 70,000 hrs"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "15W"
+          },
+          {
+            "label": "Voltage",
+            "value": "220–240V AC (operational from 150V)"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "fileStem": "Soniq",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "SONIQ",
+  "category": "LINEAR LIGHTING",
+  "variant": "3-wattage seamless linkable linear for continuous runs with flexible output.",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "3",
+      "unit": "W"
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "3-wattage seamless linkable linear for continuous runs with flexible output."
+  ],
+  "features": [
+    "Seamless linkable design",
+    "Three selectable wattages",
+    "Continuous run capability"
+  ],
+  "applications": [
+    "Offices",
+    "Retail",
+    "Architectural interiors",
+    "Cove lighting"
+  ],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Type",
+            "value": "Seamless linkable linear"
+          },
+          {
+            "label": "Linking",
+            "value": "Seamless end-to-end"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "3 selectable wattages"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

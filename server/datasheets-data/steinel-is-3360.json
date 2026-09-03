@@ -1,0 +1,109 @@
+{
+  "fileStem": "IS 3360",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "IS 3360",
+  "category": "SENSORS",
+  "variant": "",
+  "stats": [
+    {
+      "label": "Reach",
+      "value": "40",
+      "unit": "m"
+    },
+    {
+      "label": "Angle",
+      "value": "360",
+      "unit": "°"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "Higher, further, faster. Infrared presence detector IS 3360 for indoors and out, ideal for watching over high spaces and large areas, such as multi-storey and underground car parks, installation height up to 4 m, 360° angle of coverage, reach 20 m max. (tangential), heavy-duty relay for high switching capacity. Available either in round or square surface-mounted, concealed or In-ceiling installation."
+  ],
+  "features": [],
+  "applications": [],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Application, place",
+            "value": "Indoors"
+          },
+          {
+            "label": "Installation",
+            "value": "In-ceiling installation"
+          },
+          {
+            "label": "Detection angle",
+            "value": "360 °"
+          },
+          {
+            "label": "Reach, tangential",
+            "value": "Ø 40 m (1257 m²)"
+          },
+          {
+            "label": "Mounting height max.",
+            "value": "4,00 m"
+          },
+          {
+            "label": "Interconnection via",
+            "value": "Cable"
+          },
+          {
+            "label": "Version",
+            "value": "COM1 - in-ceiling installation, rd. white"
+          },
+          {
+            "label": "PU1, net weight",
+            "value": "0,161 kg"
+          },
+          {
+            "label": "infrared sensor 360°",
+            "value": "max. 20 m"
+          },
+          {
+            "label": "max. 2000 W",
+            "value": "IP20"
+          },
+          {
+            "label": "2 - 1000 lux",
+            "value": "5 sec - 15 min"
+          },
+          {
+            "label": "manual override",
+            "value": "ideal 2,5 - 4 m"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

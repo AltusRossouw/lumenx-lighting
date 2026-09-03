@@ -1,0 +1,83 @@
+{
+  "fileStem": "Bunker",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "BUNKER",
+  "category": "BULKHEADS",
+  "variant": "Die-cast aluminium IP65 bulkhead with 4CCT selectable colour temperature for robust exterior applications.",
+  "stats": [
+    {
+      "label": "IP Rating",
+      "value": "IP65",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "The Bunker is a die-cast aluminium IP65 bulkhead engineered for exterior and semi-exterior environments. Its 4CCT switch provides four selectable colour temperatures, while the aluminium body dissipates heat and resists impact better than polycarbonate alternatives. A tamper-resistant construction suits public and semi-public installations."
+  ],
+  "features": [
+    "4CCT selectable colour temperature",
+    "Die-cast aluminium for thermal performance",
+    "Impact-resistant construction",
+    "Suitable for public and semi-public areas"
+  ],
+  "applications": [
+    "Exterior walls",
+    "Entrances",
+    "Underground parking",
+    "Stairwells"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Housing",
+            "value": "Die-cast aluminium"
+          },
+          {
+            "label": "Mounting",
+            "value": "Wall / Ceiling surface"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "CCT",
+            "value": "4CCT selectable"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP65"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

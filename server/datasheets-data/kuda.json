@@ -1,0 +1,77 @@
+{
+  "fileStem": "Kuda",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "KUDA",
+  "category": "VAPOUR PROOF",
+  "variant": "IP65 wattage-selectable linear for flexible vapour-proof lighting.",
+  "stats": [
+    {
+      "label": "IP Rating",
+      "value": "IP65",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "IP65 wattage-selectable linear for flexible vapour-proof lighting."
+  ],
+  "features": [
+    "IP65 vapour-proof construction",
+    "Selectable wattage",
+    "Flexible output specification"
+  ],
+  "applications": [
+    "Parking structures",
+    "Canopies",
+    "Industrial corridors",
+    "Utility areas"
+  ],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP65"
+          },
+          {
+            "label": "Type",
+            "value": "Vapour-proof linear"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "Selectable"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

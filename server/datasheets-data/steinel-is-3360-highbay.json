@@ -1,0 +1,109 @@
+{
+  "fileStem": "IS 3360 Highbay",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "IS 3360 HIGHBAY",
+  "category": "SENSORS",
+  "variant": "",
+  "stats": [
+    {
+      "label": "Reach",
+      "value": "36",
+      "unit": "m"
+    },
+    {
+      "label": "Angle",
+      "value": "360",
+      "unit": "°"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP54",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "A head for heights. Powerful reach. Reliable. IS 3360 MX Highbay motion detector – ideal for high ceilings in industrial buildings or commercial properties. For mounting heights of up to 14 m. High-precision 360° infrared sensor. Maximum reach: 18 m. For watching over up to 1000 sq.m. Available as square surface-mounted and concealed version."
+  ],
+  "features": [],
+  "applications": [],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Application, place",
+            "value": "Indoors"
+          },
+          {
+            "label": "Installation",
+            "value": "Surface wiring"
+          },
+          {
+            "label": "Detection angle",
+            "value": "360 °"
+          },
+          {
+            "label": "Reach, tangential",
+            "value": "Ø 36 m (1018 m²)"
+          },
+          {
+            "label": "Mounting height max.",
+            "value": "14,00 m"
+          },
+          {
+            "label": "Interconnection via",
+            "value": "Cable"
+          },
+          {
+            "label": "Version",
+            "value": "COM1 - surface, sq."
+          },
+          {
+            "label": "PU1, net weight",
+            "value": "0,176 kg"
+          },
+          {
+            "label": "infrared sensor 360°",
+            "value": "18 m"
+          },
+          {
+            "label": "max. 2000 W",
+            "value": "IP54"
+          },
+          {
+            "label": "2 - 1000 lux",
+            "value": "5 sec - 15 min"
+          },
+          {
+            "label": "manual override",
+            "value": "ideal 4 - 14 m"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

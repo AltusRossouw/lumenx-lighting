@@ -1,0 +1,102 @@
+{
+  "fileStem": "Puck Seamless",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "PUCK SEAMLESS",
+  "category": "LINEAR LIGHTING",
+  "variant": "Integrated seamless linear with a <3mm end-cap line for continuous runs, in 1200mm and 2400mm.",
+  "stats": [],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "Integrated seamless linear with a <3mm end-cap line for continuous runs, in 1200mm and 2400mm."
+  ],
+  "features": [
+    "<3mm end-cap line for seamless runs",
+    "Direct Drive — no external driver",
+    "Type A light quality",
+    "Surface / suspended mounting"
+  ],
+  "applications": [
+    "Offices",
+    "Retail",
+    "Workspaces",
+    "Architectural interiors"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Guarantee",
+            "value": "6 years operational"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Efficacy",
+            "value": "110 lm/W"
+          },
+          {
+            "label": "CCT",
+            "value": "4000K / 5000K"
+          },
+          {
+            "label": "CRI",
+            "value": "83 (GAI 96)"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "160°"
+          },
+          {
+            "label": "Lengths",
+            "value": "1200mm / 2400mm"
+          },
+          {
+            "label": "Lifetime",
+            "value": "L70 60,000 hrs"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Power",
+            "value": "58W (1200mm) / 116W (2400mm)"
+          },
+          {
+            "label": "Voltage",
+            "value": "220–240V AC"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "fileStem": "LDS5083",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "LDS5083",
+  "category": "LINEAR LIGHTING",
+  "variant": "50×83mm linear profile available as single or continuous runs with 30–50W/m output.",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "54–65",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "4847–5817",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "50×83mm linear profile available as single or continuous runs with 30–50W/m output."
+  ],
+  "features": [
+    "Single and continuous run options",
+    "Three wattages per metre",
+    "Multiple finishes",
+    "DALI dimming available"
+  ],
+  "applications": [
+    "Offices",
+    "Retail",
+    "Architectural interiors",
+    "Workspaces"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Profile",
+            "value": "50 × 83mm"
+          },
+          {
+            "label": "Housing",
+            "value": "Aluminium"
+          },
+          {
+            "label": "Mounting",
+            "value": "Surface / Suspended / P2000"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "4,847 – 5,817 lm"
+          },
+          {
+            "label": "Efficacy",
+            "value": "Up to 100 lm/W"
+          },
+          {
+            "label": "CCT",
+            "value": "3000K / 3500K / 4000K / 5000K"
+          },
+          {
+            "label": "CRI",
+            "value": ">80"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "120°"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "1.5kV"
+          },
+          {
+            "label": "Lifetime",
+            "value": "L80B10 @ 50,000 hrs"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "54W / 65W"
+          },
+          {
+            "label": "Voltage",
+            "value": "220–240V AC"
+          },
+          {
+            "label": "Dimming",
+            "value": "Optional DALI / Phase cut"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

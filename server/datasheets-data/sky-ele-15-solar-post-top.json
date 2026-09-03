@@ -1,0 +1,116 @@
+{
+  "fileStem": "Sky ELE-15 Solar Post Top",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "SKY ELE-15 SOLAR POST TOP",
+  "category": "SOLAR LIGHTING",
+  "variant": "",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "20",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "2000",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP65",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "All-in-one solar-powered LED post top fitting for areas with no electrical infrastructure — fully integrated battery, zero wiring and minimal maintenance. Ideal for estates, public parks, isolated streets and gate posts."
+  ],
+  "features": [],
+  "applications": [
+    "Estates",
+    "Public parks",
+    "Isolated streets",
+    "Gate posts"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Product Size (L × W × H)",
+            "value": "500 × 500 × 200mm"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Nominal Flux",
+            "value": "Up to 2000 lm"
+          },
+          {
+            "label": "Efficacy",
+            "value": "Up to 100 lm/W"
+          },
+          {
+            "label": "Colour Temperature",
+            "value": "6000K"
+          },
+          {
+            "label": "Recommended Mounting Height",
+            "value": "4-5 m"
+          },
+          {
+            "label": "Storage Capacity",
+            "value": "86.58 Wh lithium battery, 3.7V, 10400 mAh"
+          },
+          {
+            "label": "Autonomy",
+            "value": ">24 h at full charge · up to 3 rainy days"
+          },
+          {
+            "label": "Charging Time",
+            "value": "7-8 h"
+          },
+          {
+            "label": "Lifespan",
+            "value": ">4000 cycles @ 80% DoD · 10-year lifetime"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP65"
+          },
+          {
+            "label": "Solar Panel",
+            "value": "6 W / 6 V high-efficiency panel (18%)"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "fileStem": "Cloud Bell",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "CLOUD BELL",
+  "category": "INDOOR DECORATIVE",
+  "variant": "",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "15–500",
+      "unit": "W"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "The Cloud Bell Series draws its vocabulary from the gentle curves of hanging bells and the soft fullness of clouds at dusk — organic forms that carry both visual weight and an inherent sense of movement. Each bell element is individually crafted from layered acrylic and crystal, achieving a depth of luminous translucency that flat surfaces cannot replicate. Deployed in clusters of varying heights, the Cloud Bell Series creates installations that feel more like kinetic sculpture than conventional lighting — ideal for clients who treat their spaces as galleries of lived experience."
+  ],
+  "features": [],
+  "applications": [
+    "Hospitality",
+    "Residential",
+    "Lobbies",
+    "Retail"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Primary Material",
+            "value": "Layered Optical Acrylic + K9 Crystal Accent Elements"
+          },
+          {
+            "label": "Frame",
+            "value": "Stainless Steel 304 PVD-coated"
+          },
+          {
+            "label": "Finish Options",
+            "value": "Champagne Gold · Matte Black · Brushed Silver"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Warranty",
+            "value": "3 Years · LED Driver: 5 Years"
+          },
+          {
+            "label": "Certifications",
+            "value": "CE · CNAS-accredited test reports available"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Light Source",
+            "value": "Integrated LED, 2700K / 3000K CCT, CRI > 90"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP20 standard"
+          },
+          {
+            "label": "Lead Time",
+            "value": "Standard: 5–7 weeks · Grand Installation: 10–16 weeks"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "15W – 500W (configuration-dependent)"
+          },
+          {
+            "label": "Voltage",
+            "value": "110V – 240V, 50/60Hz Universal Input"
+          },
+          {
+            "label": "Dimming",
+            "value": "0–10V · Triac · DALI"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

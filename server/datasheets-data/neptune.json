@@ -1,0 +1,112 @@
+{
+  "fileStem": "Neptune",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "NEPTUNE",
+  "category": "VAPOUR PROOF",
+  "variant": "IP65 integrated vapour-proof linear with 8-year operational guarantee.",
+  "stats": [
+    {
+      "label": "IP Rating",
+      "value": "IP65",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "IP65 integrated vapour-proof linear with 8-year operational guarantee."
+  ],
+  "features": [
+    "IP65 dust, moisture and vapour proof",
+    "UL-94 V0 fire rating",
+    "Direct Drive — no external driver",
+    "8-year operational guarantee"
+  ],
+  "applications": [
+    "Parking structures",
+    "Washdown areas",
+    "Food processing",
+    "Industrial"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Guarantee",
+            "value": "8 years operational"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Efficacy",
+            "value": "135 lm/W"
+          },
+          {
+            "label": "CCT",
+            "value": "5000K (options available)"
+          },
+          {
+            "label": "CRI",
+            "value": "83 (GAI 96)"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "120°"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP65"
+          },
+          {
+            "label": "Fire Rating",
+            "value": "UL-94 V0"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "1.5kV"
+          },
+          {
+            "label": "Lifetime",
+            "value": "L70 70,000 hrs"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Voltage",
+            "value": "220–240V AC (from 150V)"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

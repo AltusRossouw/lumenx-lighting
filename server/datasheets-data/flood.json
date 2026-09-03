@@ -1,0 +1,67 @@
+{
+  "fileStem": "Flood",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "FLOOD",
+  "category": "FLOODLIGHTS",
+  "variant": "OrbitX Direct Drive floodlight for exterior area, facade and perimeter lighting.",
+  "stats": [],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "OrbitX Direct Drive floodlight for exterior area, facade and perimeter lighting."
+  ],
+  "features": [
+    "Driverless Direct Drive design",
+    "Weather-resistant exterior construction",
+    "Low-maintenance operation",
+    "Immediate full-brightness switching"
+  ],
+  "applications": [
+    "Facades",
+    "Perimeter security",
+    "Yards",
+    "Area lighting"
+  ],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Technology",
+            "value": "OrbitX Direct Drive"
+          },
+          {
+            "label": "Application",
+            "value": "Exterior area / facade / perimeter"
+          },
+          {
+            "label": "Switching",
+            "value": "Immediate full brightness"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

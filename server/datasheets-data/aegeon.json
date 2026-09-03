@@ -1,0 +1,138 @@
+{
+  "fileStem": "Aegeon",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "AEGEON",
+  "category": "DOWNLIGHTS",
+  "variant": "Diffused recessed LED downlight with low-glare output and passive die-cast cooling.",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "10–35",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "1200–4320",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP40",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "Diffused recessed LED downlight with low-glare output and passive die-cast cooling."
+  ],
+  "features": [
+    "Diffused, low-glare light distribution",
+    "Passive die-cast cooling — no moving parts",
+    "High CRI 90+ for accurate colour",
+    "Flicker-free operation"
+  ],
+  "applications": [
+    "Corporate offices",
+    "Healthcare",
+    "Education",
+    "High-end retail"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Housing",
+            "value": "Die-Cast Aluminium"
+          },
+          {
+            "label": "Mounting",
+            "value": "Recessed"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "1,200 – 4,320 lm"
+          },
+          {
+            "label": "Efficacy",
+            "value": "120 lm/W"
+          },
+          {
+            "label": "CCT",
+            "value": "4000K"
+          },
+          {
+            "label": "CRI",
+            "value": ">80"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "100–110°"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP40"
+          },
+          {
+            "label": "Power Factor",
+            "value": ">0.9"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "1.5kV"
+          },
+          {
+            "label": "Lifetime",
+            "value": "L70B10 @ 50,000 hrs"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "10W / 15W / 20W / 30W / 35W"
+          },
+          {
+            "label": "Voltage",
+            "value": "220–240V AC"
+          },
+          {
+            "label": "Dimming",
+            "value": "On request"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

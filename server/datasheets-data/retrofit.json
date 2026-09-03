@@ -1,0 +1,90 @@
+{
+  "fileStem": "Retrofit",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "RETROFIT",
+  "category": "BULKHEADS",
+  "variant": "Direct Drive retrofit bulkhead designed to replace existing fittings with minimal rework and maximum energy saving.",
+  "stats": [],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "The OrbitX Retrofit bulkhead brings Direct Drive technology to existing installations, replacing older light sources with an integrated, driverless LED solution. Its compact footprint and polycarbonate construction make it a low-maintenance upgrade path for corridors, stairwells and utility spaces where refurbishment efficiency is a priority."
+  ],
+  "features": [
+    "Driverless Direct Drive design",
+    "Low-maintenance, rust-free construction",
+    "Fast retrofit of existing fittings",
+    "Immediate full-brightness switching"
+  ],
+  "applications": [
+    "Refurbishment projects",
+    "Corridors",
+    "Stairwells",
+    "Utility areas"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Housing",
+            "value": "Polycarbonate (no metal / no glass)"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Technology",
+            "value": "OrbitX Direct Drive"
+          },
+          {
+            "label": "Light Quality",
+            "value": "Type A compliant"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "1.5kV"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Voltage",
+            "value": "220–240V AC"
+          },
+          {
+            "label": "Flicker",
+            "value": "80% flicker-free"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

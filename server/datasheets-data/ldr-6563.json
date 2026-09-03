@@ -1,0 +1,104 @@
+{
+  "fileStem": "LDR6563",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "LDR6563",
+  "category": "LINEAR LIGHTING",
+  "variant": "65×63mm linear profile for higher-output continuous and single applications.",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "15.5–78",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "1257–6000",
+      "unit": "lm"
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "65×63mm linear profile for higher-output continuous and single applications."
+  ],
+  "features": [
+    "Higher-output 65×63mm profile",
+    "Single and continuous configurations",
+    "Long run capability to 2260mm"
+  ],
+  "applications": [
+    "Offices",
+    "Retail",
+    "Commercial",
+    "Architectural interiors"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Profile",
+            "value": "65×63mm"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "1,257lm – 6,000lm+"
+          },
+          {
+            "label": "Lengths",
+            "value": "580 – 2260mm"
+          },
+          {
+            "label": "CRI",
+            "value": "80"
+          },
+          {
+            "label": "CCT",
+            "value": "3000K / 4000K"
+          },
+          {
+            "label": "Finishes",
+            "value": "White / Black / Aluminium / Custom"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "15.5W – 78W (30/40/50 W/m)"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

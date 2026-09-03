@@ -1,0 +1,72 @@
+{
+  "fileStem": "Puck Profile 40x43",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "PUCK PROFILE 40X43",
+  "category": "LINEAR LIGHTING",
+  "variant": "40×43mm Puck profile linear system for compact architectural runs.",
+  "stats": [],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "40×43mm Puck profile linear system for compact architectural runs."
+  ],
+  "features": [
+    "Compact 40×43mm profile",
+    "Slim, discreet appearance",
+    "Direct Drive technology"
+  ],
+  "applications": [
+    "Architectural interiors",
+    "Offices",
+    "Retail",
+    "Cove lighting"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Profile",
+            "value": "40×43mm"
+          },
+          {
+            "label": "Mounting",
+            "value": "Surface / Suspended / Recessed"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Technology",
+            "value": "OrbitX Direct Drive"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

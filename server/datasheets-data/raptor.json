@@ -1,0 +1,81 @@
+{
+  "fileStem": "Raptor",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "RAPTOR",
+  "category": "HIGH BAYS",
+  "variant": "IP65 3-in-1 UFO highbay with selectable wattage and CCT for flexible specification.",
+  "stats": [
+    {
+      "label": "IP Rating",
+      "value": "IP65",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "IP65 3-in-1 UFO highbay with selectable wattage and CCT for flexible specification."
+  ],
+  "features": [
+    "3-in-1 selectable wattage and CCT",
+    "IP65 rated",
+    "UFO form factor for wide distribution"
+  ],
+  "applications": [
+    "Warehouses",
+    "Factories",
+    "Workshops",
+    "High-ceiling spaces"
+  ],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Type",
+            "value": "UFO highbay, 3-in-1"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP65"
+          },
+          {
+            "label": "CCT",
+            "value": "Selectable"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "Selectable"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

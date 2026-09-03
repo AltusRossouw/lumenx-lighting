@@ -1,0 +1,120 @@
+{
+  "fileStem": "Fuji Round Bollard",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "FUJI ROUND BOLLARD",
+  "category": "OUTDOOR LIGHTING",
+  "variant": "",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "12",
+      "unit": "W"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP65",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "12W Fuji IP65 4CCT Surface Mount Bollard – Round"
+  ],
+  "features": [],
+  "applications": [
+    "Exterior",
+    "Commercial",
+    "Municipal"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Housing",
+            "value": "Aluminium + PC"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Certifications",
+            "value": "CE, EMC, IEC60598"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Colour Temperature",
+            "value": "4CCT (2200K/3000K/4000K/6000K)"
+          },
+          {
+            "label": "CRI",
+            "value": ">80"
+          },
+          {
+            "label": "Operating Temp",
+            "value": "-35~45°C"
+          },
+          {
+            "label": "LED Chips",
+            "value": "Sanan 2835"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "360°"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "12W"
+          },
+          {
+            "label": "Input Voltage",
+            "value": "100-265V"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "2kV"
+          },
+          {
+            "label": "Dimmable",
+            "value": "No"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

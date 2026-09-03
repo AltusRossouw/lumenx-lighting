@@ -1,0 +1,109 @@
+{
+  "fileStem": "IS 2180",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "IS 2180",
+  "category": "SENSORS",
+  "variant": "",
+  "stats": [
+    {
+      "label": "Reach",
+      "value": "5",
+      "unit": "m"
+    },
+    {
+      "label": "Angle",
+      "value": "180",
+      "unit": "°"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP54",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "Attractive, clever, efficient. Infrared motion detector IS 2180-2 for outdoors, ideal for building fronts and properties, medium-sized business and outdoor spaces, ideal installation height 2 m, 180° angle of coverage, reach. 12 m max. or 5 m max. (tangential), selectable time and twilight threshold, manual override, for outdoor and indoor installation ."
+  ],
+  "features": [],
+  "applications": [],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Application, place",
+            "value": "Outdoors, Indoors"
+          },
+          {
+            "label": "Installation",
+            "value": "Surface wiring"
+          },
+          {
+            "label": "Detection angle",
+            "value": "180 °"
+          },
+          {
+            "label": "Reach, tangential",
+            "value": "r = 5 m (39 m²) / r = 12 m (226 m²)"
+          },
+          {
+            "label": "Mounting height max.",
+            "value": "4,00 m"
+          },
+          {
+            "label": "Interconnection via",
+            "value": "Cable"
+          },
+          {
+            "label": "Version",
+            "value": "white"
+          },
+          {
+            "label": "PU1, net weight",
+            "value": "0,12 kg"
+          },
+          {
+            "label": "infrared sensor 180°",
+            "value": "max. Ø 12 m"
+          },
+          {
+            "label": "1000 W max.",
+            "value": "IP54"
+          },
+          {
+            "label": "2 - 2000 lux",
+            "value": "5 sec - 15 min"
+          },
+          {
+            "label": "manufacturer's warranty steinel.de/garantie",
+            "value": "CE"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

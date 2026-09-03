@@ -1,0 +1,99 @@
+{
+  "fileStem": "ACE",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "ACE",
+  "category": "HIGH BAYS",
+  "variant": "ACE-HP-S high-power linear highbay from 75W to 206W with aisle and oval optics.",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "75–206",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "8809–25487",
+      "unit": "lm"
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "ACE-HP-S high-power linear highbay from 75W to 206W with aisle and oval optics."
+  ],
+  "features": [
+    "High-power output to 206W",
+    "Aisle and oval optic options",
+    "Multiple lengths for layout flexibility",
+    "DALI dimming available"
+  ],
+  "applications": [
+    "Racking aisles",
+    "Production lines",
+    "Distribution centres",
+    "Factories"
+  ],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "8,809lm – 25,487lm+"
+          },
+          {
+            "label": "Lengths",
+            "value": "1140 / 1700 / 2260mm"
+          },
+          {
+            "label": "Beam",
+            "value": "60° / 90° / Oval / Aisle Asym / Aisle Sym"
+          },
+          {
+            "label": "CRI",
+            "value": "80"
+          },
+          {
+            "label": "CCT",
+            "value": "3000K / 4000K / 5000K"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "75W – 206W"
+          },
+          {
+            "label": "Control",
+            "value": "Non-dim / DALI"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

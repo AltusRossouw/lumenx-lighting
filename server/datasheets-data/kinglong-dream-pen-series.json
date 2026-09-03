@@ -1,0 +1,133 @@
+{
+  "fileStem": "Dream Pen",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "DREAM PEN",
+  "category": "INDOOR DECORATIVE",
+  "variant": "",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "20–40",
+      "unit": "W"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "The Dream Pen Series is a study in restraint and rigour. Precision-extruded high-grade aluminium profiles form clean linear forms that speak the language of contemporary architecture — resolute, purposeful, and endlessly adaptable. The series integrates LED strip lighting directly within the aluminium extrusion, delivering exceptional thermal management and uniform illumination without visual hotspots. From a single pendant above a boardroom table to a grid of parallel lines defining an open-plan office, the Dream Pen Series offers modular scalability that few collections can match."
+  ],
+  "features": [],
+  "applications": [
+    "Hospitality",
+    "Residential",
+    "Lobbies",
+    "Retail"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Primary Material",
+            "value": "High-Grade Aluminium Extrusion Profile (T6 alloy)"
+          },
+          {
+            "label": "Diffuser",
+            "value": "Opal PMMA Diffuser (anti-glare, UGR < 19)"
+          },
+          {
+            "label": "Frame / Suspension",
+            "value": "Stainless Steel Wire / Rigid Rod (selectable)"
+          },
+          {
+            "label": "Finish Options",
+            "value": "Anodised Silver · Matte Black · Champagne Gold Powder Coat · White"
+          },
+          {
+            "label": "Profile Lengths",
+            "value": "L600 / L900 / L1200 / L1500 / L1800 / L2400mm (custom available)"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Warranty",
+            "value": "5 Years (aluminium structure) · LED Driver: 5 Years"
+          },
+          {
+            "label": "Certifications",
+            "value": "UL · CE · DLC · CNAS-accredited test reports available"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Light Source",
+            "value": "Integrated LED Strip, 3000K / 4000K / 5700K CCT, CRI > 90"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP20 standard · IP44 available"
+          },
+          {
+            "label": "UGR< 19",
+            "value": "(anti-glare PMMA diffuser)"
+          },
+          {
+            "label": "Lead Time",
+            "value": "Standard: 3–5 weeks · Custom: 6–10 weeks"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "20W/m – 40W/m (length-dependent)"
+          },
+          {
+            "label": "Voltage",
+            "value": "110V – 240V, 50/60Hz Universal Input"
+          },
+          {
+            "label": "Dimming",
+            "value": "DALI · 0–10V · KNX compatible"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

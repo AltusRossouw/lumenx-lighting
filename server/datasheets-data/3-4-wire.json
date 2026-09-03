@@ -1,0 +1,62 @@
+{
+  "fileStem": "3/4 Wire",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "3/4 WIRE",
+  "category": "TRACK LIGHTING",
+  "variant": "3/4-wire track lighting system for flexible, reconfigurable accent illumination.",
+  "stats": [],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "3/4-wire track lighting system for flexible, reconfigurable accent illumination."
+  ],
+  "features": [
+    "3- and 4-circuit configurations",
+    "Independent control per circuit",
+    "Reconfigurable layout"
+  ],
+  "applications": [
+    "Retail",
+    "Galleries",
+    "Showrooms",
+    "Display lighting"
+  ],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Type",
+            "value": "Track lighting system"
+          },
+          {
+            "label": "Circuits",
+            "value": "3-wire / 4-wire"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

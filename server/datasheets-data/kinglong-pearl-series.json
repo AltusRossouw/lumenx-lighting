@@ -1,0 +1,133 @@
+{
+  "fileStem": "Pearl Series",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "PEARL SERIES",
+  "category": "INDOOR DECORATIVE",
+  "variant": "",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "5–200",
+      "unit": "W"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "Pearls have symbolised purity and refinement across cultures for millennia — and the Pearl Series channels that same quiet confidence into decorative lighting. Each sphere is crafted from high-quality mouth-blown glass, achieving a uniformity of form and a translucency that mass-produced alternatives cannot match. Arranged in cascading cluster configurations that echo the natural randomness of a pearl strand, the series brings an organic, timeless elegance to any interior. Versatile enough for both intimate residential dining rooms and the public areas of boutique hotels, the Pearl Series is a perennial bestseller."
+  ],
+  "features": [],
+  "applications": [
+    "Hospitality",
+    "Residential",
+    "Lobbies",
+    "Retail"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Primary Material",
+            "value": "High-Quality Mouth-Blown Glass Spheres"
+          },
+          {
+            "label": "Alternative",
+            "value": "High-Clarity Optical Acrylic Spheres (lightweight variant)"
+          },
+          {
+            "label": "Frame",
+            "value": "Stainless Steel Cable + Brass / Chrome Cap Fittings"
+          },
+          {
+            "label": "Finish Options",
+            "value": "Champagne Gold · Chrome · Antique Brass · Matte Black"
+          },
+          {
+            "label": "Sphere Diameter Options",
+            "value": "Ø60 / Ø80 / Ø100 / Ø150 / Ø200mm"
+          },
+          {
+            "label": "Cluster Configurations",
+            "value": "9-sphere / 18-sphere / 36-sphere / custom"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Warranty",
+            "value": "3 Years · LED Driver: 5 Years"
+          },
+          {
+            "label": "Certifications",
+            "value": "CE · CNAS-accredited test reports available"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Light Source",
+            "value": "G9 LED / Integrated LED Module, 2700K / 3000K CCT, CRI > 90"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP20 standard"
+          },
+          {
+            "label": "Lead Time",
+            "value": "Standard: 4–6 weeks · Custom: 6–10 weeks"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "5W – 200W (sphere count-dependent)"
+          },
+          {
+            "label": "Voltage",
+            "value": "110V – 240V, 50/60Hz Universal Input"
+          },
+          {
+            "label": "Dimming",
+            "value": "Triac · 0–10V"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

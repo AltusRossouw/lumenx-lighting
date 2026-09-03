@@ -1,0 +1,107 @@
+{
+  "fileStem": "Sens IQ S",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "SENS IQ S",
+  "category": "SENSORS",
+  "variant": "",
+  "stats": [
+    {
+      "label": "Reach",
+      "value": "20",
+      "unit": "m"
+    },
+    {
+      "label": "Angle",
+      "value": "300",
+      "unit": "°"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP54",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [],
+  "features": [],
+  "applications": [],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Application, place",
+            "value": "Indoors, Outdoors"
+          },
+          {
+            "label": "Installation",
+            "value": "Surface wiring"
+          },
+          {
+            "label": "Detection angle",
+            "value": "300 °"
+          },
+          {
+            "label": "Reach, tangential",
+            "value": "r = 20 m (1047 m²)"
+          },
+          {
+            "label": "Mounting height max.",
+            "value": "5,00 m"
+          },
+          {
+            "label": "Interconnection via",
+            "value": "Cable"
+          },
+          {
+            "label": "Version",
+            "value": "white"
+          },
+          {
+            "label": "PU1, net weight",
+            "value": "0,252 kg"
+          },
+          {
+            "label": "infrared sensor 3 x 100°",
+            "value": "3 zones scalable 2-20m"
+          },
+          {
+            "label": "max. 2000 W",
+            "value": "IP54"
+          },
+          {
+            "label": "2 - 2000 lux daylight operation",
+            "value": "5 sec - 15 min"
+          },
+          {
+            "label": "ideal 2 - 5 m",
+            "value": "Teach mode"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

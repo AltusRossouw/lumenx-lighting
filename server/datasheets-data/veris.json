@@ -1,0 +1,141 @@
+{
+  "fileStem": "Veris",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "VERIS",
+  "category": "LED PANELS",
+  "variant": "Back-lit low-glare LED panel with UGR<19 and flicker-free operation.",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "24",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "3600",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP40",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "Back-lit low-glare LED panel with UGR<19 and flicker-free operation."
+  ],
+  "features": [
+    "Low-glare UGR<19 output",
+    "Back-lit, flicker-free",
+    "Clean architectural finish"
+  ],
+  "applications": [
+    "Offices",
+    "Education",
+    "Hospitals",
+    "Corporate interiors"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Dimensions",
+            "value": "1195 × 295 × 32mm"
+          },
+          {
+            "label": "Housing",
+            "value": "Aluminium"
+          },
+          {
+            "label": "Mounting",
+            "value": "Recessed"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "3,600 lm"
+          },
+          {
+            "label": "Efficacy",
+            "value": "150 lm/W"
+          },
+          {
+            "label": "CCT",
+            "value": "4000K / 5000K / 6000K"
+          },
+          {
+            "label": "CRI",
+            "value": ">80"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "120°"
+          },
+          {
+            "label": "UGR",
+            "value": "<19"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP40"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "1.5kV"
+          },
+          {
+            "label": "Lifetime",
+            "value": "L80B10 @ 50,000 hrs"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "24W"
+          },
+          {
+            "label": "Voltage",
+            "value": "220–240V AC"
+          },
+          {
+            "label": "Dimming",
+            "value": "Optional DALI / Phase cut"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

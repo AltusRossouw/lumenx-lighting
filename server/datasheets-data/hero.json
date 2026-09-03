@@ -1,0 +1,111 @@
+{
+  "fileStem": "Hero",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "HERO",
+  "category": "BULKHEADS",
+  "variant": "All-in-one IP65 bulkhead with selectable wattage and 3CCT in a round or square polycarbonate housing.",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "12–24",
+      "unit": "W"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP65",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "All-in-one IP65 bulkhead with selectable wattage and 3CCT in a round or square polycarbonate housing."
+  ],
+  "features": [
+    "Selectable wattage and CCT in one fitting",
+    "Round or square, black or white options",
+    "Flicker-free driver",
+    "CE & RoHS certified"
+  ],
+  "applications": [
+    "Exterior walls",
+    "Corridors",
+    "Entrances",
+    "Stairwells"
+  ],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Efficacy",
+            "value": "105 lm/W"
+          },
+          {
+            "label": "CCT",
+            "value": "3CCT (3000K / 4000K / 6000K)"
+          },
+          {
+            "label": "CRI",
+            "value": "> 80"
+          },
+          {
+            "label": "Beam",
+            "value": "140°"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP65"
+          },
+          {
+            "label": "IK Rating",
+            "value": "IK08"
+          },
+          {
+            "label": "LED Chips",
+            "value": "Sanan 2835"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "1kV"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "12W / 18W / 24W (selectable)"
+          },
+          {
+            "label": "Voltage",
+            "value": "185–265V AC"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

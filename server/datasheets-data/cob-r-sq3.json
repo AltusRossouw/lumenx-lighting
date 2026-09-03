@@ -1,0 +1,90 @@
+{
+  "fileStem": "COB-R-SQ3",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "COB-R-SQ3",
+  "category": "DOWNLIGHTS",
+  "variant": "Triple-module square swivel COB recessed downlight for high-output architectural applications.",
+  "stats": [
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "The COB-R-SQ3 is the triple-module flagship of the COB-R square swivel downlight range, delivering maximum output for large open-plan retail and commercial spaces. Swivel trims, specialty colours and full control flexibility make it a powerful architectural accent tool."
+  ],
+  "features": [
+    "Triple-module maximum output",
+    "Per-module swivel aiming",
+    "Specialty colour options",
+    "DALI and Bluetooth control"
+  ],
+  "applications": [
+    "Large retail",
+    "Atriums",
+    "Showrooms",
+    "Commercial spaces"
+  ],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Type",
+            "value": "Triple-module square swivel"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "15° / 30° / 45° / 60°"
+          },
+          {
+            "label": "CRI",
+            "value": "80 / 90 (95+ on request)"
+          },
+          {
+            "label": "CCT",
+            "value": "3000K / 4000K + specialty"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Control",
+            "value": "Non-dim / DALI / Bluetooth"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

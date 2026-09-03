@@ -1,0 +1,109 @@
+{
+  "fileStem": "IS 2360 R",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "IS 2360 R",
+  "category": "SENSORS",
+  "variant": "",
+  "stats": [
+    {
+      "label": "Reach",
+      "value": "8",
+      "unit": "m"
+    },
+    {
+      "label": "Angle",
+      "value": "360",
+      "unit": "°"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP54",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "STEINEL inside. Intelligent technology for installation. The perfect infrared sensor for installing in projecting roofs and suspended ceilings. The IS 2360 DE ECO has a reach of up to 8 m in diameter and an impressive 360° angle of coverage. The detection zone can be adjusted where necessary by using shrouds."
+  ],
+  "features": [],
+  "applications": [],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Application, place",
+            "value": "Outdoors, Indoors"
+          },
+          {
+            "label": "Installation",
+            "value": "In-ceiling installation"
+          },
+          {
+            "label": "Detection angle",
+            "value": "360 °"
+          },
+          {
+            "label": "Reach, tangential",
+            "value": "Ø 8 m (50 m²)"
+          },
+          {
+            "label": "Mounting height max.",
+            "value": "4,00 m"
+          },
+          {
+            "label": "Interconnection via",
+            "value": "Cable"
+          },
+          {
+            "label": "Version",
+            "value": "white"
+          },
+          {
+            "label": "PU1, net weight",
+            "value": "0,117 kg"
+          },
+          {
+            "label": "infrared sensor 360°",
+            "value": "max. 4 m"
+          },
+          {
+            "label": "1000 W max.",
+            "value": "IP54"
+          },
+          {
+            "label": "2 - 2000 lux",
+            "value": "8 sec - 35 min"
+          },
+          {
+            "label": "manufacturer's warranty steinel.de/garantie",
+            "value": "CE"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

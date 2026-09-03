@@ -1,0 +1,114 @@
+{
+  "fileStem": "COB-R-SQ1",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "COB-R-SQ1",
+  "category": "DOWNLIGHTS",
+  "variant": "Square swivel COB recessed downlight from 10W to 45W with specialty colour options.",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "10.1–42",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "1268–4846",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "Square swivel COB recessed downlight from 10W to 45W with specialty colour options."
+  ],
+  "features": [
+    "Swivel trim for adjustable aiming",
+    "Specialty retail / food / health colours",
+    "CRI95+ available",
+    "DALI and Bluetooth control"
+  ],
+  "applications": [
+    "Retail",
+    "Display",
+    "Hospitality",
+    "Food retail"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Cutout",
+            "value": "158 × 158mm"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "1,268lm – 4,846lm"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "15° / 30° / 45° / 60°"
+          },
+          {
+            "label": "CRI",
+            "value": "80 / 90 (95+ on request)"
+          },
+          {
+            "label": "CCT",
+            "value": "3000K / 4000K + specialty"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "10.1W – 42W"
+          },
+          {
+            "label": "Control",
+            "value": "Non-dim / DALI / Bluetooth"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

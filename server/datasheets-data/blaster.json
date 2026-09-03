@@ -1,0 +1,107 @@
+{
+  "fileStem": "Blaster",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "BLASTER",
+  "category": "TRACK LIGHTING",
+  "variant": "35/30/28W 3-wire track spot with 340° rotation and CRI>90.",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "28–35",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "3220–4025",
+      "unit": "lm"
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "35/30/28W 3-wire track spot with 340° rotation and CRI>90."
+  ],
+  "features": [
+    "CRI>90 accurate colour",
+    "340° rotation for aiming",
+    "High output to 4,025lm",
+    "3kV surge protection"
+  ],
+  "applications": [
+    "Retail",
+    "Showrooms",
+    "Galleries",
+    "Accent lighting"
+  ],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "> 3,220lm – 4,025lm"
+          },
+          {
+            "label": "CCT",
+            "value": "3CCT (3000K / 4000K / 6000K)"
+          },
+          {
+            "label": "CRI",
+            "value": "> 90"
+          },
+          {
+            "label": "Beam",
+            "value": "36°"
+          },
+          {
+            "label": "Rotation",
+            "value": "340°"
+          },
+          {
+            "label": "IK Rating",
+            "value": "IK05"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "3kV"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "28W / 30W / 35W"
+          },
+          {
+            "label": "Voltage",
+            "value": "200–265V AC"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

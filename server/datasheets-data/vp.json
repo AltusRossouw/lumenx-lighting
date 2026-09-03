@@ -1,0 +1,118 @@
+{
+  "fileStem": "VP",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "VP",
+  "category": "VAPOUR PROOF",
+  "variant": "IP65 polycarbonate vapour-proof linear with emergency and motion sensor options.",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "40–60",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "4382–6962",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP65",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "IP65 polycarbonate vapour-proof linear with emergency and motion sensor options."
+  ],
+  "features": [
+    "IP65 vapour-proof polycarbonate",
+    "Emergency version available",
+    "Optional microwave motion sensor",
+    "Multiple mounting options"
+  ],
+  "applications": [
+    "Parking structures",
+    "Industrial",
+    "Canopies",
+    "Utility areas"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Housing",
+            "value": "Grey polycarbonate"
+          },
+          {
+            "label": "Mounting",
+            "value": "Surface / P2000 / Suspended"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "4,382lm – 6,962lm"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "110°"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP65"
+          },
+          {
+            "label": "CRI",
+            "value": "80 (90 on request)"
+          },
+          {
+            "label": "CCT",
+            "value": "3000K / 4000K"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "40W / 50W / 60W"
+          },
+          {
+            "label": "Control",
+            "value": "Non-dim / DALI"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

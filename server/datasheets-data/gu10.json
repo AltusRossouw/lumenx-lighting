@@ -1,0 +1,72 @@
+{
+  "fileStem": "GU10",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "GU10",
+  "category": "DOWNLIGHTS",
+  "variant": "GU10 fixtures and accessories for flexible lamp-based accent and downlighting.",
+  "stats": [
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "The GU10 range covers fixtures and accessories built around the universal GU10 lamp format, providing a simple, serviceable solution for accent and downlighting applications where lamp replacement flexibility is required."
+  ],
+  "features": [
+    "Universal GU10 lamp compatibility",
+    "Simple, serviceable design",
+    "Accent and downlighting applications"
+  ],
+  "applications": [
+    "Residential",
+    "Retail",
+    "Hospitality",
+    "Display"
+  ],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lamp Base",
+            "value": "GU10"
+          },
+          {
+            "label": "Type",
+            "value": "Fixture & accessories"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

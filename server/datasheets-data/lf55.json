@@ -1,0 +1,137 @@
+{
+  "fileStem": "LF55",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "LF55",
+  "category": "LINEAR LIGHTING",
+  "variant": "55×80mm Light Frame family linear for high-output industrial and commercial use.",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "17–100",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "2300–12000",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "55×80mm Light Frame family linear for high-output industrial and commercial use."
+  ],
+  "features": [
+    "High-output 55×80mm profile",
+    "Excellent thermal management",
+    "Surface and suspended mounting"
+  ],
+  "applications": [
+    "Warehouse racking",
+    "Production lines",
+    "Industrial",
+    "Workspaces"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Profile",
+            "value": "55 × 80mm"
+          },
+          {
+            "label": "Housing",
+            "value": "Aluminium"
+          },
+          {
+            "label": "Mounting",
+            "value": "Surface / Suspended / P2000"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "2,300 – 12,000 lm"
+          },
+          {
+            "label": "Efficacy",
+            "value": "Up to 136 lm/W"
+          },
+          {
+            "label": "CCT",
+            "value": "3000K / 3500K / 4000K / 5000K"
+          },
+          {
+            "label": "CRI",
+            "value": ">80"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "90°"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "1.5kV"
+          },
+          {
+            "label": "Lifetime",
+            "value": "L80B10 @ 50,000 hrs"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "17W – 100W"
+          },
+          {
+            "label": "Voltage",
+            "value": "200–265V AC"
+          },
+          {
+            "label": "Dimming",
+            "value": "Optional DALI / Phase cut"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

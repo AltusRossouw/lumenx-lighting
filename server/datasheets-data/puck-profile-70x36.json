@@ -1,0 +1,72 @@
+{
+  "fileStem": "Puck Profile 70x36",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "PUCK PROFILE 70X36",
+  "category": "LINEAR LIGHTING",
+  "variant": "70×36mm Puck profile linear system for recessed, surface and suspended applications.",
+  "stats": [],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "70×36mm Puck profile linear system for recessed, surface and suspended applications."
+  ],
+  "features": [
+    "70×36mm linear profile",
+    "Multiple mounting options",
+    "Direct Drive technology"
+  ],
+  "applications": [
+    "Architectural interiors",
+    "Offices",
+    "Retail",
+    "Commercial"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Profile",
+            "value": "70×36mm"
+          },
+          {
+            "label": "Mounting",
+            "value": "Recessed / Surface / Suspended"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Technology",
+            "value": "OrbitX Direct Drive"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

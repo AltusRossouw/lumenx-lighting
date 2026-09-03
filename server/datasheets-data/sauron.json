@@ -1,0 +1,111 @@
+{
+  "fileStem": "Sauron",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "SAURON",
+  "category": "DOWNLIGHTS",
+  "variant": "3CCT round COB downlight from 16W to 25W with UGR<19 and Bridgelux LED chips.",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "16–25",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "1920–3000",
+      "unit": "lm"
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "3CCT round COB downlight from 16W to 25W with UGR<19 and Bridgelux LED chips."
+  ],
+  "features": [
+    "UGR<19 low-glare comfort",
+    "Bridgelux COB LED platform",
+    "Flicker-free AGT driver",
+    "3kV surge protection"
+  ],
+  "applications": [
+    "Offices",
+    "Retail",
+    "Healthcare",
+    "Commercial interiors"
+  ],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "1,920lm – 3,000lm"
+          },
+          {
+            "label": "CCT",
+            "value": "3CCT (3000K / 4000K / 6000K)"
+          },
+          {
+            "label": "CRI",
+            "value": "> 80"
+          },
+          {
+            "label": "UGR",
+            "value": "< 19"
+          },
+          {
+            "label": "Beam",
+            "value": "45°"
+          },
+          {
+            "label": "LED Chips",
+            "value": "Bridgelux COB"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "3kV"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "16W / 18W / 20W / 25W"
+          },
+          {
+            "label": "Voltage",
+            "value": "200–277V AC"
+          },
+          {
+            "label": "Dimming",
+            "value": "Optional dimmable driver"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

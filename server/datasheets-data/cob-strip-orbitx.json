@@ -1,0 +1,71 @@
+{
+  "fileStem": "COB",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "COB",
+  "category": "LED STRIPS",
+  "variant": "Chip-on-board dotless LED strip for seamless, continuous linear light.",
+  "stats": [],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "Chip-on-board dotless LED strip for seamless, continuous linear light."
+  ],
+  "features": [
+    "Dot-free continuous light",
+    "High CRI 90+",
+    "Seamless architectural detail"
+  ],
+  "applications": [
+    "Cove lighting",
+    "Display shelving",
+    "Joinery accent",
+    "Under-cabinet"
+  ],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Type",
+            "value": "COB (Chip-on-Board)"
+          },
+          {
+            "label": "CRI",
+            "value": "90+"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Voltage",
+            "value": "24V DC"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "fileStem": "Protega Gen 2",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "PROTEGA GEN 2",
+  "category": "LINEAR LIGHTING",
+  "variant": "LED linear luminaire delivering up to 171 lm/W in a sleek, easily maintained profile.",
+  "stats": [],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "LED linear luminaire delivering up to 171 lm/W in a sleek, easily maintained profile."
+  ],
+  "features": [
+    "Industry-leading 171 lm/W efficacy",
+    "Sleek architectural profile",
+    "Easy maintenance access",
+    "Retail, commercial and industrial"
+  ],
+  "applications": [
+    "Retail",
+    "Commercial",
+    "Industrial",
+    "Workspaces"
+  ],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Efficacy",
+            "value": "Up to 171 lm/W"
+          },
+          {
+            "label": "Type",
+            "value": "Linear luminaire"
+          },
+          {
+            "label": "Maintenance",
+            "value": "Easily maintained profile"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

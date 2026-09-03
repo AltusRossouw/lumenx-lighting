@@ -1,0 +1,109 @@
+{
+  "fileStem": "IR Quattro HD",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "IR QUATTRO HD",
+  "category": "SENSORS",
+  "variant": "",
+  "stats": [
+    {
+      "label": "Reach",
+      "value": "20",
+      "unit": "m"
+    },
+    {
+      "label": "Angle",
+      "value": "360",
+      "unit": "°"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "Detection no finer! Infrared presence detector Presence Control PRO IR Quattro HD COM1 for indoors, ideal for medium to large-size offices, conference and meeting rooms, classrooms and lecture theatres, sports halls and warehouses, installation height up to 10 m, for switching light 'ON' and 'OFF', 4800 switching zones for the ultimate in detection quality, presence detection over a true 64 m2, square detection zone, mechanically scalable."
+  ],
+  "features": [],
+  "applications": [],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Application, place",
+            "value": "Indoors"
+          },
+          {
+            "label": "Installation",
+            "value": "In-ceiling installation"
+          },
+          {
+            "label": "Detection angle",
+            "value": "360 °"
+          },
+          {
+            "label": "Reach, tangential",
+            "value": "20 x 20 m (400 m²)"
+          },
+          {
+            "label": "Mounting height max.",
+            "value": "10,00 m"
+          },
+          {
+            "label": "Interconnection via",
+            "value": "Cable"
+          },
+          {
+            "label": "Version",
+            "value": "COM1 - in-ceiling installation white"
+          },
+          {
+            "label": "PU1, net weight",
+            "value": "0,216 kg"
+          },
+          {
+            "label": "infrared sensor",
+            "value": "max. 8m x 8m presence"
+          },
+          {
+            "label": "4800 zones",
+            "value": "max. 2000 W"
+          },
+          {
+            "label": "ideal 2,5 - 10 m",
+            "value": "indoor sensor"
+          },
+          {
+            "label": "manufacturer's warranty steinel.de/garantie",
+            "value": "CE"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

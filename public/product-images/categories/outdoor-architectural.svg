@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs><radialGradient id="g" cx="70%" cy="30%" r="80%"><stop offset="0%" stop-color="#00D4FF" stop-opacity="0.35"/><stop offset="100%" stop-color="#06090F" stop-opacity="0"/></radialGradient></defs>
+<rect width="1600" height="900" fill="#0A101A"/>
+<rect width="1600" height="900" fill="url(#g)"/>
+<circle cx="1180" cy="230" r="90" fill="none" stroke="#00D4FF" stroke-width="2" opacity="0.6"/>
+<circle cx="1180" cy="230" r="26" fill="#00D4FF"/>
+<text x="120" y="470" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="120" fill="#FFFFFF">Architectural</text>
+<text x="124" y="540" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="34" letter-spacing="8" fill="#5B9DB8">ARCHITECTURAL — OUTDOOR</text>
+</svg>

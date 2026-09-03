@@ -1,0 +1,109 @@
+{
+  "fileStem": "HF 360",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "HF 360",
+  "category": "SENSORS",
+  "variant": "",
+  "stats": [
+    {
+      "label": "Reach",
+      "value": "12",
+      "unit": "m"
+    },
+    {
+      "label": "Angle",
+      "value": "360",
+      "unit": "°"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "Doesn't miss a thing. HF-presence detector Presence Control PRO HF 360 COM1 for indoors, ideal for WCs with toilet cubicles, changing rooms, stairwells, multi-storey car parks, kitchens, installation height up to 3.5 m, for switching light 'ON' and 'OFF', 1 – 12 m reach, reach is electronically adjustable and can be limited in two directions, detection regardless of temperature, HF-sensor technology also detects movement through glass, wood and stud walls."
+  ],
+  "features": [],
+  "applications": [],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Application, place",
+            "value": "Indoors"
+          },
+          {
+            "label": "Installation",
+            "value": "In-ceiling installation"
+          },
+          {
+            "label": "Detection angle",
+            "value": "360 °"
+          },
+          {
+            "label": "Reach, tangential",
+            "value": "Ø 12 m (113 m²)"
+          },
+          {
+            "label": "Mounting height max.",
+            "value": "3,50 m"
+          },
+          {
+            "label": "Interconnection via",
+            "value": "Cable"
+          },
+          {
+            "label": "Version",
+            "value": "COM1 - in-ceiling installation"
+          },
+          {
+            "label": "PU1, net weight",
+            "value": "0,185 kg"
+          },
+          {
+            "label": "high frequency sensor 360°",
+            "value": "max. Ø 12 m"
+          },
+          {
+            "label": "max. 2000 W",
+            "value": "IP20"
+          },
+          {
+            "label": "ideal 2,5 - 3,5 m",
+            "value": "indoor sensor"
+          },
+          {
+            "label": "IQ-mode",
+            "value": "Teach mode"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

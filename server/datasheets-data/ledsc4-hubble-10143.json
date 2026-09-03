@@ -1,0 +1,90 @@
+{
+  "fileStem": "Hubble",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "HUBBLE",
+  "category": "INDOOR LIGHTING",
+  "variant": "",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "8–968",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "224–10863",
+      "unit": "lm"
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "Collection of versatile and highly efficient projectors"
+  ],
+  "features": [
+    "Quick and waterproof connection wiring",
+    "In vertical downward position, excellent visual comfort. Index: BUG B3 U0 G0.",
+    "LED models with a lifespan of 50,000h L80 B20",
+    "5-year warranty for heavy use (4,000 hours/year) and in a marine atmosphere."
+  ],
+  "applications": [
+    "Architectural",
+    "Commercial",
+    "Hospitality"
+  ],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumen Output",
+            "value": "224–10863 lm"
+          },
+          {
+            "label": "Colour Temperature",
+            "value": "2700K / 3000K / 4000K"
+          },
+          {
+            "label": "CRI",
+            "value": "80"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "8–968 W"
+          },
+          {
+            "label": "Input Voltage",
+            "value": "100-240V"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

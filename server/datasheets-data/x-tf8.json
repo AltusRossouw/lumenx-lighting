@@ -1,0 +1,118 @@
+{
+  "fileStem": "X-TF8",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "X-TF8",
+  "category": "DOWNLIGHTS",
+  "variant": "Trimless reflector downlight with fixed and swivel trim variants and <3 SDCM colour consistency.",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "7.2–13.9",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "694–1364",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "Trimless reflector downlight with fixed and swivel trim variants and <3 SDCM colour consistency."
+  ],
+  "features": [
+    "Fixed and swivel trim variants",
+    "Trimless architectural finish",
+    "Optional emergency version (1 hour)",
+    "Optional Bluetooth control"
+  ],
+  "applications": [
+    "Architectural interiors",
+    "Offices",
+    "Retail",
+    "Hospitality"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Cutout",
+            "value": "Ø70mm"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "694lm – 1,364lm"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "38° / 60°"
+          },
+          {
+            "label": "CRI",
+            "value": "80 (90 on request)"
+          },
+          {
+            "label": "CCT",
+            "value": "3000K / 4000K"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          },
+          {
+            "label": "Colour Consistency",
+            "value": "< 3 SDCM"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "7.2W – 13.9W"
+          },
+          {
+            "label": "Control",
+            "value": "Non-dim / Phase / DALI / Bluetooth"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

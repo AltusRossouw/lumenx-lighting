@@ -1,0 +1,80 @@
+{
+  "fileStem": "Lean 153",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "LEAN 153",
+  "category": "DOWNLIGHTS",
+  "variant": "Compact, low-profile recessed downlight from the Aegeon family for discreet ceiling integration.",
+  "stats": [],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "The Lean 153 is a low-profile recessed downlight within the Aegeon range, engineered for shallow ceiling voids and discreet architectural integration. It shares the diffused, low-glare optic and passive cooling approach of the family while accommodating tighter installation constraints."
+  ],
+  "features": [
+    "Shallow ceiling void compatible",
+    "Low-glare diffused output",
+    "Discreet architectural profile"
+  ],
+  "applications": [
+    "Offices",
+    "Retail",
+    "Healthcare",
+    "Corridors"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Cooling",
+            "value": "Passive die-cast"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Type",
+            "value": "Recessed, low-profile"
+          },
+          {
+            "label": "Optics",
+            "value": "Diffused, low-glare"
+          },
+          {
+            "label": "CRI",
+            "value": "90+"
+          },
+          {
+            "label": "CCT",
+            "value": "3000K / 4000K"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

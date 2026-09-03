@@ -1,0 +1,98 @@
+{
+  "fileStem": "BASE",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "BASE",
+  "category": "LINEAR LIGHTING",
+  "variant": "BACE base linear profile offering 135 lm/W efficacy in single or continuous form.",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "16–54",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "2400–6682",
+      "unit": "lm"
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "BACE base linear profile offering 135 lm/W efficacy in single or continuous form."
+  ],
+  "features": [
+    "High 135 lm/W efficacy",
+    "Single and continuous options",
+    "Cost-effective architectural linear"
+  ],
+  "applications": [
+    "Offices",
+    "Retail",
+    "Commercial",
+    "Workspaces"
+  ],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "2,400lm – 6,682lm"
+          },
+          {
+            "label": "Efficacy",
+            "value": "Up to 135 lm/W"
+          },
+          {
+            "label": "Lengths",
+            "value": "580 – 1420mm"
+          },
+          {
+            "label": "CRI",
+            "value": "80"
+          },
+          {
+            "label": "CCT",
+            "value": "3000K / 4000K"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "16W – 54W (30/40/50 W/m)"
+          },
+          {
+            "label": "Control",
+            "value": "Non-dim / DALI"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

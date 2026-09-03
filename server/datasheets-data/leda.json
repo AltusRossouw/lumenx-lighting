@@ -1,0 +1,72 @@
+{
+  "fileStem": "Leda",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "LEDA",
+  "category": "TRACK LIGHTING",
+  "variant": "3-wire track tilt IP20 linear for directional linear accent lighting.",
+  "stats": [
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": ""
+  },
+  "overview": [
+    "3-wire track tilt IP20 linear for directional linear accent lighting."
+  ],
+  "features": [
+    "Tiltable linear format",
+    "3-wire track compatibility",
+    "Broader accent coverage"
+  ],
+  "applications": [
+    "Retail",
+    "Display",
+    "Showrooms",
+    "Accent lighting"
+  ],
+  "columns": {
+    "left": [],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Type",
+            "value": "3-wire track linear"
+          },
+          {
+            "label": "Tilt",
+            "value": "Tiltable"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}
