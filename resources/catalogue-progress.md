@@ -7,9 +7,11 @@ Source of truth for mapping/diff: `resources/products-inventory.json`
 (`master[]` rows carry siteStatus / siteSlug / hasDatasheet) and
 `resources/catalogue-audit.md`.
 
-## Status (round 5)
+## Status (round 7 — code complete, deploying)
 
-- Master rows: **116** (57 keep on site · 59 to add · 10 to remove).
+- Master rows: **116** — live catalogue now matches: 6 new categories + 59 added products,
+  the 10 non-CSV products removed (with their old PDFs), all Spec Sheet buttons point
+  at the generated datasheet endpoint, Resources hub lists 111 generated datasheets.
 - **Datasheet payloads: 111 render-verified files → cover 112 of 116 master rows.**
   - 56 existing site products · 7 PioLED outdoor/solar · 2 Superlume solar
   - 24 LEDsC4 (proxy) · 5 KingLong decorative (proxy) · 2 Superlume wall lights
