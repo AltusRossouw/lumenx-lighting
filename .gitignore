@@ -7,6 +7,9 @@ coverage/
 .env*
 !.env.example
 
+# Generated datasheet PDF cache (rendered on demand from the template + JSON).
+server/cache/
+
 # Raw supplier IES source dumps — redundant with server/files/ies/ (already
 # normalised there) and contain "Don't Send" internal test reports. Kept out of
 # version control and out of the public web root.

@@ -1805,7 +1805,7 @@ export const PRODUCTS: Product[] = [
     ],
     applications: ['Retail', 'Galleries', 'Showrooms', 'Accent lighting'],
     imageUrl: IMG.track,
-    pdfUrl: '/datasheets/LumenX_Datasheet_35W Track Spot.pdf',
+    pdfUrl: '/api/download/datasheet/generated/track-spot-35w',
     warranty: '5-year warranty',
   },
 
@@ -2039,10 +2039,13 @@ export function getProduct(categoryId: string, slug: string): Product | undefine
 }
 
 /**
- * Convert a static datasheet path (/datasheets/X.pdf) into the tracked
- * backend download URL so every datasheet download is recorded.
+ * Convert a datasheet path into the tracked backend download URL so every
+ * download is recorded. Static files (/datasheets/X.pdf) map onto the legacy
+ * file route; generated datasheets already carry their /api/ URL and pass
+ * straight through.
  */
 export const datasheetDownloadUrl = (pdfUrl: string): string => {
+  if (pdfUrl.startsWith('/api/')) return pdfUrl;
   const name = pdfUrl.split('/').filter(Boolean).pop() || '';
   return `/api/download/datasheet/${encodeURIComponent(name)}`;
 };
@@ -2063,7 +2066,7 @@ export function getAllDatasheets(): { name: string; href: string }[] {
 /** Complete local datasheet library (LumenX-branded + supplier-linked ranges). */
 export const DATASHEET_LIBRARY: { name: string; href: string }[] = [
   { name: '300x1200 Recessed Panel', href: '/datasheets/LumenX_Datasheet_300x1200 Recessed Panel.pdf' },
-  { name: '35W Track Spot', href: '/datasheets/LumenX_Datasheet_35W Track Spot.pdf' },
+  { name: '35W Track Spot', href: '/api/download/datasheet/generated/track-spot-35w' },
   { name: '48W 3 CCT Triproof', href: '/datasheets/LumenX_Datasheet_48W 3 CCT Triproof.pdf' },
   { name: '60W Street Light', href: '/datasheets/LumenX_Datasheet_60W Street light.pdf' },
   { name: '9W Surface Downlight', href: '/datasheets/LumenX_Datasheet_9w Surface downlight.pdf' },

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<!--
+  ═══════════════════════════════════════════════════════════════════════════════
+  LumenX Lighting — Master Datasheet Template (A4)
+
+  One HTML + CSS source of truth for every product datasheet. The page hydrates
+  itself from the JSON block below (<script id="datasheet-data">), so the same
+  file works for every product: swap the JSON, keep the layout.
+
+  How to use
+  ──────────
+  1.  Open this file in a browser: the datasheet is rendered from the JSON block
+      below ("Track Spot" sample is pre-filled — replace it with any product).
+  2.  To make a real PDF from a product:
+        • Dev quick check   → open in Chrome, Cmd+P, "Save as PDF" (A4, no margins).
+        • Automated         → headless Chromium / Puppeteer, see README.md.
+  3.  Per-product data should be generated from src/products.ts (single source of
+      truth) or a new src/datasheets/*.ts module — see README.md for the mapping.
+
+  Brand tokens live in the :root block — change once, re-render everything.
+
+  NOTE FOR THE CURRENT PDFS: the reference sheets are 1-page A4. If a product's
+  content overflows, sections auto-flow to page 2 (never truncate). Prefer short
+  copy so most products stay on a single page like the reference.
+  ═══════════════════════════════════════════════════════════════════════════════
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LumenX — Product Datasheet</title>
+<style>
+  /* ── Brand tokens (match to official brand swatches / logo files) ─────────── */
+  :root {
+    --paper:        #ffffff;
+    --band:         #201820;   /* dark top/bottom band (sampled from reference PDF) */
+    --band-ink:     #ffffff;
+    --ink:          #111111;   /* primary text */
+    --muted:        #5b6168;   /* labels / captions */
+    --faint:        #d9dbe0;   /* watermark + hairlines */
+    --rule:         #e2e4e8;   /* table row rule */
+    --accent:       #00b4e6;   /* LumenX cyan accent */
+    --accent-soft:  rgba(0, 180, 230, 0.10);
+
+    /* Typography — the reference uses Calibri + Arial Black/Helvetica families.
+       Use CSS font stacks here; for byte-identical server output install
+       Carlito (Calibri-compatible) + Liberation Sans in the render container. */
+    --font-display: "Arial Black", "Arial Bold", Arial, Helvetica, sans-serif;
+    --font-head:    Helvetica, Arial, "Liberation Sans", sans-serif;
+    --font-body:    Calibri, Carlito, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+
+  /* ── Print geometry: A4 with full-bleed bands ─────────────────────────────── */
+  @page { size: A4 portrait; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    background: #eef0f3;            /* screen-only backdrop */
+    font-family: var(--font-body);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Sheet ────────────────────────────────────────────────────────────────── */
+  .sheet {
+    position: relative;
+    width: 210mm;
+    height: 297mm;                 /* exactly one A4 page — like the reference */
+    margin: 0 auto;
+    background: var(--paper);
+    color: var(--ink);
+    box-shadow: 0 2mm 10mm rgba(0,0,0,.18);   /* screen-only */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ── Dark bands ───────────────────────────────────────────────────────────── */
+  .band {
+    flex: 0 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--band); color: var(--band-ink);
+    padding: 0 10.5mm;
+  }
+  .band-top    { height: 9mm; }
+  .band-bottom { height: 11mm; }
+  .band img.logo { height: 5.2mm; width: auto; display: block; }
+  .sheet-meta {
+    font-family: var(--font-head);
+    font-size: 7.4pt; font-weight: 700;
+    letter-spacing: 1.6px; text-transform: uppercase; color: var(--band-ink);
+  }
+  .sheet-meta em { font-style: normal; color: var(--accent); }
+  .foot-line {
+    display: flex; align-items: center; gap: 5mm; min-width: 0;
+    font-family: var(--font-head);
+    font-size: 8pt; letter-spacing: 1.1px; color: var(--band-ink);
+    white-space: nowrap; overflow: hidden;
+  }
+  .foot-line .dot { color: var(--accent); }
+
+  /* ── Hero ─────────────────────────────────────────────────────────────────── */
+  .hero {
+    flex: 0 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    min-height: 46mm;
+    padding: 4mm 10.5mm 3.5mm;
+    background:
+      linear-gradient(90deg, var(--accent-soft), transparent 55%),
+      var(--paper);
+  }
+  .hero-copy { padding-right: 6mm; }
+
+  .watermark {
+    font-family: var(--font-display);
+    font-size: 8.5pt; font-weight: 900;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 1.8mm;
+  }
+  h1.product-name {
+    font-family: var(--font-display);
+    font-size: 22pt; font-weight: 900;
+    letter-spacing: 0.5px;
+    line-height: 1.05;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .variant {
+    margin-top: 1.2mm;
+    font-size: 9pt; color: var(--muted);
+  }
+
+  .stats { display: flex; margin-top: 3.4mm; }
+  .stat {
+    flex: 1;
+    padding: 1.4mm 2.8mm 0.4mm 2.8mm;
+    border-top: 0.7mm solid var(--band);
+    border-left: 0.3mm solid var(--rule);
+  }
+  .stat:first-child { border-left: none; padding-left: 0; }
+  .stat .stat-value { font-family: var(--font-display); font-size: 15pt; font-weight: 900; line-height: 1; }
+  .stat .stat-value .unit { font-family: var(--font-body); font-size: 8.5pt; font-weight: 700; color: var(--muted); margin-left: 1mm; }
+  .stat .stat-label {
+    display: block; margin-top: 1.1mm;
+    font-family: var(--font-head);
+    font-size: 6.4pt; font-weight: 700;
+    letter-spacing: 1.3px; text-transform: uppercase; color: var(--muted);
+  }
+
+  .hero-visual {
+    display: flex; align-items: center; justify-content: flex-end;
+    height: 42mm;
+  }
+  .hero-visual img {
+    max-width: 96%; max-height: 100%;
+    object-fit: contain;
+  }
+
+  /* ── Body: two independent spec columns ───────────────────────────────────── */
+  .body-grid {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12mm;
+    padding: 0 10.5mm;
+    align-items: start;
+  }
+  .col { display: flex; flex-direction: column; }
+
+  .section { margin-bottom: 3.6mm; break-inside: avoid; }
+  h2.sec-h {
+    font-family: var(--font-head);
+    font-size: 9pt; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--ink);
+    display: inline-block;
+    padding-bottom: 0.8mm;
+    border-bottom: 0.5mm solid var(--accent);
+    margin-bottom: 1.8mm;
+  }
+  .section p.lede { font-size: 8.7pt; line-height: 1.44; margin-bottom: 1.4mm; text-align: justify; }
+
+  /* feature bullets (optional) */
+  ul.features { list-style: none; }
+  ul.features li {
+    position: relative; padding-left: 3.6mm;
+    font-size: 8.3pt; line-height: 1.44;
+  }
+  ul.features li::before {
+    content: ""; position: absolute; left: 0; top: 0.35em;
+    width: 1.8mm; height: 1.8mm; background: var(--accent);
+  }
+
+  /* application chips */
+  .chips { display: flex; flex-wrap: wrap; gap: 1.8mm; }
+  .chip {
+    font-family: var(--font-head);
+    font-size: 7.2pt; font-weight: 700;
+    letter-spacing: 1.3px; text-transform: uppercase;
+    padding: 1mm 2.6mm;
+    border: 0.3mm solid var(--ink);
+    color: var(--ink);
+  }
+  .chip.on {
+    background: var(--band); color: var(--band-ink); border-color: var(--band);
+  }
+
+  /* label/value rows */
+  table.spec { width: 100%; border-collapse: collapse; }
+  table.spec tr { break-inside: avoid; }
+  table.spec td { padding: 1.25mm 0 1.25mm 0; border-bottom: 0.25mm solid var(--rule); vertical-align: top; }
+  table.spec tr:last-child td { border-bottom: none; }
+  table.spec td.k { font-size: 8.1pt; color: var(--muted); width: 46%; padding-right: 3mm; }
+  table.spec td.v { font-size: 8.6pt; font-weight: 600; text-align: right; }
+  table.spec.small td.k { width: 40%; }
+  table.spec.small td.v { font-size: 8.3pt; }
+
+  /* ── Bottom zone: dimension drawing (left) + legal notes (right) ──────────── */
+  .bottom {
+    flex: 0 0 auto;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    column-gap: 12mm;
+    padding: 2mm 10.5mm 3.5mm;
+    align-items: start;
+    border-top: 0.4mm solid var(--rule);
+    margin: 0 10.5mm;
+  }
+  .dims-frame {
+    margin-top: 1.6mm;
+    height: 27mm;
+    display: flex; align-items: center; justify-content: center;
+    border: 0.3mm dashed var(--faint);
+    background:
+      linear-gradient(var(--faint) 0.2mm, transparent 0.2mm) 0 0 / 8mm 8mm,
+      linear-gradient(90deg, var(--faint) 0.2mm, transparent 0.2mm) 0 0 / 8mm 8mm,
+      #fafbfc;
+    overflow: hidden;
+  }
+  .dims-frame img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .dims-frame .ph {
+    font-family: var(--font-head);
+    font-size: 6.8pt; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--muted); text-align: center; padding: 0 4mm;
+  }
+
+  ul.notes { list-style: none; padding-top: 2.6mm; }
+  ul.notes li {
+    position: relative;
+    padding-left: 3.2mm;
+    font-size: 6.5pt; line-height: 1.4; color: var(--muted);
+    margin-bottom: 0.6mm;
+  }
+  ul.notes li::before { content: "•"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+  /* ── Screen-only scaffolding (hidden when printed) ────────────────────────── */
+  .screen-toolbar {
+    max-width: 210mm; margin: 6mm auto 3mm; padding: 0 2mm;
+    display: flex; gap: 3mm; align-items: center; justify-content: space-between;
+    font-family: var(--font-head); font-size: 10px; color: #333;
+  }
+  .screen-toolbar button {
+    font-family: inherit; font-size: 11px; font-weight: 700; letter-spacing: 0.4px;
+    border: 0; border-radius: 6px; padding: 7px 14px; cursor: pointer;
+    background: var(--band); color: #fff;
+  }
+  .screen-toolbar button:hover { opacity: .9; }
+  body.has-toolbar { padding: 0 0 8mm 0; }
+
+  @media print {
+    body { background: #fff; }
+    .screen-toolbar { display: none; }
+    .sheet { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Toolbar is purely for on-screen convenience; it is hidden when printing. -->
+<div class="screen-toolbar" id="toolbar">
+  <span><strong>LumenX datasheet template</strong> — rendered from the JSON block in this file · A4</span>
+  <button onclick="window.print()">Print / Save as PDF</button>
+</div>
+
+<!-- ══════════════════════════ PER-PRODUCT DATA ══════════════════════════
+     Replace this JSON for each product. Every field is optional except name.
+     Most values can be pulled straight from src/products.ts — see README.md.
+     ════════════════════════════════════════════════════════════════════ -->
+<script id="datasheet-data" type="application/json">
+{
+  "meta": { "rev": "1.0" },
+
+  "name": "TRACK SPOT",
+  "category": "TRACK SPOTS AND TRACKS",
+  "variant": "35W 3-wire track spot · dual heat sink · 36° deep reflector",
+
+  "stats": [
+    { "label": "Power",     "value": "35",    "unit": "W" },
+    { "label": "Lumens",    "value": "3500",  "unit": "lm" },
+    { "label": "IP Rating", "value": "IP20",  "unit": "" }
+  ],
+
+  "heroImage": { "src": "../public/product-images/35W_Track_Spot.png", "alt": "LumenX 35W Track Spot" },
+
+  "overview": [
+    "Dynamic Dual Heat Sink ensuring longevity and the reduction in lumen depreciation. Elegant, sophisticated look bringing style to your application. Deep reflector (36°) helps in the reduction of glare whilst not impacting lumen output. Matt black or chic white trendy powder coated finish. 3kV built in surge protection designed to withstand the toughest environments."
+  ],
+  "features": [],
+  "applications": ["Commercial", "Residential", "Retail"],
+
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          { "label": "Dimensions (mm)", "value": "Φ90 × 130mm" },
+          { "label": "Weight",           "value": "460 g" },
+          { "label": "Housing",          "value": "Aluminium" },
+          { "label": "Mounting",         "value": "3 Wire Track" }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          { "label": "Certifications", "value": "CE / RoHS / IEC 60598" },
+          { "label": "Class Rating",   "value": "Class II" },
+          { "label": "Warranty",       "value": "5 Years" }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          { "label": "Lumen Output",       "value": "3500 lm" },
+          { "label": "Lumen Efficacy",     "value": "100 lm/W" },
+          { "label": "Colour Temperature", "value": "3000K / 4000K / 6000K" },
+          { "label": "CRI",                "value": ">83" },
+          { "label": "Beam Angle",         "value": "36°" },
+          { "label": "UGR",                "value": "24" },
+          { "label": "IP Rating",          "value": "IP20" },
+          { "label": "Operating Temp",     "value": "-15 ~ 45 °C" },
+          { "label": "Lifespan",           "value": "L80B10 @ 50 000 hrs" }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          { "label": "Wattage",         "value": "35 W" },
+          { "label": "Input Voltage",   "value": "200-265V AC" },
+          { "label": "Frequency",       "value": "50-60 Hz" },
+          { "label": "Power Factor",    "value": ">0.9" },
+          { "label": "Surge Protection","value": "3kV" },
+          { "label": "Dimmable",        "value": "Dimmable with optional driver" },
+          { "label": "Flicker",         "value": "Flicker-free" }
+        ]
+      }
+    ]
+  },
+
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing",
+    "placeholder": "Dimension drawing — export per-product line art (.png / .svg)"
+  },
+
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}
+</script>
+
+<!-- ══════════════════════════ DOCUMENT (hydrated from JSON) ══════════════════════════ -->
+<section class="sheet" id="sheet">
+
+  <!-- Top band -->
+  <header class="band band-top">
+    <img class="logo" id="logoTop" src="../public/logo-wide.png" alt="LumenX" />
+    <div class="sheet-meta">Product Data Sheet&nbsp;·&nbsp;<em id="revText"></em></div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="watermark" id="watermark"></div>
+      <h1 class="product-name" id="productName"></h1>
+      <p class="variant" id="variant"></p>
+      <div class="stats" id="stats"></div>
+    </div>
+    <figure class="hero-visual" id="heroVisual" hidden>
+      <img id="heroVisualImg" alt="" />
+    </figure>
+  </section>
+
+  <!-- Two spec columns -->
+  <main class="body-grid">
+    <div class="col col-left" id="colLeft"></div>
+    <div class="col col-right" id="colRight"></div>
+  </main>
+
+  <!-- Bottom: dimension drawing + legal notes -->
+  <section class="bottom">
+    <div>
+      <h2 class="sec-h">Dimension Drawing</h2>
+      <div class="dims-frame" id="dimsFrame"></div>
+    </div>
+    <ul class="notes" id="notes"></ul>
+  </section>
+
+  <!-- Bottom band -->
+  <footer class="band band-bottom">
+    <div class="foot-line" id="footContact"></div>
+    <img class="logo" src="../public/logo-wide.png" alt="LumenX" />
+  </footer>
+
+</section>
+
+<script>
+  // Exposed as window.__renderDatasheet so server-side renderers can inject a
+  // product's JSON into #datasheet-data and re-render (see README example route).
+  function renderDatasheet() {
+  "use strict";
+  var data = JSON.parse(document.getElementById("datasheet-data").textContent);
+  document.title = "LumenX — " + (data.name || "Product") + " Datasheet";
+
+  function setText(id, txt) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = txt == null ? "" : txt;
+  }
+
+  /* header / footer */
+  setText("revText", "Rev " + ((data.meta && data.meta.rev) || "1.0"));
+  var contact = data.contact || {};
+  var c = [contact.web, contact.email, contact.phone].filter(Boolean);
+  document.getElementById("footContact").innerHTML = c.map(function (s) {
+    return '<span>' + s + '</span>';
+  }).join('<span class="dot">&nbsp;·&nbsp;</span>');
+
+  /* hero */
+  setText("watermark", data.category || "");
+  setText("productName", data.name || "");
+  setText("variant", data.variant || "");
+
+  var statsEl = document.getElementById("stats");
+  statsEl.innerHTML = "";
+  (data.stats || []).forEach(function (s) {
+    var d = document.createElement("div");
+    d.className = "stat";
+    var val = document.createElement("span");
+    val.className = "stat-value";
+    val.textContent = s.value || "";
+    if (s.unit) {
+      var u = document.createElement("span");
+      u.className = "unit";
+      u.textContent = s.unit;
+      val.appendChild(u);
+    }
+    var l = document.createElement("span");
+    l.className = "stat-label";
+    l.textContent = s.label || "";
+    d.appendChild(val);
+    d.appendChild(l);
+    statsEl.appendChild(d);
+  });
+
+  var vis = document.getElementById("heroVisual");
+  if (data.heroImage && data.heroImage.src) {
+    vis.hidden = false;
+    document.getElementById("heroVisualImg").src = data.heroImage.src;
+    document.getElementById("heroVisualImg").alt = data.heroImage.alt || data.name || "Product";
+  } else {
+    vis.hidden = true;
+  }
+
+  /* two columns */
+  function heading(title) {
+    var h = document.createElement("h2");
+    h.className = "sec-h";
+    h.textContent = title;
+    return h;
+  }
+  function tableHtml(rows) {
+    var html = "<table class=\"spec\">";
+    rows.forEach(function (r) {
+      html += "<tr><td class=\"k\">" + r.label + "</td><td class=\"v\">" + r.value + "</td></tr>";
+    });
+    return html + "</table>";
+  }
+  function sectionEl(title) {
+    var s = document.createElement("div");
+    s.className = "section";
+    s.appendChild(heading(title));
+    return s;
+  }
+
+  /* Left column = OVERVIEW (+features) → APPLICATIONS → configured left tables.
+     Right column = configured right tables. Order is fixed to match the
+     reference layout (Overview / Applications / Physical / Compliance on the
+     left; Product Information / Electrical on the right). */
+  function buildLeft() {
+    var col = document.getElementById("colLeft");
+    col.innerHTML = "";
+
+    if (data.overview && data.overview.length) {
+      var o = sectionEl("Overview");
+      data.overview.forEach(function (p) {
+        var el = document.createElement("p");
+        el.className = "lede";
+        el.textContent = p;
+        o.appendChild(el);
+      });
+      if (data.features && data.features.length) {
+        var ul = document.createElement("ul");
+        ul.className = "features";
+        data.features.forEach(function (f) {
+          var li = document.createElement("li");
+          li.textContent = f;
+          ul.appendChild(li);
+        });
+        o.appendChild(ul);
+      }
+      col.appendChild(o);
+    }
+
+    if (data.applications && data.applications.length) {
+      var a = sectionEl("Applications");
+      var chips = document.createElement("div");
+      chips.className = "chips";
+      data.applications.forEach(function (app, i) {
+        var ch = document.createElement("span");
+        ch.className = "chip" + (i === 0 ? " on" : "");
+        ch.textContent = app;
+        chips.appendChild(ch);
+      });
+      a.appendChild(chips);
+      col.appendChild(a);
+    }
+
+    ((data.columns && data.columns.left) || []).forEach(function (sec) {
+      if (!sec.rows || !sec.rows.length) return;
+      var s = sectionEl(sec.title || "");
+      s.insertAdjacentHTML("beforeend", tableHtml(sec.rows));
+      col.appendChild(s);
+    });
+  }
+
+  function buildRight() {
+    var col = document.getElementById("colRight");
+    col.innerHTML = "";
+    ((data.columns && data.columns.right) || []).forEach(function (sec) {
+      if (!sec.rows || !sec.rows.length) return;
+      var s = sectionEl(sec.title || "");
+      s.insertAdjacentHTML("beforeend", tableHtml(sec.rows));
+      col.appendChild(s);
+    });
+  }
+
+  buildLeft();
+  buildRight();
+
+  /* dimension drawing */
+  var frame = document.getElementById("dimsFrame");
+  frame.innerHTML = "";
+  if (data.drawing && data.drawing.src) {
+    var img = document.createElement("img");
+    img.src = data.drawing.src;
+    img.alt = (data.drawing && data.drawing.alt) || "Dimension drawing";
+    frame.appendChild(img);
+  } else {
+    var ph = document.createElement("div");
+    ph.className = "ph";
+    ph.textContent = (data.drawing && data.drawing.placeholder) ||
+      "Dimension drawing — export per-product line art (.png / .svg)";
+    frame.appendChild(ph);
+  }
+
+  /* legal notes */
+  var notes = document.getElementById("notes");
+  notes.innerHTML = "";
+  (data.notes || []).forEach(function (n) {
+    var li = document.createElement("li");
+    li.innerHTML = n;                 /* notes may include entities; content is trusted */
+    notes.appendChild(li);
+  });
+  }
+  window.__renderDatasheet = renderDatasheet;
+  renderDatasheet();
+</script>
+</body>
+</html>

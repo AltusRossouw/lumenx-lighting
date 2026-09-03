@@ -7,9 +7,32 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { config } from '../config.js';
 import { recordDownload } from '../services/downloads.js';
+import { generateDatasheetPdf } from '../services/datasheet-pdf.js';
 
 export const downloadsRouter = () => {
   const router = Router();
+
+  // GET /api/download/datasheet/generated/:slug — render a datasheet from the
+  // shared HTML template + per-product JSON (server/datasheets-data/<slug>.json).
+  // Result is cached on disk; renders again only when data or template change.
+  router.get('/datasheet/generated/:slug', async (req, res, next) => {
+    try {
+      const result = await generateDatasheetPdf(String(req.params.slug || ''));
+      if (!result) {
+        return res.status(404).json({ error: 'Datasheet not found.' });
+      }
+
+      recordDownload({ filename: path.basename(result.file), kind: 'datasheet', ip: req.ip });
+
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', `attachment; filename="${result.filename}"`);
+      res.setHeader('X-Content-Type-Options', 'nosniff');
+      res.setHeader('Cache-Control', 'private, max-age=300');
+      return fs.createReadStream(result.file).on('error', next).pipe(res);
+    } catch (err) {
+      return next(err);
+    }
+  });
 
   // GET /api/download/datasheet/:filename — log and stream a public PDF.
   router.get('/datasheet/:filename', (req, res, next) => {

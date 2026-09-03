@@ -1,0 +1,92 @@
+{
+  "fileStem": "35W Track Spot",
+  "meta": { "rev": "1.0" },
+
+  "name": "TRACK SPOT",
+  "category": "TRACK SPOTS AND TRACKS",
+  "variant": "35W 3-wire track spot · dual heat sink · 36° deep reflector",
+
+  "stats": [
+    { "label": "Power",     "value": "35",    "unit": "W" },
+    { "label": "Lumens",    "value": "3500",  "unit": "lm" },
+    { "label": "IP Rating", "value": "IP20",  "unit": "" }
+  ],
+
+  "heroImage": { "src": "../public/product-images/35W_Track_Spot.png", "alt": "LumenX 35W Track Spot" },
+
+  "overview": [
+    "Dynamic Dual Heat Sink ensuring longevity and the reduction in lumen depreciation. Elegant, sophisticated look bringing style to your application. Deep reflector (36°) helps in the reduction of glare whilst not impacting lumen output. Matt black or chic white trendy powder coated finish. 3kV built in surge protection designed to withstand the toughest environments."
+  ],
+  "features": [],
+  "applications": ["Commercial", "Residential", "Retail"],
+
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          { "label": "Dimensions (mm)", "value": "Φ90 × 130mm" },
+          { "label": "Weight",           "value": "460 g" },
+          { "label": "Housing",          "value": "Aluminium" },
+          { "label": "Mounting",         "value": "3 Wire Track" }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          { "label": "Certifications", "value": "CE / RoHS / IEC 60598" },
+          { "label": "Class Rating",   "value": "Class II" },
+          { "label": "Warranty",       "value": "5 Years" }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          { "label": "Lumen Output",       "value": "3500 lm" },
+          { "label": "Lumen Efficacy",     "value": "100 lm/W" },
+          { "label": "Colour Temperature", "value": "3000K / 4000K / 6000K" },
+          { "label": "CRI",                "value": ">83" },
+          { "label": "Beam Angle",         "value": "36°" },
+          { "label": "UGR",                "value": "24" },
+          { "label": "IP Rating",          "value": "IP20" },
+          { "label": "Operating Temp",     "value": "-15 ~ 45 °C" },
+          { "label": "Lifespan",           "value": "L80B10 @ 50 000 hrs" }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          { "label": "Wattage",          "value": "35 W" },
+          { "label": "Input Voltage",    "value": "200-265V AC" },
+          { "label": "Frequency",        "value": "50-60 Hz" },
+          { "label": "Power Factor",     "value": ">0.9" },
+          { "label": "Surge Protection", "value": "3kV" },
+          { "label": "Dimmable",         "value": "Dimmable with optional driver" },
+          { "label": "Flicker",          "value": "Flicker-free" }
+        ]
+      }
+    ]
+  },
+
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing",
+    "placeholder": "Dimension drawing — export per-product line art (.png / .svg)"
+  },
+
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}
