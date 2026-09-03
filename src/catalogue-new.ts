@@ -8,7 +8,7 @@ export const NEW_CATEGORIES: ProductCategory[] = [
     title: "Decorative",
     description: "Statement chandeliers and decorative series that make interiors feel curated — layered acrylic, crystal and sculptural forms.",
     applications: "Hotels, restaurants, residences and feature interiors",
-    imageUrl: "/product-images/categories/decorative.svg",
+    imageUrl: "/product-images/categories/decorative.jpg",
     linkLabel: "Explore Decorative",
   },
   {
@@ -16,7 +16,7 @@ export const NEW_CATEGORIES: ProductCategory[] = [
     title: "Architectural — Indoor",
     description: "Recessed, surface and suspended architectural luminaires for refined interior detailing — circular systems, pendants and ceiling lights.",
     applications: "Offices, hospitality, retail and residential architecture",
-    imageUrl: "/product-images/categories/indoor-architectural.svg",
+    imageUrl: "/product-images/categories/indoor-architectural.jpg",
     linkLabel: "Explore Architectural — Indoor",
   },
   {
@@ -24,7 +24,7 @@ export const NEW_CATEGORIES: ProductCategory[] = [
     title: "Architectural — Outdoor",
     description: "Outdoor spots, bollards, post-tops, wall lights and in-ground luminaires for considered exterior architecture and landscape.",
     applications: "Facades, gardens, pathways, plazas and streetscapes",
-    imageUrl: "/product-images/categories/outdoor-architectural.svg",
+    imageUrl: "/product-images/categories/outdoor-architectural.jpg",
     linkLabel: "Explore Architectural — Outdoor",
   },
   {
@@ -32,7 +32,7 @@ export const NEW_CATEGORIES: ProductCategory[] = [
     title: "Sensors",
     description: "Motion and presence detectors for indoor and outdoor automation — PIR, HF and ultrasonic with adjustable detection zones.",
     applications: "Offices, warehouses, corridors, parking and security",
-    imageUrl: "/product-images/categories/sensors.svg",
+    imageUrl: "/product-images/categories/sensors.jpg",
     linkLabel: "Explore Sensors",
   },
   {
@@ -48,7 +48,7 @@ export const NEW_CATEGORIES: ProductCategory[] = [
     title: "Profiles & Accessories",
     description: "Extrusion profiles and system accessories for integrating LED tape into architecture and millwork.",
     applications: "Coves, joinery, display and linear detailing",
-    imageUrl: "/product-images/categories/profiles.svg",
+    imageUrl: "/product-images/categories/profiles.jpg",
     linkLabel: "Explore Profiles & Accessories",
   },
 ];
