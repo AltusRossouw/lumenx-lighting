@@ -162,7 +162,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/steinel-is-2360-r.jpg",
+    imageUrl: "/product-images/steinel-is-2360-r.png",
     pdfUrl: "/api/download/datasheet/generated/steinel-is-2360-r",
   },
   {
@@ -188,7 +188,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/steinel-is-2360-s.jpg",
+    imageUrl: "/product-images/steinel-is-2360-s.png",
     pdfUrl: "/api/download/datasheet/generated/steinel-is-2360-s",
   },
   {
@@ -236,7 +236,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/steinel-dualtech.jpg",
+    imageUrl: "/product-images/steinel-dualtech.png",
     pdfUrl: "/api/download/datasheet/generated/steinel-dualtech",
   },
   {
@@ -262,7 +262,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/steinel-is-3360.jpg",
+    imageUrl: "/product-images/steinel-is-3360.png",
     pdfUrl: "/api/download/datasheet/generated/steinel-is-3360",
   },
   {
@@ -288,7 +288,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/steinel-is-3360-highbay.jpg",
+    imageUrl: "/product-images/steinel-is-3360-highbay.png",
     pdfUrl: "/api/download/datasheet/generated/steinel-is-3360-highbay",
   },
   {
@@ -314,7 +314,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/steinel-is-345-highbay.jpg",
+    imageUrl: "/product-images/steinel-is-345-highbay.png",
     pdfUrl: "/api/download/datasheet/generated/steinel-is-345-highbay",
   },
   {
@@ -340,7 +340,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/steinel-dual-hf-corridor.jpg",
+    imageUrl: "/product-images/steinel-dual-hf-corridor.png",
     pdfUrl: "/api/download/datasheet/generated/steinel-dual-hf-corridor",
   },
   {
@@ -366,7 +366,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/steinel-hf-360.jpg",
+    imageUrl: "/product-images/steinel-hf-360.png",
     pdfUrl: "/api/download/datasheet/generated/steinel-hf-360",
   },
   {
@@ -392,7 +392,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/steinel-is-2180.jpg",
+    imageUrl: "/product-images/steinel-is-2180.png",
     pdfUrl: "/api/download/datasheet/generated/steinel-is-2180",
   },
   {
@@ -418,7 +418,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/steinel-ir-quattro-micro.jpg",
+    imageUrl: "/product-images/steinel-ir-quattro-micro.png",
     pdfUrl: "/api/download/datasheet/generated/steinel-ir-quattro-micro",
   },
   {
@@ -444,7 +444,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/steinel-ir-quattro-hd.jpg",
+    imageUrl: "/product-images/steinel-ir-quattro-hd.png",
     pdfUrl: "/api/download/datasheet/generated/steinel-ir-quattro-hd",
   },
   {
@@ -470,7 +470,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/steinel-sensiq-s.jpg",
+    imageUrl: "/product-images/steinel-sensiq-s.png",
     pdfUrl: "/api/download/datasheet/generated/steinel-sensiq-s",
   },
   {
@@ -485,7 +485,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/steinel-smart-remote.jpg",
+    imageUrl: "/product-images/steinel-smart-remote.png",
     pdfUrl: "/api/download/datasheet/generated/steinel-smart-remote",
   },
   {
@@ -500,7 +500,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/steinel-service-remote.jpg",
+    imageUrl: "/product-images/steinel-service-remote.png",
     pdfUrl: "/api/download/datasheet/generated/steinel-service-remote",
   },
   {
@@ -553,7 +553,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Hospitality","Residential","Lobbies","Retail"],
-    imageUrl: "/product-images/kinglong-pearl-series.jpg",
+    imageUrl: "/product-images/kinglong-pearl-series.png",
     pdfUrl: "/api/download/datasheet/generated/kinglong-pearl-series",
   },
   {
@@ -594,7 +594,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Hospitality","Residential","Lobbies","Retail"],
-    imageUrl: "/product-images/kinglong-jiangnan-series.jpg",
+    imageUrl: "/product-images/kinglong-jiangnan-series.png",
     pdfUrl: "/api/download/datasheet/generated/kinglong-jiangnan-series",
   },
   {
@@ -621,7 +621,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Hospitality","Residential","Lobbies","Retail"],
-    imageUrl: "/product-images/kinglong-crystal-cloud-series.jpg",
+    imageUrl: "/product-images/kinglong-crystal-cloud-series.png",
     pdfUrl: "/api/download/datasheet/generated/kinglong-crystal-cloud-series",
   },
   {
@@ -931,7 +931,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["LED and driver easily replaceable.","Zero light pollution (ULOR: 0%)","50,000h L80 B20 useful life.","5-year warranty for heavy use (4,000 hours/year) and in a marine atmosphere."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/ledsc4-zigzag-10225.jpg",
+    imageUrl: "/product-images/ledsc4-zigzag-10225.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-zigzag-10225",
   },
   {
@@ -1228,7 +1228,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Exterior","Commercial","Municipal"],
-    imageUrl: "/product-images/orbit-post-top.jpg",
+    imageUrl: "/product-images/orbit-post-top.png",
     pdfUrl: "/api/download/datasheet/generated/orbit-post-top",
   },
   {

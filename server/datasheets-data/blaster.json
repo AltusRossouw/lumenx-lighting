@@ -19,7 +19,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/blaster.jpg",
+    "src": "../public/product-images/blaster.png",
     "alt": "BLASTER"
   },
   "overview": [

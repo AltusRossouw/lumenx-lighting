@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/mario.jpg",
+    "src": "../public/product-images/mario.png",
     "alt": "MARIO"
   },
   "overview": [

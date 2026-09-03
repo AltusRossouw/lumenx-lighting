@@ -19,7 +19,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/base.jpg",
+    "src": "../public/product-images/base.png",
     "alt": "BASE"
   },
   "overview": [

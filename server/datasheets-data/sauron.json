@@ -19,7 +19,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/sauron.jpg",
+    "src": "../public/product-images/sauron.png",
     "alt": "SAURON"
   },
   "overview": [

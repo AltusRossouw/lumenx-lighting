@@ -14,7 +14,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/pakman.jpg",
+    "src": "../public/product-images/pakman.png",
     "alt": "PAKMAN"
   },
   "overview": [
