@@ -155,6 +155,7 @@ export const PRODUCTS: Product[] = [
     imageUrl: '/product-images/rhea.png',
     iesUrl: '/api/ies/orbitx-rhea-15w.ies',
     warranty: '6-year operational guarantee (24/7)',
+    pdfUrl: '/api/download/datasheet/generated/rhea',
   },
   {
     slug: 'phoebe',
@@ -188,6 +189,7 @@ export const PRODUCTS: Product[] = [
     imageUrl: '/product-images/phoebe.png',
     iesUrl: '/api/ies/orbitx-phoebe-15w.ies',
     warranty: '8-year operational guarantee (24/7)',
+    pdfUrl: '/api/download/datasheet/generated/phoebe',
   },
   {
     slug: 'retrofit',
@@ -215,6 +217,7 @@ export const PRODUCTS: Product[] = [
     imageUrl: IMG.bulkheadPC,
     iesUrl: '/api/ies/orbitx-bulkhead-retrofit-15w.ies',
     warranty: 'OrbitX Direct Drive guarantee',
+    pdfUrl: '/api/download/datasheet/generated/retrofit',
   },
   {
     slug: 'hero',
@@ -245,6 +248,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Exterior walls', 'Corridors', 'Entrances', 'Stairwells'],
     imageUrl: '/product-images/hero.png',
     warranty: '5-year warranty',
+    pdfUrl: '/api/download/datasheet/generated/hero',
   },
   {
     slug: 'bunker',
@@ -269,6 +273,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Exterior walls', 'Entrances', 'Underground parking', 'Stairwells'],
     imageUrl: '/product-images/bunker.png',
     warranty: 'LumenX warranty',
+    pdfUrl: '/api/download/datasheet/generated/bunker',
   },
 
   /* ══════════════════════ DOWNLIGHTS ══════════════════════ */
@@ -361,6 +366,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Retail', 'Offices', 'Hospitality', 'Display lighting'],
     imageUrl: '/product-images/cob-dr.png',
     warranty: '5-year warranty',
+    pdfUrl: '/api/download/datasheet/generated/cob-dr',
   },
   {
     slug: 'x-tf8',
@@ -390,6 +396,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Architectural interiors', 'Offices', 'Retail', 'Hospitality'],
     imageUrl: '/product-images/x-tf8.png',
     warranty: '5-year warranty',
+    pdfUrl: '/api/download/datasheet/generated/x-tf8',
   },
   {
     slug: 'cob-r-sq1',
@@ -418,6 +425,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Retail', 'Display', 'Hospitality', 'Food retail'],
     imageUrl: '/product-images/cob-r-sq1.png',
     warranty: '5-year warranty',
+    pdfUrl: '/api/download/datasheet/generated/cob-r-sq1',
   },
   {
     slug: 'cob-r-sq2',
@@ -446,6 +454,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Large retail', 'Showrooms', 'Commercial', 'Display'],
     imageUrl: '/product-images/cob-r-sq2.png',
     warranty: '5-year warranty',
+    pdfUrl: '/api/download/datasheet/generated/cob-r-sq2',
   },
   {
     slug: 'cob-r-sq3',
@@ -472,6 +481,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Large retail', 'Atriums', 'Showrooms', 'Commercial spaces'],
     imageUrl: '/product-images/cob-r-sq3.png',
     warranty: '5-year warranty',
+    pdfUrl: '/api/download/datasheet/generated/cob-r-sq3',
   },
   {
     slug: 'sauron',
@@ -503,6 +513,7 @@ export const PRODUCTS: Product[] = [
     imageUrl: '/product-images/sauron.png',
     iesUrl: '/api/ies/lumenx-3000k-25w-sauron-downlight.ies',
     warranty: '5-year warranty',
+    pdfUrl: '/api/download/datasheet/generated/sauron',
   },
   {
     slug: 'legend',
@@ -527,6 +538,7 @@ export const PRODUCTS: Product[] = [
     imageUrl: '/product-images/legend.png',
     iesUrl: '/api/ies/lumenx-legend-20w-4k.ies',
     warranty: 'LumenX warranty',
+    pdfUrl: '/api/download/datasheet/generated/legend',
   },
   {
     slug: 'gu10',
@@ -549,6 +561,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Residential', 'Retail', 'Hospitality', 'Display'],
     imageUrl: '/product-images/gu10.png',
     warranty: 'LumenX warranty',
+    pdfUrl: '/api/download/datasheet/generated/gu10',
   },
   {
     slug: 'pakman',
@@ -571,6 +584,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Retail', 'Hospitality', 'Accent lighting', 'Offices'],
     imageUrl: '/product-images/pakman.png',
     warranty: 'LumenX warranty',
+    pdfUrl: '/api/download/datasheet/generated/pakman',
   },
   {
     slug: 'mario',
@@ -593,6 +607,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Retail stores', 'Supermarkets', 'Exhibition centres', 'Restaurants'],
     imageUrl: '/product-images/mario.png',
     warranty: 'LumenX warranty',
+    pdfUrl: '/api/download/datasheet/generated/mario',
   },
 
   /* ══════════════════════ FLOODLIGHTS ══════════════════════ */
@@ -619,6 +634,7 @@ export const PRODUCTS: Product[] = [
     imageUrl: '/product-images/orbitx-flood.png',
     iesUrl: '/api/ies/orbitx-floodlight-150w-18900lm.ies',
     warranty: 'OrbitX Direct Drive guarantee',
+    pdfUrl: '/api/download/datasheet/generated/flood',
   },
   {
     slug: 'performance',
@@ -680,6 +696,7 @@ export const PRODUCTS: Product[] = [
     imageUrl: IMG.highbay,
     iesUrl: '/api/ies/orbitx-jupiter-1200mm-200w-25000lm.ies',
     warranty: 'OrbitX Direct Drive guarantee',
+    pdfUrl: '/api/download/datasheet/generated/jupiter',
   },
   {
     slug: 'ace-hp',
@@ -707,6 +724,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Racking aisles', 'Production lines', 'Distribution centres', 'Factories'],
     imageUrl: '/product-images/ace-hp.png',
     warranty: '5-year warranty',
+    pdfUrl: '/api/download/datasheet/generated/ace-hp',
   },
   {
     slug: 'umgeni',
@@ -730,6 +748,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Warehouses', 'Factories', 'Logistics hubs', 'Industrial'],
     imageUrl: '/product-images/umgeni.png',
     warranty: 'LumenX warranty',
+    pdfUrl: '/api/download/datasheet/generated/umgeni',
   },
   {
     slug: 'thermisto',
@@ -797,6 +816,7 @@ export const PRODUCTS: Product[] = [
     imageUrl: '/product-images/delta.png',
     iesUrl: '/api/ies/lumenx-delta-240w-170lm-5700k-70ra-110x60d-iesna2002.ies',
     warranty: '5-year warranty',
+    pdfUrl: '/api/download/datasheet/generated/delta',
   },
   {
     slug: 'raptor',
@@ -821,6 +841,7 @@ export const PRODUCTS: Product[] = [
     imageUrl: '/product-images/raptor.png',
     iesUrl: '/api/ies/lumenx-raptor-120d-4000k-200w-ufo-hbay.ies',
     warranty: 'LumenX warranty',
+    pdfUrl: '/api/download/datasheet/generated/raptor',
   },
 
   /* ══════════════════════ LINEAR LIGHTING ══════════════════════ */
@@ -853,6 +874,7 @@ export const PRODUCTS: Product[] = [
     imageUrl: '/product-images/puck-seamless.png',
     iesUrl: '/api/ies/orbitx-puck-2400mm-116w.ies',
     warranty: '6-year operational guarantee (24/7)',
+    pdfUrl: '/api/download/datasheet/generated/puck-seamless',
   },
   {
     slug: 'puck-profile-70x36',
@@ -876,6 +898,7 @@ export const PRODUCTS: Product[] = [
     imageUrl: '/product-images/orbitx-puck-70x36.png',
     iesUrl: '/api/ies/orbitx-puck-profile-70x36-2400mm-116w-12000lm.ies',
     warranty: 'OrbitX Direct Drive guarantee',
+    pdfUrl: '/api/download/datasheet/generated/puck-profile-70x36',
   },
   {
     slug: 'puck-profile-40x43',
@@ -899,6 +922,7 @@ export const PRODUCTS: Product[] = [
     imageUrl: '/product-images/orbitx-puck-40x43.png',
     iesUrl: '/api/ies/orbitx-puck-profile-40x43-1200mm-32w-4000lm.ies',
     warranty: 'OrbitX Direct Drive guarantee',
+    pdfUrl: '/api/download/datasheet/generated/puck-profile-40x43',
   },
   {
     slug: 'kepler',
@@ -922,6 +946,7 @@ export const PRODUCTS: Product[] = [
     imageUrl: '/product-images/kepler.png',
     iesUrl: '/api/ies/orbitx-kepler-1200mm-52w.ies',
     warranty: 'OrbitX Direct Drive guarantee',
+    pdfUrl: '/api/download/datasheet/generated/kepler',
   },
   {
     slug: 'lds-5083',
@@ -983,6 +1008,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Offices', 'Retail', 'Commercial', 'Architectural interiors'],
     imageUrl: '/product-images/ldr-6563.png',
     warranty: '5-year warranty',
+    pdfUrl: '/api/download/datasheet/generated/ldr-6563',
   },
   {
     slug: 'lrd-9063',
@@ -1006,6 +1032,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Atriums', 'Large offices', 'Commercial', 'Architectural interiors'],
     imageUrl: IMG.linear,
     warranty: '5-year warranty',
+    pdfUrl: '/api/download/datasheet/generated/lrd-9063',
   },
   {
     slug: 'base',
@@ -1032,6 +1059,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Offices', 'Retail', 'Commercial', 'Workspaces'],
     imageUrl: '/product-images/base.png',
     warranty: '5-year warranty',
+    pdfUrl: '/api/download/datasheet/generated/base',
   },
   {
     slug: 'ace-linear',
@@ -1058,6 +1086,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Racking aisles', 'Retail', 'Offices', 'Workspaces'],
     imageUrl: '/product-images/ace-linear.png',
     warranty: '5-year warranty',
+    pdfUrl: '/api/download/datasheet/generated/ace-linear',
   },
   {
     slug: 'protega-gen-2',
@@ -1081,6 +1110,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Retail', 'Commercial', 'Industrial', 'Workspaces'],
     imageUrl: '/product-images/protega-gen-2.png',
     warranty: 'LumenX warranty',
+    pdfUrl: '/api/download/datasheet/generated/protega-gen-2',
   },
   {
     slug: 'lf40',
@@ -1103,6 +1133,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Modern offices', 'Retail', 'Reception areas', 'Atriums'],
     imageUrl: '/product-images/lf40.png',
     warranty: 'LumenX warranty',
+    pdfUrl: '/api/download/datasheet/generated/lf40',
   },
   {
     slug: 'lf20',
@@ -1125,6 +1156,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Modern offices', 'Task lighting', 'Retail', 'Workspaces'],
     imageUrl: '/product-images/lf20.png',
     warranty: 'LumenX warranty',
+    pdfUrl: '/api/download/datasheet/generated/lf20',
   },
   {
     slug: 'lf55',
@@ -1218,6 +1250,7 @@ export const PRODUCTS: Product[] = [
     imageUrl: '/product-images/soniq.png',
     iesUrl: '/api/ies/lumenx-40w-soniq-120.ies',
     warranty: 'LumenX warranty',
+    pdfUrl: '/api/download/datasheet/generated/soniq',
   },
 
   /* ══════════════════════ PANELS ══════════════════════ */
@@ -1243,6 +1276,7 @@ export const PRODUCTS: Product[] = [
     imageUrl: IMG.panel,
     iesUrl: '/api/ies/orbitx-puck-panel-1200mm-60w-6000lm.ies',
     warranty: 'OrbitX Direct Drive guarantee',
+    pdfUrl: '/api/download/datasheet/generated/puck-panel',
   },
   {
     slug: 'veris',
@@ -1300,6 +1334,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Premium offices', 'Boardrooms', 'Hospitality', 'Architectural interiors'],
     imageUrl: IMG.panel,
     warranty: 'LumenX warranty',
+    pdfUrl: '/api/download/datasheet/generated/dark-light',
   },
 
   /* ══════════════════════ LED STRIPS ══════════════════════ */
@@ -1383,6 +1418,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Retail', 'Commercial', 'Display', 'Galleries'],
     imageUrl: '/product-images/standard.png',
     warranty: 'LumenX warranty',
+    pdfUrl: '/api/download/datasheet/generated/standard',
   },
   {
     slug: 'bazuka',
@@ -1404,6 +1440,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Retail', 'Display', 'Galleries', 'Accent lighting'],
     imageUrl: '/product-images/bazuka.png',
     warranty: 'LumenX warranty',
+    pdfUrl: '/api/download/datasheet/generated/bazuka',
   },
   {
     slug: 'blaster',
@@ -1433,6 +1470,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Retail', 'Showrooms', 'Galleries', 'Accent lighting'],
     imageUrl: '/product-images/blaster.png',
     warranty: '5-year warranty',
+    pdfUrl: '/api/download/datasheet/generated/blaster',
   },
   {
     slug: 'leda',
@@ -1455,6 +1493,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Retail', 'Display', 'Showrooms', 'Accent lighting'],
     imageUrl: '/product-images/leda.png',
     warranty: 'LumenX warranty',
+    pdfUrl: '/api/download/datasheet/generated/leda',
   },
   {
     slug: 'snypa',
@@ -1476,6 +1515,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Retail', 'Hospitality', 'Display', 'Accent lighting'],
     imageUrl: '/product-images/snypa.png',
     warranty: 'LumenX warranty',
+    pdfUrl: '/api/download/datasheet/generated/snypa',
   },
   {
     slug: '3-4-wire',
@@ -1497,6 +1537,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Retail', 'Galleries', 'Showrooms', 'Display lighting'],
     imageUrl: IMG.track,
     warranty: 'LumenX warranty',
+    pdfUrl: '/api/download/datasheet/generated/3-4-wire',
   },
 
   /* ══════════════════════ VAPOUR PROOF ══════════════════════ */
@@ -1530,6 +1571,7 @@ export const PRODUCTS: Product[] = [
     imageUrl: '/product-images/neptune.png',
     iesUrl: '/api/ies/orbitx-neptune-1200mm-80w-10000lm.ies',
     warranty: '8-year operational guarantee (24/7)',
+    pdfUrl: '/api/download/datasheet/generated/neptune',
   },
   {
     slug: 'titan',
@@ -1561,6 +1603,7 @@ export const PRODUCTS: Product[] = [
     imageUrl: '/product-images/titan.png',
     iesUrl: '/api/ies/orbitx-titan-1200mm-48w.ies',
     warranty: '6-year operational guarantee (24/7)',
+    pdfUrl: '/api/download/datasheet/generated/titan',
   },
   {
     slug: 'saxa',
@@ -1617,6 +1660,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Industrial', 'Commercial', 'Harsh environments', 'Washdown areas'],
     imageUrl: '/product-images/metropolis.png',
     warranty: 'LumenX warranty',
+    pdfUrl: '/api/download/datasheet/generated/metropolis',
   },
   {
     slug: 'vp',
@@ -1646,6 +1690,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Parking structures', 'Industrial', 'Canopies', 'Utility areas'],
     imageUrl: '/product-images/vp.png',
     warranty: '5-year warranty',
+    pdfUrl: '/api/download/datasheet/generated/vp',
   },
   {
     slug: 'kuda',

@@ -127,8 +127,8 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/sky-spt-150-solar-post-top",
   },
   {
-    slug: "pioled",
-    name: "Pioled",
+    slug: "vista-solar-post-top",
+    name: "Vista Solar Post Top",
     category: "solar",
     supplier: "Pioled",
     summary: "Pioled — supplied by LumenX.",
@@ -138,6 +138,7 @@ export const NEW_PRODUCTS: Product[] = [
     features: [],
     applications: ["Estates","Parks","Isolated sites","Security"],
     imageUrl: "/product-images/placeholder-product.svg",
+    pdfUrl: "/api/download/datasheet/generated/vista-solar-post-top",
   },
   {
     slug: "steinel-is-2360-r",
@@ -557,7 +558,7 @@ export const NEW_PRODUCTS: Product[] = [
     pdfUrl: "/api/download/datasheet/generated/kinglong-pearl-series",
   },
   {
-    slug: "dream-pen",
+    slug: "kinglong-dream-pen-series",
     name: "Dream Pen",
     category: "decorative",
     supplier: "KingLong",
@@ -568,6 +569,7 @@ export const NEW_PRODUCTS: Product[] = [
     features: [],
     applications: ["Hospitality","Residential","Feature interiors"],
     imageUrl: "/product-images/placeholder-product.svg",
+    pdfUrl: "/api/download/datasheet/generated/kinglong-dream-pen-series",
   },
   {
     slug: "kinglong-jiangnan-series",
@@ -1097,7 +1099,7 @@ export const NEW_PRODUCTS: Product[] = [
     imageUrl: "/product-images/placeholder-product.svg",
   },
   {
-    slug: "fuji-square",
+    slug: "fuji-bollard-square",
     name: "Fuji Square",
     category: "outdoor-architectural",
     supplier: "Pioled",
@@ -1108,9 +1110,10 @@ export const NEW_PRODUCTS: Product[] = [
     features: [],
     applications: ["Facades","Pathways","Landscape","Municipal"],
     imageUrl: "/product-images/placeholder-product.svg",
+    pdfUrl: "/api/download/datasheet/generated/fuji-bollard-square",
   },
   {
-    slug: "fuji-round",
+    slug: "fuji-bollard-round",
     name: "Fuji Round",
     category: "outdoor-architectural",
     supplier: "Pioled",
@@ -1121,9 +1124,10 @@ export const NEW_PRODUCTS: Product[] = [
     features: [],
     applications: ["Facades","Pathways","Landscape","Municipal"],
     imageUrl: "/product-images/placeholder-product.svg",
+    pdfUrl: "/api/download/datasheet/generated/fuji-bollard-round",
   },
   {
-    slug: "everest-square",
+    slug: "everest-bollard-square",
     name: "Everest Square",
     category: "outdoor-architectural",
     supplier: "Pioled",
@@ -1134,9 +1138,10 @@ export const NEW_PRODUCTS: Product[] = [
     features: [],
     applications: ["Facades","Pathways","Landscape","Municipal"],
     imageUrl: "/product-images/placeholder-product.svg",
+    pdfUrl: "/api/download/datasheet/generated/everest-bollard-square",
   },
   {
-    slug: "everest-round",
+    slug: "everest-bollard-round",
     name: "Everest Round",
     category: "outdoor-architectural",
     supplier: "Pioled",
@@ -1147,6 +1152,7 @@ export const NEW_PRODUCTS: Product[] = [
     features: [],
     applications: ["Facades","Pathways","Landscape","Municipal"],
     imageUrl: "/product-images/placeholder-product.svg",
+    pdfUrl: "/api/download/datasheet/generated/everest-bollard-round",
   },
   {
     slug: "zod101-square-led-wall",
