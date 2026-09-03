@@ -19,8 +19,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/ledsc4-circular-10002.png",
+    "alt": "CIRCULAR"
   },
   "overview": [
     "Harmony closes in a circle."

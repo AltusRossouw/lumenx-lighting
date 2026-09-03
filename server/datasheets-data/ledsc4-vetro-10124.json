@@ -24,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/ledsc4-vetro-10124.png",
+    "alt": "VETRO"
   },
   "overview": [
     "Essential that resists moisture"

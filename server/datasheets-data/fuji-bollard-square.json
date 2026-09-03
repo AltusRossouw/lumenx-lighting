@@ -19,8 +19,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/fuji-bollard-square.jpg",
+    "alt": "FUJI SQUARE BOLLARD"
   },
   "overview": [
     "12W Fuji IP65 4CCT Surface Mount Bollard – Square"

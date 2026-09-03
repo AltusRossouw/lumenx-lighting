@@ -24,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/ledsc4-finestra-10183.png",
+    "alt": "FINESTRA"
   },
   "overview": [
     "Customizable facades"

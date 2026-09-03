@@ -24,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/steinel-sensiq-s.jpg",
+    "alt": "SENS IQ S"
   },
   "overview": [],
   "features": [],

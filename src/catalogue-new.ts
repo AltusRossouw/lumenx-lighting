@@ -162,7 +162,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/steinel-is-2360-r.jpg",
     pdfUrl: "/api/download/datasheet/generated/steinel-is-2360-r",
   },
   {
@@ -188,7 +188,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/steinel-is-2360-s.jpg",
     pdfUrl: "/api/download/datasheet/generated/steinel-is-2360-s",
   },
   {
@@ -236,7 +236,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/steinel-dualtech.jpg",
     pdfUrl: "/api/download/datasheet/generated/steinel-dualtech",
   },
   {
@@ -262,7 +262,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/steinel-is-3360.jpg",
     pdfUrl: "/api/download/datasheet/generated/steinel-is-3360",
   },
   {
@@ -288,7 +288,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/steinel-is-3360-highbay.jpg",
     pdfUrl: "/api/download/datasheet/generated/steinel-is-3360-highbay",
   },
   {
@@ -314,7 +314,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/steinel-is-345-highbay.jpg",
     pdfUrl: "/api/download/datasheet/generated/steinel-is-345-highbay",
   },
   {
@@ -340,7 +340,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/steinel-dual-hf-corridor.jpg",
     pdfUrl: "/api/download/datasheet/generated/steinel-dual-hf-corridor",
   },
   {
@@ -366,7 +366,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/steinel-hf-360.jpg",
     pdfUrl: "/api/download/datasheet/generated/steinel-hf-360",
   },
   {
@@ -392,7 +392,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/steinel-is-2180.jpg",
     pdfUrl: "/api/download/datasheet/generated/steinel-is-2180",
   },
   {
@@ -418,7 +418,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/steinel-ir-quattro-micro.jpg",
     pdfUrl: "/api/download/datasheet/generated/steinel-ir-quattro-micro",
   },
   {
@@ -444,7 +444,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/steinel-ir-quattro-hd.jpg",
     pdfUrl: "/api/download/datasheet/generated/steinel-ir-quattro-hd",
   },
   {
@@ -470,7 +470,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/steinel-sensiq-s.jpg",
     pdfUrl: "/api/download/datasheet/generated/steinel-sensiq-s",
   },
   {
@@ -485,7 +485,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/steinel-smart-remote.jpg",
     pdfUrl: "/api/download/datasheet/generated/steinel-smart-remote",
   },
   {
@@ -500,7 +500,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/steinel-service-remote.jpg",
     pdfUrl: "/api/download/datasheet/generated/steinel-service-remote",
   },
   {
@@ -553,7 +553,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Hospitality","Residential","Lobbies","Retail"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/kinglong-pearl-series.jpg",
     pdfUrl: "/api/download/datasheet/generated/kinglong-pearl-series",
   },
   {
@@ -594,7 +594,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Hospitality","Residential","Lobbies","Retail"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/kinglong-jiangnan-series.jpg",
     pdfUrl: "/api/download/datasheet/generated/kinglong-jiangnan-series",
   },
   {
@@ -621,7 +621,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Hospitality","Residential","Lobbies","Retail"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/kinglong-crystal-cloud-series.jpg",
     pdfUrl: "/api/download/datasheet/generated/kinglong-crystal-cloud-series",
   },
   {
@@ -640,7 +640,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["Three light directions: interior, exterior, and underneath.","Available in three finishes: white, black, and gold","Possibility of recessed or surface installation","Multiple compositions, both vertical and horizontal, in a simple or chandelier version."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-circular-10002.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-circular-10002",
   },
   {
@@ -659,7 +659,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["Three light directions: interior, exterior, and underneath.","Available in three finishes: white, black, and gold","Possibility of recessed or surface installation","Multiple compositions, both vertical and horizontal, in a simple or chandelier version."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-circular-vertical-10374.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-circular-vertical-10374",
   },
   {
@@ -694,7 +694,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["Waterproof properties with IP44","Highly resistant with IK05","Double pressed glass"],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-vetro-10124.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-vetro-10124",
   },
   {
@@ -723,7 +723,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["Includes bulb extraction kit","In vertical downward position, excellent visual comfort. Index: BUG B1 U0 G0.","LED models with a lifespan of 50,000h L80 B20.","5-year warranty for heavy use (4,000h/year) and in a marine atmosphere."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-eko-10141.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-eko-10141",
   },
   {
@@ -742,7 +742,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["Includes wiring with waterproof quick connectors","In vertical downward position, excellent visual comfort. Index: BUG B0 U0 G0.","50,000h L80 B20 useful life.","5-year warranty for heavy use (4,000h/year) and in a marine atmosphere."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-cube-spot-10301.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-cube-spot-10301",
   },
   {
@@ -761,7 +761,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["Quick and waterproof connection wiring","In vertical downward position, excellent visual comfort. Index: BUG B3 U0 G0.","LED models with a lifespan of 50,000h L80 B20","5-year warranty for heavy use (4,000 hours/year) and in a marine atmosphere."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-hubble-10143.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-hubble-10143",
   },
   {
@@ -777,7 +777,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["Standard version and with tilted head","Zero light pollution (ULOR: 0%) and BUG B1 U0 G0.","LED models with a lifespan of 50,000h L80 B20","5-year warranty for heavy use (4,000h/year) and in a marine atmosphere."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-eko-10195.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-eko-10195",
   },
   {
@@ -796,7 +796,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["LED and driver easily replaceable.","Zero light pollution (ULOR: 0%) and BUG B1 U0 G0.","50,000h L80 B20 useful life.","5-year warranty for heavy use (4,000h/year) and in a marine atmosphere."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-ele-10311.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-ele-10311",
   },
   {
@@ -833,7 +833,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["Protection against impacts and high-pressure water (IK10 and IP66)","Available in two sizes","LED with 50,000h L80 B20 lifespan","5-year warranty for heavy use (4,000 hours/year) and in a marine atmosphere."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-moal-10202.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-moal-10202",
   },
   {
@@ -853,7 +853,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["Protection against dust and high-pressure water (IK10 and IP66)","Made 100% of cement","50,000h L80 B20 useful life.","5-year warranty for heavy use (4,000 hours/year) and in a marine atmosphere."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-row-10319.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-row-10319",
   },
   {
@@ -873,7 +873,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["Protection against dust and high-pressure water (IK10 and IP66)","BREEAM certification","50,000h L80 B20 useful life.","5-year warranty for heavy use (4,000h/year) and in a marine atmosphere."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-ele-10218.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-ele-10218",
   },
   {
@@ -892,7 +892,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["BREEAM certification","LED and driver easily replaceable.","L80 B20 50,000h lifespan.","5-year warranty for heavy use (4,000 hours/year) and in a marine atmosphere."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-proud-10224.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-proud-10224",
   },
   {
@@ -912,7 +912,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["Protection against dust and high-pressure water (IK10 and IP66)","BREEAM certification","50,000h L80 B20 useful life.","5-year warranty for heavy use (4,000 hours/year) and in a marine atmosphere."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-lyon-10221.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-lyon-10221",
   },
   {
@@ -931,7 +931,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["LED and driver easily replaceable.","Zero light pollution (ULOR: 0%)","50,000h L80 B20 useful life.","5-year warranty for heavy use (4,000 hours/year) and in a marine atmosphere."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-zigzag-10225.jpg",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-zigzag-10225",
   },
   {
@@ -950,7 +950,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["Switch 2700 K - 3200K - 4000K included","BREEAM certification","50,000h L80 B20 useful life.","5-year warranty for heavy use (4,000h/year) and in a marine atmosphere."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-helion-10219.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-helion-10219",
   },
   {
@@ -969,7 +969,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["Includes flush-mounted box and metal connection plates","Includes wiring with waterproof quick connectors","50,000h L80 B20 useful life.","5-year warranty for heavy use (4,000h/year) and in a marine atmosphere."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-cube-linear-recessed-10128.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-cube-linear-recessed-10128",
   },
   {
@@ -985,7 +985,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-gea-cob-10155.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-gea-cob-10155",
   },
   {
@@ -1005,7 +1005,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["Protection against dust and high-pressure water (IK10 and IP66)","Standard option or DMX","50,000h L80 B20 useful life.","5-year warranty for heavy use (4,000h/year) and in a marine atmosphere."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-finestra-10183.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-finestra-10183",
   },
   {
@@ -1024,7 +1024,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["Energy efficiency with BREEAM certification","Custom finishes available upon request","50,000h L80 B20 useful life.","5-year warranty for heavy use (4,000 hours/year) and in a marine atmosphere."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-cosmos-10172.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-cosmos-10172",
   },
   {
@@ -1060,7 +1060,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-mega-10230.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-mega-10230",
   },
   {
@@ -1080,7 +1080,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: ["Protection against dust and high-pressure water (IK10 and IP66)","LED modules and E27 easily replaceable.","LED models with a lifespan of 50,000h L80 B20.","5-year warranty for heavy use (4,000h/year) and in a marine atmosphere."],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/ledsc4-cisne-colgante-10231.png",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-cisne-colgante-10231",
   },
   {
@@ -1228,7 +1228,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Exterior","Commercial","Municipal"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/orbit-post-top.jpg",
     pdfUrl: "/api/download/datasheet/generated/orbit-post-top",
   },
   {
@@ -1253,7 +1253,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Exterior","Commercial","Municipal"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/vista-post-top.png",
     pdfUrl: "/api/download/datasheet/generated/vista-post-top",
   },
 ];

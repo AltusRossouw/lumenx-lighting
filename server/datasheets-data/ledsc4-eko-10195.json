@@ -14,8 +14,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/ledsc4-eko-10195.png",
+    "alt": "EKO"
   },
   "overview": [
     "Essential with premium features"

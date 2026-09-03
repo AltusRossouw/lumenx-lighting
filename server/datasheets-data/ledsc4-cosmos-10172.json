@@ -19,8 +19,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/ledsc4-cosmos-10172.png",
+    "alt": "COSMOS"
   },
   "overview": [
     "Elegance and versatility"

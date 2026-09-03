@@ -19,8 +19,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/ledsc4-cube-spot-10301.png",
+    "alt": "CUBE"
   },
   "overview": [
     "Maximum precision for high-rise facades"

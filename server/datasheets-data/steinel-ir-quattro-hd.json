@@ -24,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/steinel-ir-quattro-hd.jpg",
+    "alt": "IR QUATTRO HD"
   },
   "overview": [
     "Detection no finer! Infrared presence detector Presence Control PRO IR Quattro HD COM1 for indoors, ideal for medium to large-size offices, conference and meeting rooms, classrooms and lecture theatres, sports halls and warehouses, installation height up to 10 m, for switching light 'ON' and 'OFF', 4800 switching zones for the ultimate in detection quality, presence detection over a true 64 m2, square detection zone, mechanically scalable."

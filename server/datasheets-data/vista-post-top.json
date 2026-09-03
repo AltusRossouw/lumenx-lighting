@@ -19,8 +19,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/vista-post-top.png",
+    "alt": "VISTA POST TOP"
   },
   "overview": [
     "Vista Post Top — outdoor LED luminaire from PioLED, supplied by LumenX."

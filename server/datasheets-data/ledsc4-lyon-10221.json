@@ -24,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/ledsc4-lyon-10221.png",
+    "alt": "LYON"
   },
   "overview": [
     "Extensive lighting"

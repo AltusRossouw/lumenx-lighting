@@ -19,8 +19,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/ledsc4-hubble-10143.png",
+    "alt": "HUBBLE"
   },
   "overview": [
     "Collection of versatile and highly efficient projectors"

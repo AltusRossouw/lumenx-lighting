@@ -19,8 +19,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/ledsc4-mega-10230.png",
+    "alt": "MEGA"
   },
   "overview": [
     "Lighting of large surfaces"

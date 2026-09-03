@@ -8,8 +8,8 @@
   "variant": "",
   "stats": [],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/steinel-service-remote.jpg",
+    "alt": "SERVICE REMOTE"
   },
   "overview": [
     "The full works at the press of a button. User remote control RC7 KNX for Presence Control PRO presence detectors and motion detectors in conjunction with KNX interface."

@@ -24,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/steinel-dualtech.jpg",
+    "alt": "DUALTECH"
   },
   "overview": [
     "Risk of electric shock! 230 V means danger to life! Disconnect the power supply before attempting any work on the product. During installation, the electric power cable being connected may not be live. Therefore, switch off the power first and use a voltage tester to make sure the wiring is off-circuit. Installing the sensor involves work on the mains power supply. This work must therefore be carried out professionally in accordance with national wiring regulations and electrical operating conditions. (e.g. DE - VDE 0100, AT - ÖVE / ÖNORM E8001-1, CH - SEV 1000) For products with COM2 port: connection B1, B2 is a switching contact for low-energy circuits. This must be fuse-protected in line with the technical specifications. Only electronic ballasts with a floating control signal may be used at the DIM 1 to 10 V control output. No mains voltage may be connected to control output/input DA+ / DA-. Only use genuine replacement parts. Repairs may only be made by specialist workshops."

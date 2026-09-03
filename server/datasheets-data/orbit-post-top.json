@@ -19,8 +19,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/orbit-post-top.jpg",
+    "alt": "ORBIT POST TOP"
   },
   "overview": [
     "Orbit Post Top — outdoor LED luminaire from PioLED, supplied by LumenX."

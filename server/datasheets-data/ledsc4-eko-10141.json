@@ -14,8 +14,8 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/product-images/ledsc4-eko-10141.png",
+    "alt": "EKO"
   },
   "overview": [
     "Essential with a filter that softens the light effect"
