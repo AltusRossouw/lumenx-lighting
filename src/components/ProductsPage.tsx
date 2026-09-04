@@ -44,12 +44,12 @@ const CategoryCard: React.FC<{ category: (typeof PRODUCT_CATEGORIES)[number]; in
       className="group relative overflow-hidden gradient-border-card card-lift flex flex-col"
     >
       {/* Image / light-up animation */}
-      <Link to={`/products/${category.id}`} className="h-52 overflow-hidden relative block bg-black" aria-label={category.title}>
+      <Link to={`/products/${category.id}`} className="aspect-video overflow-hidden relative block bg-black" aria-label={category.title}>
         <img
           src={category.imageUrl}
           alt={category.title}
           loading="lazy"
-          className="absolute inset-0 w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-105"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
         />
         {HAS_ANIMATION.has(category.id) && (
           <video
@@ -59,7 +59,7 @@ const CategoryCard: React.FC<{ category: (typeof PRODUCT_CATEGORIES)[number]; in
             muted
             playsInline
             preload="auto"
-            className="absolute inset-0 w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-150"
+            className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-150"
           />
         )}
         {/* Ambient glow on hover — the fixture "switches on" */}
