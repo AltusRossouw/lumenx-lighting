@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { getCategory, getProductsByCategory } from '../products';
-import { ArrowLeft, ArrowRight, Check, Factory } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, Factory, Search, X } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
 interface ProductDetailPageProps {
@@ -12,6 +12,51 @@ interface ProductDetailPageProps {
 export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId }) => {
   const category = getCategory(categoryId);
   const products = getProductsByCategory(categoryId);
+
+  const [query, setQuery] = useState('');
+  const [ip, setIp] = useState('');
+  const [cct, setCct] = useState('');
+  const [wattage, setWattage] = useState('');
+
+  // Build filter facets from the flat spec lists.
+  const facet = useMemo(() => {
+    const unique = (re: RegExp) =>
+      Array.from(
+        new Set(
+          products.flatMap((p) =>
+            p.specs.filter((s) => re.test(s.label)).map((s) => s.value.trim()),
+          ),
+        ),
+      ).filter(Boolean);
+    return {
+      ip: unique(/IP rating|ingress protection/i),
+      cct: unique(/colour temperature|CCT/i),
+      wattage: unique(/wattage|power/i),
+    };
+  }, [products]);
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return products.filter((p) => {
+      if (q) {
+        const hay = [
+          p.name,
+          p.summary,
+          ...p.specs.flatMap((s) => [s.label, s.value]),
+          ...p.applications,
+        ]
+          .join(' ')
+          .toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      if (ip && !p.specs.some((s) => /IP rating|ingress protection/i.test(s.label) && s.value.trim() === ip)) return false;
+      if (cct && !p.specs.some((s) => /colour temperature|CCT/i.test(s.label) && s.value.trim() === cct)) return false;
+      if (wattage && !p.specs.some((s) => /wattage|power/i.test(s.label) && s.value.trim() === wattage)) return false;
+      return true;
+    });
+  }, [products, query, ip, cct, wattage]);
+
+  const hasFilters = Boolean(query || ip || cct || wattage);
 
   if (!category) {
     return (
@@ -54,6 +99,65 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
       {/* Products List */}
       <section className="pb-20 sm:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {products.length > 0 && (
+            <div className="mb-8 p-4 rounded-2xl bg-[#0A0D14] border border-[#1E293B]">
+              <div className="flex flex-col lg:flex-row gap-3">
+                <div className="relative flex-1">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+                  <input
+                    type="text"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder={`Search ${category.title.toLowerCase()}…`}
+                    className="w-full pl-10 pr-4 py-2.5 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans"
+                  />
+                </div>
+                <select
+                  value={ip}
+                  onChange={(e) => setIp(e.target.value)}
+                  className="px-3 py-2.5 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-slate-300 focus:outline-none focus:border-primary/50 font-sans"
+                >
+                  <option value="">IP rating</option>
+                  {facet.ip.map((v) => (
+                    <option key={v} value={v}>{v}</option>
+                  ))}
+                </select>
+                <select
+                  value={cct}
+                  onChange={(e) => setCct(e.target.value)}
+                  className="px-3 py-2.5 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-slate-300 focus:outline-none focus:border-primary/50 font-sans"
+                >
+                  <option value="">Colour temperature</option>
+                  {facet.cct.map((v) => (
+                    <option key={v} value={v}>{v}</option>
+                  ))}
+                </select>
+                <select
+                  value={wattage}
+                  onChange={(e) => setWattage(e.target.value)}
+                  className="px-3 py-2.5 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-slate-300 focus:outline-none focus:border-primary/50 font-sans"
+                >
+                  <option value="">Wattage</option>
+                  {facet.wattage.map((v) => (
+                    <option key={v} value={v}>{v}</option>
+                  ))}
+                </select>
+                {hasFilters && (
+                  <button
+                    type="button"
+                    onClick={() => { setQuery(''); setIp(''); setCct(''); setWattage(''); }}
+                    className="inline-flex items-center gap-1.5 px-3 py-2.5 text-sm text-slate-400 hover:text-white transition-colors font-sans"
+                  >
+                    <X className="w-4 h-4" /> Clear
+                  </button>
+                )}
+              </div>
+              <p className="mt-2 text-xs text-slate-500 font-mono">
+                Showing {filtered.length} of {products.length} products
+              </p>
+            </div>
+          )}
+
           {products.length === 0 ? (
             <div className="text-center p-16 rounded-2xl bg-[#0A0D14] border border-[#1E293B]">
               <h2 className="font-display text-xl sm:text-2xl font-bold text-white mb-3 tracking-[-0.02em]">
@@ -70,9 +174,25 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
                 </span>
               </Link>
             </div>
+          ) : filtered.length === 0 ? (
+            <div className="text-center p-16 rounded-2xl bg-[#0A0D14] border border-[#1E293B]">
+              <h2 className="font-display text-xl sm:text-2xl font-bold text-white mb-3 tracking-[-0.02em]">
+                No products match your filters
+              </h2>
+              <p className="text-slate-400 text-sm mb-6 font-sans font-light">
+                Try adjusting your search or clearing a filter.
+              </p>
+              <button
+                type="button"
+                onClick={() => { setQuery(''); setIp(''); setCct(''); setWattage(''); }}
+                className="btn btn-outline btn-sm"
+              >
+                Clear filters
+              </button>
+            </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {products.map((product, i) => (
+              {filtered.map((product, i) => (
                 <motion.div
                   key={product.slug}
                   initial={{ opacity: 0, y: 20 }}
