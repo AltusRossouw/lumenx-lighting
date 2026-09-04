@@ -9,7 +9,7 @@
   "stats": [
     {
       "label": "Lumens",
-      "value": "1084–4049",
+      "value": "2880–2952",
       "unit": "lm"
     }
   ],
@@ -17,7 +17,9 @@
     "src": "",
     "alt": ""
   },
-  "overview": [],
+  "overview": [
+    "The Afrodita LED is an outdoor luminaire from the LumenX range, available in multiple configurations."
+  ],
   "features": [],
   "applications": [
     "Architectural",
@@ -31,12 +33,16 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "Lumen Output",
-            "value": "1084–4049 lm"
-          },
-          {
             "label": "Colour Temperature",
             "value": "2700K / 3000K / 4000K"
+          },
+          {
+            "label": "Lumen Output",
+            "value": "2880–2952 lm"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "100°"
           }
         ]
       },

@@ -9,7 +9,7 @@
   "stats": [
     {
       "label": "Lumens",
-      "value": "768–4340",
+      "value": "3255–4340",
       "unit": "lm"
     }
   ],
@@ -17,8 +17,14 @@
     "src": "",
     "alt": ""
   },
-  "overview": [],
-  "features": [],
+  "overview": [
+    "The Attic system is based on a compositional modularity that starts from screens with customizable finishes — decorative hexagonal pendant clusters in 3- and 4-body configurations."
+  ],
+  "features": [
+    "Modular compositional system",
+    "Customisable finishes",
+    "E27 lamp"
+  ],
   "applications": [
     "Architectural",
     "Commercial",
@@ -31,8 +37,12 @@
         "title": "Product Information",
         "rows": [
           {
+            "label": "Light Source",
+            "value": "E27"
+          },
+          {
             "label": "Lumen Output",
-            "value": "768–4340 lm"
+            "value": "3255–4340 lm"
           }
         ]
       }

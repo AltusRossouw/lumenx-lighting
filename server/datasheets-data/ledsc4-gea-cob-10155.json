@@ -9,7 +9,7 @@
   "stats": [
     {
       "label": "Lumens",
-      "value": "869–5878",
+      "value": "869–934",
       "unit": "lm"
     }
   ],
@@ -18,9 +18,13 @@
     "alt": "GEA COB"
   },
   "overview": [
-    "Ideal swivel solution for vegetation"
+    "Swiveling solution that adapts to different vegetation heights thanks to its optical accessories."
   ],
-  "features": [],
+  "features": [
+    "Easily replaceable LED",
+    "50 000h L80 B20",
+    "Optical accessories"
+  ],
   "applications": [
     "Architectural",
     "Commercial",
@@ -33,12 +37,16 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "Lumen Output",
-            "value": "869–5878 lm"
-          },
-          {
             "label": "Colour Temperature",
             "value": "2700K / 3000K / 4000K"
+          },
+          {
+            "label": "Lumen Output",
+            "value": "869–934 lm"
+          },
+          {
+            "label": "Lifespan",
+            "value": "50 000h L80 B20"
           }
         ]
       }
