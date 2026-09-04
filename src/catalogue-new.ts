@@ -102,7 +102,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Estates","Public parks","Isolated streets","Gate posts"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/sky-ele-15-solar-post-top.jpg",
     pdfUrl: "/api/download/datasheet/generated/sky-ele-15-solar-post-top",
   },
   {
@@ -123,7 +123,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Estates","Isolated areas","Security perimeters"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/sky-spt-150-solar-post-top.jpg",
     pdfUrl: "/api/download/datasheet/generated/sky-spt-150-solar-post-top",
   },
   {
@@ -137,7 +137,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Estates","Parks","Isolated sites","Security"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/vista-solar-post-top.png",
     pdfUrl: "/api/download/datasheet/generated/vista-solar-post-top",
   },
   {
@@ -526,7 +526,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Hospitality","Residential","Lobbies","Retail"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/kinglong-cloudbell.png",
     pdfUrl: "/api/download/datasheet/generated/kinglong-cloud-bell-series",
   },
   {
@@ -568,7 +568,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Hospitality","Residential","Feature interiors"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/kinglong-dream-pen-series.png",
     pdfUrl: "/api/download/datasheet/generated/kinglong-dream-pen-series",
   },
   {
@@ -710,7 +710,8 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Retail","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/superlume-fabric-tape.jpg",
+    pdfUrl: "/api/download/datasheet/generated/superlume-fabric-tape",
   },
   {
     slug: "LumenX-eko-10141",
@@ -1096,7 +1097,8 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Facades","Pathways","Landscape","Municipal"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/superlume-palm-and-coco.jpg",
+    pdfUrl: "/api/download/datasheet/generated/superlume-palm-and-coco",
   },
   {
     slug: "fuji-bollard-square",
@@ -1109,7 +1111,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Facades","Pathways","Landscape","Municipal"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/fuji-bollard-square.png",
     pdfUrl: "/api/download/datasheet/generated/fuji-bollard-square",
   },
   {
@@ -1123,7 +1125,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Facades","Pathways","Landscape","Municipal"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/fuji-bollard-round.png",
     pdfUrl: "/api/download/datasheet/generated/fuji-bollard-round",
   },
   {
@@ -1137,7 +1139,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Facades","Pathways","Landscape","Municipal"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/everest-bollard-square.png",
     pdfUrl: "/api/download/datasheet/generated/everest-bollard-square",
   },
   {
@@ -1151,7 +1153,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Facades","Pathways","Landscape","Municipal"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/everest-bollard-round.png",
     pdfUrl: "/api/download/datasheet/generated/everest-bollard-round",
   },
   {
@@ -1179,7 +1181,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Outdoor walls","Facades","Entrances"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/zod101-square-led-wall.jpg",
     pdfUrl: "/api/download/datasheet/generated/zod101-square-led-wall",
   },
   {
@@ -1207,7 +1209,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Outdoor walls","Facades","Coastal areas"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/zod102-round-led-wall.jpg",
     pdfUrl: "/api/download/datasheet/generated/zod102-round-led-wall",
   },
   {

@@ -1,0 +1,134 @@
+{
+  "fileStem": "Palm & Coco",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "PALM & COCO",
+  "category": "OUTDOOR LIGHTING",
+  "variant": "20W LED bollard · 1 m · 3CCT",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "20",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "1800",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP66",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": "Palm & Coco"
+  },
+  "overview": [
+    "Stylish outdoor LED bollard for landscape lighting — the Palm & Coco delivers up to 1800 lm with selectable colour temperature, a UV-resistant clear diffuser and a robust ground-mount aluminium body."
+  ],
+  "features": [
+    "Up to 1800 lm",
+    "3CCT selectable (3000K / 4000K / 6000K)",
+    "IP66 rated",
+    "UV-resistant clear diffuser"
+  ],
+  "applications": [
+    "Landscape lighting",
+    "Pathways",
+    "Gardens",
+    "Estate lighting"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Body",
+            "value": "Aluminium"
+          },
+          {
+            "label": "Diffuser",
+            "value": "UV-resistant clear"
+          },
+          {
+            "label": "Mounting",
+            "value": "Ground"
+          },
+          {
+            "label": "Colour",
+            "value": "Black"
+          },
+          {
+            "label": "Product Size (L × W × H)",
+            "value": "181 × 181 × 900mm"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Nominal Flux",
+            "value": "Up to 1800 lm"
+          },
+          {
+            "label": "Efficacy",
+            "value": "Up to 90 lm/W"
+          },
+          {
+            "label": "Colour Temperature",
+            "value": "3000K / 4000K / 6000K"
+          },
+          {
+            "label": "CRI",
+            "value": ">80"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP66"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "20W"
+          },
+          {
+            "label": "Input Voltage",
+            "value": "220-240V"
+          },
+          {
+            "label": "Power Factor",
+            "value": "0.9"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

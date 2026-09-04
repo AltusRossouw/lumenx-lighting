@@ -1,0 +1,101 @@
+{
+  "fileStem": "Fabric Tape",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "FABRIC TAPE",
+  "category": "FABRIC TAPE LIGHTING",
+  "variant": "Braided fabric lighting tape range · 12–46W · 3000K",
+  "stats": [
+    {
+      "label": "Power",
+      "value": "12–46",
+      "unit": "W"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "",
+    "alt": "Fabric Tape"
+  },
+  "overview": [
+    "Braided fabric LED lighting tape in a flexible family of per-metre tape and finished forms — strips, spheres, cones, pendants and spots. 3000K warm light, 48V low-voltage operation, IP20, in Black or Terra Red."
+  ],
+  "features": [
+    "Braided fabric construction",
+    "12W – 46W across the range",
+    "3000K warm light",
+    "48V low voltage"
+  ],
+  "applications": [
+    "Cove lighting",
+    "Joinery",
+    "Feature lighting",
+    "Hospitality interiors"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Size",
+            "value": "34 × 17 × 1500mm (1.5m strip)"
+          },
+          {
+            "label": "Colour",
+            "value": "Black / Terra Red"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Colour Temperature",
+            "value": "3000K"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "12W – 46W"
+          },
+          {
+            "label": "Voltage",
+            "value": "48V"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}
