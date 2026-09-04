@@ -6,6 +6,13 @@ import { useSiteContent } from '../content';
 import { ArrowRight, ShieldCheck, Zap, Clock } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
+/* Categories that have a hover "light-up" video. Newer categories use the
+   static image only until an animation is produced. */
+const HAS_ANIMATION = new Set([
+  'bulkheads', 'downlights', 'floods', 'highbays', 'linears',
+  'panels', 'strips', 'track', 'vapourproof',
+]);
+
 /* ── Category card with hover "light-up" animation ── */
 const CategoryCard: React.FC<{ category: (typeof PRODUCT_CATEGORIES)[number]; index: number }> = ({ category, index }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -39,15 +46,17 @@ const CategoryCard: React.FC<{ category: (typeof PRODUCT_CATEGORIES)[number]; in
           loading="lazy"
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
         />
-        <video
-          ref={videoRef}
-          src={`/product-images/categories/animations/${category.id}.mp4`}
-          poster={category.imageUrl}
-          muted
-          playsInline
-          preload="none"
-          className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        />
+        {HAS_ANIMATION.has(category.id) && (
+          <video
+            ref={videoRef}
+            src={`/product-images/categories/animations/${category.id}.mp4`}
+            poster={category.imageUrl}
+            muted
+            playsInline
+            preload="none"
+            className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          />
+        )}
         {/* Ambient glow on hover — the fixture "switches on" */}
         <div
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"

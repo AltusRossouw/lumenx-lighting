@@ -70,7 +70,7 @@ export const NEW_PRODUCTS: Product[] = [
   },
   {
     slug: "LumenX-solar-range",
-    name: "Sunfor",
+    name: "Sunfor Solar Range",
     category: "solar",
     supplier: "LumenX",
     summary: "LumenX — supplied by LumenX.",
@@ -79,7 +79,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Estates","Parks","Isolated sites","Security"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/categories/solar.jpg",
   },
   {
     slug: "sky-ele-15-solar-post-top",
@@ -212,7 +212,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Offices","Warehouses","Corridors","Security"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/categories/sensors.jpg",
     pdfUrl: "/api/download/datasheet/generated/steinel-light-sensor",
   },
   {
@@ -677,7 +677,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/categories/indoor-architectural.jpg",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-attic-10009",
   },
   {
@@ -817,7 +817,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/categories/outdoor-architectural.jpg",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-modis-10316",
   },
   {
@@ -1045,7 +1045,7 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Architectural","Commercial","Hospitality"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/categories/outdoor-architectural.jpg",
     pdfUrl: "/api/download/datasheet/generated/ledsc4-afrodita-led-10168",
   },
   {
