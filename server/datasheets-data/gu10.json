@@ -18,12 +18,13 @@
     "alt": "GU10"
   },
   "overview": [
-    "The GU10 range covers fixtures and accessories built around the universal GU10 lamp format, providing a simple, serviceable solution for accent and downlighting applications where lamp replacement flexibility is required."
+    "GU10 lamp-based fixtures and accessories for flexible accent and downlighting — a family of adjustable and fixed GU10 holders plus compatible accessories."
   ],
   "features": [
-    "Universal GU10 lamp compatibility",
-    "Simple, serviceable design",
-    "Accent and downlighting applications"
+    "Colour GU10 downlighters",
+    "Decor Colour GU10 downlighters",
+    "Vers 3CCT GU10 downlighters",
+    "Lamp-based — easy re-lamping"
   ],
   "applications": [
     "Residential",
@@ -37,6 +38,10 @@
       {
         "title": "Product Information",
         "rows": [
+          {
+            "label": "Range",
+            "value": "Colour · Decor Colour · Vers 3CCT"
+          },
           {
             "label": "Lamp Base",
             "value": "GU10"
