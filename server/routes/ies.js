@@ -11,7 +11,7 @@ import { Router } from 'express';
 import fs from 'node:fs';
 import path from 'node:path';
 import { requireAuth } from '../middleware/auth.js';
-import { listIesFiles, resolveIesPath } from '../services/ies.js';
+import { listIesFiles, resolveIesPath, humanizeIesLabel } from '../services/ies.js';
 import { recordDownload } from '../services/downloads.js';
 
 const slugify = (value) =>
@@ -68,7 +68,10 @@ export const iesRouter = () => {
       });
 
       res.setHeader('Content-Type', 'application/octet-stream');
-      res.setHeader('Content-Disposition', `attachment; filename="${path.basename(filePath)}"`);
+      res.setHeader(
+        'Content-Disposition',
+        `attachment; filename="${humanizeIesLabel('', path.basename(filePath))}.ies"`,
+      );
       res.setHeader('X-Content-Type-Options', 'nosniff');
       res.setHeader('Cache-Control', 'private, no-store');
       return fs.createReadStream(filePath).on('error', next).pipe(res);

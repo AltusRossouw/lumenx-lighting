@@ -164,6 +164,40 @@ const nameFromFilename = (filename) =>
     .replace(/[-_]+/g, ' ')
     .trim();
 
+// Turn a technical IES label/filename into a readable, Title-Cased product name:
+//   lumenx-100w-samurai-ufo-120d.ies  →  Samurai UFO 100 W 120°
+//   lumenx-1200x300-backlit.ies       →  1200×300 Backlit
+export const humanizeIesLabel = (label, filename) => {
+  let s = String(label || '').trim();
+  if (s.length < 2 || /^lumenx[_-]/i.test(s)) {
+    s = nameFromFilename(filename);
+  } else {
+    s = s.replace(/[-_]+/g, ' ');
+  }
+
+  s = s
+    .replace(/(\d+(?:\.\d+)?)w\b/gi, '$1 W')
+    .replace(/(\d+(?:\.\d+)?)d\b/gi, '$1°')
+    .replace(/(\d+(?:\.\d+)?)x(?=\d)/gi, '$1×')
+    .replace(/\biesna\d*/gi, '')
+    .replace(/\b(?:ies|file|luminaire)\b/gi, '')
+    .replace(/\bhd\b/gi, 'HD')
+    .replace(/\bufo\b/gi, 'UFO')
+    .replace(/\bled\b/gi, 'LED')
+    .replace(/\bip(\d+)\b/gi, 'IP$1')
+    .replace(/\bcob\b/gi, 'COB')
+    .replace(/\bpc\b/gi, 'PC')
+    .replace(/\bir\b/gi, 'IR')
+    .replace(/\bhf\b/gi, 'HF')
+    .replace(/\b3cct\b/gi, '3CCT')
+    .replace(/\bcct\b/gi, 'CCT')
+    .replace(/\buv\b/gi, 'UV')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  return s.replace(/\b\w/g, (c) => c.toUpperCase());
+};
+
 // List every IES file across all distributed brands (public-safe metadata).
 export const listIesFiles = async () => {
   let entries;
@@ -182,7 +216,7 @@ export const listIesFiles = async () => {
       files.push({
         id: entry,
         filename: entry,
-        name: parsed.luminaire || parsed.luminaireName || nameFromFilename(entry),
+        name: humanizeIesLabel(parsed.luminaire || parsed.luminaireName, entry),
         lumens: parsed.lumensPerLamp,
         watts: parsed.inputWatts,
         manufacturer: BRAND_LABELS[brandOf(entry)] || parsed.manufacturer || 'LumenX',
