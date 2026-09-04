@@ -198,6 +198,22 @@ export const humanizeIesLabel = (label, filename) => {
   return s.replace(/\b\w/g, (c) => c.toUpperCase());
 };
 
+// Does a label read like a real product name (letters present, not just a
+// spec token such as "120°", "5700K", "IP65")?
+const looksLikeName = (label) => {
+  const t = String(label || '').trim();
+  if (!t || t.length < 3) return false;
+  const letters = (t.match(/[a-z]/gi) || []).length;
+  return letters >= 3 && !/^[\d.,°%WKx×\s-]+$/.test(t);
+};
+
+// Prefer the in-file luminaire name only when it is a genuine name; otherwise
+// derive a readable name from the filename.
+export const humanizeIesName = (parsed, filename) => {
+  const label = parsed?.luminaire || parsed?.luminaireName;
+  return looksLikeName(label) ? humanizeIesLabel(label, filename) : humanizeIesLabel('', filename);
+};
+
 // List every IES file across all distributed brands (public-safe metadata).
 export const listIesFiles = async () => {
   let entries;
@@ -216,7 +232,7 @@ export const listIesFiles = async () => {
       files.push({
         id: entry,
         filename: entry,
-        name: humanizeIesLabel(parsed.luminaire || parsed.luminaireName, entry),
+        name: humanizeIesName(parsed, entry),
         lumens: parsed.lumensPerLamp,
         watts: parsed.inputWatts,
         manufacturer: BRAND_LABELS[brandOf(entry)] || parsed.manufacturer || 'LumenX',
