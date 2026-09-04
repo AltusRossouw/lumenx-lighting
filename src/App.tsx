@@ -149,6 +149,7 @@ function AppLayout() {
           <Route path="/design-tool" element={<DesignToolPage />} />
           <Route path="/ies" element={<IESLibraryPage />} />
           <Route path="/account" element={<AuthPage />} />
+          <Route path="/reset-password" element={<AuthPage />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route
             path="/planner"
