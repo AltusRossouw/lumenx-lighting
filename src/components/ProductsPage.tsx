@@ -18,7 +18,11 @@ const CategoryCard: React.FC<{ category: (typeof PRODUCT_CATEGORIES)[number]; in
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleEnter = () => {
-    videoRef.current?.play().catch(() => {});
+    const v = videoRef.current;
+    if (v) {
+      v.playbackRate = 2.5; // light-up completes almost immediately
+      v.play().catch(() => {});
+    }
   };
 
   const handleLeave = () => {
@@ -26,6 +30,7 @@ const CategoryCard: React.FC<{ category: (typeof PRODUCT_CATEGORIES)[number]; in
     if (v) {
       v.pause();
       v.currentTime = 0;
+      v.playbackRate = 1;
     }
   };
 
@@ -53,8 +58,8 @@ const CategoryCard: React.FC<{ category: (typeof PRODUCT_CATEGORIES)[number]; in
             poster={category.imageUrl}
             muted
             playsInline
-            preload="none"
-            className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            preload="auto"
+            className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-150"
           />
         )}
         {/* Ambient glow on hover — the fixture "switches on" */}
