@@ -166,7 +166,7 @@ const CategoriesTeaser: React.FC = () => {
           <Link
             key={c.id}
             to={`/products/${c.id}`}
-            className="group relative overflow-hidden h-40 gradient-border-card card-lift text-left"
+            className="group relative overflow-hidden h-40 bg-black gradient-border-card card-lift text-left"
           >
             <img
               src={c.imageUrl}

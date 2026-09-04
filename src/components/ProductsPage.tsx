@@ -44,7 +44,7 @@ const CategoryCard: React.FC<{ category: (typeof PRODUCT_CATEGORIES)[number]; in
       className="group relative overflow-hidden gradient-border-card card-lift flex flex-col"
     >
       {/* Image / light-up animation */}
-      <Link to={`/products/${category.id}`} className="h-52 overflow-hidden relative block" aria-label={category.title}>
+      <Link to={`/products/${category.id}`} className="h-52 overflow-hidden relative block bg-black" aria-label={category.title}>
         <img
           src={category.imageUrl}
           alt={category.title}
