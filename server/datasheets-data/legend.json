@@ -5,31 +5,37 @@
   },
   "name": "LEGEND",
   "category": "DOWNLIGHTS",
-  "variant": "High-powered 3CCT round downlight range for demanding commercial applications.",
+  "variant": "High-powered 3CCT round downlight · 10W / 20W / 35W",
   "stats": [
     {
-      "label": "IP Rating",
-      "value": "IP20",
-      "unit": ""
+      "label": "Power",
+      "value": "10–35",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "3500",
+      "unit": "lm"
     }
   ],
   "heroImage": {
     "src": "../public/product-images/legend.png",
-    "alt": "LEGEND"
+    "alt": "Legend"
   },
   "overview": [
-    "High-powered 3CCT round downlight range for demanding commercial applications."
+    "High-powered 3CCT round downlight range for demanding commercial applications, available in 10W, 20W and 35W with selectable colour temperature and a 60° beam for uniform general illumination."
   ],
   "features": [
-    "High-power output",
-    "3CCT selectable colour temperature",
-    "Aluminium construction"
+    "3CCT selectable (3000K / 4000K / 6000K)",
+    "10W / 20W / 35W models",
+    "60° beam",
+    "Flicker-free"
   ],
   "applications": [
-    "Commercial",
     "Retail",
     "Offices",
-    "Hospitality"
+    "Hospitality",
+    "Commercial interiors"
   ],
   "columns": {
     "left": [
@@ -39,6 +45,23 @@
           {
             "label": "Housing",
             "value": "Aluminium"
+          },
+          {
+            "label": "Cutout",
+            "value": "Ø195–210mm"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Certifications",
+            "value": "CE / EMC / IEC 60598 / ErP"
+          },
+          {
+            "label": "Warranty",
+            "value": "5 Years"
           }
         ]
       }
@@ -48,16 +71,49 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "CCT",
-            "value": "3CCT selectable"
+            "label": "Lumen Output",
+            "value": "3500 lm (35W)"
           },
           {
-            "label": "Type",
-            "value": "High-powered round downlight"
+            "label": "Colour Temperature",
+            "value": "3CCT · 3000K / 4000K / 6000K"
           },
           {
-            "label": "IP Rating",
-            "value": "IP20"
+            "label": "CRI",
+            "value": ">80"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "60°"
+          },
+          {
+            "label": "LED Chips",
+            "value": "2835 Sanan"
+          },
+          {
+            "label": "Operating Temp",
+            "value": "-20 ~ 45 °C"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "10W / 20W / 35W"
+          },
+          {
+            "label": "Input Voltage",
+            "value": "185-270V"
+          },
+          {
+            "label": "Power Factor",
+            "value": "0.9 · flicker-free"
+          },
+          {
+            "label": "Dimmable",
+            "value": "Optional dimmable driver"
           }
         ]
       }

@@ -5,8 +5,18 @@
   },
   "name": "PAKMAN",
   "category": "DOWNLIGHTS",
-  "variant": "3CCT tiltable round downlighter for adjustable accent and general lighting.",
+  "variant": "3CCT tiltable round downlighter · 15W / 25W / 35W",
   "stats": [
+    {
+      "label": "Power",
+      "value": "15–35",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "3500",
+      "unit": "lm"
+    },
     {
       "label": "IP Rating",
       "value": "IP20",
@@ -15,39 +25,100 @@
   ],
   "heroImage": {
     "src": "../public/product-images/pakman.png",
-    "alt": "PAKMAN"
+    "alt": "Pakman"
   },
   "overview": [
-    "The Pakman is a 3CCT tiltable round downlighter that combines adjustable aiming with colour-temperature flexibility. Its IP20 rating and tilt mechanism make it suited to accent lighting and general illumination where direction needs to be fine-tuned after installation."
+    "IP20 tiltable round downlighter with selectable colour temperature, available in 15W, 25W and 35W. A 36° beam with 340° rotation suits adjustable accent and general lighting; a removable honeycomb louvre is included for glare control."
   ],
   "features": [
-    "Tiltable head for adjustable aiming",
-    "3CCT colour temperature selection",
-    "Accent and general lighting"
+    "3CCT selectable (3000K / 4000K / 6000K)",
+    "36° beam · 340° rotation",
+    "Removable honeycomb louvre",
+    "IP20"
   ],
   "applications": [
     "Retail",
-    "Hospitality",
+    "Showrooms",
     "Accent lighting",
-    "Offices"
+    "Commercial interiors"
   ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Housing",
+            "value": "Aluminium"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Certifications",
+            "value": "CE / RoHS / IEC 60598"
+          },
+          {
+            "label": "Warranty",
+            "value": "5 Years"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
           {
-            "label": "CCT",
-            "value": "3CCT selectable"
+            "label": "Lumen Output",
+            "value": "3500 lm (35W)"
           },
           {
-            "label": "Type",
-            "value": "Tiltable round downlighter"
+            "label": "Colour Temperature",
+            "value": "3CCT · 3000K / 4000K / 6000K"
+          },
+          {
+            "label": "CRI",
+            "value": ">80"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "36° · 340° rotation"
+          },
+          {
+            "label": "LED Chips",
+            "value": "Bridgelux COB"
           },
           {
             "label": "IP Rating",
             "value": "IP20"
+          },
+          {
+            "label": "Operating Temp",
+            "value": "-15 ~ 45 °C"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "15W / 25W / 35W"
+          },
+          {
+            "label": "Input Voltage",
+            "value": "200-265V"
+          },
+          {
+            "label": "Power Factor",
+            "value": "0.9"
+          },
+          {
+            "label": "Dimmable",
+            "value": "No"
           }
         ]
       }
