@@ -40,7 +40,7 @@ export const NEW_CATEGORIES: ProductCategory[] = [
     title: "Solar",
     description: "All-in-one solar post-top and area lighting for sites with no grid — self-sustaining with integrated panels and batteries.",
     applications: "Estates, parks, isolated streets and gate posts",
-    imageUrl: "/product-images/categories/solar.svg",
+    imageUrl: "/product-images/categories/solar.jpg",
     linkLabel: "Explore Solar",
   },
   {

@@ -4,7 +4,7 @@ import { NEW_CATEGORIES, NEW_PRODUCTS } from './catalogue-new';
 /**
  * LumenX product catalogue — the single source of truth.
  * Mirrors the product list in /public/product-list, grouped into the
- * 11 commercial ranges LumenX supplies across South Africa.
+ * 15 commercial ranges LumenX supplies across South Africa.
  */
 
 /* ── Shared imagery (local assets + themed fallbacks) ── */
