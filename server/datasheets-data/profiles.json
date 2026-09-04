@@ -1,0 +1,89 @@
+{
+  "fileStem": "Profiles",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "PROFILES",
+  "category": "PROFILES & ACCESSORIES",
+  "variant": "Aluminium LED lighting channels · recessed, surface & corner",
+  "stats": [],
+  "heroImage": {
+    "src": "../public/product-images/profiles.jpg",
+    "alt": "Profiles"
+  },
+  "overview": [
+    "Extensive range of aluminium LED lighting channels for surface, recessed and corner mounting of LED tape. Available silver-anodised or black with PC opal or black covers, in 3-metre lengths (representative Eco-L001: 25.7 × 7mm, 12mm light-source width)."
+  ],
+  "features": [
+    "Recessed, surface and corner profiles",
+    "Silver-anodised or black finish",
+    "PC opal / black covers",
+    "3 m lengths"
+  ],
+  "applications": [
+    "Coves",
+    "Joinery",
+    "Display",
+    "Millwork"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Material",
+            "value": "Aluminium"
+          },
+          {
+            "label": "Size (representative Eco-L001)",
+            "value": "25.7 × 7mm"
+          },
+          {
+            "label": "Length",
+            "value": "3 m"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Finish",
+            "value": "Silver anodised / black"
+          },
+          {
+            "label": "Cover",
+            "value": "PC opal / black"
+          },
+          {
+            "label": "Light Source Width",
+            "value": "12mm"
+          },
+          {
+            "label": "Range",
+            "value": "Recessed · Surface · Corner"
+          }
+        ]
+      }
+    ]
+  },
+  "drawing": {
+    "src": "",
+    "alt": "Dimension drawing"
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
+  }
+}

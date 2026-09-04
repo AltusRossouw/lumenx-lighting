@@ -65,7 +65,8 @@ export const NEW_PRODUCTS: Product[] = [
     ],
     features: [],
     applications: ["Coves","Joinery","Display","Millwork"],
-    imageUrl: "/product-images/placeholder-product.svg",
+    imageUrl: "/product-images/profiles.jpg",
+    pdfUrl: "/api/download/datasheet/generated/profiles",
   },
   {
     slug: "LumenX-solar-range",
