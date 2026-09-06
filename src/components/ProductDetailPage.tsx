@@ -203,7 +203,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
                   {/* Image */}
                   <Link
                     to={`/products/${category.id}/${product.slug}`}
-                    className="relative h-56 overflow-hidden block bg-[#0A101A]"
+                    className="relative h-56 overflow-hidden block bg-white"
                     aria-label={product.name}
                   >
                     {/* hero image — always show the whole product (no crop) */}

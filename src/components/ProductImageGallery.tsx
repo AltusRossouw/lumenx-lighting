@@ -94,14 +94,15 @@ export const ProductImageGallery: React.FC<ProductImageGalleryProps> = ({
       aria-roledescription="carousel"
       aria-label={`${name} image gallery`}
     >
-      {/* Stage */}
+      {/* Stage — white backdrop so white-based product renders blend in.
+          (cover photos fill the frame, so the backdrop is behind them.) */}
       <div
         ref={stageRef}
         className={`relative overflow-hidden rounded-2xl gradient-border-card card-lift ${stageAspect ? '' : fallbackAspectClass}`}
         style={stageAspect ? { aspectRatio: stageAspect } : undefined}
       >
-        {/* Ambient fill so object-cover photos blend into the card edge */}
-        <div className="absolute inset-0 bg-[#0A101A]" />
+        {/* Ambient fill so the photo's own background reads seamlessly */}
+        <div className="absolute inset-0 bg-white" />
 
         {current.src ? (
           <img
@@ -181,12 +182,12 @@ export const ProductImageGallery: React.FC<ProductImageGalleryProps> = ({
                   alt=""
                   loading="lazy"
                   className={`w-full h-full ${
-                    img.fit === 'contain' ? 'object-contain p-1 bg-[#0A101A]' : 'object-cover'
+                    img.fit === 'contain' ? 'object-contain p-1 bg-white' : 'object-cover'
                   }`}
                 />
               ) : (
-                <div className="w-full h-full bg-[#0A101A] flex items-center justify-center">
-                  <ImageOff className="w-4 h-4 text-slate-600" />
+                <div className="w-full h-full bg-white flex items-center justify-center">
+                  <ImageOff className="w-4 h-4 text-slate-400" />
                 </div>
               )}
             </button>
