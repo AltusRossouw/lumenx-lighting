@@ -23,6 +23,7 @@ PRODUCTS_ROOT = os.path.join(HERE, 'products')
 PUBLIC = os.path.join(ROOT, 'public')
 SCRAPED_IMG = os.path.join(PUBLIC, 'scraped')
 DATASHEETS = os.path.join(PUBLIC, 'datasheets')
+INDEX_JSON = os.path.join(HERE, 'product-images.json')
 OUT_TS = os.path.join(ROOT, 'src', 'catalogue-scraped.ts')
 
 # ─────────────────────────────────────────────────────────────────────────
@@ -134,6 +135,60 @@ def slugify(text):
     text = text.lower()
     text = re.sub(r'[^a-z0-9]+', '-', text).strip('-')
     return re.sub(r'-+', '-', text)
+
+
+# Rank real product photos above technical dimension/diagram drawings so a
+# genuine render is always chosen as the hero image. 'banner/teaser' shots are
+# also demoted (they're marketing headers, not the fixture).
+IMAGE_TYPE_RANK = {
+    'hero': 0,
+    'product': 1,
+    'detail': 2,
+    'application': 3,
+    'case study': 4,
+    'banner/teaser': 5,
+    'diagram/drawing': 6,
+}
+_IMAGE_TYPE_LOADED = None
+
+
+def load_image_type_index():
+    """Return {(folder_path, filename): type} from data-scrape/product-images.json.
+
+    Folder paths use the index convention ('products/<Category>/<NN-name>').
+    """
+    global _IMAGE_TYPE_LOADED
+    if _IMAGE_TYPE_LOADED is not None:
+        return _IMAGE_TYPE_LOADED
+    lookup = {}
+    if os.path.exists(INDEX_JSON):
+        try:
+            data = json.load(open(INDEX_JSON, encoding='utf-8'))
+            for item in data.get('images', []):
+                path = item.get('path', '')
+                folder = path.split('/images/')[0]
+                lookup[(folder, item.get('file'))] = item.get('type')
+        except Exception:
+            lookup = {}
+    _IMAGE_TYPE_LOADED = lookup
+    return lookup
+
+
+def image_type_rank(folder_rel, fname, kind):
+    """Rank for ordering a product's images (lower sorts first).
+
+    Falls back to the 'kind' field when the index has no entry.
+    """
+    lookup = load_image_type_index()
+    t = lookup.get((folder_rel, fname))
+    if t:
+        return IMAGE_TYPE_RANK.get(t, 5)
+    # Heuristic fallback: filename contains dimension/drawing words.
+    if re.search(r'\b(dim|drawing|schaltplan|spec|diagram|datasheet)\b', fname.lower()):
+        return 6
+    if kind in ('doc',):
+        return 6
+    return 5
 
 
 def clean_text(s):
@@ -674,8 +729,18 @@ def main():
         dest_dir = os.path.join(SCRAPED_IMG, cat_id, slug)
         image_objs = []
         if os.path.isdir(img_dir) and images:
-            # Order: hero first, then the rest in the scraped order.
-            ordered = sorted(images, key=lambda i: (0 if i.get('hero') else 1, i.get('file', '')))
+            # Order: real product/hero photos first, dimension drawings last.
+            # Within the same type, keep the scraper's hero flag first, then
+            # the scraped order. This guarantees a genuine render is the hero.
+            index_folder = f'products/{cat_dir}/{entry}'
+            ordered = sorted(
+                images,
+                key=lambda i: (
+                    image_type_rank(index_folder, i.get('file', ''), (i.get('kind') or '')),
+                    0 if i.get('hero') else 1,
+                    i.get('file', ''),
+                ),
+            )
             os.makedirs(dest_dir, exist_ok=True)
             for i in ordered:
                 fname = i['file']
