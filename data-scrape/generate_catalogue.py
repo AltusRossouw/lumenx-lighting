@@ -191,6 +191,106 @@ def image_type_rank(folder_rel, fname, kind):
     return 5
 
 
+# ── Datasheet payloads (server/datasheets-data/<slug>.json) ──
+# These are the hand-curated spec source for every product, used to backfill
+# products whose scrape produced no structured spec table.
+DASH_DATA_DIR = os.path.join(ROOT, 'server', 'datasheets-data')
+_DATASHEET_BY_NAME = None
+
+
+def norm_key(s):
+    return re.sub(r'[^a-z0-9]+', '', str(s or '').lower())
+
+
+def load_datasheet_index():
+    """Return {normalized_name: datasheet_payload} across datasheets-data.
+
+    Also includes an alias by the file slug so we can look up directly.
+    """
+    global _DATASHEET_BY_NAME
+    if _DATASHEET_BY_NAME is not None:
+        return _DATASHEET_BY_NAME
+    idx = {}
+    if os.path.isdir(DASH_DATA_DIR):
+        for f in sorted(os.listdir(DASH_DATA_DIR)):
+            if not f.endswith('.json'):
+                continue
+            try:
+                d = json.load(open(os.path.join(DASH_DATA_DIR, f), encoding='utf-8'))
+            except Exception:
+                continue
+            name = norm_key(d.get('name'))
+            if name:
+                idx.setdefault(name, d)
+            idx.setdefault(norm_key(f[:-5]), d)
+    _DATASHEET_BY_NAME = idx
+    return idx
+
+
+def datasheet_for(name):
+    """Return the datasheet payload for a product name, or None."""
+    return load_datasheet_index().get(norm_key(name))
+
+
+def flatten_datasheet_specs(ds):
+    """Flatten a datasheet's stats + columns.*.rows into [{label, value}]."""
+    rows = []
+    seen = set()
+    for s in ds.get('stats', []) or []:
+        label = (s.get('label') or '').strip()
+        value = (s.get('value') or '').strip()
+        unit = (s.get('unit') or '').strip()
+        if label and value:
+            if unit and not re.search(r'\d\s*' + re.escape(unit) + r'\s*$', value):
+                value = f'{value} {unit}'.strip()
+            key = norm_key(label)
+            if key not in seen:
+                seen.add(key)
+                rows.append({'label': label, 'value': value})
+    for section in ds.get('columns', {}) or {}:
+        for col in (ds['columns'].get(section) or []):
+            for r in col.get('rows', []) or []:
+                label = (r.get('label') or '').strip()
+                value = (r.get('value') or '').strip()
+                if label and value and value != '—':
+                    key = norm_key(label)
+                    if key not in seen:
+                        seen.add(key)
+                        rows.append({'label': label, 'value': value})
+    return rows
+
+
+def merge_specs(primary, secondary):
+    """Merge secondary spec rows into primary, preserving order and deduping."""
+    out = list(primary)
+    seen = {norm_key(s['label']) for s in out}
+    for s in secondary:
+        if norm_key(s['label']) not in seen:
+            seen.add(norm_key(s['label']))
+            out.append(s)
+    return out
+
+
+def parse_spec_dump(text):
+    """Parse a colon-delimited 'Label: value' spec dump into [{label, value}]."""
+    text = clean_text(text or '')
+    if not text or ':' not in text:
+        return []
+    # Split on '<Label>: <value>' where the label is a short capitalized phrase.
+    # Use a lookahead so values that contain digits/symbols aren't split.
+    parts = re.split(r'(?=(?:[A-Z][a-zA-Z]+(?:\s+[A-Za-z]+)*):)', text)
+    out = []
+    for part in parts:
+        m = re.match(r'^\s*([A-Z][A-Za-z0-9 /()\-]*?)\s*:\s*(.*)$', part.strip())
+        if not m:
+            continue
+        label = clean_text(m.group(1).rstrip(':'))
+        value = clean_text(m.group(2))
+        if label and value and value != '—':
+            out.append({'label': label, 'value': value})
+    return out
+
+
 def clean_text(s):
     if not s:
         return ''
@@ -667,7 +767,12 @@ def main():
             n += 1
         used.add(slug)
 
-        # Specs: README table first, fall back to scrape.specs.
+        # Datasheet payload (hand-curated specs) — used to backfill products
+        # whose scrape produced no structured spec table.
+        ds = datasheet_for(name_clean) or datasheet_for(row.get('name') or '')
+
+        # Specs: README table first, then scrape.specs, then the authoritative
+        # datasheet payload, then a colon-delimited spec dump in the description.
         specs = parse_readme_specs(readme_path)
         if not specs:
             for s in pj.get('scrape', {}).get('specs', []):
@@ -675,9 +780,24 @@ def main():
                 value = s.get('value') or ''
                 if label and value and value != '—':
                     specs.append({'label': label, 'value': value})
+        if ds:
+            ds_specs = flatten_datasheet_specs(ds)
+        else:
+            ds_specs = []
+        if not specs and ds_specs:
+            specs = list(ds_specs)
+        elif specs and ds_specs and len(specs) < len(ds_specs):
+            specs = merge_specs(specs, ds_specs)
+        if not specs:
+            raw_desc = pj.get('scrape', {}).get('description') or ''
+            specs = parse_spec_dump(raw_desc)
 
         # Applications.
         apps = CATEGORY_APPLICATIONS.get(cat_id, ['Commercial', 'Industrial', 'Architectural'])
+        if ds and ds.get('applications'):
+            ds_apps = [clean_text(a) for a in ds['applications'] if clean_text(a)]
+            if ds_apps:
+                apps = list(dict.fromkeys(ds_apps))
 
         # Description.
         description = clean_description(read_readme_line(readme_path, 'Description'))
@@ -687,6 +807,11 @@ def main():
             page_desc = clean_text(read_readme_line(readme_path, 'Page description'))
             if page_desc and page_desc not in ('—', '-', '–'):
                 description = page_desc
+        ds_overview = clean_text(' '.join(ds['overview'])) if (ds and ds.get('overview')) else ''
+        # Replace near-empty/junk descriptions with the curated datasheet overview.
+        if (not description or len(description) < 20 or description in ('Group.', '—', '-', '–')
+                or description.lower() in ('none', 'n/a', 'see description')) and ds_overview:
+            description = ds_overview
         # If the scraped description is a raw spec dump or empty, build a clean
         # readable description from the structured data.
         if is_spec_dump(description):
@@ -694,13 +819,15 @@ def main():
                 # A short real sentence — keep it, just ensure it's readable.
                 description = description.strip(' -–—')
             else:
-                description = build_clean_description(
+                description = ds_overview or build_clean_description(
                     name_clean, cat_meta['title'], row.get('supplier', ''), specs, apps)
         if not description:
             members = pj.get('scrape', {}).get('members') or []
-            if members:
+            if members and not ds_overview:
                 description = f'The {name_clean} range from {row.get("supplier", "")} includes {len(members)} products.' \
                               f' Contact our team for full details on each configuration.'
+            elif ds_overview:
+                description = ds_overview
             else:
                 description = build_clean_description(name_clean, cat_meta['title'], row.get('supplier', ''), specs, apps)
 
@@ -719,6 +846,11 @@ def main():
             features = [clean_text(f) for f in features if f]
         else:
             features = derive_features(specs, description, name_clean)
+        # Prefer the authoritative datasheet features when available.
+        if ds and ds.get('features'):
+            ds_feats = [clean_text(f) for f in ds['features'] if clean_text(f)]
+            if ds_feats:
+                features = list(dict.fromkeys(ds_feats))[:8]
 
         # Warranty.
         warranty = derive_warranty(specs, description)
