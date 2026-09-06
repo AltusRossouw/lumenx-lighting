@@ -17,3 +17,11 @@ public/downloads/ies/OrbitX/
 public/downloads/ies/Pioled/
 public/downloads/ies/Rubicon/
 .tools/
+
+# Scrape source artifacts — the raw downloaded product folders and the scraper's
+# node_modules are bulky and regenerateable. The catalogue that the site ships
+# (src/catalogue-scraped.ts + public/scraped + public/datasheets/<slug>.pdf) is
+# produced by data-scrape/generate_catalogue.py, which IS committed.
+data-scrape/products/
+data-scrape/tools/
+data-scrape/product-lists/

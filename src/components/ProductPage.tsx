@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { getCategory, getProduct, getProductsByCategory, datasheetDownloadUrl } from '../products';
+import { getCategory, getProduct, getProductsByCategory, getProductImages, datasheetDownloadUrl } from '../products';
 import { api } from '../lib/api';
 import {
   ArrowLeft,
@@ -16,6 +16,7 @@ import {
   Target,
 } from 'lucide-react';
 import { PageHeroBackground } from './animations';
+import { ProductImageGallery } from './ProductImageGallery';
 
 interface ProductPageProps {
   categoryId: string;
@@ -57,8 +58,8 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
   const prev = index > 0 ? siblings[index - 1] : undefined;
   const next = index >= 0 && index < siblings.length - 1 ? siblings[index + 1] : undefined;
 
-  // White-background product renders should never be cropped — show them fully.
-  const isRender = product.imageUrl.startsWith('/product-images/');
+  // Ordered gallery (hero first) drives the carousel.
+  const galleryImages = getProductImages(product);
 
   return (
     <div className="min-h-screen">
@@ -78,7 +79,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
             <span className="text-white">{product.name}</span>
           </nav>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             {/* Copy */}
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <div className="flex flex-wrap items-center gap-3 mb-4">
@@ -117,26 +118,18 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
               </div>
             </motion.div>
 
-            {/* Image */}
+            {/* Image gallery / carousel */}
             <motion.div
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7 }}
-              className="relative overflow-hidden rounded-2xl gradient-border-card card-lift"
+              className="relative"
             >
-              <img
-                src={product.imageUrl}
-                alt={product.name}
-                className={`w-full h-72 sm:h-96 ${isRender ? 'object-contain p-5' : 'object-cover'}`}
+              <ProductImageGallery
+                images={galleryImages}
+                name={product.name}
+                aspectClass="aspect-[4/3]"
               />
-              {!isRender && (
-                <div className="absolute inset-0 bg-gradient-to-t from-[#06090F]/70 via-transparent to-transparent pointer-events-none" />
-              )}
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                <span className="px-3 py-1 text-[10px] font-mono tracking-wider uppercase rounded-full border backdrop-blur bg-[#06090F]/80 border-white/10 text-slate-300">
-                  {product.supplier} · {category.title}
-                </span>
-              </div>
             </motion.div>
           </div>
         </div>
@@ -156,23 +149,37 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
               </div>
 
               <div className="overflow-hidden rounded-2xl border border-[#1E293B] bg-[#0A0D14]">
-                {product.specs.map((spec, i) => (
-                  <div
-                    key={spec.label}
-                    className={`grid grid-cols-2 sm:grid-cols-[240px_1fr] ${
-                      i !== 0 ? 'border-t border-[#1E293B]/60' : ''
-                    }`}
-                  >
-                    <div className="px-4 sm:px-6 py-3.5 bg-white/[0.02]">
-                      <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider">
-                        {spec.label}
-                      </span>
+                {product.specs.length > 0 ? (
+                  product.specs.map((spec, i) => (
+                    <div
+                      key={spec.label}
+                      className={`grid grid-cols-2 sm:grid-cols-[240px_1fr] ${
+                        i !== 0 ? 'border-t border-[#1E293B]/60' : ''
+                      }`}
+                    >
+                      <div className="px-4 sm:px-6 py-3.5 bg-white/[0.02]">
+                        <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider">
+                          {spec.label}
+                        </span>
+                      </div>
+                      <div className="px-4 sm:px-6 py-3.5">
+                        <span className="text-sm text-white font-medium">{spec.value}</span>
+                      </div>
                     </div>
-                    <div className="px-4 sm:px-6 py-3.5">
-                      <span className="text-sm text-white font-medium">{spec.value}</span>
-                    </div>
+                  ))
+                ) : (
+                  <div className="px-6 py-8 text-center">
+                    <p className="text-sm text-slate-400 font-sans font-light">
+                      Full technical data for the {product.name} is available on request.
+                    </p>
+                    <Link
+                      to="/contact"
+                      className="mt-4 inline-flex text-sm text-primary hover:underline font-sans"
+                    >
+                      Contact our technical team →
+                    </Link>
                   </div>
-                ))}
+                )}
               </div>
 
               {/* Downloads */}

@@ -46,6 +46,7 @@ COPY datasheet-template ./datasheet-template
 COPY public/logo.png ./public/logo.png
 COPY public/logo-wide.png ./public/logo-wide.png
 COPY public/product-images ./public/product-images
+COPY public/scraped ./public/scraped
 
 # Run as a non-root user.
 RUN addgroup -S nodejs && adduser -S nodejs -G nodejs && \

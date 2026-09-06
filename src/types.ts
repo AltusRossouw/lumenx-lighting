@@ -12,6 +12,15 @@ export interface ProductSpec {
   value: string;
 }
 
+/** A single gallery image for a product, with fit hints for the carousel. */
+export interface ProductImage {
+  src: string;
+  alt?: string;
+  /** 'contain' = product render on white/transparent (show fully);
+   *  'cover' = application/lifestyle photo (fill the frame). */
+  fit?: 'contain' | 'cover';
+}
+
 /** Full, detailed product record for the catalogue. */
 export interface Product {
   /** URL-safe unique slug (unique within its category). */
@@ -33,6 +42,8 @@ export interface Product {
   applications: string[];
   /** Product image or illustrative category image. */
   imageUrl: string;
+  /** Full ordered gallery of product images (hero first). Falls back to [imageUrl]. */
+  images?: ProductImage[];
   /** Local datasheet download. */
   pdfUrl?: string;
   /** Local photometric (.ies) download. */

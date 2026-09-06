@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { getCategory, getProductsByCategory } from '../products';
+import { getCategory, getProductsByCategory, getProductImages } from '../products';
 import { ArrowLeft, ArrowRight, Check, Factory, Search, X } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
@@ -203,15 +203,16 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
                   {/* Image */}
                   <Link
                     to={`/products/${category.id}/${product.slug}`}
-                    className="relative h-56 overflow-hidden block"
+                    className="relative h-56 overflow-hidden block bg-[#0A101A]"
                     aria-label={product.name}
                   >
+                    {/* hero image from the gallery; renders use object-contain */}
                     <img
-                      src={product.imageUrl}
+                      src={getProductImages(product)[0].src}
                       alt={product.name}
                       loading="lazy"
                       className={`absolute inset-0 w-full h-full ${
-                        product.imageUrl.startsWith('/product-images/')
+                        getProductImages(product)[0].fit === 'contain'
                           ? 'object-contain p-4'
                           : 'object-cover group-hover:scale-105'
                       } transition-transform duration-700`}
