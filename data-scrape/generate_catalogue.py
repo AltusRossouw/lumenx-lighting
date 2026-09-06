@@ -359,6 +359,56 @@ FEATURE_LABEL_TEMPLATES = [
 ]
 
 
+# Keys that may legitimately appear embedded at the start of a spec label
+# (e.g. "IP Rating", "Nominal Lifetime"). Everything else must match exactly.
+PREFIX_KEYS = {'ip rating', 'ip', 'nominal lifetime', 'colour temperature', 'beam angle',
+               'input voltage', 'lumen output', 'led chips', 'surge protection'}
+
+
+def apply_feature_template(lkey, tmpl, value):
+    """Apply a feature template without duplicating a prefix already in value.
+
+    e.g. ('IP Rating', 'IP{} rated') + value 'IP20' -> 'IP20 rated' (not
+    'IPIP20 rated'); ('Warranty', '{} warranty') + value '5 year warranty...'
+    -> the raw warranty text (not '... warranty warranty').
+    """
+    value = clean_text(value or '')
+    if not value:
+        return None
+    # Skip cross-reference values that are not a real attribute (e.g. "See
+    # Configurations table", "Please complete the selection above").
+    if re.search(r'\b(see|refer to|please complete|choose|select)\b', value, re.I):
+        return None
+    # If the value already begins with the template's leading keyword, don't
+    # prepend it again. We infer the leading keyword from the template (text
+    # before the '{').
+    leading = tmpl.split('{')[0].strip()
+    if leading:
+        # Normalise case for the comparison.
+        if value.lower().strip().startswith(leading.lower().strip()):
+            # Already prefixed — just trim any trailing keyword from the value
+            # if the template repeats it at the end, otherwise return value.
+            trailing = tmpl.split('}')[-1].strip()
+            if trailing:
+                t = trailing.lower().strip()
+                low = value.lower().strip()
+                # Avoid "X ... warranty warranty": if the value already ends in
+                # the trailing keyword, return it verbatim.
+                if not low.endswith(t):
+                    return f'{value} {trailing}'.strip()
+                return value.strip()
+            return value.strip()
+    phrase = tmpl.format(value)
+    phrase = clean_text(phrase)
+    # Detect & remove accidental doubled trailing keyword (e.g. 'warranty warranty').
+    words = phrase.split()
+    if len(words) >= 2 and words[-1].lower() == words[-2].lower():
+        phrase = ' '.join(words[:-1])
+    # Tidy trailing punctuation/comma from scraped values ("White," -> "White").
+    phrase = re.sub(r'\s*[,\s]+\s*$', '', phrase).strip()
+    return phrase
+
+
 def derive_features(specs, description, name=''):
     features = []
     seen = set()
@@ -366,15 +416,17 @@ def derive_features(specs, description, name=''):
         label = s['label']
         value = s['value']
         for lkey, tmpl in FEATURE_LABEL_TEMPLATES:
-            if label.lower() == lkey.lower():
-                phrase = tmpl.format(value)
-                if phrase not in seen and len(value) < 80:
-                    seen.add(phrase)
-                    features.append(phrase)
-                break
-            elif label.lower().startswith(lkey.lower()):
-                phrase = tmpl.format(value)
-                if phrase not in seen and len(value) < 80:
+            lk = lkey.lower()
+            lab = label.lower()
+            # Only allow startswith matching for the curated prefix keys;
+            # otherwise require an exact label match to avoid mis-templating.
+            if lk in PREFIX_KEYS:
+                match = lab.startswith(lk)
+            else:
+                match = lab == lk
+            if match:
+                phrase = apply_feature_template(lkey, tmpl, value)
+                if phrase and phrase not in seen and len(value) < 80:
                     seen.add(phrase)
                     features.append(phrase)
                 break
@@ -650,6 +702,11 @@ def main():
                 fit = 'contain' if (is_render and not too_wide and not too_tall) else 'cover'
                 alt = i.get('alt') or fname
                 image_objs.append({'src': f'/scraped/{cat_id}/{slug}/{fname}', 'fit': fit, 'alt': alt})
+            # Cap the gallery so a collection page with many tiny member-card
+            # thumbnails doesn't overflow the carousel. Keep the hero + first
+            # 11 (12 total); they're the most representative variants.
+            if len(image_objs) > 12:
+                image_objs = image_objs[:12]
         if not image_objs:
             # Fallback placeholder so the page still renders.
             image_objs = [{'src': f'/product-images/categories/{cat_id}.jpg', 'fit': 'cover', 'alt': name_clean}]
