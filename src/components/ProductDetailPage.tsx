@@ -206,16 +206,12 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
                     className="relative h-56 overflow-hidden block bg-[#0A101A]"
                     aria-label={product.name}
                   >
-                    {/* hero image from the gallery; renders use object-contain */}
+                    {/* hero image — always show the whole product (no crop) */}
                     <img
                       src={getProductImages(product)[0].src}
                       alt={product.name}
                       loading="lazy"
-                      className={`absolute inset-0 w-full h-full ${
-                        getProductImages(product)[0].fit === 'contain'
-                          ? 'object-contain p-4'
-                          : 'object-cover group-hover:scale-105'
-                      } transition-transform duration-700`}
+                      className="absolute inset-0 w-full h-full object-contain p-4 transition-transform duration-700"
                     />
                     <div className="absolute top-4 left-4 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#06090F]/80 backdrop-blur border border-white/10 text-[10px] font-mono uppercase tracking-wider text-primary">
                       <Factory className="w-3 h-3" />

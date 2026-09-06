@@ -686,22 +686,25 @@ def main():
                 if not os.path.exists(dst):
                     shutil.copy2(src, dst)
                     copied_images += 1
-                # Decide fit: transparent PNG/product renders get 'contain';
-                # wide lifestyle/application photos get 'cover'.
+                # Decide fit: show the whole product (contain) for product-like
+                # images; only fill the frame (cover) for genuine lifestyle /
+                # application scenes. We don't know the photo content, so:
+                #  - PNG/WebP renders and dimension drawings -> contain
+                #  - JPG/avif product & hero shots -> contain (show the fixture)
+                #  - application / case-study / banner images -> cover
                 w = i.get('w') or 0
                 h = i.get('h') or 0
                 kind = (i.get('kind') or '').lower()
                 ext = os.path.splitext(fname)[1].lower()
-                is_render = kind in ('hero', 'product') and ext in ('.png', '.webp')
-                if w and h and h > 0:
-                    ratio = w / h
-                    too_wide = ratio > 1.6
-                    too_tall = ratio < 0.75
-                else:
-                    too_wide = too_tall = False
-                fit = 'contain' if (is_render and not too_wide and not too_tall) else 'cover'
+                scene_kind = kind in ('application', 'case study', 'banner', 'banner/teaser')
+                is_render = ext in ('.png', '.webp') and kind in ('hero', 'gallery', 'doc', 'product')
+                # Product/hero JPGs are usually the fixture on a clean background —
+                # show them fully so nothing is cropped.
+                is_product_photo = kind in ('hero', 'gallery', 'product') and ext in ('.jpg', '.jpeg', '.avif')
+                fit = 'cover' if scene_kind else ('contain' if (is_render or is_product_photo) else 'cover')
                 alt = i.get('alt') or fname
-                image_objs.append({'src': f'/scraped/{cat_id}/{slug}/{fname}', 'fit': fit, 'alt': alt})
+                image_objs.append({'src': f'/scraped/{cat_id}/{slug}/{fname}',
+                                   'fit': fit, 'alt': alt, 'width': w or None, 'height': h or None})
             # Cap the gallery so a collection page with many tiny member-card
             # thumbnails doesn't overflow the carousel. Keep the hero + first
             # 11 (12 total); they're the most representative variants.
@@ -793,7 +796,12 @@ def main():
         lines.append(f"    imageUrl: {js_str(p['imageUrl'])},// hero")
         lines.append('    images: [')
         for im in p['images']:
-            lines.append(f"      {{ src: {js_str(im['src'])}, fit: {js_str(im.get('fit', 'cover'))}, alt: {js_str(im.get('alt', ''))} }},")
+            w = im.get('width') or 0
+            h = im.get('height') or 0
+            extra = ''
+            if w and h:
+                extra = f", width: {w}, height: {h}"
+            lines.append(f"      {{ src: {js_str(im['src'])}, fit: {js_str(im.get('fit', 'cover'))}, alt: {js_str(im.get('alt', ''))}{extra} }},")
         lines.append('    ],')
         if p.get('pdfUrl'):
             lines.append(f"    pdfUrl: {js_str(p['pdfUrl'])},")

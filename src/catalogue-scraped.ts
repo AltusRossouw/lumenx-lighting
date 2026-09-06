@@ -175,8 +175,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/bulkheads/rhea/01-1-1-800x383.png",// hero
     images: [
-      { src: "/scraped/bulkheads/rhea/01-1-1-800x383.png", fit: "cover", alt: "01-1-1-800x383.png" },
-      { src: "/scraped/bulkheads/rhea/02-rhea-bulkhead-dimensions.png", fit: "cover", alt: "02-rhea-bulkhead-dimensions.png" },
+      { src: "/scraped/bulkheads/rhea/01-1-1-800x383.png", fit: "contain", alt: "01-1-1-800x383.png", width: 800, height: 383 },
+      { src: "/scraped/bulkheads/rhea/02-rhea-bulkhead-dimensions.png", fit: "contain", alt: "02-rhea-bulkhead-dimensions.png", width: 610, height: 382 },
     ],
     pdfUrl: "/api/download/datasheet/rhea.pdf",
     warranty: "6 years",
@@ -237,8 +237,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/bulkheads/phoebe/01-2-1-800x431.png",// hero
     images: [
-      { src: "/scraped/bulkheads/phoebe/01-2-1-800x431.png", fit: "cover", alt: "01-2-1-800x431.png" },
-      { src: "/scraped/bulkheads/phoebe/02-phoebe-bulkhead-dimensions.png", fit: "cover", alt: "02-phoebe-bulkhead-dimensions.png" },
+      { src: "/scraped/bulkheads/phoebe/01-2-1-800x431.png", fit: "contain", alt: "01-2-1-800x431.png", width: 800, height: 431 },
+      { src: "/scraped/bulkheads/phoebe/02-phoebe-bulkhead-dimensions.png", fit: "contain", alt: "02-phoebe-bulkhead-dimensions.png", width: 610, height: 382 },
     ],
     pdfUrl: "/api/download/datasheet/phoebe.pdf",
     warranty: "8 years",
@@ -285,7 +285,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/bulkheads/hero/01-pioled-lighting-hero-ip65-led-bulkhead-3cct-round-black-and-white.jpg",// hero
     images: [
-      { src: "/scraped/bulkheads/hero/01-pioled-lighting-hero-ip65-led-bulkhead-3cct-round-black-and-white.jpg", fit: "cover", alt: "01-pioled-lighting-hero-ip65-led-bulkhead-3cct-round-black-and-white.jpg" },
+      { src: "/scraped/bulkheads/hero/01-pioled-lighting-hero-ip65-led-bulkhead-3cct-round-black-and-white.jpg", fit: "contain", alt: "01-pioled-lighting-hero-ip65-led-bulkhead-3cct-round-black-and-white.jpg", width: 1024, height: 1024 },
     ],
     pdfUrl: "/api/download/datasheet/hero.pdf",
     warranty: "5-year warranty",
@@ -311,9 +311,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/bulkheads/bunker/member-01-pioled-lighting-ic014e-12-16-18w-ip65-4cct-bunker-die-cast-aluminium-b.png",// hero
     images: [
-      { src: "/scraped/bulkheads/bunker/member-01-pioled-lighting-ic014e-12-16-18w-ip65-4cct-bunker-die-cast-aluminium-b.png", fit: "cover", alt: "member-01-pioled-lighting-ic014e-12-16-18w-ip65-4cct-bunker-die-cast-aluminium-b.png" },
-      { src: "/scraped/bulkheads/bunker/member-02-pioled-lighting-ic018-bunker-aluminium-ip65-bulkhead-black-square-600x.png", fit: "cover", alt: "member-02-pioled-lighting-ic018-bunker-aluminium-ip65-bulkhead-black-square-600x.png" },
-      { src: "/scraped/bulkheads/bunker/member-03-pioled-lighting-ic014-bunker-aluminium-ip65-bulkhead-black-1.png", fit: "cover", alt: "member-03-pioled-lighting-ic014-bunker-aluminium-ip65-bulkhead-black-1.png" },
+      { src: "/scraped/bulkheads/bunker/member-01-pioled-lighting-ic014e-12-16-18w-ip65-4cct-bunker-die-cast-aluminium-b.png", fit: "contain", alt: "member-01-pioled-lighting-ic014e-12-16-18w-ip65-4cct-bunker-die-cast-aluminium-b.png", width: 600, height: 600 },
+      { src: "/scraped/bulkheads/bunker/member-02-pioled-lighting-ic018-bunker-aluminium-ip65-bulkhead-black-square-600x.png", fit: "contain", alt: "member-02-pioled-lighting-ic018-bunker-aluminium-ip65-bulkhead-black-square-600x.png", width: 600, height: 600 },
+      { src: "/scraped/bulkheads/bunker/member-03-pioled-lighting-ic014-bunker-aluminium-ip65-bulkhead-black-1.png", fit: "contain", alt: "member-03-pioled-lighting-ic014-bunker-aluminium-ip65-bulkhead-black-1.png", width: 1024, height: 1024 },
     ],
   },
   {
@@ -339,8 +339,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/downlights/diffused-downlight/01-aegeon.jpg",// hero
     images: [
-      { src: "/scraped/downlights/diffused-downlight/01-aegeon.jpg", fit: "cover", alt: "01-aegeon.jpg" },
-      { src: "/scraped/downlights/diffused-downlight/02-aegeon-downlight.jpg", fit: "cover", alt: "02-aegeon-downlight.jpg" },
+      { src: "/scraped/downlights/diffused-downlight/01-aegeon.jpg", fit: "contain", alt: "01-aegeon.jpg", width: 2048, height: 1409 },
+      { src: "/scraped/downlights/diffused-downlight/02-aegeon-downlight.jpg", fit: "contain", alt: "02-aegeon-downlight.jpg", width: 1600, height: 1200 },
     ],
   },
   {
@@ -366,8 +366,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/downlights/cob-adjustable-downlight/01-aegeon.jpg",// hero
     images: [
-      { src: "/scraped/downlights/cob-adjustable-downlight/01-aegeon.jpg", fit: "cover", alt: "01-aegeon.jpg" },
-      { src: "/scraped/downlights/cob-adjustable-downlight/02-aegeon-downlight.jpg", fit: "cover", alt: "02-aegeon-downlight.jpg" },
+      { src: "/scraped/downlights/cob-adjustable-downlight/01-aegeon.jpg", fit: "contain", alt: "01-aegeon.jpg", width: 2048, height: 1409 },
+      { src: "/scraped/downlights/cob-adjustable-downlight/02-aegeon-downlight.jpg", fit: "contain", alt: "02-aegeon-downlight.jpg", width: 1600, height: 1200 },
     ],
   },
   {
@@ -406,12 +406,12 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/downlights/cob-anti-glare-downlight/02-cob-dr-s-dimensions-1.png",// hero
     images: [
-      { src: "/scraped/downlights/cob-anti-glare-downlight/02-cob-dr-s-dimensions-1.png", fit: "cover", alt: "02-cob-dr-s-dimensions-1.png" },
-      { src: "/scraped/downlights/cob-anti-glare-downlight/01-cob-dr-s.png", fit: "contain", alt: "01-cob-dr-s.png" },
-      { src: "/scraped/downlights/cob-anti-glare-downlight/03-cob-dr-m.png", fit: "cover", alt: "03-cob-dr-m.png" },
-      { src: "/scraped/downlights/cob-anti-glare-downlight/04-cob-dr-m-dimensions.png", fit: "cover", alt: "04-cob-dr-m-dimensions.png" },
-      { src: "/scraped/downlights/cob-anti-glare-downlight/05-cob-dr-l.png", fit: "cover", alt: "05-cob-dr-l.png" },
-      { src: "/scraped/downlights/cob-anti-glare-downlight/06-cob-dr-l-dimensions.png", fit: "cover", alt: "06-cob-dr-l-dimensions.png" },
+      { src: "/scraped/downlights/cob-anti-glare-downlight/02-cob-dr-s-dimensions-1.png", fit: "contain", alt: "02-cob-dr-s-dimensions-1.png", width: 1058, height: 1058 },
+      { src: "/scraped/downlights/cob-anti-glare-downlight/01-cob-dr-s.png", fit: "contain", alt: "01-cob-dr-s.png", width: 1000, height: 1000 },
+      { src: "/scraped/downlights/cob-anti-glare-downlight/03-cob-dr-m.png", fit: "contain", alt: "03-cob-dr-m.png", width: 1000, height: 1000 },
+      { src: "/scraped/downlights/cob-anti-glare-downlight/04-cob-dr-m-dimensions.png", fit: "contain", alt: "04-cob-dr-m-dimensions.png", width: 1058, height: 1058 },
+      { src: "/scraped/downlights/cob-anti-glare-downlight/05-cob-dr-l.png", fit: "contain", alt: "05-cob-dr-l.png", width: 1000, height: 1000 },
+      { src: "/scraped/downlights/cob-anti-glare-downlight/06-cob-dr-l-dimensions.png", fit: "contain", alt: "06-cob-dr-l-dimensions.png", width: 1058, height: 1058 },
     ],
     pdfUrl: "/api/download/datasheet/cob-anti-glare-downlight.pdf",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
@@ -453,7 +453,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/downlights/small-cob-anti-glare-downlight/01-x-tf8.jpg",// hero
     images: [
-      { src: "/scraped/downlights/small-cob-anti-glare-downlight/01-x-tf8.jpg", fit: "cover", alt: "01-x-tf8.jpg" },
+      { src: "/scraped/downlights/small-cob-anti-glare-downlight/01-x-tf8.jpg", fit: "contain", alt: "01-x-tf8.jpg", width: 1058, height: 1058 },
     ],
     pdfUrl: "/api/download/datasheet/small-cob-anti-glare-downlight.pdf",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
@@ -495,7 +495,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/downlights/cob-square-downlight/01-cob-sq1-scaled.jpg",// hero
     images: [
-      { src: "/scraped/downlights/cob-square-downlight/01-cob-sq1-scaled.jpg", fit: "cover", alt: "01-cob-sq1-scaled.jpg" },
+      { src: "/scraped/downlights/cob-square-downlight/01-cob-sq1-scaled.jpg", fit: "contain", alt: "01-cob-sq1-scaled.jpg", width: 2560, height: 2010 },
     ],
     pdfUrl: "/api/download/datasheet/cob-square-downlight.pdf",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
@@ -537,7 +537,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/downlights/cob-square-double-downlight/01-cob-sq2-scaled-e1585665645179.jpg",// hero
     images: [
-      { src: "/scraped/downlights/cob-square-double-downlight/01-cob-sq2-scaled-e1585665645179.jpg", fit: "cover", alt: "01-cob-sq2-scaled-e1585665645179.jpg" },
+      { src: "/scraped/downlights/cob-square-double-downlight/01-cob-sq2-scaled-e1585665645179.jpg", fit: "contain", alt: "01-cob-sq2-scaled-e1585665645179.jpg", width: 1861, height: 1058 },
     ],
     pdfUrl: "/api/download/datasheet/cob-square-double-downlight.pdf",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
@@ -585,8 +585,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/downlights/cob-square-triple-downlight/01-cob-r-sq3.jpg",// hero
     images: [
-      { src: "/scraped/downlights/cob-square-triple-downlight/01-cob-r-sq3.jpg", fit: "cover", alt: "01-cob-r-sq3.jpg" },
-      { src: "/scraped/downlights/cob-square-triple-downlight/02-cob-r-sq3-dimensions.jpg", fit: "cover", alt: "02-cob-r-sq3-dimensions.jpg" },
+      { src: "/scraped/downlights/cob-square-triple-downlight/01-cob-r-sq3.jpg", fit: "contain", alt: "01-cob-r-sq3.jpg", width: 1058, height: 1058 },
+      { src: "/scraped/downlights/cob-square-triple-downlight/02-cob-r-sq3-dimensions.jpg", fit: "contain", alt: "02-cob-r-sq3-dimensions.jpg", width: 1058, height: 1058 },
     ],
     pdfUrl: "/api/download/datasheet/cob-square-triple-downlight.pdf",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
@@ -635,7 +635,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/downlights/sauron/01-pioled-lighting-hd016-25-20-18-16w-sauron-recessed-round-led-downlight.jpg",// hero
     images: [
-      { src: "/scraped/downlights/sauron/01-pioled-lighting-hd016-25-20-18-16w-sauron-recessed-round-led-downlight.jpg", fit: "cover", alt: "01-pioled-lighting-hd016-25-20-18-16w-sauron-recessed-round-led-downlight.jpg" },
+      { src: "/scraped/downlights/sauron/01-pioled-lighting-hd016-25-20-18-16w-sauron-recessed-round-led-downlight.jpg", fit: "contain", alt: "01-pioled-lighting-hd016-25-20-18-16w-sauron-recessed-round-led-downlight.jpg", width: 1024, height: 1024 },
     ],
     pdfUrl: "/api/download/datasheet/sauron.pdf",
     warranty: "5-year warranty",
@@ -661,10 +661,10 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/downlights/legend/member-01-pioled-lighting-i063-35w-legend-recessed-round-led-downlight-3cct-ip44.jpg",// hero
     images: [
-      { src: "/scraped/downlights/legend/member-01-pioled-lighting-i063-35w-legend-recessed-round-led-downlight-3cct-ip44.jpg", fit: "cover", alt: "member-01-pioled-lighting-i063-35w-legend-recessed-round-led-downlight-3cct-ip44.jpg" },
-      { src: "/scraped/downlights/legend/member-02-pioled-lighting-i061-20w-legend-recessed-round-led-downlight-3cct-ip44.jpg", fit: "cover", alt: "member-02-pioled-lighting-i061-20w-legend-recessed-round-led-downlight-3cct-ip44.jpg" },
-      { src: "/scraped/downlights/legend/member-03-pioled-lighting-i060-10w-legend-recessed-round-led-downlight-3cct-ip44.jpg", fit: "cover", alt: "member-03-pioled-lighting-i060-10w-legend-recessed-round-led-downlight-3cct-ip44.jpg" },
-      { src: "/scraped/downlights/legend/member-04-pioled-lighting-r201-s8818.png", fit: "cover", alt: "member-04-pioled-lighting-r201-s8818.png" },
+      { src: "/scraped/downlights/legend/member-01-pioled-lighting-i063-35w-legend-recessed-round-led-downlight-3cct-ip44.jpg", fit: "contain", alt: "member-01-pioled-lighting-i063-35w-legend-recessed-round-led-downlight-3cct-ip44.jpg", width: 1024, height: 1024 },
+      { src: "/scraped/downlights/legend/member-02-pioled-lighting-i061-20w-legend-recessed-round-led-downlight-3cct-ip44.jpg", fit: "contain", alt: "member-02-pioled-lighting-i061-20w-legend-recessed-round-led-downlight-3cct-ip44.jpg", width: 1024, height: 1024 },
+      { src: "/scraped/downlights/legend/member-03-pioled-lighting-i060-10w-legend-recessed-round-led-downlight-3cct-ip44.jpg", fit: "contain", alt: "member-03-pioled-lighting-i060-10w-legend-recessed-round-led-downlight-3cct-ip44.jpg", width: 1024, height: 1024 },
+      { src: "/scraped/downlights/legend/member-04-pioled-lighting-r201-s8818.png", fit: "contain", alt: "member-04-pioled-lighting-r201-s8818.png", width: 1024, height: 1024 },
     ],
   },
   {
@@ -688,8 +688,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/downlights/gu10-downlight/member-01-pioled-lighting-d001-6-5w-vers-non-dimmable-gu10-3cct-1.jpg",// hero
     images: [
-      { src: "/scraped/downlights/gu10-downlight/member-01-pioled-lighting-d001-6-5w-vers-non-dimmable-gu10-3cct-1.jpg", fit: "cover", alt: "member-01-pioled-lighting-d001-6-5w-vers-non-dimmable-gu10-3cct-1.jpg" },
-      { src: "/scraped/downlights/gu10-downlight/member-04-pioled-lighting-im028-im102-14w-led-retrofit-module.png", fit: "cover", alt: "member-04-pioled-lighting-im028-im102-14w-led-retrofit-module.png" },
+      { src: "/scraped/downlights/gu10-downlight/member-01-pioled-lighting-d001-6-5w-vers-non-dimmable-gu10-3cct-1.jpg", fit: "contain", alt: "member-01-pioled-lighting-d001-6-5w-vers-non-dimmable-gu10-3cct-1.jpg", width: 1024, height: 1024 },
+      { src: "/scraped/downlights/gu10-downlight/member-04-pioled-lighting-im028-im102-14w-led-retrofit-module.png", fit: "contain", alt: "member-04-pioled-lighting-im028-im102-14w-led-retrofit-module.png", width: 1024, height: 1024 },
     ],
   },
   {
@@ -713,9 +713,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/downlights/surface-adjustable-downlight/member-01-pioled-lighting-hd026-35w-pakman-3cct-tiltable-surface-mount-downlight.jpg",// hero
     images: [
-      { src: "/scraped/downlights/surface-adjustable-downlight/member-01-pioled-lighting-hd026-35w-pakman-3cct-tiltable-surface-mount-downlight.jpg", fit: "cover", alt: "member-01-pioled-lighting-hd026-35w-pakman-3cct-tiltable-surface-mount-downlight.jpg" },
-      { src: "/scraped/downlights/surface-adjustable-downlight/member-02-pioled-lighting-hd024-25w-pakman-3cct-tiltable-surface-mount-downlight.jpg", fit: "cover", alt: "member-02-pioled-lighting-hd024-25w-pakman-3cct-tiltable-surface-mount-downlight.jpg" },
-      { src: "/scraped/downlights/surface-adjustable-downlight/member-03-pioled-lighting-hd022-15w-pakman-3cct-tiltable-surface-mount-downlight.jpg", fit: "cover", alt: "member-03-pioled-lighting-hd022-15w-pakman-3cct-tiltable-surface-mount-downlight.jpg" },
+      { src: "/scraped/downlights/surface-adjustable-downlight/member-01-pioled-lighting-hd026-35w-pakman-3cct-tiltable-surface-mount-downlight.jpg", fit: "contain", alt: "member-01-pioled-lighting-hd026-35w-pakman-3cct-tiltable-surface-mount-downlight.jpg", width: 1024, height: 1024 },
+      { src: "/scraped/downlights/surface-adjustable-downlight/member-02-pioled-lighting-hd024-25w-pakman-3cct-tiltable-surface-mount-downlight.jpg", fit: "contain", alt: "member-02-pioled-lighting-hd024-25w-pakman-3cct-tiltable-surface-mount-downlight.jpg", width: 1024, height: 1024 },
+      { src: "/scraped/downlights/surface-adjustable-downlight/member-03-pioled-lighting-hd022-15w-pakman-3cct-tiltable-surface-mount-downlight.jpg", fit: "contain", alt: "member-03-pioled-lighting-hd022-15w-pakman-3cct-tiltable-surface-mount-downlight.jpg", width: 1024, height: 1024 },
     ],
   },
   {
@@ -739,7 +739,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/downlights/mario/01-pioled-lighting-hd020-35w-mario-led-round-tilt-downlight-3cct-1.jpg",// hero
     images: [
-      { src: "/scraped/downlights/mario/01-pioled-lighting-hd020-35w-mario-led-round-tilt-downlight-3cct-1.jpg", fit: "cover", alt: "01-pioled-lighting-hd020-35w-mario-led-round-tilt-downlight-3cct-1.jpg" },
+      { src: "/scraped/downlights/mario/01-pioled-lighting-hd020-35w-mario-led-round-tilt-downlight-3cct-1.jpg", fit: "contain", alt: "01-pioled-lighting-hd020-35w-mario-led-round-tilt-downlight-3cct-1.jpg", width: 1024, height: 1024 },
     ],
     pdfUrl: "/api/download/datasheet/mario.pdf",
   },
@@ -795,7 +795,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/floods/flood/01-floodlight-800x720.png",// hero
     images: [
-      { src: "/scraped/floods/flood/01-floodlight-800x720.png", fit: "contain", alt: "01-floodlight-800x720.png" },
+      { src: "/scraped/floods/flood/01-floodlight-800x720.png", fit: "contain", alt: "01-floodlight-800x720.png", width: 800, height: 720 },
     ],
     pdfUrl: "/api/download/datasheet/flood.pdf",
     warranty: "5 years",
@@ -836,8 +836,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/highbays/ace/01-ace-s-black-with-transparent-background.png",// hero
     images: [
-      { src: "/scraped/highbays/ace/01-ace-s-black-with-transparent-background.png", fit: "contain", alt: "01-ace-s-black-with-transparent-background.png" },
-      { src: "/scraped/highbays/ace/02-ace-s-white-with-transparent-background.png", fit: "cover", alt: "02-ace-s-white-with-transparent-background.png" },
+      { src: "/scraped/highbays/ace/01-ace-s-black-with-transparent-background.png", fit: "contain", alt: "01-ace-s-black-with-transparent-background.png", width: 1920, height: 1483 },
+      { src: "/scraped/highbays/ace/02-ace-s-white-with-transparent-background.png", fit: "contain", alt: "02-ace-s-white-with-transparent-background.png", width: 1920, height: 1483 },
     ],
     pdfUrl: "/api/download/datasheet/ace.pdf",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
@@ -865,8 +865,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/highbays/umgeni/01-umgeni-linear-highbay.jpg",// hero
     images: [
-      { src: "/scraped/highbays/umgeni/01-umgeni-linear-highbay.jpg", fit: "cover", alt: "01-umgeni-linear-highbay.jpg" },
-      { src: "/scraped/highbays/umgeni/02-umgeni.jpg", fit: "cover", alt: "02-umgeni.jpg" },
+      { src: "/scraped/highbays/umgeni/01-umgeni-linear-highbay.jpg", fit: "contain", alt: "01-umgeni-linear-highbay.jpg", width: 4080, height: 1836 },
+      { src: "/scraped/highbays/umgeni/02-umgeni.jpg", fit: "contain", alt: "02-umgeni.jpg", width: 1536, height: 2048 },
     ],
   },
   {
@@ -891,11 +891,11 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/highbays/thermisto/02-rubicon-themistolinearlowbay-surface-suspension-extendeddatasheet.jpg",// hero
     images: [
-      { src: "/scraped/highbays/thermisto/02-rubicon-themistolinearlowbay-surface-suspension-extendeddatasheet.jpg", fit: "cover", alt: "02-rubicon-themistolinearlowbay-surface-suspension-extendeddatasheet.jpg" },
-      { src: "/scraped/highbays/thermisto/01-themisto-lowbay-55-surface-suspension.jpg", fit: "cover", alt: "01-themisto-lowbay-55-surface-suspension.jpg" },
-      { src: "/scraped/highbays/thermisto/03-hp-image-2.jpg", fit: "cover", alt: "03-hp-image-2.jpg" },
-      { src: "/scraped/highbays/thermisto/04-1571807246438.jpg", fit: "cover", alt: "04-1571807246438.jpg" },
-      { src: "/scraped/highbays/thermisto/05-1571807247040.jpg", fit: "cover", alt: "05-1571807247040.jpg" },
+      { src: "/scraped/highbays/thermisto/02-rubicon-themistolinearlowbay-surface-suspension-extendeddatasheet.jpg", fit: "contain", alt: "02-rubicon-themistolinearlowbay-surface-suspension-extendeddatasheet.jpg", width: 3341, height: 2077 },
+      { src: "/scraped/highbays/thermisto/01-themisto-lowbay-55-surface-suspension.jpg", fit: "contain", alt: "01-themisto-lowbay-55-surface-suspension.jpg", width: 2048, height: 1273 },
+      { src: "/scraped/highbays/thermisto/03-hp-image-2.jpg", fit: "contain", alt: "03-hp-image-2.jpg", width: 2048, height: 1365 },
+      { src: "/scraped/highbays/thermisto/04-1571807246438.jpg", fit: "contain", alt: "04-1571807246438.jpg", width: 1478, height: 1108 },
+      { src: "/scraped/highbays/thermisto/05-1571807247040.jpg", fit: "contain", alt: "05-1571807247040.jpg", width: 800, height: 599 },
     ],
   },
   {
@@ -939,7 +939,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/highbays/delta/01-pioled-lighting-hb1045-delta-padel-court-sq.png",// hero
     images: [
-      { src: "/scraped/highbays/delta/01-pioled-lighting-hb1045-delta-padel-court-sq.png", fit: "contain", alt: "01-pioled-lighting-hb1045-delta-padel-court-sq.png" },
+      { src: "/scraped/highbays/delta/01-pioled-lighting-hb1045-delta-padel-court-sq.png", fit: "contain", alt: "01-pioled-lighting-hb1045-delta-padel-court-sq.png", width: 1024, height: 1024 },
     ],
     pdfUrl: "/api/download/datasheet/delta.pdf",
     warranty: "5-year warranty",
@@ -989,16 +989,16 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/indoor-architectural/circular/02-circular-ld-109-amb-26-05-002.jpg",// hero
     images: [
-      { src: "/scraped/indoor-architectural/circular/02-circular-ld-109-amb-26-05-002.jpg", fit: "cover", alt: "02-circular-ld-109-amb-26-05-002.jpg" },
-      { src: "/scraped/indoor-architectural/circular/01-web-mainimage-circular-ld-91-gen-26-05-002.png", fit: "contain", alt: "01-web-mainimage-circular-ld-91-gen-26-05-002.png" },
-      { src: "/scraped/indoor-architectural/circular/03-circular-ld-110-amb-26-05.jpg", fit: "cover", alt: "03-circular-ld-110-amb-26-05.jpg" },
-      { src: "/scraped/indoor-architectural/circular/04-circular-ld-124-amb-26-l4.jpg", fit: "cover", alt: "04-circular-ld-124-amb-26-l4.jpg" },
-      { src: "/scraped/indoor-architectural/circular/05-circular-amb-26-05-002.jpg", fit: "cover", alt: "05-circular-amb-26-05-002.jpg" },
-      { src: "/scraped/indoor-architectural/circular/06-circular-amb-26-05.jpg", fit: "cover", alt: "06-circular-amb-26-05.jpg" },
-      { src: "/scraped/indoor-architectural/circular/07-circular-ld-90-amb-26-14.jpg", fit: "cover", alt: "07-circular-ld-90-amb-26-14.jpg" },
-      { src: "/scraped/indoor-architectural/circular/08-circular-ld-94-amb-26-05.jpg", fit: "cover", alt: "08-circular-ld-94-amb-26-05.jpg" },
-      { src: "/scraped/indoor-architectural/circular/09-web-mainimage-circular-vertic-ld-151-gen-26-05.png", fit: "cover", alt: "09-web-mainimage-circular-vertic-ld-151-gen-26-05.png" },
-      { src: "/scraped/indoor-architectural/circular/10-web-mainimage-cd6k-05.png", fit: "cover", alt: "10-web-mainimage-cd6k-05.png" },
+      { src: "/scraped/indoor-architectural/circular/02-circular-ld-109-amb-26-05-002.jpg", fit: "contain", alt: "02-circular-ld-109-amb-26-05-002.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/circular/01-web-mainimage-circular-ld-91-gen-26-05-002.png", fit: "contain", alt: "01-web-mainimage-circular-ld-91-gen-26-05-002.png", width: 480, height: 480 },
+      { src: "/scraped/indoor-architectural/circular/03-circular-ld-110-amb-26-05.jpg", fit: "contain", alt: "03-circular-ld-110-amb-26-05.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/circular/04-circular-ld-124-amb-26-l4.jpg", fit: "contain", alt: "04-circular-ld-124-amb-26-l4.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/circular/05-circular-amb-26-05-002.jpg", fit: "contain", alt: "05-circular-amb-26-05-002.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/circular/06-circular-amb-26-05.jpg", fit: "contain", alt: "06-circular-amb-26-05.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/circular/07-circular-ld-90-amb-26-14.jpg", fit: "contain", alt: "07-circular-ld-90-amb-26-14.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/circular/08-circular-ld-94-amb-26-05.jpg", fit: "contain", alt: "08-circular-ld-94-amb-26-05.jpg", width: 2000, height: 1333 },
+      { src: "/scraped/indoor-architectural/circular/09-web-mainimage-circular-vertic-ld-151-gen-26-05.png", fit: "contain", alt: "09-web-mainimage-circular-vertic-ld-151-gen-26-05.png", width: 480, height: 480 },
+      { src: "/scraped/indoor-architectural/circular/10-web-mainimage-cd6k-05.png", fit: "contain", alt: "10-web-mainimage-cd6k-05.png", width: 480, height: 480 },
     ],
   },
   {
@@ -1022,16 +1022,16 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/indoor-architectural/circular-vertical/07-aea62d768c704212-b0f107f9acc8036a-2000-1-6.png",// hero
     images: [
-      { src: "/scraped/indoor-architectural/circular-vertical/07-aea62d768c704212-b0f107f9acc8036a-2000-1-6.png", fit: "cover", alt: "07-aea62d768c704212-b0f107f9acc8036a-2000-1-6.png" },
-      { src: "/scraped/indoor-architectural/circular-vertical/01-web-mainimage-circular-vertic-ld-151-gen-26-05.png", fit: "contain", alt: "01-web-mainimage-circular-vertic-ld-151-gen-26-05.png" },
-      { src: "/scraped/indoor-architectural/circular-vertical/02-circular-vertic-amb-26-14.jpg", fit: "cover", alt: "02-circular-vertic-amb-26-14.jpg" },
-      { src: "/scraped/indoor-architectural/circular-vertical/03-web-mainimage-circular-ld-91-gen-26-05-002.png", fit: "cover", alt: "03-web-mainimage-circular-ld-91-gen-26-05-002.png" },
-      { src: "/scraped/indoor-architectural/circular-vertical/04-web-mainimage-cd6k-05.png", fit: "cover", alt: "04-web-mainimage-cd6k-05.png" },
-      { src: "/scraped/indoor-architectural/circular-vertical/08-475ac97f70084c78-b36cc1667e9a1107-2000-1-6.png", fit: "cover", alt: "08-475ac97f70084c78-b36cc1667e9a1107-2000-1-6.png" },
-      { src: "/scraped/indoor-architectural/circular-vertical/09-128040e21099424b-85c8fdde9ab402b0-2000-1-6.png", fit: "cover", alt: "09-128040e21099424b-85c8fdde9ab402b0-2000-1-6.png" },
-      { src: "/scraped/indoor-architectural/circular-vertical/10-3b3c1518c6b94e3a-90fb91e5480a1a5a-2000-1-6.png", fit: "cover", alt: "10-3b3c1518c6b94e3a-90fb91e5480a1a5a-2000-1-6.png" },
-      { src: "/scraped/indoor-architectural/circular-vertical/11-0daa68c5c9e3402c-ad31c0d7b040f632-2000-1-6.png", fit: "cover", alt: "11-0daa68c5c9e3402c-ad31c0d7b040f632-2000-1-6.png" },
-      { src: "/scraped/indoor-architectural/circular-vertical/12-15b3b15bc2644daa-b476e67c13c12a43-2000-1-6.png", fit: "cover", alt: "12-15b3b15bc2644daa-b476e67c13c12a43-2000-1-6.png" },
+      { src: "/scraped/indoor-architectural/circular-vertical/07-aea62d768c704212-b0f107f9acc8036a-2000-1-6.png", fit: "contain", alt: "07-aea62d768c704212-b0f107f9acc8036a-2000-1-6.png", width: 2000, height: 2000 },
+      { src: "/scraped/indoor-architectural/circular-vertical/01-web-mainimage-circular-vertic-ld-151-gen-26-05.png", fit: "contain", alt: "01-web-mainimage-circular-vertic-ld-151-gen-26-05.png", width: 480, height: 480 },
+      { src: "/scraped/indoor-architectural/circular-vertical/02-circular-vertic-amb-26-14.jpg", fit: "contain", alt: "02-circular-vertic-amb-26-14.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/circular-vertical/03-web-mainimage-circular-ld-91-gen-26-05-002.png", fit: "contain", alt: "03-web-mainimage-circular-ld-91-gen-26-05-002.png", width: 480, height: 480 },
+      { src: "/scraped/indoor-architectural/circular-vertical/04-web-mainimage-cd6k-05.png", fit: "contain", alt: "04-web-mainimage-cd6k-05.png", width: 480, height: 480 },
+      { src: "/scraped/indoor-architectural/circular-vertical/08-475ac97f70084c78-b36cc1667e9a1107-2000-1-6.png", fit: "contain", alt: "08-475ac97f70084c78-b36cc1667e9a1107-2000-1-6.png", width: 2000, height: 2000 },
+      { src: "/scraped/indoor-architectural/circular-vertical/09-128040e21099424b-85c8fdde9ab402b0-2000-1-6.png", fit: "contain", alt: "09-128040e21099424b-85c8fdde9ab402b0-2000-1-6.png", width: 2000, height: 2000 },
+      { src: "/scraped/indoor-architectural/circular-vertical/10-3b3c1518c6b94e3a-90fb91e5480a1a5a-2000-1-6.png", fit: "contain", alt: "10-3b3c1518c6b94e3a-90fb91e5480a1a5a-2000-1-6.png", width: 2000, height: 2000 },
+      { src: "/scraped/indoor-architectural/circular-vertical/11-0daa68c5c9e3402c-ad31c0d7b040f632-2000-1-6.png", fit: "contain", alt: "11-0daa68c5c9e3402c-ad31c0d7b040f632-2000-1-6.png", width: 2000, height: 2000 },
+      { src: "/scraped/indoor-architectural/circular-vertical/12-15b3b15bc2644daa-b476e67c13c12a43-2000-1-6.png", fit: "contain", alt: "12-15b3b15bc2644daa-b476e67c13c12a43-2000-1-6.png", width: 2000, height: 2000 },
     ],
   },
   {
@@ -1055,18 +1055,18 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/indoor-architectural/attic/02-attic-ld-37-amb-05.jpg",// hero
     images: [
-      { src: "/scraped/indoor-architectural/attic/02-attic-ld-37-amb-05.jpg", fit: "cover", alt: "02-attic-ld-37-amb-05.jpg" },
-      { src: "/scraped/indoor-architectural/attic/01-web-mainimage-attic-gen-05-006.png", fit: "contain", alt: "01-web-mainimage-attic-gen-05-006.png" },
-      { src: "/scraped/indoor-architectural/attic/03-attic-amb-05-002.jpg", fit: "cover", alt: "03-attic-amb-05-002.jpg" },
-      { src: "/scraped/indoor-architectural/attic/04-attic-amb-05-003.jpg", fit: "cover", alt: "04-attic-amb-05-003.jpg" },
-      { src: "/scraped/indoor-architectural/attic/05-attic-ld-40-amb-05-60-002.jpg", fit: "cover", alt: "05-attic-ld-40-amb-05-60-002.jpg" },
-      { src: "/scraped/indoor-architectural/attic/06-attic-amb-05-005.jpg", fit: "cover", alt: "06-attic-amb-05-005.jpg" },
-      { src: "/scraped/indoor-architectural/attic/07-attic-amb-05-008.jpg", fit: "cover", alt: "07-attic-amb-05-008.jpg" },
-      { src: "/scraped/indoor-architectural/attic/08-attic-amb-05-009.jpg", fit: "cover", alt: "08-attic-amb-05-009.jpg" },
-      { src: "/scraped/indoor-architectural/attic/09-attic-amb-14-002.jpg", fit: "cover", alt: "09-attic-amb-14-002.jpg" },
-      { src: "/scraped/indoor-architectural/attic/10-attic-amb-14.jpg", fit: "cover", alt: "10-attic-amb-14.jpg" },
-      { src: "/scraped/indoor-architectural/attic/11-attic-ld-40-amb-05-60-003.jpg", fit: "cover", alt: "11-attic-ld-40-amb-05-60-003.jpg" },
-      { src: "/scraped/indoor-architectural/attic/12-attic-ld-40-amb-05-60-004.jpg", fit: "cover", alt: "12-attic-ld-40-amb-05-60-004.jpg" },
+      { src: "/scraped/indoor-architectural/attic/02-attic-ld-37-amb-05.jpg", fit: "contain", alt: "02-attic-ld-37-amb-05.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/attic/01-web-mainimage-attic-gen-05-006.png", fit: "contain", alt: "01-web-mainimage-attic-gen-05-006.png", width: 480, height: 480 },
+      { src: "/scraped/indoor-architectural/attic/03-attic-amb-05-002.jpg", fit: "contain", alt: "03-attic-amb-05-002.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/attic/04-attic-amb-05-003.jpg", fit: "contain", alt: "04-attic-amb-05-003.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/attic/05-attic-ld-40-amb-05-60-002.jpg", fit: "contain", alt: "05-attic-ld-40-amb-05-60-002.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/attic/06-attic-amb-05-005.jpg", fit: "contain", alt: "06-attic-amb-05-005.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/attic/07-attic-amb-05-008.jpg", fit: "contain", alt: "07-attic-amb-05-008.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/attic/08-attic-amb-05-009.jpg", fit: "contain", alt: "08-attic-amb-05-009.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/attic/09-attic-amb-14-002.jpg", fit: "contain", alt: "09-attic-amb-14-002.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/attic/10-attic-amb-14.jpg", fit: "contain", alt: "10-attic-amb-14.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/attic/11-attic-ld-40-amb-05-60-003.jpg", fit: "contain", alt: "11-attic-ld-40-amb-05-60-003.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/attic/12-attic-ld-40-amb-05-60-004.jpg", fit: "contain", alt: "12-attic-ld-40-amb-05-60-004.jpg", width: 2500, height: 1558 },
     ],
   },
   {
@@ -1090,12 +1090,12 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/indoor-architectural/vetro/08-f2911c0a04a7459e-a515bd33aca78898-2000.png",// hero
     images: [
-      { src: "/scraped/indoor-architectural/vetro/08-f2911c0a04a7459e-a515bd33aca78898-2000.png", fit: "cover", alt: "08-f2911c0a04a7459e-a515bd33aca78898-2000.png" },
-      { src: "/scraped/indoor-architectural/vetro/01-web-mainimage-vetro-ld-540-gen-14-14.png", fit: "contain", alt: "01-web-mainimage-vetro-ld-540-gen-14-14.png" },
-      { src: "/scraped/indoor-architectural/vetro/02-vetro-ld-540-gen-14-14-3.jpg", fit: "cover", alt: "02-vetro-ld-540-gen-14-14-3.jpg" },
-      { src: "/scraped/indoor-architectural/vetro/03-ambients-sl-0002-vetro-ld-540-det-14-14.jpg", fit: "cover", alt: "03-ambients-sl-0002-vetro-ld-540-det-14-14.jpg" },
-      { src: "/scraped/indoor-architectural/vetro/04-ambients-sl-0000-vetro-ld-540-amb-14-14.jpg", fit: "cover", alt: "04-ambients-sl-0000-vetro-ld-540-amb-14-14.jpg" },
-      { src: "/scraped/indoor-architectural/vetro/05-ambients-sl-0001-vetro-ld-540-gen-14-14.jpg", fit: "cover", alt: "05-ambients-sl-0001-vetro-ld-540-gen-14-14.jpg" },
+      { src: "/scraped/indoor-architectural/vetro/08-f2911c0a04a7459e-a515bd33aca78898-2000.png", fit: "contain", alt: "08-f2911c0a04a7459e-a515bd33aca78898-2000.png", width: 2000, height: 1999 },
+      { src: "/scraped/indoor-architectural/vetro/01-web-mainimage-vetro-ld-540-gen-14-14.png", fit: "contain", alt: "01-web-mainimage-vetro-ld-540-gen-14-14.png", width: 480, height: 480 },
+      { src: "/scraped/indoor-architectural/vetro/02-vetro-ld-540-gen-14-14-3.jpg", fit: "contain", alt: "02-vetro-ld-540-gen-14-14-3.jpg", width: 2501, height: 1558 },
+      { src: "/scraped/indoor-architectural/vetro/03-ambients-sl-0002-vetro-ld-540-det-14-14.jpg", fit: "contain", alt: "03-ambients-sl-0002-vetro-ld-540-det-14-14.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/vetro/04-ambients-sl-0000-vetro-ld-540-amb-14-14.jpg", fit: "contain", alt: "04-ambients-sl-0000-vetro-ld-540-amb-14-14.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/indoor-architectural/vetro/05-ambients-sl-0001-vetro-ld-540-gen-14-14.jpg", fit: "contain", alt: "05-ambients-sl-0001-vetro-ld-540-gen-14-14.jpg", width: 2500, height: 1558 },
     ],
   },
   {
@@ -1119,18 +1119,18 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/indoor-architectural/fabric-tape/member-01-a546d4-1be930474538476397b983a4944286d6-mv2.jpg",// hero
     images: [
-      { src: "/scraped/indoor-architectural/fabric-tape/member-01-a546d4-1be930474538476397b983a4944286d6-mv2.jpg", fit: "cover", alt: "member-01-a546d4-1be930474538476397b983a4944286d6-mv2.jpg" },
-      { src: "/scraped/indoor-architectural/fabric-tape/member-02-a546d4-8d996821075949db93cbd3eb08b49484-mv2.jpg", fit: "cover", alt: "member-02-a546d4-8d996821075949db93cbd3eb08b49484-mv2.jpg" },
-      { src: "/scraped/indoor-architectural/fabric-tape/member-03-a546d4-9a1b9f4f59a244afbf3a280a79ac9845-mv2.jpg", fit: "cover", alt: "member-03-a546d4-9a1b9f4f59a244afbf3a280a79ac9845-mv2.jpg" },
-      { src: "/scraped/indoor-architectural/fabric-tape/member-04-a546d4-88c0b881cc5c4ae49bfd43861249a804-mv2.jpg", fit: "cover", alt: "member-04-a546d4-88c0b881cc5c4ae49bfd43861249a804-mv2.jpg" },
-      { src: "/scraped/indoor-architectural/fabric-tape/member-05-a546d4-962c5fc662b044b69f2e46953912c59c-mv2.jpg", fit: "cover", alt: "member-05-a546d4-962c5fc662b044b69f2e46953912c59c-mv2.jpg" },
-      { src: "/scraped/indoor-architectural/fabric-tape/member-06-a546d4-e0bfb6cf0a4640dfbbfbd66e257b049b-mv2.jpg", fit: "cover", alt: "member-06-a546d4-e0bfb6cf0a4640dfbbfbd66e257b049b-mv2.jpg" },
-      { src: "/scraped/indoor-architectural/fabric-tape/member-07-a546d4-dce783ea6668480a82772b93d752694d-mv2.jpg", fit: "cover", alt: "member-07-a546d4-dce783ea6668480a82772b93d752694d-mv2.jpg" },
-      { src: "/scraped/indoor-architectural/fabric-tape/member-08-a546d4-4fb1ea8ad4fc4b0a9e37649ba2c3b4fd-mv2.jpg", fit: "cover", alt: "member-08-a546d4-4fb1ea8ad4fc4b0a9e37649ba2c3b4fd-mv2.jpg" },
-      { src: "/scraped/indoor-architectural/fabric-tape/member-09-a546d4-c94d913e171e40548d7df0cb8430505c-mv2.jpg", fit: "cover", alt: "member-09-a546d4-c94d913e171e40548d7df0cb8430505c-mv2.jpg" },
-      { src: "/scraped/indoor-architectural/fabric-tape/member-10-a546d4-a5eae9ee31294289b8f577e3e356233e-mv2.jpg", fit: "cover", alt: "member-10-a546d4-a5eae9ee31294289b8f577e3e356233e-mv2.jpg" },
-      { src: "/scraped/indoor-architectural/fabric-tape/member-11-a546d4-c0349e3bb89f4e3abb099df9f6bc7d78-mv2.jpg", fit: "cover", alt: "member-11-a546d4-c0349e3bb89f4e3abb099df9f6bc7d78-mv2.jpg" },
-      { src: "/scraped/indoor-architectural/fabric-tape/member-12-a546d4-f2630fc8c3a447e3b55155cc460aba7c-mv2.jpg", fit: "cover", alt: "member-12-a546d4-f2630fc8c3a447e3b55155cc460aba7c-mv2.jpg" },
+      { src: "/scraped/indoor-architectural/fabric-tape/member-01-a546d4-1be930474538476397b983a4944286d6-mv2.jpg", fit: "contain", alt: "member-01-a546d4-1be930474538476397b983a4944286d6-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/indoor-architectural/fabric-tape/member-02-a546d4-8d996821075949db93cbd3eb08b49484-mv2.jpg", fit: "contain", alt: "member-02-a546d4-8d996821075949db93cbd3eb08b49484-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/indoor-architectural/fabric-tape/member-03-a546d4-9a1b9f4f59a244afbf3a280a79ac9845-mv2.jpg", fit: "contain", alt: "member-03-a546d4-9a1b9f4f59a244afbf3a280a79ac9845-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/indoor-architectural/fabric-tape/member-04-a546d4-88c0b881cc5c4ae49bfd43861249a804-mv2.jpg", fit: "contain", alt: "member-04-a546d4-88c0b881cc5c4ae49bfd43861249a804-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/indoor-architectural/fabric-tape/member-05-a546d4-962c5fc662b044b69f2e46953912c59c-mv2.jpg", fit: "contain", alt: "member-05-a546d4-962c5fc662b044b69f2e46953912c59c-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/indoor-architectural/fabric-tape/member-06-a546d4-e0bfb6cf0a4640dfbbfbd66e257b049b-mv2.jpg", fit: "contain", alt: "member-06-a546d4-e0bfb6cf0a4640dfbbfbd66e257b049b-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/indoor-architectural/fabric-tape/member-07-a546d4-dce783ea6668480a82772b93d752694d-mv2.jpg", fit: "contain", alt: "member-07-a546d4-dce783ea6668480a82772b93d752694d-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/indoor-architectural/fabric-tape/member-08-a546d4-4fb1ea8ad4fc4b0a9e37649ba2c3b4fd-mv2.jpg", fit: "contain", alt: "member-08-a546d4-4fb1ea8ad4fc4b0a9e37649ba2c3b4fd-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/indoor-architectural/fabric-tape/member-09-a546d4-c94d913e171e40548d7df0cb8430505c-mv2.jpg", fit: "contain", alt: "member-09-a546d4-c94d913e171e40548d7df0cb8430505c-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/indoor-architectural/fabric-tape/member-10-a546d4-a5eae9ee31294289b8f577e3e356233e-mv2.jpg", fit: "contain", alt: "member-10-a546d4-a5eae9ee31294289b8f577e3e356233e-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/indoor-architectural/fabric-tape/member-11-a546d4-c0349e3bb89f4e3abb099df9f6bc7d78-mv2.jpg", fit: "contain", alt: "member-11-a546d4-c0349e3bb89f4e3abb099df9f6bc7d78-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/indoor-architectural/fabric-tape/member-12-a546d4-f2630fc8c3a447e3b55155cc460aba7c-mv2.jpg", fit: "contain", alt: "member-12-a546d4-f2630fc8c3a447e3b55155cc460aba7c-mv2.jpg", width: 147, height: 147 },
     ],
   },
   {
@@ -1159,18 +1159,18 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/decorative/cloud-bell/10-cloudbell-case2.jpg",// hero
     images: [
-      { src: "/scraped/decorative/cloud-bell/10-cloudbell-case2.jpg", fit: "cover", alt: "10-cloudbell-case2.jpg" },
-      { src: "/scraped/decorative/cloud-bell/01-cloudbell-banner.jpg", fit: "cover", alt: "01-cloudbell-banner.jpg" },
-      { src: "/scraped/decorative/cloud-bell/02-cloudbell-detail.jpg", fit: "cover", alt: "02-cloudbell-detail.jpg" },
-      { src: "/scraped/decorative/cloud-bell/03-cloudbell-s1-l2127-w1116-h1403.png", fit: "cover", alt: "03-cloudbell-s1-l2127-w1116-h1403.png" },
-      { src: "/scraped/decorative/cloud-bell/04-cloudbell-s2-l3622-w952-h1012.png", fit: "cover", alt: "04-cloudbell-s2-l3622-w952-h1012.png" },
-      { src: "/scraped/decorative/cloud-bell/05-cloudbell-s3-l4836-w1995-h3309.png", fit: "cover", alt: "05-cloudbell-s3-l4836-w1995-h3309.png" },
-      { src: "/scraped/decorative/cloud-bell/06-cloudbell-s4-l1496-w1303-h982.png", fit: "cover", alt: "06-cloudbell-s4-l1496-w1303-h982.png" },
-      { src: "/scraped/decorative/cloud-bell/07-cloudbell-s5-l1615-w1614-h2829.png", fit: "cover", alt: "07-cloudbell-s5-l1615-w1614-h2829.png" },
-      { src: "/scraped/decorative/cloud-bell/08-cloudbell-s6-l2296-w1966-h3240.png", fit: "cover", alt: "08-cloudbell-s6-l2296-w1966-h3240.png" },
-      { src: "/scraped/decorative/cloud-bell/09-cloudbell-case1.jpg", fit: "cover", alt: "09-cloudbell-case1.jpg" },
-      { src: "/scraped/decorative/cloud-bell/11-cloudbell-case3.jpg", fit: "cover", alt: "11-cloudbell-case3.jpg" },
-      { src: "/scraped/decorative/cloud-bell/12-cloudbell-case4.jpg", fit: "cover", alt: "12-cloudbell-case4.jpg" },
+      { src: "/scraped/decorative/cloud-bell/10-cloudbell-case2.jpg", fit: "contain", alt: "10-cloudbell-case2.jpg", width: 7070, height: 10000 },
+      { src: "/scraped/decorative/cloud-bell/01-cloudbell-banner.jpg", fit: "contain", alt: "01-cloudbell-banner.jpg", width: 2492, height: 3324 },
+      { src: "/scraped/decorative/cloud-bell/02-cloudbell-detail.jpg", fit: "contain", alt: "02-cloudbell-detail.jpg", width: 896, height: 1200 },
+      { src: "/scraped/decorative/cloud-bell/03-cloudbell-s1-l2127-w1116-h1403.png", fit: "contain", alt: "03-cloudbell-s1-l2127-w1116-h1403.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/cloud-bell/04-cloudbell-s2-l3622-w952-h1012.png", fit: "contain", alt: "04-cloudbell-s2-l3622-w952-h1012.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/cloud-bell/05-cloudbell-s3-l4836-w1995-h3309.png", fit: "contain", alt: "05-cloudbell-s3-l4836-w1995-h3309.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/cloud-bell/06-cloudbell-s4-l1496-w1303-h982.png", fit: "contain", alt: "06-cloudbell-s4-l1496-w1303-h982.png", width: 2249, height: 2249 },
+      { src: "/scraped/decorative/cloud-bell/07-cloudbell-s5-l1615-w1614-h2829.png", fit: "contain", alt: "07-cloudbell-s5-l1615-w1614-h2829.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/cloud-bell/08-cloudbell-s6-l2296-w1966-h3240.png", fit: "contain", alt: "08-cloudbell-s6-l2296-w1966-h3240.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/cloud-bell/09-cloudbell-case1.jpg", fit: "contain", alt: "09-cloudbell-case1.jpg", width: 3173, height: 4304 },
+      { src: "/scraped/decorative/cloud-bell/11-cloudbell-case3.jpg", fit: "contain", alt: "11-cloudbell-case3.jpg", width: 2492, height: 3324 },
+      { src: "/scraped/decorative/cloud-bell/12-cloudbell-case4.jpg", fit: "contain", alt: "12-cloudbell-case4.jpg", width: 3173, height: 4304 },
     ],
   },
   {
@@ -1199,18 +1199,18 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/decorative/pearl/03-pearl-s1-l690-w149-h2001.png",// hero
     images: [
-      { src: "/scraped/decorative/pearl/03-pearl-s1-l690-w149-h2001.png", fit: "cover", alt: "03-pearl-s1-l690-w149-h2001.png" },
-      { src: "/scraped/decorative/pearl/01-pearl-banner.jpg", fit: "cover", alt: "01-pearl-banner.jpg" },
-      { src: "/scraped/decorative/pearl/02-pearl-detail.jpg", fit: "cover", alt: "02-pearl-detail.jpg" },
-      { src: "/scraped/decorative/pearl/04-pearl-s2-l1197-w1197-h1600.png", fit: "cover", alt: "04-pearl-s2-l1197-w1197-h1600.png" },
-      { src: "/scraped/decorative/pearl/05-pearl-s3-l1937-w2000-h4030.png", fit: "cover", alt: "05-pearl-s3-l1937-w2000-h4030.png" },
-      { src: "/scraped/decorative/pearl/06-pearl-s4-l895-w827-h682.png", fit: "cover", alt: "06-pearl-s4-l895-w827-h682.png" },
-      { src: "/scraped/decorative/pearl/07-pearl-s5-l1443-w1235-h1193.png", fit: "cover", alt: "07-pearl-s5-l1443-w1235-h1193.png" },
-      { src: "/scraped/decorative/pearl/08-pearl-s6-l2416-w740-h1700.png", fit: "cover", alt: "08-pearl-s6-l2416-w740-h1700.png" },
-      { src: "/scraped/decorative/pearl/09-pearl-case1.jpg", fit: "cover", alt: "09-pearl-case1.jpg" },
-      { src: "/scraped/decorative/pearl/10-pearl-case2.jpg", fit: "cover", alt: "10-pearl-case2.jpg" },
-      { src: "/scraped/decorative/pearl/11-pearl-case3.jpg", fit: "cover", alt: "11-pearl-case3.jpg" },
-      { src: "/scraped/decorative/pearl/12-pearl-case4.jpg", fit: "cover", alt: "12-pearl-case4.jpg" },
+      { src: "/scraped/decorative/pearl/03-pearl-s1-l690-w149-h2001.png", fit: "contain", alt: "03-pearl-s1-l690-w149-h2001.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/pearl/01-pearl-banner.jpg", fit: "contain", alt: "01-pearl-banner.jpg", width: 2569, height: 3425 },
+      { src: "/scraped/decorative/pearl/02-pearl-detail.jpg", fit: "contain", alt: "02-pearl-detail.jpg", width: 896, height: 1200 },
+      { src: "/scraped/decorative/pearl/04-pearl-s2-l1197-w1197-h1600.png", fit: "contain", alt: "04-pearl-s2-l1197-w1197-h1600.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/pearl/05-pearl-s3-l1937-w2000-h4030.png", fit: "contain", alt: "05-pearl-s3-l1937-w2000-h4030.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/pearl/06-pearl-s4-l895-w827-h682.png", fit: "contain", alt: "06-pearl-s4-l895-w827-h682.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/pearl/07-pearl-s5-l1443-w1235-h1193.png", fit: "contain", alt: "07-pearl-s5-l1443-w1235-h1193.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/pearl/08-pearl-s6-l2416-w740-h1700.png", fit: "contain", alt: "08-pearl-s6-l2416-w740-h1700.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/pearl/09-pearl-case1.jpg", fit: "contain", alt: "09-pearl-case1.jpg", width: 3173, height: 4304 },
+      { src: "/scraped/decorative/pearl/10-pearl-case2.jpg", fit: "contain", alt: "10-pearl-case2.jpg", width: 3173, height: 4304 },
+      { src: "/scraped/decorative/pearl/11-pearl-case3.jpg", fit: "contain", alt: "11-pearl-case3.jpg", width: 3173, height: 4304 },
+      { src: "/scraped/decorative/pearl/12-pearl-case4.jpg", fit: "contain", alt: "12-pearl-case4.jpg", width: 3173, height: 4304 },
     ],
   },
   {
@@ -1239,18 +1239,18 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/decorative/dream-pen/03-dreampen-s1-l1231-w617-h1178.png",// hero
     images: [
-      { src: "/scraped/decorative/dream-pen/03-dreampen-s1-l1231-w617-h1178.png", fit: "cover", alt: "03-dreampen-s1-l1231-w617-h1178.png" },
-      { src: "/scraped/decorative/dream-pen/01-dreampen-banner.png", fit: "contain", alt: "01-dreampen-banner.png" },
-      { src: "/scraped/decorative/dream-pen/02-dreampen-detail.jpg", fit: "cover", alt: "02-dreampen-detail.jpg" },
-      { src: "/scraped/decorative/dream-pen/04-dreampen-s2-l1231-w617-h1178.png", fit: "cover", alt: "04-dreampen-s2-l1231-w617-h1178.png" },
-      { src: "/scraped/decorative/dream-pen/05-dreampen-s3-l3200-w1097-h1500.png", fit: "cover", alt: "05-dreampen-s3-l3200-w1097-h1500.png" },
-      { src: "/scraped/decorative/dream-pen/06-dreampen-s4-l1505-w1502-h941.png", fit: "cover", alt: "06-dreampen-s4-l1505-w1502-h941.png" },
-      { src: "/scraped/decorative/dream-pen/07-dreampen-s5-l2000-w3000-h3200.png", fit: "cover", alt: "07-dreampen-s5-l2000-w3000-h3200.png" },
-      { src: "/scraped/decorative/dream-pen/08-dreampen-s6-l5490-w2445-h3197.png", fit: "cover", alt: "08-dreampen-s6-l5490-w2445-h3197.png" },
-      { src: "/scraped/decorative/dream-pen/09-dreampen-case1.jpg", fit: "cover", alt: "09-dreampen-case1.jpg" },
-      { src: "/scraped/decorative/dream-pen/10-dreampen-case2.jpg", fit: "cover", alt: "10-dreampen-case2.jpg" },
-      { src: "/scraped/decorative/dream-pen/11-dreampen-case3.jpg", fit: "cover", alt: "11-dreampen-case3.jpg" },
-      { src: "/scraped/decorative/dream-pen/12-dreampen-case4.jpg", fit: "cover", alt: "12-dreampen-case4.jpg" },
+      { src: "/scraped/decorative/dream-pen/03-dreampen-s1-l1231-w617-h1178.png", fit: "contain", alt: "03-dreampen-s1-l1231-w617-h1178.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/dream-pen/01-dreampen-banner.png", fit: "contain", alt: "01-dreampen-banner.png", width: 2304, height: 3072 },
+      { src: "/scraped/decorative/dream-pen/02-dreampen-detail.jpg", fit: "contain", alt: "02-dreampen-detail.jpg", width: 2492, height: 3324 },
+      { src: "/scraped/decorative/dream-pen/04-dreampen-s2-l1231-w617-h1178.png", fit: "contain", alt: "04-dreampen-s2-l1231-w617-h1178.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/dream-pen/05-dreampen-s3-l3200-w1097-h1500.png", fit: "contain", alt: "05-dreampen-s3-l3200-w1097-h1500.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/dream-pen/06-dreampen-s4-l1505-w1502-h941.png", fit: "contain", alt: "06-dreampen-s4-l1505-w1502-h941.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/dream-pen/07-dreampen-s5-l2000-w3000-h3200.png", fit: "contain", alt: "07-dreampen-s5-l2000-w3000-h3200.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/dream-pen/08-dreampen-s6-l5490-w2445-h3197.png", fit: "contain", alt: "08-dreampen-s6-l5490-w2445-h3197.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/dream-pen/09-dreampen-case1.jpg", fit: "contain", alt: "09-dreampen-case1.jpg", width: 3298, height: 4399 },
+      { src: "/scraped/decorative/dream-pen/10-dreampen-case2.jpg", fit: "contain", alt: "10-dreampen-case2.jpg", width: 2492, height: 3324 },
+      { src: "/scraped/decorative/dream-pen/11-dreampen-case3.jpg", fit: "contain", alt: "11-dreampen-case3.jpg", width: 2492, height: 3324 },
+      { src: "/scraped/decorative/dream-pen/12-dreampen-case4.jpg", fit: "contain", alt: "12-dreampen-case4.jpg", width: 2492, height: 3324 },
     ],
   },
   {
@@ -1279,18 +1279,18 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/decorative/jiangnan/03-jiangnan-s1-l800-w800-h1218.png",// hero
     images: [
-      { src: "/scraped/decorative/jiangnan/03-jiangnan-s1-l800-w800-h1218.png", fit: "cover", alt: "03-jiangnan-s1-l800-w800-h1218.png" },
-      { src: "/scraped/decorative/jiangnan/01-jiangnan-banner.png", fit: "contain", alt: "01-jiangnan-banner.png" },
-      { src: "/scraped/decorative/jiangnan/02-jiangnan-detail.jpg", fit: "cover", alt: "02-jiangnan-detail.jpg" },
-      { src: "/scraped/decorative/jiangnan/04-jiangnan-s2-l1532-w1156-h680.png", fit: "cover", alt: "04-jiangnan-s2-l1532-w1156-h680.png" },
-      { src: "/scraped/decorative/jiangnan/05-jiangnan-s3-l1519-w1601-h3239.png", fit: "cover", alt: "05-jiangnan-s3-l1519-w1601-h3239.png" },
-      { src: "/scraped/decorative/jiangnan/06-jiangnan-s4-l1409-w454-h1414.png", fit: "cover", alt: "06-jiangnan-s4-l1409-w454-h1414.png" },
-      { src: "/scraped/decorative/jiangnan/07-jiangnan-s5-l1586-w1004-h883.png", fit: "cover", alt: "07-jiangnan-s5-l1586-w1004-h883.png" },
-      { src: "/scraped/decorative/jiangnan/08-jiangnan-s6-l1507-w1509-h3012.png", fit: "cover", alt: "08-jiangnan-s6-l1507-w1509-h3012.png" },
-      { src: "/scraped/decorative/jiangnan/09-jiangnan-case1.jpg", fit: "cover", alt: "09-jiangnan-case1.jpg" },
-      { src: "/scraped/decorative/jiangnan/10-jiangnan-case2.jpg", fit: "cover", alt: "10-jiangnan-case2.jpg" },
-      { src: "/scraped/decorative/jiangnan/11-jiangnan-case3.jpg", fit: "cover", alt: "11-jiangnan-case3.jpg" },
-      { src: "/scraped/decorative/jiangnan/12-jiangnan-case4.jpg", fit: "cover", alt: "12-jiangnan-case4.jpg" },
+      { src: "/scraped/decorative/jiangnan/03-jiangnan-s1-l800-w800-h1218.png", fit: "contain", alt: "03-jiangnan-s1-l800-w800-h1218.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/jiangnan/01-jiangnan-banner.png", fit: "contain", alt: "01-jiangnan-banner.png", width: 2304, height: 3072 },
+      { src: "/scraped/decorative/jiangnan/02-jiangnan-detail.jpg", fit: "contain", alt: "02-jiangnan-detail.jpg", width: 896, height: 1200 },
+      { src: "/scraped/decorative/jiangnan/04-jiangnan-s2-l1532-w1156-h680.png", fit: "contain", alt: "04-jiangnan-s2-l1532-w1156-h680.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/jiangnan/05-jiangnan-s3-l1519-w1601-h3239.png", fit: "contain", alt: "05-jiangnan-s3-l1519-w1601-h3239.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/jiangnan/06-jiangnan-s4-l1409-w454-h1414.png", fit: "contain", alt: "06-jiangnan-s4-l1409-w454-h1414.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/jiangnan/07-jiangnan-s5-l1586-w1004-h883.png", fit: "contain", alt: "07-jiangnan-s5-l1586-w1004-h883.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/jiangnan/08-jiangnan-s6-l1507-w1509-h3012.png", fit: "contain", alt: "08-jiangnan-s6-l1507-w1509-h3012.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/jiangnan/09-jiangnan-case1.jpg", fit: "contain", alt: "09-jiangnan-case1.jpg", width: 2492, height: 3324 },
+      { src: "/scraped/decorative/jiangnan/10-jiangnan-case2.jpg", fit: "contain", alt: "10-jiangnan-case2.jpg", width: 2492, height: 3324 },
+      { src: "/scraped/decorative/jiangnan/11-jiangnan-case3.jpg", fit: "contain", alt: "11-jiangnan-case3.jpg", width: 2492, height: 3324 },
+      { src: "/scraped/decorative/jiangnan/12-jiangnan-case4.jpg", fit: "contain", alt: "12-jiangnan-case4.jpg", width: 2492, height: 3324 },
     ],
   },
   {
@@ -1319,18 +1319,18 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/decorative/crystal-cloud/03-crystalcloud-s1-l915-w829-h826.png",// hero
     images: [
-      { src: "/scraped/decorative/crystal-cloud/03-crystalcloud-s1-l915-w829-h826.png", fit: "cover", alt: "03-crystalcloud-s1-l915-w829-h826.png" },
-      { src: "/scraped/decorative/crystal-cloud/01-crystalcloud-banner.jpg", fit: "cover", alt: "01-crystalcloud-banner.jpg" },
-      { src: "/scraped/decorative/crystal-cloud/02-crystalcloud-detail.jpg", fit: "cover", alt: "02-crystalcloud-detail.jpg" },
-      { src: "/scraped/decorative/crystal-cloud/04-crystalcloud-s2-l1412-w1429-h902.png", fit: "cover", alt: "04-crystalcloud-s2-l1412-w1429-h902.png" },
-      { src: "/scraped/decorative/crystal-cloud/05-crystalcloud-s3-l3102-w914-h1547.png", fit: "cover", alt: "05-crystalcloud-s3-l3102-w914-h1547.png" },
-      { src: "/scraped/decorative/crystal-cloud/06-crystalcloud-s4-l1594-w192-h776.png", fit: "cover", alt: "06-crystalcloud-s4-l1594-w192-h776.png" },
-      { src: "/scraped/decorative/crystal-cloud/07-crystalcloud-s5-l1004-w1004-h1276.png", fit: "cover", alt: "07-crystalcloud-s5-l1004-w1004-h1276.png" },
-      { src: "/scraped/decorative/crystal-cloud/08-crystalcloud-s6-l1123-w777-h1712.png", fit: "cover", alt: "08-crystalcloud-s6-l1123-w777-h1712.png" },
-      { src: "/scraped/decorative/crystal-cloud/09-crystalcloud-case1.png", fit: "cover", alt: "09-crystalcloud-case1.png" },
-      { src: "/scraped/decorative/crystal-cloud/10-crystalcloud-case2.jpg", fit: "cover", alt: "10-crystalcloud-case2.jpg" },
-      { src: "/scraped/decorative/crystal-cloud/11-crystalcloud-case3.png", fit: "cover", alt: "11-crystalcloud-case3.png" },
-      { src: "/scraped/decorative/crystal-cloud/12-crystalcloud-case4.jpg", fit: "cover", alt: "12-crystalcloud-case4.jpg" },
+      { src: "/scraped/decorative/crystal-cloud/03-crystalcloud-s1-l915-w829-h826.png", fit: "contain", alt: "03-crystalcloud-s1-l915-w829-h826.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/crystal-cloud/01-crystalcloud-banner.jpg", fit: "contain", alt: "01-crystalcloud-banner.jpg", width: 1376, height: 768 },
+      { src: "/scraped/decorative/crystal-cloud/02-crystalcloud-detail.jpg", fit: "contain", alt: "02-crystalcloud-detail.jpg", width: 4032, height: 3024 },
+      { src: "/scraped/decorative/crystal-cloud/04-crystalcloud-s2-l1412-w1429-h902.png", fit: "contain", alt: "04-crystalcloud-s2-l1412-w1429-h902.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/crystal-cloud/05-crystalcloud-s3-l3102-w914-h1547.png", fit: "contain", alt: "05-crystalcloud-s3-l3102-w914-h1547.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/crystal-cloud/06-crystalcloud-s4-l1594-w192-h776.png", fit: "contain", alt: "06-crystalcloud-s4-l1594-w192-h776.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/crystal-cloud/07-crystalcloud-s5-l1004-w1004-h1276.png", fit: "contain", alt: "07-crystalcloud-s5-l1004-w1004-h1276.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/crystal-cloud/08-crystalcloud-s6-l1123-w777-h1712.png", fit: "contain", alt: "08-crystalcloud-s6-l1123-w777-h1712.png", width: 4499, height: 4499 },
+      { src: "/scraped/decorative/crystal-cloud/09-crystalcloud-case1.png", fit: "contain", alt: "09-crystalcloud-case1.png", width: 2543, height: 3392 },
+      { src: "/scraped/decorative/crystal-cloud/10-crystalcloud-case2.jpg", fit: "contain", alt: "10-crystalcloud-case2.jpg", width: 1329, height: 1773 },
+      { src: "/scraped/decorative/crystal-cloud/11-crystalcloud-case3.png", fit: "contain", alt: "11-crystalcloud-case3.png", width: 2543, height: 3392 },
+      { src: "/scraped/decorative/crystal-cloud/12-crystalcloud-case4.jpg", fit: "contain", alt: "12-crystalcloud-case4.jpg", width: 2077, height: 2770 },
     ],
   },
   {
@@ -1382,8 +1382,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/linears/puck-seamless/01-puck-800x601.png",// hero
     images: [
-      { src: "/scraped/linears/puck-seamless/01-puck-800x601.png", fit: "contain", alt: "01-puck-800x601.png" },
-      { src: "/scraped/linears/puck-seamless/02-puck-seamless-dimensions.png", fit: "cover", alt: "02-puck-seamless-dimensions.png" },
+      { src: "/scraped/linears/puck-seamless/01-puck-800x601.png", fit: "contain", alt: "01-puck-800x601.png", width: 800, height: 601 },
+      { src: "/scraped/linears/puck-seamless/02-puck-seamless-dimensions.png", fit: "contain", alt: "02-puck-seamless-dimensions.png", width: 1894, height: 524 },
     ],
     pdfUrl: "/api/download/datasheet/puck-seamless.pdf",
     warranty: "6 years",
@@ -1439,7 +1439,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/linears/puck-profile-70x36/01-ledlights4-800x534.png",// hero
     images: [
-      { src: "/scraped/linears/puck-profile-70x36/01-ledlights4-800x534.png", fit: "contain", alt: "01-ledlights4-800x534.png" },
+      { src: "/scraped/linears/puck-profile-70x36/01-ledlights4-800x534.png", fit: "contain", alt: "01-ledlights4-800x534.png", width: 800, height: 534 },
     ],
     pdfUrl: "/api/download/datasheet/puck-profile-70x36.pdf",
     warranty: "6 years",
@@ -1495,7 +1495,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/linears/puck-profile-40x43/01-ledlights1-800x534.png",// hero
     images: [
-      { src: "/scraped/linears/puck-profile-40x43/01-ledlights1-800x534.png", fit: "contain", alt: "01-ledlights1-800x534.png" },
+      { src: "/scraped/linears/puck-profile-40x43/01-ledlights1-800x534.png", fit: "contain", alt: "01-ledlights1-800x534.png", width: 800, height: 534 },
     ],
     pdfUrl: "/api/download/datasheet/puck-profile-40x43.pdf",
     warranty: "6 years",
@@ -1551,7 +1551,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/linears/kepler/01-kepler-800x883.png",// hero
     images: [
-      { src: "/scraped/linears/kepler/01-kepler-800x883.png", fit: "contain", alt: "01-kepler-800x883.png" },
+      { src: "/scraped/linears/kepler/01-kepler-800x883.png", fit: "contain", alt: "01-kepler-800x883.png", width: 800, height: 883 },
     ],
     pdfUrl: "/api/download/datasheet/kepler.pdf",
     warranty: "8 years",
@@ -1592,7 +1592,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/linears/lds5083/01-ld-50-s-render-2.png",// hero
     images: [
-      { src: "/scraped/linears/lds5083/01-ld-50-s-render-2.png", fit: "contain", alt: "01-ld-50-s-render-2.png" },
+      { src: "/scraped/linears/lds5083/01-ld-50-s-render-2.png", fit: "contain", alt: "01-ld-50-s-render-2.png", width: 900, height: 832 },
     ],
     pdfUrl: "/api/download/datasheet/lds5083.pdf",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
@@ -1633,7 +1633,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/linears/ldr6563/01-ldr-s.jpg",// hero
     images: [
-      { src: "/scraped/linears/ldr6563/01-ldr-s.jpg", fit: "cover", alt: "01-ldr-s.jpg" },
+      { src: "/scraped/linears/ldr6563/01-ldr-s.jpg", fit: "contain", alt: "01-ldr-s.jpg", width: 1346, height: 1346 },
     ],
     pdfUrl: "/api/download/datasheet/ldr6563.pdf",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
@@ -1674,7 +1674,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/linears/lrd9063/01-ldr-s.jpg",// hero
     images: [
-      { src: "/scraped/linears/lrd9063/01-ldr-s.jpg", fit: "cover", alt: "01-ldr-s.jpg" },
+      { src: "/scraped/linears/lrd9063/01-ldr-s.jpg", fit: "contain", alt: "01-ldr-s.jpg", width: 1346, height: 1346 },
     ],
     pdfUrl: "/api/download/datasheet/lrd9063.pdf",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
@@ -1715,7 +1715,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/linears/base/01-baton-1200-wt.jpg",// hero
     images: [
-      { src: "/scraped/linears/base/01-baton-1200-wt.jpg", fit: "cover", alt: "01-baton-1200-wt.jpg" },
+      { src: "/scraped/linears/base/01-baton-1200-wt.jpg", fit: "contain", alt: "01-baton-1200-wt.jpg", width: 500, height: 500 },
     ],
     pdfUrl: "/api/download/datasheet/base.pdf",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
@@ -1756,9 +1756,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/linears/ace/01-ace-s-black-with-transparent-background.png",// hero
     images: [
-      { src: "/scraped/linears/ace/01-ace-s-black-with-transparent-background.png", fit: "contain", alt: "01-ace-s-black-with-transparent-background.png" },
-      { src: "/scraped/linears/ace/02-ace-s-white-with-transparent-background.png", fit: "cover", alt: "02-ace-s-white-with-transparent-background.png" },
-      { src: "/scraped/linears/ace/03-ace-c-with-transparent-background-v2.png", fit: "cover", alt: "03-ace-c-with-transparent-background-v2.png" },
+      { src: "/scraped/linears/ace/01-ace-s-black-with-transparent-background.png", fit: "contain", alt: "01-ace-s-black-with-transparent-background.png", width: 1920, height: 1483 },
+      { src: "/scraped/linears/ace/02-ace-s-white-with-transparent-background.png", fit: "contain", alt: "02-ace-s-white-with-transparent-background.png", width: 1920, height: 1483 },
+      { src: "/scraped/linears/ace/03-ace-c-with-transparent-background-v2.png", fit: "contain", alt: "03-ace-c-with-transparent-background-v2.png", width: 958, height: 739 },
     ],
     pdfUrl: "/api/download/datasheet/ace.pdf",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
@@ -1786,8 +1786,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/linears/protega-gen-2/01-protegagen2.jpg",// hero
     images: [
-      { src: "/scraped/linears/protega-gen-2/01-protegagen2.jpg", fit: "cover", alt: "01-protegagen2.jpg" },
-      { src: "/scraped/linears/protega-gen-2/02-protegagen2white.png", fit: "cover", alt: "02-protegagen2white.png" },
+      { src: "/scraped/linears/protega-gen-2/01-protegagen2.jpg", fit: "contain", alt: "01-protegagen2.jpg", width: 4132, height: 1692 },
+      { src: "/scraped/linears/protega-gen-2/02-protegagen2white.png", fit: "contain", alt: "02-protegagen2white.png", width: 4132, height: 1692 },
     ],
   },
   {
@@ -1812,11 +1812,11 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/linears/thermisto/02-rubicon-themistolinearlowbay-surface-suspension-extendeddatasheet.jpg",// hero
     images: [
-      { src: "/scraped/linears/thermisto/02-rubicon-themistolinearlowbay-surface-suspension-extendeddatasheet.jpg", fit: "cover", alt: "02-rubicon-themistolinearlowbay-surface-suspension-extendeddatasheet.jpg" },
-      { src: "/scraped/linears/thermisto/01-themisto-lowbay-55-surface-suspension.jpg", fit: "cover", alt: "01-themisto-lowbay-55-surface-suspension.jpg" },
-      { src: "/scraped/linears/thermisto/03-hp-image-2.jpg", fit: "cover", alt: "03-hp-image-2.jpg" },
-      { src: "/scraped/linears/thermisto/04-1571807246438.jpg", fit: "cover", alt: "04-1571807246438.jpg" },
-      { src: "/scraped/linears/thermisto/05-1571807247040.jpg", fit: "cover", alt: "05-1571807247040.jpg" },
+      { src: "/scraped/linears/thermisto/02-rubicon-themistolinearlowbay-surface-suspension-extendeddatasheet.jpg", fit: "contain", alt: "02-rubicon-themistolinearlowbay-surface-suspension-extendeddatasheet.jpg", width: 3341, height: 2077 },
+      { src: "/scraped/linears/thermisto/01-themisto-lowbay-55-surface-suspension.jpg", fit: "contain", alt: "01-themisto-lowbay-55-surface-suspension.jpg", width: 2048, height: 1273 },
+      { src: "/scraped/linears/thermisto/03-hp-image-2.jpg", fit: "contain", alt: "03-hp-image-2.jpg", width: 2048, height: 1365 },
+      { src: "/scraped/linears/thermisto/04-1571807246438.jpg", fit: "contain", alt: "04-1571807246438.jpg", width: 1478, height: 1108 },
+      { src: "/scraped/linears/thermisto/05-1571807247040.jpg", fit: "contain", alt: "05-1571807247040.jpg", width: 800, height: 599 },
     ],
   },
   {
@@ -1842,10 +1842,10 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/linears/lf40/01-lf40fix.jpg",// hero
     images: [
-      { src: "/scraped/linears/lf40/01-lf40fix.jpg", fit: "cover", alt: "01-lf40fix.jpg" },
-      { src: "/scraped/linears/lf40/02-rubicon-lightframe40reccessed.jpg", fit: "cover", alt: "02-rubicon-lightframe40reccessed.jpg" },
-      { src: "/scraped/linears/lf40/03-2u-image3.jpg", fit: "cover", alt: "03-2u-image3.jpg" },
-      { src: "/scraped/linears/lf40/04-2u-image2.jpg", fit: "cover", alt: "04-2u-image2.jpg" },
+      { src: "/scraped/linears/lf40/01-lf40fix.jpg", fit: "contain", alt: "01-lf40fix.jpg", width: 3665, height: 3030 },
+      { src: "/scraped/linears/lf40/02-rubicon-lightframe40reccessed.jpg", fit: "contain", alt: "02-rubicon-lightframe40reccessed.jpg", width: 894, height: 662 },
+      { src: "/scraped/linears/lf40/03-2u-image3.jpg", fit: "contain", alt: "03-2u-image3.jpg", width: 1800, height: 1200 },
+      { src: "/scraped/linears/lf40/04-2u-image2.jpg", fit: "contain", alt: "04-2u-image2.jpg", width: 1800, height: 1200 },
     ],
   },
   {
@@ -1871,9 +1871,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/linears/lf20/02-lf20lifestylefin.jpg",// hero
     images: [
-      { src: "/scraped/linears/lf20/02-lf20lifestylefin.jpg", fit: "cover", alt: "02-lf20lifestylefin.jpg" },
-      { src: "/scraped/linears/lf20/01-lf20.jpg", fit: "cover", alt: "01-lf20.jpg" },
-      { src: "/scraped/linears/lf20/03-lf20-linear-site-picnic.jpg", fit: "cover", alt: "03-lf20-linear-site-picnic.jpg" },
+      { src: "/scraped/linears/lf20/02-lf20lifestylefin.jpg", fit: "contain", alt: "02-lf20lifestylefin.jpg", width: 2296, height: 4080 },
+      { src: "/scraped/linears/lf20/01-lf20.jpg", fit: "contain", alt: "01-lf20.jpg", width: 502, height: 240 },
+      { src: "/scraped/linears/lf20/03-lf20-linear-site-picnic.jpg", fit: "contain", alt: "03-lf20-linear-site-picnic.jpg", width: 2364, height: 1773 },
     ],
   },
   {
@@ -1899,18 +1899,18 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/linears/lf55/12-lightframe80recessed.jpg",// hero
     images: [
-      { src: "/scraped/linears/lf55/12-lightframe80recessed.jpg", fit: "cover", alt: "12-lightframe80recessed.jpg" },
-      { src: "/scraped/linears/lf55/01-lightframefamily5555x8080copy.jpg", fit: "cover", alt: "01-lightframefamily5555x8080copy.jpg" },
-      { src: "/scraped/linears/lf55/02-lightframe55surfaceblack.jpg", fit: "cover", alt: "02-lightframe55surfaceblack.jpg" },
-      { src: "/scraped/linears/lf55/03-lightframe55recessedy.jpg", fit: "cover", alt: "03-lightframe55recessedy.jpg" },
-      { src: "/scraped/linears/lf55/04-lamborghini-image2copy1.jpg", fit: "cover", alt: "04-lamborghini-image2copy1.jpg" },
-      { src: "/scraped/linears/lf55/05-lamborghini-image2copy.jpg", fit: "cover", alt: "05-lamborghini-image2copy.jpg" },
-      { src: "/scraped/linears/lf55/06-lightframe55x80.jpg", fit: "cover", alt: "06-lightframe55x80.jpg" },
-      { src: "/scraped/linears/lf55/07-55x80.jpg", fit: "cover", alt: "07-55x80.jpg" },
-      { src: "/scraped/linears/lf55/08-ccg-image1copy.jpg", fit: "cover", alt: "08-ccg-image1copy.jpg" },
-      { src: "/scraped/linears/lf55/09-lightframe80surface-suspension.jpg", fit: "cover", alt: "09-lightframe80surface-suspension.jpg" },
-      { src: "/scraped/linears/lf55/10-lightframe80reccessed.png", fit: "cover", alt: "10-lightframe80reccessed.png" },
-      { src: "/scraped/linears/lf55/11-axalta-jhb-tg2-1df18da3-40bd-4b7f-b2ce-a276eb274402.jpg", fit: "cover", alt: "11-axalta-jhb-tg2-1df18da3-40bd-4b7f-b2ce-a276eb274402.jpg" },
+      { src: "/scraped/linears/lf55/12-lightframe80recessed.jpg", fit: "contain", alt: "12-lightframe80recessed.jpg", width: 5255, height: 3505 },
+      { src: "/scraped/linears/lf55/01-lightframefamily5555x8080copy.jpg", fit: "contain", alt: "01-lightframefamily5555x8080copy.jpg", width: 1695, height: 1695 },
+      { src: "/scraped/linears/lf55/02-lightframe55surfaceblack.jpg", fit: "contain", alt: "02-lightframe55surfaceblack.jpg", width: 526, height: 242 },
+      { src: "/scraped/linears/lf55/03-lightframe55recessedy.jpg", fit: "contain", alt: "03-lightframe55recessedy.jpg", width: 1096, height: 583 },
+      { src: "/scraped/linears/lf55/04-lamborghini-image2copy1.jpg", fit: "contain", alt: "04-lamborghini-image2copy1.jpg", width: 3370, height: 2766 },
+      { src: "/scraped/linears/lf55/05-lamborghini-image2copy.jpg", fit: "contain", alt: "05-lamborghini-image2copy.jpg", width: 3370, height: 2766 },
+      { src: "/scraped/linears/lf55/06-lightframe55x80.jpg", fit: "contain", alt: "06-lightframe55x80.jpg", width: 4652, height: 2912 },
+      { src: "/scraped/linears/lf55/07-55x80.jpg", fit: "contain", alt: "07-55x80.jpg", width: 4652, height: 2912 },
+      { src: "/scraped/linears/lf55/08-ccg-image1copy.jpg", fit: "contain", alt: "08-ccg-image1copy.jpg", width: 3009, height: 3107 },
+      { src: "/scraped/linears/lf55/09-lightframe80surface-suspension.jpg", fit: "contain", alt: "09-lightframe80surface-suspension.jpg", width: 899, height: 599 },
+      { src: "/scraped/linears/lf55/10-lightframe80reccessed.png", fit: "contain", alt: "10-lightframe80reccessed.png", width: 713, height: 474 },
+      { src: "/scraped/linears/lf55/11-axalta-jhb-tg2-1df18da3-40bd-4b7f-b2ce-a276eb274402.jpg", fit: "contain", alt: "11-axalta-jhb-tg2-1df18da3-40bd-4b7f-b2ce-a276eb274402.jpg", width: 900, height: 600 },
     ],
   },
   {
@@ -1934,9 +1934,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/linears/soniq/member-01-pioled-lighting-ll709-8ft-3-wattage-soniq-seamless-linkable-linear-lig.png",// hero
     images: [
-      { src: "/scraped/linears/soniq/member-01-pioled-lighting-ll709-8ft-3-wattage-soniq-seamless-linkable-linear-lig.png", fit: "cover", alt: "member-01-pioled-lighting-ll709-8ft-3-wattage-soniq-seamless-linkable-linear-lig.png" },
-      { src: "/scraped/linears/soniq/member-02-pioled-lighting-ll707-10w-1ft-soniq-seamless-linkable-linear-light-3cc.png", fit: "cover", alt: "member-02-pioled-lighting-ll707-10w-1ft-soniq-seamless-linkable-linear-light-3cc.png" },
-      { src: "/scraped/linears/soniq/member-03-pioled-lighting-ll705-4ft-soniq-seamless-linkable-linear-light-3cct-bl.png", fit: "cover", alt: "member-03-pioled-lighting-ll705-4ft-soniq-seamless-linkable-linear-light-3cct-bl.png" },
+      { src: "/scraped/linears/soniq/member-01-pioled-lighting-ll709-8ft-3-wattage-soniq-seamless-linkable-linear-lig.png", fit: "contain", alt: "member-01-pioled-lighting-ll709-8ft-3-wattage-soniq-seamless-linkable-linear-lig.png", width: 1024, height: 1024 },
+      { src: "/scraped/linears/soniq/member-02-pioled-lighting-ll707-10w-1ft-soniq-seamless-linkable-linear-light-3cc.png", fit: "contain", alt: "member-02-pioled-lighting-ll707-10w-1ft-soniq-seamless-linkable-linear-light-3cc.png", width: 1024, height: 1024 },
+      { src: "/scraped/linears/soniq/member-03-pioled-lighting-ll705-4ft-soniq-seamless-linkable-linear-light-3cct-bl.png", fit: "contain", alt: "member-03-pioled-lighting-ll705-4ft-soniq-seamless-linkable-linear-light-3cct-bl.png", width: 1024, height: 1024 },
     ],
   },
   {
@@ -1960,16 +1960,16 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/eko/09-e96e04bdf1df4e47-9fa6b4d83c540b87-2000-1.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/eko/09-e96e04bdf1df4e47-9fa6b4d83c540b87-2000-1.png", fit: "cover", alt: "09-e96e04bdf1df4e47-9fa6b4d83c540b87-2000-1.png" },
-      { src: "/scraped/outdoor-architectural/eko/01-web-mainimage-eko-lo-140-gen-37-z5.png", fit: "contain", alt: "01-web-mainimage-eko-lo-140-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/eko/02-eko-lo-140-amb-37-60-al.jpg", fit: "cover", alt: "02-eko-lo-140-amb-37-60-al.jpg" },
-      { src: "/scraped/outdoor-architectural/eko/03-web-mainimage-eko-lo-199-gen-37-z5.png", fit: "cover", alt: "03-web-mainimage-eko-lo-199-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/eko/04-web-mainimage-eko-lo-142-gen-37-z5.png", fit: "cover", alt: "04-web-mainimage-eko-lo-142-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/eko/05-web-mainimage-eko-lo-405-gen-37-z5.png", fit: "cover", alt: "05-web-mainimage-eko-lo-405-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/eko/06-web-mainimage-eko-lo-198-gen-37-z5.png", fit: "cover", alt: "06-web-mainimage-eko-lo-198-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/eko/10-b3fa23aa8c664c14-a0c29574ba197fbc-2000-1.png", fit: "cover", alt: "10-b3fa23aa8c664c14-a0c29574ba197fbc-2000-1.png" },
-      { src: "/scraped/outdoor-architectural/eko/11-c421d5ff2d5a4443-9b30cb5d6329642b-2000-1.png", fit: "cover", alt: "11-c421d5ff2d5a4443-9b30cb5d6329642b-2000-1.png" },
-      { src: "/scraped/outdoor-architectural/eko/12-3d0c661fd5c94d49-a42a0a13a7dc903d-2000-1-1.png", fit: "cover", alt: "12-3d0c661fd5c94d49-a42a0a13a7dc903d-2000-1-1.png" },
+      { src: "/scraped/outdoor-architectural/eko/09-e96e04bdf1df4e47-9fa6b4d83c540b87-2000-1.png", fit: "contain", alt: "09-e96e04bdf1df4e47-9fa6b4d83c540b87-2000-1.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/eko/01-web-mainimage-eko-lo-140-gen-37-z5.png", fit: "contain", alt: "01-web-mainimage-eko-lo-140-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/eko/02-eko-lo-140-amb-37-60-al.jpg", fit: "contain", alt: "02-eko-lo-140-amb-37-60-al.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/eko/03-web-mainimage-eko-lo-199-gen-37-z5.png", fit: "contain", alt: "03-web-mainimage-eko-lo-199-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/eko/04-web-mainimage-eko-lo-142-gen-37-z5.png", fit: "contain", alt: "04-web-mainimage-eko-lo-142-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/eko/05-web-mainimage-eko-lo-405-gen-37-z5.png", fit: "contain", alt: "05-web-mainimage-eko-lo-405-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/eko/06-web-mainimage-eko-lo-198-gen-37-z5.png", fit: "contain", alt: "06-web-mainimage-eko-lo-198-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/eko/10-b3fa23aa8c664c14-a0c29574ba197fbc-2000-1.png", fit: "contain", alt: "10-b3fa23aa8c664c14-a0c29574ba197fbc-2000-1.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/eko/11-c421d5ff2d5a4443-9b30cb5d6329642b-2000-1.png", fit: "contain", alt: "11-c421d5ff2d5a4443-9b30cb5d6329642b-2000-1.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/eko/12-3d0c661fd5c94d49-a42a0a13a7dc903d-2000-1-1.png", fit: "contain", alt: "12-3d0c661fd5c94d49-a42a0a13a7dc903d-2000-1-1.png", width: 2000, height: 2000 },
     ],
   },
   {
@@ -1993,16 +1993,16 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/cube/07-65272d1c2dd54154-a400e81aea18a2e3-2000-22.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/cube/07-65272d1c2dd54154-a400e81aea18a2e3-2000-22.png", fit: "cover", alt: "07-65272d1c2dd54154-a400e81aea18a2e3-2000-22.png" },
-      { src: "/scraped/outdoor-architectural/cube/01-web-mainimage-cube-lo-451-gen-37-z5-2.png", fit: "contain", alt: "01-web-mainimage-cube-lo-451-gen-37-z5-2.png" },
-      { src: "/scraped/outdoor-architectural/cube/02-cube-lo-452-amb-37-z5.jpg", fit: "cover", alt: "02-cube-lo-452-amb-37-z5.jpg" },
-      { src: "/scraped/outdoor-architectural/cube/03-web-mainimage-cube-lo-489-gen-37-z5.png", fit: "cover", alt: "03-web-mainimage-cube-lo-489-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/cube/04-web-mainimage-cube-lo-493-gen-37-34-002.png", fit: "cover", alt: "04-web-mainimage-cube-lo-493-gen-37-34-002.png" },
-      { src: "/scraped/outdoor-architectural/cube/08-2960c2a2159a46d3-8805edf6645f8ee9-2000-1-34.png", fit: "cover", alt: "08-2960c2a2159a46d3-8805edf6645f8ee9-2000-1-34.png" },
-      { src: "/scraped/outdoor-architectural/cube/09-5b45b1f9ebb342bf-982d44632dab1e65-2000-1-34.png", fit: "cover", alt: "09-5b45b1f9ebb342bf-982d44632dab1e65-2000-1-34.png" },
-      { src: "/scraped/outdoor-architectural/cube/10-e8c8b6f6041d4011-aade4bc03d7695bc-2000-1-34.png", fit: "cover", alt: "10-e8c8b6f6041d4011-aade4bc03d7695bc-2000-1-34.png" },
-      { src: "/scraped/outdoor-architectural/cube/11-8eccd5d931a444f7-a893ac224c257eb4-2000-1-34.png", fit: "cover", alt: "11-8eccd5d931a444f7-a893ac224c257eb4-2000-1-34.png" },
-      { src: "/scraped/outdoor-architectural/cube/12-65272d1c2dd54154-a400e81aea18a2e3-2000-21.png", fit: "cover", alt: "12-65272d1c2dd54154-a400e81aea18a2e3-2000-21.png" },
+      { src: "/scraped/outdoor-architectural/cube/07-65272d1c2dd54154-a400e81aea18a2e3-2000-22.png", fit: "contain", alt: "07-65272d1c2dd54154-a400e81aea18a2e3-2000-22.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/cube/01-web-mainimage-cube-lo-451-gen-37-z5-2.png", fit: "contain", alt: "01-web-mainimage-cube-lo-451-gen-37-z5-2.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/cube/02-cube-lo-452-amb-37-z5.jpg", fit: "contain", alt: "02-cube-lo-452-amb-37-z5.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/cube/03-web-mainimage-cube-lo-489-gen-37-z5.png", fit: "contain", alt: "03-web-mainimage-cube-lo-489-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/cube/04-web-mainimage-cube-lo-493-gen-37-34-002.png", fit: "contain", alt: "04-web-mainimage-cube-lo-493-gen-37-34-002.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/cube/08-2960c2a2159a46d3-8805edf6645f8ee9-2000-1-34.png", fit: "contain", alt: "08-2960c2a2159a46d3-8805edf6645f8ee9-2000-1-34.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/cube/09-5b45b1f9ebb342bf-982d44632dab1e65-2000-1-34.png", fit: "contain", alt: "09-5b45b1f9ebb342bf-982d44632dab1e65-2000-1-34.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/cube/10-e8c8b6f6041d4011-aade4bc03d7695bc-2000-1-34.png", fit: "contain", alt: "10-e8c8b6f6041d4011-aade4bc03d7695bc-2000-1-34.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/cube/11-8eccd5d931a444f7-a893ac224c257eb4-2000-1-34.png", fit: "contain", alt: "11-8eccd5d931a444f7-a893ac224c257eb4-2000-1-34.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/cube/12-65272d1c2dd54154-a400e81aea18a2e3-2000-21.png", fit: "contain", alt: "12-65272d1c2dd54154-a400e81aea18a2e3-2000-21.png", width: 2000, height: 2000 },
     ],
   },
   {
@@ -2026,16 +2026,16 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/hubble/07-35ea6c6d92a747ee-8db5a94b3c45e7ff-2000-4.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/hubble/07-35ea6c6d92a747ee-8db5a94b3c45e7ff-2000-4.png", fit: "cover", alt: "07-35ea6c6d92a747ee-8db5a94b3c45e7ff-2000-4.png" },
-      { src: "/scraped/outdoor-architectural/hubble/01-web-mainimage-hubble-lo-117-gen-37-z5.png", fit: "contain", alt: "01-web-mainimage-hubble-lo-117-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/hubble/02-hubble-amb-37-z5.jpg", fit: "cover", alt: "02-hubble-amb-37-z5.jpg" },
-      { src: "/scraped/outdoor-architectural/hubble/03-hubble-lo-117-amb-37-z5.jpg", fit: "cover", alt: "03-hubble-lo-117-amb-37-z5.jpg" },
-      { src: "/scraped/outdoor-architectural/hubble/04-hubble-37-z5.jpg", fit: "cover", alt: "04-hubble-37-z5.jpg" },
-      { src: "/scraped/outdoor-architectural/hubble/08-35ea6c6d92a747ee-8db5a94b3c45e7ff-2000-1.png", fit: "cover", alt: "08-35ea6c6d92a747ee-8db5a94b3c45e7ff-2000-1.png" },
-      { src: "/scraped/outdoor-architectural/hubble/09-a7c6e9c344de4ba0-b45ccf5c6aff79ab-2000-4.png", fit: "cover", alt: "09-a7c6e9c344de4ba0-b45ccf5c6aff79ab-2000-4.png" },
-      { src: "/scraped/outdoor-architectural/hubble/10-a7c6e9c344de4ba0-b45ccf5c6aff79ab-2000-1.png", fit: "cover", alt: "10-a7c6e9c344de4ba0-b45ccf5c6aff79ab-2000-1.png" },
-      { src: "/scraped/outdoor-architectural/hubble/11-a7c6e9c344de4ba0-b45ccf5c6aff79ab-2000-2.png", fit: "cover", alt: "11-a7c6e9c344de4ba0-b45ccf5c6aff79ab-2000-2.png" },
-      { src: "/scraped/outdoor-architectural/hubble/12-a7c6e9c344de4ba0-b45ccf5c6aff79ab-2000.png", fit: "cover", alt: "12-a7c6e9c344de4ba0-b45ccf5c6aff79ab-2000.png" },
+      { src: "/scraped/outdoor-architectural/hubble/07-35ea6c6d92a747ee-8db5a94b3c45e7ff-2000-4.png", fit: "contain", alt: "07-35ea6c6d92a747ee-8db5a94b3c45e7ff-2000-4.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/hubble/01-web-mainimage-hubble-lo-117-gen-37-z5.png", fit: "contain", alt: "01-web-mainimage-hubble-lo-117-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/hubble/02-hubble-amb-37-z5.jpg", fit: "contain", alt: "02-hubble-amb-37-z5.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/hubble/03-hubble-lo-117-amb-37-z5.jpg", fit: "contain", alt: "03-hubble-lo-117-amb-37-z5.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/hubble/04-hubble-37-z5.jpg", fit: "contain", alt: "04-hubble-37-z5.jpg", width: 2000, height: 1500 },
+      { src: "/scraped/outdoor-architectural/hubble/08-35ea6c6d92a747ee-8db5a94b3c45e7ff-2000-1.png", fit: "contain", alt: "08-35ea6c6d92a747ee-8db5a94b3c45e7ff-2000-1.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/hubble/09-a7c6e9c344de4ba0-b45ccf5c6aff79ab-2000-4.png", fit: "contain", alt: "09-a7c6e9c344de4ba0-b45ccf5c6aff79ab-2000-4.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/hubble/10-a7c6e9c344de4ba0-b45ccf5c6aff79ab-2000-1.png", fit: "contain", alt: "10-a7c6e9c344de4ba0-b45ccf5c6aff79ab-2000-1.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/hubble/11-a7c6e9c344de4ba0-b45ccf5c6aff79ab-2000-2.png", fit: "contain", alt: "11-a7c6e9c344de4ba0-b45ccf5c6aff79ab-2000-2.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/hubble/12-a7c6e9c344de4ba0-b45ccf5c6aff79ab-2000.png", fit: "contain", alt: "12-a7c6e9c344de4ba0-b45ccf5c6aff79ab-2000.png", width: 2000, height: 2000 },
     ],
   },
   {
@@ -2059,16 +2059,16 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/eko-2/09-a53bc4c30f6a4d04-ba0450b1ef5914c6-2000-1.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/eko-2/09-a53bc4c30f6a4d04-ba0450b1ef5914c6-2000-1.png", fit: "cover", alt: "09-a53bc4c30f6a4d04-ba0450b1ef5914c6-2000-1.png" },
-      { src: "/scraped/outdoor-architectural/eko-2/01-web-mainimage-eko-lo-405-gen-37-z5.png", fit: "contain", alt: "01-web-mainimage-eko-lo-405-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/eko-2/02-eko-lo-404-amb-37-z5.jpg", fit: "cover", alt: "02-eko-lo-404-amb-37-z5.jpg" },
-      { src: "/scraped/outdoor-architectural/eko-2/03-web-mainimage-eko-lo-140-gen-37-z5.png", fit: "cover", alt: "03-web-mainimage-eko-lo-140-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/eko-2/04-web-mainimage-eko-lo-199-gen-37-z5.png", fit: "cover", alt: "04-web-mainimage-eko-lo-199-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/eko-2/05-web-mainimage-eko-lo-142-gen-37-z5.png", fit: "cover", alt: "05-web-mainimage-eko-lo-142-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/eko-2/06-web-mainimage-eko-lo-198-gen-37-z5.png", fit: "cover", alt: "06-web-mainimage-eko-lo-198-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/eko-2/10-d09b0ba90ca5405f-89793c071caaf832-2000-1.png", fit: "cover", alt: "10-d09b0ba90ca5405f-89793c071caaf832-2000-1.png" },
-      { src: "/scraped/outdoor-architectural/eko-2/11-907e1ebaff5c4959-9949ec178be0a405-2000-1.png", fit: "cover", alt: "11-907e1ebaff5c4959-9949ec178be0a405-2000-1.png" },
-      { src: "/scraped/outdoor-architectural/eko-2/12-e4ad9706c6644990-857b542dfd051b3c-2000-1.png", fit: "cover", alt: "12-e4ad9706c6644990-857b542dfd051b3c-2000-1.png" },
+      { src: "/scraped/outdoor-architectural/eko-2/09-a53bc4c30f6a4d04-ba0450b1ef5914c6-2000-1.png", fit: "contain", alt: "09-a53bc4c30f6a4d04-ba0450b1ef5914c6-2000-1.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/eko-2/01-web-mainimage-eko-lo-405-gen-37-z5.png", fit: "contain", alt: "01-web-mainimage-eko-lo-405-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/eko-2/02-eko-lo-404-amb-37-z5.jpg", fit: "contain", alt: "02-eko-lo-404-amb-37-z5.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/eko-2/03-web-mainimage-eko-lo-140-gen-37-z5.png", fit: "contain", alt: "03-web-mainimage-eko-lo-140-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/eko-2/04-web-mainimage-eko-lo-199-gen-37-z5.png", fit: "contain", alt: "04-web-mainimage-eko-lo-199-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/eko-2/05-web-mainimage-eko-lo-142-gen-37-z5.png", fit: "contain", alt: "05-web-mainimage-eko-lo-142-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/eko-2/06-web-mainimage-eko-lo-198-gen-37-z5.png", fit: "contain", alt: "06-web-mainimage-eko-lo-198-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/eko-2/10-d09b0ba90ca5405f-89793c071caaf832-2000-1.png", fit: "contain", alt: "10-d09b0ba90ca5405f-89793c071caaf832-2000-1.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/eko-2/11-907e1ebaff5c4959-9949ec178be0a405-2000-1.png", fit: "contain", alt: "11-907e1ebaff5c4959-9949ec178be0a405-2000-1.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/eko-2/12-e4ad9706c6644990-857b542dfd051b3c-2000-1.png", fit: "contain", alt: "12-e4ad9706c6644990-857b542dfd051b3c-2000-1.png", width: 2000, height: 2000 },
     ],
   },
   {
@@ -2092,12 +2092,12 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/ele/06-a279157b3f894793-a64d94b862c0865a-2000-2.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/ele/06-a279157b3f894793-a64d94b862c0865a-2000-2.png", fit: "cover", alt: "06-a279157b3f894793-a64d94b862c0865a-2000-2.png" },
-      { src: "/scraped/outdoor-architectural/ele/01-web-mainimage-ele-lo-400-gen-37-z5.png", fit: "contain", alt: "01-web-mainimage-ele-lo-400-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/ele/02-ele-lo-400-37-z5-002.jpg", fit: "cover", alt: "02-ele-lo-400-37-z5-002.jpg" },
-      { src: "/scraped/outdoor-architectural/ele/03-web-mainimage-ele-lo-401-gen-37-z5.png", fit: "cover", alt: "03-web-mainimage-ele-lo-401-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/ele/07-a279157b3f894793-a64d94b862c0865a-2000-1.png", fit: "cover", alt: "07-a279157b3f894793-a64d94b862c0865a-2000-1.png" },
-      { src: "/scraped/outdoor-architectural/ele/08-a279157b3f894793-a64d94b862c0865a-2000.png", fit: "cover", alt: "08-a279157b3f894793-a64d94b862c0865a-2000.png" },
+      { src: "/scraped/outdoor-architectural/ele/06-a279157b3f894793-a64d94b862c0865a-2000-2.png", fit: "contain", alt: "06-a279157b3f894793-a64d94b862c0865a-2000-2.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/ele/01-web-mainimage-ele-lo-400-gen-37-z5.png", fit: "contain", alt: "01-web-mainimage-ele-lo-400-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/ele/02-ele-lo-400-37-z5-002.jpg", fit: "contain", alt: "02-ele-lo-400-37-z5-002.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/ele/03-web-mainimage-ele-lo-401-gen-37-z5.png", fit: "contain", alt: "03-web-mainimage-ele-lo-401-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/ele/07-a279157b3f894793-a64d94b862c0865a-2000-1.png", fit: "contain", alt: "07-a279157b3f894793-a64d94b862c0865a-2000-1.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/ele/08-a279157b3f894793-a64d94b862c0865a-2000.png", fit: "contain", alt: "08-a279157b3f894793-a64d94b862c0865a-2000.png", width: 2000, height: 2000 },
     ],
   },
   {
@@ -2121,16 +2121,16 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/modis/08-8a167b8d141247fd-9eda1aff50589a66-2000-34.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/modis/08-8a167b8d141247fd-9eda1aff50589a66-2000-34.png", fit: "cover", alt: "08-8a167b8d141247fd-9eda1aff50589a66-2000-34.png" },
-      { src: "/scraped/outdoor-architectural/modis/01-web-mainimage-modis-lo-456-gen-37-60.png", fit: "contain", alt: "01-web-mainimage-modis-lo-456-gen-37-60.png" },
-      { src: "/scraped/outdoor-architectural/modis/02-modis-37-ant.jpg", fit: "cover", alt: "02-modis-37-ant.jpg" },
-      { src: "/scraped/outdoor-architectural/modis/03-modis-lo-456-amb-37-ant.jpg", fit: "cover", alt: "03-modis-lo-456-amb-37-ant.jpg" },
-      { src: "/scraped/outdoor-architectural/modis/04-web-mainimage-modis-lo-99-gen-z5.png", fit: "cover", alt: "04-web-mainimage-modis-lo-99-gen-z5.png" },
-      { src: "/scraped/outdoor-architectural/modis/05-web-mainimage-modis-lo-453-gen-37-z5-002.png", fit: "cover", alt: "05-web-mainimage-modis-lo-453-gen-37-z5-002.png" },
-      { src: "/scraped/outdoor-architectural/modis/09-1b2f1e5e934c4237-90dfe4f2f43b6391-2000-33.png", fit: "cover", alt: "09-1b2f1e5e934c4237-90dfe4f2f43b6391-2000-33.png" },
-      { src: "/scraped/outdoor-architectural/modis/10-6623b2a0522e4558-95f7d76805cc7024-2000-32.png", fit: "cover", alt: "10-6623b2a0522e4558-95f7d76805cc7024-2000-32.png" },
-      { src: "/scraped/outdoor-architectural/modis/11-15fc33b530fc4106-bcfe5061c951bb39-2000-34.png", fit: "cover", alt: "11-15fc33b530fc4106-bcfe5061c951bb39-2000-34.png" },
-      { src: "/scraped/outdoor-architectural/modis/12-075a6d7add8044eb-94dce3a3e141db60-2000-32.png", fit: "cover", alt: "12-075a6d7add8044eb-94dce3a3e141db60-2000-32.png" },
+      { src: "/scraped/outdoor-architectural/modis/08-8a167b8d141247fd-9eda1aff50589a66-2000-34.png", fit: "contain", alt: "08-8a167b8d141247fd-9eda1aff50589a66-2000-34.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/modis/01-web-mainimage-modis-lo-456-gen-37-60.png", fit: "contain", alt: "01-web-mainimage-modis-lo-456-gen-37-60.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/modis/02-modis-37-ant.jpg", fit: "contain", alt: "02-modis-37-ant.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/modis/03-modis-lo-456-amb-37-ant.jpg", fit: "contain", alt: "03-modis-lo-456-amb-37-ant.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/modis/04-web-mainimage-modis-lo-99-gen-z5.png", fit: "contain", alt: "04-web-mainimage-modis-lo-99-gen-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/modis/05-web-mainimage-modis-lo-453-gen-37-z5-002.png", fit: "contain", alt: "05-web-mainimage-modis-lo-453-gen-37-z5-002.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/modis/09-1b2f1e5e934c4237-90dfe4f2f43b6391-2000-33.png", fit: "contain", alt: "09-1b2f1e5e934c4237-90dfe4f2f43b6391-2000-33.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/modis/10-6623b2a0522e4558-95f7d76805cc7024-2000-32.png", fit: "contain", alt: "10-6623b2a0522e4558-95f7d76805cc7024-2000-32.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/modis/11-15fc33b530fc4106-bcfe5061c951bb39-2000-34.png", fit: "contain", alt: "11-15fc33b530fc4106-bcfe5061c951bb39-2000-34.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/modis/12-075a6d7add8044eb-94dce3a3e141db60-2000-32.png", fit: "contain", alt: "12-075a6d7add8044eb-94dce3a3e141db60-2000-32.png", width: 2000, height: 2000 },
     ],
   },
   {
@@ -2154,15 +2154,15 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/moal/10-7a35dab1b5c147f9-90544533412351b0-2000.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/moal/10-7a35dab1b5c147f9-90544533412351b0-2000.png", fit: "cover", alt: "10-7a35dab1b5c147f9-90544533412351b0-2000.png" },
-      { src: "/scraped/outdoor-architectural/moal/01-web-mainimage-moal-lo-368-gen-37-dc.png", fit: "contain", alt: "01-web-mainimage-moal-lo-368-gen-37-dc.png" },
-      { src: "/scraped/outdoor-architectural/moal/02-moal-amb-37-dc.jpg", fit: "cover", alt: "02-moal-amb-37-dc.jpg" },
-      { src: "/scraped/outdoor-architectural/moal/03-moal-amb-37-dc-002.jpg", fit: "cover", alt: "03-moal-amb-37-dc-002.jpg" },
-      { src: "/scraped/outdoor-architectural/moal/04-moal-amb-37-dc-003.jpg", fit: "cover", alt: "04-moal-amb-37-dc-003.jpg" },
-      { src: "/scraped/outdoor-architectural/moal/05-moal-amb-37-dc-005.jpg", fit: "cover", alt: "05-moal-amb-37-dc-005.jpg" },
-      { src: "/scraped/outdoor-architectural/moal/06-moal-amb-37-dc-1.jpg", fit: "cover", alt: "06-moal-amb-37-dc-1.jpg" },
-      { src: "/scraped/outdoor-architectural/moal/07-web-mainimage-moal-lo-112-gen-dc.png", fit: "cover", alt: "07-web-mainimage-moal-lo-112-gen-dc.png" },
-      { src: "/scraped/outdoor-architectural/moal/11-9807d83d684144c0-9a9e569072922142-2000.png", fit: "cover", alt: "11-9807d83d684144c0-9a9e569072922142-2000.png" },
+      { src: "/scraped/outdoor-architectural/moal/10-7a35dab1b5c147f9-90544533412351b0-2000.png", fit: "contain", alt: "10-7a35dab1b5c147f9-90544533412351b0-2000.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/moal/01-web-mainimage-moal-lo-368-gen-37-dc.png", fit: "contain", alt: "01-web-mainimage-moal-lo-368-gen-37-dc.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/moal/02-moal-amb-37-dc.jpg", fit: "contain", alt: "02-moal-amb-37-dc.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/moal/03-moal-amb-37-dc-002.jpg", fit: "contain", alt: "03-moal-amb-37-dc-002.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/moal/04-moal-amb-37-dc-003.jpg", fit: "contain", alt: "04-moal-amb-37-dc-003.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/moal/05-moal-amb-37-dc-005.jpg", fit: "contain", alt: "05-moal-amb-37-dc-005.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/moal/06-moal-amb-37-dc-1.jpg", fit: "contain", alt: "06-moal-amb-37-dc-1.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/moal/07-web-mainimage-moal-lo-112-gen-dc.png", fit: "contain", alt: "07-web-mainimage-moal-lo-112-gen-dc.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/moal/11-9807d83d684144c0-9a9e569072922142-2000.png", fit: "contain", alt: "11-9807d83d684144c0-9a9e569072922142-2000.png", width: 2000, height: 2000 },
     ],
   },
   {
@@ -2186,10 +2186,10 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/row/05-57c5600015c24df8-b98cbc1063fa2ff8-2000-1.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/row/05-57c5600015c24df8-b98cbc1063fa2ff8-2000-1.png", fit: "cover", alt: "05-57c5600015c24df8-b98cbc1063fa2ff8-2000-1.png" },
-      { src: "/scraped/outdoor-architectural/row/01-web-mainimage-row-lo-351-gen-26-dc.png", fit: "contain", alt: "01-web-mainimage-row-lo-351-gen-26-dc.png" },
-      { src: "/scraped/outdoor-architectural/row/02-row-gen-26-dc.jpg", fit: "cover", alt: "02-row-gen-26-dc.jpg" },
-      { src: "/scraped/outdoor-architectural/row/06-57409ccd24d14097-be33bc4f802fd15c-2000.png", fit: "cover", alt: "06-57409ccd24d14097-be33bc4f802fd15c-2000.png" },
+      { src: "/scraped/outdoor-architectural/row/05-57c5600015c24df8-b98cbc1063fa2ff8-2000-1.png", fit: "contain", alt: "05-57c5600015c24df8-b98cbc1063fa2ff8-2000-1.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/row/01-web-mainimage-row-lo-351-gen-26-dc.png", fit: "contain", alt: "01-web-mainimage-row-lo-351-gen-26-dc.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/row/02-row-gen-26-dc.jpg", fit: "contain", alt: "02-row-gen-26-dc.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/row/06-57409ccd24d14097-be33bc4f802fd15c-2000.png", fit: "contain", alt: "06-57409ccd24d14097-be33bc4f802fd15c-2000.png", width: 2000, height: 2000 },
     ],
   },
   {
@@ -2213,15 +2213,15 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/ele-2/06-99ff0b0537784933-aeda62ccab5e4d99-2000-2.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/ele-2/06-99ff0b0537784933-aeda62ccab5e4d99-2000-2.png", fit: "cover", alt: "06-99ff0b0537784933-aeda62ccab5e4d99-2000-2.png" },
-      { src: "/scraped/outdoor-architectural/ele-2/01-web-mainimage-ele-lo-401-gen-37-z5.png", fit: "contain", alt: "01-web-mainimage-ele-lo-401-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/ele-2/02-ele-lo-402-amb-37-z5.jpg", fit: "cover", alt: "02-ele-lo-402-amb-37-z5.jpg" },
-      { src: "/scraped/outdoor-architectural/ele-2/03-web-mainimage-ele-lo-400-gen-37-z5.png", fit: "cover", alt: "03-web-mainimage-ele-lo-400-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/ele-2/07-99ff0b0537784933-aeda62ccab5e4d99-2000-1.png", fit: "cover", alt: "07-99ff0b0537784933-aeda62ccab5e4d99-2000-1.png" },
-      { src: "/scraped/outdoor-architectural/ele-2/08-99ff0b0537784933-aeda62ccab5e4d99-2000.png", fit: "cover", alt: "08-99ff0b0537784933-aeda62ccab5e4d99-2000.png" },
-      { src: "/scraped/outdoor-architectural/ele-2/09-41bbaff4f9834ddf-8d75d21e1df71337-2000-2.png", fit: "cover", alt: "09-41bbaff4f9834ddf-8d75d21e1df71337-2000-2.png" },
-      { src: "/scraped/outdoor-architectural/ele-2/10-41bbaff4f9834ddf-8d75d21e1df71337-2000-1.png", fit: "cover", alt: "10-41bbaff4f9834ddf-8d75d21e1df71337-2000-1.png" },
-      { src: "/scraped/outdoor-architectural/ele-2/11-41bbaff4f9834ddf-8d75d21e1df71337-2000.png", fit: "cover", alt: "11-41bbaff4f9834ddf-8d75d21e1df71337-2000.png" },
+      { src: "/scraped/outdoor-architectural/ele-2/06-99ff0b0537784933-aeda62ccab5e4d99-2000-2.png", fit: "contain", alt: "06-99ff0b0537784933-aeda62ccab5e4d99-2000-2.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/ele-2/01-web-mainimage-ele-lo-401-gen-37-z5.png", fit: "contain", alt: "01-web-mainimage-ele-lo-401-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/ele-2/02-ele-lo-402-amb-37-z5.jpg", fit: "contain", alt: "02-ele-lo-402-amb-37-z5.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/ele-2/03-web-mainimage-ele-lo-400-gen-37-z5.png", fit: "contain", alt: "03-web-mainimage-ele-lo-400-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/ele-2/07-99ff0b0537784933-aeda62ccab5e4d99-2000-1.png", fit: "contain", alt: "07-99ff0b0537784933-aeda62ccab5e4d99-2000-1.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/ele-2/08-99ff0b0537784933-aeda62ccab5e4d99-2000.png", fit: "contain", alt: "08-99ff0b0537784933-aeda62ccab5e4d99-2000.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/ele-2/09-41bbaff4f9834ddf-8d75d21e1df71337-2000-2.png", fit: "contain", alt: "09-41bbaff4f9834ddf-8d75d21e1df71337-2000-2.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/ele-2/10-41bbaff4f9834ddf-8d75d21e1df71337-2000-1.png", fit: "contain", alt: "10-41bbaff4f9834ddf-8d75d21e1df71337-2000-1.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/ele-2/11-41bbaff4f9834ddf-8d75d21e1df71337-2000.png", fit: "contain", alt: "11-41bbaff4f9834ddf-8d75d21e1df71337-2000.png", width: 2000, height: 2000 },
     ],
   },
   {
@@ -2245,12 +2245,12 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/proud/06-93aaa23a437943b4-879121b60805e71c-2000.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/proud/06-93aaa23a437943b4-879121b60805e71c-2000.png", fit: "cover", alt: "06-93aaa23a437943b4-879121b60805e71c-2000.png" },
-      { src: "/scraped/outdoor-architectural/proud/01-web-mainimage-proud-lo-424-gen-37-z5.png", fit: "contain", alt: "01-web-mainimage-proud-lo-424-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/proud/02-proud-lo-419-gen-z5-1.jpg", fit: "cover", alt: "02-proud-lo-419-gen-z5-1.jpg" },
-      { src: "/scraped/outdoor-architectural/proud/03-proud-lo-419-gen-z5-2.jpg", fit: "cover", alt: "03-proud-lo-419-gen-z5-2.jpg" },
-      { src: "/scraped/outdoor-architectural/proud/07-b1c4a6f1f4114d77-95b47064c648d5a2-2000.png", fit: "cover", alt: "07-b1c4a6f1f4114d77-95b47064c648d5a2-2000.png" },
-      { src: "/scraped/outdoor-architectural/proud/08-b1c4a6f1f4114d77-95b47064c648d5a2-2000-1.png", fit: "cover", alt: "08-b1c4a6f1f4114d77-95b47064c648d5a2-2000-1.png" },
+      { src: "/scraped/outdoor-architectural/proud/06-93aaa23a437943b4-879121b60805e71c-2000.png", fit: "contain", alt: "06-93aaa23a437943b4-879121b60805e71c-2000.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/proud/01-web-mainimage-proud-lo-424-gen-37-z5.png", fit: "contain", alt: "01-web-mainimage-proud-lo-424-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/proud/02-proud-lo-419-gen-z5-1.jpg", fit: "contain", alt: "02-proud-lo-419-gen-z5-1.jpg", width: 2501, height: 1558 },
+      { src: "/scraped/outdoor-architectural/proud/03-proud-lo-419-gen-z5-2.jpg", fit: "contain", alt: "03-proud-lo-419-gen-z5-2.jpg", width: 2501, height: 1558 },
+      { src: "/scraped/outdoor-architectural/proud/07-b1c4a6f1f4114d77-95b47064c648d5a2-2000.png", fit: "contain", alt: "07-b1c4a6f1f4114d77-95b47064c648d5a2-2000.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/proud/08-b1c4a6f1f4114d77-95b47064c648d5a2-2000-1.png", fit: "contain", alt: "08-b1c4a6f1f4114d77-95b47064c648d5a2-2000-1.png", width: 2000, height: 2000 },
     ],
   },
   {
@@ -2274,11 +2274,11 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/lyon/06-83ff603be1dd4127-a568375356ac0cbf-2000-1.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/lyon/06-83ff603be1dd4127-a568375356ac0cbf-2000-1.png", fit: "cover", alt: "06-83ff603be1dd4127-a568375356ac0cbf-2000-1.png" },
-      { src: "/scraped/outdoor-architectural/lyon/01-web-mainimage-lyon-gen-26-z5.png", fit: "contain", alt: "01-web-mainimage-lyon-gen-26-z5.png" },
-      { src: "/scraped/outdoor-architectural/lyon/02-lyon-26-z5.jpg", fit: "cover", alt: "02-lyon-26-z5.jpg" },
-      { src: "/scraped/outdoor-architectural/lyon/03-web-mainimage-lyon-lo-372-gen-26-z5.png", fit: "cover", alt: "03-web-mainimage-lyon-lo-372-gen-26-z5.png" },
-      { src: "/scraped/outdoor-architectural/lyon/07-5c7624c2f47e4a93-886b21f6c2a703a0-2000.png", fit: "cover", alt: "07-5c7624c2f47e4a93-886b21f6c2a703a0-2000.png" },
+      { src: "/scraped/outdoor-architectural/lyon/06-83ff603be1dd4127-a568375356ac0cbf-2000-1.png", fit: "contain", alt: "06-83ff603be1dd4127-a568375356ac0cbf-2000-1.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/lyon/01-web-mainimage-lyon-gen-26-z5.png", fit: "contain", alt: "01-web-mainimage-lyon-gen-26-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/lyon/02-lyon-26-z5.jpg", fit: "contain", alt: "02-lyon-26-z5.jpg", width: 2000, height: 1125 },
+      { src: "/scraped/outdoor-architectural/lyon/03-web-mainimage-lyon-lo-372-gen-26-z5.png", fit: "contain", alt: "03-web-mainimage-lyon-lo-372-gen-26-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/lyon/07-5c7624c2f47e4a93-886b21f6c2a703a0-2000.png", fit: "contain", alt: "07-5c7624c2f47e4a93-886b21f6c2a703a0-2000.png", width: 2000, height: 2000 },
     ],
   },
   {
@@ -2302,14 +2302,14 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/zig-zag/08-eb34ac82301d44f9-95093358bcabbbff-2000-1.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/zig-zag/08-eb34ac82301d44f9-95093358bcabbbff-2000-1.png", fit: "cover", alt: "08-eb34ac82301d44f9-95093358bcabbbff-2000-1.png" },
-      { src: "/scraped/outdoor-architectural/zig-zag/01-zigzag-gen-37-z5-002.png", fit: "contain", alt: "01-zigzag-gen-37-z5-002.png" },
-      { src: "/scraped/outdoor-architectural/zig-zag/02-zigzag-amb-37-z5.jpg", fit: "cover", alt: "02-zigzag-amb-37-z5.jpg" },
-      { src: "/scraped/outdoor-architectural/zig-zag/03-zigzag-amb-37-z5-002.jpg", fit: "cover", alt: "03-zigzag-amb-37-z5-002.jpg" },
-      { src: "/scraped/outdoor-architectural/zig-zag/04-zigzag-37-z5.jpg", fit: "cover", alt: "04-zigzag-37-z5.jpg" },
-      { src: "/scraped/outdoor-architectural/zig-zag/05-zigzag-37-z5-z5-na.jpg", fit: "cover", alt: "05-zigzag-37-z5-z5-na.jpg" },
-      { src: "/scraped/outdoor-architectural/zig-zag/09-cff3bc5c4a2b4687-bbd1d176fe14c566-2000.png", fit: "cover", alt: "09-cff3bc5c4a2b4687-bbd1d176fe14c566-2000.png" },
-      { src: "/scraped/outdoor-architectural/zig-zag/10-cff3bc5c4a2b4687-bbd1d176fe14c566-2000-1.png", fit: "cover", alt: "10-cff3bc5c4a2b4687-bbd1d176fe14c566-2000-1.png" },
+      { src: "/scraped/outdoor-architectural/zig-zag/08-eb34ac82301d44f9-95093358bcabbbff-2000-1.png", fit: "contain", alt: "08-eb34ac82301d44f9-95093358bcabbbff-2000-1.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/zig-zag/01-zigzag-gen-37-z5-002.png", fit: "contain", alt: "01-zigzag-gen-37-z5-002.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/zig-zag/02-zigzag-amb-37-z5.jpg", fit: "contain", alt: "02-zigzag-amb-37-z5.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/zig-zag/03-zigzag-amb-37-z5-002.jpg", fit: "contain", alt: "03-zigzag-amb-37-z5-002.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/zig-zag/04-zigzag-37-z5.jpg", fit: "contain", alt: "04-zigzag-37-z5.jpg", width: 2000, height: 1466 },
+      { src: "/scraped/outdoor-architectural/zig-zag/05-zigzag-37-z5-z5-na.jpg", fit: "contain", alt: "05-zigzag-37-z5-z5-na.jpg", width: 2000, height: 1466 },
+      { src: "/scraped/outdoor-architectural/zig-zag/09-cff3bc5c4a2b4687-bbd1d176fe14c566-2000.png", fit: "contain", alt: "09-cff3bc5c4a2b4687-bbd1d176fe14c566-2000.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/zig-zag/10-cff3bc5c4a2b4687-bbd1d176fe14c566-2000-1.png", fit: "contain", alt: "10-cff3bc5c4a2b4687-bbd1d176fe14c566-2000-1.png", width: 2000, height: 2000 },
     ],
   },
   {
@@ -2333,10 +2333,10 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/helion/06-5a4a8c9b2eb043b8-880cfeaf05009f84-2000.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/helion/06-5a4a8c9b2eb043b8-880cfeaf05009f84-2000.png", fit: "cover", alt: "06-5a4a8c9b2eb043b8-880cfeaf05009f84-2000.png" },
-      { src: "/scraped/outdoor-architectural/helion/01-web-mainimage-helion-lo-362-gen-z5.png", fit: "contain", alt: "01-web-mainimage-helion-lo-362-gen-z5.png" },
-      { src: "/scraped/outdoor-architectural/helion/02-helion-amb-z5.jpg", fit: "cover", alt: "02-helion-amb-z5.jpg" },
-      { src: "/scraped/outdoor-architectural/helion/03-web-mainimage-helion-lo-361-gen-26-z5.png", fit: "cover", alt: "03-web-mainimage-helion-lo-361-gen-26-z5.png" },
+      { src: "/scraped/outdoor-architectural/helion/06-5a4a8c9b2eb043b8-880cfeaf05009f84-2000.png", fit: "contain", alt: "06-5a4a8c9b2eb043b8-880cfeaf05009f84-2000.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/helion/01-web-mainimage-helion-lo-362-gen-z5.png", fit: "contain", alt: "01-web-mainimage-helion-lo-362-gen-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/helion/02-helion-amb-z5.jpg", fit: "contain", alt: "02-helion-amb-z5.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/helion/03-web-mainimage-helion-lo-361-gen-26-z5.png", fit: "contain", alt: "03-web-mainimage-helion-lo-361-gen-26-z5.png", width: 480, height: 480 },
     ],
   },
   {
@@ -2360,16 +2360,16 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/cube-linear/07-ef5e547e8310495a-b28faa11a786f27a-2000-15-7.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/cube-linear/07-ef5e547e8310495a-b28faa11a786f27a-2000-15-7.png", fit: "cover", alt: "07-ef5e547e8310495a-b28faa11a786f27a-2000-15-7.png" },
-      { src: "/scraped/outdoor-architectural/cube-linear/01-web-mainimage-cube-lo-493-gen-37-34-002.png", fit: "contain", alt: "01-web-mainimage-cube-lo-493-gen-37-34-002.png" },
-      { src: "/scraped/outdoor-architectural/cube-linear/02-cube-37-34.jpg", fit: "cover", alt: "02-cube-37-34.jpg" },
-      { src: "/scraped/outdoor-architectural/cube-linear/03-web-mainimage-cube-lo-489-gen-37-z5.png", fit: "cover", alt: "03-web-mainimage-cube-lo-489-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/cube-linear/04-web-mainimage-cube-lo-451-gen-37-z5-2.png", fit: "cover", alt: "04-web-mainimage-cube-lo-451-gen-37-z5-2.png" },
-      { src: "/scraped/outdoor-architectural/cube-linear/08-ef5e547e8310495a-b28faa11a786f27a-2000-29.png", fit: "cover", alt: "08-ef5e547e8310495a-b28faa11a786f27a-2000-29.png" },
-      { src: "/scraped/outdoor-architectural/cube-linear/09-ef5e547e8310495a-b28faa11a786f27a-2000-28.png", fit: "cover", alt: "09-ef5e547e8310495a-b28faa11a786f27a-2000-28.png" },
-      { src: "/scraped/outdoor-architectural/cube-linear/10-ef5e547e8310495a-b28faa11a786f27a-2000-27.png", fit: "cover", alt: "10-ef5e547e8310495a-b28faa11a786f27a-2000-27.png" },
-      { src: "/scraped/outdoor-architectural/cube-linear/11-ef5e547e8310495a-b28faa11a786f27a-2000-15-6.png", fit: "cover", alt: "11-ef5e547e8310495a-b28faa11a786f27a-2000-15-6.png" },
-      { src: "/scraped/outdoor-architectural/cube-linear/12-ef5e547e8310495a-b28faa11a786f27a-2000-26.png", fit: "cover", alt: "12-ef5e547e8310495a-b28faa11a786f27a-2000-26.png" },
+      { src: "/scraped/outdoor-architectural/cube-linear/07-ef5e547e8310495a-b28faa11a786f27a-2000-15-7.png", fit: "contain", alt: "07-ef5e547e8310495a-b28faa11a786f27a-2000-15-7.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/cube-linear/01-web-mainimage-cube-lo-493-gen-37-34-002.png", fit: "contain", alt: "01-web-mainimage-cube-lo-493-gen-37-34-002.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/cube-linear/02-cube-37-34.jpg", fit: "contain", alt: "02-cube-37-34.jpg", width: 2000, height: 736 },
+      { src: "/scraped/outdoor-architectural/cube-linear/03-web-mainimage-cube-lo-489-gen-37-z5.png", fit: "contain", alt: "03-web-mainimage-cube-lo-489-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/cube-linear/04-web-mainimage-cube-lo-451-gen-37-z5-2.png", fit: "contain", alt: "04-web-mainimage-cube-lo-451-gen-37-z5-2.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/cube-linear/08-ef5e547e8310495a-b28faa11a786f27a-2000-29.png", fit: "contain", alt: "08-ef5e547e8310495a-b28faa11a786f27a-2000-29.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/cube-linear/09-ef5e547e8310495a-b28faa11a786f27a-2000-28.png", fit: "contain", alt: "09-ef5e547e8310495a-b28faa11a786f27a-2000-28.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/cube-linear/10-ef5e547e8310495a-b28faa11a786f27a-2000-27.png", fit: "contain", alt: "10-ef5e547e8310495a-b28faa11a786f27a-2000-27.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/cube-linear/11-ef5e547e8310495a-b28faa11a786f27a-2000-15-6.png", fit: "contain", alt: "11-ef5e547e8310495a-b28faa11a786f27a-2000-15-6.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/cube-linear/12-ef5e547e8310495a-b28faa11a786f27a-2000-26.png", fit: "contain", alt: "12-ef5e547e8310495a-b28faa11a786f27a-2000-26.png", width: 2000, height: 2000 },
     ],
   },
   {
@@ -2393,16 +2393,16 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/gea-cob/10-f28fa54d99144f44-855a4391f5ab57c2-2000-1-3.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/gea-cob/10-f28fa54d99144f44-855a4391f5ab57c2-2000-1-3.png", fit: "cover", alt: "10-f28fa54d99144f44-855a4391f5ab57c2-2000-1-3.png" },
-      { src: "/scraped/outdoor-architectural/gea-cob/01-web-mainimage-gea-lo-242-gen-37-ca.png", fit: "contain", alt: "01-web-mainimage-gea-lo-242-gen-37-ca.png" },
-      { src: "/scraped/outdoor-architectural/gea-cob/02-ambients-sl-0003-gea-lo-363-amb-37-ca-ino-pc.jpg", fit: "cover", alt: "02-ambients-sl-0003-gea-lo-363-amb-37-ca-ino-pc.jpg" },
-      { src: "/scraped/outdoor-architectural/gea-cob/03-gea.jpg", fit: "cover", alt: "03-gea.jpg" },
-      { src: "/scraped/outdoor-architectural/gea-cob/04-web-mainimage-gea-lo-406-gen-37-ca.png", fit: "cover", alt: "04-web-mainimage-gea-lo-406-gen-37-ca.png" },
-      { src: "/scraped/outdoor-architectural/gea-cob/05-web-mainimage-gea-lo-474-gen-37-ca-002.png", fit: "cover", alt: "05-web-mainimage-gea-lo-474-gen-37-ca-002.png" },
-      { src: "/scraped/outdoor-architectural/gea-cob/06-web-mainimage-gea-lo-350-gen-37-ca.png", fit: "cover", alt: "06-web-mainimage-gea-lo-350-gen-37-ca.png" },
-      { src: "/scraped/outdoor-architectural/gea-cob/07-gea-lo-227-gen-54-gris.jpg", fit: "cover", alt: "07-gea-lo-227-gen-54-gris.jpg" },
-      { src: "/scraped/outdoor-architectural/gea-cob/11-f28fa54d99144f44-855a4391f5ab57c2-2000-1-2.png", fit: "cover", alt: "11-f28fa54d99144f44-855a4391f5ab57c2-2000-1-2.png" },
-      { src: "/scraped/outdoor-architectural/gea-cob/12-f28fa54d99144f44-855a4391f5ab57c2-2000-1-1.png", fit: "cover", alt: "12-f28fa54d99144f44-855a4391f5ab57c2-2000-1-1.png" },
+      { src: "/scraped/outdoor-architectural/gea-cob/10-f28fa54d99144f44-855a4391f5ab57c2-2000-1-3.png", fit: "contain", alt: "10-f28fa54d99144f44-855a4391f5ab57c2-2000-1-3.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/gea-cob/01-web-mainimage-gea-lo-242-gen-37-ca.png", fit: "contain", alt: "01-web-mainimage-gea-lo-242-gen-37-ca.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/gea-cob/02-ambients-sl-0003-gea-lo-363-amb-37-ca-ino-pc.jpg", fit: "contain", alt: "02-ambients-sl-0003-gea-lo-363-amb-37-ca-ino-pc.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/gea-cob/03-gea.jpg", fit: "contain", alt: "03-gea.jpg", width: 2499, height: 1557 },
+      { src: "/scraped/outdoor-architectural/gea-cob/04-web-mainimage-gea-lo-406-gen-37-ca.png", fit: "contain", alt: "04-web-mainimage-gea-lo-406-gen-37-ca.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/gea-cob/05-web-mainimage-gea-lo-474-gen-37-ca-002.png", fit: "contain", alt: "05-web-mainimage-gea-lo-474-gen-37-ca-002.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/gea-cob/06-web-mainimage-gea-lo-350-gen-37-ca.png", fit: "contain", alt: "06-web-mainimage-gea-lo-350-gen-37-ca.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/gea-cob/07-gea-lo-227-gen-54-gris.jpg", fit: "contain", alt: "07-gea-lo-227-gen-54-gris.jpg", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/gea-cob/11-f28fa54d99144f44-855a4391f5ab57c2-2000-1-2.png", fit: "contain", alt: "11-f28fa54d99144f44-855a4391f5ab57c2-2000-1-2.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/gea-cob/12-f28fa54d99144f44-855a4391f5ab57c2-2000-1-1.png", fit: "contain", alt: "12-f28fa54d99144f44-855a4391f5ab57c2-2000-1-1.png", width: 2000, height: 2000 },
     ],
   },
   {
@@ -2426,12 +2426,12 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/finestra/05-1a9ae15092ff49fc-91d4481920a52756-2000.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/finestra/05-1a9ae15092ff49fc-91d4481920a52756-2000.png", fit: "cover", alt: "05-1a9ae15092ff49fc-91d4481920a52756-2000.png" },
-      { src: "/scraped/outdoor-architectural/finestra/01-web-mainimage-finestra-lo-188-gen-37-z5.png", fit: "contain", alt: "01-web-mainimage-finestra-lo-188-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/finestra/02-finestra-amb-37-14.jpg", fit: "cover", alt: "02-finestra-amb-37-14.jpg" },
-      { src: "/scraped/outdoor-architectural/finestra/06-3681803c292146cd-b2e4dc809951e2ee-2000.png", fit: "cover", alt: "06-3681803c292146cd-b2e4dc809951e2ee-2000.png" },
-      { src: "/scraped/outdoor-architectural/finestra/07-87d806f0302e4cb9-955f422fb5c44fb1-2000.png", fit: "cover", alt: "07-87d806f0302e4cb9-955f422fb5c44fb1-2000.png" },
-      { src: "/scraped/outdoor-architectural/finestra/08-f3cfd2e874ed4773-b2975f7948760ab9-2000.png", fit: "cover", alt: "08-f3cfd2e874ed4773-b2975f7948760ab9-2000.png" },
+      { src: "/scraped/outdoor-architectural/finestra/05-1a9ae15092ff49fc-91d4481920a52756-2000.png", fit: "contain", alt: "05-1a9ae15092ff49fc-91d4481920a52756-2000.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/finestra/01-web-mainimage-finestra-lo-188-gen-37-z5.png", fit: "contain", alt: "01-web-mainimage-finestra-lo-188-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/finestra/02-finestra-amb-37-14.jpg", fit: "contain", alt: "02-finestra-amb-37-14.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/finestra/06-3681803c292146cd-b2e4dc809951e2ee-2000.png", fit: "contain", alt: "06-3681803c292146cd-b2e4dc809951e2ee-2000.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/finestra/07-87d806f0302e4cb9-955f422fb5c44fb1-2000.png", fit: "contain", alt: "07-87d806f0302e4cb9-955f422fb5c44fb1-2000.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/finestra/08-f3cfd2e874ed4773-b2975f7948760ab9-2000.png", fit: "contain", alt: "08-f3cfd2e874ed4773-b2975f7948760ab9-2000.png", width: 2000, height: 2000 },
     ],
   },
   {
@@ -2455,16 +2455,16 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/cosmos/07-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-1-5.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/cosmos/07-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-1-5.png", fit: "cover", alt: "07-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-1-5.png" },
-      { src: "/scraped/outdoor-architectural/cosmos/01-web-mainimage-cosmos-gen-37-z5-003.png", fit: "contain", alt: "01-web-mainimage-cosmos-gen-37-z5-003.png" },
-      { src: "/scraped/outdoor-architectural/cosmos/02-cosmos-37-z5.jpg", fit: "cover", alt: "02-cosmos-37-z5.jpg" },
-      { src: "/scraped/outdoor-architectural/cosmos/03-vivienda-unifamiliar-20-esp-002.jpg", fit: "cover", alt: "03-vivienda-unifamiliar-20-esp-002.jpg" },
-      { src: "/scraped/outdoor-architectural/cosmos/04-web-mainimage-15-9904-14-cl.png", fit: "cover", alt: "04-web-mainimage-15-9904-14-cl.png" },
-      { src: "/scraped/outdoor-architectural/cosmos/08-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-1-4.png", fit: "cover", alt: "08-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-1-4.png" },
-      { src: "/scraped/outdoor-architectural/cosmos/09-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-6.png", fit: "cover", alt: "09-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-6.png" },
-      { src: "/scraped/outdoor-architectural/cosmos/10-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-1-3.png", fit: "cover", alt: "10-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-1-3.png" },
-      { src: "/scraped/outdoor-architectural/cosmos/11-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-5.png", fit: "cover", alt: "11-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-5.png" },
-      { src: "/scraped/outdoor-architectural/cosmos/12-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-4.png", fit: "cover", alt: "12-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-4.png" },
+      { src: "/scraped/outdoor-architectural/cosmos/07-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-1-5.png", fit: "contain", alt: "07-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-1-5.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/cosmos/01-web-mainimage-cosmos-gen-37-z5-003.png", fit: "contain", alt: "01-web-mainimage-cosmos-gen-37-z5-003.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/cosmos/02-cosmos-37-z5.jpg", fit: "contain", alt: "02-cosmos-37-z5.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/cosmos/03-vivienda-unifamiliar-20-esp-002.jpg", fit: "contain", alt: "03-vivienda-unifamiliar-20-esp-002.jpg", width: 2000, height: 1517 },
+      { src: "/scraped/outdoor-architectural/cosmos/04-web-mainimage-15-9904-14-cl.png", fit: "contain", alt: "04-web-mainimage-15-9904-14-cl.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/cosmos/08-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-1-4.png", fit: "contain", alt: "08-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-1-4.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/cosmos/09-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-6.png", fit: "contain", alt: "09-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-6.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/cosmos/10-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-1-3.png", fit: "contain", alt: "10-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-1-3.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/cosmos/11-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-5.png", fit: "contain", alt: "11-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-5.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/cosmos/12-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-4.png", fit: "contain", alt: "12-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-4.png", width: 2000, height: 2000 },
     ],
   },
   {
@@ -2488,16 +2488,16 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/afrodita/12-6ea9d3e7025348cb-9ba591aff40652b5-2000-1-5.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/afrodita/12-6ea9d3e7025348cb-9ba591aff40652b5-2000-1-5.png", fit: "cover", alt: "12-6ea9d3e7025348cb-9ba591aff40652b5-2000-1-5.png" },
-      { src: "/scraped/outdoor-architectural/afrodita/01-web-mainimage-afrodita-gen-z5.png", fit: "contain", alt: "01-web-mainimage-afrodita-gen-z5.png" },
-      { src: "/scraped/outdoor-architectural/afrodita/02-afrodita-37-14.jpg", fit: "cover", alt: "02-afrodita-37-14.jpg" },
-      { src: "/scraped/outdoor-architectural/afrodita/03-afrodita-14-002.jpg", fit: "cover", alt: "03-afrodita-14-002.jpg" },
-      { src: "/scraped/outdoor-architectural/afrodita/04-afrodita-14.jpg", fit: "cover", alt: "04-afrodita-14.jpg" },
-      { src: "/scraped/outdoor-architectural/afrodita/05-afrodita-amb-z5.jpg", fit: "cover", alt: "05-afrodita-amb-z5.jpg" },
-      { src: "/scraped/outdoor-architectural/afrodita/06-afrodita-lo-22-amb-z5.jpg", fit: "cover", alt: "06-afrodita-lo-22-amb-z5.jpg" },
-      { src: "/scraped/outdoor-architectural/afrodita/07-web-mainimage-afrodita-lo-91-gen-37-z5-002.png", fit: "cover", alt: "07-web-mainimage-afrodita-lo-91-gen-37-z5-002.png" },
-      { src: "/scraped/outdoor-architectural/afrodita/08-web-mainimage-afrodita-gen-37-z5.png", fit: "cover", alt: "08-web-mainimage-afrodita-gen-37-z5.png" },
-      { src: "/scraped/outdoor-architectural/afrodita/09-web-mainimage-afrodita-lo-189-gen-37-z5.png", fit: "cover", alt: "09-web-mainimage-afrodita-lo-189-gen-37-z5.png" },
+      { src: "/scraped/outdoor-architectural/afrodita/12-6ea9d3e7025348cb-9ba591aff40652b5-2000-1-5.png", fit: "contain", alt: "12-6ea9d3e7025348cb-9ba591aff40652b5-2000-1-5.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/afrodita/01-web-mainimage-afrodita-gen-z5.png", fit: "contain", alt: "01-web-mainimage-afrodita-gen-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/afrodita/02-afrodita-37-14.jpg", fit: "contain", alt: "02-afrodita-37-14.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/afrodita/03-afrodita-14-002.jpg", fit: "contain", alt: "03-afrodita-14-002.jpg", width: 2000, height: 1961 },
+      { src: "/scraped/outdoor-architectural/afrodita/04-afrodita-14.jpg", fit: "contain", alt: "04-afrodita-14.jpg", width: 2000, height: 1961 },
+      { src: "/scraped/outdoor-architectural/afrodita/05-afrodita-amb-z5.jpg", fit: "contain", alt: "05-afrodita-amb-z5.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/afrodita/06-afrodita-lo-22-amb-z5.jpg", fit: "contain", alt: "06-afrodita-lo-22-amb-z5.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/afrodita/07-web-mainimage-afrodita-lo-91-gen-37-z5-002.png", fit: "contain", alt: "07-web-mainimage-afrodita-lo-91-gen-37-z5-002.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/afrodita/08-web-mainimage-afrodita-gen-37-z5.png", fit: "contain", alt: "08-web-mainimage-afrodita-gen-37-z5.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/afrodita/09-web-mainimage-afrodita-lo-189-gen-37-z5.png", fit: "contain", alt: "09-web-mainimage-afrodita-lo-189-gen-37-z5.png", width: 480, height: 480 },
     ],
   },
   {
@@ -2521,11 +2521,11 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/mega/07-1d70a59ea358434d-9f2376280dac70d8-2000.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/mega/07-1d70a59ea358434d-9f2376280dac70d8-2000.png", fit: "cover", alt: "07-1d70a59ea358434d-9f2376280dac70d8-2000.png" },
-      { src: "/scraped/outdoor-architectural/mega/01-web-mainimage-mega-lo-202-gen-m1-m1.png", fit: "contain", alt: "01-web-mainimage-mega-lo-202-gen-m1-m1.png" },
-      { src: "/scraped/outdoor-architectural/mega/02-mega-amb-m1-m1-bl-na.jpg", fit: "cover", alt: "02-mega-amb-m1-m1-bl-na.jpg" },
-      { src: "/scraped/outdoor-architectural/mega/03-mega-det-m1-m1-bl-na-002.jpg", fit: "cover", alt: "03-mega-det-m1-m1-bl-na-002.jpg" },
-      { src: "/scraped/outdoor-architectural/mega/04-mega-lo-203-amb-m1-m1-bl-na.jpg", fit: "cover", alt: "04-mega-lo-203-amb-m1-m1-bl-na.jpg" },
+      { src: "/scraped/outdoor-architectural/mega/07-1d70a59ea358434d-9f2376280dac70d8-2000.png", fit: "contain", alt: "07-1d70a59ea358434d-9f2376280dac70d8-2000.png", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/mega/01-web-mainimage-mega-lo-202-gen-m1-m1.png", fit: "contain", alt: "01-web-mainimage-mega-lo-202-gen-m1-m1.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/mega/02-mega-amb-m1-m1-bl-na.jpg", fit: "contain", alt: "02-mega-amb-m1-m1-bl-na.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/mega/03-mega-det-m1-m1-bl-na-002.jpg", fit: "contain", alt: "03-mega-det-m1-m1-bl-na-002.jpg", width: 2000, height: 1335 },
+      { src: "/scraped/outdoor-architectural/mega/04-mega-lo-203-amb-m1-m1-bl-na.jpg", fit: "contain", alt: "04-mega-lo-203-amb-m1-m1-bl-na.jpg", width: 2500, height: 1558 },
     ],
   },
   {
@@ -2549,11 +2549,11 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/cisne-colgante/06-anpxacgke5gqg97d5niw.jpg",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/cisne-colgante/06-anpxacgke5gqg97d5niw.jpg", fit: "cover", alt: "06-anpxacgke5gqg97d5niw.jpg" },
-      { src: "/scraped/outdoor-architectural/cisne-colgante/01-web-mainimage-cisne-lo-1-gen-26-14.png", fit: "contain", alt: "01-web-mainimage-cisne-lo-1-gen-26-14.png" },
-      { src: "/scraped/outdoor-architectural/cisne-colgante/02-cisne-lo-2-amb-26-14.jpg", fit: "cover", alt: "02-cisne-lo-2-amb-26-14.jpg" },
-      { src: "/scraped/outdoor-architectural/cisne-colgante/03-web-mainimage-cisne-lo-211-gen-26-m1.png", fit: "cover", alt: "03-web-mainimage-cisne-lo-211-gen-26-m1.png" },
-      { src: "/scraped/outdoor-architectural/cisne-colgante/07-tpylf4dixa96albkui1l.jpg", fit: "cover", alt: "07-tpylf4dixa96albkui1l.jpg" },
+      { src: "/scraped/outdoor-architectural/cisne-colgante/06-anpxacgke5gqg97d5niw.jpg", fit: "contain", alt: "06-anpxacgke5gqg97d5niw.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/outdoor-architectural/cisne-colgante/01-web-mainimage-cisne-lo-1-gen-26-14.png", fit: "contain", alt: "01-web-mainimage-cisne-lo-1-gen-26-14.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/cisne-colgante/02-cisne-lo-2-amb-26-14.jpg", fit: "contain", alt: "02-cisne-lo-2-amb-26-14.jpg", width: 2500, height: 1558 },
+      { src: "/scraped/outdoor-architectural/cisne-colgante/03-web-mainimage-cisne-lo-211-gen-26-m1.png", fit: "contain", alt: "03-web-mainimage-cisne-lo-211-gen-26-m1.png", width: 480, height: 480 },
+      { src: "/scraped/outdoor-architectural/cisne-colgante/07-tpylf4dixa96albkui1l.jpg", fit: "contain", alt: "07-tpylf4dixa96albkui1l.jpg", width: 2000, height: 2000 },
     ],
   },
   {
@@ -2577,18 +2577,18 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/palm-coco/member-01-a546d4-1be930474538476397b983a4944286d6-mv2.jpg",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/palm-coco/member-01-a546d4-1be930474538476397b983a4944286d6-mv2.jpg", fit: "cover", alt: "member-01-a546d4-1be930474538476397b983a4944286d6-mv2.jpg" },
-      { src: "/scraped/outdoor-architectural/palm-coco/member-02-a546d4-8d996821075949db93cbd3eb08b49484-mv2.jpg", fit: "cover", alt: "member-02-a546d4-8d996821075949db93cbd3eb08b49484-mv2.jpg" },
-      { src: "/scraped/outdoor-architectural/palm-coco/member-03-a546d4-9a1b9f4f59a244afbf3a280a79ac9845-mv2.jpg", fit: "cover", alt: "member-03-a546d4-9a1b9f4f59a244afbf3a280a79ac9845-mv2.jpg" },
-      { src: "/scraped/outdoor-architectural/palm-coco/member-04-a546d4-88c0b881cc5c4ae49bfd43861249a804-mv2.jpg", fit: "cover", alt: "member-04-a546d4-88c0b881cc5c4ae49bfd43861249a804-mv2.jpg" },
-      { src: "/scraped/outdoor-architectural/palm-coco/member-05-a546d4-962c5fc662b044b69f2e46953912c59c-mv2.jpg", fit: "cover", alt: "member-05-a546d4-962c5fc662b044b69f2e46953912c59c-mv2.jpg" },
-      { src: "/scraped/outdoor-architectural/palm-coco/member-06-a546d4-e0bfb6cf0a4640dfbbfbd66e257b049b-mv2.jpg", fit: "cover", alt: "member-06-a546d4-e0bfb6cf0a4640dfbbfbd66e257b049b-mv2.jpg" },
-      { src: "/scraped/outdoor-architectural/palm-coco/member-07-a546d4-dce783ea6668480a82772b93d752694d-mv2.jpg", fit: "cover", alt: "member-07-a546d4-dce783ea6668480a82772b93d752694d-mv2.jpg" },
-      { src: "/scraped/outdoor-architectural/palm-coco/member-08-a546d4-4fb1ea8ad4fc4b0a9e37649ba2c3b4fd-mv2.jpg", fit: "cover", alt: "member-08-a546d4-4fb1ea8ad4fc4b0a9e37649ba2c3b4fd-mv2.jpg" },
-      { src: "/scraped/outdoor-architectural/palm-coco/member-09-a546d4-c94d913e171e40548d7df0cb8430505c-mv2.jpg", fit: "cover", alt: "member-09-a546d4-c94d913e171e40548d7df0cb8430505c-mv2.jpg" },
-      { src: "/scraped/outdoor-architectural/palm-coco/member-10-a546d4-a5eae9ee31294289b8f577e3e356233e-mv2.jpg", fit: "cover", alt: "member-10-a546d4-a5eae9ee31294289b8f577e3e356233e-mv2.jpg" },
-      { src: "/scraped/outdoor-architectural/palm-coco/member-11-a546d4-c0349e3bb89f4e3abb099df9f6bc7d78-mv2.jpg", fit: "cover", alt: "member-11-a546d4-c0349e3bb89f4e3abb099df9f6bc7d78-mv2.jpg" },
-      { src: "/scraped/outdoor-architectural/palm-coco/member-12-a546d4-f2630fc8c3a447e3b55155cc460aba7c-mv2.jpg", fit: "cover", alt: "member-12-a546d4-f2630fc8c3a447e3b55155cc460aba7c-mv2.jpg" },
+      { src: "/scraped/outdoor-architectural/palm-coco/member-01-a546d4-1be930474538476397b983a4944286d6-mv2.jpg", fit: "contain", alt: "member-01-a546d4-1be930474538476397b983a4944286d6-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/outdoor-architectural/palm-coco/member-02-a546d4-8d996821075949db93cbd3eb08b49484-mv2.jpg", fit: "contain", alt: "member-02-a546d4-8d996821075949db93cbd3eb08b49484-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/outdoor-architectural/palm-coco/member-03-a546d4-9a1b9f4f59a244afbf3a280a79ac9845-mv2.jpg", fit: "contain", alt: "member-03-a546d4-9a1b9f4f59a244afbf3a280a79ac9845-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/outdoor-architectural/palm-coco/member-04-a546d4-88c0b881cc5c4ae49bfd43861249a804-mv2.jpg", fit: "contain", alt: "member-04-a546d4-88c0b881cc5c4ae49bfd43861249a804-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/outdoor-architectural/palm-coco/member-05-a546d4-962c5fc662b044b69f2e46953912c59c-mv2.jpg", fit: "contain", alt: "member-05-a546d4-962c5fc662b044b69f2e46953912c59c-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/outdoor-architectural/palm-coco/member-06-a546d4-e0bfb6cf0a4640dfbbfbd66e257b049b-mv2.jpg", fit: "contain", alt: "member-06-a546d4-e0bfb6cf0a4640dfbbfbd66e257b049b-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/outdoor-architectural/palm-coco/member-07-a546d4-dce783ea6668480a82772b93d752694d-mv2.jpg", fit: "contain", alt: "member-07-a546d4-dce783ea6668480a82772b93d752694d-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/outdoor-architectural/palm-coco/member-08-a546d4-4fb1ea8ad4fc4b0a9e37649ba2c3b4fd-mv2.jpg", fit: "contain", alt: "member-08-a546d4-4fb1ea8ad4fc4b0a9e37649ba2c3b4fd-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/outdoor-architectural/palm-coco/member-09-a546d4-c94d913e171e40548d7df0cb8430505c-mv2.jpg", fit: "contain", alt: "member-09-a546d4-c94d913e171e40548d7df0cb8430505c-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/outdoor-architectural/palm-coco/member-10-a546d4-a5eae9ee31294289b8f577e3e356233e-mv2.jpg", fit: "contain", alt: "member-10-a546d4-a5eae9ee31294289b8f577e3e356233e-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/outdoor-architectural/palm-coco/member-11-a546d4-c0349e3bb89f4e3abb099df9f6bc7d78-mv2.jpg", fit: "contain", alt: "member-11-a546d4-c0349e3bb89f4e3abb099df9f6bc7d78-mv2.jpg", width: 147, height: 147 },
+      { src: "/scraped/outdoor-architectural/palm-coco/member-12-a546d4-f2630fc8c3a447e3b55155cc460aba7c-mv2.jpg", fit: "contain", alt: "member-12-a546d4-f2630fc8c3a447e3b55155cc460aba7c-mv2.jpg", width: 147, height: 147 },
     ],
   },
   {
@@ -2632,7 +2632,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/fuji-square/01-pioled-lighting-fb004-12w-fuji-square-ip65-bollard-4cct-black.jpg",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/fuji-square/01-pioled-lighting-fb004-12w-fuji-square-ip65-bollard-4cct-black.jpg", fit: "cover", alt: "01-pioled-lighting-fb004-12w-fuji-square-ip65-bollard-4cct-black.jpg" },
+      { src: "/scraped/outdoor-architectural/fuji-square/01-pioled-lighting-fb004-12w-fuji-square-ip65-bollard-4cct-black.jpg", fit: "contain", alt: "01-pioled-lighting-fb004-12w-fuji-square-ip65-bollard-4cct-black.jpg", width: 1024, height: 1024 },
     ],
     pdfUrl: "/api/download/datasheet/fuji-square.pdf",
     warranty: "5-year warranty",
@@ -2678,7 +2678,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/fuji-round/01-pioled-lighting-fb003-12w-fuji-round-ip65-bollard-4cct-black.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/fuji-round/01-pioled-lighting-fb003-12w-fuji-round-ip65-bollard-4cct-black.png", fit: "contain", alt: "01-pioled-lighting-fb003-12w-fuji-round-ip65-bollard-4cct-black.png" },
+      { src: "/scraped/outdoor-architectural/fuji-round/01-pioled-lighting-fb003-12w-fuji-round-ip65-bollard-4cct-black.png", fit: "contain", alt: "01-pioled-lighting-fb003-12w-fuji-round-ip65-bollard-4cct-black.png", width: 1024, height: 1024 },
     ],
     pdfUrl: "/api/download/datasheet/fuji-round.pdf",
     warranty: "5-year warranty",
@@ -2724,7 +2724,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/everest-square/01-pioled-lighting-fb002-12w-everest-square-ip65-bollard-4cct-black-1.jpg",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/everest-square/01-pioled-lighting-fb002-12w-everest-square-ip65-bollard-4cct-black-1.jpg", fit: "cover", alt: "01-pioled-lighting-fb002-12w-everest-square-ip65-bollard-4cct-black-1.jpg" },
+      { src: "/scraped/outdoor-architectural/everest-square/01-pioled-lighting-fb002-12w-everest-square-ip65-bollard-4cct-black-1.jpg", fit: "contain", alt: "01-pioled-lighting-fb002-12w-everest-square-ip65-bollard-4cct-black-1.jpg", width: 1024, height: 1024 },
     ],
     pdfUrl: "/api/download/datasheet/everest-square.pdf",
     warranty: "5-year warranty",
@@ -2770,7 +2770,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/everest-round/01-pioled-lighting-fb001-12w-everest-round-ip65-bollard-4cct-black-1.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/everest-round/01-pioled-lighting-fb001-12w-everest-round-ip65-bollard-4cct-black-1.png", fit: "contain", alt: "01-pioled-lighting-fb001-12w-everest-round-ip65-bollard-4cct-black-1.png" },
+      { src: "/scraped/outdoor-architectural/everest-round/01-pioled-lighting-fb001-12w-everest-round-ip65-bollard-4cct-black-1.png", fit: "contain", alt: "01-pioled-lighting-fb001-12w-everest-round-ip65-bollard-4cct-black-1.png", width: 1024, height: 1024 },
     ],
     pdfUrl: "/api/download/datasheet/everest-round.pdf",
     warranty: "5-year warranty",
@@ -2796,7 +2796,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/zod101-square-led-wall/01-a546d4-5ec889d42ad848f1af0ecaa21e516686-mv2.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/zod101-square-led-wall/01-a546d4-5ec889d42ad848f1af0ecaa21e516686-mv2.png", fit: "contain", alt: "01-a546d4-5ec889d42ad848f1af0ecaa21e516686-mv2.png" },
+      { src: "/scraped/outdoor-architectural/zod101-square-led-wall/01-a546d4-5ec889d42ad848f1af0ecaa21e516686-mv2.png", fit: "contain", alt: "01-a546d4-5ec889d42ad848f1af0ecaa21e516686-mv2.png", width: 1080, height: 1080 },
     ],
   },
   {
@@ -2820,7 +2820,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/zod102-round-led-wall/01-a546d4-d29eac5d5d6c47e6a9d396a256db1d7c-mv2.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/zod102-round-led-wall/01-a546d4-d29eac5d5d6c47e6a9d396a256db1d7c-mv2.png", fit: "contain", alt: "01-a546d4-d29eac5d5d6c47e6a9d396a256db1d7c-mv2.png" },
+      { src: "/scraped/outdoor-architectural/zod102-round-led-wall/01-a546d4-d29eac5d5d6c47e6a9d396a256db1d7c-mv2.png", fit: "contain", alt: "01-a546d4-d29eac5d5d6c47e6a9d396a256db1d7c-mv2.png", width: 1080, height: 1080 },
     ],
   },
   {
@@ -2865,7 +2865,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/orbit/01-pioled-lighting-hp001-4-60w-120w-orbit-ip65-post-top-lamp-3cct-1.jpg",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/orbit/01-pioled-lighting-hp001-4-60w-120w-orbit-ip65-post-top-lamp-3cct-1.jpg", fit: "cover", alt: "01-pioled-lighting-hp001-4-60w-120w-orbit-ip65-post-top-lamp-3cct-1.jpg" },
+      { src: "/scraped/outdoor-architectural/orbit/01-pioled-lighting-hp001-4-60w-120w-orbit-ip65-post-top-lamp-3cct-1.jpg", fit: "contain", alt: "01-pioled-lighting-hp001-4-60w-120w-orbit-ip65-post-top-lamp-3cct-1.jpg", width: 1024, height: 1024 },
     ],
     pdfUrl: "/api/download/datasheet/orbit.pdf",
     warranty: "5-year warranty",
@@ -2910,7 +2910,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/outdoor-architectural/vista/01-pioled-lighting-vista-35-20w-230v-post-top-3cct.png",// hero
     images: [
-      { src: "/scraped/outdoor-architectural/vista/01-pioled-lighting-vista-35-20w-230v-post-top-3cct.png", fit: "contain", alt: "01-pioled-lighting-vista-35-20w-230v-post-top-3cct.png" },
+      { src: "/scraped/outdoor-architectural/vista/01-pioled-lighting-vista-35-20w-230v-post-top-3cct.png", fit: "contain", alt: "01-pioled-lighting-vista-35-20w-230v-post-top-3cct.png", width: 1024, height: 1024 },
     ],
     pdfUrl: "/api/download/datasheet/vista.pdf",
     warranty: "5-year warranty",
@@ -2937,8 +2937,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/panels/veris/01-veris.jpg",// hero
     images: [
-      { src: "/scraped/panels/veris/01-veris.jpg", fit: "cover", alt: "01-veris.jpg" },
-      { src: "/scraped/panels/veris/02-eazi-access-december-2017-00006-rt.jpg", fit: "cover", alt: "02-eazi-access-december-2017-00006-rt.jpg" },
+      { src: "/scraped/panels/veris/01-veris.jpg", fit: "contain", alt: "01-veris.jpg", width: 4608, height: 1605 },
+      { src: "/scraped/panels/veris/02-eazi-access-december-2017-00006-rt.jpg", fit: "contain", alt: "02-eazi-access-december-2017-00006-rt.jpg", width: 2048, height: 1365 },
     ],
   },
   {
@@ -2962,8 +2962,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/sensors/is-2360-r/01-grp-group-teaser-licht-jpg.webp",// hero
     images: [
-      { src: "/scraped/sensors/is-2360-r/01-grp-group-teaser-licht-jpg.webp", fit: "cover", alt: "01-grp-group-teaser-licht-jpg.webp" },
-      { src: "/scraped/sensors/is-2360-r/02-grp-group-teaser-sensorik-jpg.webp", fit: "cover", alt: "02-grp-group-teaser-sensorik-jpg.webp" },
+      { src: "/scraped/sensors/is-2360-r/01-grp-group-teaser-licht-jpg.webp", fit: "contain", alt: "01-grp-group-teaser-licht-jpg.webp", width: 680, height: 382 },
+      { src: "/scraped/sensors/is-2360-r/02-grp-group-teaser-sensorik-jpg.webp", fit: "contain", alt: "02-grp-group-teaser-sensorik-jpg.webp", width: 680, height: 382 },
     ],
   },
   {
@@ -3047,8 +3047,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/sensors/is-2360-s/01-17253-is-2360-eco-ohne-schatten.jpg",// hero
     images: [
-      { src: "/scraped/sensors/is-2360-s/01-17253-is-2360-eco-ohne-schatten.jpg", fit: "cover", alt: "01-17253-is-2360-eco-ohne-schatten.jpg" },
-      { src: "/scraped/sensors/is-2360-s/02-62456-ste-schaltplan-22-com-1.jpg", fit: "cover", alt: "02-62456-ste-schaltplan-22-com-1.jpg" },
+      { src: "/scraped/sensors/is-2360-s/01-17253-is-2360-eco-ohne-schatten.jpg", fit: "contain", alt: "01-17253-is-2360-eco-ohne-schatten.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/is-2360-s/02-62456-ste-schaltplan-22-com-1.jpg", fit: "cover", alt: "02-62456-ste-schaltplan-22-com-1.jpg", width: 2000, height: 1500 },
     ],
     pdfUrl: "/api/download/datasheet/is-2360-s.pdf",
     warranty: "5 years",
@@ -3107,8 +3107,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/sensors/light-sensor/01-17116-light-sensor-dual-4007841033637-pro-ab-x-x-up-eckig-whi-1-1-1100.jpg",// hero
     images: [
-      { src: "/scraped/sensors/light-sensor/01-17116-light-sensor-dual-4007841033637-pro-ab-x-x-up-eckig-whi-1-1-1100.jpg", fit: "cover", alt: "01-17116-light-sensor-dual-4007841033637-pro-ab-x-x-up-eckig-whi-1-1-1100.jpg" },
-      { src: "/scraped/sensors/light-sensor/02-62039-light-sensor-dual-unterputz-eckig.jpg", fit: "cover", alt: "02-62039-light-sensor-dual-unterputz-eckig.jpg" },
+      { src: "/scraped/sensors/light-sensor/01-17116-light-sensor-dual-4007841033637-pro-ab-x-x-up-eckig-whi-1-1-1100.jpg", fit: "contain", alt: "01-17116-light-sensor-dual-4007841033637-pro-ab-x-x-up-eckig-whi-1-1-1100.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/light-sensor/02-62039-light-sensor-dual-unterputz-eckig.jpg", fit: "contain", alt: "02-62039-light-sensor-dual-unterputz-eckig.jpg", width: 2000, height: 1500 },
     ],
     pdfUrl: "/api/download/datasheet/light-sensor.pdf",
     warranty: "5 years",
@@ -3199,10 +3199,10 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/sensors/dualtech/01-17398-dualtech-4007841007997-pro-ab01-x-x-com1-whi-x-110034417-web-new.jpg",// hero
     images: [
-      { src: "/scraped/sensors/dualtech/01-17398-dualtech-4007841007997-pro-ab01-x-x-com1-whi-x-110034417-web-new.jpg", fit: "cover", alt: "01-17398-dualtech-4007841007997-pro-ab01-x-x-com1-whi-x-110034417-web-new.jpg" },
-      { src: "/scraped/sensors/dualtech/02-62453-ste-schaltplan-26-a-com-1-master.jpg", fit: "cover", alt: "02-62453-ste-schaltplan-26-a-com-1-master.jpg" },
-      { src: "/scraped/sensors/dualtech/03-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", fit: "cover", alt: "03-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg" },
-      { src: "/scraped/sensors/dualtech/04-17356-fernbedienung-rc8-4007841559410-110021956.jpg", fit: "cover", alt: "04-17356-fernbedienung-rc8-4007841559410-110021956.jpg" },
+      { src: "/scraped/sensors/dualtech/01-17398-dualtech-4007841007997-pro-ab01-x-x-com1-whi-x-110034417-web-new.jpg", fit: "contain", alt: "01-17398-dualtech-4007841007997-pro-ab01-x-x-com1-whi-x-110034417-web-new.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/dualtech/02-62453-ste-schaltplan-26-a-com-1-master.jpg", fit: "cover", alt: "02-62453-ste-schaltplan-26-a-com-1-master.jpg", width: 2000, height: 1500 },
+      { src: "/scraped/sensors/dualtech/03-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", fit: "contain", alt: "03-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/dualtech/04-17356-fernbedienung-rc8-4007841559410-110021956.jpg", fit: "contain", alt: "04-17356-fernbedienung-rc8-4007841559410-110021956.jpg", width: 2000, height: 2000 },
     ],
     pdfUrl: "/api/download/datasheet/dualtech.pdf",
     warranty: "5 years",
@@ -3361,14 +3361,14 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/sensors/dual-hf-corridoor/01-17403-dual-hf-4007841002978-pro-ab01-x-x-com1-whi-x-110011582-web-new.jpg",// hero
     images: [
-      { src: "/scraped/sensors/dual-hf-corridoor/01-17403-dual-hf-4007841002978-pro-ab01-x-x-com1-whi-x-110011582-web-new.jpg", fit: "cover", alt: "01-17403-dual-hf-4007841002978-pro-ab01-x-x-com1-whi-x-110011582-web-new.jpg" },
-      { src: "/scraped/sensors/dual-hf-corridoor/02-17520-110011582-schnittstelle-praesenzmelder-presence-control-pro-dual.jpg", fit: "cover", alt: "02-17520-110011582-schnittstelle-praesenzmelder-presence-control-pro-dual.jpg" },
-      { src: "/scraped/sensors/dual-hf-corridoor/03-62453-ste-schaltplan-26-a-com-1-master.jpg", fit: "cover", alt: "03-62453-ste-schaltplan-26-a-com-1-master.jpg" },
-      { src: "/scraped/sensors/dual-hf-corridoor/04-17327-hf-deckenadapter-4007841006600-110030123-web.jpg", fit: "cover", alt: "04-17327-hf-deckenadapter-4007841006600-110030123-web.jpg" },
-      { src: "/scraped/sensors/dual-hf-corridoor/05-17356-fernbedienung-rc8-4007841559410-110021956.jpg", fit: "cover", alt: "05-17356-fernbedienung-rc8-4007841559410-110021956.jpg" },
-      { src: "/scraped/sensors/dual-hf-corridoor/06-17417-ap-box-ip54-4007841000363-pro-ab01-x-x-x-x-x-110008826-web-new.jpg", fit: "cover", alt: "06-17417-ap-box-ip54-4007841000363-pro-ab01-x-x-x-x-x-110008826-web-new.jpg" },
-      { src: "/scraped/sensors/dual-hf-corridoor/07-17008-schutzkorb-4007841003036-pro-ab01-x-x-x-x-x-110011664-web.jpg", fit: "cover", alt: "07-17008-schutzkorb-4007841003036-pro-ab01-x-x-x-x-x-110011664-web.jpg" },
-      { src: "/scraped/sensors/dual-hf-corridoor/08-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", fit: "cover", alt: "08-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg" },
+      { src: "/scraped/sensors/dual-hf-corridoor/01-17403-dual-hf-4007841002978-pro-ab01-x-x-com1-whi-x-110011582-web-new.jpg", fit: "contain", alt: "01-17403-dual-hf-4007841002978-pro-ab01-x-x-com1-whi-x-110011582-web-new.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/dual-hf-corridoor/02-17520-110011582-schnittstelle-praesenzmelder-presence-control-pro-dual.jpg", fit: "contain", alt: "02-17520-110011582-schnittstelle-praesenzmelder-presence-control-pro-dual.jpg", width: 783, height: 800 },
+      { src: "/scraped/sensors/dual-hf-corridoor/03-62453-ste-schaltplan-26-a-com-1-master.jpg", fit: "cover", alt: "03-62453-ste-schaltplan-26-a-com-1-master.jpg", width: 2000, height: 1500 },
+      { src: "/scraped/sensors/dual-hf-corridoor/04-17327-hf-deckenadapter-4007841006600-110030123-web.jpg", fit: "contain", alt: "04-17327-hf-deckenadapter-4007841006600-110030123-web.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/dual-hf-corridoor/05-17356-fernbedienung-rc8-4007841559410-110021956.jpg", fit: "contain", alt: "05-17356-fernbedienung-rc8-4007841559410-110021956.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/dual-hf-corridoor/06-17417-ap-box-ip54-4007841000363-pro-ab01-x-x-x-x-x-110008826-web-new.jpg", fit: "contain", alt: "06-17417-ap-box-ip54-4007841000363-pro-ab01-x-x-x-x-x-110008826-web-new.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/dual-hf-corridoor/07-17008-schutzkorb-4007841003036-pro-ab01-x-x-x-x-x-110011664-web.jpg", fit: "contain", alt: "07-17008-schutzkorb-4007841003036-pro-ab01-x-x-x-x-x-110011664-web.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/dual-hf-corridoor/08-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", fit: "contain", alt: "08-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", width: 2000, height: 2000 },
     ],
     pdfUrl: "/api/download/datasheet/dual-hf-corridoor.pdf",
     warranty: "5 years",
@@ -3445,12 +3445,12 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/sensors/hf-360/01-17334-hf-360-4007841002800-pro-ab01-x-x-com1-whi-x-110011563-web.jpg",// hero
     images: [
-      { src: "/scraped/sensors/hf-360/01-17334-hf-360-4007841002800-pro-ab01-x-x-com1-whi-x-110011563-web.jpg", fit: "cover", alt: "01-17334-hf-360-4007841002800-pro-ab01-x-x-com1-whi-x-110011563-web.jpg" },
-      { src: "/scraped/sensors/hf-360/02-17525-110011563-schnittstelle-praesenzmelder-pro-hf-360-com1.jpg", fit: "cover", alt: "02-17525-110011563-schnittstelle-praesenzmelder-pro-hf-360-com1.jpg" },
-      { src: "/scraped/sensors/hf-360/03-62453-ste-schaltplan-26-a-com-1-master.jpg", fit: "cover", alt: "03-62453-ste-schaltplan-26-a-com-1-master.jpg" },
-      { src: "/scraped/sensors/hf-360/04-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", fit: "cover", alt: "04-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg" },
-      { src: "/scraped/sensors/hf-360/05-17356-fernbedienung-rc8-4007841559410-110021956.jpg", fit: "cover", alt: "05-17356-fernbedienung-rc8-4007841559410-110021956.jpg" },
-      { src: "/scraped/sensors/hf-360/06-17008-schutzkorb-4007841003036-pro-ab01-x-x-x-x-x-110011664-web.jpg", fit: "cover", alt: "06-17008-schutzkorb-4007841003036-pro-ab01-x-x-x-x-x-110011664-web.jpg" },
+      { src: "/scraped/sensors/hf-360/01-17334-hf-360-4007841002800-pro-ab01-x-x-com1-whi-x-110011563-web.jpg", fit: "contain", alt: "01-17334-hf-360-4007841002800-pro-ab01-x-x-com1-whi-x-110011563-web.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/hf-360/02-17525-110011563-schnittstelle-praesenzmelder-pro-hf-360-com1.jpg", fit: "contain", alt: "02-17525-110011563-schnittstelle-praesenzmelder-pro-hf-360-com1.jpg", width: 783, height: 800 },
+      { src: "/scraped/sensors/hf-360/03-62453-ste-schaltplan-26-a-com-1-master.jpg", fit: "cover", alt: "03-62453-ste-schaltplan-26-a-com-1-master.jpg", width: 2000, height: 1500 },
+      { src: "/scraped/sensors/hf-360/04-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", fit: "contain", alt: "04-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/hf-360/05-17356-fernbedienung-rc8-4007841559410-110021956.jpg", fit: "contain", alt: "05-17356-fernbedienung-rc8-4007841559410-110021956.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/hf-360/06-17008-schutzkorb-4007841003036-pro-ab01-x-x-x-x-x-110011664-web.jpg", fit: "contain", alt: "06-17008-schutzkorb-4007841003036-pro-ab01-x-x-x-x-x-110011664-web.jpg", width: 2000, height: 2000 },
     ],
     pdfUrl: "/api/download/datasheet/hf-360.pdf",
     warranty: "5 years",
@@ -3534,8 +3534,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/sensors/is-2180/01-17215-is-2180-2-4007841603717-pro-ab01-x-x-x-bla-x-106679306-web-new.jpg",// hero
     images: [
-      { src: "/scraped/sensors/is-2180/01-17215-is-2180-2-4007841603717-pro-ab01-x-x-x-bla-x-106679306-web-new.jpg", fit: "cover", alt: "01-17215-is-2180-2-4007841603717-pro-ab01-x-x-x-bla-x-106679306-web-new.jpg" },
-      { src: "/scraped/sensors/is-2180/02-90145-ste-schaltplan-36-a-8x3.jpg", fit: "cover", alt: "02-90145-ste-schaltplan-36-a-8x3.jpg" },
+      { src: "/scraped/sensors/is-2180/01-17215-is-2180-2-4007841603717-pro-ab01-x-x-x-bla-x-106679306-web-new.jpg", fit: "contain", alt: "01-17215-is-2180-2-4007841603717-pro-ab01-x-x-x-bla-x-106679306-web-new.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/is-2180/02-90145-ste-schaltplan-36-a-8x3.jpg", fit: "cover", alt: "02-90145-ste-schaltplan-36-a-8x3.jpg", width: 2000, height: 750 },
     ],
     pdfUrl: "/api/download/datasheet/is-2180.pdf",
     warranty: "5 years",
@@ -3624,14 +3624,14 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/sensors/ir-quattro-micro/01-18000-ir-quattro-micro-ohne-schatten.jpg",// hero
     images: [
-      { src: "/scraped/sensors/ir-quattro-micro/01-18000-ir-quattro-micro-ohne-schatten.jpg", fit: "cover", alt: "01-18000-ir-quattro-micro-ohne-schatten.jpg" },
-      { src: "/scraped/sensors/ir-quattro-micro/02-18002-ir-quattro-micro-komplett-ohne-schatten.jpg", fit: "cover", alt: "02-18002-ir-quattro-micro-komplett-ohne-schatten.jpg" },
-      { src: "/scraped/sensors/ir-quattro-micro/03-55386-moodbild-ir-quattro-micro-1.jpg", fit: "cover", alt: "03-55386-moodbild-ir-quattro-micro-1.jpg" },
-      { src: "/scraped/sensors/ir-quattro-micro/04-20850-moodbild-ir-quattro-micro-2.jpg", fit: "cover", alt: "04-20850-moodbild-ir-quattro-micro-2.jpg" },
-      { src: "/scraped/sensors/ir-quattro-micro/05-62453-ste-schaltplan-26-a-com-1-master.jpg", fit: "cover", alt: "05-62453-ste-schaltplan-26-a-com-1-master.jpg" },
-      { src: "/scraped/sensors/ir-quattro-micro/06-17074-rc5-4007841592806-pro-ab01-x-x-x-bla-x-110011940-web-new.jpg", fit: "cover", alt: "06-17074-rc5-4007841592806-pro-ab01-x-x-x-bla-x-110011940-web-new.jpg" },
-      { src: "/scraped/sensors/ir-quattro-micro/07-17356-fernbedienung-rc8-4007841559410-110021956.jpg", fit: "cover", alt: "07-17356-fernbedienung-rc8-4007841559410-110021956.jpg" },
-      { src: "/scraped/sensors/ir-quattro-micro/08-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", fit: "cover", alt: "08-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg" },
+      { src: "/scraped/sensors/ir-quattro-micro/01-18000-ir-quattro-micro-ohne-schatten.jpg", fit: "contain", alt: "01-18000-ir-quattro-micro-ohne-schatten.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/ir-quattro-micro/02-18002-ir-quattro-micro-komplett-ohne-schatten.jpg", fit: "contain", alt: "02-18002-ir-quattro-micro-komplett-ohne-schatten.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/ir-quattro-micro/03-55386-moodbild-ir-quattro-micro-1.jpg", fit: "contain", alt: "03-55386-moodbild-ir-quattro-micro-1.jpg", width: 1620, height: 911 },
+      { src: "/scraped/sensors/ir-quattro-micro/04-20850-moodbild-ir-quattro-micro-2.jpg", fit: "contain", alt: "04-20850-moodbild-ir-quattro-micro-2.jpg", width: 1620, height: 911 },
+      { src: "/scraped/sensors/ir-quattro-micro/05-62453-ste-schaltplan-26-a-com-1-master.jpg", fit: "cover", alt: "05-62453-ste-schaltplan-26-a-com-1-master.jpg", width: 2000, height: 1500 },
+      { src: "/scraped/sensors/ir-quattro-micro/06-17074-rc5-4007841592806-pro-ab01-x-x-x-bla-x-110011940-web-new.jpg", fit: "contain", alt: "06-17074-rc5-4007841592806-pro-ab01-x-x-x-bla-x-110011940-web-new.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/ir-quattro-micro/07-17356-fernbedienung-rc8-4007841559410-110021956.jpg", fit: "contain", alt: "07-17356-fernbedienung-rc8-4007841559410-110021956.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/ir-quattro-micro/08-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", fit: "contain", alt: "08-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", width: 2000, height: 2000 },
     ],
     pdfUrl: "/api/download/datasheet/ir-quattro-micro.pdf",
     warranty: "5 years",
@@ -3717,13 +3717,13 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/sensors/ir-quattro-hd/01-17263-ir-quattro-hd-4007841002794-pro-ab01-x-x-com1-whi-x-110011562-we.jpg",// hero
     images: [
-      { src: "/scraped/sensors/ir-quattro-hd/01-17263-ir-quattro-hd-4007841002794-pro-ab01-x-x-com1-whi-x-110011562-we.jpg", fit: "cover", alt: "01-17263-ir-quattro-hd-4007841002794-pro-ab01-x-x-com1-whi-x-110011562-we.jpg" },
-      { src: "/scraped/sensors/ir-quattro-hd/02-17526-110011562-schnittstelle-praesenzmelder-ir-quattro-hd-com1.jpg", fit: "cover", alt: "02-17526-110011562-schnittstelle-praesenzmelder-ir-quattro-hd-com1.jpg" },
-      { src: "/scraped/sensors/ir-quattro-hd/03-62453-ste-schaltplan-26-a-com-1-master.jpg", fit: "cover", alt: "03-62453-ste-schaltplan-26-a-com-1-master.jpg" },
-      { src: "/scraped/sensors/ir-quattro-hd/04-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", fit: "cover", alt: "04-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg" },
-      { src: "/scraped/sensors/ir-quattro-hd/05-17356-fernbedienung-rc8-4007841559410-110021956.jpg", fit: "cover", alt: "05-17356-fernbedienung-rc8-4007841559410-110021956.jpg" },
-      { src: "/scraped/sensors/ir-quattro-hd/06-17417-ap-box-ip54-4007841000363-pro-ab01-x-x-x-x-x-110008826-web-new.jpg", fit: "cover", alt: "06-17417-ap-box-ip54-4007841000363-pro-ab01-x-x-x-x-x-110008826-web-new.jpg" },
-      { src: "/scraped/sensors/ir-quattro-hd/07-17008-schutzkorb-4007841003036-pro-ab01-x-x-x-x-x-110011664-web.jpg", fit: "cover", alt: "07-17008-schutzkorb-4007841003036-pro-ab01-x-x-x-x-x-110011664-web.jpg" },
+      { src: "/scraped/sensors/ir-quattro-hd/01-17263-ir-quattro-hd-4007841002794-pro-ab01-x-x-com1-whi-x-110011562-we.jpg", fit: "contain", alt: "01-17263-ir-quattro-hd-4007841002794-pro-ab01-x-x-com1-whi-x-110011562-we.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/ir-quattro-hd/02-17526-110011562-schnittstelle-praesenzmelder-ir-quattro-hd-com1.jpg", fit: "contain", alt: "02-17526-110011562-schnittstelle-praesenzmelder-ir-quattro-hd-com1.jpg", width: 783, height: 800 },
+      { src: "/scraped/sensors/ir-quattro-hd/03-62453-ste-schaltplan-26-a-com-1-master.jpg", fit: "cover", alt: "03-62453-ste-schaltplan-26-a-com-1-master.jpg", width: 2000, height: 1500 },
+      { src: "/scraped/sensors/ir-quattro-hd/04-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", fit: "contain", alt: "04-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/ir-quattro-hd/05-17356-fernbedienung-rc8-4007841559410-110021956.jpg", fit: "contain", alt: "05-17356-fernbedienung-rc8-4007841559410-110021956.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/ir-quattro-hd/06-17417-ap-box-ip54-4007841000363-pro-ab01-x-x-x-x-x-110008826-web-new.jpg", fit: "contain", alt: "06-17417-ap-box-ip54-4007841000363-pro-ab01-x-x-x-x-x-110008826-web-new.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/ir-quattro-hd/07-17008-schutzkorb-4007841003036-pro-ab01-x-x-x-x-x-110011664-web.jpg", fit: "contain", alt: "07-17008-schutzkorb-4007841003036-pro-ab01-x-x-x-x-x-110011664-web.jpg", width: 2000, height: 2000 },
     ],
     pdfUrl: "/api/download/datasheet/ir-quattro-hd.pdf",
     warranty: "5 years",
@@ -3794,9 +3794,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/sensors/sens-iq-s/01-16993-sensiq-s-4007841004064-pro-ab01-x-x-knx-whi-x-110017968-web-new.jpg",// hero
     images: [
-      { src: "/scraped/sensors/sens-iq-s/01-16993-sensiq-s-4007841004064-pro-ab01-x-x-knx-whi-x-110017968-web-new.jpg", fit: "cover", alt: "01-16993-sensiq-s-4007841004064-pro-ab01-x-x-knx-whi-x-110017968-web-new.jpg" },
-      { src: "/scraped/sensors/sens-iq-s/02-17618-anwendungsillustration-sensiq-s.jpg", fit: "cover", alt: "02-17618-anwendungsillustration-sensiq-s.jpg" },
-      { src: "/scraped/sensors/sens-iq-s/03-120402-4-fach-pyro-system-sensiq-knx.jpg", fit: "cover", alt: "03-120402-4-fach-pyro-system-sensiq-knx.jpg" },
+      { src: "/scraped/sensors/sens-iq-s/01-16993-sensiq-s-4007841004064-pro-ab01-x-x-knx-whi-x-110017968-web-new.jpg", fit: "contain", alt: "01-16993-sensiq-s-4007841004064-pro-ab01-x-x-knx-whi-x-110017968-web-new.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/sens-iq-s/02-17618-anwendungsillustration-sensiq-s.jpg", fit: "contain", alt: "02-17618-anwendungsillustration-sensiq-s.jpg", width: 1280, height: 719 },
+      { src: "/scraped/sensors/sens-iq-s/03-120402-4-fach-pyro-system-sensiq-knx.jpg", fit: "contain", alt: "03-120402-4-fach-pyro-system-sensiq-knx.jpg", width: 1250, height: 1250 },
     ],
     pdfUrl: "/api/download/datasheet/sens-iq-s.pdf",
     warranty: "5 years",
@@ -3832,8 +3832,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/sensors/smart-remote/01-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg",// hero
     images: [
-      { src: "/scraped/sensors/smart-remote/01-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", fit: "cover", alt: "01-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg" },
-      { src: "/scraped/sensors/smart-remote/02-17468-smart-remote-4007841009151-pro-ab02-x-x-x-bla-x-110036719-web.jpg", fit: "cover", alt: "02-17468-smart-remote-4007841009151-pro-ab02-x-x-x-bla-x-110036719-web.jpg" },
+      { src: "/scraped/sensors/smart-remote/01-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", fit: "contain", alt: "01-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", width: 2000, height: 2000 },
+      { src: "/scraped/sensors/smart-remote/02-17468-smart-remote-4007841009151-pro-ab02-x-x-x-bla-x-110036719-web.jpg", fit: "contain", alt: "02-17468-smart-remote-4007841009151-pro-ab02-x-x-x-bla-x-110036719-web.jpg", width: 2000, height: 2000 },
     ],
     pdfUrl: "/api/download/datasheet/smart-remote.pdf",
     warranty: "5 years",
@@ -3869,7 +3869,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/sensors/service-remote/01-17356-fernbedienung-rc8-4007841559410-110021956.jpg",// hero
     images: [
-      { src: "/scraped/sensors/service-remote/01-17356-fernbedienung-rc8-4007841559410-110021956.jpg", fit: "cover", alt: "01-17356-fernbedienung-rc8-4007841559410-110021956.jpg" },
+      { src: "/scraped/sensors/service-remote/01-17356-fernbedienung-rc8-4007841559410-110021956.jpg", fit: "contain", alt: "01-17356-fernbedienung-rc8-4007841559410-110021956.jpg", width: 2000, height: 2000 },
     ],
     pdfUrl: "/api/download/datasheet/service-remote.pdf",
     warranty: "5 years",
@@ -3895,7 +3895,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/solar/sky-ele-15-solar-post-top/01-a546d4-ccc9e61871494e7d8d36fa4a943dcf99-mv2.png",// hero
     images: [
-      { src: "/scraped/solar/sky-ele-15-solar-post-top/01-a546d4-ccc9e61871494e7d8d36fa4a943dcf99-mv2.png", fit: "contain", alt: "01-a546d4-ccc9e61871494e7d8d36fa4a943dcf99-mv2.png" },
+      { src: "/scraped/solar/sky-ele-15-solar-post-top/01-a546d4-ccc9e61871494e7d8d36fa4a943dcf99-mv2.png", fit: "contain", alt: "01-a546d4-ccc9e61871494e7d8d36fa4a943dcf99-mv2.png", width: 1080, height: 1080 },
     ],
   },
   {
@@ -3919,7 +3919,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/solar/sky-spt-150-solar-post-top/01-a546d4-e58c2abd51ed4328a8c1e08c606abcc0-mv2.png",// hero
     images: [
-      { src: "/scraped/solar/sky-spt-150-solar-post-top/01-a546d4-e58c2abd51ed4328a8c1e08c606abcc0-mv2.png", fit: "contain", alt: "01-a546d4-e58c2abd51ed4328a8c1e08c606abcc0-mv2.png" },
+      { src: "/scraped/solar/sky-spt-150-solar-post-top/01-a546d4-e58c2abd51ed4328a8c1e08c606abcc0-mv2.png", fit: "contain", alt: "01-a546d4-e58c2abd51ed4328a8c1e08c606abcc0-mv2.png", width: 1080, height: 1080 },
     ],
   },
   {
@@ -3962,7 +3962,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/solar/vista-solar-post-top/01-pioled-lighting-vista-25w-mono-solar-post-top-3cct-rgb.jpg",// hero
     images: [
-      { src: "/scraped/solar/vista-solar-post-top/01-pioled-lighting-vista-25w-mono-solar-post-top-3cct-rgb.jpg", fit: "cover", alt: "01-pioled-lighting-vista-25w-mono-solar-post-top-3cct-rgb.jpg" },
+      { src: "/scraped/solar/vista-solar-post-top/01-pioled-lighting-vista-25w-mono-solar-post-top-3cct-rgb.jpg", fit: "contain", alt: "01-pioled-lighting-vista-25w-mono-solar-post-top-3cct-rgb.jpg", width: 1024, height: 1024 },
     ],
     pdfUrl: "/api/download/datasheet/vista-solar-post-top.pdf",
     warranty: "3-year warranty",
@@ -4009,7 +4009,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/strips/cob/01-pioled-lighting-s303-sr303-a-10w-24v-cob-ip20-strip-3000k-1.jpg",// hero
     images: [
-      { src: "/scraped/strips/cob/01-pioled-lighting-s303-sr303-a-10w-24v-cob-ip20-strip-3000k-1.jpg", fit: "cover", alt: "01-pioled-lighting-s303-sr303-a-10w-24v-cob-ip20-strip-3000k-1.jpg" },
+      { src: "/scraped/strips/cob/01-pioled-lighting-s303-sr303-a-10w-24v-cob-ip20-strip-3000k-1.jpg", fit: "contain", alt: "01-pioled-lighting-s303-sr303-a-10w-24v-cob-ip20-strip-3000k-1.jpg", width: 1024, height: 1024 },
     ],
     pdfUrl: "/api/download/datasheet/cob.pdf",
     warranty: "3-year warranty",
@@ -4035,18 +4035,18 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/profiles/profiles/member-01-freestanding-loop-3-234x234.webp",// hero
     images: [
-      { src: "/scraped/profiles/profiles/member-01-freestanding-loop-3-234x234.webp", fit: "cover", alt: "member-01-freestanding-loop-3-234x234.webp" },
-      { src: "/scraped/profiles/profiles/member-02-freestanding-loop-1-234x234.webp", fit: "cover", alt: "member-02-freestanding-loop-1-234x234.webp" },
-      { src: "/scraped/profiles/profiles/member-03-freestanding-loop-2-234x234.webp", fit: "cover", alt: "member-03-freestanding-loop-2-234x234.webp" },
-      { src: "/scraped/profiles/profiles/member-04-loop-light-7-234x234.webp", fit: "cover", alt: "member-04-loop-light-7-234x234.webp" },
-      { src: "/scraped/profiles/profiles/member-05-loop-light-6-234x234.webp", fit: "cover", alt: "member-05-loop-light-6-234x234.webp" },
-      { src: "/scraped/profiles/profiles/member-06-loop-light-9-234x234.webp", fit: "cover", alt: "member-06-loop-light-9-234x234.webp" },
-      { src: "/scraped/profiles/profiles/member-07-doodle-pendant-light-34362766295236-644x644-234x234.webp", fit: "cover", alt: "member-07-doodle-pendant-light-34362766295236-644x644-234x234.webp" },
-      { src: "/scraped/profiles/profiles/member-08-door-double-234x234.jpg", fit: "cover", alt: "member-08-door-double-234x234.jpg" },
-      { src: "/scraped/profiles/profiles/member-09-loop-lighting-queuing-poles-234x234.webp", fit: "cover", alt: "member-09-loop-lighting-queuing-poles-234x234.webp" },
-      { src: "/scraped/profiles/profiles/member-10-luxury-loop-3-1-5-234x234.webp", fit: "cover", alt: "member-10-luxury-loop-3-1-5-234x234.webp" },
-      { src: "/scraped/profiles/profiles/member-11-zh03qa9-v2-1x1-234x234.jpg", fit: "cover", alt: "member-11-zh03qa9-v2-1x1-234x234.jpg" },
-      { src: "/scraped/profiles/profiles/member-12-ic-dynamic-module-1x1-234x234.jpg", fit: "cover", alt: "member-12-ic-dynamic-module-1x1-234x234.jpg" },
+      { src: "/scraped/profiles/profiles/member-01-freestanding-loop-3-234x234.webp", fit: "contain", alt: "member-01-freestanding-loop-3-234x234.webp", width: 234, height: 234 },
+      { src: "/scraped/profiles/profiles/member-02-freestanding-loop-1-234x234.webp", fit: "contain", alt: "member-02-freestanding-loop-1-234x234.webp", width: 234, height: 234 },
+      { src: "/scraped/profiles/profiles/member-03-freestanding-loop-2-234x234.webp", fit: "contain", alt: "member-03-freestanding-loop-2-234x234.webp", width: 234, height: 234 },
+      { src: "/scraped/profiles/profiles/member-04-loop-light-7-234x234.webp", fit: "contain", alt: "member-04-loop-light-7-234x234.webp", width: 234, height: 234 },
+      { src: "/scraped/profiles/profiles/member-05-loop-light-6-234x234.webp", fit: "contain", alt: "member-05-loop-light-6-234x234.webp", width: 234, height: 234 },
+      { src: "/scraped/profiles/profiles/member-06-loop-light-9-234x234.webp", fit: "contain", alt: "member-06-loop-light-9-234x234.webp", width: 234, height: 234 },
+      { src: "/scraped/profiles/profiles/member-07-doodle-pendant-light-34362766295236-644x644-234x234.webp", fit: "contain", alt: "member-07-doodle-pendant-light-34362766295236-644x644-234x234.webp", width: 234, height: 234 },
+      { src: "/scraped/profiles/profiles/member-08-door-double-234x234.jpg", fit: "contain", alt: "member-08-door-double-234x234.jpg", width: 234, height: 234 },
+      { src: "/scraped/profiles/profiles/member-09-loop-lighting-queuing-poles-234x234.webp", fit: "contain", alt: "member-09-loop-lighting-queuing-poles-234x234.webp", width: 234, height: 234 },
+      { src: "/scraped/profiles/profiles/member-10-luxury-loop-3-1-5-234x234.webp", fit: "contain", alt: "member-10-luxury-loop-3-1-5-234x234.webp", width: 234, height: 234 },
+      { src: "/scraped/profiles/profiles/member-11-zh03qa9-v2-1x1-234x234.jpg", fit: "contain", alt: "member-11-zh03qa9-v2-1x1-234x234.jpg", width: 234, height: 234 },
+      { src: "/scraped/profiles/profiles/member-12-ic-dynamic-module-1x1-234x234.jpg", fit: "contain", alt: "member-12-ic-dynamic-module-1x1-234x234.jpg", width: 234, height: 234 },
     ],
   },
   {
@@ -4072,11 +4072,11 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/track/standard/02-rubicon-office-informal-meeting-lounge-2.jpg",// hero
     images: [
-      { src: "/scraped/track/standard/02-rubicon-office-informal-meeting-lounge-2.jpg", fit: "cover", alt: "02-rubicon-office-informal-meeting-lounge-2.jpg" },
-      { src: "/scraped/track/standard/01-standard.jpg", fit: "cover", alt: "01-standard.jpg" },
-      { src: "/scraped/track/standard/03-rubicon-office-informal-meeting-lounge-4.jpg", fit: "cover", alt: "03-rubicon-office-informal-meeting-lounge-4.jpg" },
-      { src: "/scraped/track/standard/04-rubicon-office-informal-meeting-lounge-5.jpg", fit: "cover", alt: "04-rubicon-office-informal-meeting-lounge-5.jpg" },
-      { src: "/scraped/track/standard/05-rubicon-office-informal-meeting-lounge-9.jpg", fit: "cover", alt: "05-rubicon-office-informal-meeting-lounge-9.jpg" },
+      { src: "/scraped/track/standard/02-rubicon-office-informal-meeting-lounge-2.jpg", fit: "contain", alt: "02-rubicon-office-informal-meeting-lounge-2.jpg", width: 2048, height: 1367 },
+      { src: "/scraped/track/standard/01-standard.jpg", fit: "contain", alt: "01-standard.jpg", width: 724, height: 546 },
+      { src: "/scraped/track/standard/03-rubicon-office-informal-meeting-lounge-4.jpg", fit: "contain", alt: "03-rubicon-office-informal-meeting-lounge-4.jpg", width: 2048, height: 1367 },
+      { src: "/scraped/track/standard/04-rubicon-office-informal-meeting-lounge-5.jpg", fit: "contain", alt: "04-rubicon-office-informal-meeting-lounge-5.jpg", width: 2048, height: 1367 },
+      { src: "/scraped/track/standard/05-rubicon-office-informal-meeting-lounge-9.jpg", fit: "contain", alt: "05-rubicon-office-informal-meeting-lounge-9.jpg", width: 2048, height: 1367 },
     ],
   },
   {
@@ -4100,14 +4100,14 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/track/bazuka/member-01-pioled-lighting-tkb099-25w-bazuka-3-wire-track-3cct-honeycomb-black.png",// hero
     images: [
-      { src: "/scraped/track/bazuka/member-01-pioled-lighting-tkb099-25w-bazuka-3-wire-track-3cct-honeycomb-black.png", fit: "cover", alt: "member-01-pioled-lighting-tkb099-25w-bazuka-3-wire-track-3cct-honeycomb-black.png" },
-      { src: "/scraped/track/bazuka/member-02-pioled-lighting-tkb098-15w-bazuka-3-wire-track-3cct-honeycomb-black.png", fit: "cover", alt: "member-02-pioled-lighting-tkb098-15w-bazuka-3-wire-track-3cct-honeycomb-black.png" },
-      { src: "/scraped/track/bazuka/member-03-pioled-lighting-tkw101-2-3-35w-bazuka-3-wire-track-white.jpg", fit: "cover", alt: "member-03-pioled-lighting-tkw101-2-3-35w-bazuka-3-wire-track-white.jpg" },
-      { src: "/scraped/track/bazuka/member-04-pioled-lighting-tsb100-35w-surface-bazuka-black-honeycomb-3cct.jpg", fit: "cover", alt: "member-04-pioled-lighting-tsb100-35w-surface-bazuka-black-honeycomb-3cct.jpg" },
-      { src: "/scraped/track/bazuka/member-05-pioled-lighting-tkb099d-25w-3-wire-dim-driver.png", fit: "cover", alt: "member-05-pioled-lighting-tkb099d-25w-3-wire-dim-driver.png" },
-      { src: "/scraped/track/bazuka/member-06-pioled-lighting-tkb099d-25w-3-wire-dim-driver.png", fit: "cover", alt: "member-06-pioled-lighting-tkb099d-25w-3-wire-dim-driver.png" },
-      { src: "/scraped/track/bazuka/member-07-pioled-lighting-tkb098d-15w-3-wire-dim-driver.png", fit: "cover", alt: "member-07-pioled-lighting-tkb098d-15w-3-wire-dim-driver.png" },
-      { src: "/scraped/track/bazuka/member-08-pioled-lighting-tkb100-honeycomb-35w-bazuka-3-wire-track-black-3cct-1.png", fit: "cover", alt: "member-08-pioled-lighting-tkb100-honeycomb-35w-bazuka-3-wire-track-black-3cct-1.png" },
+      { src: "/scraped/track/bazuka/member-01-pioled-lighting-tkb099-25w-bazuka-3-wire-track-3cct-honeycomb-black.png", fit: "contain", alt: "member-01-pioled-lighting-tkb099-25w-bazuka-3-wire-track-3cct-honeycomb-black.png", width: 1024, height: 1024 },
+      { src: "/scraped/track/bazuka/member-02-pioled-lighting-tkb098-15w-bazuka-3-wire-track-3cct-honeycomb-black.png", fit: "contain", alt: "member-02-pioled-lighting-tkb098-15w-bazuka-3-wire-track-3cct-honeycomb-black.png", width: 1024, height: 1024 },
+      { src: "/scraped/track/bazuka/member-03-pioled-lighting-tkw101-2-3-35w-bazuka-3-wire-track-white.jpg", fit: "contain", alt: "member-03-pioled-lighting-tkw101-2-3-35w-bazuka-3-wire-track-white.jpg", width: 1024, height: 1024 },
+      { src: "/scraped/track/bazuka/member-04-pioled-lighting-tsb100-35w-surface-bazuka-black-honeycomb-3cct.jpg", fit: "contain", alt: "member-04-pioled-lighting-tsb100-35w-surface-bazuka-black-honeycomb-3cct.jpg", width: 1024, height: 1024 },
+      { src: "/scraped/track/bazuka/member-05-pioled-lighting-tkb099d-25w-3-wire-dim-driver.png", fit: "contain", alt: "member-05-pioled-lighting-tkb099d-25w-3-wire-dim-driver.png", width: 1024, height: 1024 },
+      { src: "/scraped/track/bazuka/member-06-pioled-lighting-tkb099d-25w-3-wire-dim-driver.png", fit: "contain", alt: "member-06-pioled-lighting-tkb099d-25w-3-wire-dim-driver.png", width: 1024, height: 1024 },
+      { src: "/scraped/track/bazuka/member-07-pioled-lighting-tkb098d-15w-3-wire-dim-driver.png", fit: "contain", alt: "member-07-pioled-lighting-tkb098d-15w-3-wire-dim-driver.png", width: 1024, height: 1024 },
+      { src: "/scraped/track/bazuka/member-08-pioled-lighting-tkb100-honeycomb-35w-bazuka-3-wire-track-black-3cct-1.png", fit: "contain", alt: "member-08-pioled-lighting-tkb100-honeycomb-35w-bazuka-3-wire-track-black-3cct-1.png", width: 1024, height: 1024 },
     ],
   },
   {
@@ -4152,7 +4152,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/track/blaster/01-pioled-lighting-tkw101-blaster-high-power-3-wire-track-spot-white-c.png",// hero
     images: [
-      { src: "/scraped/track/blaster/01-pioled-lighting-tkw101-blaster-high-power-3-wire-track-spot-white-c.png", fit: "contain", alt: "01-pioled-lighting-tkw101-blaster-high-power-3-wire-track-spot-white-c.png" },
+      { src: "/scraped/track/blaster/01-pioled-lighting-tkw101-blaster-high-power-3-wire-track-spot-white-c.png", fit: "contain", alt: "01-pioled-lighting-tkw101-blaster-high-power-3-wire-track-spot-white-c.png", width: 1024, height: 1024 },
     ],
     pdfUrl: "/api/download/datasheet/blaster.pdf",
     warranty: "5-year warranty",
@@ -4178,9 +4178,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/track/leda/member-01-pioled-lighting-tk005-4ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png",// hero
     images: [
-      { src: "/scraped/track/leda/member-01-pioled-lighting-tk005-4ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png", fit: "cover", alt: "member-01-pioled-lighting-tk005-4ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png" },
-      { src: "/scraped/track/leda/member-02-pioled-lighting-tk004-3ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png", fit: "cover", alt: "member-02-pioled-lighting-tk004-3ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png" },
-      { src: "/scraped/track/leda/member-03-pioled-lighting-tk002-2ft-leda-3-wire-track-tiltable-linear-3cct-white.png", fit: "cover", alt: "member-03-pioled-lighting-tk002-2ft-leda-3-wire-track-tiltable-linear-3cct-white.png" },
+      { src: "/scraped/track/leda/member-01-pioled-lighting-tk005-4ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png", fit: "contain", alt: "member-01-pioled-lighting-tk005-4ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png", width: 600, height: 600 },
+      { src: "/scraped/track/leda/member-02-pioled-lighting-tk004-3ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png", fit: "contain", alt: "member-02-pioled-lighting-tk004-3ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png", width: 600, height: 600 },
+      { src: "/scraped/track/leda/member-03-pioled-lighting-tk002-2ft-leda-3-wire-track-tiltable-linear-3cct-white.png", fit: "contain", alt: "member-03-pioled-lighting-tk002-2ft-leda-3-wire-track-tiltable-linear-3cct-white.png", width: 1024, height: 1024 },
     ],
   },
   {
@@ -4204,10 +4204,10 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/track/snypa/member-01-pioled-lighting-r315-snypa-gu10-surface-mount-110m-black-fitting.jpg",// hero
     images: [
-      { src: "/scraped/track/snypa/member-01-pioled-lighting-r315-snypa-gu10-surface-mount-110m-black-fitting.jpg", fit: "cover", alt: "member-01-pioled-lighting-r315-snypa-gu10-surface-mount-110m-black-fitting.jpg" },
-      { src: "/scraped/track/snypa/member-02-pioled-lighting-r313-snypa-gu10-3-wire-track-110m-black-fitting-square.jpg", fit: "cover", alt: "member-02-pioled-lighting-r313-snypa-gu10-3-wire-track-110m-black-fitting-square.jpg" },
-      { src: "/scraped/track/snypa/member-03-pioled-lighting-r312-snypa-gu10-surface-110m-white-fitting-honeycomb-1.jpg", fit: "cover", alt: "member-03-pioled-lighting-r312-snypa-gu10-surface-110m-white-fitting-honeycomb-1.jpg" },
-      { src: "/scraped/track/snypa/member-04-pioled-lighting-r301-snypa-gu10-3-wire-track-110m-black-fitting-1.jpg", fit: "cover", alt: "member-04-pioled-lighting-r301-snypa-gu10-3-wire-track-110m-black-fitting-1.jpg" },
+      { src: "/scraped/track/snypa/member-01-pioled-lighting-r315-snypa-gu10-surface-mount-110m-black-fitting.jpg", fit: "contain", alt: "member-01-pioled-lighting-r315-snypa-gu10-surface-mount-110m-black-fitting.jpg", width: 1024, height: 1024 },
+      { src: "/scraped/track/snypa/member-02-pioled-lighting-r313-snypa-gu10-3-wire-track-110m-black-fitting-square.jpg", fit: "contain", alt: "member-02-pioled-lighting-r313-snypa-gu10-3-wire-track-110m-black-fitting-square.jpg", width: 1024, height: 1024 },
+      { src: "/scraped/track/snypa/member-03-pioled-lighting-r312-snypa-gu10-surface-110m-white-fitting-honeycomb-1.jpg", fit: "contain", alt: "member-03-pioled-lighting-r312-snypa-gu10-surface-110m-white-fitting-honeycomb-1.jpg", width: 1024, height: 1024 },
+      { src: "/scraped/track/snypa/member-04-pioled-lighting-r301-snypa-gu10-3-wire-track-110m-black-fitting-1.jpg", fit: "contain", alt: "member-04-pioled-lighting-r301-snypa-gu10-3-wire-track-110m-black-fitting-1.jpg", width: 1024, height: 1024 },
     ],
   },
   {
@@ -4267,8 +4267,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/vapourproof/neptune/01-neptune-800x416.png",// hero
     images: [
-      { src: "/scraped/vapourproof/neptune/01-neptune-800x416.png", fit: "cover", alt: "01-neptune-800x416.png" },
-      { src: "/scraped/vapourproof/neptune/02-neptune-dimensions.png", fit: "cover", alt: "02-neptune-dimensions.png" },
+      { src: "/scraped/vapourproof/neptune/01-neptune-800x416.png", fit: "contain", alt: "01-neptune-800x416.png", width: 800, height: 416 },
+      { src: "/scraped/vapourproof/neptune/02-neptune-dimensions.png", fit: "contain", alt: "02-neptune-dimensions.png", width: 1774, height: 592 },
     ],
     pdfUrl: "/api/download/datasheet/neptune.pdf",
     warranty: "8 years (365d x 24h)",
@@ -4322,8 +4322,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/vapourproof/titan/01-titan-800x418.png",// hero
     images: [
-      { src: "/scraped/vapourproof/titan/01-titan-800x418.png", fit: "cover", alt: "01-titan-800x418.png" },
-      { src: "/scraped/vapourproof/titan/02-titan-dimensions.png", fit: "cover", alt: "02-titan-dimensions.png" },
+      { src: "/scraped/vapourproof/titan/01-titan-800x418.png", fit: "contain", alt: "01-titan-800x418.png", width: 800, height: 418 },
+      { src: "/scraped/vapourproof/titan/02-titan-dimensions.png", fit: "contain", alt: "02-titan-dimensions.png", width: 1774, height: 592 },
     ],
     pdfUrl: "/api/download/datasheet/titan.pdf",
     warranty: "6 years",
@@ -4351,11 +4351,11 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/vapourproof/saxa/02-hilltop-10.jpg",// hero
     images: [
-      { src: "/scraped/vapourproof/saxa/02-hilltop-10.jpg", fit: "cover", alt: "02-hilltop-10.jpg" },
-      { src: "/scraped/vapourproof/saxa/01-saxa-triproof.jpg", fit: "cover", alt: "01-saxa-triproof.jpg" },
-      { src: "/scraped/vapourproof/saxa/03-hilltop-9.jpg", fit: "cover", alt: "03-hilltop-9.jpg" },
-      { src: "/scraped/vapourproof/saxa/04-img-0297.jpg", fit: "cover", alt: "04-img-0297.jpg" },
-      { src: "/scraped/vapourproof/saxa/05-img-0298.jpg", fit: "cover", alt: "05-img-0298.jpg" },
+      { src: "/scraped/vapourproof/saxa/02-hilltop-10.jpg", fit: "contain", alt: "02-hilltop-10.jpg", width: 2048, height: 1365 },
+      { src: "/scraped/vapourproof/saxa/01-saxa-triproof.jpg", fit: "contain", alt: "01-saxa-triproof.jpg", width: 900, height: 612 },
+      { src: "/scraped/vapourproof/saxa/03-hilltop-9.jpg", fit: "contain", alt: "03-hilltop-9.jpg", width: 2048, height: 1365 },
+      { src: "/scraped/vapourproof/saxa/04-img-0297.jpg", fit: "contain", alt: "04-img-0297.jpg", width: 2048, height: 1150 },
+      { src: "/scraped/vapourproof/saxa/05-img-0298.jpg", fit: "contain", alt: "05-img-0298.jpg", width: 2048, height: 1150 },
     ],
   },
   {
@@ -4381,10 +4381,10 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/vapourproof/metropolis/02-metropolis-edit.jpg",// hero
     images: [
-      { src: "/scraped/vapourproof/metropolis/02-metropolis-edit.jpg", fit: "cover", alt: "02-metropolis-edit.jpg" },
-      { src: "/scraped/vapourproof/metropolis/01-metropolis.jpg", fit: "cover", alt: "01-metropolis.jpg" },
-      { src: "/scraped/vapourproof/metropolis/03-whatsapp-image-2025-09-18-at-12-11-52.jpg", fit: "cover", alt: "03-whatsapp-image-2025-09-18-at-12-11-52.jpg" },
-      { src: "/scraped/vapourproof/metropolis/04-whatsapp-image-2025-09-23-at-09-09-09-1.jpg", fit: "cover", alt: "04-whatsapp-image-2025-09-23-at-09-09-09-1.jpg" },
+      { src: "/scraped/vapourproof/metropolis/02-metropolis-edit.jpg", fit: "contain", alt: "02-metropolis-edit.jpg", width: 1536, height: 2048 },
+      { src: "/scraped/vapourproof/metropolis/01-metropolis.jpg", fit: "contain", alt: "01-metropolis.jpg", width: 2048, height: 614 },
+      { src: "/scraped/vapourproof/metropolis/03-whatsapp-image-2025-09-18-at-12-11-52.jpg", fit: "contain", alt: "03-whatsapp-image-2025-09-18-at-12-11-52.jpg", width: 1536, height: 2048 },
+      { src: "/scraped/vapourproof/metropolis/04-whatsapp-image-2025-09-23-at-09-09-09-1.jpg", fit: "contain", alt: "04-whatsapp-image-2025-09-23-at-09-09-09-1.jpg", width: 1280, height: 960 },
     ],
   },
   {
@@ -4423,7 +4423,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/vapourproof/vp/01-vp-1200-2021.jpg",// hero
     images: [
-      { src: "/scraped/vapourproof/vp/01-vp-1200-2021.jpg", fit: "cover", alt: "01-vp-1200-2021.jpg" },
+      { src: "/scraped/vapourproof/vp/01-vp-1200-2021.jpg", fit: "contain", alt: "01-vp-1200-2021.jpg", width: 1058, height: 1058 },
     ],
     pdfUrl: "/api/download/datasheet/vp.pdf",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
@@ -4449,10 +4449,10 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     imageUrl: "/scraped/vapourproof/kuda/member-01-pioled-lighting-ll913-kuda-max-5ft-emergency-kit-space-1.png",// hero
     images: [
-      { src: "/scraped/vapourproof/kuda/member-01-pioled-lighting-ll913-kuda-max-5ft-emergency-kit-space-1.png", fit: "cover", alt: "member-01-pioled-lighting-ll913-kuda-max-5ft-emergency-kit-space-1.png" },
-      { src: "/scraped/vapourproof/kuda/member-02-pioled-lighting-ll912-kuda-max-4ft-emergency-kit-space-1.png", fit: "cover", alt: "member-02-pioled-lighting-ll912-kuda-max-4ft-emergency-kit-space-1.png" },
-      { src: "/scraped/vapourproof/kuda/member-03-pioled-lighting-ll908-9-kuda-ip65-3cct-linear-batten-white-1.jpg", fit: "cover", alt: "member-03-pioled-lighting-ll908-9-kuda-ip65-3cct-linear-batten-white-1.jpg" },
-      { src: "/scraped/vapourproof/kuda/member-04-pioled-lighting-ll908-9-kuda-ip65-3cct-linear-batten-white-1.jpg", fit: "cover", alt: "member-04-pioled-lighting-ll908-9-kuda-ip65-3cct-linear-batten-white-1.jpg" },
+      { src: "/scraped/vapourproof/kuda/member-01-pioled-lighting-ll913-kuda-max-5ft-emergency-kit-space-1.png", fit: "contain", alt: "member-01-pioled-lighting-ll913-kuda-max-5ft-emergency-kit-space-1.png", width: 1024, height: 1024 },
+      { src: "/scraped/vapourproof/kuda/member-02-pioled-lighting-ll912-kuda-max-4ft-emergency-kit-space-1.png", fit: "contain", alt: "member-02-pioled-lighting-ll912-kuda-max-4ft-emergency-kit-space-1.png", width: 1024, height: 1024 },
+      { src: "/scraped/vapourproof/kuda/member-03-pioled-lighting-ll908-9-kuda-ip65-3cct-linear-batten-white-1.jpg", fit: "contain", alt: "member-03-pioled-lighting-ll908-9-kuda-ip65-3cct-linear-batten-white-1.jpg", width: 1024, height: 1024 },
+      { src: "/scraped/vapourproof/kuda/member-04-pioled-lighting-ll908-9-kuda-ip65-3cct-linear-batten-white-1.jpg", fit: "contain", alt: "member-04-pioled-lighting-ll908-9-kuda-ip65-3cct-linear-batten-white-1.jpg", width: 1024, height: 1024 },
     ],
   },
 ];

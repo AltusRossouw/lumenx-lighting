@@ -128,7 +128,6 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
               <ProductImageGallery
                 images={galleryImages}
                 name={product.name}
-                aspectClass="aspect-[4/3]"
               />
             </motion.div>
           </div>

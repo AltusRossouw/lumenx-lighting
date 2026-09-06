@@ -6,8 +6,8 @@ interface ProductImageGalleryProps {
   images: ProductImage[];
   /** Product name, used for alt text. */
   name: string;
-  /** Aspect ratio class applied to the stage container (default square-ish). */
-  aspectClass?: string;
+  /** Aspect ratio class for the stage when the image dims are unknown. */
+  fallbackAspectClass?: string;
   className?: string;
 }
 
@@ -22,17 +22,34 @@ interface ProductImageGalleryProps {
 export const ProductImageGallery: React.FC<ProductImageGalleryProps> = ({
   images,
   name,
-  aspectClass = 'aspect-[4/3]',
+  fallbackAspectClass = 'aspect-[4/3]',
   className = '',
 }) => {
   const safeImages = images.length > 0 ? images : [{ src: '', fit: 'contain' as const, alt: name }];
   const [index, setIndex] = useState(0);
   const [loaded, setLoaded] = useState<Record<number, boolean>>({});
+  const [stageAspect, setStageAspect] = useState<number | undefined>(undefined);
   const stageRef = useRef<HTMLDivElement>(null);
 
   const count = safeImages.length;
   const current = safeImages[Math.min(index, count - 1)];
   const isRender = current.fit === 'contain';
+
+  // Size the stage to the current image's natural ratio so nothing is cropped
+  // or over-letterboxed. Clamp to a sensible range so very wide drawings and
+  // very tall portraits don't blow up the layout. transition happens via CSS.
+  useEffect(() => {
+    const w = current.width;
+    const h = current.height;
+    if (w && h && h > 0) {
+      const ratio = w / h;
+      // Clamp ratio to [0.72, 2.4] (portrait => wide landscape).
+      const clamped = Math.max(0.72, Math.min(2.4, ratio));
+      setStageAspect(clamped);
+    } else {
+      setStageAspect(undefined);
+    }
+  }, [current.src, current.width, current.height]);
 
   const goTo = useCallback(
     (i: number) => {
@@ -80,7 +97,8 @@ export const ProductImageGallery: React.FC<ProductImageGalleryProps> = ({
       {/* Stage */}
       <div
         ref={stageRef}
-        className={`relative overflow-hidden rounded-2xl gradient-border-card card-lift ${aspectClass}`}
+        className={`relative overflow-hidden rounded-2xl gradient-border-card card-lift ${stageAspect ? '' : fallbackAspectClass}`}
+        style={stageAspect ? { aspectRatio: stageAspect } : undefined}
       >
         {/* Ambient fill so object-cover photos blend into the card edge */}
         <div className="absolute inset-0 bg-[#0A101A]" />
@@ -93,8 +111,10 @@ export const ProductImageGallery: React.FC<ProductImageGalleryProps> = ({
             loading="eager"
             onLoad={() => markLoaded(index)}
             className={`relative z-10 w-full h-full ${
-              isRender ? 'object-contain p-4 sm:p-6' : 'object-cover group-hover/gallery:scale-[1.02]'
-            } transition-transform duration-500 ${
+              isRender
+                ? 'object-contain p-3 sm:p-4'
+                : 'object-cover group-hover/gallery:scale-[1.02]'
+            } transition-[aspect-ratio,transform] duration-500 ease-out ${
               loaded[index] ? 'opacity-100' : 'opacity-0'
             }`}
           />

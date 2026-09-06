@@ -19,6 +19,9 @@ export interface ProductImage {
   /** 'contain' = product render on white/transparent (show fully);
    *  'cover' = application/lifestyle photo (fill the frame). */
   fit?: 'contain' | 'cover';
+  /** Natural pixel dimensions — used to size the stage so nothing is cropped. */
+  width?: number;
+  height?: number;
 }
 
 /** Full, detailed product record for the catalogue. */

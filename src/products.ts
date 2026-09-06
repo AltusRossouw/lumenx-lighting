@@ -41,7 +41,7 @@ export function getProduct(categoryId: string, slug: string): Product | undefine
 /** Ordered gallery for a product (hero first); falls back to the single image. */
 export function getProductImages(product: Product): ProductImage[] {
   if (product.images && product.images.length > 0) return product.images;
-  return [{ src: product.imageUrl, fit: 'cover' as const }];
+  return [{ src: product.imageUrl, fit: 'contain' as const }];
 }
 
 /**
