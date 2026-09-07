@@ -71,3 +71,43 @@ export function getAllDatasheets(): { name: string; href: string }[] {
 
 /** Complete local datasheet library (LumenX-branded + supplier-linked ranges). */
 export const DATASHEET_LIBRARY: { name: string; href: string }[] = getAllDatasheets();
+
+/** A single datasheet entry carrying its product category for grouping. */
+export interface DatasheetEntry {
+  name: string;
+  href: string;
+  category: string;
+}
+
+/** A category group within the datasheet library. */
+export interface DatasheetCategoryGroup {
+  categoryId: string;
+  title: string;
+  sheets: DatasheetEntry[];
+}
+
+/**
+ * Datasheet library grouped by product category, ordered to match the
+ * catalogue. Each unique datasheet appears once, under the first product
+ * category that references it.
+ */
+export const DATASHEET_LIBRARY_BY_CATEGORY: DatasheetCategoryGroup[] = (() => {
+  const seen = new Set<string>();
+  const groups = new Map<string, DatasheetCategoryGroup>();
+  for (const category of PRODUCT_CATEGORIES) {
+    groups.set(category.id, { categoryId: category.id, title: category.title, sheets: [] });
+  }
+  for (const product of PRODUCTS) {
+    if (!product.pdfUrl || seen.has(product.pdfUrl)) continue;
+    seen.add(product.pdfUrl);
+    const group = groups.get(product.category);
+    if (!group) continue;
+    group.sheets.push({ name: product.name, href: product.pdfUrl, category: product.category });
+  }
+  return [...groups.values()]
+    .filter((group) => group.sheets.length > 0)
+    .map((group) => ({
+      ...group,
+      sheets: group.sheets.sort((a, b) => a.name.localeCompare(b.name)),
+    }));
+})();

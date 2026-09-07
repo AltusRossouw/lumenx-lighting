@@ -1,14 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight, FileDown, FileText, ShieldCheck, Download } from 'lucide-react';
+import { ArrowRight, FileDown, FileText, ShieldCheck, Download, FolderOpen } from 'lucide-react';
 import { PageHeroBackground } from './animations';
-import { DATASHEET_LIBRARY, datasheetDownloadUrl } from '../products';
+import { DATASHEET_LIBRARY, DATASHEET_LIBRARY_BY_CATEGORY, datasheetDownloadUrl } from '../products';
 import { useSiteContent } from '../content';
 
 export const ResourcesPage: React.FC = () => {
   const { resources } = useSiteContent();
   const datasheets = DATASHEET_LIBRARY;
+  const [activeCategory, setActiveCategory] = React.useState<string>('all');
+
+  const visibleGroups =
+    activeCategory === 'all'
+      ? DATASHEET_LIBRARY_BY_CATEGORY
+      : DATASHEET_LIBRARY_BY_CATEGORY.filter((group) => group.categoryId === activeCategory);
+
+  const filterOptions = [
+    { id: 'all', label: 'All Datasheets', count: datasheets.length },
+    ...DATASHEET_LIBRARY_BY_CATEGORY.map((group) => ({
+      id: group.categoryId,
+      label: group.title,
+      count: group.sheets.length,
+    })),
+  ];
 
   const cardMeta = [
     { icon: FileText, to: '/resources' },
@@ -135,34 +150,75 @@ export const ResourcesPage: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {datasheets.map((sheet, i) => (
-              <motion.div
-                key={sheet.href}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ delay: (i % 9) * 0.05, duration: 0.5 }}
-                className="border border-[#1E293B]/70 bg-[#0A0F17] hover:border-primary/30 transition-colors duration-300 p-4 flex items-center justify-between gap-4"
-              >
-                <div className="flex items-center gap-3 min-w-0">
-                  <FileText className="w-4 h-4 text-primary/50 shrink-0" />
-                  <div className="min-w-0">
-                    <p className="text-sm font-semibold text-white truncate font-display">{sheet.name}</p>
-                    <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">PDF Datasheet</p>
-                  </div>
-                </div>
-                <a
-                  href={datasheetDownloadUrl(sheet.href)}
-                  download
-                  className="btn btn-outline btn-sm no-underline shrink-0"
-                  aria-label={`Download ${sheet.name} datasheet`}
+          {/* Category filter */}
+          <div className="mb-10 flex flex-wrap gap-2" role="group" aria-label="Filter datasheets by category">
+            {filterOptions.map((option) => {
+              const isActive = option.id === activeCategory;
+              return (
+                <button
+                  key={option.id}
+                  type="button"
+                  onClick={() => setActiveCategory(option.id)}
+                  aria-pressed={isActive}
+                  className={`inline-flex items-center gap-2 px-4 py-2 text-xs font-mono tracking-wider uppercase rounded-full border transition-colors duration-200 cursor-pointer ${
+                    isActive
+                      ? 'bg-primary text-[#04070D] border-primary'
+                      : 'bg-primary/5 text-slate-300 border-[#1E293B]/80 hover:border-primary/40 hover:text-primary'
+                  }`}
                 >
-                  <Download className="w-3.5 h-3.5" />
-                </a>
-              </motion.div>
-            ))}
+                  {option.label}
+                  <span
+                    className={`text-[10px] px-1.5 py-0.5 rounded-full ${
+                      isActive ? 'bg-[#04070D]/15 text-[#04070D]' : 'bg-white/5 text-slate-500'
+                    }`}
+                  >
+                    {option.count}
+                  </span>
+                </button>
+              );
+            })}
           </div>
+
+          {/* Grouped datasheets */}
+          {visibleGroups.map((group) => (
+            <div key={group.categoryId} className="mb-12 last:mb-0">
+              <div className="flex items-baseline gap-3 mb-4">
+                <FolderOpen className="w-4 h-4 text-primary/50 shrink-0 self-center" />
+                <h3 className="font-display text-lg font-semibold text-white tracking-tight">{group.title}</h3>
+                <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">
+                  {group.sheets.length} {group.sheets.length === 1 ? 'datasheet' : 'datasheets'}
+                </span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {group.sheets.map((sheet, i) => (
+                  <motion.div
+                    key={sheet.href}
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-60px' }}
+                    transition={{ delay: (i % 9) * 0.05, duration: 0.5 }}
+                    className="border border-[#1E293B]/70 bg-[#0A0F17] hover:border-primary/30 transition-colors duration-300 p-4 flex items-center justify-between gap-4"
+                  >
+                    <div className="flex items-center gap-3 min-w-0">
+                      <FileText className="w-4 h-4 text-primary/50 shrink-0" />
+                      <div className="min-w-0">
+                        <p className="text-sm font-semibold text-white truncate font-display">{sheet.name}</p>
+                        <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">PDF Datasheet</p>
+                      </div>
+                    </div>
+                    <a
+                      href={datasheetDownloadUrl(sheet.href)}
+                      download
+                      className="btn btn-outline btn-sm no-underline shrink-0"
+                      aria-label={`Download ${sheet.name} datasheet`}
+                    >
+                      <Download className="w-3.5 h-3.5" />
+                    </a>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>
