@@ -598,8 +598,45 @@
     notes.appendChild(li);
   });
   }
+  // ── Auto-fit: guarantee the spec columns never overflow / get clipped ──────
+  // The sheet is a fixed 297mm page with `overflow:hidden`, so content taller
+  // than the space the body grid is allocated would be silently clipped (dense
+  // products like Rhea were losing their last spec rows). Measure the columns
+  // and scale them down just enough to fit — but only as far as is still
+  // readable. If even the readable floor can't fit one page, grow the sheet so
+  // the content flows onto a second page: never clip, never shrink to illegible.
+  var FIT_MIN_ZOOM = 0.80;   // ~6.6pt body text: smallest we still consider legible
+  function allowFlow() {
+    var sheet = document.getElementById('sheet');
+    var grid = document.querySelector('.body-grid');
+    if (sheet) { sheet.style.height = 'auto'; sheet.style.overflow = 'visible'; }
+    if (grid) grid.style.overflow = 'visible';
+  }
+  function fitGridToPage() {
+    var grid = document.querySelector('.body-grid');
+    var left = document.getElementById('colLeft');
+    var right = document.getElementById('colRight');
+    if (!grid || !left || !right) return;
+    // Clear any prior fit then measure the natural content height.
+    left.style.zoom = '';
+    right.style.zoom = '';
+    var avail = grid.clientHeight;
+    var content = Math.max(left.scrollHeight, right.scrollHeight);
+    if (content <= avail || content <= 0) return; // already fits on one page
+    var z = avail / content;
+    if (z >= FIT_MIN_ZOOM) {
+      // Fits at a readable size → scale the columns down to fill one page.
+      left.style.zoom = z.toFixed(4);
+      right.style.zoom = z.toFixed(4);
+    } else {
+      // Too dense to fit one page readably → keep full size, flow to page 2.
+      allowFlow();
+    }
+  }
+
   window.__renderDatasheet = renderDatasheet;
   renderDatasheet();
+  fitGridToPage();
 </script>
 </body>
 </html>
