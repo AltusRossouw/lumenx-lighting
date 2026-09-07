@@ -932,13 +932,13 @@ def main():
             # Fallback placeholder so the page still renders.
             image_objs = [{'src': f'/product-images/categories/{cat_id}.jpg', 'fit': 'cover', 'alt': name_clean}]
 
-        # Prefer the curated datasheet hero render (a proper product photo from
-        # public/product-images/) as the main image, prepending it to the gallery
-        # so the carousel still has the scraped photos behind it. This fixes
-        # products whose scraped hero was a poor/odd photo (e.g. a tiny module).
+        # Fall back to the curated datasheet hero ONLY for collection-page
+        # products (whose scraped images are all low-quality 'member-*' cards),
+        # e.g. GU10 / Bazuka / Snypa. Real products keep their new scraped photo.
+        scraped_names = [os.path.basename(im['src']) for im in image_objs if im['src'].startswith('/scraped/')]
+        is_collection = bool(scraped_names) and all(n.startswith('member-') for n in scraped_names)
         hero_path = datasheet_hero(ds)
-        if hero_path:
-            # Avoid duplicating the curated hero if it's already the first image.
+        if hero_path and is_collection:
             if not (image_objs and image_objs[0]['src'] == hero_path):
                 hero_w = hero_h = None
                 hero_abs = os.path.join(ROOT, 'public', hero_path.lstrip('/'))
