@@ -214,7 +214,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
                   <Layers className="w-4 h-4 text-primary" />
                   <h3 className="font-display text-sm font-semibold text-white tracking-tight">Key Features</h3>
                 </div>
-                <ul className="list-x space-y-3">
+                <ul className="list-disc pl-5 space-y-3 marker:text-primary">
                   {product.features.map((f) => (
                     <li key={f} className="text-sm text-slate-300 leading-relaxed font-sans font-light">
                       {f}

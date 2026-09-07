@@ -94,20 +94,6 @@ body { background-color: #06090F; color: #CBD5E1; -webkit-font-smoothing: antial
 }
 .btn-block { width: 100%; }
 
-/* Custom list markers — the LumenX "X" in brand blue */
-.list-x li { display: flex; align-items: flex-start; gap: 0.625rem; }
-.list-x li::before {
-  content: '';
-  flex: 0 0 auto;
-  width: 0.625rem;
-  height: 0.625rem;
-  margin-top: 0.325rem;
-  background:
-    linear-gradient(to top right, transparent calc(50% - 1.5px), #00D4FF calc(50% - 1.5px) calc(50% + 1.5px), transparent calc(50% + 1.5px)),
-    linear-gradient(to bottom right, transparent calc(50% - 1.5px), #00D4FF calc(50% - 1.5px) calc(50% + 1.5px), transparent calc(50% + 1.5px));
-  filter: drop-shadow(0 0 3px rgba(0, 212, 255, 0.45));
-}
-
 
 /* Light rays */
 @keyframes light-ray { 0%,100%{opacity:.12;transform:rotate(-15deg) scaleY(1)} 50%{opacity:.3;transform:rotate(-15deg) scaleY(1.4)} }
