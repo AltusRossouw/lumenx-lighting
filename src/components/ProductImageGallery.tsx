@@ -83,7 +83,23 @@ export const ProductImageGallery: React.FC<ProductImageGalleryProps> = ({
 
   const showArrows = count > 1;
 
-  const markLoaded = (i: number) => setLoaded((l) => ({ ...l, [i]: true }));
+  // Idempotent: bail out with the same reference if already loaded so a
+  // repeated callback (e.g. the ref below) doesn't trigger extra renders.
+  const markLoaded = useCallback((i: number) => {
+    setLoaded((l) => (l[i] ? l : { ...l, [i]: true }));
+  }, []);
+
+  // Cached images can finish loading before React attaches `onLoad`, so the
+  // event is missed and the image stays `opacity-0` (white) until a full
+  // refresh. On attach, if the image already finished, reveal it immediately.
+  const handleImgRef = useCallback(
+    (node: HTMLImageElement | null) => {
+      if (node && node.complete && node.naturalWidth > 0) {
+        markLoaded(index);
+      }
+    },
+    [index, markLoaded],
+  );
 
   return (
     <div
@@ -107,6 +123,7 @@ export const ProductImageGallery: React.FC<ProductImageGalleryProps> = ({
         {current.src ? (
           <img
             key={current.src}
+            ref={handleImgRef}
             src={current.src}
             alt={current.alt || `${name} — image ${index + 1}`}
             loading="eager"
