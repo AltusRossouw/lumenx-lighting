@@ -8,7 +8,6 @@ const NAV_ITEMS: { id: string; label: string; path: string }[] = [
   { id: 'home', label: 'Home', path: '/' },
   { id: 'services', label: 'The Solution', path: '/the-solution' },
   { id: 'products', label: 'Products', path: '/products' },
-  { id: 'projects', label: 'Projects', path: '/projects' },
   { id: 'resources', label: 'Technical Resources', path: '/resources' },
   { id: 'about', label: 'About', path: '/about' },
   { id: 'contact', label: 'Contact', path: '/contact' },

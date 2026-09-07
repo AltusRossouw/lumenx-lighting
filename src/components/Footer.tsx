@@ -13,7 +13,6 @@ export const Footer: React.FC = () => {
     { label: 'Products', path: '/products' },
     // Design Tool temporarily disabled for testing — re-add when ready.
     // Lighting Planner temporarily disabled for testing — re-add when ready.
-    { label: 'Projects', path: '/projects' },
     { label: 'Technical Resources', path: '/resources' },
     { label: 'IES Downloads', path: '/ies' },
     { label: 'About', path: '/about' },

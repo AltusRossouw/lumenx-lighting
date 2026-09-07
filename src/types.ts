@@ -108,16 +108,6 @@ export interface ProcessStep {
   iconImg: string;
 }
 
-export interface FeaturedProject {
-  name: string;
-  location: string;
-  scope: string;
-  delivered: string;
-  imageUrl?: string;
-  imageAlt?: string;
-  category?: string;
-}
-
 export interface InstallationImage {
   src: string;
   alt: string;

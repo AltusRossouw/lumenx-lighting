@@ -117,7 +117,6 @@ export interface SiteContent {
   cta: { label: string; heading: Heading; subcopy: string; button: string };
   home: {
     solution: Teaser;
-    projects: Teaser;
     categories: Teaser;
     who: Teaser;
   };
@@ -130,7 +129,6 @@ export interface SiteContent {
     quoteCta: { heading: Heading; subcopy: string; button: string; secondary: string };
   };
   resources: { label: string; heading: Heading; subcopy: string; cards: LabelItem[] };
-  projects: { label: string; heading: Heading; subcopy: string };
   seo: {
     homeTitle: string;
     homeDescription: string;
@@ -221,12 +219,6 @@ export const DEFAULT_CONTENT: SiteContent = {
         'Lighting projects involve more than choosing a fitting. LumenX helps project teams turn design intent into a technically sound, commercially workable lighting solution that can be delivered on site.',
       link: 'See how the complete solution works',
     },
-    projects: {
-      label: 'Featured Projects',
-      title: { lead: 'Technical proof ', accent: 'not promises', tail: '' },
-      copy: "Commercial and industrial lighting projects we've delivered, end to end.",
-      link: 'View featured projects',
-    },
     categories: {
       label: 'Product Categories',
       title: { lead: 'Lighting selected around ', accent: 'the application', tail: '' },
@@ -284,12 +276,6 @@ export const DEFAULT_CONTENT: SiteContent = {
       { label: 'Warranty Terms', description: 'Manufacturer-backed warranty documentation per product range, confirmed in quotation.' },
     ],
   },
-  projects: {
-    label: 'Featured Projects',
-    heading: { lead: 'Technical proof ', accent: 'not promises', tail: '' },
-    subcopy:
-      'Every project is supported by lighting design, specification discipline, compliance documentation and coordinated delivery.',
-  },
   seo: {
     homeTitle: 'LumenX Lighting — Engineered for Real Projects | Industrial & Commercial LED Solutions',
     homeDescription:
@@ -340,7 +326,6 @@ export interface ResolvedContent {
   services: SiteContent['services'];
   products: SiteContent['products'];
   resources: SiteContent['resources'];
-  projects: SiteContent['projects'];
   seo: SiteContent['seo'];
   complianceBar: SiteContent['complianceBar'];
   managingDirector: SiteContent['managingDirector'];
@@ -423,7 +408,6 @@ const resolve = (content: SiteContent): ResolvedContent => ({
   services: content.services,
   products: content.products,
   resources: content.resources,
-  projects: content.projects,
   seo: content.seo,
   complianceBar: content.complianceBar,
   managingDirector: content.managingDirector,

@@ -61,10 +61,9 @@ export const CONTENT_SCHEMA: Group[] = [
   },
   {
     title: 'Homepage teasers',
-    description: 'The four headline/copy blocks on the home page.',
+    description: 'The three headline/copy blocks on the home page.',
     fields: [
       ...teaserFields(['home', 'solution']),
-      ...teaserFields(['home', 'projects'], { withLabel: true }),
       ...teaserFields(['home', 'categories'], { withLabel: true }),
       ...teaserFields(['home', 'who'], { withLabel: true }),
     ],
@@ -221,14 +220,6 @@ export const CONTENT_SCHEMA: Group[] = [
         addable: false,
         itemFields: [labelItem, descriptionItem],
       },
-    ],
-  },
-  {
-    title: 'Projects page',
-    fields: [
-      { kind: 'text', label: 'Eyebrow label', path: ['projects', 'label'] },
-      heading('Heading', ['projects', 'heading']),
-      { kind: 'textarea', label: 'Subcopy', path: ['projects', 'subcopy'] },
     ],
   },
   {

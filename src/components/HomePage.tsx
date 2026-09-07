@@ -6,13 +6,9 @@ import { DifferenceCarousel } from './DifferenceCarousel';
 import { CTASection } from './CTASection';
 import { AccreditationBar } from './AccreditationBar';
 import { LumenXMark } from './ui/lumenx-mark';
-import { FEATURED_PROJECTS, PRODUCT_CATEGORIES } from '../data';
+import { PRODUCT_CATEGORIES } from '../data';
 import { useSiteContent } from '../content';
-import {
-  ArrowRight,
-  Building2,
-  MapPin,
-} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 /* ── Shared teaser shell: headline + short copy (body sits under the heading) ── */
 interface TeaserProps {
@@ -98,59 +94,7 @@ const SolutionTeaser: React.FC = () => {
   );
 };
 
-/* ── 2 · Featured Projects teaser ── */
-const ProjectsTeaser: React.FC = () => {
-  const { home } = useSiteContent();
-  const t = home.projects;
-  return (
-    <Teaser
-      id="projects"
-      label={t.label}
-      title={<>{t.title.lead}<span className="gradient-text">{t.title.accent}</span>{t.title.tail}</>}
-      copy={t.copy}
-    >
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {FEATURED_PROJECTS.map((p) => (
-        <div key={p.name} className="gradient-border-card card-lift overflow-hidden group">
-          {p.imageUrl && (
-            <div className="relative h-48 overflow-hidden bg-[#080D15]">
-              <img
-                src={p.imageUrl}
-                alt={p.imageAlt || p.name}
-                loading="lazy"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#06090F]/85 via-transparent to-transparent" />
-              {p.category && (
-                <span className="absolute bottom-3 left-4 px-2.5 py-1 rounded-full bg-[#06090F]/80 backdrop-blur-sm border border-primary/30 text-[9px] font-mono text-primary uppercase tracking-[0.2em]">
-                  {p.category}
-                </span>
-              )}
-            </div>
-          )}
-          <div className="p-6">
-            <div className="flex items-start gap-3 mb-4">
-              <div className="w-9 h-9 bg-primary/[0.06] flex items-center justify-center shrink-0">
-                <Building2 className="w-4 h-4 text-primary/50" />
-              </div>
-              <div>
-                <h3 className="font-display text-lg font-semibold text-white tracking-tight">{p.name}</h3>
-                <p className="flex items-center gap-1.5 text-xs font-mono text-slate-500 mt-0.5">
-                  <MapPin className="w-3 h-3" /> {p.location}
-                </p>
-              </div>
-            </div>
-            <p className="text-sm text-slate-400 leading-relaxed font-sans font-light">{p.scope}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-    <TeaserLink to="/projects" label={t.link} />
-  </Teaser>
-  );
-};
-
-/* ── 5 · Product Categories teaser ── */
+/* ── 2 · Product Categories teaser ── */
 const CategoriesTeaser: React.FC = () => {
   const { home } = useSiteContent();
   const t = home.categories;
@@ -188,7 +132,7 @@ const CategoriesTeaser: React.FC = () => {
   );
 };
 
-/* ── 6 · Who It's For teaser ── */
+/* ── 3 · Who It's For teaser ── */
 const WhoItsForTeaser: React.FC = () => {
   const { home, industries } = useSiteContent();
   const t = home.who;
@@ -235,9 +179,6 @@ export const HomePage: React.FC = () => {
       <SolutionTeaser />
       <CategoriesTeaser />
       <WhoItsForTeaser />
-
-      {/* Technical proof — moved directly above the final CTA */}
-      <ProjectsTeaser />
 
       <CTASection />
     </div>

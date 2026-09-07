@@ -5,7 +5,6 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { HomePage } from './components/HomePage';
 import { ServicesPage } from './components/ServicesPage';
-import { ProjectsPageWrapper } from './components/ProjectsPageWrapper';
 import { ResourcesPage } from './components/ResourcesPage';
 import { AboutPage } from './components/AboutPage';
 import { ContactPage } from './components/ContactPage';
@@ -66,7 +65,6 @@ function SeoManager() {
     { match: /^\/products\/[^/]+\/[^/]+$/, title: 'Product Details — LumenX Lighting' },
     { match: /^\/products\/[^/]+$/, title: 'Product Range — LumenX Lighting' },
     { match: /^\/products(\/|$)/, title: seo.productsTitle, description: seo.productsDescription },
-    { match: /^\/projects(\/|$)/, title: 'Projects — LumenX Lighting' },
     { match: /^\/resources(\/|$)/, title: 'Technical Resources — LumenX Lighting' },
     { match: /^\/design-tool(\/|$)/, title: 'Lighting Design Tool — LumenX Lighting' },
     { match: /^\/ies(\/|$)/, title: 'IES Downloads — LumenX Lighting' },
@@ -144,7 +142,6 @@ function AppLayout() {
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:categoryId/:slug" element={<ProductPageWrapper />} />
           <Route path="/products/:categoryId" element={<ProductDetailWrapper />} />
-          <Route path="/projects" element={<ProjectsPageWrapper />} />
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/design-tool" element={<DesignToolPage />} />
           <Route path="/ies" element={<IESLibraryPage />} />
