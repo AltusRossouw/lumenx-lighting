@@ -1,0 +1,922 @@
+{
+  "04-pioled-bunker": [
+    {
+      "label": "Wattage",
+      "value": "12W/16W/18W / 120W (10 / 35W"
+    },
+    {
+      "label": "available in",
+      "value": "Black/White / White"
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "4CCT (2200K/3000K/4000K/6000K) / 3000K / 5700K"
+    },
+    {
+      "label": "Lumen Output",
+      "value": "130lm/W / 30 000lm / 3 500lm / 153 600lm"
+    },
+    {
+      "label": "CRI",
+      "value": ">80 / >83"
+    },
+    {
+      "label": "Input Voltage",
+      "value": "100-265V / 200-260V (DOB) / 175-264V / 200V-265V / 180-277V"
+    },
+    {
+      "label": "Operating Temp",
+      "value": "-20~45°C / -35°C to 45°C / -30 ~ 50°C / -15~45°C / -20~40°C"
+    },
+    {
+      "label": "LED Chips",
+      "value": "Sanan 2835 / Bridgelux / Lumileds 5050"
+    },
+    {
+      "label": "Beam Angle",
+      "value": "120° / 36° / 90°"
+    },
+    {
+      "label": "IK Rating",
+      "value": "IK08 / IK05"
+    },
+    {
+      "label": "Housing",
+      "value": "Aluminium + / Black, White / CNC / Die cast / Pure / Aluminium"
+    },
+    {
+      "label": "Surge Protection",
+      "value": "2kV / 10kV / 1kV / 3kV / 10kV (Meanwell"
+    },
+    {
+      "label": "Dimmable",
+      "value": "No / Yes with 35W"
+    },
+    {
+      "label": "Certifications",
+      "value": "CE / CE, EMC / IEC"
+    },
+    {
+      "label": "ies file",
+      "value": "Yes"
+    },
+    {
+      "label": "additional features",
+      "value": "Suitable for Emergency Battery Backup Kit  : / 340° Rotation for Aiming / Complete with waterproof gland."
+    },
+    {
+      "label": "Colour",
+      "value": "Black / 6000K"
+    },
+    {
+      "label": "dimensions",
+      "value": "Ф94*H25/Cut76-84mm"
+    },
+    {
+      "label": "aluminium additional features",
+      "value": "Anti Glare | Fixed | Flat"
+    },
+    {
+      "label": "led chip",
+      "value": "Sanan 2835"
+    },
+    {
+      "label": "iec60598 ies file",
+      "value": "Yes"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20"
+    },
+    {
+      "label": "ce ies file",
+      "value": "No"
+    }
+  ],
+  "09-pioled-legend": [
+    {
+      "label": "Wattage",
+      "value": "35W / 20W / 10W / 18W / 30W/35W/40W/50W"
+    },
+    {
+      "label": "UGR",
+      "value": "<19"
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "3CCT (3000K/4000K/6000K) / 6000K/4000K / 3CCT(3000K/4000K/6000K)"
+    },
+    {
+      "label": "Lumen Output",
+      "value": "3500lm / 2000lm / 1000lm / 800lm PF: / 100lm/W / 36°"
+    },
+    {
+      "label": "CRI",
+      "value": ">80 / >83 / >85"
+    },
+    {
+      "label": "Input Voltage",
+      "value": "185- 270V / 180V- 265V / 200-277V"
+    },
+    {
+      "label": "Operating Temp",
+      "value": "-20~45°C / -15~45°C"
+    },
+    {
+      "label": "LED Chips",
+      "value": "2835 / High"
+    },
+    {
+      "label": "Beam Angle",
+      "value": "60° / 270°"
+    },
+    {
+      "label": "Housing",
+      "value": "Aluminium / CNC / Glass / Round, Square"
+    },
+    {
+      "label": "Surge Protection",
+      "value": "1kV / 500V / 1kv / 2kV"
+    },
+    {
+      "label": "Dimmable",
+      "value": "Optional / CE, EMC, IEC60598 / Yes / No"
+    },
+    {
+      "label": "erp ies file",
+      "value": "Yes / Yes Additional Features:L80B10 @ 50 000hrs rated lifespan"
+    },
+    {
+      "label": "additional features",
+      "value": "Frosted glass diffuser & aluminum for efficient heat dissipation"
+    },
+    {
+      "label": "Colour",
+      "value": "Silver / Matt / White"
+    },
+    {
+      "label": "dimensions",
+      "value": "Ф92*H25/Cut70-85mm"
+    },
+    {
+      "label": "aluminium additional features",
+      "value": "Tiltable | Pop out central ring | Flat"
+    },
+    {
+      "label": "dimension (mm)",
+      "value": "L115*W56*H34"
+    },
+    {
+      "label": "Certifications",
+      "value": "CE, EMC / CE / CE, EMC, IEC60598"
+    },
+    {
+      "label": "iec60598 ies file",
+      "value": "Yes"
+    },
+    {
+      "label": "clear pc lens mounting option",
+      "value": "Surface"
+    },
+    {
+      "label": "iec60598 additional features",
+      "value": "Suitable for GU10 Lamps less than 6W"
+    }
+  ],
+  "10-pioled-gu10-gu10-downlight": [
+    {
+      "label": "Wattage",
+      "value": "6.5W / 160W / 14W / 400W (16"
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "3CCT(3000K/4000K/6000K) / 3CCT(3000K/4000K/6000K)/ 6000K"
+    },
+    {
+      "label": "Lumen Output",
+      "value": "650lm / 27 200lm / 15 40lm"
+    },
+    {
+      "label": "CRI",
+      "value": ">80 / >83"
+    },
+    {
+      "label": "Input Voltage",
+      "value": "170V-265V / 85V-277V / 200-277V / 200-240VAC"
+    },
+    {
+      "label": "Operating Temp",
+      "value": "-20~45°C / -40~40°C / -20~40°C / -30~60°C"
+    },
+    {
+      "label": "LED Chips",
+      "value": "LED / SMD 2835"
+    },
+    {
+      "label": "Beam Angle",
+      "value": "60° / 90° / 120°"
+    },
+    {
+      "label": "Housing",
+      "value": "Aluminium + / Aluminium / Black, White / Aluminum + / Pure"
+    },
+    {
+      "label": "Dimmable",
+      "value": "No"
+    },
+    {
+      "label": "Certifications",
+      "value": "EMC, ErP, CE / CE, EMC, RoHS / RoHS / CE"
+    },
+    {
+      "label": "rohs ies file",
+      "value": "No"
+    },
+    {
+      "label": "additional features",
+      "value": "Suspension or Bracket mount options. / Magnetic housing provides as a quick and easy LED retrofit to existing bulkhead luminaires."
+    },
+    {
+      "label": "Colour",
+      "value": "5700K / Black/White / 3CCT, 6000K"
+    },
+    {
+      "label": "led chip",
+      "value": "Lumileds 3030"
+    },
+    {
+      "label": "Surge Protection",
+      "value": "6kV (Meanwell / 1kV"
+    },
+    {
+      "label": "iso9001 ies file",
+      "value": "Yes"
+    },
+    {
+      "label": "lens",
+      "value": "120°, 90°"
+    },
+    {
+      "label": "available in",
+      "value": "1m/2m/3m"
+    },
+    {
+      "label": "includes",
+      "value": "Power feed and end cap"
+    },
+    {
+      "label": "length",
+      "value": "1 Meter, 2 Meter, 3 Meter"
+    },
+    {
+      "label": "IK Rating",
+      "value": "IK10"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20"
+    }
+  ],
+  "11-pioled-pakman-surface-adjustable-downlight": [
+    {
+      "label": "Wattage",
+      "value": "35W / 25W / 15W / 30W/35W/40W/50W / 18W"
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "3CCT(3000K/4000K/6000K) / 6000K/4000K"
+    },
+    {
+      "label": "Colour",
+      "value": "Black or optional / Black / Silver / White / Matt"
+    },
+    {
+      "label": "Lumen Output",
+      "value": "3 500lm / 36° | 340° / 2 500lm / 1 500lm / 100lm/W / 36° / 800lm PF:"
+    },
+    {
+      "label": "CRI",
+      "value": ">80 / >85 / >83"
+    },
+    {
+      "label": "Input Voltage",
+      "value": "200-265V / 200-277V / 180V- 265V"
+    },
+    {
+      "label": "Operating Temp",
+      "value": "-15~45°C / -20~45°C"
+    },
+    {
+      "label": "LED Chips",
+      "value": "High / 2835"
+    },
+    {
+      "label": "Housing",
+      "value": "Aluminium / Black, White / CNC / Glass / Round, Square"
+    },
+    {
+      "label": "Surge Protection",
+      "value": "3kV / 2kV / 1kv"
+    },
+    {
+      "label": "Dimmable",
+      "value": "No / Yes"
+    },
+    {
+      "label": "Certifications",
+      "value": "CE, RoHS / CE, EMC, IEC60598 / CE, EMC / CE"
+    },
+    {
+      "label": "iec60598 ies file",
+      "value": "Yes"
+    },
+    {
+      "label": "additional features",
+      "value": "Removable Honey Comb net included / Frosted glass diffuser & aluminum for efficient heat dissipation"
+    },
+    {
+      "label": "dimensions",
+      "value": "Ф92*H25/Cut70-85mm"
+    },
+    {
+      "label": "aluminium additional features",
+      "value": "Tiltable | Pop out central ring | Flat"
+    },
+    {
+      "label": "erp ies file",
+      "value": "Yes Additional Features:L80B10 @ 50 000hrs rated lifespan"
+    },
+    {
+      "label": "dimension (mm)",
+      "value": "L115*W56*H34"
+    },
+    {
+      "label": "Beam Angle",
+      "value": "270°"
+    },
+    {
+      "label": "clear pc lens mounting option",
+      "value": "Surface"
+    },
+    {
+      "label": "iec60598 additional features",
+      "value": "Suitable for GU10 Lamps less than 6W"
+    }
+  ],
+  "05-pioled-raptor": [
+    {
+      "label": "Wattage",
+      "value": "120W (10 / 35W"
+    },
+    {
+      "label": "Colour",
+      "value": "6000K / Black"
+    },
+    {
+      "label": "Lumen Output",
+      "value": "30 000lm / 3 500lm / 153 600lm"
+    },
+    {
+      "label": "CRI",
+      "value": ">80 / >83"
+    },
+    {
+      "label": "Input Voltage",
+      "value": "200-260V (DOB) / 175-264V / 200V-265V / 180-277V"
+    },
+    {
+      "label": "Operating Temp",
+      "value": "-35°C to 45°C / -30 ~ 50°C / -15~45°C / -20~40°C"
+    },
+    {
+      "label": "led chip",
+      "value": "Sanan 2835"
+    },
+    {
+      "label": "Beam Angle",
+      "value": "120° / 36° / 90°"
+    },
+    {
+      "label": "Housing",
+      "value": "Die cast / Pure / CNC / Aluminium"
+    },
+    {
+      "label": "Surge Protection",
+      "value": "10kV / 1kV / 3kV / 10kV (Meanwell"
+    },
+    {
+      "label": "Dimmable",
+      "value": "No / Yes with 35W"
+    },
+    {
+      "label": "Certifications",
+      "value": "CE, EMC / IEC"
+    },
+    {
+      "label": "iec60598 ies file",
+      "value": "Yes"
+    },
+    {
+      "label": "additional features",
+      "value": "340° Rotation for Aiming / Complete with waterproof gland."
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20"
+    },
+    {
+      "label": "ce ies file",
+      "value": "No"
+    },
+    {
+      "label": "dimensions",
+      "value": "Ф94*H25/Cut76-84mm"
+    },
+    {
+      "label": "aluminium additional features",
+      "value": "Anti Glare | Fixed | Flat"
+    },
+    {
+      "label": "available in",
+      "value": "White"
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "3000K / 5700K"
+    },
+    {
+      "label": "LED Chips",
+      "value": "Bridgelux / Lumileds 5050"
+    },
+    {
+      "label": "IK Rating",
+      "value": "IK05"
+    }
+  ],
+  "15-pioled-soniq": [
+    {
+      "label": "Wattage",
+      "value": "60W/80W/100W / 10W / 30W/40W/50W / 18W / 30W/35W/40W/50W"
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "3CCT ( 3000K/4000K/6000K) / 6000K/4000K / 3CCT(3000K/4000K/6000K)"
+    },
+    {
+      "label": "Lumen Output",
+      "value": "60W=9 000lm/80W=12 000lm/100W=15 000lm / 1 500lm / 30W= 4 500lm | 40W= 6 000lm 50W= 7 500lm / 800lm PF: / 100lm/W / 36°"
+    },
+    {
+      "label": "CRI",
+      "value": ">80 / >83 / >85"
+    },
+    {
+      "label": "Input Voltage",
+      "value": "AC180-277V / 180V- 265V / 200-277V"
+    },
+    {
+      "label": "Operating Temp",
+      "value": "-25~45°C / -20~45°C / -15~45°C"
+    },
+    {
+      "label": "LED Chips",
+      "value": "Epistar 2835 / 2835 / High"
+    },
+    {
+      "label": "Beam Angle",
+      "value": "90° / 270°"
+    },
+    {
+      "label": "IK Rating",
+      "value": "IK08"
+    },
+    {
+      "label": "Housing",
+      "value": "Pure / CNC / Glass / Round, Square / Aluminium"
+    },
+    {
+      "label": "Surge Protection",
+      "value": "2.5kV / 1kv / 2kV"
+    },
+    {
+      "label": "Dimmable",
+      "value": "No / Yes"
+    },
+    {
+      "label": "Certifications",
+      "value": "CE, EMC, IEC60958 / CE, EMC / CE / CE, EMC, IEC60598"
+    },
+    {
+      "label": "erp ies file",
+      "value": "Yes / Yes Additional Features:L80B10 @ 50 000hrs rated lifespan"
+    },
+    {
+      "label": "additional features",
+      "value": "Available in Black or White / Frosted glass diffuser & aluminum for efficient heat dissipation"
+    },
+    {
+      "label": "iec60958 ies file",
+      "value": "Yes"
+    },
+    {
+      "label": "Colour",
+      "value": "Silver / Matt / White"
+    },
+    {
+      "label": "dimensions",
+      "value": "Ф92*H25/Cut70-85mm"
+    },
+    {
+      "label": "aluminium additional features",
+      "value": "Tiltable | Pop out central ring | Flat"
+    },
+    {
+      "label": "dimension (mm)",
+      "value": "L115*W56*H34"
+    },
+    {
+      "label": "iec60598 ies file",
+      "value": "Yes"
+    },
+    {
+      "label": "clear pc lens mounting option",
+      "value": "Surface"
+    },
+    {
+      "label": "iec60598 additional features",
+      "value": "Suitable for GU10 Lamps less than 6W"
+    }
+  ],
+  "02-pioled-bazuka": [
+    {
+      "label": "Wattage",
+      "value": "25W / 15W / 35W / 18W / 30W/35W/40W/50W"
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "3CCT (3000K/4000K/6000K) / 3000K / 6000K/4000K / 3CCT(3000K/4000K/6000K)"
+    },
+    {
+      "label": "Lumen Output",
+      "value": "2 500lm / 1 500lm / 3 500lm / 800lm PF: / 100lm/W / 36°"
+    },
+    {
+      "label": "CRI",
+      "value": ">83 / >85"
+    },
+    {
+      "label": "Input Voltage",
+      "value": "200-277V / 200V-265V / 200-265V / 180V- 265V"
+    },
+    {
+      "label": "Operating Temp",
+      "value": "-15~45°C / -20~45°C"
+    },
+    {
+      "label": "LED Chips",
+      "value": "Bridgelux / 2835 / High"
+    },
+    {
+      "label": "Beam Angle",
+      "value": "36° / 270°"
+    },
+    {
+      "label": "IK Rating",
+      "value": "IK05"
+    },
+    {
+      "label": "Housing",
+      "value": "Aluminium / Round, Square / CNC / Glass"
+    },
+    {
+      "label": "Surge Protection",
+      "value": "3kV / 1kv / 2kV"
+    },
+    {
+      "label": "Dimmable",
+      "value": "Yes with 35W / Yes / No"
+    },
+    {
+      "label": "Certifications",
+      "value": "CE, EMC / CE / CE, EMC, IEC60598"
+    },
+    {
+      "label": "iec60598 ies file",
+      "value": "Yes"
+    },
+    {
+      "label": "additional features",
+      "value": "340° Rotation for Aiming / Frosted glass diffuser & aluminum for efficient heat dissipation"
+    },
+    {
+      "label": "available in",
+      "value": "White / Black / Black/White"
+    },
+    {
+      "label": "Colour",
+      "value": "Matt / Silver / White"
+    },
+    {
+      "label": "clear pc lens mounting option",
+      "value": "Surface"
+    },
+    {
+      "label": "iec60598 additional features",
+      "value": "Suitable for GU10 Lamps less than 6W"
+    },
+    {
+      "label": "dimension (mm)",
+      "value": "L115*W56*H34"
+    },
+    {
+      "label": "dimensions",
+      "value": "Ф92*H25/Cut70-85mm"
+    },
+    {
+      "label": "aluminium additional features",
+      "value": "Tiltable | Pop out central ring | Flat"
+    },
+    {
+      "label": "erp ies file",
+      "value": "Yes Additional Features:L80B10 @ 50 000hrs rated lifespan"
+    }
+  ],
+  "04-pioled-leda": [
+    {
+      "label": "Wattage",
+      "value": "40W / 36W / 20W / 5W / 18W / 12W / 50W"
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "3CCT (3000K/4000K/6000K) / Amber/Lime/Green / 6000K/4000K/3000K"
+    },
+    {
+      "label": "Lumen Output",
+      "value": "3 200lm / 2 880lm / 1 600lm / 1 710lm / 1000lm"
+    },
+    {
+      "label": "CRI",
+      "value": ">83 / >80"
+    },
+    {
+      "label": "Input Voltage",
+      "value": "185-265V / 170V-265V / 185V-265V / 200-260V (DOB)"
+    },
+    {
+      "label": "Operating Temp",
+      "value": "-15~45°C / -20~45°C / -35°C to 45°C"
+    },
+    {
+      "label": "LED Chips",
+      "value": "2835 / Sanan 2835"
+    },
+    {
+      "label": "Beam Angle",
+      "value": "120° / 60° / 132°"
+    },
+    {
+      "label": "Housing",
+      "value": "Aluminium + / Pure / PMMA / Die cast"
+    },
+    {
+      "label": "Surge Protection",
+      "value": "2.5kV / 1Kv / 1kV / 4kV"
+    },
+    {
+      "label": "Dimmable",
+      "value": "No"
+    },
+    {
+      "label": "Certifications",
+      "value": "CE, EMC / CE"
+    },
+    {
+      "label": "iec60598 ies file",
+      "value": "No / Yes"
+    },
+    {
+      "label": "additional features",
+      "value": "Tiltable 45° either side / Colour-changing Dipswitch / Built in CCT Dipswitch allowing seamless transitions between 3000K/4000K/6000K / Easy to install 20° smart bracket."
+    },
+    {
+      "label": "available in",
+      "value": "Black/White"
+    },
+    {
+      "label": "ies file",
+      "value": "No"
+    },
+    {
+      "label": "Colour",
+      "value": "3CCT (3000K/4000K/6000K) / Blue/Green / Blue, Green"
+    },
+    {
+      "label": "led chip",
+      "value": "Sanan 2835"
+    }
+  ],
+  "05-pioled-snypa": [
+    {
+      "label": "Colour",
+      "value": "Matt / Black / 6000K"
+    },
+    {
+      "label": "Housing",
+      "value": "Aluminium / Black, White / Pure / CNC / Die cast"
+    },
+    {
+      "label": "mounting option",
+      "value": "Surface / 3"
+    },
+    {
+      "label": "mount additional features",
+      "value": "Removable Honeycomb included, No tools required to remove the lamp 110mm in length - designed to take most GU10 lamps. GU10 Lamp NOT included  :"
+    },
+    {
+      "label": "wire track additional features",
+      "value": "Removable Honeycomb included, No tools required to remove the lamp 110mm in length - designed to take most GU10 lamps. GU10 Lamp NOT included  :"
+    },
+    {
+      "label": "mount/3 wire track additional features",
+      "value": "Removable Honeycomb included, No tools required to remove the lamp 110mm in length - designed to take most GU10 lamps. GU10 Lamp NOT included"
+    },
+    {
+      "label": "Wattage",
+      "value": "35W / 120W (10"
+    },
+    {
+      "label": "available in",
+      "value": "White"
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "3000K / 5700K"
+    },
+    {
+      "label": "Lumen Output",
+      "value": "3 500lm / 30 000lm / 153 600lm"
+    },
+    {
+      "label": "CRI",
+      "value": ">83 / >80"
+    },
+    {
+      "label": "Input Voltage",
+      "value": "200V-265V / 175-264V / 200-260V (DOB) / 180-277V"
+    },
+    {
+      "label": "Operating Temp",
+      "value": "-15~45°C / -30 ~ 50°C / -35°C to 45°C / -20~40°C"
+    },
+    {
+      "label": "LED Chips",
+      "value": "Bridgelux / Lumileds 5050"
+    },
+    {
+      "label": "Beam Angle",
+      "value": "36° / 120° / 90°"
+    },
+    {
+      "label": "IK Rating",
+      "value": "IK05"
+    },
+    {
+      "label": "Surge Protection",
+      "value": "3kV / 1kV / 10kV / 10kV (Meanwell"
+    },
+    {
+      "label": "Dimmable",
+      "value": "Yes with 35W / No"
+    },
+    {
+      "label": "Certifications",
+      "value": "CE, EMC / IEC"
+    },
+    {
+      "label": "iec60598 ies file",
+      "value": "Yes"
+    },
+    {
+      "label": "additional features",
+      "value": "340° Rotation for Aiming / Complete with waterproof gland."
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20"
+    },
+    {
+      "label": "ce ies file",
+      "value": "No"
+    },
+    {
+      "label": "dimensions",
+      "value": "Ф94*H25/Cut76-84mm"
+    },
+    {
+      "label": "aluminium additional features",
+      "value": "Anti Glare | Fixed | Flat"
+    },
+    {
+      "label": "led chip",
+      "value": "Sanan 2835"
+    }
+  ],
+  "06-pioled-kuda": [
+    {
+      "label": "Wattage",
+      "value": "55W/45W/36W/28W / 34W/30W/25W/17W / 25/50W / 18/36W / 160W / 14W / 400W (16 / 6.5W"
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "3CCT (3000K/4000K/6000K) / 3CCT(3000K/4000K/6000K)/ 6000K / 3CCT(3000K/4000K/6000K)"
+    },
+    {
+      "label": "Lumen Output",
+      "value": "55W = 7700lm | 45W = 6300lm | 36W = 5040lm | 28W = 3920lm / 34W = 4760lm | 30W = 4200lm | 25W = 3500lm | 17W = 2380lm / 50W = 6 000lm | 25W = 3 000lm / 36W = 4 320lm | 18W = 2 160lm / 27 200lm / 15 40lm / 650lm"
+    },
+    {
+      "label": "CRI",
+      "value": ">80 / >83"
+    },
+    {
+      "label": "Input Voltage",
+      "value": "190-277V / 85V-277V / 200-277V / 200-240VAC / 170V-265V"
+    },
+    {
+      "label": "Operating Temp",
+      "value": "-20~40°C / -40~40°C / -30~60°C / -20~45°C"
+    },
+    {
+      "label": "LED Chips",
+      "value": "2835 / SMD 2835 / LED"
+    },
+    {
+      "label": "Beam Angle",
+      "value": "120° / 90° / 60°"
+    },
+    {
+      "label": "Housing",
+      "value": "PC / Aluminium / Black, White / Aluminum + / Pure / Aluminium +"
+    },
+    {
+      "label": "Surge Protection",
+      "value": "1.5kV / 6kV (Meanwell / 1kV"
+    },
+    {
+      "label": "Dimmable",
+      "value": "No"
+    },
+    {
+      "label": "Certifications",
+      "value": "CE, EMC, IEC60598 / CE, EMC, RoHS / RoHS / CE / EMC, ErP, CE"
+    },
+    {
+      "label": "erp ies file",
+      "value": "Yes"
+    },
+    {
+      "label": "additional features",
+      "value": "Suitable for Emergency Battery Backup  : / Suitable for Emergency Battery Backup *5 YEARS WARRANTY : / Max link 5ft 7pcs, Available in Black or White / Max link 4ft 10pcs, Available in Black and White / Suspension or Bracket mount options. / Magnetic housing provides as a quick and easy LED retrofit to existing bulkhead luminaires."
+    },
+    {
+      "label": "Colour",
+      "value": "5700K / Black/White / 3CCT, 6000K"
+    },
+    {
+      "label": "led chip",
+      "value": "Lumileds 3030"
+    },
+    {
+      "label": "iso9001 ies file",
+      "value": "Yes"
+    },
+    {
+      "label": "lens",
+      "value": "120°, 90°"
+    },
+    {
+      "label": "available in",
+      "value": "1m/2m/3m"
+    },
+    {
+      "label": "includes",
+      "value": "Power feed and end cap"
+    },
+    {
+      "label": "length",
+      "value": "1 Meter, 2 Meter, 3 Meter"
+    },
+    {
+      "label": "IK Rating",
+      "value": "IK10"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20"
+    },
+    {
+      "label": "rohs ies file",
+      "value": "No"
+    }
+  ]
+}

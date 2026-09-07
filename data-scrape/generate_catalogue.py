@@ -232,6 +232,26 @@ def datasheet_for(name):
     return load_datasheet_index().get(norm_key(name))
 
 
+# Aggregated specs for Pioled collection products (scraped from each member
+# product page by tools/scrape-collections.mjs → collection-specs.json).
+COLLECTION_SPECS_FILE = os.path.join(HERE, 'collection-specs.json')
+_COLLECTION_SPECS_LOADED = None
+
+
+def load_collection_specs():
+    global _COLLECTION_SPECS_LOADED
+    if _COLLECTION_SPECS_LOADED is not None:
+        return _COLLECTION_SPECS_LOADED
+    data = {}
+    if os.path.exists(COLLECTION_SPECS_FILE):
+        try:
+            data = json.load(open(COLLECTION_SPECS_FILE, encoding='utf-8'))
+        except Exception:
+            data = {}
+    _COLLECTION_SPECS_LOADED = data
+    return data
+
+
 def flatten_datasheet_specs(ds):
     """Flatten a datasheet's stats + columns.*.rows into [{label, value}]."""
     rows = []
@@ -258,6 +278,22 @@ def flatten_datasheet_specs(ds):
                         seen.add(key)
                         rows.append({'label': label, 'value': value})
     return rows
+
+
+def clean_collection_specs(rows):
+    """Drop noisy colon-dump split-label artifacts from collection member specs."""
+    # Labels that are clearly split artifacts (a stray word fused with a real key).
+    junk_label = re.compile(
+        r'ies file|additional features|pc lens|mounting option|mount additional|'
+        r'wire track|^led chip$|^aluminium |^iec|^ce |^rohs |^erp |dimensions?|'
+        r'mount/3', re.I)
+    out = []
+    for s in rows:
+        label = s.get('label') or ''
+        if junk_label.search(label):
+            continue
+        out.append(s)
+    return out
 
 
 def merge_specs(primary, secondary):
@@ -812,6 +848,11 @@ def main():
         if not specs:
             raw_desc = pj.get('scrape', {}).get('description') or ''
             specs = parse_spec_dump(raw_desc)
+
+        # Enrich collection products with specs scraped from their member pages.
+        col_specs = load_collection_specs().get(entry)
+        if col_specs:
+            specs = merge_specs(specs, clean_collection_specs(col_specs))
 
         # Applications.
         apps = CATEGORY_APPLICATIONS.get(cat_id, ['Commercial', 'Industrial', 'Architectural'])
