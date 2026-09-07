@@ -73,11 +73,9 @@
             "value": "5 year warranty as per LEDwise standard terms of warranty"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "(3080) 3000K",
@@ -94,7 +92,14 @@
           {
             "label": "LED Colours (CCT)",
             "value": "3000K, 4000K (others CCT’s available on request)"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "LED Colour Consistency",
             "value": "<3 SDCM"

@@ -65,11 +65,9 @@
             "value": "IP65"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Nominal Lifetime (L70)",
@@ -110,7 +108,14 @@
           {
             "label": "Operating Voltage",
             "value": "220-240V AC"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "Min Sustained Voltage",
             "value": "No minimum, operational from 150V"

@@ -64,11 +64,9 @@
             "value": "UL-94 V2 compliant"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Operational Guarantee (365d × 24h)",
@@ -109,7 +107,14 @@
           {
             "label": "Operating Voltage",
             "value": "220–240V AC"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "Minimum Sustained Voltage",
             "value": "No minimum limit, operational from 150V"

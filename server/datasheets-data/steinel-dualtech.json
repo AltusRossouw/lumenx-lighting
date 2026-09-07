@@ -79,11 +79,9 @@
             "value": "Master/master, Master/slave"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Application, place",
@@ -192,7 +190,14 @@
           {
             "label": "LED lamps > 8 W",
             "value": "600 W"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "Capacitive load in μF",
             "value": "176 µF"

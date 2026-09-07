@@ -89,23 +89,28 @@
             "value": "CE / CE, EMC / IEC"
           }
         ]
+      },
+      {
+        "title": "Specifications",
+        "rows": [
+          {
+            "label": "Lumen Output",
+            "value": "130lm/W / 30 000lm / 3 500lm / 153 600lm"
+          },
+          {
+            "label": "CCT",
+            "value": "4CCT selectable"
+          }
+        ]
       }
     ],
     "right": [
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
-          {
-            "label": "CCT",
-            "value": "4CCT selectable"
-          },
           {
             "label": "available in",
             "value": "Black/White / White"
-          },
-          {
-            "label": "Lumen Output",
-            "value": "130lm/W / 30 000lm / 3 500lm / 153 600lm"
           },
           {
             "label": "CRI",

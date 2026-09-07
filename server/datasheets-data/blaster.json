@@ -85,16 +85,21 @@
             "value": "Yes"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Flicker Free CRI",
             "value": ">90"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "LED Chips",
             "value": "COB"

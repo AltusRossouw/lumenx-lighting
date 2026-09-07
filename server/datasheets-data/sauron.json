@@ -69,11 +69,9 @@
             "value": "-15~45°C"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "UGR",
@@ -90,7 +88,14 @@
           {
             "label": "Flicker Free CRI",
             "value": ">80"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "LED Chips",
             "value": "USA"

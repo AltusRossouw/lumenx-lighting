@@ -81,11 +81,9 @@
             "value": "No"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Available in",
@@ -98,7 +96,14 @@
           {
             "label": "CRI",
             "value": ">90"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "DC LED Chips",
             "value": "COB"

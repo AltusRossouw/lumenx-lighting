@@ -85,11 +85,9 @@
             "value": "5 year warranty as per LEDwise standard terms of warranty"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Fitting Material",
@@ -106,7 +104,14 @@
           {
             "label": "LED Colour Consistency",
             "value": "<3 SDCM"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "LED Lifetime",
             "value": "L80B10 >50,000 hrs at Ta = 25° Celsius"

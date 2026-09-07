@@ -79,11 +79,9 @@
             "value": "Master/master"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Application, place",
@@ -180,7 +178,14 @@
           {
             "label": "Fluorescent lamps, series-corrected",
             "value": "500 VA"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "Fluorescent lamps, parallel-corrected",
             "value": "500 VA"

@@ -73,11 +73,9 @@
             "value": "IP66"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Lumens",
@@ -90,7 +88,14 @@
           {
             "label": "Diffuser",
             "value": "UV-resistant clear"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "Nominal Flux",
             "value": "Up to 1800 lm"
@@ -114,7 +119,7 @@
           },
           {
             "label": "Wattage",
-            "value": "20W"
+            "value": "20 W"
           },
           {
             "label": "Input Voltage",

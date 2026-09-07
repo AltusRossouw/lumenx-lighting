@@ -79,11 +79,9 @@
             "value": "Master/master, Master/slave"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Application, place",
@@ -184,7 +182,14 @@
           {
             "label": "LED lamps < 2 W",
             "value": "100 W"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "LED lamps > 2 W < 8 W",
             "value": "300 W"

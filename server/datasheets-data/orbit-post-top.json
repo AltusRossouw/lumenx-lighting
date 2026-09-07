@@ -76,11 +76,9 @@
             "value": "CE, EMC,"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Lumen Output",
@@ -93,7 +91,14 @@
           {
             "label": "CRI",
             "value": ">80"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "LED Chips",
             "value": "Epistar 2835"

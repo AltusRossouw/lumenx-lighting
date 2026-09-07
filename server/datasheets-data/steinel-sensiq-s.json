@@ -78,11 +78,9 @@
             "value": "Master/master, Master/slave"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Application, place",
@@ -155,7 +153,14 @@
           {
             "label": "European Article Number (EAN)",
             "value": "4007841059613"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "Angle of aperture",
             "value": "180 °"

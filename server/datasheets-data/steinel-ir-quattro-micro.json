@@ -79,11 +79,9 @@
             "value": "Master/master, Master/slave"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Application, place",
@@ -184,7 +182,14 @@
           {
             "label": "Fluorescent lamps, series-corrected",
             "value": "400 VA"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "Fluorescent lamps, parallel-corrected",
             "value": "400 VA"

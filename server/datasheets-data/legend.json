@@ -81,11 +81,9 @@
             "value": "-20 ~ 45 °C"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Lumens",
@@ -98,7 +96,14 @@
           {
             "label": "Lumen Output",
             "value": "3500 lm (35W)"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "CRI",
             "value": ">80"

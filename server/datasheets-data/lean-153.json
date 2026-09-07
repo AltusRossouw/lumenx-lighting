@@ -59,23 +59,28 @@
             "value": "Diffused, low-glare"
           }
         ]
+      },
+      {
+        "title": "Specifications",
+        "rows": [
+          {
+            "label": "CCT",
+            "value": "3000K / 4000K"
+          }
+        ]
       }
     ],
     "right": [
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
-          {
-            "label": "Cooling",
-            "value": "Passive die-cast"
-          },
           {
             "label": "CRI",
             "value": "90+"
           },
           {
-            "label": "CCT",
-            "value": "3000K / 4000K"
+            "label": "Cooling",
+            "value": "Passive die-cast"
           }
         ]
       },

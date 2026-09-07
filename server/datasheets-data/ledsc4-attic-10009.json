@@ -41,22 +41,28 @@
     "Hospitality"
   ],
   "columns": {
-    "left": [],
-    "right": [
+    "left": [
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Lumens",
+            "value": "3255–4340 lm"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
+          {
+            "label": "Lumen Output",
             "value": "3255–4340 lm"
           },
           {
             "label": "Light Source",
             "value": "E27"
-          },
-          {
-            "label": "Lumen Output",
-            "value": "3255–4340 lm"
           }
         ]
       }

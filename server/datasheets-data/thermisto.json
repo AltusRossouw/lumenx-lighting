@@ -77,11 +77,9 @@
             "value": "L90B10 @ 50,000 hrs"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Lumens",
@@ -90,7 +88,14 @@
           {
             "label": "Efficacy",
             "value": "Up to 148 lm/W"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "CCT",
             "value": "3000K / 3500K / 4000K / 5000K"

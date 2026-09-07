@@ -70,24 +70,29 @@
             "value": ">4000 cycles @ 80% DoD · 10-year lifetime"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Lumens",
             "value": "2000 lm"
           },
           {
-            "label": "Nominal Flux",
-            "value": "Up to 2000 lm"
-          },
-          {
             "label": "Efficacy",
             "value": "Up to 100 lm/W"
           },
+          {
+            "label": "Nominal Flux",
+            "value": "Up to 2000 lm"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "Recommended Mounting Height",
             "value": "4-5 m"

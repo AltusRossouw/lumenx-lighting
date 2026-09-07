@@ -84,16 +84,21 @@
             "value": "No *5 YEAR WARRANTY DOWNLOAD SPEC SHEET"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Lumen Output",
             "value": "20W = 2 600lm \\"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "CRI",
             "value": ">80"

@@ -46,12 +46,12 @@
         "title": "Physical",
         "rows": [
           {
-            "label": "Product Size (L × W × H)",
-            "value": "420 × 420 × 130mm"
+            "label": "Colour Temperature",
+            "value": "6000 K"
           },
           {
-            "label": "Colour Temperature",
-            "value": "6000K"
+            "label": "Product Size (L × W × H)",
+            "value": "420 × 420 × 130mm"
           }
         ]
       },
@@ -63,11 +63,9 @@
             "value": "IP65"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Lumens",
@@ -76,7 +74,14 @@
           {
             "label": "Nominal Flux",
             "value": "Up to 1100 lm"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "Storage Capacity",
             "value": "3.2V / 15000 mAh"

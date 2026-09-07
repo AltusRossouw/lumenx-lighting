@@ -59,11 +59,9 @@
             "value": "IP54"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Reach",
@@ -88,7 +86,14 @@
           {
             "label": "Reach, tangential",
             "value": "30 x 4 m (120 m²)"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "Interconnection via",
             "value": "Cable"

@@ -64,16 +64,21 @@
             "value": "Silver anodised / black"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Cover",
             "value": "PC opal / black"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "Light Source Width",
             "value": "12mm"

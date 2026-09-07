@@ -388,14 +388,39 @@ def build_datasheet_payload(product, old=None):
         else:
             info.append({'label': lab, 'value': s['value']})
 
+    # Group the remaining specs into columns, then balance the two columns so
+    # the sheet fits on one A4 page (no single column overflows).
+    physical = []
+    electrical = []
+    compliance = []
+    info = []
+    for s in specs:
+        lab = s['label']
+        if PHYSICAL_LABELS.match(lab):
+            physical.append({'label': lab, 'value': s['value']})
+        elif ELECTRICAL_LABELS.match(lab):
+            electrical.append({'label': lab, 'value': s['value']})
+        elif COMPLIANCE_LABELS.match(lab):
+            compliance.append({'label': lab, 'value': s['value']})
+        else:
+            info.append({'label': lab, 'value': s['value']})
+
+    # Left column: Physical + Compliance + first half of the misc "info" specs.
+    # Right column: Electrical + second half of "info" specs (kept balanced).
+    info_left = info[:len(info) // 2]
+    info_right = info[len(info) // 2:]
+
     left = []
     if physical:
         left.append({'title': 'Physical', 'rows': physical})
     if compliance:
         left.append({'title': 'Compliance', 'rows': compliance})
+    if info_left:
+        left.append({'title': 'Specifications', 'rows': info_left})
+
     right = []
-    if info:
-        right.append({'title': 'Product Information', 'rows': info})
+    if info_right:
+        right.append({'title': 'Specifications', 'rows': info_right})
     if electrical:
         right.append({'title': 'Electrical', 'rows': electrical})
 

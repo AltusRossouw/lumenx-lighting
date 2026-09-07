@@ -72,6 +72,10 @@
         "title": "Compliance",
         "rows": [
           {
+            "label": "IP Rating",
+            "value": "IP20"
+          },
+          {
             "label": "Operating Temp",
             "value": "-15~45°C / -30 ~ 50°C / -35°C to 45°C / -20~40°C"
           },
@@ -82,29 +86,30 @@
           {
             "label": "Certifications",
             "value": "CE, EMC / IEC"
+          }
+        ]
+      },
+      {
+        "title": "Specifications",
+        "rows": [
+          {
+            "label": "Lumen Output",
+            "value": "3 500lm / 30 000lm / 153 600lm"
           },
           {
-            "label": "IP Rating",
-            "value": "IP20"
+            "label": "Lamp",
+            "value": "GU10"
           }
         ]
       }
     ],
     "right": [
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
-          {
-            "label": "Lamp",
-            "value": "GU10"
-          },
           {
             "label": "available in",
             "value": "White"
-          },
-          {
-            "label": "Lumen Output",
-            "value": "3 500lm / 30 000lm / 153 600lm"
           },
           {
             "label": "CRI",

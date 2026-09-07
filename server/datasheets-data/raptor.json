@@ -88,20 +88,25 @@
             "value": "IK05"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
-          {
-            "label": "CCT",
-            "value": "Selectable"
-          },
           {
             "label": "Lumen Output",
             "value": "30 000lm / 3 500lm / 153 600lm"
           },
+          {
+            "label": "CCT",
+            "value": "Selectable"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "CRI",
             "value": ">80 / >83"

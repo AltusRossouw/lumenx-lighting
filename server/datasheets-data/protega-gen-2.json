@@ -56,16 +56,21 @@
             "value": "Linear luminaire"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Efficacy",
             "value": "Up to 171 lm/W"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "Maintenance",
             "value": "Easily maintained profile"

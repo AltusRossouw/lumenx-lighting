@@ -76,11 +76,9 @@
             "value": "IP65"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Lumens",
@@ -93,7 +91,14 @@
           {
             "label": "Diffuser",
             "value": "Polycarbonate"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "Product Weight",
             "value": "0,65kg"
@@ -120,12 +125,12 @@
             "value": "12 W"
           },
           {
-            "label": "Power Factor",
-            "value": "0,9"
+            "label": "Wattage",
+            "value": "12 W"
           },
           {
-            "label": "Wattage",
-            "value": "12W"
+            "label": "Power Factor",
+            "value": "0,9"
           },
           {
             "label": "Input Voltage",

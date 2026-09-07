@@ -85,11 +85,9 @@
             "value": "3 Years · LED Driver: 5 Years"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Lead Time",
@@ -98,7 +96,14 @@
           {
             "label": "Primary Material",
             "value": "Layered Optical Acrylic + K9 Crystal Accent Elements"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "Frame",
             "value": "Stainless Steel 304 PVD-coated"

@@ -51,11 +51,9 @@
             "value": "Linear highbay"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Configuration",
@@ -64,7 +62,14 @@
           {
             "label": "Cooling",
             "value": "Excellent thermal design"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "Output",
             "value": "> 35,000 lm"

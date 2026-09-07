@@ -54,11 +54,9 @@
             "value": "9005"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Article number",
@@ -71,7 +69,14 @@
           {
             "label": "Package content",
             "value": "1"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "Manufacturer's Warranty",
             "value": "5 years"

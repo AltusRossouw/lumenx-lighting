@@ -66,11 +66,9 @@
             "value": "IP65"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Nominal Lifetime (L70)",
@@ -115,7 +113,14 @@
           {
             "label": "Max Sustained Voltage",
             "value": "250V for 2 minutes"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "On/Off Switching",
             "value": "Unlimited"

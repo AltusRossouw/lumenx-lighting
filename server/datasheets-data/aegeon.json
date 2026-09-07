@@ -77,11 +77,9 @@
             "value": "L70B10 @ 50,000 hrs"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Lumens",
@@ -90,7 +88,14 @@
           {
             "label": "Efficacy",
             "value": "120 lm/W"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "CCT",
             "value": "4000K"

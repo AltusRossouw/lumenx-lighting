@@ -93,12 +93,14 @@
             "value": "IK10"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
+          {
+            "label": "Lumen Output",
+            "value": "650lm / 27 200lm / 15 40lm"
+          },
           {
             "label": "Range",
             "value": "Colour · Decor Colour · Vers 3CCT"
@@ -108,13 +110,16 @@
             "value": "GU10"
           },
           {
-            "label": "Lumen Output",
-            "value": "650lm / 27 200lm / 15 40lm"
-          },
-          {
             "label": "CRI",
             "value": ">80 / >83"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "LED Chips",
             "value": "LED / SMD 2835"

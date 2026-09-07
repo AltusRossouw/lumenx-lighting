@@ -93,11 +93,9 @@
             "value": "L80B10 @ 50 000 hrs"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Lumens",
@@ -106,7 +104,14 @@
           {
             "label": "Lumen Output",
             "value": "3 500 lm"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "CRI",
             "value": ">80"

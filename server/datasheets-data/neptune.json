@@ -69,11 +69,9 @@
             "value": "IP65"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Operational Guarantee",
@@ -122,7 +120,14 @@
           {
             "label": "Maximum Sustained Voltage",
             "value": "250V for 2 minutes"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "On/Off Switching",
             "value": "Unlimited"

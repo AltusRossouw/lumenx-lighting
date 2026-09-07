@@ -84,20 +84,25 @@
             "value": "CE, EMC, IEC60958 / CE, EMC / CE / CE, EMC, IEC60598"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
-          {
-            "label": "Linking",
-            "value": "Seamless end-to-end"
-          },
           {
             "label": "Lumen Output",
             "value": "60W=9 000lm/80W=12 000lm/100W=15 000lm / 1 500lm / 30W= 4 500lm | 40W= 6 000lm 50W= 7 500lm / 800lm PF: / 100lm/W / 36°"
           },
+          {
+            "label": "Linking",
+            "value": "Seamless end-to-end"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "CRI",
             "value": ">80 / >83 / >85"

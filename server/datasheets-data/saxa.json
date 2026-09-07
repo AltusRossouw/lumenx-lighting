@@ -73,11 +73,9 @@
             "value": "L90B10 @ 50,000 hrs"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Configuration",
@@ -86,7 +84,14 @@
           {
             "label": "Lumens",
             "value": "2160–6480 lm"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "Efficacy",
             "value": "120 lm/W"

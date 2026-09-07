@@ -84,11 +84,9 @@
             "value": "L80B10 @ 50,000 hrs"
           }
         ]
-      }
-    ],
-    "right": [
+      },
       {
-        "title": "Product Information",
+        "title": "Specifications",
         "rows": [
           {
             "label": "Lumens",
@@ -97,7 +95,14 @@
           {
             "label": "Efficacy",
             "value": "Up to 136 lm/W"
-          },
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Specifications",
+        "rows": [
           {
             "label": "CCT",
             "value": "3000K / 3500K / 4000K / 5000K"
@@ -116,12 +121,12 @@
             "value": "17–100 W"
           },
           {
-            "label": "Surge Protection",
-            "value": "1.5kV"
-          },
-          {
             "label": "Wattage",
             "value": "17W – 100W"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "1.5kV"
           },
           {
             "label": "Voltage",
