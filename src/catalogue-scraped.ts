@@ -130,7 +130,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "rhea",
     name: "Rhea",
     category: "bulkheads",
-    supplier: "OrbitX",
     summary: "INTEGRATED SURFACE MOUNT LED LIGHT.",
     description: "INTEGRATED SURFACE MOUNT LED LIGHT",
     specs: [
@@ -189,7 +188,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "phoebe",
     name: "Phoebe",
     category: "bulkheads",
-    supplier: "OrbitX",
     summary: "IP65 INTEGRATED SURFACE MOUNT LED LIGHT.",
     description: "IP65 INTEGRATED SURFACE MOUNT LED LIGHT",
     specs: [
@@ -248,7 +246,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "hero",
     name: "Hero",
     category: "bulkheads",
-    supplier: "Pioled",
     summary: "All-in-one IP65 bulkhead with selectable wattage and 3CCT in a round or square polycarbonate housing.",
     description: "All-in-one IP65 bulkhead with selectable wattage and 3CCT in a round or square polycarbonate housing.",
     specs: [
@@ -292,7 +289,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "bunker",
     name: "Bunker",
     category: "bulkheads",
-    supplier: "Pioled",
     summary: "The Bunker is a die-cast aluminium IP65 bulkhead engineered for exterior and semi-exterior environments.",
     description: "The Bunker is a die-cast aluminium IP65 bulkhead engineered for exterior and semi-exterior environments. Its 4CCT switch provides four selectable colour temperatures, while the aluminium body dissipates heat and resists impact better than polycarbonate alternatives. A tamper-resistant construction suits public and semi-public installations.",
     specs: [
@@ -338,7 +334,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "diffused-downlight",
     name: "Diffused Downlight",
     category: "downlights",
-    supplier: "Rubicon",
     summary: "The Aegeon is a diffused recessed downlight designed for efficiency and low-glare.",
     description: "The Aegeon is a diffused recessed downlight designed for efficiency and low-glare. Its simple, modern design combined with reliable LED performance makes it ideal for offices, retail areas and hospitality spaces.",
     specs: [
@@ -381,7 +376,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "cob-adjustable-downlight",
     name: "COB Adjustable Downlight",
     category: "downlights",
-    supplier: "Rubicon",
     summary: "The Aegeon is a diffused recessed downlight designed for efficiency and low-glare.",
     description: "The Aegeon is a diffused recessed downlight designed for efficiency and low-glare. Its simple, modern design combined with reliable LED performance makes it ideal for offices, retail areas and hospitality spaces.",
     specs: [
@@ -414,7 +408,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "cob-anti-glare-downlight",
     name: "COB Anti-glare Downlight",
     category: "downlights",
-    supplier: "Ledwise",
     summary: "Round COB recessed downlight range from 7W to 35W with deep-recessed reflector optics.",
     description: "Round COB recessed downlight range from 7W to 35W with deep-recessed reflector optics.",
     specs: [
@@ -462,7 +455,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "small-cob-anti-glare-downlight",
     name: "Small COB Anti-glare Downlight",
     category: "downlights",
-    supplier: "Ledwise",
     summary: "Trimless reflector downlight with fixed and swivel trim variants and <3 SDCM colour consistency.",
     description: "Trimless reflector downlight with fixed and swivel trim variants and <3 SDCM colour consistency.",
     specs: [
@@ -506,7 +498,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "cob-square-downlight",
     name: "COB Square Downlight",
     category: "downlights",
-    supplier: "Ledwise",
     summary: "Square swivel COB recessed downlight from 10W to 45W with specialty colour options.",
     description: "Square swivel COB recessed downlight from 10W to 45W with specialty colour options.",
     specs: [
@@ -550,7 +541,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "cob-square-double-downlight",
     name: "COB Square Double Downlight",
     category: "downlights",
-    supplier: "Ledwise",
     summary: "The COB-R-SQ2 is the double-module version of the COB-R square swivel downlight, providing roughly twice the output in a 360mm-wide fitting for larger retail and commercial spaces.",
     description: "The COB-R-SQ2 is the double-module version of the COB-R square swivel downlight, providing roughly twice the output in a 360mm-wide fitting for larger retail and commercial spaces. It retains the swivel trim, specialty colour options and DALI / Bluetooth control of the single-module range.",
     specs: [
@@ -594,7 +584,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "cob-square-triple-downlight",
     name: "COB Square Triple Downlight",
     category: "downlights",
-    supplier: "Ledwise",
     summary: "The COB-R-SQ3 is the triple-module flagship of the COB-R square swivel downlight range, delivering maximum output for large open-plan retail and commercial spaces.",
     description: "The COB-R-SQ3 is the triple-module flagship of the COB-R square swivel downlight range, delivering maximum output for large open-plan retail and commercial spaces. Swivel trims, specialty colours and full control flexibility make it a powerful architectural accent tool.",
     specs: [
@@ -642,7 +631,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "sauron",
     name: "Sauron",
     category: "downlights",
-    supplier: "Pioled",
     summary: "3CCT round COB downlight from 16W to 25W with UGR<19 and Bridgelux LED chips.",
     description: "3CCT round COB downlight from 16W to 25W with UGR<19 and Bridgelux LED chips.",
     specs: [
@@ -687,7 +675,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "legend",
     name: "Legend",
     category: "downlights",
-    supplier: "Pioled",
     summary: "High-powered 3CCT round downlight range for demanding commercial applications, available in 10W, 20W and 35W with selectable colour temperature and a 60° beam for uniform general illumination.",
     description: "High-powered 3CCT round downlight range for demanding commercial applications, available in 10W, 20W and 35W with selectable colour temperature and a 60° beam for uniform general illumination.",
     specs: [
@@ -736,7 +723,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "gu10-downlight",
     name: "GU10 Downlight",
     category: "downlights",
-    supplier: "Pioled",
     summary: "GU10 lamp-based fixtures and accessories for flexible accent and downlighting — a family of adjustable and fixed GU10 holders plus compatible accessories.",
     description: "GU10 lamp-based fixtures and accessories for flexible accent and downlighting — a family of adjustable and fixed GU10 holders plus compatible accessories.",
     specs: [
@@ -785,7 +771,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "surface-adjustable-downlight",
     name: "Surface Adjustable Downlight",
     category: "downlights",
-    supplier: "Pioled",
     summary: "IP20 tiltable round downlighter with selectable colour temperature, available in 15W, 25W and 35W.",
     description: "IP20 tiltable round downlighter with selectable colour temperature, available in 15W, 25W and 35W. A 36° beam with 340° rotation suits adjustable accent and general lighting; a removable honeycomb louvre is included for glare control.",
     specs: [
@@ -832,7 +817,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "mario",
     name: "Mario",
     category: "downlights",
-    supplier: "Pioled",
     summary: "Round-tilt LED downlighter delivering uniform spot, decorative and soft lighting in a single fitting.",
     description: "Round-tilt LED downlighter delivering uniform spot, decorative and soft lighting in a single fitting. High-lumen Bridgelux COB engine with selectable colour temperature and tool-free tilt adjustment for accent and general lighting.",
     specs: [
@@ -880,7 +864,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "flood",
     name: "Flood",
     category: "floods",
-    supplier: "OrbitX",
     summary: "IP65 FLOODLIGHT WITH AUTOMATIC LIGHT SENSOR (ALS).",
     description: "IP65 FLOODLIGHT WITH AUTOMATIC LIGHT SENSOR (ALS)",
     specs: [
@@ -935,7 +918,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "ace",
     name: "ACE",
     category: "highbays",
-    supplier: "Ledwise",
     summary: "ACE-HP-S high-power linear highbay from 75W to 206W with aisle and oval optics.",
     description: "ACE-HP-S high-power linear highbay from 75W to 206W with aisle and oval optics.",
     specs: [
@@ -979,7 +961,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "umgeni",
     name: "Umgeni",
     category: "highbays",
-    supplier: "Rubicon",
     summary: "The Umgeni high-performance linear highbay is designed for demanding commercial and industrial environments.",
     description: "The Umgeni high-performance linear highbay is designed for demanding commercial and industrial environments. Built for durability and engineered for efficiency, Umgeni delivers powerful, uniform illumination with lumen packages of over 35 000lm. Its robust construction, sleek linear form, and high efficiency make it the ideal solution for warehouses, factories, logistics hubs, and large indoor spaces where reliability and light quality are non-negotiable.",
     specs: [
@@ -1011,7 +992,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "thermisto",
     name: "Thermisto",
     category: "highbays",
-    supplier: "Rubicon",
     summary: "The Themisto is a lensed linear for controlled illumination.",
     description: "The Themisto is a lensed linear for controlled illumination. With various mounting options, its ideal for warehouses, workshops and retail spaces for higher general lighting.",
     specs: [
@@ -1056,7 +1036,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "delta",
     name: "Delta",
     category: "highbays",
-    supplier: "Pioled",
     summary: "240W linear IP65 highbay delivering 40,800 lumens with 3CCT switching.",
     description: "240W linear IP65 highbay delivering 40,800 lumens with 3CCT switching.",
     specs: [
@@ -1099,7 +1078,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "raptor",
     name: "Raptor",
     category: "highbays",
-    supplier: "Pioled",
     summary: "IP65 3-in-1 UFO highbay with selectable wattage and CCT for flexible specification.",
     description: "IP65 3-in-1 UFO highbay with selectable wattage and CCT for flexible specification.",
     specs: [
@@ -1143,7 +1121,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "circular",
     name: "Circular",
     category: "indoor-architectural",
-    supplier: "LEDsC4",
     summary: "The circle harmonizes the space.",
     description: "The circle harmonizes the space. Its various configurations, both structural and lighting, shape its personality.",
     specs: [
@@ -1184,7 +1161,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "circular-vertical",
     name: "Circular Vertical",
     category: "indoor-architectural",
-    supplier: "LEDsC4",
     summary: "The circle harmonizes the space.",
     description: "The circle harmonizes the space. Its various configurations, both structural and lighting, shape its personality.",
     specs: [
@@ -1225,7 +1201,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "attic",
     name: "Attic",
     category: "indoor-architectural",
-    supplier: "LEDsC4",
     summary: "The Attic system is based on a compositional modularity that starts from screens with customizable finishes.",
     description: "The Attic system is based on a compositional modularity that starts from screens with customizable finishes.",
     specs: [
@@ -1263,7 +1238,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "vetro",
     name: "Vetro",
     category: "indoor-architectural",
-    supplier: "LEDsC4",
     summary: "Vetro is a surface solution with a noble double-thickness pressed glass and waterproof properties.",
     description: "Vetro is a surface solution with a noble double-thickness pressed glass and waterproof properties.",
     specs: [
@@ -1300,7 +1274,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "fabric-tape",
     name: "Fabric Tape",
     category: "indoor-architectural",
-    supplier: "Superlume",
     summary: "Braided fabric LED lighting tape in a flexible family of per-metre tape and finished forms — strips, spheres, cones, pendants and spots.",
     description: "Braided fabric LED lighting tape in a flexible family of per-metre tape and finished forms — strips, spheres, cones, pendants and spots. 3000K warm light, 48V low-voltage operation, IP20, in Black or Terra Red.",
     specs: [
@@ -1344,9 +1317,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "cloud-bell",
     name: "Cloud Bell",
     category: "decorative",
-    supplier: "KingLong",
-    summary: "Explore the Cloud Bell Series by Kinglong Lighting, a decorative chandelier collection for hotel lobbies, villas, and commercial interiors.",
-    description: "Explore the Cloud Bell Series by Kinglong Lighting, a decorative chandelier collection for hotel lobbies, villas, and commercial interiors.",
+    summary: "Explore the Cloud Bell Series, a decorative chandelier collection for hotel lobbies, villas, and commercial interiors.",
+    description: "Explore the Cloud Bell Series, a decorative chandelier collection for hotel lobbies, villas, and commercial interiors.",
     specs: [
       { label: "Material", value: "Layered Optical Acrylic · K9 Crystal" },
       { label: "Finish", value: "Champagne Gold · Matte Black · Brushed Silver" },
@@ -1401,9 +1373,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "pearl",
     name: "Pearl",
     category: "decorative",
-    supplier: "KingLong",
-    summary: "Explore the Pearl Series by Kinglong Lighting, a timeless spherical decorative lighting collection for luxury residential and hospitality spaces.",
-    description: "Explore the Pearl Series by Kinglong Lighting, a timeless spherical decorative lighting collection for luxury residential and hospitality spaces.",
+    summary: "Explore the Pearl Series, a timeless spherical decorative lighting collection for luxury residential and hospitality spaces.",
+    description: "Explore the Pearl Series, a timeless spherical decorative lighting collection for luxury residential and hospitality spaces.",
     specs: [
       { label: "Material", value: "Mouth-Blown Glass · Optical Acrylic" },
       { label: "Finish", value: "Champagne Gold · Chrome · Antique Brass · Matte Black" },
@@ -1461,9 +1432,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "dream-pen",
     name: "Dream Pen",
     category: "decorative",
-    supplier: "KingLong",
-    summary: "Explore the Dream Pen Series by Kinglong Lighting, a precise linear chandelier collection for modern hotels, villas, and commercial spaces.",
-    description: "Explore the Dream Pen Series by Kinglong Lighting, a precise linear chandelier collection for modern hotels, villas, and commercial spaces.",
+    summary: "Explore the Dream Pen Series, a precise linear chandelier collection for modern hotels, villas, and commercial spaces.",
+    description: "Explore the Dream Pen Series, a precise linear chandelier collection for modern hotels, villas, and commercial spaces.",
     specs: [
       { label: "Material", value: "Aluminium Extrusion Profile (T6 alloy)" },
       { label: "Finish", value: "Anodised Silver · Matte Black · Champagne Gold Powder Coat · White" },
@@ -1521,9 +1491,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "jiangnan",
     name: "Jiangnan",
     category: "decorative",
-    supplier: "KingLong",
-    summary: "Explore the Jiangnan Series by Kinglong Lighting, an Eastern-inspired decorative lighting collection for hotels and refined interiors.",
-    description: "Explore the Jiangnan Series by Kinglong Lighting, an Eastern-inspired decorative lighting collection for hotels and refined interiors.",
+    summary: "Explore the Jiangnan Series, an Eastern-inspired decorative lighting collection for hotels and refined interiors.",
+    description: "Explore the Jiangnan Series, an Eastern-inspired decorative lighting collection for hotels and refined interiors.",
     specs: [
       { label: "Material", value: "Eco-Leather · Stainless Steel" },
       { label: "Finish", value: "Champagne Gold PVD · Matte Black · Brushed Nickel" },
@@ -1581,7 +1550,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "crystal-cloud",
     name: "Crystal Cloud",
     category: "decorative",
-    supplier: "KingLong",
     summary: "Explore the Crystal Cloud Series, a suspended crystal chandelier collection for luxury hotels, atriums, and bespoke interior projects.",
     description: "Explore the Crystal Cloud Series, a suspended crystal chandelier collection for luxury hotels, atriums, and bespoke interior projects.",
     specs: [
@@ -1640,7 +1608,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "puck-seamless",
     name: "Puck Seamless",
     category: "linears",
-    supplier: "OrbitX",
     summary: "INTEGRATED LINEAR LED LIGHT.",
     description: "INTEGRATED LINEAR LED LIGHT",
     specs: [
@@ -1697,7 +1664,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "puck-profile-70x36",
     name: "Puck Profile 70x36",
     category: "linears",
-    supplier: "OrbitX",
     summary: "INTEGRATED LINEAR LED LIGHT.",
     description: "INTEGRATED LINEAR LED LIGHT",
     specs: [
@@ -1751,7 +1717,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "puck-profile-40x43",
     name: "Puck Profile 40x43",
     category: "linears",
-    supplier: "OrbitX",
     summary: "INTEGRATED LINEAR LED LIGHT.",
     description: "INTEGRATED LINEAR LED LIGHT",
     specs: [
@@ -1805,7 +1770,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "kepler",
     name: "Kepler",
     category: "linears",
-    supplier: "OrbitX",
     summary: "INTEGRATED LINEAR LED LIGHT.",
     description: "INTEGRATED LINEAR LED LIGHT",
     specs: [
@@ -1859,7 +1823,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "lds5083",
     name: "LDS5083",
     category: "linears",
-    supplier: "Ledwise",
     summary: "50×83mm linear profile available as single or continuous runs with 30–50W/m output.",
     description: "50×83mm linear profile available as single or continuous runs with 30–50W/m output.",
     specs: [
@@ -1902,7 +1865,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "ldr6563",
     name: "LDR6563",
     category: "linears",
-    supplier: "Ledwise",
     summary: "65×63mm linear profile for higher-output continuous and single applications.",
     description: "65×63mm linear profile for higher-output continuous and single applications.",
     specs: [
@@ -1944,7 +1906,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "lrd9063",
     name: "LRD9063",
     category: "linears",
-    supplier: "Ledwise",
     summary: "90×63mm large-format linear profile for high-output architectural runs.",
     description: "90×63mm large-format linear profile for high-output architectural runs.",
     specs: [
@@ -1986,7 +1947,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "base",
     name: "BASE",
     category: "linears",
-    supplier: "Ledwise",
     summary: "BACE base linear profile offering 135 lm/W efficacy in single or continuous form.",
     description: "BACE base linear profile offering 135 lm/W efficacy in single or continuous form.",
     specs: [
@@ -2028,7 +1988,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "ace",
     name: "ACE",
     category: "linears",
-    supplier: "Ledwise",
     summary: "ACE-HP-S high-power linear highbay from 75W to 206W with aisle and oval optics.",
     description: "ACE-HP-S high-power linear highbay from 75W to 206W with aisle and oval optics.",
     specs: [
@@ -2073,7 +2032,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "protega-gen-2",
     name: "Protega Gen 2",
     category: "linears",
-    supplier: "Rubicon",
     summary: "The Protega has evolved with Gen 2, it’s sleek design features a lighter profile and with it’s adaptable configuration is now even more easily maintained.",
     description: "The Protega has evolved with Gen 2, it’s sleek design features a lighter profile and with it’s adaptable configuration is now even more easily maintained. The new Gen 2’s design is focused on it’s efficiency which has been greatly improved to feature up to an impressive 171 Lm/W. The Protega Gen 2 is the perfect choice for any high-performance lighting application in modern retail or commercial spaces.",
     specs: [
@@ -2105,7 +2063,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "thermisto",
     name: "Thermisto",
     category: "linears",
-    supplier: "Rubicon",
     summary: "The Themisto is a lensed linear for controlled illumination.",
     description: "The Themisto is a lensed linear for controlled illumination. With various mounting options, its ideal for warehouses, workshops and retail spaces for higher general lighting.",
     specs: [
@@ -2150,7 +2107,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "lf40",
     name: "LF40",
     category: "linears",
-    supplier: "Rubicon",
     summary: "The Light Frame 40 is a versatile diffused linear for both standalone and continuous applications.",
     description: "The Light Frame 40 is a versatile diffused linear for both standalone and continuous applications. Suitable for surface, suspended and recessed mounting the Light Frame 40 is ideal for larger modern spaces to showcase lighting as part of the environment.",
     specs: [
@@ -2183,7 +2139,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "lf20",
     name: "LF20",
     category: "linears",
-    supplier: "Rubicon",
     summary: "The Light Frame 20 is a narrow diffused linear for task lighting for a stylish modern environment.",
     description: "The Light Frame 20 is a narrow diffused linear for task lighting for a stylish modern environment. Suitable for surface and suspended mounting.",
     specs: [
@@ -2215,9 +2170,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "lf55",
     name: "LF55",
     category: "linears",
-    supplier: "Rubicon",
     summary: "Introducing the Light Frame Family.",
-    description: "Introducing the Light Frame Family. A collective of highly effective, stylish and versatile constant current linear systems. In this family you'll find some of our best linear luminaires which include the Light Frame 55 , Light Frame 55X80 and Light Frame 80 profiles which are all available in variety of sizes / lengths, dimming and emergency control options (on request), a range of luminaire colour temperatures ( CCT ) available, various mounting options and a wide selection wattage / lumen packages available.",
+    description: "Introducing the Light Frame Family. A collective of highly effective, stylish and versatile constant current linear systems. In this family you'll find some of our best linear luminaires which include the Light Frame 55, Light Frame 55X80 and Light Frame 80 profiles which are all available in variety of sizes / lengths, dimming and emergency control options (on request), a range of luminaire colour temperatures ( CCT ) available, various mounting options and a wide selection wattage / lumen packages available.",
     specs: [
       { label: "Length", value: "600 - 2300mm" },
       { label: "Colour", value: "Black, White, Silver" },
@@ -2268,7 +2222,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "soniq",
     name: "Soniq",
     category: "linears",
-    supplier: "Pioled",
     summary: "3-wattage seamless linkable linear for continuous runs with flexible output.",
     description: "3-wattage seamless linkable linear for continuous runs with flexible output.",
     specs: [
@@ -2312,7 +2265,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "eko",
     name: "Eko",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "Essential projector with different applications that includes a filter to soften the light effect.",
     description: "Essential projector with different applications that includes a filter to soften the light effect.",
     specs: [
@@ -2349,7 +2301,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "cube",
     name: "Cube",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "Advanced high-precision solution for illuminating architectural facades.",
     description: "Advanced high-precision solution for illuminating architectural facades",
     specs: [
@@ -2390,7 +2341,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "hubble",
     name: "Hubble",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "Hubble is a versatile collection characterized by its efficiency in all its applications.",
     description: "Hubble is a versatile collection characterized by its efficiency in all its applications.",
     specs: [
@@ -2431,7 +2381,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "eko-2",
     name: "Eko",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "Eko is an essential with a premium-level design and exceptional light quality.",
     description: "Eko is an essential with a premium-level design and exceptional light quality.",
     specs: [
@@ -2468,7 +2417,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "ele",
     name: "Ele",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "The pure aesthetics of Ele respond to a precise luminous requirement, with asymmetrical optics for greater comfort.",
     description: "The pure aesthetics of Ele respond to a precise luminous requirement, with asymmetrical optics for greater comfort.",
     specs: [
@@ -2506,7 +2454,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "modis",
     name: "Modis",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "Modis' double ball joint design allows for limitless light direction.",
     description: "Modis' double ball joint design allows for limitless light direction.",
     specs: [
@@ -2544,7 +2491,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "moal",
     name: "Moal",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "Beacon made of cement that also serves as decorative furniture.",
     description: "Beacon made of cement that also serves as decorative furniture",
     specs: [
@@ -2585,7 +2531,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "row",
     name: "Row",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "Robustness and durability in a doubly reinforced cement silhouette.",
     description: "Robustness and durability in a doubly reinforced cement silhouette.",
     specs: [
@@ -2621,7 +2566,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "ele-2",
     name: "Ele",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "The pure aesthetics of Ele respond to a precise lighting requirement, with asymmetrical optics for greater comfort.",
     description: "The pure aesthetics of Ele respond to a precise lighting requirement, with asymmetrical optics for greater comfort.",
     specs: [
@@ -2662,7 +2606,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "proud",
     name: "Proud",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "With an excellent lighting package, Proud adapts the space with personality.",
     description: "With an excellent lighting package, Proud adapts the space with personality.",
     specs: [
@@ -2699,7 +2642,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "lyon",
     name: "Lyon",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "Lyon offers an optimal light flow, capable of extensively illuminating up to 26 m².",
     description: "Lyon offers an optimal light flow, capable of extensively illuminating up to 26 m².",
     specs: [
@@ -2736,7 +2678,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "zig-zag",
     name: "Zig Zag",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "With a clear architectural intention, zigzag offers design in a body with high technical performance.",
     description: "With a clear architectural intention, zigzag offers design in a body with high technical performance.",
     specs: [
@@ -2775,7 +2716,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "helion",
     name: "Helion",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "Its design with divided windows creates an evocative play of light and shadow that enhances the harmony of the surroundings.",
     description: "Its design with divided windows creates an evocative play of light and shadow that enhances the harmony of the surroundings.",
     specs: [
@@ -2810,7 +2750,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "cube-linear",
     name: "Cube Linear",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "Advanced high-precision solution for illuminating architectural facades.",
     description: "Advanced high-precision solution for illuminating architectural facades",
     specs: [
@@ -2851,7 +2790,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "gea-cob",
     name: "Gea Cob",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "Swiveling solution that adapts to different vegetation heights thanks to its optical accessories.",
     description: "Swiveling solution that adapts to different vegetation heights thanks to its optical accessories.",
     specs: [
@@ -2888,7 +2826,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "finestra",
     name: "Finestra",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "Finestra is the ideal option for customizable facades through precise control of light and color.",
     description: "Finestra is the ideal option for customizable facades through precise control of light and color.",
     specs: [
@@ -2926,7 +2863,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "cosmos",
     name: "Cosmos",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "Apply deco-tech with hidden screws for demanding projects that require both technique and aesthetics.",
     description: "Apply deco-tech with hidden screws for demanding projects that require both technique and aesthetics.",
     specs: [
@@ -2967,7 +2903,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "afrodita",
     name: "Afrodita",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "Apply classic highly specified recognized for its high technical and functional quality.",
     description: "Apply classic highly specified recognized for its high technical and functional quality.",
     specs: [
@@ -3007,7 +2942,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "mega",
     name: "Mega",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "Mega, with a diameter of up to 1.2 meters, is ideal for lighting large surfaces.",
     description: "Mega, with a diameter of up to 1.2 meters, is ideal for lighting large surfaces.",
     specs: [
@@ -3045,7 +2979,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "cisne-colgante",
     name: "Cisne Colgante",
     category: "outdoor-architectural",
-    supplier: "LEDsC4",
     summary: "Swan is a hanging sphere of warm light that brings magnetism and sophistication.",
     description: "Swan is a hanging sphere of warm light that brings magnetism and sophistication.",
     specs: [
@@ -3082,7 +3015,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "palm-coco",
     name: "Palm & Coco",
     category: "outdoor-architectural",
-    supplier: "Superlume",
     summary: "Stylish outdoor LED bollard for landscape lighting — the Palm & Coco delivers up to 1800 lm with selectable colour temperature, a UV-resistant clear diffuser and a robust ground-mount aluminium body.",
     description: "Stylish outdoor LED bollard for landscape lighting — the Palm & Coco delivers up to 1800 lm with selectable colour temperature, a UV-resistant clear diffuser and a robust ground-mount aluminium body.",
     specs: [
@@ -3134,9 +3066,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "fuji-square",
     name: "Fuji Square",
     category: "outdoor-architectural",
-    supplier: "Pioled",
-    summary: "The Fuji Square is an outdoor architectural luminaire supplied by Pioled.",
-    description: "The Fuji Square is an outdoor architectural luminaire supplied by Pioled. It is designed for Facades, Gardens, Pathways environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
+    summary: "The Fuji Square is a LumenX outdoor architectural luminaire.",
+    description: "The Fuji Square is a LumenX outdoor architectural luminaire. It is designed for Facades, Gardens, Pathways environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
     specs: [
       { label: "Wattage", value: "12W" },
       { label: "Colour Temperature", value: "4CCT (2200K/3000K/4000K/6000K)" },
@@ -3180,9 +3111,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "fuji-round",
     name: "Fuji Round",
     category: "outdoor-architectural",
-    supplier: "Pioled",
-    summary: "The Fuji Round is an outdoor architectural luminaire supplied by Pioled.",
-    description: "The Fuji Round is an outdoor architectural luminaire supplied by Pioled. It is designed for Facades, Gardens, Pathways environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
+    summary: "The Fuji Round is a LumenX outdoor architectural luminaire.",
+    description: "The Fuji Round is a LumenX outdoor architectural luminaire. It is designed for Facades, Gardens, Pathways environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
     specs: [
       { label: "Wattage", value: "12W" },
       { label: "Colour Temperature", value: "4CCT (2200K/3000K/4000K/6000K)" },
@@ -3226,9 +3156,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "everest-square",
     name: "Everest Square",
     category: "outdoor-architectural",
-    supplier: "Pioled",
-    summary: "The Everest Square is an outdoor architectural luminaire supplied by Pioled.",
-    description: "The Everest Square is an outdoor architectural luminaire supplied by Pioled. It is designed for Facades, Gardens, Pathways environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
+    summary: "The Everest Square is a LumenX outdoor architectural luminaire.",
+    description: "The Everest Square is a LumenX outdoor architectural luminaire. It is designed for Facades, Gardens, Pathways environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
     specs: [
       { label: "Wattage", value: "12W" },
       { label: "Colour Temperature", value: "4CCT (2200K/3000K/4000K/6000K)" },
@@ -3272,9 +3201,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "everest-round",
     name: "Everest Round",
     category: "outdoor-architectural",
-    supplier: "Pioled",
-    summary: "The Everest Round is an outdoor architectural luminaire supplied by Pioled.",
-    description: "The Everest Round is an outdoor architectural luminaire supplied by Pioled. It is designed for Facades, Gardens, Pathways environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
+    summary: "The Everest Round is a LumenX outdoor architectural luminaire.",
+    description: "The Everest Round is a LumenX outdoor architectural luminaire. It is designed for Facades, Gardens, Pathways environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
     specs: [
       { label: "Wattage", value: "12W" },
       { label: "Colour Temperature", value: "4CCT (2200K/3000K/4000K/6000K)" },
@@ -3318,7 +3246,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "zod101-square-led-wall",
     name: "ZOD101 Square LED Wall",
     category: "outdoor-architectural",
-    supplier: "Superlume",
     summary: "The ZOD101-LED-BL is a square decorative wall-mounted fixture, ideal for coastal environments.",
     description: "The ZOD101-LED-BL is a square decorative wall-mounted fixture, ideal for coastal environments. Designed with a polycarbonate housing and diffuser, it offers exceptional durability and resistance to corrosion. The integrated 12W 4000K LED light source delivers crisp, efficient illumination in any outdoor setting.",
     specs: [
@@ -3363,7 +3290,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "zod102-round-led-wall",
     name: "ZOD102 Round LED Wall",
     category: "outdoor-architectural",
-    supplier: "Superlume",
     summary: "The ZOD102-LED-BL is a round, wall-mounted luminaire ideal for coastal or high-corrosion environments.",
     description: "The ZOD102-LED-BL is a round, wall-mounted luminaire ideal for coastal or high-corrosion environments. Designed with an integrated 12W LED in a 4000K neutral white, it offers a clean and modern light profile for both commercial and residential use. Engineered with durable polycarbonate housing and diffuser, this IP65-rated fixture is perfect for reliable outdoor lighting without compromising on aesthetics.",
     specs: [
@@ -3408,9 +3334,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "orbit",
     name: "Orbit",
     category: "outdoor-architectural",
-    supplier: "Pioled",
-    summary: "The Orbit is an outdoor architectural luminaire supplied by Pioled.",
-    description: "The Orbit is an outdoor architectural luminaire supplied by Pioled. It is designed for Facades, Gardens, Pathways environments. Available in 36W/48W/60W. Available in 3CCT (6000K/4000K/3000K).",
+    summary: "The Orbit is a LumenX outdoor architectural luminaire.",
+    description: "The Orbit is a LumenX outdoor architectural luminaire. It is designed for Facades, Gardens, Pathways environments. Available in 36W/48W/60W. Available in 3CCT (6000K/4000K/3000K).",
     specs: [
       { label: "Wattage", value: "36W/48W/60W" },
       { label: "Colour Temperature", value: "3CCT (6000K/4000K/3000K)" },
@@ -3455,9 +3380,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "vista",
     name: "Vista",
     category: "outdoor-architectural",
-    supplier: "Pioled",
-    summary: "The Vista is an outdoor architectural luminaire supplied by Pioled.",
-    description: "The Vista is an outdoor architectural luminaire supplied by Pioled. It is designed for Facades, Gardens, Pathways environments. Available in 20/35W. Available in 3CCT (3000K/4000K/6000K).",
+    summary: "The Vista is a LumenX outdoor architectural luminaire.",
+    description: "The Vista is a LumenX outdoor architectural luminaire. It is designed for Facades, Gardens, Pathways environments. Available in 20/35W. Available in 3CCT (3000K/4000K/6000K).",
     specs: [
       { label: "Wattage", value: "20/35W" },
       { label: "Colour Temperature", value: "3CCT (3000K/4000K/6000K)" },
@@ -3500,7 +3424,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "veris",
     name: "Veris",
     category: "panels",
-    supplier: "Rubicon",
     summary: "The Veris is a back-lit panel for general lighting with low-glare.",
     description: "The Veris is a back-lit panel for general lighting with low-glare. Suitable for offices, educational and hospital spaces for a clean finish and general lighting.",
     specs: [
@@ -3542,7 +3465,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "is-2360-r",
     name: "IS 2360 R",
     category: "sensors",
-    supplier: "Steinel",
     summary: "LumenX inside. Intelligent technology for installation. The perfect infrared sensor for installing in projecting roofs and suspended ceilings. The IS 2360 DE EC.",
     description: "LumenX inside. Intelligent technology for installation. The perfect infrared sensor for installing in projecting roofs and suspended ceilings. The IS 2360 DE ECO has a reach of up to 8 m in diameter and an impressive 360° angle of coverage. The detection zone can be adjusted where necessary by using shrouds.",
     specs: [
@@ -3582,7 +3504,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "is-2360-s",
     name: "IS 2360 S",
     category: "sensors",
-    supplier: "Steinel",
     summary: "IS 2360 ECO 7m white - Slips into the background.",
     description: "IS 2360 ECO 7m white - Slips into the background. And detects every movement. Stylish infrared ceiling sensor with an unobtrusive compact look. The surface-mounted IS 2360 motion detector with passive",
     specs: [
@@ -3669,7 +3590,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "light-sensor",
     name: "Light Sensor",
     category: "sensors",
-    supplier: "Steinel",
     summary: "Light Sensor Dual KNX - concealed, sq.",
     description: "Light Sensor Dual KNX - concealed, sq. - Light measurement in perfection. The Light Sensor Dual photo-cell controller with KNX interface measures directed and diffuse light, watches over areas below t",
     specs: [
@@ -3729,7 +3649,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "dualtech",
     name: "DualTech",
     category: "sensors",
-    supplier: "Steinel",
     summary: "DualTech COM1 - Concealed wiring - The best of both worlds.",
     description: "DualTech COM1 - Concealed wiring - The best of both worlds. Combined in one detector. Ultrasonic presence detector DualTech, ideal for offices, conference rooms and class rooms. 36 sq.m. presence zone",
     specs: [
@@ -3823,7 +3742,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "is-3360",
     name: "IS 3360",
     category: "sensors",
-    supplier: "Steinel",
     summary: "Higher, further, faster. Infrared presence detector IS 3360 for indoors and out, ideal for watching over high spaces and large areas, such as multi-storey and u.",
     description: "Higher, further, faster. Infrared presence detector IS 3360 for indoors and out, ideal for watching over high spaces and large areas, such as multi-storey and underground car parks, installation height up to 4 m, 360° angle of coverage, reach 20 m max. (tangential), heavy-duty relay for high switching capacity. Available either in round or square surface-mounted, concealed or In-ceiling installation.",
     specs: [
@@ -3863,7 +3781,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "is-3360-highbay",
     name: "IS 3360 Highbay",
     category: "sensors",
-    supplier: "Steinel",
     summary: "A head for heights. Powerful reach. Reliable. IS 3360 MX Highbay motion detector – ideal for high ceilings in industrial buildings or commercial properties. For.",
     description: "A head for heights. Powerful reach. Reliable. IS 3360 MX Highbay motion detector – ideal for high ceilings in industrial buildings or commercial properties. For mounting heights of up to 14 m. High-precision 360° infrared sensor. Maximum reach: 18 m. For watching over up to 1000 sq.m. Available as square surface-mounted and concealed version.",
     specs: [
@@ -3903,7 +3820,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "is-345-highbay",
     name: "IS 345 Highbay",
     category: "sensors",
-    supplier: "Steinel",
     summary: "Surveillance on the highest level.",
     description: "Surveillance on the highest level. Infrared motion detector IS 345 MX Highbay for indoors, ideal for large heights in depots, high-bay warehouses, machine shops, check-in areas and departure lounges, installation height 16 m, detection zone 30 x 4 m (radial), large terminal compartment for easy installation, heavy-duty relay for high switching capacity. Available as square surface-mounted and concealed version.",
     specs: [
@@ -3943,7 +3859,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "dual-hf-corridoor",
     name: "Dual HF Corridoor",
     category: "sensors",
-    supplier: "Steinel",
     summary: "Dual HF COM1 - Concealed wiring - Twice as vigilant!.",
     description: "Dual HF COM1 - Concealed wiring - Twice as vigilant! High-frequency corridor sensor Presence Control PRO Dual HF COM1 for indoors, ideal for passageways and long corridors, installation height up to 3",
     specs: [
@@ -4037,7 +3952,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "hf-360",
     name: "HF 360",
     category: "sensors",
-    supplier: "Steinel",
     summary: "HF 360 COM1 - in-ceiling installation - Doesn't miss a thing.",
     description: "HF 360 COM1 - in-ceiling installation - Doesn't miss a thing. HF-presence detector Presence Control PRO HF 360 COM1 for indoors, ideal for WCs with toilet cubicles, changing rooms, stairwells, multi-s",
     specs: [
@@ -4119,7 +4033,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "is-2180",
     name: "IS 2180",
     category: "sensors",
-    supplier: "Steinel",
     summary: "IS 2180 ECO black - Attractive, clever, efficient.",
     description: "IS 2180 ECO black - Attractive, clever, efficient. Infrared motion detector IS 2180 ECO for outdoors, ideal for building fronts and properties, medium-sized business and outdoor spaces, ideal installa",
     specs: [
@@ -4204,7 +4117,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "ir-quattro-micro",
     name: "IR Quattro Micro",
     category: "sensors",
-    supplier: "Steinel",
     summary: "IR Quattro MICRO 6m COM1 - white - Small sensor.",
     description: "IR Quattro MICRO 6m COM1 - white - Small sensor. Great performance. The IR Quattro MICRO meets the wish of many architects and planners for a sensor that's as inconspicuous as possible. It impresses w",
     specs: [
@@ -4300,7 +4212,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "ir-quattro-hd",
     name: "IR Quattro HD",
     category: "sensors",
-    supplier: "Steinel",
     summary: "IR Quattro HD 24m COM1 - concealed white - Detection no finer!.",
     description: "IR Quattro HD 24m COM1 - concealed white - Detection no finer! Infrared presence detector Presence Control PRO IR Quattro HD COM1 for indoors, ideal for medium to large-size offices, conference and me",
     specs: [
@@ -4392,7 +4303,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "sens-iq-s",
     name: "Sens IQ S",
     category: "sensors",
-    supplier: "Steinel",
     summary: "sensIQ S white - The evolution of perfection.",
     description: "sensIQ S white - The evolution of perfection. The sensIQ S is just as perfect as its larger role model. For indoors and outdoors, ideal for building entrances, loading bays, for mounting heights of up",
     specs: [
@@ -4465,7 +4375,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "smart-remote",
     name: "Smart Remote",
     category: "sensors",
-    supplier: "Steinel",
     summary: "Remote control Smart Remote - Full control via remote control.",
     description: "Remote control Smart Remote - Full control via remote control. In connection with the corresponding app, the remote control Smart Remote becomes the universal remote control. The Smart Remote replaces",
     specs: [
@@ -4502,7 +4411,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "service-remote",
     name: "Service Remote",
     category: "sensors",
-    supplier: "Steinel",
     summary: "Service remote control RC8 - Everything under control!.",
     description: "Service remote control RC8 - Everything under control! Service remote control RC8 for all Control PRO Presence Detectors and motion detectors in conjunction with COM1, COM2, DIM and DALI interface.",
     specs: [
@@ -4538,7 +4446,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "sky-ele-15-solar-post-top",
     name: "Sky ELE-15 Solar Post Top",
     category: "solar",
-    supplier: "Superlume",
     summary: "The SKY-ELE-15 is a compact yet powerful solar-powered LED post top fitting, designed for areas with no access to electrical infrastructure.",
     description: "The SKY-ELE-15 is a compact yet powerful solar-powered LED post top fitting, designed for areas with no access to electrical infrastructure. With a fully integrated battery and solar panel, this self-sustaining light provides high brightness throughout the night—no motion sensor needed. Its IP65-rated aluminium body ensures reliable performance even in harsh outdoor environments. Ideal for estates, public parks, isolated streets, and gate posts, this unit requires zero wiring and minimal maintenance.",
     specs: [
@@ -4578,7 +4485,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "sky-spt-150-solar-post-top",
     name: "Sky SPT-150 Solar Post Top",
     category: "solar",
-    supplier: "Superlume",
     summary: "The SKY-SPT-150 is a compact, all-in-one solar LED post top luminaire designed for outdoor areas without electrical infrastructure.",
     description: "The SKY-SPT-150 is a compact, all-in-one solar LED post top luminaire designed for outdoor areas without electrical infrastructure. Integrated with a solar panel, battery, and motion/daylight sensors, this unit provides efficient, autonomous lighting with minimal maintenance. Perfect for estates, isolated areas, and security perimeters, the SKY-SPT-150 delivers reliable performance for both safety and aesthetics.",
     specs: [
@@ -4610,7 +4516,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "vista-solar-post-top",
     name: "Vista Solar Post Top",
     category: "solar",
-    supplier: "Pioled",
     summary: "Vista Solar Post Top — outdoor LED luminaire from LumenX, supplied by LumenX.",
     description: "Vista Solar Post Top — outdoor LED luminaire from LumenX, supplied by LumenX.",
     specs: [
@@ -4654,7 +4559,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "cob",
     name: "COB",
     category: "strips",
-    supplier: "Pioled",
     summary: "5/10W 24V IP20 COB dotless strip (8mm) with 5cm cutting points.",
     description: "5/10W 24V IP20 COB dotless strip (8mm) with 5cm cutting points.",
     specs: [
@@ -4698,7 +4602,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "profiles",
     name: "Profiles",
     category: "profiles",
-    supplier: "LBY",
     summary: "Extensive range of aluminium LED lighting channels for surface, recessed and corner mounting of LED tape.",
     description: "Extensive range of aluminium LED lighting channels for surface, recessed and corner mounting of LED tape. Available silver-anodised or black with PC opal or black covers, in 3-metre lengths (representative Eco-L001: 25.7 × 7mm, 12mm light-source width).",
     specs: [
@@ -4743,7 +4646,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "standard",
     name: "Standard",
     category: "track",
-    supplier: "Rubicon",
     summary: "Our new spotlight, Standard, offers the same exceptional illumination as our flagship Cafeteria—but in a more compact design.",
     description: "Our new spotlight, Standard, offers the same exceptional illumination as our flagship Cafeteria—but in a more compact design. Ideal for retail and commercial spaces where space matters, Standard delivers powerful, consistent lighting performance without compromising on style. Availability In Special Colors And Applications (Meat & Bread)",
     specs: [
@@ -4777,7 +4679,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "bazuka",
     name: "Bazuka",
     category: "track",
-    supplier: "Pioled",
     summary: "3-wire track / surface mount spot for flexible accent lighting.",
     description: "3-wire track / surface mount spot for flexible accent lighting.",
     specs: [
@@ -4826,7 +4727,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "blaster",
     name: "Blaster",
     category: "track",
-    supplier: "Pioled",
     summary: "35/30/28W 3-wire track spot with 340° rotation and CRI>90.",
     description: "35/30/28W 3-wire track spot with 340° rotation and CRI>90.",
     specs: [
@@ -4869,7 +4769,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "leda",
     name: "Leda",
     category: "track",
-    supplier: "Pioled",
     summary: "3-wire track tilt IP20 linear for directional linear accent lighting.",
     description: "3-wire track tilt IP20 linear for directional linear accent lighting.",
     specs: [
@@ -4913,7 +4812,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "snypa",
     name: "Snypa",
     category: "track",
-    supplier: "Pioled",
     summary: "Track / surface GU10 fixtures for flexible lamp-based accent lighting.",
     description: "Track / surface GU10 fixtures for flexible lamp-based accent lighting.",
     specs: [
@@ -4959,7 +4857,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "neptune",
     name: "Neptune",
     category: "vapourproof",
-    supplier: "OrbitX",
     summary: "INTEGRATED IP65 LINEAR LED LIGHT.",
     description: "INTEGRATED IP65 LINEAR LED LIGHT",
     specs: [
@@ -5020,7 +4917,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "titan",
     name: "Titan",
     category: "vapourproof",
-    supplier: "OrbitX",
     summary: "INTEGRATED LINEAR LED LIGHT.",
     description: "INTEGRATED LINEAR LED LIGHT",
     specs: [
@@ -5075,7 +4971,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "saxa",
     name: "Saxa",
     category: "vapourproof",
-    supplier: "Rubicon",
     summary: "The Saxa Tri-Proof is a commercial, diffused linear with high performance LED and a IP65 rating for both indoor and outdoor commercial or industrial applications.",
     description: "The Saxa Tri-Proof is a commercial, diffused linear with high performance LED and a IP65 rating for both indoor and outdoor commercial or industrial applications.",
     specs: [
@@ -5120,7 +5015,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "metropolis",
     name: "Metropolis",
     category: "vapourproof",
-    supplier: "Rubicon",
     summary: "Metropolis is our high-performance vapour-proof LED linear fitting, engineered to deliver reliable lighting in the most demanding environments.",
     description: "Metropolis is our high-performance vapour-proof LED linear fitting, engineered to deliver reliable lighting in the most demanding environments. With durable IP66 protection and robust construction, it’s ideal for both indoor and outdoor commercial or industrial applications. Whether you’re looking for efficient standalone illumination or multiple fixtures across your space, Metropolis combines strength, longevity, and consistent performance. Polycarbonate (PC), UV stable, impact resistant.Body Seal - Polyurethane (PUR), foamed body groove.Clips - Polyamide (PA) + 15 % glass fibre or stainless steel & polyamide (PA).Cable Glands: Screwed PG 13,5, or rubber (SBS).",
     specs: [
@@ -5153,7 +5047,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "vp",
     name: "VP",
     category: "vapourproof",
-    supplier: "Ledwise",
     summary: "IP65 polycarbonate vapour-proof linear with emergency and motion sensor options.",
     description: "IP65 polycarbonate vapour-proof linear with emergency and motion sensor options.",
     specs: [
@@ -5196,7 +5089,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "kuda",
     name: "Kuda",
     category: "vapourproof",
-    supplier: "Pioled",
     summary: "IP65 wattage-selectable linear for flexible vapour-proof lighting.",
     description: "IP65 wattage-selectable linear for flexible vapour-proof lighting.",
     specs: [

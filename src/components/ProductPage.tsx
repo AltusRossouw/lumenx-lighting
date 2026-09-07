@@ -10,7 +10,6 @@ import {
   FileDown,
   FileText,
   ShieldCheck,
-  Factory,
   Layers,
   Lock,
   Target,
@@ -83,10 +82,6 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
             {/* Copy */}
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <div className="flex flex-wrap items-center gap-3 mb-4">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-mono tracking-wider uppercase rounded-full bg-primary/10 border border-primary/20 text-primary">
-                  <Factory className="w-3 h-3" />
-                  {product.supplier}
-                </span>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-mono tracking-wider uppercase rounded-full bg-white/[0.03] border border-white/10 text-slate-400">
                   {category.title}
                 </span>

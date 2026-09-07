@@ -461,6 +461,30 @@ def clean_description(s):
     return s.strip()
 
 
+# Manufacturer brand names to scrub from descriptions/summaries (rebranding —
+# the site is now LumenX, so we don't credit the supplier).
+BRAND_NAMES = [
+    'Kinglong Lighting', 'Kinglong', 'PioLED Lighting', 'PioLED', 'Pioled',
+    'OrbitX', 'Rubicon', 'Ledwise', 'LEDwise', 'LEDsC4', 'LEDSC4',
+    'Steinel', 'Superlume', 'LBY Africa', 'LBY', 'Sunfor', 'LEDVANCE',
+    'Spazio', 'Mez',
+]
+
+
+def scrub_brands(text):
+    """Remove manufacturer brand names from prose (rebranding to LumenX)."""
+    s = text or ''
+    for brand in BRAND_NAMES:
+        # "by <Brand>" / "from <Brand>" / "of <Brand>" → drop the phrase
+        s = re.sub(r'\s+(?:by|from|of)\s+' + re.escape(brand) + r'\b', ' ', s, flags=re.I)
+        # leading "<Brand> " / trailing " <Brand>"
+        s = re.sub(r'\b' + re.escape(brand) + r'\s+', '', s, flags=re.I)
+        s = re.sub(r'\s+' + re.escape(brand) + r'\b', '', s, flags=re.I)
+    # tidy leftover "word ," / "word ." from the phrase removal
+    s = re.sub(r'\s+([,.])', r'\1', s)
+    return clean_text(s)
+
+
 def parse_readme_specs(path):
     """Parse the '## Specifications' markdown table -> list of {label, value}."""
     specs = []
@@ -733,7 +757,7 @@ def build_clean_description(name, cat_title, supplier, specs, applications=None)
     apps = applications or ['commercial', 'industrial', 'architectural']
     app_phrase = ', '.join(apps[:3])
     singular = cat_singular(cat_title)
-    start = f'The {name} is {with_article(singular)} supplied by {supplier}.'
+    start = f'The {name} is a LumenX {singular}.'
     sentences = [start, f'It is designed for {app_phrase} environments.']
 
     # Add a couple of headline specs phrased naturally.
@@ -893,18 +917,21 @@ def main():
         if not description:
             members = pj.get('scrape', {}).get('members') or []
             if members and not ds_overview:
-                description = f'The {name_clean} range from {row.get("supplier", "")} includes {len(members)} products.' \
+                description = f'The {name_clean} range includes {len(members)} products.' \
                               f' Contact our team for full details on each configuration.'
             elif ds_overview:
                 description = ds_overview
             else:
                 description = build_clean_description(name_clean, cat_meta['title'], row.get('supplier', ''), specs, apps)
 
+        # Rebranding: strip any manufacturer brand name from the prose.
+        description = scrub_brands(description)
+
         # Summary (short one-liner) — a clean first sentence of the description.
         first_sentence = re.split(r'(?<=[.!?])\s', description)[0].strip()
         summary = first_sentence if 25 <= len(first_sentence) <= 200 else description[:160].strip()
         if len(summary) < 25:
-            summary = f'The {name_clean} is {with_article(cat_singular(cat_meta["title"]))} from {row.get("supplier", "LumenX")}.'
+            summary = f'The {name_clean} is a LumenX {cat_singular(cat_meta["title"])}.'
         if not summary.endswith('.'):
             summary += '.'
         summary = summary.strip()
@@ -920,6 +947,7 @@ def main():
             ds_feats = [clean_text(f) for f in ds['features'] if clean_text(f)]
             if ds_feats:
                 features = list(dict.fromkeys(ds_feats))[:8]
+        features = [scrub_brands(f) for f in features if scrub_brands(f)]
 
         # Warranty.
         warranty = derive_warranty(specs, description)
@@ -1033,7 +1061,6 @@ def main():
             'slug': slug,
             'name': name_clean,
             'category': cat_id,
-            'supplier': row.get('supplier') or '',
             'summary': summary,
             'description': description,
             'specs': specs,
@@ -1076,7 +1103,6 @@ def main():
         lines.append(f"    slug: {js_str(p['slug'])},")
         lines.append(f"    name: {js_str(p['name'])},")
         lines.append(f"    category: {js_str(p['category'])},")
-        lines.append(f"    supplier: {js_str(p['supplier'])},")
         lines.append(f"    summary: {js_str(p['summary'])},")
         lines.append(f"    description: {js_str(p['description'])},")
         # specs

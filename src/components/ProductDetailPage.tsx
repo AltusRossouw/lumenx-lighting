@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { getCategory, getProductsByCategory, getProductImages } from '../products';
-import { ArrowLeft, ArrowRight, Check, Factory, Search, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, Search, X } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
 interface ProductDetailPageProps {
@@ -213,10 +213,6 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
                       loading="lazy"
                       className="absolute inset-0 w-full h-full object-contain p-4 transition-transform duration-700"
                     />
-                    <div className="absolute top-4 left-4 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#06090F]/80 backdrop-blur border border-white/10 text-[10px] font-mono uppercase tracking-wider text-primary">
-                      <Factory className="w-3 h-3" />
-                      {product.supplier}
-                    </div>
                   </Link>
 
                   {/* Content */}

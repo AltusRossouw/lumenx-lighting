@@ -31,8 +31,6 @@ export interface Product {
   name: string;
   /** Category id this product belongs to. */
   category: string;
-  /** Manufacturer / brand the product is sourced from. */
-  supplier: string;
   /** Short one-line summary. */
   summary: string;
   /** Longer, detailed description. */
