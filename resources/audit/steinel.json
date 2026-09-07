@@ -1,0 +1,399 @@
+{
+  "LumenX-is-2360-r": {
+    "name": "IS 2360 R",
+    "summary": "Compact recessed 360° ceiling PIR motion detector with 8 m reach for hands-free, energy-saving lighting control in homes and small commercial spaces.",
+    "description": "The IS 2360 R (Steinel IS 2360 DE ECO) is a flush-mounting ceiling motion detector that switches lighting on when movement is detected and off again after an adjustable delay. Its 360° infrared coverage reaches up to 8 m, making it ideal for single rooms, corridors, stairwells and washrooms. The time (8 s – 35 min) and twilight threshold (2 – 2000 lux) are set via potentiometers, and the IP54 housing suits sheltered indoor and outdoor areas.",
+    "specs": [
+      {"label": "Detection angle", "value": "360°"},
+      {"label": "Reach", "value": "Ø 8 m (50 m²)"},
+      {"label": "Mounting height", "value": "2.2 – 4 m (max. 4 m)"},
+      {"label": "Switching capacity", "value": "1000 W max."},
+      {"label": "Twilight setting", "value": "2 – 2000 lux"},
+      {"label": "Time setting", "value": "8 s – 35 min"},
+      {"label": "IP rating", "value": "IP54"},
+      {"label": "Installation", "value": "In-ceiling"},
+      {"label": "Warranty", "value": "5 years"}
+    ],
+    "features": [
+      "360° detection with 304 switching zones and sneak-by guard",
+      "Adjustable twilight threshold (2 – 2000 lux) and switch-off delay (8 s – 35 min)",
+      "LED-ready switching up to 1000 W",
+      "IP54 protection for sheltered indoor and outdoor use",
+      "Interconnection of multiple sensors (master/master)"
+    ],
+    "applications": [
+      "Corridors and stairwells",
+      "Utility rooms, toilets and washrooms",
+      "Porches and entrances",
+      "Small offices and store rooms"
+    ]
+  },
+  "LumenX-is-2360-s": {
+    "name": "IS 2360 S",
+    "summary": "Surface-mounted 360° ceiling PIR sensor with 7 m reach and 2000 W switching capacity for reliable energy-saving lighting control.",
+    "description": "The IS 2360 S (Steinel IS 2360 ECO) is a surface-mounted ceiling motion detector for porches, small rooms and transitional indoor/outdoor areas. It offers 360° detection up to 7 m, an adjustable twilight threshold of 2 – 2000 lux and a switch-off delay of 8 s – 35 min. The IP54 body switches loads up to 2000 W and supports interconnection of up to five sensors.",
+    "specs": [
+      {"label": "Detection angle", "value": "360°"},
+      {"label": "Reach", "value": "Ø 7 m (38 m²)"},
+      {"label": "Mounting height", "value": "2 – 4 m (max. 4 m)"},
+      {"label": "Switching capacity", "value": "2000 W max."},
+      {"label": "Twilight setting", "value": "2 – 2000 lux"},
+      {"label": "Time setting", "value": "8 s – 35 min"},
+      {"label": "IP rating", "value": "IP54"},
+      {"label": "Installation", "value": "Surface / ceiling"},
+      {"label": "Warranty", "value": "5 years"}
+    ],
+    "features": [
+      "360° detection with 664 switching zones and sneak-by guard",
+      "Adjustable twilight (2 – 2000 lux) and time (8 s – 35 min) settings",
+      "Switching up to 2000 W (resistive), LED-ready",
+      "IP54 protection for indoor and sheltered outdoor use",
+      "Interconnection of up to 5 sensors (master/master)"
+    ],
+    "applications": [
+      "Porches and small rooms",
+      "Corridors and stairwells",
+      "Changing rooms and kitchenettes",
+      "Washrooms and ancillary rooms"
+    ]
+  },
+  "LumenX-light-sensor": {
+    "name": "Light Sensor",
+    "summary": "KNX photoelectric lighting controller that measures daylight with two lenses to keep interior lighting constant.",
+    "description": "The Light Sensor (Steinel Light Sensor DUAL) is a KNX bus device that continuously measures ambient light with two lenses — one directed and one diffuse — and controls two lighting outputs for constant-light and twilight switching. It installs flush in a ceiling or wall up to 4 m high and is configured via ETS software, a remote control or the Smart Remote. The twilight threshold is adjustable from 2 – 1000 lux with 0 – 100% light-level control.",
+    "specs": [
+      {"label": "Function", "value": "KNX constant-light / twilight controller (2 light outputs)"},
+      {"label": "Twilight setting", "value": "2 – 1000 lux"},
+      {"label": "Mounting height", "value": "max. 4 m"},
+      {"label": "Power supply", "value": "KNX bus (12.5 mA)"},
+      {"label": "Settings via", "value": "ETS software, remote control, Smart Remote"},
+      {"label": "IP rating", "value": "IP20"},
+      {"label": "Installation", "value": "Ceiling / wall, flush (concealed)"},
+      {"label": "Warranty", "value": "5 years"}
+    ],
+    "features": [
+      "Two lenses (directed + diffuse) for accurate daylight measurement",
+      "Constant-lighting control with 0 – 100% adjustable light level",
+      "KNX logic and two light outputs",
+      "Configured via ETS, remote control or Smart Remote"
+    ],
+    "applications": [
+      "Classrooms and conference rooms",
+      "One-person and open-plan offices",
+      "High-bay warehouses",
+      "Daylight-dependent lighting control"
+    ]
+  },
+  "LumenX-dualtech": {
+    "name": "DualTech",
+    "summary": "In-ceiling presence detector combining ultrasonic and passive-infrared sensing for 360° coverage of offices and meeting rooms.",
+    "description": "The DualTech (Steinel Presence Control PRO DualTech) pairs a 40 kHz ultrasonic sensor with a passive-infrared sensor and a light sensor, ensuring reliable presence detection even behind partitions and out of direct sight. It provides 360° coverage with an ultrasonic reach of up to 10 m and switches loads up to 2000 W. Designed for in-ceiling mounting at 2.5 – 3.5 m, it is ideal for open-plan offices, classrooms and conference rooms.",
+    "specs": [
+      {"label": "Detection angle", "value": "360°"},
+      {"label": "Sensor technology", "value": "Ultrasonic (40 kHz) + PIR + light sensor"},
+      {"label": "Reach", "value": "Ultrasonic Ø 10 m · PIR Ø 8 m"},
+      {"label": "Mounting height", "value": "2.5 – 3.5 m (max. 3.5 m)"},
+      {"label": "Switching capacity", "value": "2000 W max."},
+      {"label": "Twilight setting", "value": "10 – 1000 lux"},
+      {"label": "Time setting", "value": "30 s – 30 min"},
+      {"label": "IP rating", "value": "IP20"},
+      {"label": "Installation", "value": "In-ceiling"},
+      {"label": "Warranty", "value": "5 years"}
+    ],
+    "features": [
+      "Ultrasonic + PIR dual technology detects presence behind partitions",
+      "520 switching zones with sneak-by guard",
+      "Semi-/fully automatic and pushbutton/switch modes",
+      "Master/master and master/slave interconnection (up to 10 sensors)"
+    ],
+    "applications": [
+      "Open-plan and one-person offices",
+      "Classrooms and conference rooms",
+      "Recreation and duty rooms"
+    ]
+  },
+  "LumenX-is-3360": {
+    "name": "IS 3360",
+    "summary": "High-precision 360° in-ceiling PIR presence detector with up to 40 m reach for large indoor spaces.",
+    "description": "The IS 3360 (Steinel Presence Control PRO IS 3360) is a flush-mounting ceiling PIR presence/motion detector with 360° detection and a tangential reach of up to 40 m. It offers high sensitivity with 1416 switching zones, a twilight threshold of 2 – 1000 lux and a switch-off delay of 5 s – 15 min. Rated for 2000 W switching, it suits warehouses, sports halls, stairwells and production areas.",
+    "specs": [
+      {"label": "Detection angle", "value": "360°"},
+      {"label": "Reach", "value": "Ø 40 m tangential (1257 m²)"},
+      {"label": "Mounting height", "value": "2.5 – 4 m (max. 4 m)"},
+      {"label": "Switching capacity", "value": "2000 W max."},
+      {"label": "Twilight setting", "value": "2 – 1000 lux"},
+      {"label": "Time setting", "value": "5 s – 15 min"},
+      {"label": "IP rating", "value": "IP20"},
+      {"label": "Installation", "value": "In-ceiling"},
+      {"label": "Warranty", "value": "5 years"}
+    ],
+    "features": [
+      "1416 switching zones for high-precision presence detection",
+      "Sneak-by guard and segment masking",
+      "Twilight TEACH and manual ON/OFF functions",
+      "Interconnection of up to 10 sensors"
+    ],
+    "applications": [
+      "Warehouses and production facilities",
+      "Sports halls and reception lobbies",
+      "Stairwells and underground car parks",
+      "Changing rooms and washrooms"
+    ]
+  },
+  "LumenX-is-3360-highbay": {
+    "name": "IS 3360 Highbay",
+    "summary": "Surface-mounted 360° PIR high-bay sensor with 36 m reach for warehouses and sports halls up to 14 m high.",
+    "description": "The IS 3360 MX Highbay is a surface-mounted PIR motion detector for high-bay areas with mounting heights of 4 – 14 m. It delivers 360° detection with a tangential reach of up to 36 m and an IP54 housing. Twilight (2 – 1000 lux) and time (5 s – 15 min) settings allow energy-saving automatic switching of up to 2000 W.",
+    "specs": [
+      {"label": "Detection angle", "value": "360°"},
+      {"label": "Reach", "value": "Ø 36 m tangential (1018 m²)"},
+      {"label": "Mounting height", "value": "4 – 14 m (max. 14 m)"},
+      {"label": "Switching capacity", "value": "2000 W max."},
+      {"label": "Twilight setting", "value": "2 – 1000 lux"},
+      {"label": "Time setting", "value": "5 s – 15 min"},
+      {"label": "IP rating", "value": "IP54"},
+      {"label": "Installation", "value": "Surface / ceiling"},
+      {"label": "Warranty", "value": "5 years"}
+    ],
+    "features": [
+      "1416 switching zones for precise high-bay detection",
+      "IP54 housing for dusty/industrial environments",
+      "Sneak-by guard and segment masking",
+      "Interconnection of up to 10 sensors"
+    ],
+    "applications": [
+      "High-bay warehouses",
+      "Sports halls",
+      "Industrial and logistics areas"
+    ]
+  },
+  "LumenX-is-345-highbay": {
+    "name": "IS 345 Highbay",
+    "summary": "Aisle-optimised 360° PIR high-bay sensor covering 30 × 4 m for racking aisles up to 16 m high.",
+    "description": "The IS 345 MX Highbay is a surface-mounted PIR motion detector with an aisle lens that produces a 30 × 4 m detection zone, ideal for racking aisles and high-bay warehouses. It mounts at 4 – 16 m, provides 360° coverage with 280 switching zones, and switches loads up to 2000 W. Twilight (2 – 1000 lux) and time (5 s – 15 min) are adjustable.",
+    "specs": [
+      {"label": "Detection angle", "value": "360° (aisle lens)"},
+      {"label": "Reach", "value": "30 × 4 m (120 m²)"},
+      {"label": "Mounting height", "value": "4 – 16 m (max. 16 m)"},
+      {"label": "Switching capacity", "value": "2000 W max."},
+      {"label": "Twilight setting", "value": "2 – 1000 lux"},
+      {"label": "Time setting", "value": "5 s – 15 min"},
+      {"label": "IP rating", "value": "IP54"},
+      {"label": "Installation", "value": "Surface / ceiling"},
+      {"label": "Warranty", "value": "5 years"}
+    ],
+    "features": [
+      "Aisle lens for rectangular 30 × 4 m racking-aisle coverage",
+      "280 switching zones with sneak-by guard",
+      "IP54 housing for industrial environments",
+      "Interconnection of up to 10 sensors"
+    ],
+    "applications": [
+      "High-bay warehouses",
+      "Racking aisles and narrow-aisle storage"
+    ]
+  },
+  "LumenX-dual-hf-corridor": {
+    "name": "Dual HF Corridor",
+    "summary": "In-ceiling 5.8 GHz high-frequency presence detector covering a 20 × 3 m corridor zone.",
+    "description": "The Dual HF Corridor (Steinel Presence Control PRO Dual HF) uses 5.8 GHz high-frequency technology that detects movement through glass, wood and stud walls, plus a light sensor for constant-lighting control. Its aisle lens produces a 20 × 3 m detection zone for corridors, with 360° coverage and a twilight threshold of 10 – 1000 lux. It is designed for in-ceiling mounting at 2.5 – 3.5 m and switches up to 2000 W.",
+    "specs": [
+      {"label": "Detection angle", "value": "360° (aisle lens)"},
+      {"label": "Sensor technology", "value": "5.8 GHz high frequency + light sensor"},
+      {"label": "Reach", "value": "20 × 3 m (60 m²)"},
+      {"label": "Mounting height", "value": "2.5 – 3.5 m (max. 3.5 m)"},
+      {"label": "Switching capacity", "value": "2000 W max."},
+      {"label": "Twilight setting", "value": "10 – 1000 lux"},
+      {"label": "Time setting", "value": "30 s – 30 min"},
+      {"label": "IP rating", "value": "IP20"},
+      {"label": "Installation", "value": "In-ceiling"},
+      {"label": "Warranty", "value": "5 years"}
+    ],
+    "features": [
+      "5.8 GHz detection through glass, wood and stud walls",
+      "Aisle lens for 20 × 3 m corridor coverage",
+      "Semi-/fully automatic and pushbutton/switch modes",
+      "Master/master and master/slave interconnection (up to 10 sensors)"
+    ],
+    "applications": [
+      "Corridors and aisles",
+      "Transition and circulation areas"
+    ]
+  },
+  "LumenX-hf-360": {
+    "name": "HF 360",
+    "summary": "In-ceiling 5.8 GHz high-frequency presence detector with 360° detection and up to 12 m reach.",
+    "description": "The HF 360 (Steinel Presence Control PRO HF 360) is a flush-mounting ceiling presence detector using 5.8 GHz high-frequency sensing that sees through non-metallic obstructions. It offers 360° detection with a reach of up to 12 m, a twilight threshold of 10 – 1000 lux and a time setting of 30 s – 30 min. Rated IP20 for indoor use, it switches loads up to 2000 W.",
+    "specs": [
+      {"label": "Detection angle", "value": "360°"},
+      {"label": "Sensor technology", "value": "5.8 GHz high frequency + light sensor"},
+      {"label": "Reach", "value": "Ø 12 m (113 m²)"},
+      {"label": "Mounting height", "value": "2.5 – 3.5 m (max. 3.5 m)"},
+      {"label": "Switching capacity", "value": "2000 W max."},
+      {"label": "Twilight setting", "value": "10 – 1000 lux"},
+      {"label": "Time setting", "value": "30 s – 30 min"},
+      {"label": "IP rating", "value": "IP20"},
+      {"label": "Installation", "value": "Concealed / ceiling"},
+      {"label": "Warranty", "value": "5 years"}
+    ],
+    "features": [
+      "5.8 GHz detection through non-metallic materials",
+      "Segment masking and sneak-by guard",
+      "Semi-/fully automatic and pushbutton/switch modes",
+      "Master/master and master/slave interconnection"
+    ],
+    "applications": [
+      "Function and ancillary rooms",
+      "Kitchenettes and stairwells",
+      "Washrooms"
+    ]
+  },
+  "LumenX-is-2180": {
+    "name": "IS 2180",
+    "summary": "Wall-mounted 180° PIR motion detector with up to 12 m reach for outdoor and entrance lighting.",
+    "description": "The IS 2180 (Steinel IS 2180 ECO) is a surface-mounted wall/corner PIR motion detector for outdoor and entrance areas. It offers 180° detection with a reach of up to 12 m, a twilight threshold of 2 – 2000 lux and a switch-off delay of 10 s – 15 min. The IP54 housing switches up to 2000 W and provides a sneak-by guard for reliable coverage.",
+    "specs": [
+      {"label": "Detection angle", "value": "180°"},
+      {"label": "Reach", "value": "12 m max. tangential (226 m²)"},
+      {"label": "Mounting height", "value": "1.8 – 4 m (max. 4 m)"},
+      {"label": "Switching capacity", "value": "2000 W max."},
+      {"label": "Twilight setting", "value": "2 – 2000 lux"},
+      {"label": "Time setting", "value": "10 s – 15 min"},
+      {"label": "IP rating", "value": "IP54"},
+      {"label": "Installation", "value": "Wall / corner"},
+      {"label": "Warranty", "value": "5 years"}
+    ],
+    "features": [
+      "180° detection with 504 switching zones and sneak-by guard",
+      "Adjustable twilight (2 – 2000 lux) and time (10 s – 15 min) settings",
+      "Switching up to 2000 W, LED-ready",
+      "IP54 for outdoor and entrance use"
+    ],
+    "applications": [
+      "Entrances and front doors",
+      "Terraces, balconies and driveways",
+      "Around buildings"
+    ]
+  },
+  "LumenX-ir-quattro-micro": {
+    "name": "IR Quattro Micro",
+    "summary": "Compact in-ceiling 360° PIR presence detector with 6 × 6 m reach and IP65 rating.",
+    "description": "The IR Quattro Micro (Steinel IR Quattro MICRO) is a small flush-mounting ceiling presence detector for offices, hotel rooms, care rooms and washrooms. It provides 360° detection with a reach of up to 6 × 6 m, a twilight threshold of 2 – 1000 lux and a time setting of 5 s – 60 min. Its IP65 housing allows use in damp areas, and it switches loads up to 1000 W.",
+    "specs": [
+      {"label": "Detection angle", "value": "360°"},
+      {"label": "Reach", "value": "6 × 6 m (36 m²)"},
+      {"label": "Mounting height", "value": "2.5 – 4 m (max. 4 m)"},
+      {"label": "Switching capacity", "value": "1000 W max."},
+      {"label": "Twilight setting", "value": "2 – 1000 lux"},
+      {"label": "Time setting", "value": "5 s – 60 min"},
+      {"label": "IP rating", "value": "IP65"},
+      {"label": "Installation", "value": "In-ceiling"},
+      {"label": "Warranty", "value": "5 years"}
+    ],
+    "features": [
+      "Compact 43 mm diameter in-ceiling design",
+      "IP65 for damp areas such as washrooms",
+      "Sneak-by guard and semi-/fully automatic modes",
+      "Master/master and master/slave interconnection"
+    ],
+    "applications": [
+      "One-person offices and hotel rooms",
+      "Care rooms and washrooms",
+      "Function and ancillary rooms"
+    ]
+  },
+  "LumenX-ir-quattro-hd": {
+    "name": "IR Quattro HD",
+    "summary": "High-definition 360° in-ceiling PIR presence detector with up to 20 × 20 m reach and 4800 switching zones.",
+    "description": "The IR Quattro HD (Steinel Presence Control PRO IR Quattro HD) is a flush-mounting ceiling PIR presence detector with 360° detection, up to 20 × 20 m reach and 4800 switching zones for fine-grained presence detection. It mounts at 2.5 – 10 m, with a twilight threshold of 10 – 1000 lux and a time setting of 30 s – 30 min. Suitable for classrooms, lecture halls, offices and car parks, it switches up to 2000 W.",
+    "specs": [
+      {"label": "Detection angle", "value": "360°"},
+      {"label": "Reach", "value": "20 × 20 m (400 m²)"},
+      {"label": "Mounting height", "value": "2.5 – 10 m (max. 10 m)"},
+      {"label": "Switching capacity", "value": "2000 W max."},
+      {"label": "Twilight setting", "value": "10 – 1000 lux"},
+      {"label": "Time setting", "value": "30 s – 30 min"},
+      {"label": "IP rating", "value": "IP20"},
+      {"label": "Installation", "value": "Concealed / ceiling"},
+      {"label": "Warranty", "value": "5 years"}
+    ],
+    "features": [
+      "4800 switching zones for high-definition presence detection",
+      "Mechanical scalability and sneak-by guard",
+      "Constant-lighting control function",
+      "Master/master and master/slave interconnection (up to 10 sensors)"
+    ],
+    "applications": [
+      "Classrooms and lecture halls",
+      "Open-plan offices and meeting rooms",
+      "Production facilities and sports halls",
+      "Underground car parks"
+    ]
+  },
+  "LumenX-sensiq-s": {
+    "name": "Sens IQ S",
+    "summary": "Smart wall-mounted 300° outdoor PIR sensor with up to 20 m reach and included remote control.",
+    "description": "The Sens IQ S is a surface-mounted wall/corner PIR motion detector for outdoor and indoor use, offering 300° detection with a reach of up to 20 m. It features a twilight threshold of 2 – 1000 lux and a time setting of 5 s – 15 min, with 1360 switching zones and a sneak-by guard. Supplied with a remote control, the IP54 unit switches loads up to 2000 W.",
+    "specs": [
+      {"label": "Detection angle", "value": "300°"},
+      {"label": "Reach", "value": "20 m tangential (1047 m²)"},
+      {"label": "Mounting height", "value": "2 – 5 m (max. 5 m)"},
+      {"label": "Switching capacity", "value": "2000 W max."},
+      {"label": "Twilight setting", "value": "2 – 1000 lux"},
+      {"label": "Time setting", "value": "5 s – 15 min"},
+      {"label": "IP rating", "value": "IP54"},
+      {"label": "Installation", "value": "Wall / corner (surface)"},
+      {"label": "Warranty", "value": "5 years"}
+    ],
+    "features": [
+      "300° detection with 1360 switching zones and sneak-by guard",
+      "Supplied with remote control for easy setup",
+      "Mechanical scalability and segment masking",
+      "Wide 100 – 240 V mains supply"
+    ],
+    "applications": [
+      "Entrances and driveways",
+      "Around buildings",
+      "Warehouses and underground car parks",
+      "Courtyards"
+    ]
+  },
+  "LumenX-smart-remote": {
+    "name": "Smart Remote",
+    "summary": "IR remote control for convenient wireless configuration of Steinel Professional Line sensors.",
+    "description": "The Smart Remote is a handheld infrared remote for adjusting Steinel sensor settings such as twilight threshold, time delay and operating mode without ladders or tools. It is powered by two AAA batteries and works with Steinel sensors that support Smart Remote configuration, including the 3000 series and Control PRO range.",
+    "specs": [
+      {"label": "Function", "value": "IR remote control for sensor settings"},
+      {"label": "Compatibility", "value": "Steinel sensors with Smart Remote support (3000 series, Control PRO)"},
+      {"label": "Battery", "value": "2 × AAA"},
+      {"label": "Warranty", "value": "5 years"}
+    ],
+    "features": [
+      "Wireless adjustment of twilight, time and operating modes",
+      "Compact handheld design (26 × 52 × 115 mm)",
+      "No tools or ladders required for setup"
+    ],
+    "applications": [
+      "Configuring Steinel motion and presence detectors",
+      "Installer and end-user setup"
+    ]
+  },
+  "LumenX-service-remote": {
+    "name": "Service Remote",
+    "summary": "Installer service remote for commissioning and programming Steinel Control PRO sensors.",
+    "description": "The Service Remote (Steinel RC8) is a service remote for installers to commission and program Steinel Control PRO sensors, including COM1, COM2 and DALI versions. It provides convenient access to installation and test functions during setup, complementing the Smart Remote for day-to-day settings.",
+    "specs": [
+      {"label": "Function", "value": "Service/commissioning remote for sensors"},
+      {"label": "Compatibility", "value": "Steinel Control PRO sensors (COM1, COM2, DALI)"},
+      {"label": "Warranty", "value": "5 years"}
+    ],
+    "features": [
+      "Installer commissioning of Control PRO sensors",
+      "Compact design (6 × 56 × 94 mm)"
+    ],
+    "applications": [
+      "Commissioning and programming Steinel sensors",
+      "Installer setup and testing"
+    ]
+  }
+}
