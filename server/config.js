@@ -43,6 +43,12 @@ export const config = Object.freeze({
   // Manual admin approval is performed by a human holding this key.
   adminApiKey: process.env.ADMIN_API_KEY || '',
 
+  // Maintenance mode — when true, the whole site (SPA + API) is replaced by a
+  // static maintenance page (HTTP 503). /api/health stays up for the container
+  // probe. In production this is forced ON via docker-compose (see
+  // MAINTENANCE_MODE there); set MAINTENANCE_MODE=false to bring the site back.
+  maintenanceMode: toBool(process.env.MAINTENANCE_MODE, false),
+
   // IES walled garden — protected directory (never served as static files).
   iesDir: path.resolve(process.env.IES_DIR || path.join(__dirname, 'files', 'ies')),
 

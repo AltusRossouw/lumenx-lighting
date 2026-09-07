@@ -45,6 +45,9 @@ services:
       RESEND_FROM: "LumenX Lighting <leads@lumenx.co.za>"
       LEAD_NOTIFY_EMAIL: info@lumenx.co.za
       CORS_ORIGINS: https://www.lumenx.co.za
+      # Maintenance mode defaults ON on `main` (the branch production deploys).
+      # Set MAINTENANCE_MODE=false in the stack env to bring the site back.
+      MAINTENANCE_MODE: ${MAINTENANCE_MODE:-true}
     ports:
       - "4000:4000" # NPM (separate container) proxies to host:4000
     healthcheck:
