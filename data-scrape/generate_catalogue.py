@@ -177,14 +177,21 @@ def load_image_type_index():
 def image_type_rank(folder_rel, fname, kind):
     """Rank for ordering a product's images (lower sorts first).
 
-    Falls back to the 'kind' field when the index has no entry.
+    Falls back to the 'kind' field when the index has no entry. Overrides the
+    scrape's unreliable 'diagram/drawing' type when the filename clearly
+    indicates a real product photo (many Pioled member photos were mis-typed).
     """
     lookup = load_image_type_index()
     t = lookup.get((folder_rel, fname))
+    # True diagrams are named dimensions/schaltplan/driver/drawing. A
+    # 'diagram/drawing' type on a normal product filename is a misclass.
+    looks_diagram = bool(re.search(r'\b(dimension|schaltplan|drawing|spec|diagram|datasheet|driver)\b', fname.lower()))
+    if t == 'diagram/drawing' and not looks_diagram:
+        t = 'product'
     if t:
         return IMAGE_TYPE_RANK.get(t, 5)
     # Heuristic fallback: filename contains dimension/drawing words.
-    if re.search(r'\b(dim|drawing|schaltplan|spec|diagram|datasheet)\b', fname.lower()):
+    if looks_diagram:
         return 6
     if kind in ('doc',):
         return 6
@@ -973,13 +980,17 @@ def main():
             # Fallback placeholder so the page still renders.
             image_objs = [{'src': f'/product-images/categories/{cat_id}.jpg', 'fit': 'cover', 'alt': name_clean}]
 
-        # Fall back to the curated datasheet hero ONLY for collection-page
-        # products (whose scraped images are all low-quality 'member-*' cards),
-        # e.g. GU10 / Bazuka / Snypa. Real products keep their new scraped photo.
-        scraped_names = [os.path.basename(im['src']) for im in image_objs if im['src'].startswith('/scraped/')]
-        is_collection = bool(scraped_names) and all(n.startswith('member-') for n in scraped_names)
+        # Fall back to the curated datasheet hero ONLY when the product has no
+        # usable scraped photo. A scraped photo counts as usable if its larger
+        # dimension is ≥400px (a wide 800×383 render is fine) — this avoids
+        # overriding real product photos with the old 300px curated renders.
+        has_good_scraped = any(
+            im['src'].startswith('/scraped/')
+            and max(im.get('width') or 0, im.get('height') or 0) >= 400
+            for im in image_objs
+        )
         hero_path = datasheet_hero(ds)
-        if hero_path and is_collection:
+        if hero_path and not has_good_scraped:
             if not (image_objs and image_objs[0]['src'] == hero_path):
                 hero_w = hero_h = None
                 hero_abs = os.path.join(ROOT, 'public', hero_path.lstrip('/'))

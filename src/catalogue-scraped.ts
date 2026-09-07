@@ -327,9 +327,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Underground parking",
       "Stairwells",
     ],
-    imageUrl: "/product-images/bunker.png",// hero
+    imageUrl: "/scraped/bulkheads/bunker/member-01-pioled-lighting-ic014e-12-16-18w-ip65-4cct-bunker-die-cast-aluminium-b.png",// hero
     images: [
-      { src: "/product-images/bunker.png", fit: "contain", alt: "Bunker", width: 300, height: 300 },
       { src: "/scraped/bulkheads/bunker/member-01-pioled-lighting-ic014e-12-16-18w-ip65-4cct-bunker-die-cast-aluminium-b.png", fit: "contain", alt: "member-01-pioled-lighting-ic014e-12-16-18w-ip65-4cct-bunker-die-cast-aluminium-b.png", width: 600, height: 600 },
       { src: "/scraped/bulkheads/bunker/member-02-pioled-lighting-ic018-bunker-aluminium-ip65-bulkhead-black-square-600x.png", fit: "contain", alt: "member-02-pioled-lighting-ic018-bunker-aluminium-ip65-bulkhead-black-square-600x.png", width: 600, height: 600 },
       { src: "/scraped/bulkheads/bunker/member-03-pioled-lighting-ic014-bunker-aluminium-ip65-bulkhead-black-1.png", fit: "contain", alt: "member-03-pioled-lighting-ic014-bunker-aluminium-ip65-bulkhead-black-1.png", width: 1024, height: 1024 },
@@ -450,10 +449,10 @@ export const SCRAPED_PRODUCTS: Product[] = [
     imageUrl: "/scraped/downlights/cob-anti-glare-downlight/01-cob-dr-s.png",// hero
     images: [
       { src: "/scraped/downlights/cob-anti-glare-downlight/01-cob-dr-s.png", fit: "contain", alt: "01-cob-dr-s.png", width: 1000, height: 1000 },
-      { src: "/scraped/downlights/cob-anti-glare-downlight/03-cob-dr-m.png", fit: "contain", alt: "03-cob-dr-m.png", width: 1000, height: 1000 },
-      { src: "/scraped/downlights/cob-anti-glare-downlight/05-cob-dr-l.png", fit: "contain", alt: "05-cob-dr-l.png", width: 1000, height: 1000 },
       { src: "/scraped/downlights/cob-anti-glare-downlight/02-cob-dr-s-dimensions-1.png", fit: "contain", alt: "02-cob-dr-s-dimensions-1.png", width: 1058, height: 1058 },
+      { src: "/scraped/downlights/cob-anti-glare-downlight/03-cob-dr-m.png", fit: "contain", alt: "03-cob-dr-m.png", width: 1000, height: 1000 },
       { src: "/scraped/downlights/cob-anti-glare-downlight/04-cob-dr-m-dimensions.png", fit: "contain", alt: "04-cob-dr-m-dimensions.png", width: 1058, height: 1058 },
+      { src: "/scraped/downlights/cob-anti-glare-downlight/05-cob-dr-l.png", fit: "contain", alt: "05-cob-dr-l.png", width: 1000, height: 1000 },
       { src: "/scraped/downlights/cob-anti-glare-downlight/06-cob-dr-l-dimensions.png", fit: "contain", alt: "06-cob-dr-l-dimensions.png", width: 1058, height: 1058 },
     ],
     pdfUrl: "/api/download/datasheet/cob-anti-glare-downlight.pdf",
@@ -724,9 +723,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Hospitality",
       "Commercial interiors",
     ],
-    imageUrl: "/product-images/legend.png",// hero
+    imageUrl: "/scraped/downlights/legend/member-01-pioled-lighting-i063-35w-legend-recessed-round-led-downlight-3cct-ip44.jpg",// hero
     images: [
-      { src: "/product-images/legend.png", fit: "contain", alt: "Legend", width: 1024, height: 1024 },
       { src: "/scraped/downlights/legend/member-01-pioled-lighting-i063-35w-legend-recessed-round-led-downlight-3cct-ip44.jpg", fit: "contain", alt: "member-01-pioled-lighting-i063-35w-legend-recessed-round-led-downlight-3cct-ip44.jpg", width: 1024, height: 1024 },
       { src: "/scraped/downlights/legend/member-02-pioled-lighting-i061-20w-legend-recessed-round-led-downlight-3cct-ip44.jpg", fit: "contain", alt: "member-02-pioled-lighting-i061-20w-legend-recessed-round-led-downlight-3cct-ip44.jpg", width: 1024, height: 1024 },
       { src: "/scraped/downlights/legend/member-03-pioled-lighting-i060-10w-legend-recessed-round-led-downlight-3cct-ip44.jpg", fit: "contain", alt: "member-03-pioled-lighting-i060-10w-legend-recessed-round-led-downlight-3cct-ip44.jpg", width: 1024, height: 1024 },
@@ -777,11 +775,10 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Hospitality",
       "Display",
     ],
-    imageUrl: "/product-images/gu10.png",// hero
+    imageUrl: "/scraped/downlights/gu10-downlight/member-01-pioled-lighting-d001-6-5w-vers-non-dimmable-gu10-3cct-1.jpg",// hero
     images: [
-      { src: "/product-images/gu10.png", fit: "contain", alt: "GU10 Downlight", width: 300, height: 300 },
-      { src: "/scraped/downlights/gu10-downlight/member-04-pioled-lighting-im028-im102-14w-led-retrofit-module.png", fit: "contain", alt: "member-04-pioled-lighting-im028-im102-14w-led-retrofit-module.png", width: 1024, height: 1024 },
       { src: "/scraped/downlights/gu10-downlight/member-01-pioled-lighting-d001-6-5w-vers-non-dimmable-gu10-3cct-1.jpg", fit: "contain", alt: "member-01-pioled-lighting-d001-6-5w-vers-non-dimmable-gu10-3cct-1.jpg", width: 1024, height: 1024 },
+      { src: "/scraped/downlights/gu10-downlight/member-04-pioled-lighting-im028-im102-14w-led-retrofit-module.png", fit: "contain", alt: "member-04-pioled-lighting-im028-im102-14w-led-retrofit-module.png", width: 1024, height: 1024 },
     ],
   },
   {
@@ -823,9 +820,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Accent lighting",
       "Commercial interiors",
     ],
-    imageUrl: "/product-images/pakman.png",// hero
+    imageUrl: "/scraped/downlights/surface-adjustable-downlight/member-01-pioled-lighting-hd026-35w-pakman-3cct-tiltable-surface-mount-downlight.jpg",// hero
     images: [
-      { src: "/product-images/pakman.png", fit: "contain", alt: "Surface Adjustable Downlight", width: 1024, height: 1024 },
       { src: "/scraped/downlights/surface-adjustable-downlight/member-01-pioled-lighting-hd026-35w-pakman-3cct-tiltable-surface-mount-downlight.jpg", fit: "contain", alt: "member-01-pioled-lighting-hd026-35w-pakman-3cct-tiltable-surface-mount-downlight.jpg", width: 1024, height: 1024 },
       { src: "/scraped/downlights/surface-adjustable-downlight/member-02-pioled-lighting-hd024-25w-pakman-3cct-tiltable-surface-mount-downlight.jpg", fit: "contain", alt: "member-02-pioled-lighting-hd024-25w-pakman-3cct-tiltable-surface-mount-downlight.jpg", width: 1024, height: 1024 },
       { src: "/scraped/downlights/surface-adjustable-downlight/member-03-pioled-lighting-hd022-15w-pakman-3cct-tiltable-surface-mount-downlight.jpg", fit: "contain", alt: "member-03-pioled-lighting-hd022-15w-pakman-3cct-tiltable-surface-mount-downlight.jpg", width: 1024, height: 1024 },
@@ -1137,8 +1133,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Workshops",
       "High-ceiling spaces",
     ],
-    imageUrl: "/product-images/categories/highbays.jpg",// hero
+    imageUrl: "/product-images/raptor.png",// hero
     images: [
+      { src: "/product-images/raptor.png", fit: "contain", alt: "Raptor", width: 300, height: 300 },
       { src: "/product-images/categories/highbays.jpg", fit: "cover", alt: "Raptor" },
     ],
   },
@@ -2304,9 +2301,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Architectural interiors",
       "Cove lighting",
     ],
-    imageUrl: "/product-images/soniq.png",// hero
+    imageUrl: "/scraped/linears/soniq/member-01-pioled-lighting-ll709-8ft-3-wattage-soniq-seamless-linkable-linear-lig.png",// hero
     images: [
-      { src: "/product-images/soniq.png", fit: "contain", alt: "Soniq", width: 300, height: 300 },
       { src: "/scraped/linears/soniq/member-01-pioled-lighting-ll709-8ft-3-wattage-soniq-seamless-linkable-linear-lig.png", fit: "contain", alt: "member-01-pioled-lighting-ll709-8ft-3-wattage-soniq-seamless-linkable-linear-lig.png", width: 1024, height: 1024 },
       { src: "/scraped/linears/soniq/member-02-pioled-lighting-ll707-10w-1ft-soniq-seamless-linkable-linear-light-3cc.png", fit: "contain", alt: "member-02-pioled-lighting-ll707-10w-1ft-soniq-seamless-linkable-linear-light-3cc.png", width: 1024, height: 1024 },
       { src: "/scraped/linears/soniq/member-03-pioled-lighting-ll705-4ft-soniq-seamless-linkable-linear-light-3cct-bl.png", fit: "contain", alt: "member-03-pioled-lighting-ll705-4ft-soniq-seamless-linkable-linear-light-3cct-bl.png", width: 1024, height: 1024 },
@@ -3857,8 +3853,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Corridors",
       "Parking",
     ],
-    imageUrl: "/product-images/categories/sensors.jpg",// hero
+    imageUrl: "/product-images/steinel-is-3360.png",// hero
     images: [
+      { src: "/product-images/steinel-is-3360.png", fit: "contain", alt: "IS 3360", width: 360, height: 360 },
       { src: "/product-images/categories/sensors.jpg", fit: "cover", alt: "IS 3360" },
     ],
   },
@@ -3896,8 +3893,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Corridors",
       "Parking",
     ],
-    imageUrl: "/product-images/categories/sensors.jpg",// hero
+    imageUrl: "/product-images/steinel-is-3360-highbay.png",// hero
     images: [
+      { src: "/product-images/steinel-is-3360-highbay.png", fit: "contain", alt: "IS 3360 Highbay", width: 360, height: 360 },
       { src: "/product-images/categories/sensors.jpg", fit: "cover", alt: "IS 3360 Highbay" },
     ],
   },
@@ -3935,8 +3933,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Corridors",
       "Parking",
     ],
-    imageUrl: "/product-images/categories/sensors.jpg",// hero
+    imageUrl: "/product-images/steinel-is-345-highbay.png",// hero
     images: [
+      { src: "/product-images/steinel-is-345-highbay.png", fit: "contain", alt: "IS 345 Highbay", width: 360, height: 360 },
       { src: "/product-images/categories/sensors.jpg", fit: "cover", alt: "IS 345 Highbay" },
     ],
   },
@@ -4811,17 +4810,16 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Galleries",
       "Accent lighting",
     ],
-    imageUrl: "/product-images/bazuka.png",// hero
+    imageUrl: "/scraped/track/bazuka/member-01-pioled-lighting-tkb099-25w-bazuka-3-wire-track-3cct-honeycomb-black.png",// hero
     images: [
-      { src: "/product-images/bazuka.png", fit: "contain", alt: "Bazuka", width: 1024, height: 1024 },
-      { src: "/scraped/track/bazuka/member-04-pioled-lighting-tsb100-35w-surface-bazuka-black-honeycomb-3cct.jpg", fit: "contain", alt: "member-04-pioled-lighting-tsb100-35w-surface-bazuka-black-honeycomb-3cct.jpg", width: 1024, height: 1024 },
       { src: "/scraped/track/bazuka/member-01-pioled-lighting-tkb099-25w-bazuka-3-wire-track-3cct-honeycomb-black.png", fit: "contain", alt: "member-01-pioled-lighting-tkb099-25w-bazuka-3-wire-track-3cct-honeycomb-black.png", width: 1024, height: 1024 },
       { src: "/scraped/track/bazuka/member-02-pioled-lighting-tkb098-15w-bazuka-3-wire-track-3cct-honeycomb-black.png", fit: "contain", alt: "member-02-pioled-lighting-tkb098-15w-bazuka-3-wire-track-3cct-honeycomb-black.png", width: 1024, height: 1024 },
       { src: "/scraped/track/bazuka/member-03-pioled-lighting-tkw101-2-3-35w-bazuka-3-wire-track-white.jpg", fit: "contain", alt: "member-03-pioled-lighting-tkw101-2-3-35w-bazuka-3-wire-track-white.jpg", width: 1024, height: 1024 },
+      { src: "/scraped/track/bazuka/member-04-pioled-lighting-tsb100-35w-surface-bazuka-black-honeycomb-3cct.jpg", fit: "contain", alt: "member-04-pioled-lighting-tsb100-35w-surface-bazuka-black-honeycomb-3cct.jpg", width: 1024, height: 1024 },
+      { src: "/scraped/track/bazuka/member-08-pioled-lighting-tkb100-honeycomb-35w-bazuka-3-wire-track-black-3cct-1.png", fit: "contain", alt: "member-08-pioled-lighting-tkb100-honeycomb-35w-bazuka-3-wire-track-black-3cct-1.png", width: 1024, height: 1024 },
       { src: "/scraped/track/bazuka/member-05-pioled-lighting-tkb099d-25w-3-wire-dim-driver.png", fit: "contain", alt: "member-05-pioled-lighting-tkb099d-25w-3-wire-dim-driver.png", width: 1024, height: 1024 },
       { src: "/scraped/track/bazuka/member-06-pioled-lighting-tkb099d-25w-3-wire-dim-driver.png", fit: "contain", alt: "member-06-pioled-lighting-tkb099d-25w-3-wire-dim-driver.png", width: 1024, height: 1024 },
       { src: "/scraped/track/bazuka/member-07-pioled-lighting-tkb098d-15w-3-wire-dim-driver.png", fit: "contain", alt: "member-07-pioled-lighting-tkb098d-15w-3-wire-dim-driver.png", width: 1024, height: 1024 },
-      { src: "/scraped/track/bazuka/member-08-pioled-lighting-tkb100-honeycomb-35w-bazuka-3-wire-track-black-3cct-1.png", fit: "contain", alt: "member-08-pioled-lighting-tkb100-honeycomb-35w-bazuka-3-wire-track-black-3cct-1.png", width: 1024, height: 1024 },
     ],
   },
   {
@@ -4904,9 +4902,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Showrooms",
       "Accent lighting",
     ],
-    imageUrl: "/product-images/leda.png",// hero
+    imageUrl: "/scraped/track/leda/member-01-pioled-lighting-tk005-4ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png",// hero
     images: [
-      { src: "/product-images/leda.png", fit: "contain", alt: "Leda", width: 300, height: 300 },
       { src: "/scraped/track/leda/member-01-pioled-lighting-tk005-4ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png", fit: "contain", alt: "member-01-pioled-lighting-tk005-4ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png", width: 600, height: 600 },
       { src: "/scraped/track/leda/member-02-pioled-lighting-tk004-3ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png", fit: "contain", alt: "member-02-pioled-lighting-tk004-3ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png", width: 600, height: 600 },
       { src: "/scraped/track/leda/member-03-pioled-lighting-tk002-2ft-leda-3-wire-track-tiltable-linear-3cct-white.png", fit: "contain", alt: "member-03-pioled-lighting-tk002-2ft-leda-3-wire-track-tiltable-linear-3cct-white.png", width: 1024, height: 1024 },
@@ -4950,12 +4947,11 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Display",
       "Accent lighting",
     ],
-    imageUrl: "/product-images/snypa.png",// hero
+    imageUrl: "/scraped/track/snypa/member-01-pioled-lighting-r315-snypa-gu10-surface-mount-110m-black-fitting.jpg",// hero
     images: [
-      { src: "/product-images/snypa.png", fit: "contain", alt: "Snypa", width: 1024, height: 1024 },
       { src: "/scraped/track/snypa/member-01-pioled-lighting-r315-snypa-gu10-surface-mount-110m-black-fitting.jpg", fit: "contain", alt: "member-01-pioled-lighting-r315-snypa-gu10-surface-mount-110m-black-fitting.jpg", width: 1024, height: 1024 },
-      { src: "/scraped/track/snypa/member-03-pioled-lighting-r312-snypa-gu10-surface-110m-white-fitting-honeycomb-1.jpg", fit: "contain", alt: "member-03-pioled-lighting-r312-snypa-gu10-surface-110m-white-fitting-honeycomb-1.jpg", width: 1024, height: 1024 },
       { src: "/scraped/track/snypa/member-02-pioled-lighting-r313-snypa-gu10-3-wire-track-110m-black-fitting-square.jpg", fit: "contain", alt: "member-02-pioled-lighting-r313-snypa-gu10-3-wire-track-110m-black-fitting-square.jpg", width: 1024, height: 1024 },
+      { src: "/scraped/track/snypa/member-03-pioled-lighting-r312-snypa-gu10-surface-110m-white-fitting-honeycomb-1.jpg", fit: "contain", alt: "member-03-pioled-lighting-r312-snypa-gu10-surface-110m-white-fitting-honeycomb-1.jpg", width: 1024, height: 1024 },
       { src: "/scraped/track/snypa/member-04-pioled-lighting-r301-snypa-gu10-3-wire-track-110m-black-fitting-1.jpg", fit: "contain", alt: "member-04-pioled-lighting-r301-snypa-gu10-3-wire-track-110m-black-fitting-1.jpg", width: 1024, height: 1024 },
     ],
   },
@@ -5236,9 +5232,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Industrial corridors",
       "Utility areas",
     ],
-    imageUrl: "/product-images/kuda.png",// hero
+    imageUrl: "/scraped/vapourproof/kuda/member-01-pioled-lighting-ll913-kuda-max-5ft-emergency-kit-space-1.png",// hero
     images: [
-      { src: "/product-images/kuda.png", fit: "contain", alt: "Kuda", width: 1024, height: 1024 },
       { src: "/scraped/vapourproof/kuda/member-01-pioled-lighting-ll913-kuda-max-5ft-emergency-kit-space-1.png", fit: "contain", alt: "member-01-pioled-lighting-ll913-kuda-max-5ft-emergency-kit-space-1.png", width: 1024, height: 1024 },
       { src: "/scraped/vapourproof/kuda/member-02-pioled-lighting-ll912-kuda-max-4ft-emergency-kit-space-1.png", fit: "contain", alt: "member-02-pioled-lighting-ll912-kuda-max-4ft-emergency-kit-space-1.png", width: 1024, height: 1024 },
       { src: "/scraped/vapourproof/kuda/member-03-pioled-lighting-ll908-9-kuda-ip65-3cct-linear-batten-white-1.jpg", fit: "contain", alt: "member-03-pioled-lighting-ll908-9-kuda-ip65-3cct-linear-batten-white-1.jpg", width: 1024, height: 1024 },
