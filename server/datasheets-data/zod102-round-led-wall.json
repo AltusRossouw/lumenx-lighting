@@ -4,8 +4,8 @@
     "rev": "1.0"
   },
   "name": "ZOD102 ROUND LED WALL",
-  "category": "OUTDOOR WALL LIGHT",
-  "variant": "",
+  "category": "OUTDOOR ARCHITECTURAL",
+  "variant": "ZOD102 Round LED Wall — decorative coastal-ready wall light from LumenX: IP65 rated, 12W with up to 1200 lm in 4000K, designed for covered and outdoor wall mounting",
   "stats": [
     {
       "label": "Power",
@@ -13,24 +13,33 @@
       "unit": "W"
     },
     {
+      "label": "Wattage",
+      "value": "12",
+      "unit": "W"
+    },
+    {
       "label": "Lumens",
       "value": "1200",
       "unit": "lm"
-    },
-    {
-      "label": "IP Rating",
-      "value": "IP65",
-      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/scraped/outdoor-architectural/zod102-round-led-wall/01-a546d4-d29eac5d5d6c47e6a9d396a256db1d7c-mv2.png",
+    "alt": "ZOD102 Round LED Wall"
   },
   "overview": [
     "ZOD102 Round LED Wall — decorative coastal-ready wall light from LumenX: IP65 rated, 12W with up to 1200 lm in 4000K, designed for covered and outdoor wall mounting."
   ],
-  "features": [],
+  "features": [
+    "12 W power",
+    "1200 lm lumens",
+    "IP65 rated",
+    "Wall Mount mounting",
+    "Black finish",
+    "Up to 100 lm/w efficacy",
+    "4000k colour temperature",
+    "CRI >80"
+  ],
   "applications": [
     "Outdoor walls",
     "Facades",
@@ -41,14 +50,6 @@
       {
         "title": "Physical",
         "rows": [
-          {
-            "label": "Body",
-            "value": "Polycarbonate"
-          },
-          {
-            "label": "Diffuser",
-            "value": "Polycarbonate"
-          },
           {
             "label": "Mounting",
             "value": "Wall Mount"
@@ -62,8 +63,17 @@
             "value": "169mm x 67mm x 169mm"
           },
           {
-            "label": "Product Weight",
-            "value": "0,65kg"
+            "label": "Colour Temperature",
+            "value": "4000k"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP65"
           }
         ]
       }
@@ -73,6 +83,22 @@
         "title": "Product Information",
         "rows": [
           {
+            "label": "Lumens",
+            "value": "1200 lm"
+          },
+          {
+            "label": "Body",
+            "value": "Polycarbonate"
+          },
+          {
+            "label": "Diffuser",
+            "value": "Polycarbonate"
+          },
+          {
+            "label": "Product Weight",
+            "value": "0,65kg"
+          },
+          {
             "label": "Nominal Flux",
             "value": "Up to 1200 lm"
           },
@@ -81,26 +107,22 @@
             "value": "Up to 100 lm/w"
           },
           {
-            "label": "Colour Temperature",
-            "value": "4000k"
-          },
-          {
             "label": "CRI",
             "value": ">80"
-          },
-          {
-            "label": "Power Factor",
-            "value": "0,9"
-          },
-          {
-            "label": "IP Rating",
-            "value": "IP65"
           }
         ]
       },
       {
         "title": "Electrical",
         "rows": [
+          {
+            "label": "Power",
+            "value": "12 W"
+          },
+          {
+            "label": "Power Factor",
+            "value": "0,9"
+          },
           {
             "label": "Wattage",
             "value": "12W"
@@ -121,7 +143,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

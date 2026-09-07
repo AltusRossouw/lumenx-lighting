@@ -67,14 +67,14 @@
   .sheet {
     position: relative;
     width: 210mm;
-    height: 297mm;                 /* exactly one A4 page — like the reference */
+    min-height: 297mm;              /* at least one A4 page; grows for rich products */
     margin: 0 auto;
     background: var(--paper);
     color: var(--ink);
     box-shadow: 0 2mm 10mm rgba(0,0,0,.18);   /* screen-only */
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: visible;
   }
 
   /* ── Dark bands ───────────────────────────────────────────────────────────── */
@@ -167,7 +167,7 @@
   .body-grid {
     flex: 1 1 auto;
     min-height: 0;
-    overflow: hidden;
+    overflow: visible;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 12mm;

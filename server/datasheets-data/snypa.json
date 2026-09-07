@@ -4,12 +4,28 @@
     "rev": "1.0"
   },
   "name": "SNYPA",
-  "category": "TRACK LIGHTING",
+  "category": "TRACK",
   "variant": "Track / surface GU10 fixtures for flexible lamp-based accent lighting.",
-  "stats": [],
+  "stats": [
+    {
+      "label": "Wattage",
+      "value": "35W / 120W (10",
+      "unit": ""
+    },
+    {
+      "label": "Lumen Output",
+      "value": "3 500lm / 30 000lm / 153 600lm",
+      "unit": ""
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
   "heroImage": {
-    "src": "../public/product-images/snypa.png",
-    "alt": "SNYPA"
+    "src": "../public/scraped/track/snypa/member-01-pioled-lighting-r315-snypa-gu10-surface-mount-110m-black-fitting.jpg",
+    "alt": "Snypa"
   },
   "overview": [
     "Track / surface GU10 fixtures for flexible lamp-based accent lighting."
@@ -26,18 +42,98 @@
     "Accent lighting"
   ],
   "columns": {
-    "left": [],
-    "right": [
+    "left": [
       {
-        "title": "Product Information",
+        "title": "Physical",
         "rows": [
           {
             "label": "Type",
             "value": "Track / surface GU10 fixture"
           },
           {
+            "label": "Colour",
+            "value": "Matt / Black / 6000K"
+          },
+          {
+            "label": "Housing",
+            "value": "Aluminium / Black, White / Pure / CNC / Die cast"
+          },
+          {
+            "label": "Colour Temperature",
+            "value": "3000K / 5700K"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "36° / 120° / 90°"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Operating Temp",
+            "value": "-15~45°C / -30 ~ 50°C / -35°C to 45°C / -20~40°C"
+          },
+          {
+            "label": "IK Rating",
+            "value": "IK05"
+          },
+          {
+            "label": "Certifications",
+            "value": "CE, EMC / IEC"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
             "label": "Lamp",
             "value": "GU10"
+          },
+          {
+            "label": "available in",
+            "value": "White"
+          },
+          {
+            "label": "Lumen Output",
+            "value": "3 500lm / 30 000lm / 153 600lm"
+          },
+          {
+            "label": "CRI",
+            "value": ">83 / >80"
+          },
+          {
+            "label": "LED Chips",
+            "value": "Bridgelux / Lumileds 5050"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "35W / 120W (10"
+          },
+          {
+            "label": "Input Voltage",
+            "value": "200V-265V / 175-264V / 200-260V (DOB) / 180-277V"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "3kV / 1kV / 10kV / 10kV (Meanwell"
+          },
+          {
+            "label": "Dimmable",
+            "value": "Yes with 35W / No"
           }
         ]
       }
@@ -51,7 +147,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

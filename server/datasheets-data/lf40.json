@@ -4,11 +4,27 @@
     "rev": "1.0"
   },
   "name": "LF40",
-  "category": "LINEAR LIGHTING",
+  "category": "LINEARS",
   "variant": "Light Frame 40 diffused linear for standalone and continuous, surface, suspended or recessed use.",
-  "stats": [],
+  "stats": [
+    {
+      "label": "Length",
+      "value": "620mm - 3020mm (100mm Increments)",
+      "unit": ""
+    },
+    {
+      "label": "Colour",
+      "value": "Black, White, Silver",
+      "unit": ""
+    },
+    {
+      "label": "Profile",
+      "value": "Light Frame 40",
+      "unit": ""
+    }
+  ],
   "heroImage": {
-    "src": "../public/product-images/lf40.png",
+    "src": "../public/scraped/linears/lf40/01-lf40fix.jpg",
     "alt": "LF40"
   },
   "overview": [
@@ -31,27 +47,29 @@
         "title": "Physical",
         "rows": [
           {
+            "label": "Length",
+            "value": "620mm - 3020mm (100mm Increments)"
+          },
+          {
+            "label": "Colour",
+            "value": "Black, White, Silver"
+          },
+          {
             "label": "Profile",
             "value": "Light Frame 40"
           },
           {
             "label": "Mounting",
             "value": "Surface / Suspended / Recessed"
-          }
-        ]
-      }
-    ],
-    "right": [
-      {
-        "title": "Product Information",
-        "rows": [
+          },
           {
             "label": "Type",
             "value": "Diffused linear"
           }
         ]
       }
-    ]
+    ],
+    "right": []
   },
   "drawing": {
     "src": "",
@@ -61,7 +79,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

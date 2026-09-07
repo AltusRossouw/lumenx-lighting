@@ -4,18 +4,28 @@
     "rev": "1.0"
   },
   "name": "SONIQ",
-  "category": "LINEAR LIGHTING",
+  "category": "LINEARS",
   "variant": "3-wattage seamless linkable linear for continuous runs with flexible output.",
   "stats": [
     {
       "label": "Power",
       "value": "3",
       "unit": "W"
+    },
+    {
+      "label": "Wattage",
+      "value": "3 selectable wattages",
+      "unit": ""
+    },
+    {
+      "label": "Lumen Output",
+      "value": "60W=9 000lm/80W=12 000lm/100W=15 000lm / 1 500lm / 30W= 4 500lm | 40W= 6 000lm 50W= 7 500lm / 800lm PF: / 100lm/W / 36°",
+      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/soniq.png",
-    "alt": "SONIQ"
+    "src": "../public/scraped/linears/soniq/member-01-pioled-lighting-ll709-8ft-3-wattage-soniq-seamless-linkable-linear-lig.png",
+    "alt": "Soniq"
   },
   "overview": [
     "3-wattage seamless linkable linear for continuous runs with flexible output."
@@ -32,18 +42,69 @@
     "Cove lighting"
   ],
   "columns": {
-    "left": [],
-    "right": [
+    "left": [
       {
-        "title": "Product Information",
+        "title": "Physical",
         "rows": [
           {
             "label": "Type",
             "value": "Seamless linkable linear"
           },
           {
+            "label": "Colour Temperature",
+            "value": "3CCT ( 3000K/4000K/6000K) / 6000K/4000K / 3CCT(3000K/4000K/6000K)"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "90° / 270°"
+          },
+          {
+            "label": "Housing",
+            "value": "Pure / CNC / Glass / Round, Square / Aluminium"
+          },
+          {
+            "label": "Colour",
+            "value": "Silver / Matt / White"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Operating Temp",
+            "value": "-25~45°C / -20~45°C / -15~45°C"
+          },
+          {
+            "label": "IK Rating",
+            "value": "IK08"
+          },
+          {
+            "label": "Certifications",
+            "value": "CE, EMC, IEC60958 / CE, EMC / CE / CE, EMC, IEC60598"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
             "label": "Linking",
             "value": "Seamless end-to-end"
+          },
+          {
+            "label": "Lumen Output",
+            "value": "60W=9 000lm/80W=12 000lm/100W=15 000lm / 1 500lm / 30W= 4 500lm | 40W= 6 000lm 50W= 7 500lm / 800lm PF: / 100lm/W / 36°"
+          },
+          {
+            "label": "CRI",
+            "value": ">80 / >83 / >85"
+          },
+          {
+            "label": "LED Chips",
+            "value": "Epistar 2835 / 2835 / High"
           }
         ]
       },
@@ -51,8 +112,24 @@
         "title": "Electrical",
         "rows": [
           {
+            "label": "Power",
+            "value": "3 W"
+          },
+          {
             "label": "Wattage",
             "value": "3 selectable wattages"
+          },
+          {
+            "label": "Input Voltage",
+            "value": "AC180-277V / 180V- 265V / 200-277V"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "2.5kV / 1kv / 2kV"
+          },
+          {
+            "label": "Dimmable",
+            "value": "No / Yes"
           }
         ]
       }
@@ -66,7 +143,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

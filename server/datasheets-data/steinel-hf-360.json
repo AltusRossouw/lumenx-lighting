@@ -5,35 +5,82 @@
   },
   "name": "HF 360",
   "category": "SENSORS",
-  "variant": "",
+  "variant": "HF 360 COM1 - in-ceiling installation - Doesn't miss a thing",
   "stats": [
     {
-      "label": "Reach",
-      "value": "12",
-      "unit": "m"
+      "label": "Application, place",
+      "value": "Indoors",
+      "unit": ""
     },
     {
-      "label": "Angle",
+      "label": "Installation",
+      "value": "In-ceiling installation",
+      "unit": ""
+    },
+    {
+      "label": "Detection angle",
       "value": "360",
       "unit": "°"
-    },
-    {
-      "label": "IP Rating",
-      "value": "IP20",
-      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/steinel-hf-360.png",
+    "src": "../public/scraped/sensors/hf-360/01-17334-hf-360-4007841002800-pro-ab01-x-x-com1-whi-x-110011563-web.jpg",
     "alt": "HF 360"
   },
   "overview": [
-    "Doesn't miss a thing. HF-presence detector Presence Control PRO HF 360 COM1 for indoors, ideal for WCs with toilet cubicles, changing rooms, stairwells, multi-storey car parks, kitchens, installation height up to 3.5 m, for switching light 'ON' and 'OFF', 1 – 12 m reach, reach is electronically adjustable and can be limited in two directions, detection regardless of temperature, HF-sensor technology also detects movement through glass, wood and stud walls."
+    "HF 360 COM1 - in-ceiling installation - Doesn't miss a thing. HF-presence detector Presence Control PRO HF 360 COM1 for indoors, ideal for WCs with toilet cubicles, changing rooms, stairwells, multi-s"
   ],
-  "features": [],
-  "applications": [],
+  "features": [
+    "white finish",
+    "IP20 rated",
+    "Plastic"
+  ],
+  "applications": [
+    "Offices",
+    "Warehouses",
+    "Corridors",
+    "Parking"
+  ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Mounting height max.",
+            "value": "3,50 m"
+          },
+          {
+            "label": "Dimensions (L x W x H)",
+            "value": "94 x 120 x 120 mm"
+          },
+          {
+            "label": "Type",
+            "value": "Presence detector"
+          },
+          {
+            "label": "Colour",
+            "value": "white"
+          },
+          {
+            "label": "Colour, RAL",
+            "value": "9010"
+          },
+          {
+            "label": "Material",
+            "value": "Plastic"
+          },
+          {
+            "label": "Mounting height",
+            "value": "2,50 – 3,50 m"
+          },
+          {
+            "label": "Type of interconnection",
+            "value": "Master/master, Master/slave"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
@@ -55,10 +102,6 @@
             "value": "Ø 12 m (113 m²)"
           },
           {
-            "label": "Mounting height max.",
-            "value": "3,50 m"
-          },
-          {
             "label": "Interconnection via",
             "value": "Cable"
           },
@@ -67,24 +110,153 @@
             "value": "COM1 - in-ceiling installation"
           },
           {
+            "label": "Article number",
+            "value": "079512"
+          },
+          {
             "label": "PU1, net weight",
             "value": "0,185 kg"
           },
           {
-            "label": "high frequency sensor 360°",
-            "value": "max. Ø 12 m"
+            "label": "Package content",
+            "value": "1"
           },
           {
-            "label": "max. 2000 W",
+            "label": "Manufacturer's Warranty",
+            "value": "5 years"
+          },
+          {
+            "label": "Settings via",
+            "value": "Remote control, DIP switches, Potentiometers, Smart Remote"
+          },
+          {
+            "label": "With remote control",
+            "value": "No"
+          },
+          {
+            "label": "PU1, EAN",
+            "value": "4007841079512"
+          },
+          {
+            "label": "Application, room",
+            "value": "function room / ancillary room, kitchenette, stairwell, WC / washroom, Indoors"
+          },
+          {
+            "label": "Includes corner wall mount",
+            "value": "No"
+          },
+          {
+            "label": "Installation site",
+            "value": "ceiling"
+          },
+          {
+            "label": "IP-rating",
             "value": "IP20"
           },
           {
-            "label": "ideal 2,5 - 3,5 m",
-            "value": "indoor sensor"
+            "label": "Ambient temperature",
+            "value": "from -25 up to 55 °C"
           },
           {
-            "label": "IQ-mode",
-            "value": "Teach mode"
+            "label": "Mains power supply",
+            "value": "230 V / 50 – 60 Hz"
+          },
+          {
+            "label": "European Article Number (EAN)",
+            "value": "4007841079512"
+          },
+          {
+            "label": "Angle of aperture",
+            "value": "140 °"
+          },
+          {
+            "label": "Transmitter power",
+            "value": "< 1 mW"
+          },
+          {
+            "label": "Technology, sensors",
+            "value": "High frequency, Mixed light metering"
+          },
+          {
+            "label": "Optimum mounting height",
+            "value": "2,8 m"
+          },
+          {
+            "label": "HF-system",
+            "value": "5,8 GHz"
+          },
+          {
+            "label": "Detection",
+            "value": "also through glass, wood and stud walls"
+          },
+          {
+            "label": "Sneak-by guard",
+            "value": "Yes"
+          },
+          {
+            "label": "Capability of masking out individual segments",
+            "value": "Yes"
+          },
+          {
+            "label": "Electronic scalability",
+            "value": "Yes"
+          },
+          {
+            "label": "Mechanical scalability",
+            "value": "No"
+          },
+          {
+            "label": "Reach, radial",
+            "value": "Ø 12 m (113 m²)"
+          },
+          {
+            "label": "Functions",
+            "value": "Normal / test mode, Semi-/fully automatic, Pushbutton / switch mode, Manual ON / ON-OFF"
+          },
+          {
+            "label": "Twilight setting",
+            "value": "10 – 1000 lx"
+          },
+          {
+            "label": "Time setting",
+            "value": "30 s – 30 Min."
+          },
+          {
+            "label": "Basic light level function",
+            "value": "No"
+          },
+          {
+            "label": "Main light adjustable",
+            "value": "No"
+          },
+          {
+            "label": "Twilight setting TEACH",
+            "value": "Yes"
+          },
+          {
+            "label": "Constant-lighting control",
+            "value": "No"
+          },
+          {
+            "label": "Interconnection",
+            "value": "Yes"
+          },
+          {
+            "label": "Product category",
+            "value": "Presence detector"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Voltage range (min)",
+            "value": "230 V"
+          },
+          {
+            "label": "Voltage range (max)",
+            "value": "230 V"
           }
         ]
       }
@@ -98,7 +270,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

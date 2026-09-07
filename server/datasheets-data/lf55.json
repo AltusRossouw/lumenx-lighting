@@ -4,7 +4,7 @@
     "rev": "1.0"
   },
   "name": "LF55",
-  "category": "LINEAR LIGHTING",
+  "category": "LINEARS",
   "variant": "55×80mm Light Frame family linear for high-output industrial and commercial use.",
   "stats": [
     {
@@ -13,18 +13,18 @@
       "unit": "W"
     },
     {
+      "label": "Wattage",
+      "value": "17W – 100W",
+      "unit": ""
+    },
+    {
       "label": "Lumens",
       "value": "2300–12000",
       "unit": "lm"
-    },
-    {
-      "label": "IP Rating",
-      "value": "IP20",
-      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/lf55.png",
+    "src": "../public/scraped/linears/lf55/01-lightframefamily5555x8080copy.jpg",
     "alt": "LF55"
   },
   "overview": [
@@ -47,6 +47,14 @@
         "title": "Physical",
         "rows": [
           {
+            "label": "Length",
+            "value": "600 - 2300mm"
+          },
+          {
+            "label": "Colour",
+            "value": "Black, White, Silver"
+          },
+          {
             "label": "Profile",
             "value": "55 × 80mm"
           },
@@ -57,6 +65,23 @@
           {
             "label": "Mounting",
             "value": "Surface / Suspended / P2000"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "90°"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          },
+          {
+            "label": "Lifetime",
+            "value": "L80B10 @ 50,000 hrs"
           }
         ]
       }
@@ -67,7 +92,7 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "2,300 – 12,000 lm"
+            "value": "2300–12000 lm"
           },
           {
             "label": "Efficacy",
@@ -80,28 +105,20 @@
           {
             "label": "CRI",
             "value": ">80"
-          },
-          {
-            "label": "Beam Angle",
-            "value": "90°"
-          },
-          {
-            "label": "IP Rating",
-            "value": "IP20"
-          },
-          {
-            "label": "Surge Protection",
-            "value": "1.5kV"
-          },
-          {
-            "label": "Lifetime",
-            "value": "L80B10 @ 50,000 hrs"
           }
         ]
       },
       {
         "title": "Electrical",
         "rows": [
+          {
+            "label": "Power",
+            "value": "17–100 W"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "1.5kV"
+          },
           {
             "label": "Wattage",
             "value": "17W – 100W"
@@ -126,7 +143,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

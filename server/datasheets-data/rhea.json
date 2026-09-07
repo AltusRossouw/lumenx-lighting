@@ -16,14 +16,19 @@
       "label": "IP Rating",
       "value": "IP54",
       "unit": ""
+    },
+    {
+      "label": "CCT",
+      "value": "5000K (options available)",
+      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/rhea.png",
-    "alt": "RHEA"
+    "src": "../public/scraped/bulkheads/rhea/01-1-1-800x383.png",
+    "alt": "Rhea"
   },
   "overview": [
-    "The Rhea is a compact integrated LED bulkhead engineered around LumenX Direct Drive technology — no external driver, no metal and no glass. Its 1mm extruded polycarbonate housing eliminates corrosion risk and breakage, making it a good fit for corridors, stairwells and utility areas where durability and low maintenance matter. Type A light quality (LRC, New York) gives accurate, comfortable colour rendering with immediate full-brightness switching."
+    "INTEGRATED SURFACE MOUNT LED LIGHT"
   ],
   "features": [
     "Direct Drive — no external driver required",
@@ -41,11 +46,24 @@
   "columns": {
     "left": [
       {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Beam Angle",
+            "value": "160°"
+          }
+        ]
+      },
+      {
         "title": "Compliance",
         "rows": [
           {
-            "label": "Guarantee",
-            "value": "6 years operational"
+            "label": "Fire Rating",
+            "value": "UL-94 V2 compliant"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP54"
           }
         ]
       }
@@ -55,7 +73,19 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "Efficacy",
+            "label": "Nominal Lifetime (L70)",
+            "value": "60,000 hours (IES LM-80, TM-21)"
+          },
+          {
+            "label": "Operational Guarantee (24/7)",
+            "value": "6 years"
+          },
+          {
+            "label": "Light Output Guarantee (24/7)",
+            "value": "3 years"
+          },
+          {
+            "label": "Luminous Efficacy",
             "value": "135 lm/W"
           },
           {
@@ -64,27 +94,71 @@
           },
           {
             "label": "CRI",
-            "value": "83 (GAI 96)"
+            "value": "83"
           },
           {
-            "label": "Beam Angle",
-            "value": "160°"
+            "label": "GAI",
+            "value": "96"
           },
           {
-            "label": "IP Rating",
-            "value": "IP54"
+            "label": "Light Quality",
+            "value": "Type A compliant (LRC, New York)"
           },
           {
-            "label": "Power Factor",
-            "value": "> 0.98"
+            "label": "Stroboscopic Effect (50Hz)",
+            "value": "80% flicker free (OHS/MHS compliant)"
           },
           {
-            "label": "Surge Protection",
-            "value": "1.5kV"
+            "label": "Operating Voltage",
+            "value": "220-240V AC"
           },
           {
-            "label": "Nominal Lifetime",
-            "value": "L70 60,000 hrs"
+            "label": "Min Sustained Voltage",
+            "value": "No minimum, operational from 150V"
+          },
+          {
+            "label": "Max Sustained Voltage",
+            "value": "250V for 2 minutes"
+          },
+          {
+            "label": "On/Off Switching",
+            "value": "Unlimited"
+          },
+          {
+            "label": "Delay to Full Brightness",
+            "value": "Immediate"
+          },
+          {
+            "label": "Max Ambient Temperature (T Ambient)",
+            "value": "+30°C"
+          },
+          {
+            "label": "Min Ambient Temperature (T Ambient)",
+            "value": "-40°C"
+          },
+          {
+            "label": "Risk of Breakage",
+            "value": "Low, polycarbonate housing extruded to 1mm (no glass)"
+          },
+          {
+            "label": "Electrical Safety",
+            "value": "IEC60598-1, IEC60598-2-5 compliant"
+          },
+          {
+            "label": "WiFi/Barcode/Radio",
+            "value": "No interference"
+          },
+          {
+            "label": "THD",
+            "value": "IEC 61000-3-2 Class D Compliant"
+          },
+          {
+            "label": "Variable Switching",
+            "value": "2 Live inputs, 1 Neutral"
+          },
+          {
+            "label": "Radar Motion Sensor",
+            "value": "Programmable sensitivity & time on"
           }
         ]
       },
@@ -92,12 +166,20 @@
         "title": "Electrical",
         "rows": [
           {
-            "label": "Wattage",
+            "label": "Power",
             "value": "15W"
           },
           {
-            "label": "Voltage",
-            "value": "220–240V AC (operational from 150V)"
+            "label": "Power Factor",
+            "value": ">0.98"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "1.5kV"
+          },
+          {
+            "label": "Battery Backup",
+            "value": "1000lm for 4h, 6h charge time, 1y guarantee"
           }
         ]
       }
@@ -111,7 +193,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

@@ -13,19 +13,19 @@
       "unit": "W"
     },
     {
+      "label": "Wattage",
+      "value": "35",
+      "unit": "W"
+    },
+    {
       "label": "Lumens",
       "value": "3500",
       "unit": "lm"
-    },
-    {
-      "label": "IP Rating",
-      "value": "IP40",
-      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/mario.png",
-    "alt": "MARIO"
+    "src": "../public/scraped/downlights/mario/01-pioled-lighting-hd020-35w-mario-led-round-tilt-downlight-3cct-1.jpg",
+    "alt": "Mario"
   },
   "overview": [
     "Round-tilt LED downlighter delivering uniform spot, decorative and soft lighting in a single fitting. High-lumen Bridgelux COB engine with selectable colour temperature and tool-free tilt adjustment for accent and general lighting."
@@ -58,6 +58,14 @@
           {
             "label": "Type",
             "value": "Round tilt downlighter"
+          },
+          {
+            "label": "Colour Temperature",
+            "value": "3000K / 4000K / 6000K"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "36°"
           }
         ]
       },
@@ -65,12 +73,24 @@
         "title": "Compliance",
         "rows": [
           {
+            "label": "IP Rating",
+            "value": "IP40"
+          },
+          {
             "label": "Certifications",
             "value": "CE / EMC / IEC 60598 / ErP"
           },
           {
             "label": "Warranty",
             "value": "5 Years"
+          },
+          {
+            "label": "Operating Temp",
+            "value": "-15 ~ 45 °C"
+          },
+          {
+            "label": "Lifespan",
+            "value": "L80B10 @ 50 000 hrs"
           }
         ]
       }
@@ -80,42 +100,30 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "Lumen Output",
-            "value": "3 500 lm"
+            "label": "Lumens",
+            "value": "3500 lm"
           },
           {
-            "label": "Colour Temperature",
-            "value": "3000K / 4000K / 6000K"
+            "label": "Lumen Output",
+            "value": "3 500 lm"
           },
           {
             "label": "CRI",
             "value": ">80"
           },
           {
-            "label": "Beam Angle",
-            "value": "36°"
-          },
-          {
-            "label": "IP Rating",
-            "value": "IP40"
-          },
-          {
-            "label": "Operating Temp",
-            "value": "-15 ~ 45 °C"
-          },
-          {
             "label": "LED Chips",
             "value": "Bridgelux COB"
-          },
-          {
-            "label": "Lifespan",
-            "value": "L80B10 @ 50 000 hrs"
           }
         ]
       },
       {
         "title": "Electrical",
         "rows": [
+          {
+            "label": "Power",
+            "value": "35 W"
+          },
           {
             "label": "Wattage",
             "value": "35 W"
@@ -148,7 +156,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

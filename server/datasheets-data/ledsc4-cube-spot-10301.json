@@ -4,11 +4,16 @@
     "rev": "1.0"
   },
   "name": "CUBE",
-  "category": "INDOOR LIGHTING",
-  "variant": "",
+  "category": "OUTDOOR ARCHITECTURAL",
+  "variant": "Advanced high-precision solution for illuminating architectural facades",
   "stats": [
     {
       "label": "Power",
+      "value": "3.6–321",
+      "unit": "W"
+    },
+    {
+      "label": "Wattage",
       "value": "3.6–321",
       "unit": "W"
     },
@@ -19,11 +24,11 @@
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/ledsc4-cube-spot-10301.png",
-    "alt": "CUBE"
+    "src": "../public/scraped/outdoor-architectural/cube/07-65272d1c2dd54154-a400e81aea18a2e3-2000-22.png",
+    "alt": "Cube"
   },
   "overview": [
-    "Maximum precision for high-rise facades"
+    "Advanced high-precision solution for illuminating architectural facades"
   ],
   "features": [
     "Includes wiring with waterproof quick connectors",
@@ -37,18 +42,28 @@
     "Hospitality"
   ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Colour Temperature",
+            "value": "2700K / 3000K / 4000K"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
           {
-            "label": "Lumen Output",
+            "label": "Lumens",
             "value": "213–6451 lm"
           },
           {
-            "label": "Colour Temperature",
-            "value": "2700K / 3000K / 4000K"
+            "label": "Lumen Output",
+            "value": "213–6451 lm"
           },
           {
             "label": "CRI",
@@ -59,6 +74,10 @@
       {
         "title": "Electrical",
         "rows": [
+          {
+            "label": "Power",
+            "value": "3.6–321 W"
+          },
           {
             "label": "Wattage",
             "value": "3.6–321 W"
@@ -79,7 +98,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

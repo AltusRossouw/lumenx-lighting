@@ -4,11 +4,16 @@
     "rev": "1.0"
   },
   "name": "ZIG ZAG",
-  "category": "INDOOR LIGHTING",
-  "variant": "",
+  "category": "OUTDOOR ARCHITECTURAL",
+  "variant": "With a clear architectural intention, zigzag offers design in a body with high technical performance",
   "stats": [
     {
       "label": "Power",
+      "value": "62.1",
+      "unit": "W"
+    },
+    {
+      "label": "Wattage",
       "value": "62.1",
       "unit": "W"
     },
@@ -19,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/ledsc4-zigzag-10225.png",
-    "alt": "ZIG ZAG"
+    "src": "../public/scraped/outdoor-architectural/zig-zag/08-eb34ac82301d44f9-95093358bcabbbff-2000-1.png",
+    "alt": "Zig Zag"
   },
   "overview": [
     "Español English Deutsch Français Italiano Português Polski Русский"
@@ -37,18 +42,28 @@
     "Hospitality"
   ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Colour Temperature",
+            "value": "2700K / 3000K"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
           {
-            "label": "Lumen Output",
+            "label": "Lumens",
             "value": "0–5595 lm"
           },
           {
-            "label": "Colour Temperature",
-            "value": "2700K / 3000K"
+            "label": "Lumen Output",
+            "value": "0–5595 lm"
           },
           {
             "label": "CRI",
@@ -59,6 +74,10 @@
       {
         "title": "Electrical",
         "rows": [
+          {
+            "label": "Power",
+            "value": "62.1 W"
+          },
           {
             "label": "Wattage",
             "value": "62.1 W"
@@ -79,7 +98,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

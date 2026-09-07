@@ -4,22 +4,27 @@
     "rev": "1.0"
   },
   "name": "LDR6563",
-  "category": "LINEAR LIGHTING",
+  "category": "LINEARS",
   "variant": "65×63mm linear profile for higher-output continuous and single applications.",
   "stats": [
     {
-      "label": "Power",
-      "value": "15.5–78",
-      "unit": "W"
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
     },
     {
-      "label": "Lumens",
-      "value": "1257–6000",
-      "unit": "lm"
+      "label": "(3080) 3000K",
+      "value": "(4080) 4000K",
+      "unit": ""
+    },
+    {
+      "label": "Fitting Material",
+      "value": "Powder coated extruded aluminium construction",
+      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/ldr-6563.png",
+    "src": "../public/scraped/linears/ldr6563/01-ldr-s.jpg",
     "alt": "LDR6563"
   },
   "overview": [
@@ -42,8 +47,29 @@
         "title": "Physical",
         "rows": [
           {
-            "label": "Profile",
-            "value": "65×63mm"
+            "label": "Optic Type",
+            "value": "Diffuser"
+          },
+          {
+            "label": "Mounting Type",
+            "value": "Surface mount / P2000/ Suspended"
+          },
+          {
+            "label": "Colour Rendering Index (CRI)",
+            "value": "CRI80 , (CRI90 on request)"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          },
+          {
+            "label": "Warranty",
+            "value": "5 year warranty as per LEDwise standard terms of warranty"
           }
         ]
       }
@@ -53,24 +79,40 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "Lumens",
-            "value": "1,257lm – 6,000lm+"
+            "label": "(3080) 3000K",
+            "value": "(4080) 4000K"
           },
           {
-            "label": "Lengths",
-            "value": "580 – 2260mm"
+            "label": "Fitting Material",
+            "value": "Powder coated extruded aluminium construction"
           },
           {
-            "label": "CRI",
-            "value": "80"
+            "label": "Available finishes",
+            "value": "Powder coated white, custom colours on request"
           },
           {
-            "label": "CCT",
-            "value": "3000K / 4000K"
+            "label": "LED Colours (CCT)",
+            "value": "3000K, 4000K (others CCT’s available on request)"
           },
           {
-            "label": "Finishes",
-            "value": "White / Black / Aluminium / Custom"
+            "label": "LED Colour Consistency",
+            "value": "<3 SDCM"
+          },
+          {
+            "label": "LED Lifetime",
+            "value": "L80B10 >50,000 hrs at Ta = 25° Celsius"
+          },
+          {
+            "label": "Operating Voltage/ Frequency",
+            "value": "220 – 240 V/ 50 – 60 Hz"
+          },
+          {
+            "label": "Optional Add-ons",
+            "value": "Min. 1 hour emergency version available"
+          },
+          {
+            "label": "Manufacture",
+            "value": "Designed and Manufactured in South Africa"
           }
         ]
       },
@@ -78,8 +120,8 @@
         "title": "Electrical",
         "rows": [
           {
-            "label": "Wattage",
-            "value": "15.5W – 78W (30/40/50 W/m)"
+            "label": "Control Options",
+            "value": "Non-dim (N), DALI (DALI)"
           }
         ]
       }
@@ -93,7 +135,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

@@ -4,12 +4,28 @@
     "rev": "1.0"
   },
   "name": "LRD9063",
-  "category": "LINEAR LIGHTING",
+  "category": "LINEARS",
   "variant": "90×63mm large-format linear profile for high-output architectural runs.",
-  "stats": [],
+  "stats": [
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    },
+    {
+      "label": "(3080) 3000K",
+      "value": "(4080) 4000K",
+      "unit": ""
+    },
+    {
+      "label": "Fitting Material",
+      "value": "Powder coated extruded aluminium construction",
+      "unit": ""
+    }
+  ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/scraped/linears/lrd9063/01-ldr-s.jpg",
+    "alt": "LRD9063"
   },
   "overview": [
     "90×63mm large-format linear profile for high-output architectural runs."
@@ -31,8 +47,29 @@
         "title": "Physical",
         "rows": [
           {
-            "label": "Profile",
-            "value": "90×63mm"
+            "label": "Optic Type",
+            "value": "Diffuser"
+          },
+          {
+            "label": "Mounting Type",
+            "value": "Surface mount / P2000/ Suspended"
+          },
+          {
+            "label": "Colour Rendering Index (CRI)",
+            "value": "CRI80 , (CRI90 on request)"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          },
+          {
+            "label": "Warranty",
+            "value": "5 year warranty as per LEDwise standard terms of warranty"
           }
         ]
       }
@@ -42,16 +79,49 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "Type",
-            "value": "Large-format linear, continuous"
+            "label": "(3080) 3000K",
+            "value": "(4080) 4000K"
           },
           {
-            "label": "CRI",
-            "value": "80"
+            "label": "Fitting Material",
+            "value": "Powder coated extruded aluminium construction"
           },
           {
-            "label": "CCT",
-            "value": "3000K / 4000K"
+            "label": "Available finishes",
+            "value": "Powder coated white, custom colours on request"
+          },
+          {
+            "label": "LED Colours (CCT)",
+            "value": "3000K, 4000K (others CCT’s available on request)"
+          },
+          {
+            "label": "LED Colour Consistency",
+            "value": "<3 SDCM"
+          },
+          {
+            "label": "LED Lifetime",
+            "value": "L80B10 >50,000 hrs at Ta = 25° Celsius"
+          },
+          {
+            "label": "Operating Voltage/ Frequency",
+            "value": "220 – 240 V/ 50 – 60 Hz"
+          },
+          {
+            "label": "Optional Add-ons",
+            "value": "Min. 1 hour emergency version available"
+          },
+          {
+            "label": "Manufacture",
+            "value": "Designed and Manufactured in South Africa"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Control Options",
+            "value": "Non-dim (N), DALI (DALI)"
           }
         ]
       }
@@ -65,7 +135,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

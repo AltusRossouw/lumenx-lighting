@@ -5,42 +5,89 @@
   },
   "name": "IS 2180",
   "category": "SENSORS",
-  "variant": "",
+  "variant": "IS 2180 ECO black - Attractive, clever, efficient",
   "stats": [
     {
-      "label": "Reach",
-      "value": "5",
-      "unit": "m"
+      "label": "Application, place",
+      "value": "Outdoors",
+      "unit": ""
     },
     {
-      "label": "Angle",
+      "label": "Installation",
+      "value": "Surface wiring",
+      "unit": ""
+    },
+    {
+      "label": "Detection angle",
       "value": "180",
       "unit": "°"
-    },
-    {
-      "label": "IP Rating",
-      "value": "IP54",
-      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/steinel-is-2180.png",
+    "src": "../public/scraped/sensors/is-2180/01-17215-is-2180-2-4007841603717-pro-ab01-x-x-x-bla-x-106679306-web-new.jpg",
     "alt": "IS 2180"
   },
   "overview": [
-    "Attractive, clever, efficient. Infrared motion detector IS 2180-2 for outdoors, ideal for building fronts and properties, medium-sized business and outdoor spaces, ideal installation height 2 m, 180° angle of coverage, reach. 12 m max. or 5 m max. (tangential), selectable time and twilight threshold, manual override, for outdoor and indoor installation ."
+    "IS 2180 ECO black - Attractive, clever, efficient. Infrared motion detector IS 2180 ECO for outdoors, ideal for building fronts and properties, medium-sized business and outdoor spaces, ideal installa"
   ],
-  "features": [],
-  "applications": [],
+  "features": [
+    "black finish",
+    "IP54 rated",
+    "Plastic"
+  ],
+  "applications": [
+    "Offices",
+    "Warehouses",
+    "Corridors",
+    "Parking"
+  ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Mounting height max.",
+            "value": "4,00 m"
+          },
+          {
+            "label": "Dimensions (L x W x H)",
+            "value": "55 x 78 x 120 mm"
+          },
+          {
+            "label": "Type",
+            "value": "Motion detectors"
+          },
+          {
+            "label": "Colour",
+            "value": "black"
+          },
+          {
+            "label": "Colour, RAL",
+            "value": "9005"
+          },
+          {
+            "label": "Material",
+            "value": "Plastic"
+          },
+          {
+            "label": "Mounting height",
+            "value": "1,80 – 4,00 m"
+          },
+          {
+            "label": "Type of interconnection",
+            "value": "Master/master"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
           {
             "label": "Application, place",
-            "value": "Outdoors, Indoors"
+            "value": "Outdoors"
           },
           {
             "label": "Installation",
@@ -55,36 +102,189 @@
             "value": "r = 5 m (39 m²) / r = 12 m (226 m²)"
           },
           {
-            "label": "Mounting height max.",
-            "value": "4,00 m"
-          },
-          {
             "label": "Interconnection via",
             "value": "Cable"
           },
           {
             "label": "Version",
-            "value": "white"
+            "value": "black"
+          },
+          {
+            "label": "Article number",
+            "value": "034702"
           },
           {
             "label": "PU1, net weight",
-            "value": "0,12 kg"
+            "value": "0,2 kg"
           },
           {
-            "label": "infrared sensor 180°",
-            "value": "max. Ø 12 m"
+            "label": "Package content",
+            "value": "1"
           },
           {
-            "label": "1000 W max.",
+            "label": "Manufacturer's Warranty",
+            "value": "5 years"
+          },
+          {
+            "label": "Settings via",
+            "value": "Potentiometers"
+          },
+          {
+            "label": "With remote control",
+            "value": "No"
+          },
+          {
+            "label": "PU1, EAN",
+            "value": "4007841034702"
+          },
+          {
+            "label": "Application, room",
+            "value": "outdoors, front door, all round the building, terrace / balcony, courtyard & driveway"
+          },
+          {
+            "label": "Includes corner wall mount",
+            "value": "No"
+          },
+          {
+            "label": "Installation site",
+            "value": "wall, corner"
+          },
+          {
+            "label": "IP-rating",
             "value": "IP54"
           },
           {
-            "label": "2 - 2000 lux",
-            "value": "5 sec - 15 min"
+            "label": "Ambient temperature",
+            "value": "from -20 up to 50 °C"
           },
           {
-            "label": "manufacturer's warranty steinel.de/garantie",
-            "value": "CE"
+            "label": "Mains power supply",
+            "value": "230 – 240 V / 50 Hz"
+          },
+          {
+            "label": "Switching output 1, resistive",
+            "value": "2000 W"
+          },
+          {
+            "label": "Fluorescent lamps, electronic ballast",
+            "value": "350 W"
+          },
+          {
+            "label": "Fluorescent lamps, uncorrected",
+            "value": "500 VA"
+          },
+          {
+            "label": "Fluorescent lamps, series-corrected",
+            "value": "900 VA"
+          },
+          {
+            "label": "Fluorescent lamps, parallel-corrected",
+            "value": "500 VA"
+          },
+          {
+            "label": "Switching output 1, low-voltage halogen lamps",
+            "value": "1000 VA"
+          },
+          {
+            "label": "LED lamps < 2 W",
+            "value": "100 W"
+          },
+          {
+            "label": "LED lamps > 2 W < 8 W",
+            "value": "175 W"
+          },
+          {
+            "label": "LED lamps > 8 W",
+            "value": "350 W"
+          },
+          {
+            "label": "Capacitive load in μF",
+            "value": "132 µF"
+          },
+          {
+            "label": "European Article Number (EAN)",
+            "value": "4007841034702"
+          },
+          {
+            "label": "Angle of aperture",
+            "value": "90 °"
+          },
+          {
+            "label": "Technology, sensors",
+            "value": "passive infrared, Mixed light metering"
+          },
+          {
+            "label": "Optimum mounting height",
+            "value": "2 m"
+          },
+          {
+            "label": "Sneak-by guard",
+            "value": "Yes"
+          },
+          {
+            "label": "Capability of masking out individual segments",
+            "value": "Yes"
+          },
+          {
+            "label": "Electronic scalability",
+            "value": "No"
+          },
+          {
+            "label": "Mechanical scalability",
+            "value": "No"
+          },
+          {
+            "label": "Reach, radial",
+            "value": "r = 1.5 m (4 m²) / r = 3 m (14 m²)"
+          },
+          {
+            "label": "Switching zones",
+            "value": "504 switching zones"
+          },
+          {
+            "label": "Twilight setting",
+            "value": "2 – 2000 lx"
+          },
+          {
+            "label": "Time setting",
+            "value": "10 s – 15 Min."
+          },
+          {
+            "label": "Basic light level function",
+            "value": "No"
+          },
+          {
+            "label": "Main light adjustable",
+            "value": "No"
+          },
+          {
+            "label": "Twilight setting TEACH",
+            "value": "No"
+          },
+          {
+            "label": "Constant-lighting control",
+            "value": "No"
+          },
+          {
+            "label": "Interconnection",
+            "value": "Yes"
+          },
+          {
+            "label": "Product category",
+            "value": "Motion detector"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Voltage range (min)",
+            "value": "230 V"
+          },
+          {
+            "label": "Voltage range (max)",
+            "value": "240 V"
           }
         ]
       }
@@ -98,7 +298,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

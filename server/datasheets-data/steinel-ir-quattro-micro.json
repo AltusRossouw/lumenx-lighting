@@ -5,35 +5,82 @@
   },
   "name": "IR QUATTRO MICRO",
   "category": "SENSORS",
-  "variant": "",
+  "variant": "IR Quattro MICRO 6m COM1 - white - Small sensor",
   "stats": [
     {
-      "label": "Reach",
-      "value": "4",
-      "unit": "m"
+      "label": "Application, place",
+      "value": "Indoors",
+      "unit": ""
     },
     {
-      "label": "Angle",
+      "label": "Installation",
+      "value": "In-ceiling installation",
+      "unit": ""
+    },
+    {
+      "label": "Detection angle",
       "value": "360",
       "unit": "°"
-    },
-    {
-      "label": "IP Rating",
-      "value": "IP20",
-      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/steinel-ir-quattro-micro.png",
-    "alt": "IR QUATTRO MICRO"
+    "src": "../public/scraped/sensors/ir-quattro-micro/01-18000-ir-quattro-micro-ohne-schatten.jpg",
+    "alt": "IR Quattro Micro"
   },
   "overview": [
-    "Noticeably Inconspicuous. IR Quattro SLIM XS, the extra-slim presence detector in concealed-box format. Fits into any standard concealed box. Overall height of just 6 mm. High-precision 360° infrared senor with globally unique retina lens and 16 sq.m square presence detection zone (4 x 4 m). Adjustment via remote control or Smart Remote. Round aperture is additionally enclosed."
+    "IR Quattro MICRO 6m COM1 - white - Small sensor. Great performance. The IR Quattro MICRO meets the wish of many architects and planners for a sensor that's as inconspicuous as possible. It impresses w"
   ],
-  "features": [],
-  "applications": [],
+  "features": [
+    "white finish",
+    "IP65 rated",
+    "Plastic"
+  ],
+  "applications": [
+    "Offices",
+    "Warehouses",
+    "Corridors",
+    "Parking"
+  ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Mounting height max.",
+            "value": "4,00 m"
+          },
+          {
+            "label": "Dimensions (Ø x H)",
+            "value": "43 x 75 mm"
+          },
+          {
+            "label": "Type",
+            "value": "Presence detector"
+          },
+          {
+            "label": "Colour",
+            "value": "white"
+          },
+          {
+            "label": "Colour, RAL",
+            "value": "9003"
+          },
+          {
+            "label": "Material",
+            "value": "Plastic"
+          },
+          {
+            "label": "Mounting height",
+            "value": "2,50 – 4,00 m"
+          },
+          {
+            "label": "Type of interconnection",
+            "value": "Master/master, Master/slave"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
@@ -44,7 +91,7 @@
           },
           {
             "label": "Installation",
-            "value": "Concealed wiring"
+            "value": "In-ceiling installation"
           },
           {
             "label": "Detection angle",
@@ -52,11 +99,7 @@
           },
           {
             "label": "Reach, tangential",
-            "value": "4 x 4 m (16 m²)"
-          },
-          {
-            "label": "Mounting height max.",
-            "value": "4,00 m"
+            "value": "6 x 6 m (36 m²)"
           },
           {
             "label": "Interconnection via",
@@ -64,27 +107,204 @@
           },
           {
             "label": "Version",
-            "value": "COM1 - square"
+            "value": "COM1 - white"
+          },
+          {
+            "label": "Article number",
+            "value": "053789"
           },
           {
             "label": "PU1, net weight",
-            "value": "0,078 kg"
+            "value": "0,232 kg"
           },
           {
-            "label": "infrared sensor",
-            "value": "max. 4 x 4 m presence"
+            "label": "With motion detector",
+            "value": "Yes"
           },
           {
-            "label": "IP20",
-            "value": "1000 W max."
+            "label": "Manufacturer's Warranty",
+            "value": "5 years"
           },
           {
-            "label": "10 - 1000 lux with RC 8",
-            "value": "1 min - 15 min with RC 8"
+            "label": "Settings via",
+            "value": "Remote control, Smart Remote"
           },
           {
-            "label": "ideal 2,5 - 4 m",
-            "value": "Teach mode"
+            "label": "With remote control",
+            "value": "No"
+          },
+          {
+            "label": "PU1, EAN",
+            "value": "4007841053789"
+          },
+          {
+            "label": "Application, room",
+            "value": "one-person office, hotel room, care room, function room / ancillary room, WC / washroom, Indoors"
+          },
+          {
+            "label": "Includes corner wall mount",
+            "value": "No"
+          },
+          {
+            "label": "Installation site",
+            "value": "ceiling"
+          },
+          {
+            "label": "IP-rating",
+            "value": "IP65"
+          },
+          {
+            "label": "Ambient temperature",
+            "value": "from -25 up to 55 °C"
+          },
+          {
+            "label": "Mains power supply",
+            "value": "220 – 240 V / 50 – 60 Hz"
+          },
+          {
+            "label": "Switching output 1, resistive",
+            "value": "1000 W"
+          },
+          {
+            "label": "Switching output 1, number of LEDs / fluorescent lamps",
+            "value": "8 pcs."
+          },
+          {
+            "label": "Switching output 1, floating",
+            "value": "No"
+          },
+          {
+            "label": "Fluorescent lamps, electronic ballast",
+            "value": "500 W"
+          },
+          {
+            "label": "Fluorescent lamps, uncorrected",
+            "value": "400 VA"
+          },
+          {
+            "label": "Fluorescent lamps, series-corrected",
+            "value": "400 VA"
+          },
+          {
+            "label": "Fluorescent lamps, parallel-corrected",
+            "value": "400 VA"
+          },
+          {
+            "label": "Switching output 1, low-voltage halogen lamps",
+            "value": "1000 VA"
+          },
+          {
+            "label": "LED lamps < 2 W",
+            "value": "100 W"
+          },
+          {
+            "label": "LED lamps > 2 W < 8 W",
+            "value": "300 W"
+          },
+          {
+            "label": "LED lamps > 8 W",
+            "value": "600 W"
+          },
+          {
+            "label": "Capacitive load in μF",
+            "value": "176 µF"
+          },
+          {
+            "label": "European Article Number (EAN)",
+            "value": "4007841053789"
+          },
+          {
+            "label": "Angle of aperture",
+            "value": "90 °"
+          },
+          {
+            "label": "Technology, sensors",
+            "value": "passive infrared, Mixed light metering"
+          },
+          {
+            "label": "Optimum mounting height",
+            "value": "2,8 m"
+          },
+          {
+            "label": "Sneak-by guard",
+            "value": "Yes"
+          },
+          {
+            "label": "Capability of masking out individual segments",
+            "value": "No"
+          },
+          {
+            "label": "Electronic scalability",
+            "value": "No"
+          },
+          {
+            "label": "Mechanical scalability",
+            "value": "No"
+          },
+          {
+            "label": "Reach, radial",
+            "value": "4 x 4 m (16 m²)"
+          },
+          {
+            "label": "Reach, presence",
+            "value": "4 x 4 m (16 m²)"
+          },
+          {
+            "label": "Switching zones",
+            "value": "168 switching zones"
+          },
+          {
+            "label": "Functions",
+            "value": "Normal / test mode, Semi-/fully automatic, Manual ON / ON-OFF"
+          },
+          {
+            "label": "Twilight setting",
+            "value": "2 – 1000 lx"
+          },
+          {
+            "label": "Time setting",
+            "value": "5 s – 60 Min."
+          },
+          {
+            "label": "Basic light level function",
+            "value": "No"
+          },
+          {
+            "label": "Main light adjustable",
+            "value": "No"
+          },
+          {
+            "label": "Twilight setting TEACH",
+            "value": "Yes"
+          },
+          {
+            "label": "Constant-lighting control",
+            "value": "No"
+          },
+          {
+            "label": "Interconnection",
+            "value": "Yes"
+          },
+          {
+            "label": "Product category",
+            "value": "Presence detector"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Power consumption",
+            "value": "0,5 W"
+          },
+          {
+            "label": "Voltage range (min)",
+            "value": "220 V"
+          },
+          {
+            "label": "Voltage range (max)",
+            "value": "240 V"
           }
         ]
       }
@@ -98,7 +318,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

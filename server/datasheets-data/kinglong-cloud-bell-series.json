@@ -4,13 +4,18 @@
     "rev": "1.0"
   },
   "name": "CLOUD BELL",
-  "category": "INDOOR DECORATIVE",
-  "variant": "",
+  "category": "DECORATIVE",
+  "variant": "Explore the Cloud Bell Series, a decorative chandelier collection for hotel lobbies, villas, and commercial interiors",
   "stats": [
     {
       "label": "Power",
       "value": "15–500",
       "unit": "W"
+    },
+    {
+      "label": "Wattage",
+      "value": "15W – 500W (configuration-dependent)",
+      "unit": ""
     },
     {
       "label": "IP Rating",
@@ -19,13 +24,22 @@
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/scraped/decorative/cloud-bell/03-cloudbell-s1-l2127-w1116-h1403.png",
+    "alt": "Cloud Bell"
   },
   "overview": [
-    "The Cloud Bell Series draws its vocabulary from the gentle curves of hanging bells and the soft fullness of clouds at dusk — organic forms that carry both visual weight and an inherent sense of movement. Each bell element is individually crafted from layered acrylic and crystal, achieving a depth of luminous translucency that flat surfaces cannot replicate. Deployed in clusters of varying heights, the Cloud Bell Series creates installations that feel more like kinetic sculpture than conventional lighting — ideal for clients who treat their spaces as galleries of lived experience."
+    "Explore the Cloud Bell Series, a decorative chandelier collection for hotel lobbies, villas, and commercial interiors."
   ],
-  "features": [],
+  "features": [
+    "Layered Optical Acrylic · K9 Crystal",
+    "Champagne Gold · Matte Black · Brushed Silver finish",
+    "15–500 W power",
+    "IP20 rated",
+    "3 Years · LED Driver: 5 Years warranty",
+    "15W – 500W (configuration-dependent) power",
+    "110V – 240V, 50/60Hz Universal Input",
+    "Dimming: 0–10V · Triac · DALI"
+  ],
   "applications": [
     "Hospitality",
     "Residential",
@@ -38,12 +52,16 @@
         "title": "Physical",
         "rows": [
           {
-            "label": "Primary Material",
-            "value": "Layered Optical Acrylic + K9 Crystal Accent Elements"
+            "label": "Material",
+            "value": "Layered Optical Acrylic · K9 Crystal"
           },
           {
-            "label": "Frame",
-            "value": "Stainless Steel 304 PVD-coated"
+            "label": "Finish",
+            "value": "Champagne Gold · Matte Black · Brushed Silver"
+          },
+          {
+            "label": "Dimensions",
+            "value": "Bell Ø150mm – Ø600mm per element"
           },
           {
             "label": "Finish Options",
@@ -55,12 +73,16 @@
         "title": "Compliance",
         "rows": [
           {
-            "label": "Warranty",
-            "value": "3 Years · LED Driver: 5 Years"
+            "label": "Certifications",
+            "value": "CE"
           },
           {
-            "label": "Certifications",
-            "value": "CE · CNAS-accredited test reports available"
+            "label": "IP Rating",
+            "value": "IP20"
+          },
+          {
+            "label": "Warranty",
+            "value": "3 Years · LED Driver: 5 Years"
           }
         ]
       }
@@ -70,22 +92,30 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "Light Source",
-            "value": "Integrated LED, 2700K / 3000K CCT, CRI > 90"
-          },
-          {
-            "label": "IP Rating",
-            "value": "IP20 standard"
-          },
-          {
             "label": "Lead Time",
             "value": "Standard: 5–7 weeks · Grand Installation: 10–16 weeks"
+          },
+          {
+            "label": "Primary Material",
+            "value": "Layered Optical Acrylic + K9 Crystal Accent Elements"
+          },
+          {
+            "label": "Frame",
+            "value": "Stainless Steel 304 PVD-coated"
+          },
+          {
+            "label": "Light Source",
+            "value": "Integrated LED, 2700K / 3000K CCT, CRI > 90"
           }
         ]
       },
       {
         "title": "Electrical",
         "rows": [
+          {
+            "label": "Power",
+            "value": "15–500 W"
+          },
           {
             "label": "Wattage",
             "value": "15W – 500W (configuration-dependent)"
@@ -110,7 +140,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

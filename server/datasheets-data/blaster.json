@@ -4,26 +4,31 @@
     "rev": "1.0"
   },
   "name": "BLASTER",
-  "category": "TRACK LIGHTING",
+  "category": "TRACK",
   "variant": "35/30/28W 3-wire track spot with 340° rotation and CRI>90.",
   "stats": [
     {
-      "label": "Power",
-      "value": "28–35",
-      "unit": "W"
+      "label": "Wattage",
+      "value": "35/30/28W",
+      "unit": ""
     },
     {
-      "label": "Lumens",
-      "value": "3220–4025",
-      "unit": "lm"
+      "label": "Colour Temperature",
+      "value": "3CCT (3000K/4000K/6000K) Lumen Output:28W = >3220lm \\",
+      "unit": ""
+    },
+    {
+      "label": "Flicker Free CRI",
+      "value": ">90",
+      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/blaster.png",
-    "alt": "BLASTER"
+    "src": "../public/scraped/track/blaster/01-pioled-lighting-tkw101-blaster-high-power-3-wire-track-spot-white-c.png",
+    "alt": "Blaster"
   },
   "overview": [
-    "35/30/28W 3-wire track spot with 340° rotation and CRI>90."
+    "The Blaster is a LumenX track luminaire. It is designed for Retail, Showrooms, Galleries environments. Available in 35/30/28W. Available in 3CCT (3000K/4000K/6000K) Lumen Output:28W = >3220lm \\."
   ],
   "features": [
     "CRI>90 accurate colour",
@@ -38,38 +43,65 @@
     "Accent lighting"
   ],
   "columns": {
-    "left": [],
-    "right": [
+    "left": [
       {
-        "title": "Product Information",
+        "title": "Physical",
         "rows": [
           {
-            "label": "Lumens",
-            "value": "> 3,220lm – 4,025lm"
-          },
-          {
-            "label": "CCT",
-            "value": "3CCT (3000K / 4000K / 6000K)"
-          },
-          {
-            "label": "CRI",
-            "value": "> 90"
+            "label": "Colour Temperature",
+            "value": "3CCT (3000K/4000K/6000K) Lumen Output:28W = >3220lm \\"
           },
           {
             "label": "Beam",
             "value": "36°"
           },
           {
-            "label": "Rotation",
-            "value": "340°"
+            "label": "Housing",
+            "value": "Aluminium"
+          },
+          {
+            "label": "Colour",
+            "value": "Black, White"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Operating temp",
+            "value": "-30~40°C"
           },
           {
             "label": "IK Rating",
             "value": "IK05"
           },
           {
-            "label": "Surge Protection",
-            "value": "3kV"
+            "label": "Certifications",
+            "value": "CE, EMC, IEC60598,"
+          },
+          {
+            "label": "RoHs IES File",
+            "value": "Yes"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Flicker Free CRI",
+            "value": ">90"
+          },
+          {
+            "label": "LED Chips",
+            "value": "COB"
+          },
+          {
+            "label": "Additional Features",
+            "value": "340° Rotation for Aiming *5 YEAR WARRANTY"
           }
         ]
       },
@@ -78,11 +110,19 @@
         "rows": [
           {
             "label": "Wattage",
-            "value": "28W / 30W / 35W"
+            "value": "35/30/28W"
           },
           {
-            "label": "Voltage",
-            "value": "200–265V AC"
+            "label": "Input Voltage",
+            "value": "200-265V"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "3kV"
+          },
+          {
+            "label": "Dimmable",
+            "value": "No"
           }
         ]
       }
@@ -96,7 +136,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

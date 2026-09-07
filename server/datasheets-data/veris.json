@@ -4,7 +4,7 @@
     "rev": "1.0"
   },
   "name": "VERIS",
-  "category": "LED PANELS",
+  "category": "PANELS",
   "variant": "Back-lit low-glare LED panel with UGR<19 and flicker-free operation.",
   "stats": [
     {
@@ -13,19 +13,19 @@
       "unit": "W"
     },
     {
+      "label": "Wattage",
+      "value": "30W, 40W, 50W",
+      "unit": ""
+    },
+    {
       "label": "Lumens",
       "value": "3600",
       "unit": "lm"
-    },
-    {
-      "label": "IP Rating",
-      "value": "IP40",
-      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/veris.png",
-    "alt": "VERIS"
+    "src": "../public/scraped/panels/veris/01-veris.jpg",
+    "alt": "Veris"
   },
   "overview": [
     "Back-lit low-glare LED panel with UGR<19 and flicker-free operation."
@@ -57,6 +57,23 @@
           {
             "label": "Mounting",
             "value": "Recessed"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "120°"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP40"
+          },
+          {
+            "label": "Lifetime",
+            "value": "L80B10 @ 50,000 hrs"
           }
         ]
       }
@@ -67,7 +84,7 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "3,600 lm"
+            "value": "3600 lm"
           },
           {
             "label": "Efficacy",
@@ -82,24 +99,8 @@
             "value": ">80"
           },
           {
-            "label": "Beam Angle",
-            "value": "120°"
-          },
-          {
             "label": "UGR",
             "value": "<19"
-          },
-          {
-            "label": "IP Rating",
-            "value": "IP40"
-          },
-          {
-            "label": "Surge Protection",
-            "value": "1.5kV"
-          },
-          {
-            "label": "Lifetime",
-            "value": "L80B10 @ 50,000 hrs"
           }
         ]
       },
@@ -108,7 +109,15 @@
         "rows": [
           {
             "label": "Wattage",
-            "value": "24W"
+            "value": "30W, 40W, 50W"
+          },
+          {
+            "label": "Power",
+            "value": "24 W"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "1.5kV"
           },
           {
             "label": "Voltage",
@@ -130,7 +139,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

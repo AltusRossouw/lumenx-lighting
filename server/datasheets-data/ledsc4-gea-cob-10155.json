@@ -4,18 +4,28 @@
     "rev": "1.0"
   },
   "name": "GEA COB",
-  "category": "INDOOR LIGHTING",
-  "variant": "",
+  "category": "OUTDOOR ARCHITECTURAL",
+  "variant": "Swiveling solution that adapts to different vegetation heights thanks to its optical accessories",
   "stats": [
     {
       "label": "Lumens",
       "value": "869–934",
       "unit": "lm"
+    },
+    {
+      "label": "Lumen Output",
+      "value": "869–934",
+      "unit": "lm"
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "2700K / 3000K / 4000K",
+      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/ledsc4-gea-cob-10155.png",
-    "alt": "GEA COB"
+    "src": "../public/scraped/outdoor-architectural/gea-cob/10-f28fa54d99144f44-855a4391f5ab57c2-2000-1-3.png",
+    "alt": "Gea Cob"
   },
   "overview": [
     "Swiveling solution that adapts to different vegetation heights thanks to its optical accessories."
@@ -31,22 +41,37 @@
     "Hospitality"
   ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Colour Temperature",
+            "value": "2700K / 3000K / 4000K"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Lifespan",
+            "value": "50 000h L80 B20"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
           {
-            "label": "Colour Temperature",
-            "value": "2700K / 3000K / 4000K"
+            "label": "Lumens",
+            "value": "869–934 lm"
           },
           {
             "label": "Lumen Output",
             "value": "869–934 lm"
-          },
-          {
-            "label": "Lifespan",
-            "value": "50 000h L80 B20"
           }
         ]
       }
@@ -60,7 +85,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

@@ -6,10 +6,26 @@
   "name": "COB ADJUSTABLE DOWNLIGHT",
   "category": "DOWNLIGHTS",
   "variant": "Compact, low-profile recessed downlight from the Aegeon family for discreet ceiling integration.",
-  "stats": [],
+  "stats": [
+    {
+      "label": "Wattage",
+      "value": "10W, 15W, 20W, 30W, 36W",
+      "unit": ""
+    },
+    {
+      "label": "CCT",
+      "value": "3000K / 4000K",
+      "unit": ""
+    },
+    {
+      "label": "CRI",
+      "value": "90+",
+      "unit": ""
+    }
+  ],
   "heroImage": {
-    "src": "../public/product-images/lean-153.png",
-    "alt": "LEAN 153"
+    "src": "../public/scraped/downlights/cob-adjustable-downlight/01-aegeon.jpg",
+    "alt": "COB Adjustable Downlight"
   },
   "overview": [
     "The Lean 153 is a low-profile recessed downlight within the Aegeon range, engineered for shallow ceiling voids and discreet architectural integration. It shares the diffused, low-glare optic and passive cooling approach of the family while accommodating tighter installation constraints."
@@ -31,8 +47,16 @@
         "title": "Physical",
         "rows": [
           {
-            "label": "Cooling",
-            "value": "Passive die-cast"
+            "label": "Colour",
+            "value": "White"
+          },
+          {
+            "label": "Type",
+            "value": "Recessed, low-profile"
+          },
+          {
+            "label": "Optics",
+            "value": "Diffused, low-glare"
           }
         ]
       }
@@ -42,12 +66,8 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "Type",
-            "value": "Recessed, low-profile"
-          },
-          {
-            "label": "Optics",
-            "value": "Diffused, low-glare"
+            "label": "Cooling",
+            "value": "Passive die-cast"
           },
           {
             "label": "CRI",
@@ -56,6 +76,15 @@
           {
             "label": "CCT",
             "value": "3000K / 4000K"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "10W, 15W, 20W, 30W, 36W"
           }
         ]
       }
@@ -69,7 +98,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

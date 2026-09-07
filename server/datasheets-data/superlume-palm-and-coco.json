@@ -4,7 +4,7 @@
     "rev": "1.0"
   },
   "name": "PALM & COCO",
-  "category": "OUTDOOR LIGHTING",
+  "category": "OUTDOOR ARCHITECTURAL",
   "variant": "20W LED bollard · 1 m · 3CCT",
   "stats": [
     {
@@ -13,18 +13,18 @@
       "unit": "W"
     },
     {
+      "label": "Wattage",
+      "value": "20",
+      "unit": "W"
+    },
+    {
       "label": "Lumens",
       "value": "1800",
       "unit": "lm"
-    },
-    {
-      "label": "IP Rating",
-      "value": "IP66",
-      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "",
+    "src": "../public/scraped/outdoor-architectural/palm-coco/member-01-a546d4-1be930474538476397b983a4944286d6-mv2.jpg",
     "alt": "Palm & Coco"
   },
   "overview": [
@@ -48,14 +48,6 @@
         "title": "Physical",
         "rows": [
           {
-            "label": "Body",
-            "value": "Aluminium"
-          },
-          {
-            "label": "Diffuser",
-            "value": "UV-resistant clear"
-          },
-          {
             "label": "Mounting",
             "value": "Ground"
           },
@@ -66,6 +58,19 @@
           {
             "label": "Product Size (L × W × H)",
             "value": "181 × 181 × 900mm"
+          },
+          {
+            "label": "Colour Temperature",
+            "value": "3000K / 4000K / 6000K"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP66"
           }
         ]
       }
@@ -75,6 +80,18 @@
         "title": "Product Information",
         "rows": [
           {
+            "label": "Lumens",
+            "value": "1800 lm"
+          },
+          {
+            "label": "Body",
+            "value": "Aluminium"
+          },
+          {
+            "label": "Diffuser",
+            "value": "UV-resistant clear"
+          },
+          {
             "label": "Nominal Flux",
             "value": "Up to 1800 lm"
           },
@@ -83,22 +100,18 @@
             "value": "Up to 90 lm/W"
           },
           {
-            "label": "Colour Temperature",
-            "value": "3000K / 4000K / 6000K"
-          },
-          {
             "label": "CRI",
             "value": ">80"
-          },
-          {
-            "label": "IP Rating",
-            "value": "IP66"
           }
         ]
       },
       {
         "title": "Electrical",
         "rows": [
+          {
+            "label": "Power",
+            "value": "20 W"
+          },
           {
             "label": "Wattage",
             "value": "20W"
@@ -123,7 +136,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

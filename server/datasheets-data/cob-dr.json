@@ -8,24 +8,24 @@
   "variant": "Round COB recessed downlight range from 7W to 35W with deep-recessed reflector optics.",
   "stats": [
     {
-      "label": "Power",
-      "value": "7.2–36.5",
-      "unit": "W"
-    },
-    {
-      "label": "Lumens",
-      "value": "855–4519",
-      "unit": "lm"
-    },
-    {
       "label": "IP Rating",
       "value": "IP20",
+      "unit": ""
+    },
+    {
+      "label": "Fitting Material",
+      "value": "High pressure die cast aluminium housing",
+      "unit": ""
+    },
+    {
+      "label": "Trim adjustability",
+      "value": "Fixed Trim",
       "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/cob-dr.png",
-    "alt": "COB-DR"
+    "src": "../public/scraped/downlights/cob-anti-glare-downlight/01-cob-dr-s.png",
+    "alt": "COB Anti-glare Downlight"
   },
   "overview": [
     "Round COB recessed downlight range from 7W to 35W with deep-recessed reflector optics."
@@ -48,12 +48,33 @@
         "title": "Physical",
         "rows": [
           {
-            "label": "Cutout",
-            "value": "Ø85 / Ø115 / Ø140mm"
+            "label": "Trim adjustability",
+            "value": "Fixed Trim"
           },
           {
-            "label": "Housing",
-            "value": "Die-cast aluminium"
+            "label": "Optic Type",
+            "value": "Reflector"
+          },
+          {
+            "label": "Mounting Type",
+            "value": "Ceiling cut-out"
+          },
+          {
+            "label": "Colour Rendering Index (CRI)",
+            "value": "CRI80 , CRI90"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          },
+          {
+            "label": "Warranty",
+            "value": "5 year warranty as per LEDwise standard terms of warranty"
           }
         ]
       }
@@ -63,24 +84,36 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "Lumens",
-            "value": "855lm – 4,519lm"
+            "label": "Fitting Material",
+            "value": "High pressure die cast aluminium housing"
           },
           {
-            "label": "Beam Angle",
-            "value": "25° / 30° / 45° / 50°"
+            "label": "Available finishes",
+            "value": "Powder coated white"
           },
           {
-            "label": "CRI",
-            "value": "80 / 90"
+            "label": "LED Colours (CCT)",
+            "value": "3000K, 4000K (others CCT’s on request)"
           },
           {
-            "label": "CCT",
-            "value": "3000K / 4000K"
+            "label": "LED Colour Consistency",
+            "value": "<3 SDCM"
           },
           {
-            "label": "IP Rating",
-            "value": "IP20"
+            "label": "LED Lifetime",
+            "value": "L80B10 >50,000 hrs at Ta = 25° Celsius"
+          },
+          {
+            "label": "Operating Voltage/ Frequency",
+            "value": "220 – 240 V/ 50 – 60 Hz"
+          },
+          {
+            "label": "Optional Add-ons",
+            "value": "Min. 1 hour emergency version available"
+          },
+          {
+            "label": "Manufacture",
+            "value": "Assembled in South Africa"
           }
         ]
       },
@@ -88,12 +121,8 @@
         "title": "Electrical",
         "rows": [
           {
-            "label": "Wattage",
-            "value": "7.2W – 36.5W"
-          },
-          {
-            "label": "Control",
-            "value": "Non-dim / Phase-dim / DALI"
+            "label": "Control Options",
+            "value": "Non-dim (N), Phase-cut Dim (D), Dali-Dim (DALI), Bluetooth (BLU)"
           }
         ]
       }
@@ -107,7 +136,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

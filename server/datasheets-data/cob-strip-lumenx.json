@@ -4,18 +4,18 @@
     "rev": "1.0"
   },
   "name": "COB",
-  "category": "LED STRIPS",
+  "category": "STRIPS",
   "variant": "5/10W 24V IP20 COB dotless strip (8mm) with 5cm cutting points.",
   "stats": [
     {
-      "label": "Power",
-      "value": "10",
-      "unit": "W"
+      "label": "Wattage",
+      "value": "5/10W",
+      "unit": ""
     },
     {
-      "label": "Lumens",
-      "value": "1100",
-      "unit": "lm"
+      "label": "Lumen Output",
+      "value": ">500lm/1100lm",
+      "unit": ""
     },
     {
       "label": "IP Rating",
@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/cob-strip-lumenx.png",
+    "src": "../public/scraped/strips/cob/01-pioled-lighting-s303-sr303-a-10w-24v-cob-ip20-strip-3000k-1.jpg",
     "alt": "COB"
   },
   "overview": [
@@ -43,46 +43,73 @@
     "Joinery accent"
   ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Colour Temp",
+            "value": "6000K/4000K/3000K"
+          },
+          {
+            "label": "Beam",
+            "value": "180°"
+          },
+          {
+            "label": "Colour Temperature",
+            "value": "6000K, 4000K, 3000K"
+          },
+          {
+            "label": "Length",
+            "value": "1 Meter, 5 Meters, 50 Meters"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          },
+          {
+            "label": "Certifications",
+            "value": "CE,"
+          },
+          {
+            "label": "RohS IES File",
+            "value": "No"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
           {
-            "label": "Lumens",
-            "value": "1,100 lm/m"
+            "label": "Available in",
+            "value": "1m/5m/50m"
           },
           {
-            "label": "Efficacy",
-            "value": "110 lm/W"
-          },
-          {
-            "label": "CCT",
-            "value": "3000K / 4000K / 6000K"
+            "label": "Lumen Output",
+            "value": ">500lm/1100lm"
           },
           {
             "label": "CRI",
             "value": ">90"
           },
           {
-            "label": "Beam Angle",
-            "value": "180°"
+            "label": "DC LED Chips",
+            "value": "COB"
           },
           {
-            "label": "IP Rating",
-            "value": "IP20"
+            "label": "Cutting point",
+            "value": "5cm"
           },
           {
-            "label": "LED Density",
-            "value": "480 LED/m"
-          },
-          {
-            "label": "Cutting Point",
-            "value": "50mm"
-          },
-          {
-            "label": "Lifetime",
-            "value": "L70B10 @ 50,000 hrs"
+            "label": "Additional Features",
+            "value": "Max 5m series installation with no voltage drop *3 YEAR WARRANTY DOWNLOAD SPEC SHEET"
           }
         ]
       },
@@ -91,15 +118,15 @@
         "rows": [
           {
             "label": "Wattage",
-            "value": "10W/m"
+            "value": "5/10W"
           },
           {
-            "label": "Voltage",
-            "value": "24V DC"
+            "label": "Input Voltage",
+            "value": "24V"
           },
           {
-            "label": "Dimming",
-            "value": "Yes"
+            "label": "Dimmable",
+            "value": "Yes 0-24V"
           }
         ]
       }
@@ -113,7 +140,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

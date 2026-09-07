@@ -4,13 +4,18 @@
     "rev": "1.0"
   },
   "name": "JIANGNAN",
-  "category": "INDOOR DECORATIVE",
-  "variant": "",
+  "category": "DECORATIVE",
+  "variant": "Explore the Jiangnan Series, an Eastern-inspired decorative lighting collection for hotels and refined interiors",
   "stats": [
     {
       "label": "Power",
       "value": "18–300",
       "unit": "W"
+    },
+    {
+      "label": "Wattage",
+      "value": "18W – 300W (configuration-dependent)",
+      "unit": ""
     },
     {
       "label": "IP Rating",
@@ -19,13 +24,22 @@
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/kinglong-jiangnan-series.png",
-    "alt": "JIANGNAN"
+    "src": "../public/scraped/decorative/jiangnan/03-jiangnan-s1-l800-w800-h1218.png",
+    "alt": "Jiangnan"
   },
   "overview": [
-    "Inspired by the poetic mist-veiled landscapes of Jiangnan — southern China's storied water towns — this collection translates Eastern sensibility into a thoroughly contemporary design language. High-quality eco-leather wraps a precision metal armature, creating a signature softness that diffuses light with warmth and intimacy. The Champagne Gold PVD-finished metal structure offers outstanding durability and corrosion resistance, making it ideal for demanding hospitality environments. Recognized by international design awards, the Jiangnan Series redefines what modern Chinese-inspired lighting can be."
+    "Explore the Jiangnan Series, an Eastern-inspired decorative lighting collection for hotels and refined interiors."
   ],
-  "features": [],
+  "features": [
+    "Eco-Leather · Stainless Steel",
+    "Champagne Gold PVD · Matte Black · Brushed Nickel finish",
+    "18–300 W power",
+    "IP20 rated",
+    "3 Years · LED Driver: 5 Years warranty",
+    "18W – 300W (configuration-dependent) power",
+    "110V – 240V, 50/60Hz Universal Input",
+    "Dimming: DALI · 0–10V · Triac"
+  ],
   "applications": [
     "Hospitality",
     "Residential",
@@ -37,6 +51,50 @@
       {
         "title": "Physical",
         "rows": [
+          {
+            "label": "Material",
+            "value": "Eco-Leather · Stainless Steel"
+          },
+          {
+            "label": "Finish",
+            "value": "Champagne Gold PVD · Matte Black · Brushed Nickel"
+          },
+          {
+            "label": "Dimensions",
+            "value": "Single pendant: Ø400–Ø1200mm · Linear: L600–L2400mm"
+          },
+          {
+            "label": "Size Range",
+            "value": "Single pendant: Ø400–Ø1200mm · Linear: L600–L2400mm"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Certifications",
+            "value": "CE / UL"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          },
+          {
+            "label": "Warranty",
+            "value": "3 Years · LED Driver: 5 Years"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lead Time",
+            "value": "Standard: 5–7 weeks · Bespoke: 10–16 weeks"
+          },
           {
             "label": "Primary Material",
             "value": "High-Grade Eco-Leather (Simulated Leather) + Stainless Steel Frame"
@@ -50,44 +108,12 @@
             "value": "Finish Champagne Gold PVD (standard) · Matte Black · Brushed Nickel"
           },
           {
-            "label": "Size Range",
-            "value": "Single pendant: Ø400–Ø1200mm · Linear: L600–L2400mm"
-          },
-          {
             "label": "Installation",
             "value": "Suspension cable system · Adjustable height"
-          }
-        ]
-      },
-      {
-        "title": "Compliance",
-        "rows": [
-          {
-            "label": "Warranty",
-            "value": "3 Years · LED Driver: 5 Years"
           },
-          {
-            "label": "Certifications",
-            "value": "CE · UL · CNAS-accredited test reports available"
-          }
-        ]
-      }
-    ],
-    "right": [
-      {
-        "title": "Product Information",
-        "rows": [
           {
             "label": "Light Source",
             "value": "Integrated LED, 2700K / 3000K CCT, CRI > 90"
-          },
-          {
-            "label": "IP Rating",
-            "value": "IP20 standard"
-          },
-          {
-            "label": "Lead Time",
-            "value": "Standard: 5–7 weeks · Bespoke: 10–16 weeks"
           },
           {
             "label": "Awards",
@@ -98,6 +124,10 @@
       {
         "title": "Electrical",
         "rows": [
+          {
+            "label": "Power",
+            "value": "18–300 W"
+          },
           {
             "label": "Wattage",
             "value": "18W – 300W (configuration-dependent)"
@@ -122,7 +152,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

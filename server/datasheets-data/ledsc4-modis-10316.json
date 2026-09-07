@@ -4,37 +4,62 @@
     "rev": "1.0"
   },
   "name": "MODIS",
-  "category": "INDOOR LIGHTING",
-  "variant": "",
+  "category": "OUTDOOR ARCHITECTURAL",
+  "variant": "Modis' double ball joint design allows for limitless light direction",
   "stats": [
     {
       "label": "Lumens",
       "value": "1826–2080",
       "unit": "lm"
+    },
+    {
+      "label": "Lumen Output",
+      "value": "1826–2080",
+      "unit": "lm"
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "2200K / 2700K / 3000K / 3200K / 4000K",
+      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/scraped/outdoor-architectural/modis/08-8a167b8d141247fd-9eda1aff50589a66-2000-34.png",
+    "alt": "Modis"
   },
   "overview": [
     "Outdoor LED luminaire from the LumenX range — output and finishes vary by configuration; see the model table for per-variant values."
   ],
-  "features": [],
+  "features": [
+    "1826–2080 lm lumens",
+    "2200K / 2700K / 3000K / 3200K / 4000K colour temperature",
+    "Up to 1826–2080 lm",
+    "100-277V input"
+  ],
   "applications": [
     "Architectural",
     "Commercial",
     "Hospitality"
   ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Colour Temperature",
+            "value": "2200K / 2700K / 3000K / 3200K / 4000K"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
           {
-            "label": "Colour Temperature",
-            "value": "2200K / 2700K / 3000K / 3200K / 4000K"
+            "label": "Lumens",
+            "value": "1826–2080 lm"
           },
           {
             "label": "Lumen Output",
@@ -61,7 +86,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

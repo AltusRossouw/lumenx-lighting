@@ -4,8 +4,8 @@
     "rev": "1.0"
   },
   "name": "ROW",
-  "category": "INDOOR LIGHTING",
-  "variant": "",
+  "category": "OUTDOOR ARCHITECTURAL",
+  "variant": "Robustness and durability in a doubly reinforced cement silhouette",
   "stats": [
     {
       "label": "Power",
@@ -13,22 +13,22 @@
       "unit": "W"
     },
     {
+      "label": "Wattage",
+      "value": "19.3",
+      "unit": "W"
+    },
+    {
       "label": "Lumens",
       "value": "1071",
       "unit": "lm"
-    },
-    {
-      "label": "IP Rating",
-      "value": "IP66",
-      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/ledsc4-row-10319.png",
-    "alt": "ROW"
+    "src": "../public/scraped/outdoor-architectural/row/05-57c5600015c24df8-b98cbc1063fa2ff8-2000-1.png",
+    "alt": "Row"
   },
   "overview": [
-    "Integration in cement"
+    "Robustness and durability in a doubly reinforced cement silhouette."
   ],
   "features": [
     "Protection against dust and high-pressure water (IK10 and IP66)",
@@ -42,32 +42,51 @@
     "Hospitality"
   ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Colour Temperature",
+            "value": "3000K"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP66"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
           {
+            "label": "Lumens",
+            "value": "1071 lm"
+          },
+          {
             "label": "Lumen Output",
             "value": "1071 lm"
           },
           {
-            "label": "Colour Temperature",
-            "value": "3000K"
-          },
-          {
             "label": "CRI",
             "value": "80"
-          },
-          {
-            "label": "IP Rating",
-            "value": "IP66"
           }
         ]
       },
       {
         "title": "Electrical",
         "rows": [
+          {
+            "label": "Power",
+            "value": "19.3 W"
+          },
           {
             "label": "Wattage",
             "value": "19.3 W"
@@ -88,7 +107,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

@@ -4,11 +4,16 @@
     "rev": "1.0"
   },
   "name": "HELION",
-  "category": "INDOOR LIGHTING",
-  "variant": "",
+  "category": "OUTDOOR ARCHITECTURAL",
+  "variant": "Its design with divided windows creates an evocative play of light and shadow that enhances the harmony of the surroundings",
   "stats": [
     {
       "label": "Power",
+      "value": "22",
+      "unit": "W"
+    },
+    {
+      "label": "Wattage",
       "value": "22",
       "unit": "W"
     },
@@ -19,11 +24,11 @@
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/ledsc4-helion-10219.png",
-    "alt": "HELION"
+    "src": "../public/scraped/outdoor-architectural/helion/06-5a4a8c9b2eb043b8-880cfeaf05009f84-2000.png",
+    "alt": "Helion"
   },
   "overview": [
-    "Evocative lights and shadows"
+    "Its design with divided windows creates an evocative play of light and shadow that enhances the harmony of the surroundings."
   ],
   "features": [
     "Switch 2700 K - 3200K - 4000K included",
@@ -37,18 +42,28 @@
     "Hospitality"
   ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Colour Temperature",
+            "value": "2700K / 3200K / 4000K"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
           {
-            "label": "Lumen Output",
+            "label": "Lumens",
             "value": "1323 lm"
           },
           {
-            "label": "Colour Temperature",
-            "value": "2700K / 3200K / 4000K"
+            "label": "Lumen Output",
+            "value": "1323 lm"
           },
           {
             "label": "CRI",
@@ -59,6 +74,10 @@
       {
         "title": "Electrical",
         "rows": [
+          {
+            "label": "Power",
+            "value": "22 W"
+          },
           {
             "label": "Wattage",
             "value": "22 W"
@@ -79,7 +98,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

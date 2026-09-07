@@ -4,28 +4,28 @@
     "rev": "1.0"
   },
   "name": "DELTA",
-  "category": "HIGH BAYS",
+  "category": "HIGHBAYS",
   "variant": "240W linear IP65 highbay delivering 40,800 lumens with 3CCT switching.",
   "stats": [
     {
-      "label": "Power",
+      "label": "Wattage",
       "value": "240",
       "unit": "W"
     },
     {
-      "label": "Lumens",
-      "value": "40800",
-      "unit": "lm"
+      "label": "Lumen Output",
+      "value": "240W = 40 800lm PF: 0.9",
+      "unit": ""
     },
     {
-      "label": "IP Rating",
-      "value": "IP65",
-      "unit": ""
+      "label": "Colour Temperature",
+      "value": "5700",
+      "unit": "K"
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/delta.png",
-    "alt": "DELTA"
+    "src": "../public/scraped/highbays/delta/01-pioled-lighting-hb1045-delta-padel-court-sq.png",
+    "alt": "Delta"
   },
   "overview": [
     "240W linear IP65 highbay delivering 40,800 lumens with 3CCT switching."
@@ -43,42 +43,69 @@
     "Logistics"
   ],
   "columns": {
-    "left": [],
-    "right": [
+    "left": [
       {
-        "title": "Product Information",
+        "title": "Physical",
         "rows": [
           {
-            "label": "Lumens",
-            "value": "40,800lm"
-          },
-          {
-            "label": "CCT",
-            "value": "3CCT (incl. 5700K)"
-          },
-          {
-            "label": "CRI",
-            "value": "> 80"
+            "label": "Colour Temperature",
+            "value": "5700K"
           },
           {
             "label": "Beam",
             "value": "90°"
           },
           {
-            "label": "IP Rating",
-            "value": "IP65"
+            "label": "Housing",
+            "value": "Pure"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Operating temp",
+            "value": "-30~45°C"
           },
           {
             "label": "IK Rating",
             "value": "IK09"
           },
           {
+            "label": "Certifications",
+            "value": "CE. EMC,"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumen Output",
+            "value": "240W = 40 800lm PF: 0.9"
+          },
+          {
+            "label": "High Spec Flicker Free LiFud LED Driver CRI",
+            "value": ">80"
+          },
+          {
             "label": "LED Chips",
             "value": "Lumileds 3030"
           },
           {
-            "label": "Surge Protection",
+            "label": "Aluminium Surge Protection",
             "value": "6kV"
+          },
+          {
+            "label": "IEC60598 IES File",
+            "value": "Yes"
+          },
+          {
+            "label": "Additional Features",
+            "value": "Mounting Bracket included *5 YEAR WARRANTY DOWNLOAD SPEC SHEET"
           }
         ]
       },
@@ -90,7 +117,11 @@
             "value": "240W"
           },
           {
-            "label": "Dimming",
+            "label": "Input Voltage",
+            "value": "100-277V"
+          },
+          {
+            "label": "Dimmable",
             "value": "Yes"
           }
         ]
@@ -105,7 +136,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

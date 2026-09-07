@@ -4,13 +4,18 @@
     "rev": "1.0"
   },
   "name": "CRYSTAL CLOUD",
-  "category": "INDOOR DECORATIVE",
-  "variant": "",
+  "category": "DECORATIVE",
+  "variant": "Explore the Crystal Cloud Series, a suspended crystal chandelier collection for luxury hotels, atriums, and bespoke interior projects",
   "stats": [
     {
       "label": "Power",
       "value": "40–1200",
       "unit": "W"
+    },
+    {
+      "label": "Wattage",
+      "value": "40W – 1200W+ (installation-scale dependent)",
+      "unit": ""
     },
     {
       "label": "IP Rating",
@@ -19,13 +24,22 @@
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/kinglong-crystal-cloud-series.png",
-    "alt": "CRYSTAL CLOUD"
+    "src": "../public/scraped/decorative/crystal-cloud/03-crystalcloud-s1-l915-w829-h826.png",
+    "alt": "Crystal Cloud"
   },
   "overview": [
-    "The Crystal Cloud Series is pure poetry rendered in light. Thousands of individually placed crystal elements are suspended at varied heights, creating an immersive three-dimensional cloud formation that hovers above the space below. In motion with air currents, the installation breathes and shimmers — transforming any room it occupies into an experiential destination. Designed for the most ambitious architectural briefs, the Crystal Cloud Series has graced the lobbies of Ritz-Carlton, Four Seasons, and Shangri-La properties worldwide."
+    "Explore the Crystal Cloud Series, a suspended crystal chandelier collection for luxury hotels, atriums, and bespoke interior projects."
   ],
-  "features": [],
+  "features": [
+    "K9 Crystal · Stainless Steel",
+    "Champagne Gold PVD · Chrome · Rose Gold finish",
+    "40–1200 W power",
+    "IP20 rated",
+    "3 Years · LED Driver: 5 Years warranty",
+    "40W – 1200W+ (installation-scale dependent) power",
+    "110V – 240V, 50/60Hz Universal Input",
+    "Dimming: DALI · 0–10V · DMX (for dynamic scene control)"
+  ],
   "applications": [
     "Hospitality",
     "Residential",
@@ -38,24 +52,20 @@
         "title": "Physical",
         "rows": [
           {
-            "label": "Primary Material",
-            "value": "Premium K9 Crystal Pendants (multi-cut facets)"
+            "label": "Material",
+            "value": "K9 Crystal · Stainless Steel"
           },
           {
-            "label": "Frame",
-            "value": "Stainless Steel 304, PVD finished"
+            "label": "Finish",
+            "value": "Champagne Gold PVD · Chrome · Rose Gold"
+          },
+          {
+            "label": "Dimensions",
+            "value": "Ø1200mm single cluster to full atrium bespoke"
           },
           {
             "label": "Finish Options",
             "value": "Champagne Gold PVD · Chrome · Rose Gold"
-          },
-          {
-            "label": "Installation Scale",
-            "value": "Ø1200mm single cluster to full atrium bespoke installation"
-          },
-          {
-            "label": "Crystal Count",
-            "value": "200 pcs (small) to 20,000+ pcs (grand installation)"
           }
         ]
       },
@@ -63,12 +73,16 @@
         "title": "Compliance",
         "rows": [
           {
-            "label": "Warranty",
-            "value": "3 Years · LED Driver: 5 Years"
+            "label": "Certifications",
+            "value": "CE / UL / SASO"
           },
           {
-            "label": "Certifications",
-            "value": "UL · CE · SASO · CNAS-accredited test reports available"
+            "label": "IP Rating",
+            "value": "IP20"
+          },
+          {
+            "label": "Warranty",
+            "value": "3 Years · LED Driver: 5 Years"
           }
         ]
       }
@@ -78,22 +92,38 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "Light Source",
-            "value": "Integrated LED, 2700K / 3000K CCT, CRI > 90"
-          },
-          {
-            "label": "IP Rating",
-            "value": "IP20 standard"
-          },
-          {
             "label": "Lead Time",
             "value": "Standard: 6–8 weeks · Grand Installation: 12–20 weeks"
+          },
+          {
+            "label": "Primary Material",
+            "value": "Premium K9 Crystal Pendants (multi-cut facets)"
+          },
+          {
+            "label": "Frame",
+            "value": "Stainless Steel 304, PVD finished"
+          },
+          {
+            "label": "Installation Scale",
+            "value": "Ø1200mm single cluster to full atrium bespoke installation"
+          },
+          {
+            "label": "Crystal Count",
+            "value": "200 pcs (small) to 20,000+ pcs (grand installation)"
+          },
+          {
+            "label": "Light Source",
+            "value": "Integrated LED, 2700K / 3000K CCT, CRI > 90"
           }
         ]
       },
       {
         "title": "Electrical",
         "rows": [
+          {
+            "label": "Power",
+            "value": "40–1200 W"
+          },
           {
             "label": "Wattage",
             "value": "40W – 1200W+ (installation-scale dependent)"
@@ -118,7 +148,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

@@ -4,22 +4,27 @@
     "rev": "1.0"
   },
   "name": "BASE",
-  "category": "LINEAR LIGHTING",
+  "category": "LINEARS",
   "variant": "BACE base linear profile offering 135 lm/W efficacy in single or continuous form.",
   "stats": [
     {
-      "label": "Power",
-      "value": "16–54",
-      "unit": "W"
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
     },
     {
-      "label": "Lumens",
-      "value": "2400–6682",
-      "unit": "lm"
+      "label": "(3080) 3000K",
+      "value": "(4080) 4000K",
+      "unit": ""
+    },
+    {
+      "label": "Fitting Material",
+      "value": "Powder coated extruded aluminium construction",
+      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/base.png",
+    "src": "../public/scraped/linears/base/01-baton-1200-wt.jpg",
     "alt": "BASE"
   },
   "overview": [
@@ -37,30 +42,77 @@
     "Workspaces"
   ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Optic Type",
+            "value": "Diffuser"
+          },
+          {
+            "label": "Mounting Type",
+            "value": "Surface mount / P2000/ Suspended"
+          },
+          {
+            "label": "Colour Rendering Index (CRI)",
+            "value": "CRI80 , (CRI90 on request)"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          },
+          {
+            "label": "Warranty",
+            "value": "5 year warranty as per LEDwise standard terms of warranty"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
           {
-            "label": "Lumens",
-            "value": "2,400lm – 6,682lm"
+            "label": "(3080) 3000K",
+            "value": "(4080) 4000K"
           },
           {
-            "label": "Efficacy",
-            "value": "Up to 135 lm/W"
+            "label": "Fitting Material",
+            "value": "Powder coated extruded aluminium construction"
           },
           {
-            "label": "Lengths",
-            "value": "580 – 1420mm"
+            "label": "Available finishes",
+            "value": "Powder coated white, custom colours on request"
           },
           {
-            "label": "CRI",
-            "value": "80"
+            "label": "LED Colours (CCT)",
+            "value": "3000K, 4000K (others CCT’s available on request)"
           },
           {
-            "label": "CCT",
-            "value": "3000K / 4000K"
+            "label": "LED Colour Consistency",
+            "value": "<3 SDCM"
+          },
+          {
+            "label": "LED Lifetime",
+            "value": "L80B10 >50,000 hrs at Ta = 25° Celsius"
+          },
+          {
+            "label": "Operating Voltage/ Frequency",
+            "value": "220 – 240 V/ 50 – 60 Hz"
+          },
+          {
+            "label": "Optional Add-ons",
+            "value": "Min. 1 hour emergency version available"
+          },
+          {
+            "label": "Manufacture",
+            "value": "Designed and Manufactured in South Africa"
           }
         ]
       },
@@ -68,12 +120,8 @@
         "title": "Electrical",
         "rows": [
           {
-            "label": "Wattage",
-            "value": "16W – 54W (30/40/50 W/m)"
-          },
-          {
-            "label": "Control",
-            "value": "Non-dim / DALI"
+            "label": "Control Options",
+            "value": "Non-dim (N), DALI (DALI)"
           }
         ]
       }
@@ -87,7 +135,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

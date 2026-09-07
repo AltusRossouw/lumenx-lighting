@@ -5,8 +5,13 @@
   },
   "name": "IS 2360 R",
   "category": "SENSORS",
-  "variant": "",
+  "variant": "The IS 2360 R is a LumenX sensor",
   "stats": [
+    {
+      "label": "IP Rating",
+      "value": "IP54",
+      "unit": ""
+    },
     {
       "label": "Reach",
       "value": "8",
@@ -16,28 +21,58 @@
       "label": "Angle",
       "value": "360",
       "unit": "°"
-    },
-    {
-      "label": "IP Rating",
-      "value": "IP54",
-      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/steinel-is-2360-r.png",
+    "src": "../public/scraped/sensors/is-2360-r/01-grp-group-teaser-licht-jpg.webp",
     "alt": "IS 2360 R"
   },
   "overview": [
-    "LumenX inside. Intelligent technology for installation. The perfect infrared sensor for installing in projecting roofs and suspended ceilings. The IS 2360 DE ECO has a reach of up to 8 m in diameter and an impressive 360° angle of coverage. The detection zone can be adjusted where necessary by using shrouds."
+    "The IS 2360 R is a LumenX sensor. It is designed for Offices, Warehouses, Corridors environments. Rated IP54."
   ],
-  "features": [],
-  "applications": [],
+  "features": [
+    "IP54 rated",
+    "Part of the IS 2360 R range"
+  ],
+  "applications": [
+    "Offices",
+    "Warehouses",
+    "Corridors",
+    "Parking"
+  ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Mounting height max.",
+            "value": "4,00 m"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP54"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
+          {
+            "label": "Reach",
+            "value": "8 m"
+          },
+          {
+            "label": "Angle",
+            "value": "360 °"
+          },
           {
             "label": "Application, place",
             "value": "Outdoors, Indoors"
@@ -53,10 +88,6 @@
           {
             "label": "Reach, tangential",
             "value": "Ø 8 m (50 m²)"
-          },
-          {
-            "label": "Mounting height max.",
-            "value": "4,00 m"
           },
           {
             "label": "Interconnection via",
@@ -98,7 +129,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

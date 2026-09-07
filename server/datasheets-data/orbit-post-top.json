@@ -4,28 +4,42 @@
     "rev": "1.0"
   },
   "name": "ORBIT",
-  "category": "OUTDOOR LIGHTING",
-  "variant": "",
+  "category": "OUTDOOR ARCHITECTURAL",
+  "variant": "The Orbit is a LumenX outdoor architectural luminaire",
   "stats": [
     {
-      "label": "Power",
-      "value": "12",
-      "unit": "W"
+      "label": "Wattage",
+      "value": "36W/48W/60W",
+      "unit": ""
     },
     {
-      "label": "IP Rating",
-      "value": "IP65",
+      "label": "Lumen Output",
+      "value": "36W = 4680 Lumens \\",
+      "unit": ""
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "3CCT (6000K/4000K/3000K)",
       "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/orbit-post-top.png",
-    "alt": "ORBIT POST TOP"
+    "src": "../public/scraped/outdoor-architectural/orbit/01-pioled-lighting-hp001-4-60w-120w-orbit-ip65-post-top-lamp-3cct-1.jpg",
+    "alt": "Orbit"
   },
   "overview": [
-    "Orbit Post Top — outdoor LED luminaire from LumenX, supplied by LumenX."
+    "The Orbit is a LumenX outdoor architectural luminaire. It is designed for Exterior, Commercial, Municipal environments. Available in 36W/48W/60W. Available in 3CCT (6000K/4000K/3000K)."
   ],
-  "features": [],
+  "features": [
+    "36W/48W/60W power",
+    "3CCT (6000K/4000K/3000K) colour temperature",
+    "Up to 36W = 4680 Lumens \\",
+    "CRI >80",
+    "100-277V input",
+    "Epistar 2835 LEDs",
+    "120° beam",
+    "Pure Aluminium + housing"
+  ],
   "applications": [
     "Exterior",
     "Commercial",
@@ -37,8 +51,16 @@
         "title": "Physical",
         "rows": [
           {
+            "label": "Colour Temperature",
+            "value": "3CCT (6000K/4000K/3000K)"
+          },
+          {
+            "label": "Beam",
+            "value": "120°"
+          },
+          {
             "label": "Housing",
-            "value": "Pure Aluminium + PC"
+            "value": "Pure Aluminium +"
           }
         ]
       },
@@ -46,8 +68,12 @@
         "title": "Compliance",
         "rows": [
           {
+            "label": "Operating temp",
+            "value": "-25~50°C"
+          },
+          {
             "label": "Certifications",
-            "value": "CE, EMC, IEC60598"
+            "value": "CE, EMC,"
           }
         ]
       }
@@ -57,28 +83,32 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "Colour Temperature",
-            "value": "3CCT (6000K/4000K/3000K)"
+            "label": "Lumen Output",
+            "value": "36W = 4680 Lumens \\"
           },
           {
-            "label": "Lumen Output",
-            "value": "36W = 4680 Lumens | 48W=6240 Lumens | 60W=7800 Lumens"
+            "label": "Lumens PF",
+            "value": "0.9"
           },
           {
             "label": "CRI",
-            "value": "> 80"
-          },
-          {
-            "label": "Operating Temp",
-            "value": "-25~50°C"
+            "value": ">80"
           },
           {
             "label": "LED Chips",
             "value": "Epistar 2835"
           },
           {
-            "label": "Beam Angle",
-            "value": "120°"
+            "label": "PC Surge Protection",
+            "value": "10kV"
+          },
+          {
+            "label": "IEC60598 IES File",
+            "value": "Yes"
+          },
+          {
+            "label": "Additional Features",
+            "value": "From Batch 2412 Orbit is available in 3 Wattages (All in one) *5 YEAR WARRANTY DOWNLOAD SPEC SHEET"
           }
         ]
       },
@@ -90,16 +120,8 @@
             "value": "36W/48W/60W"
           },
           {
-            "label": "Power Factor",
-            "value": "0.9"
-          },
-          {
             "label": "Input Voltage",
             "value": "100-277V"
-          },
-          {
-            "label": "Surge Protection",
-            "value": "10kV"
           },
           {
             "label": "Dimmable",
@@ -117,7 +139,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

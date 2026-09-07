@@ -4,27 +4,27 @@
     "rev": "1.0"
   },
   "name": "VP",
-  "category": "VAPOUR PROOF",
+  "category": "VAPOURPROOF",
   "variant": "IP65 polycarbonate vapour-proof linear with emergency and motion sensor options.",
   "stats": [
-    {
-      "label": "Power",
-      "value": "40–60",
-      "unit": "W"
-    },
-    {
-      "label": "Lumens",
-      "value": "4382–6962",
-      "unit": "lm"
-    },
     {
       "label": "IP Rating",
       "value": "IP65",
       "unit": ""
+    },
+    {
+      "label": "3080 (3000K)",
+      "value": "4080 (4000K)",
+      "unit": ""
+    },
+    {
+      "label": "Fitting Material",
+      "value": "Polycarbonate housing",
+      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/vp.png",
+    "src": "../public/scraped/vapourproof/vp/01-vp-1200-2021.jpg",
     "alt": "VP"
   },
   "overview": [
@@ -48,12 +48,29 @@
         "title": "Physical",
         "rows": [
           {
-            "label": "Housing",
-            "value": "Grey polycarbonate"
+            "label": "Optic Type",
+            "value": "Diffuser"
           },
           {
-            "label": "Mounting",
-            "value": "Surface / P2000 / Suspended"
+            "label": "Mounting Type",
+            "value": "Surface mount / P2000/ Suspended"
+          },
+          {
+            "label": "Colour Rendering Index (CRI)",
+            "value": "CRI80 , (CRI90 on request)"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP65"
+          },
+          {
+            "label": "Warranty",
+            "value": "5 year warranty as per LEDwise standard terms of warranty"
           }
         ]
       }
@@ -63,24 +80,40 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "Lumens",
-            "value": "4,382lm – 6,962lm"
+            "label": "3080 (3000K)",
+            "value": "4080 (4000K)"
           },
           {
-            "label": "Beam Angle",
-            "value": "110°"
+            "label": "Fitting Material",
+            "value": "Polycarbonate housing"
           },
           {
-            "label": "IP Rating",
-            "value": "IP65"
+            "label": "Available finishes",
+            "value": "Grey Polycarbonate"
           },
           {
-            "label": "CRI",
-            "value": "80 (90 on request)"
+            "label": "LED Colours (CCT)",
+            "value": "3000K, 4000K (others on request)"
           },
           {
-            "label": "CCT",
-            "value": "3000K / 4000K"
+            "label": "LED Colour Consistency",
+            "value": "<3 SDCM"
+          },
+          {
+            "label": "LED Lifetime",
+            "value": "L80B10 >50,000 hrs at Ta = 25° Celsius"
+          },
+          {
+            "label": "Operating Voltage/ Frequency",
+            "value": "220 – 240 V/ 50 – 60 Hz"
+          },
+          {
+            "label": "Optional Add-ons",
+            "value": "Min. 1 hour emergency version available"
+          },
+          {
+            "label": "Manufacture",
+            "value": "Assembled in South Africa"
           }
         ]
       },
@@ -88,12 +121,8 @@
         "title": "Electrical",
         "rows": [
           {
-            "label": "Wattage",
-            "value": "40W / 50W / 60W"
-          },
-          {
-            "label": "Control",
-            "value": "Non-dim / DALI"
+            "label": "Control Options",
+            "value": "non-dim (N), DALI (DALI)"
           }
         ]
       }
@@ -107,7 +136,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

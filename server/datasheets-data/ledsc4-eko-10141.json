@@ -4,21 +4,31 @@
     "rev": "1.0"
   },
   "name": "EKO",
-  "category": "INDOOR LIGHTING",
-  "variant": "",
+  "category": "OUTDOOR ARCHITECTURAL",
+  "variant": "Essential projector with different applications that includes a filter to soften the light effect",
   "stats": [
     {
       "label": "Lumens",
       "value": "278–1379",
       "unit": "lm"
+    },
+    {
+      "label": "Lumen Output",
+      "value": "278–1379",
+      "unit": "lm"
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "2700K / 3000K",
+      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/ledsc4-eko-10141.png",
-    "alt": "EKO"
+    "src": "../public/scraped/outdoor-architectural/eko-2/09-a53bc4c30f6a4d04-ba0450b1ef5914c6-2000-1.png",
+    "alt": "Eko"
   },
   "overview": [
-    "Essential with a filter that softens the light effect"
+    "Essential projector with different applications that includes a filter to soften the light effect."
   ],
   "features": [
     "Includes bulb extraction kit",
@@ -32,18 +42,28 @@
     "Hospitality"
   ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Colour Temperature",
+            "value": "2700K / 3000K"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
           {
-            "label": "Lumen Output",
+            "label": "Lumens",
             "value": "278–1379 lm"
           },
           {
-            "label": "Colour Temperature",
-            "value": "2700K / 3000K"
+            "label": "Lumen Output",
+            "value": "278–1379 lm"
           }
         ]
       }
@@ -57,7 +77,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

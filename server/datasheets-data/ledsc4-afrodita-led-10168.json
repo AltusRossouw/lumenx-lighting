@@ -4,45 +4,71 @@
     "rev": "1.0"
   },
   "name": "AFRODITA",
-  "category": "INDOOR LIGHTING",
-  "variant": "",
+  "category": "OUTDOOR ARCHITECTURAL",
+  "variant": "Apply classic highly specified recognized for its high technical and functional quality",
   "stats": [
     {
       "label": "Lumens",
       "value": "2880–2952",
       "unit": "lm"
+    },
+    {
+      "label": "Lumen Output",
+      "value": "2880–2952",
+      "unit": "lm"
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "2700K / 3000K / 4000K",
+      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/scraped/outdoor-architectural/afrodita/12-6ea9d3e7025348cb-9ba591aff40652b5-2000-1-5.png",
+    "alt": "Afrodita"
   },
   "overview": [
     "The Afrodita LED is an outdoor luminaire from the LumenX range, available in multiple configurations."
   ],
-  "features": [],
+  "features": [
+    "2880–2952 lm lumens",
+    "2700K / 3000K / 4000K colour temperature",
+    "Up to 2880–2952 lm",
+    "100° beam",
+    "220-240V input"
+  ],
   "applications": [
     "Architectural",
     "Commercial",
     "Hospitality"
   ],
   "columns": {
-    "left": [],
-    "right": [
+    "left": [
       {
-        "title": "Product Information",
+        "title": "Physical",
         "rows": [
           {
             "label": "Colour Temperature",
             "value": "2700K / 3000K / 4000K"
           },
           {
-            "label": "Lumen Output",
+            "label": "Beam Angle",
+            "value": "100°"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumens",
             "value": "2880–2952 lm"
           },
           {
-            "label": "Beam Angle",
-            "value": "100°"
+            "label": "Lumen Output",
+            "value": "2880–2952 lm"
           }
         ]
       },
@@ -65,7 +91,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

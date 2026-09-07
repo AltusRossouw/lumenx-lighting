@@ -4,9 +4,19 @@
     "rev": "1.0"
   },
   "name": "KUDA",
-  "category": "VAPOUR PROOF",
+  "category": "VAPOURPROOF",
   "variant": "IP65 wattage-selectable linear for flexible vapour-proof lighting.",
   "stats": [
+    {
+      "label": "Wattage",
+      "value": "Selectable",
+      "unit": ""
+    },
+    {
+      "label": "Lumen Output",
+      "value": "55W = 7700lm | 45W = 6300lm | 36W = 5040lm | 28W = 3920lm / 34W = 4760lm | 30W = 4200lm | 25W = 3500lm | 17W = 2380lm / 50W = 6 000lm | 25W = 3 000lm / 36W = 4 320lm | 18W = 2 160lm / 27 200lm / 15 40lm / 650lm",
+      "unit": ""
+    },
     {
       "label": "IP Rating",
       "value": "IP65",
@@ -14,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/kuda.png",
-    "alt": "KUDA"
+    "src": "../public/scraped/vapourproof/kuda/member-01-pioled-lighting-ll913-kuda-max-5ft-emergency-kit-space-1.png",
+    "alt": "Kuda"
   },
   "overview": [
     "IP65 wattage-selectable linear for flexible vapour-proof lighting."
@@ -32,18 +42,85 @@
     "Utility areas"
   ],
   "columns": {
-    "left": [],
-    "right": [
+    "left": [
       {
-        "title": "Product Information",
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Type",
+            "value": "Vapour-proof linear"
+          },
+          {
+            "label": "Colour Temperature",
+            "value": "3CCT (3000K/4000K/6000K) / 3CCT(3000K/4000K/6000K)/ 6000K / 3CCT(3000K/4000K/6000K)"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "120° / 90° / 60°"
+          },
+          {
+            "label": "Housing",
+            "value": "PC / Aluminium / Black, White / Aluminum + / Pure / Aluminium +"
+          },
+          {
+            "label": "Colour",
+            "value": "5700K / Black/White / 3CCT, 6000K"
+          },
+          {
+            "label": "length",
+            "value": "1 Meter, 2 Meter, 3 Meter"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
         "rows": [
           {
             "label": "IP Rating",
             "value": "IP65"
           },
           {
-            "label": "Type",
-            "value": "Vapour-proof linear"
+            "label": "Operating Temp",
+            "value": "-20~40°C / -40~40°C / -30~60°C / -20~45°C"
+          },
+          {
+            "label": "Certifications",
+            "value": "CE, EMC, IEC60598 / CE, EMC, RoHS / RoHS / CE / EMC, ErP, CE"
+          },
+          {
+            "label": "IK Rating",
+            "value": "IK10"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumen Output",
+            "value": "55W = 7700lm | 45W = 6300lm | 36W = 5040lm | 28W = 3920lm / 34W = 4760lm | 30W = 4200lm | 25W = 3500lm | 17W = 2380lm / 50W = 6 000lm | 25W = 3 000lm / 36W = 4 320lm | 18W = 2 160lm / 27 200lm / 15 40lm / 650lm"
+          },
+          {
+            "label": "CRI",
+            "value": ">80 / >83"
+          },
+          {
+            "label": "LED Chips",
+            "value": "2835 / SMD 2835 / LED"
+          },
+          {
+            "label": "lens",
+            "value": "120°, 90°"
+          },
+          {
+            "label": "available in",
+            "value": "1m/2m/3m"
+          },
+          {
+            "label": "includes",
+            "value": "Power feed and end cap"
           }
         ]
       },
@@ -53,6 +130,18 @@
           {
             "label": "Wattage",
             "value": "Selectable"
+          },
+          {
+            "label": "Input Voltage",
+            "value": "190-277V / 85V-277V / 200-277V / 200-240VAC / 170V-265V"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "1.5kV / 6kV (Meanwell / 1kV"
+          },
+          {
+            "label": "Dimmable",
+            "value": "No"
           }
         ]
       }
@@ -66,7 +155,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

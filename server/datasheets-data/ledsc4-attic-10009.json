@@ -4,18 +4,28 @@
     "rev": "1.0"
   },
   "name": "ATTIC",
-  "category": "INDOOR LIGHTING",
-  "variant": "",
+  "category": "INDOOR ARCHITECTURAL",
+  "variant": "The Attic system is based on a compositional modularity that starts from screens with customizable finishes",
   "stats": [
     {
       "label": "Lumens",
       "value": "3255–4340",
       "unit": "lm"
+    },
+    {
+      "label": "Lumen Output",
+      "value": "3255–4340",
+      "unit": "lm"
+    },
+    {
+      "label": "Light Source",
+      "value": "E27",
+      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/scraped/indoor-architectural/attic/01-web-mainimage-attic-gen-05-006.png",
+    "alt": "Attic"
   },
   "overview": [
     "The Attic system is based on a compositional modularity that starts from screens with customizable finishes — decorative hexagonal pendant clusters in 3- and 4-body configurations."
@@ -37,6 +47,10 @@
         "title": "Product Information",
         "rows": [
           {
+            "label": "Lumens",
+            "value": "3255–4340 lm"
+          },
+          {
             "label": "Light Source",
             "value": "E27"
           },
@@ -56,7 +70,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

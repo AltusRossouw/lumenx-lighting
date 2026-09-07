@@ -5,26 +5,92 @@
   },
   "name": "SERVICE REMOTE",
   "category": "SENSORS",
-  "variant": "",
-  "stats": [],
+  "variant": "Service remote control RC8 - Everything under control!",
+  "stats": [
+    {
+      "label": "Article number",
+      "value": "559410",
+      "unit": ""
+    },
+    {
+      "label": "PU1, net weight",
+      "value": "0,025",
+      "unit": "kg"
+    },
+    {
+      "label": "Package content",
+      "value": "1",
+      "unit": ""
+    }
+  ],
   "heroImage": {
-    "src": "../public/product-images/steinel-service-remote.png",
-    "alt": "SERVICE REMOTE"
+    "src": "../public/scraped/sensors/service-remote/01-17356-fernbedienung-rc8-4007841559410-110021956.jpg",
+    "alt": "Service Remote"
   },
   "overview": [
     "The full works at the press of a button. User remote control RC7 KNX for Presence Control PRO presence detectors and motion detectors in conjunction with KNX interface."
   ],
-  "features": [],
-  "applications": [],
+  "features": [
+    "black finish",
+    "Part of the Service Remote range"
+  ],
+  "applications": [
+    "Offices",
+    "Warehouses",
+    "Corridors",
+    "Parking"
+  ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Dimensions (L x W x H)",
+            "value": "6 x 56 x 94 mm"
+          },
+          {
+            "label": "Colour",
+            "value": "black"
+          },
+          {
+            "label": "Colour, RAL",
+            "value": "9005"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
           {
+            "label": "Article number",
+            "value": "559410"
+          },
+          {
             "label": "PU1, net weight",
-            "value": "0,056 kg"
+            "value": "0,025 kg"
+          },
+          {
+            "label": "Package content",
+            "value": "1"
+          },
+          {
+            "label": "Manufacturer's Warranty",
+            "value": "5 years"
+          },
+          {
+            "label": "PU1, EAN",
+            "value": "4007841559410"
+          },
+          {
+            "label": "European Article Number (EAN)",
+            "value": "4007841559410"
+          },
+          {
+            "label": "Product category",
+            "value": "Accessory"
           }
         ]
       }
@@ -38,7 +104,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

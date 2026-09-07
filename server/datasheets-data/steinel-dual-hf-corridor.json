@@ -5,35 +5,82 @@
   },
   "name": "DUAL HF CORRIDOOR",
   "category": "SENSORS",
-  "variant": "",
+  "variant": "Dual HF COM1 - Concealed wiring - Twice as vigilant!",
   "stats": [
     {
-      "label": "Reach",
-      "value": "3",
-      "unit": "m"
+      "label": "Application, place",
+      "value": "Indoors",
+      "unit": ""
     },
     {
-      "label": "Angle",
+      "label": "Installation",
+      "value": "Concealed wiring",
+      "unit": ""
+    },
+    {
+      "label": "Detection angle",
       "value": "360",
       "unit": "°"
-    },
-    {
-      "label": "IP Rating",
-      "value": "IP20",
-      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/steinel-dual-hf-corridor.png",
-    "alt": "DUAL HF CORRIDOR"
+    "src": "../public/scraped/sensors/dual-hf-corridoor/01-17403-dual-hf-4007841002978-pro-ab01-x-x-com1-whi-x-110011582-web-new.jpg",
+    "alt": "Dual HF Corridoor"
   },
   "overview": [
-    "Twice as vigilant! High-frequency corridor sensor Presence Control PRO Dual HF COM1 for indoors, ideal for passageways and long corridors, installation height up to 3.5 m, for switching light 'ON' and 'OFF', DUAL-HF technology for detecting radial movement over up to 20 m in two directions, detection regardless of temperature, HF-sensor technology detects movement through glass, wood and stud walls, switches light 'ON' almost instantly."
+    "Dual HF COM1 - Concealed wiring - Twice as vigilant! High-frequency corridor sensor Presence Control PRO Dual HF COM1 for indoors, ideal for passageways and long corridors, installation height up to 3"
   ],
-  "features": [],
-  "applications": [],
+  "features": [
+    "white finish",
+    "IP20 rated",
+    "Plastic"
+  ],
+  "applications": [
+    "Offices",
+    "Warehouses",
+    "Corridors",
+    "Parking"
+  ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Mounting height max.",
+            "value": "3,50 m"
+          },
+          {
+            "label": "Dimensions (L x W x H)",
+            "value": "74 x 120 x 120 mm"
+          },
+          {
+            "label": "Type",
+            "value": "Presence detector"
+          },
+          {
+            "label": "Colour",
+            "value": "white"
+          },
+          {
+            "label": "Colour, RAL",
+            "value": "9010"
+          },
+          {
+            "label": "Material",
+            "value": "Plastic"
+          },
+          {
+            "label": "Mounting height",
+            "value": "2,50 – 3,50 m"
+          },
+          {
+            "label": "Type of interconnection",
+            "value": "Master/master, Master/slave"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
@@ -44,7 +91,7 @@
           },
           {
             "label": "Installation",
-            "value": "In-ceiling installation"
+            "value": "Concealed wiring"
           },
           {
             "label": "Detection angle",
@@ -55,36 +102,201 @@
             "value": "20 x 3 m (60 m²)"
           },
           {
-            "label": "Mounting height max.",
-            "value": "3,50 m"
-          },
-          {
             "label": "Interconnection via",
             "value": "Cable"
           },
           {
             "label": "Version",
-            "value": "COM1 - in-ceiling installation"
+            "value": "COM1 - Concealed wiring"
+          },
+          {
+            "label": "Article number",
+            "value": "002978"
           },
           {
             "label": "PU1, net weight",
-            "value": "0,236 kg"
+            "value": "0,2 kg"
           },
           {
-            "label": "high frequency sensor 360°",
-            "value": "max. 20 x 3 m"
+            "label": "Package content",
+            "value": "1"
           },
           {
-            "label": "max. 2000 W",
+            "label": "Manufacturer's Warranty",
+            "value": "5 years"
+          },
+          {
+            "label": "Settings via",
+            "value": "Remote control, DIP switches, Potentiometers, Smart Remote"
+          },
+          {
+            "label": "With remote control",
+            "value": "No"
+          },
+          {
+            "label": "PU1, EAN",
+            "value": "4007841002978"
+          },
+          {
+            "label": "Application, room",
+            "value": "corridor / aisle, Indoors"
+          },
+          {
+            "label": "Includes corner wall mount",
+            "value": "No"
+          },
+          {
+            "label": "Installation site",
+            "value": "ceiling"
+          },
+          {
+            "label": "IP-rating",
             "value": "IP20"
           },
           {
-            "label": "ideal 2,5 - 3,5 m",
-            "value": "indoor sensor"
+            "label": "Ambient temperature",
+            "value": "from -25 up to 55 °C"
           },
           {
-            "label": "IQ-mode",
-            "value": "Teach mode"
+            "label": "Mains power supply",
+            "value": "230 V / 50 – 60 Hz"
+          },
+          {
+            "label": "Fluorescent lamps, electronic ballast",
+            "value": "1500 W"
+          },
+          {
+            "label": "Fluorescent lamps, uncorrected",
+            "value": "1000 VA"
+          },
+          {
+            "label": "Fluorescent lamps, series-corrected",
+            "value": "1000 VA"
+          },
+          {
+            "label": "Fluorescent lamps, parallel-corrected",
+            "value": "1000 VA"
+          },
+          {
+            "label": "Switching output 1, low-voltage halogen lamps",
+            "value": "2000 VA"
+          },
+          {
+            "label": "LED lamps < 2 W",
+            "value": "100 W"
+          },
+          {
+            "label": "LED lamps > 2 W < 8 W",
+            "value": "300 W"
+          },
+          {
+            "label": "LED lamps > 8 W",
+            "value": "600 W"
+          },
+          {
+            "label": "Capacitive load in μF",
+            "value": "176 µF"
+          },
+          {
+            "label": "European Article Number (EAN)",
+            "value": "4007841002978"
+          },
+          {
+            "label": "Angle of aperture",
+            "value": "140 °"
+          },
+          {
+            "label": "Transmitter power",
+            "value": "< 1 mW"
+          },
+          {
+            "label": "Technology, sensors",
+            "value": "High frequency, Mixed light metering"
+          },
+          {
+            "label": "Optimum mounting height",
+            "value": "2,8 m"
+          },
+          {
+            "label": "HF-system",
+            "value": "5,8 GHz"
+          },
+          {
+            "label": "Detection",
+            "value": "also through glass, wood and stud walls"
+          },
+          {
+            "label": "Sneak-by guard",
+            "value": "Yes"
+          },
+          {
+            "label": "Capability of masking out individual segments",
+            "value": "No"
+          },
+          {
+            "label": "Electronic scalability",
+            "value": "Yes"
+          },
+          {
+            "label": "Mechanical scalability",
+            "value": "No"
+          },
+          {
+            "label": "Reach, radial",
+            "value": "20 x 3 m (60 m²)"
+          },
+          {
+            "label": "Functions",
+            "value": "Normal / test mode, Semi-/fully automatic, Pushbutton / switch mode, Manual ON / ON-OFF"
+          },
+          {
+            "label": "Twilight setting",
+            "value": "10 – 1000 lx"
+          },
+          {
+            "label": "Time setting",
+            "value": "30 s – 30 Min."
+          },
+          {
+            "label": "Basic light level function",
+            "value": "No"
+          },
+          {
+            "label": "Main light adjustable",
+            "value": "No"
+          },
+          {
+            "label": "Twilight setting TEACH",
+            "value": "Yes"
+          },
+          {
+            "label": "Constant-lighting control",
+            "value": "No"
+          },
+          {
+            "label": "Interconnection",
+            "value": "Yes"
+          },
+          {
+            "label": "Interconnection, number",
+            "value": "max. 10 sensors"
+          },
+          {
+            "label": "Product category",
+            "value": "Presence detector"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Voltage range (min)",
+            "value": "230 V"
+          },
+          {
+            "label": "Voltage range (max)",
+            "value": "230 V"
           }
         ]
       }
@@ -98,7 +310,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

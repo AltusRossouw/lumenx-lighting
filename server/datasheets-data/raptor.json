@@ -4,9 +4,19 @@
     "rev": "1.0"
   },
   "name": "RAPTOR",
-  "category": "HIGH BAYS",
+  "category": "HIGHBAYS",
   "variant": "IP65 3-in-1 UFO highbay with selectable wattage and CCT for flexible specification.",
   "stats": [
+    {
+      "label": "Wattage",
+      "value": "Selectable",
+      "unit": ""
+    },
+    {
+      "label": "Lumen Output",
+      "value": "30 000lm / 3 500lm / 153 600lm",
+      "unit": ""
+    },
     {
       "label": "IP Rating",
       "value": "IP65",
@@ -15,7 +25,7 @@
   ],
   "heroImage": {
     "src": "../public/product-images/raptor.png",
-    "alt": "RAPTOR"
+    "alt": "Raptor"
   },
   "overview": [
     "IP65 3-in-1 UFO highbay with selectable wattage and CCT for flexible specification."
@@ -32,22 +42,77 @@
     "High-ceiling spaces"
   ],
   "columns": {
-    "left": [],
-    "right": [
+    "left": [
       {
-        "title": "Product Information",
+        "title": "Physical",
         "rows": [
           {
             "label": "Type",
             "value": "UFO highbay, 3-in-1"
           },
           {
+            "label": "Colour",
+            "value": "6000K / Black"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "120° / 36° / 90°"
+          },
+          {
+            "label": "Housing",
+            "value": "Die cast / Pure / CNC / Aluminium"
+          },
+          {
+            "label": "Colour Temperature",
+            "value": "3000K / 5700K"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
             "label": "IP Rating",
             "value": "IP65"
           },
           {
+            "label": "Operating Temp",
+            "value": "-35°C to 45°C / -30 ~ 50°C / -15~45°C / -20~40°C"
+          },
+          {
+            "label": "Certifications",
+            "value": "CE, EMC / IEC"
+          },
+          {
+            "label": "IK Rating",
+            "value": "IK05"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
             "label": "CCT",
             "value": "Selectable"
+          },
+          {
+            "label": "Lumen Output",
+            "value": "30 000lm / 3 500lm / 153 600lm"
+          },
+          {
+            "label": "CRI",
+            "value": ">80 / >83"
+          },
+          {
+            "label": "available in",
+            "value": "White"
+          },
+          {
+            "label": "LED Chips",
+            "value": "Bridgelux / Lumileds 5050"
           }
         ]
       },
@@ -57,6 +122,18 @@
           {
             "label": "Wattage",
             "value": "Selectable"
+          },
+          {
+            "label": "Input Voltage",
+            "value": "200-260V (DOB) / 175-264V / 200V-265V / 180-277V"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "10kV / 1kV / 3kV / 10kV (Meanwell"
+          },
+          {
+            "label": "Dimmable",
+            "value": "No / Yes with 35W"
           }
         ]
       }
@@ -70,7 +147,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

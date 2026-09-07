@@ -5,8 +5,13 @@
   },
   "name": "IS 3360",
   "category": "SENSORS",
-  "variant": "",
+  "variant": "The IS 3360 is a LumenX sensor",
   "stats": [
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    },
     {
       "label": "Reach",
       "value": "40",
@@ -16,11 +21,6 @@
       "label": "Angle",
       "value": "360",
       "unit": "°"
-    },
-    {
-      "label": "IP Rating",
-      "value": "IP20",
-      "unit": ""
     }
   ],
   "heroImage": {
@@ -28,16 +28,51 @@
     "alt": "IS 3360"
   },
   "overview": [
-    "Higher, further, faster. Infrared presence detector IS 3360 for indoors and out, ideal for watching over high spaces and large areas, such as multi-storey and underground car parks, installation height up to 4 m, 360° angle of coverage, reach 20 m max. (tangential), heavy-duty relay for high switching capacity. Available either in round or square surface-mounted, concealed or In-ceiling installation."
+    "The IS 3360 is a LumenX sensor. It is designed for Offices, Warehouses, Corridors environments. Rated IP20."
   ],
-  "features": [],
-  "applications": [],
+  "features": [
+    "IP20 rated",
+    "Part of the IS 3360 range"
+  ],
+  "applications": [
+    "Offices",
+    "Warehouses",
+    "Corridors",
+    "Parking"
+  ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Mounting height max.",
+            "value": "4,00 m"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
+          {
+            "label": "Reach",
+            "value": "40 m"
+          },
+          {
+            "label": "Angle",
+            "value": "360 °"
+          },
           {
             "label": "Application, place",
             "value": "Indoors"
@@ -53,10 +88,6 @@
           {
             "label": "Reach, tangential",
             "value": "Ø 40 m (1257 m²)"
-          },
-          {
-            "label": "Mounting height max.",
-            "value": "4,00 m"
           },
           {
             "label": "Interconnection via",
@@ -98,7 +129,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

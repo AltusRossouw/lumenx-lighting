@@ -5,58 +5,189 @@
   },
   "name": "LIGHT SENSOR",
   "category": "SENSORS",
-  "variant": "",
+  "variant": "Light Sensor Dual KNX - concealed, sq",
   "stats": [
     {
-      "label": "IP Rating",
-      "value": "IP54",
+      "label": "Application, place",
+      "value": "Outdoors, Indoors",
       "unit": ""
+    },
+    {
+      "label": "Installation",
+      "value": "Concealed wiring",
+      "unit": ""
+    },
+    {
+      "label": "Mounting height max.",
+      "value": "4,00",
+      "unit": "m"
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/scraped/sensors/light-sensor/01-17116-light-sensor-dual-4007841033637-pro-ab-x-x-up-eckig-whi-1-1-1100.jpg",
+    "alt": "Light Sensor"
   },
-  "overview": [],
-  "features": [],
-  "applications": [],
+  "overview": [
+    "Light Sensor Dual KNX - concealed, sq. - Light measurement in perfection. The Light Sensor Dual photo-cell controller with KNX interface measures directed and diffuse light, watches over areas below t"
+  ],
+  "features": [
+    "white finish",
+    "IP20 rated"
+  ],
+  "applications": [
+    "Offices",
+    "Warehouses",
+    "Corridors",
+    "Parking"
+  ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Mounting height max.",
+            "value": "4,00 m"
+          },
+          {
+            "label": "Dimensions (L x W x H)",
+            "value": "51 x 94 x 94 mm"
+          },
+          {
+            "label": "Type",
+            "value": "Constant-lighting controller"
+          },
+          {
+            "label": "Colour",
+            "value": "white"
+          },
+          {
+            "label": "Colour, RAL",
+            "value": "9003"
+          },
+          {
+            "label": "Mounting height",
+            "value": "2,00 – 4,00 m"
+          },
+          {
+            "label": "Type of interconnection",
+            "value": "Master/master, Master/slave"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
           {
             "label": "Application, place",
-            "value": "Outdoors"
+            "value": "Outdoors, Indoors"
           },
           {
             "label": "Installation",
-            "value": "Surface wiring"
-          },
-          {
-            "label": "Mounting height max.",
-            "value": "4,00 m"
+            "value": "Concealed wiring"
           },
           {
             "label": "Interconnection via",
-            "value": "Bluetooth Mesh"
+            "value": "KNX bus"
           },
           {
             "label": "Version",
-            "value": "Anthracite"
+            "value": "KNX - concealed, sq."
+          },
+          {
+            "label": "Article number",
+            "value": "058326"
           },
           {
             "label": "PU1, net weight",
-            "value": "0,125 kg"
+            "value": "0,117 kg"
           },
           {
-            "label": "15 lux",
-            "value": "IP54"
+            "label": "Manufacturer's Warranty",
+            "value": "5 years"
           },
           {
-            "label": "connectable via bluetooth",
-            "value": "CE"
+            "label": "Settings via",
+            "value": "ETS software, Remote control, Bus, Smart Remote"
+          },
+          {
+            "label": "PU1, EAN",
+            "value": "4007841058326"
+          },
+          {
+            "label": "Application, room",
+            "value": "classroom, one-person office, open-plan office, high-bay warehouse, conference room / meeting room, Indoors"
+          },
+          {
+            "label": "Includes corner wall mount",
+            "value": "No"
+          },
+          {
+            "label": "Installation site",
+            "value": "wall, ceiling"
+          },
+          {
+            "label": "IP-rating",
+            "value": "IP20"
+          },
+          {
+            "label": "Ambient temperature",
+            "value": "from -20 up to 50 °C"
+          },
+          {
+            "label": "With bus coupling",
+            "value": "Yes"
+          },
+          {
+            "label": "European Article Number (EAN)",
+            "value": "4007841058326"
+          },
+          {
+            "label": "Rated current",
+            "value": "12,5 mA"
+          },
+          {
+            "label": "Twilight setting",
+            "value": "2 – 1000 lx"
+          },
+          {
+            "label": "Basic light level function",
+            "value": "Yes"
+          },
+          {
+            "label": "Main light adjustable",
+            "value": "0 - 100 %"
+          },
+          {
+            "label": "Twilight setting TEACH",
+            "value": "Yes"
+          },
+          {
+            "label": "Constant-lighting control",
+            "value": "Yes"
+          },
+          {
+            "label": "KNX functions",
+            "value": "Light output 2x, Light level, Constant-lighting control, Photo-cell controller, Logic gate"
+          },
+          {
+            "label": "Interconnection",
+            "value": "Yes"
+          },
+          {
+            "label": "Product category",
+            "value": "Photoelectric lighting controller"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Power supply, detail",
+            "value": "KNX bus"
           }
         ]
       }
@@ -70,7 +201,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

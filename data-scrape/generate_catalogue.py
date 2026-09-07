@@ -338,8 +338,14 @@ def split_spec_units(value):
     return v, ''
 
 
-def build_datasheet_payload(product):
-    """Build a datasheet JSON payload for a product from its catalogue record."""
+def build_datasheet_payload(product, old=None):
+    """Build a datasheet JSON payload for a product from its catalogue record.
+
+    Preserves the old hand-curated overview/features/applications/variant when
+    they are substantive prose (not spec dumps or redundant "supplied by"
+    filler); only the spec table (stats + columns) is rebuilt from the current
+    full spec data.
+    """
     specs = product.get('specs') or []
     name = product['name']
 
@@ -384,21 +390,18 @@ def build_datasheet_payload(product):
 
     left = []
     if physical:
-        left.append({'title': 'Physical', 'rows': physical[:14]})
+        left.append({'title': 'Physical', 'rows': physical})
     if compliance:
-        left.append({'title': 'Compliance', 'rows': compliance[:14]})
+        left.append({'title': 'Compliance', 'rows': compliance})
     right = []
     if info:
-        right.append({'title': 'Product Information', 'rows': info[:20]})
+        right.append({'title': 'Product Information', 'rows': info})
     if electrical:
-        right.append({'title': 'Electrical', 'rows': electrical[:14]})
+        right.append({'title': 'Electrical', 'rows': electrical})
 
     hero_src = product['imageUrl']
     # heroImage src uses ../public/… convention relative to the template.
-    hero_rel = hero_src
     if hero_src.startswith('/scraped/'):
-        hero_rel = '../public' + hero_src
-    elif hero_src.startswith('/product-images/'):
         hero_rel = '../public' + hero_src
     else:
         hero_rel = '../public' + hero_src
@@ -407,6 +410,27 @@ def build_datasheet_payload(product):
     variant = product.get('summary') or ''
     variant = re.split(r'(?<=[.!?])\s', variant)[0].strip().rstrip('.')
 
+    # Preserve the old hand-curated overview/features/applications if they are
+    # good prose (the catalogue's generated fallback is generic).
+    overview = [product.get('description') or variant]
+    features = product.get('features') or []
+    applications = product.get('applications') or []
+    if old:
+        old_overview = [clean_text(p) for p in (old.get('overview') or []) if clean_text(p)]
+        old_overview = [
+            p for p in old_overview
+            if len(p) >= 60
+            and not is_spec_dump(p)
+            and not re.search(r'supplied by|from LumenX,', p, re.I)
+        ]
+        if old_overview:
+            overview = old_overview
+        if old.get('features'):
+            features = [clean_text(f) for f in old['features'] if clean_text(f)]
+        if old.get('applications'):
+            applications = [clean_text(a) for a in old['applications'] if clean_text(a)]
+        if old.get('variant') and not re.search(r'supplied by|from LumenX,', old['variant'], re.I):
+            variant = old['variant']
     return {
         'fileStem': name,
         'meta': {'rev': '1.0'},
@@ -415,9 +439,9 @@ def build_datasheet_payload(product):
         'variant': variant,
         'stats': stats,
         'heroImage': {'src': hero_rel, 'alt': name},
-        'overview': [product.get('description') or variant],
-        'features': product.get('features') or [],
-        'applications': product.get('applications') or [],
+        'overview': overview,
+        'features': features,
+        'applications': applications,
         'columns': {'left': left, 'right': right},
         'drawing': {'src': '', 'alt': 'Dimension drawing'},
         'notes': [
@@ -1076,27 +1100,28 @@ def main():
             page_desc = clean_text(read_readme_line(readme_path, 'Page description'))
             if page_desc and page_desc not in ('—', '-', '–'):
                 description = page_desc
+        # A curated datasheet overview is good prose to keep, provided it isn't
+        # a raw spec dump, redundant "supplied by LumenX" filler, or a bare
+        # product-name paste (short).
         ds_overview = clean_text(' '.join(ds['overview'])) if (ds and ds.get('overview')) else ''
-        # Replace near-empty/junk descriptions with the curated datasheet overview.
-        if (not description or len(description) < 20 or description in ('Group.', '—', '-', '–')
-                or description.lower() in ('none', 'n/a', 'see description')) and ds_overview:
+        ds_overview = scrub_brands(ds_overview)
+        if ds_overview and (is_spec_dump(ds_overview) or len(ds_overview) < 60
+                            or re.search(r'supplied by|from LumenX,', ds_overview, re.I)):
+            ds_overview = ''
+        if not description and ds_overview:
             description = ds_overview
-        # If the scraped description is a raw spec dump or empty, build a clean
-        # readable description from the structured data.
-        if is_spec_dump(description):
-            if description and description.count(':') < 3 and '|' not in description:
-                # A short real sentence — keep it, just ensure it's readable.
-                description = description.strip(' -–—')
-            else:
-                description = ds_overview or build_clean_description(
-                    name_clean, cat_meta['title'], row.get('supplier', ''), specs, apps)
+        # If the scraped description is a raw spec dump or empty/junk, prefer the
+        # curated overview, else build clean LumenX-branded prose.
+        if is_spec_dump(description) or not description or len(description) < 20 \
+                or description in ('Group.', '—', '-', '–') \
+                or description.lower() in ('none', 'n/a', 'see description'):
+            description = ds_overview or build_clean_description(
+                name_clean, cat_meta['title'], row.get('supplier', ''), specs, apps)
         if not description:
             members = pj.get('scrape', {}).get('members') or []
-            if members and not ds_overview:
+            if members:
                 description = f'The {name_clean} range includes {len(members)} products.' \
                               f' Contact our team for full details on each configuration.'
-            elif ds_overview:
-                description = ds_overview
             else:
                 description = build_clean_description(name_clean, cat_meta['title'], row.get('supplier', ''), specs, apps)
 
@@ -1315,46 +1340,29 @@ def main():
     print(f'Categories: {len(categories)}')
     print(f'Images copied: {copied_images}')
 
-    # Ensure a datasheet JSON exists for every product's datasheet slug, and
-    # rebrand its name/fileStem to the LumenX name (keeping curated specs).
+    # Regenerate every datasheet JSON from the current (spec-enriched) product
+    # data. The website's spec table is the authoritative source, and the old
+    # hand-curated JSONs were far thinner (e.g. DualTech had 15 rows here vs
+    # 64 on the site). build_datasheet_payload uses the product's full specs,
+    # but preserves the old curated overview/features/applications prose.
     os.makedirs(DASH_OUT_DIR, exist_ok=True)
     datasheet_written = 0
-    datasheet_rebranded = 0
     for p in products:
         ds_slug = p.get('datasheetSlug')
         if not ds_slug:
             continue
         existing = os.path.join(DASH_OUT_DIR, f'{ds_slug}.json')
-        name_upper = p['name'].upper()
+        old = None
         if os.path.exists(existing):
             try:
-                payload = json.load(open(existing, encoding='utf-8'))
-                changed = False
-                if payload.get('name') != name_upper:
-                    payload['name'] = name_upper
-                    changed = True
-                if payload.get('fileStem') != p['name']:
-                    payload['fileStem'] = p['name']
-                    changed = True
-                # scrub brand from variant/overview too
-                if payload.get('variant'):
-                    v = scrub_brands(payload['variant'])
-                    if v != payload['variant']:
-                        payload['variant'] = v
-                        changed = True
-                if changed:
-                    with open(existing, 'w', encoding='utf-8') as f:
-                        json.dump(payload, f, ensure_ascii=False, indent=2)
-                    datasheet_rebranded += 1
+                old = json.load(open(existing, encoding='utf-8'))
             except Exception:
-                pass
-        else:
-            payload = build_datasheet_payload(p)
-            with open(existing, 'w', encoding='utf-8') as f:
-                json.dump(payload, f, ensure_ascii=False, indent=2)
-            datasheet_written += 1
-    print(f'Datasheet JSONs generated (missing only): {datasheet_written}')
-    print(f'Datasheet JSONs rebranded: {datasheet_rebranded}')
+                old = None
+        payload = build_datasheet_payload(p, old)
+        with open(existing, 'w', encoding='utf-8') as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+        datasheet_written += 1
+    print(f'Datasheet JSONs regenerated: {datasheet_written}')
     print(f'Wrote: {OUT_TS}')
 
 

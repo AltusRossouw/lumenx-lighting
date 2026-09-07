@@ -13,13 +13,18 @@
       "unit": "W"
     },
     {
+      "label": "Wattage",
+      "value": "10W / 20W / 35W",
+      "unit": ""
+    },
+    {
       "label": "Lumens",
       "value": "3500",
       "unit": "lm"
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/legend.png",
+    "src": "../public/scraped/downlights/legend/member-01-pioled-lighting-i063-35w-legend-recessed-round-led-downlight-3cct-ip44.jpg",
     "alt": "Legend"
   },
   "overview": [
@@ -47,8 +52,16 @@
             "value": "Aluminium"
           },
           {
-            "label": "Cutout",
-            "value": "Ø195–210mm"
+            "label": "Colour Temperature",
+            "value": "3CCT · 3000K / 4000K / 6000K"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "60°"
+          },
+          {
+            "label": "Colour",
+            "value": "Silver / Matt / White"
           }
         ]
       },
@@ -62,6 +75,10 @@
           {
             "label": "Warranty",
             "value": "5 Years"
+          },
+          {
+            "label": "Operating Temp",
+            "value": "-20 ~ 45 °C"
           }
         ]
       }
@@ -71,34 +88,38 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "Lumen Output",
-            "value": "3500 lm (35W)"
+            "label": "Lumens",
+            "value": "3500 lm"
           },
           {
-            "label": "Colour Temperature",
-            "value": "3CCT · 3000K / 4000K / 6000K"
+            "label": "Cutout",
+            "value": "Ø195–210mm"
+          },
+          {
+            "label": "Lumen Output",
+            "value": "3500 lm (35W)"
           },
           {
             "label": "CRI",
             "value": ">80"
           },
           {
-            "label": "Beam Angle",
-            "value": "60°"
-          },
-          {
             "label": "LED Chips",
             "value": "2835 Sanan"
           },
           {
-            "label": "Operating Temp",
-            "value": "-20 ~ 45 °C"
+            "label": "UGR",
+            "value": "<19"
           }
         ]
       },
       {
         "title": "Electrical",
         "rows": [
+          {
+            "label": "Power",
+            "value": "10–35 W"
+          },
           {
             "label": "Wattage",
             "value": "10W / 20W / 35W"
@@ -114,6 +135,10 @@
           {
             "label": "Dimmable",
             "value": "Optional dimmable driver"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "1kV / 500V / 1kv / 2kV"
           }
         ]
       }
@@ -127,7 +152,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

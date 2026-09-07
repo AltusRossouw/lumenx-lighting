@@ -4,8 +4,8 @@
     "rev": "1.0"
   },
   "name": "LYON",
-  "category": "INDOOR LIGHTING",
-  "variant": "",
+  "category": "OUTDOOR ARCHITECTURAL",
+  "variant": "Lyon offers an optimal light flow, capable of extensively illuminating up to 26 m²",
   "stats": [
     {
       "label": "Power",
@@ -13,22 +13,22 @@
       "unit": "W"
     },
     {
+      "label": "Wattage",
+      "value": "55",
+      "unit": "W"
+    },
+    {
       "label": "Lumens",
       "value": "0–4741",
       "unit": "lm"
-    },
-    {
-      "label": "IP Rating",
-      "value": "IP66",
-      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/ledsc4-lyon-10221.png",
-    "alt": "LYON"
+    "src": "../public/scraped/outdoor-architectural/lyon/06-83ff603be1dd4127-a568375356ac0cbf-2000-1.png",
+    "alt": "Lyon"
   },
   "overview": [
-    "Extensive lighting"
+    "Lyon offers an optimal light flow, capable of extensively illuminating up to 26 m²."
   ],
   "features": [
     "Protection against dust and high-pressure water (IK10 and IP66)",
@@ -42,32 +42,51 @@
     "Hospitality"
   ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Colour Temperature",
+            "value": "2700K / 3200K / 4000K"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP66"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
           {
+            "label": "Lumens",
+            "value": "0–4741 lm"
+          },
+          {
             "label": "Lumen Output",
             "value": "0–4741 lm"
           },
           {
-            "label": "Colour Temperature",
-            "value": "2700K / 3200K / 4000K"
-          },
-          {
             "label": "CRI",
             "value": "80"
-          },
-          {
-            "label": "IP Rating",
-            "value": "IP66"
           }
         ]
       },
       {
         "title": "Electrical",
         "rows": [
+          {
+            "label": "Power",
+            "value": "55 W"
+          },
           {
             "label": "Wattage",
             "value": "55 W"
@@ -88,7 +107,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

@@ -4,12 +4,28 @@
     "rev": "1.0"
   },
   "name": "KEPLER",
-  "category": "LINEAR LIGHTING",
+  "category": "LINEARS",
   "variant": "LumenX Kepler linear system for continuous architectural illumination.",
-  "stats": [],
+  "stats": [
+    {
+      "label": "Power",
+      "value": "See Configurations table",
+      "unit": ""
+    },
+    {
+      "label": "Beam Angle",
+      "value": "160",
+      "unit": "°"
+    },
+    {
+      "label": "Operational Guarantee (365d × 24h)",
+      "value": "8",
+      "unit": "years"
+    }
+  ],
   "heroImage": {
-    "src": "../public/product-images/kepler.png",
-    "alt": "KEPLER"
+    "src": "../public/scraped/linears/kepler/01-kepler-800x883.png",
+    "alt": "Kepler"
   },
   "overview": [
     "LumenX Kepler linear system for continuous architectural illumination."
@@ -26,22 +42,134 @@
     "Architectural interiors"
   ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Colour Rendering Index (CRI)",
+            "value": "83"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "160°"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Fire Rating",
+            "value": "UL-94 V2 compliant"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
           {
-            "label": "Technology",
-            "value": "OrbitX Direct Drive"
+            "label": "Operational Guarantee (365d × 24h)",
+            "value": "8 years"
           },
           {
-            "label": "Type",
-            "value": "Continuous linear system"
+            "label": "Light Output Guarantee (365d × 24h)",
+            "value": "5 years"
+          },
+          {
+            "label": "Nominal Lifetime (L70)",
+            "value": "70,000 hours"
+          },
+          {
+            "label": "Testing Standards",
+            "value": "IES LM-80, TM-21"
+          },
+          {
+            "label": "Luminous Efficacy",
+            "value": "110 lm/W"
+          },
+          {
+            "label": "Correlated Colour Temperature (CCT)",
+            "value": "5000K (options available)"
+          },
+          {
+            "label": "Gamut Area Index (GAI)",
+            "value": "96"
           },
           {
             "label": "Light Quality",
-            "value": "Type A compliant"
+            "value": "Type A compliant (Lighting Research Centre, New York)"
+          },
+          {
+            "label": "Stroboscopic Effect (100Hz)",
+            "value": "80% flicker free (complies with OHS and MHS Act regulations)"
+          },
+          {
+            "label": "Operating Voltage",
+            "value": "220–240V AC"
+          },
+          {
+            "label": "Minimum Sustained Voltage",
+            "value": "No minimum limit, operational from 150V"
+          },
+          {
+            "label": "Maximum Sustained Voltage",
+            "value": "250V for 2 minutes"
+          },
+          {
+            "label": "On/Off Switching",
+            "value": "Unlimited"
+          },
+          {
+            "label": "Delay to Full Brightness",
+            "value": "Immediate"
+          },
+          {
+            "label": "Max Ambient Temperature (T Ambient)",
+            "value": "+30°C"
+          },
+          {
+            "label": "Min Ambient Temperature (T Ambient)",
+            "value": "-40°C"
+          },
+          {
+            "label": "Risk of Breakage",
+            "value": "Low, polycarbonate housing extruded to 1mm (no glass)"
+          },
+          {
+            "label": "Electrical",
+            "value": "IEC60598-1, IEC60598-2-5 compliant"
+          },
+          {
+            "label": "WiFi, Barcode Scanner, Radio Frequency",
+            "value": "No interference"
+          },
+          {
+            "label": "Standards",
+            "value": "IEC 61547, SANS 215 (CISPR15) compliant"
+          },
+          {
+            "label": "Total Harmonic Distortion",
+            "value": "IEC 61000-3-2 Class D Compliant"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Power",
+            "value": "See Configurations table"
+          },
+          {
+            "label": "Power Factor",
+            "value": ">0.98"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "1.5kV"
           }
         ]
       }
@@ -55,7 +183,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

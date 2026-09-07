@@ -4,12 +4,28 @@
     "rev": "1.0"
   },
   "name": "UMGENI",
-  "category": "HIGH BAYS",
+  "category": "HIGHBAYS",
   "variant": "High-performance linear highbay delivering over 35,000 lumens with excellent thermal design.",
-  "stats": [],
+  "stats": [
+    {
+      "label": "Wattage",
+      "value": "151W, 154W, 205W, 210W",
+      "unit": ""
+    },
+    {
+      "label": "Configuration",
+      "value": "Standard",
+      "unit": ""
+    },
+    {
+      "label": "Cooling",
+      "value": "Excellent thermal design",
+      "unit": ""
+    }
+  ],
   "heroImage": {
-    "src": "../public/product-images/umgeni.png",
-    "alt": "UMGENI"
+    "src": "../public/scraped/highbays/umgeni/01-umgeni-linear-highbay.jpg",
+    "alt": "Umgeni"
   },
   "overview": [
     "High-performance linear highbay delivering over 35,000 lumens with excellent thermal design."
@@ -31,8 +47,8 @@
         "title": "Physical",
         "rows": [
           {
-            "label": "Cooling",
-            "value": "Excellent thermal design"
+            "label": "Type",
+            "value": "Linear highbay"
           }
         ]
       }
@@ -42,16 +58,29 @@
         "title": "Product Information",
         "rows": [
           {
+            "label": "Configuration",
+            "value": "Standard"
+          },
+          {
+            "label": "Cooling",
+            "value": "Excellent thermal design"
+          },
+          {
             "label": "Output",
             "value": "> 35,000 lm"
           },
           {
-            "label": "Type",
-            "value": "Linear highbay"
-          },
-          {
             "label": "Manufacture",
             "value": "Locally manufactured"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "151W, 154W, 205W, 210W"
           }
         ]
       }
@@ -65,7 +94,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

@@ -4,28 +4,42 @@
     "rev": "1.0"
   },
   "name": "VISTA",
-  "category": "OUTDOOR LIGHTING",
-  "variant": "",
+  "category": "OUTDOOR ARCHITECTURAL",
+  "variant": "The Vista is a LumenX outdoor architectural luminaire",
   "stats": [
     {
-      "label": "Power",
-      "value": "12",
-      "unit": "W"
+      "label": "Wattage",
+      "value": "20/35W",
+      "unit": ""
     },
     {
-      "label": "IP Rating",
-      "value": "IP65",
+      "label": "Lumen Output",
+      "value": "20W = 2 600lm \\",
+      "unit": ""
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "3CCT (3000K/4000K/6000K)",
       "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/vista-post-top.png",
-    "alt": "VISTA POST TOP"
+    "src": "../public/scraped/outdoor-architectural/vista/01-pioled-lighting-vista-35-20w-230v-post-top-3cct.png",
+    "alt": "Vista"
   },
   "overview": [
-    "Vista Post Top — outdoor LED luminaire from LumenX, supplied by LumenX."
+    "The Vista is a LumenX outdoor architectural luminaire. It is designed for Exterior, Commercial, Municipal environments. Available in 20/35W. Available in 3CCT (3000K/4000K/6000K)."
   ],
-  "features": [],
+  "features": [
+    "20/35W power",
+    "3CCT (3000K/4000K/6000K) colour temperature",
+    "Up to 20W = 2 600lm \\",
+    "CRI >80",
+    "170-265V input",
+    "SMD 2835 LEDs",
+    "120° beam",
+    "Aluminum housing"
+  ],
   "applications": [
     "Exterior",
     "Commercial",
@@ -37,6 +51,14 @@
         "title": "Physical",
         "rows": [
           {
+            "label": "Colour Temperature",
+            "value": "3CCT (3000K/4000K/6000K)"
+          },
+          {
+            "label": "Beam",
+            "value": "120°"
+          },
+          {
             "label": "Housing",
             "value": "Aluminum"
           }
@@ -46,8 +68,20 @@
         "title": "Compliance",
         "rows": [
           {
+            "label": "Operating temp",
+            "value": "-20~40°C"
+          },
+          {
+            "label": "IK Rating",
+            "value": "IK06"
+          },
+          {
             "label": "Certifications",
             "value": "CE"
+          },
+          {
+            "label": "IES File",
+            "value": "No *5 YEAR WARRANTY DOWNLOAD SPEC SHEET"
           }
         ]
       }
@@ -57,28 +91,16 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "Colour Temperature",
-            "value": "3CCT (3000K/4000K/6000K)"
-          },
-          {
             "label": "Lumen Output",
-            "value": "20W = 2 600lm | 35W = 4 540lm"
+            "value": "20W = 2 600lm \\"
           },
           {
             "label": "CRI",
             "value": ">80"
           },
           {
-            "label": "Operating Temp",
-            "value": "-20~40°C"
-          },
-          {
             "label": "LED Chips",
             "value": "SMD 2835"
-          },
-          {
-            "label": "Beam Angle",
-            "value": "120°"
           }
         ]
       },
@@ -109,7 +131,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

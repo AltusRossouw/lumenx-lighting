@@ -4,9 +4,19 @@
     "rev": "1.0"
   },
   "name": "LEDA",
-  "category": "TRACK LIGHTING",
+  "category": "TRACK",
   "variant": "3-wire track tilt IP20 linear for directional linear accent lighting.",
   "stats": [
+    {
+      "label": "Wattage",
+      "value": "40W / 36W / 20W / 5W / 18W / 12W / 50W",
+      "unit": ""
+    },
+    {
+      "label": "Lumen Output",
+      "value": "3 200lm / 2 880lm / 1 600lm / 1 710lm / 1000lm",
+      "unit": ""
+    },
     {
       "label": "IP Rating",
       "value": "IP20",
@@ -14,8 +24,8 @@
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/leda.png",
-    "alt": "LEDA"
+    "src": "../public/scraped/track/leda/member-01-pioled-lighting-tk005-4ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png",
+    "alt": "Leda"
   },
   "overview": [
     "3-wire track tilt IP20 linear for directional linear accent lighting."
@@ -32,10 +42,9 @@
     "Accent lighting"
   ],
   "columns": {
-    "left": [],
-    "right": [
+    "left": [
       {
-        "title": "Product Information",
+        "title": "Physical",
         "rows": [
           {
             "label": "Type",
@@ -46,8 +55,81 @@
             "value": "Tiltable"
           },
           {
+            "label": "Colour Temperature",
+            "value": "3CCT (3000K/4000K/6000K) / Amber/Lime/Green / 6000K/4000K/3000K"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "120° / 60° / 132°"
+          },
+          {
+            "label": "Housing",
+            "value": "Aluminium + / Pure / PMMA / Die cast"
+          },
+          {
+            "label": "Colour",
+            "value": "3CCT (3000K/4000K/6000K) / Blue/Green / Blue, Green"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
             "label": "IP Rating",
             "value": "IP20"
+          },
+          {
+            "label": "Operating Temp",
+            "value": "-15~45°C / -20~45°C / -35°C to 45°C"
+          },
+          {
+            "label": "Certifications",
+            "value": "CE, EMC / CE"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumen Output",
+            "value": "3 200lm / 2 880lm / 1 600lm / 1 710lm / 1000lm"
+          },
+          {
+            "label": "CRI",
+            "value": ">83 / >80"
+          },
+          {
+            "label": "LED Chips",
+            "value": "2835 / Sanan 2835"
+          },
+          {
+            "label": "available in",
+            "value": "Black/White"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "40W / 36W / 20W / 5W / 18W / 12W / 50W"
+          },
+          {
+            "label": "Input Voltage",
+            "value": "185-265V / 170V-265V / 185V-265V / 200-260V (DOB)"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "2.5kV / 1Kv / 1kV / 4kV"
+          },
+          {
+            "label": "Dimmable",
+            "value": "No"
           }
         ]
       }
@@ -61,7 +143,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

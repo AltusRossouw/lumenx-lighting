@@ -4,13 +4,18 @@
     "rev": "1.0"
   },
   "name": "PEARL",
-  "category": "INDOOR DECORATIVE",
-  "variant": "",
+  "category": "DECORATIVE",
+  "variant": "Explore the Pearl Series, a timeless spherical decorative lighting collection for luxury residential and hospitality spaces",
   "stats": [
     {
       "label": "Power",
       "value": "5–200",
       "unit": "W"
+    },
+    {
+      "label": "Wattage",
+      "value": "5W – 200W (sphere count-dependent)",
+      "unit": ""
     },
     {
       "label": "IP Rating",
@@ -19,13 +24,22 @@
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/kinglong-pearl-series.png",
-    "alt": "PEARL SERIES"
+    "src": "../public/scraped/decorative/pearl/03-pearl-s1-l690-w149-h2001.png",
+    "alt": "Pearl"
   },
   "overview": [
-    "Pearls have symbolised purity and refinement across cultures for millennia — and the Pearl Series channels that same quiet confidence into decorative lighting. Each sphere is crafted from high-quality mouth-blown glass, achieving a uniformity of form and a translucency that mass-produced alternatives cannot match. Arranged in cascading cluster configurations that echo the natural randomness of a pearl strand, the series brings an organic, timeless elegance to any interior. Versatile enough for both intimate residential dining rooms and the public areas of boutique hotels, the Pearl Series is a perennial bestseller."
+    "Explore the Pearl Series, a timeless spherical decorative lighting collection for luxury residential and hospitality spaces."
   ],
-  "features": [],
+  "features": [
+    "Mouth-Blown Glass · Optical Acrylic",
+    "Champagne Gold · Chrome · Antique Brass · Matte Black finish",
+    "5–200 W power",
+    "IP20 rated",
+    "3 Years · LED Driver: 5 Years warranty",
+    "5W – 200W (sphere count-dependent) power",
+    "110V – 240V, 50/60Hz Universal Input",
+    "Dimming: Triac · 0–10V"
+  ],
   "applications": [
     "Hospitality",
     "Residential",
@@ -37,6 +51,50 @@
       {
         "title": "Physical",
         "rows": [
+          {
+            "label": "Material",
+            "value": "Mouth-Blown Glass · Optical Acrylic"
+          },
+          {
+            "label": "Finish",
+            "value": "Champagne Gold · Chrome · Antique Brass · Matte Black"
+          },
+          {
+            "label": "Dimensions",
+            "value": "Sphere Ø60 / Ø80 / Ø100 / Ø150 / Ø200mm"
+          },
+          {
+            "label": "Finish Options",
+            "value": "Champagne Gold · Chrome · Antique Brass · Matte Black"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Certifications",
+            "value": "CE"
+          },
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          },
+          {
+            "label": "Warranty",
+            "value": "3 Years · LED Driver: 5 Years"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lead Time",
+            "value": "Standard: 4–6 weeks · Custom: 6–10 weeks"
+          },
           {
             "label": "Primary Material",
             "value": "High-Quality Mouth-Blown Glass Spheres"
@@ -50,54 +108,26 @@
             "value": "Stainless Steel Cable + Brass / Chrome Cap Fittings"
           },
           {
-            "label": "Finish Options",
-            "value": "Champagne Gold · Chrome · Antique Brass · Matte Black"
-          },
-          {
             "label": "Sphere Diameter Options",
             "value": "Ø60 / Ø80 / Ø100 / Ø150 / Ø200mm"
           },
           {
             "label": "Cluster Configurations",
             "value": "9-sphere / 18-sphere / 36-sphere / custom"
-          }
-        ]
-      },
-      {
-        "title": "Compliance",
-        "rows": [
-          {
-            "label": "Warranty",
-            "value": "3 Years · LED Driver: 5 Years"
           },
-          {
-            "label": "Certifications",
-            "value": "CE · CNAS-accredited test reports available"
-          }
-        ]
-      }
-    ],
-    "right": [
-      {
-        "title": "Product Information",
-        "rows": [
           {
             "label": "Light Source",
             "value": "G9 LED / Integrated LED Module, 2700K / 3000K CCT, CRI > 90"
-          },
-          {
-            "label": "IP Rating",
-            "value": "IP20 standard"
-          },
-          {
-            "label": "Lead Time",
-            "value": "Standard: 4–6 weeks · Custom: 6–10 weeks"
           }
         ]
       },
       {
         "title": "Electrical",
         "rows": [
+          {
+            "label": "Power",
+            "value": "5–200 W"
+          },
           {
             "label": "Wattage",
             "value": "5W – 200W (sphere count-dependent)"
@@ -122,7 +152,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

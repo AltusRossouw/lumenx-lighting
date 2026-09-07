@@ -4,8 +4,8 @@
     "rev": "1.0"
   },
   "name": "SKY SPT-150 SOLAR POST TOP",
-  "category": "SOLAR LIGHTING",
-  "variant": "",
+  "category": "SOLAR",
+  "variant": "Self-sustaining solar-powered post top light delivering reliable performance for estates, isolated areas and security perimeters — no electrical connection required",
   "stats": [
     {
       "label": "Lumens",
@@ -16,16 +16,25 @@
       "label": "IP Rating",
       "value": "IP65",
       "unit": ""
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "6000",
+      "unit": "K"
     }
   ],
   "heroImage": {
-    "src": "",
-    "alt": ""
+    "src": "../public/scraped/solar/sky-spt-150-solar-post-top/01-a546d4-e58c2abd51ed4328a8c1e08c606abcc0-mv2.png",
+    "alt": "Sky SPT-150 Solar Post Top"
   },
   "overview": [
     "Self-sustaining solar-powered post top light delivering reliable performance for estates, isolated areas and security perimeters — no electrical connection required."
   ],
-  "features": [],
+  "features": [
+    "1100 lm lumens",
+    "IP65 rated",
+    "6000K colour temperature"
+  ],
   "applications": [
     "Estates",
     "Isolated areas",
@@ -39,6 +48,19 @@
           {
             "label": "Product Size (L × W × H)",
             "value": "420 × 420 × 130mm"
+          },
+          {
+            "label": "Colour Temperature",
+            "value": "6000K"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP65"
           }
         ]
       }
@@ -48,28 +70,29 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "Nominal Flux",
-            "value": "Up to 1100 lm"
+            "label": "Lumens",
+            "value": "1100 lm"
           },
           {
-            "label": "Colour Temperature",
-            "value": "6000K"
+            "label": "Nominal Flux",
+            "value": "Up to 1100 lm"
           },
           {
             "label": "Storage Capacity",
             "value": "3.2V / 15000 mAh"
           },
           {
-            "label": "Charging Time",
-            "value": "7-8 h"
-          },
-          {
-            "label": "IP Rating",
-            "value": "IP65"
-          },
-          {
             "label": "Solar Panel",
             "value": "6V / 15W"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Charging Time",
+            "value": "7-8 h"
           }
         ]
       }
@@ -83,7 +106,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

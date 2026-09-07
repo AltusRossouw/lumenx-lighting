@@ -4,28 +4,41 @@
     "rev": "1.0"
   },
   "name": "EVEREST SQUARE",
-  "category": "OUTDOOR LIGHTING",
-  "variant": "",
+  "category": "OUTDOOR ARCHITECTURAL",
+  "variant": "The Everest Square is a LumenX outdoor architectural luminaire",
   "stats": [
     {
-      "label": "Power",
+      "label": "Wattage",
       "value": "12",
       "unit": "W"
     },
     {
-      "label": "IP Rating",
-      "value": "IP65",
+      "label": "Colour Temperature",
+      "value": "4CCT (2200K/3000K/4000K/6000K)",
+      "unit": ""
+    },
+    {
+      "label": "CRI",
+      "value": ">80",
       "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/everest-bollard-square.png",
-    "alt": "EVEREST SQUARE BOLLARD"
+    "src": "../public/scraped/outdoor-architectural/everest-square/01-pioled-lighting-fb002-12w-everest-square-ip65-bollard-4cct-black-1.jpg",
+    "alt": "Everest Square"
   },
   "overview": [
-    "12W Everest IP65 4CCT Surface Mount Bollard – Square"
+    "The Everest Square is a LumenX outdoor architectural luminaire. It is designed for Exterior, Commercial, Municipal environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K)."
   ],
-  "features": [],
+  "features": [
+    "12W power",
+    "4CCT (2200K/3000K/4000K/6000K) colour temperature",
+    "CRI >80",
+    "100-265V input",
+    "Sanan 2835 LEDs",
+    "360° beam",
+    "Aluminium + housing"
+  ],
   "applications": [
     "Exterior",
     "Commercial",
@@ -37,8 +50,16 @@
         "title": "Physical",
         "rows": [
           {
+            "label": "Colour Temperature",
+            "value": "4CCT (2200K/3000K/4000K/6000K)"
+          },
+          {
+            "label": "Beam",
+            "value": "360°"
+          },
+          {
             "label": "Housing",
-            "value": "Aluminium + PC"
+            "value": "Aluminium +"
           }
         ]
       },
@@ -46,8 +67,16 @@
         "title": "Compliance",
         "rows": [
           {
+            "label": "Operating temp",
+            "value": "-35~45°C"
+          },
+          {
+            "label": "IK Rating",
+            "value": "IK06"
+          },
+          {
             "label": "Certifications",
-            "value": "CE, EMC, IEC60598"
+            "value": "CE, EMC,"
           }
         ]
       }
@@ -57,24 +86,28 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "Colour Temperature",
-            "value": "4CCT (2200K/3000K/4000K/6000K)"
+            "label": "Lumen Per Watt",
+            "value": "100lm/W @ 6000K"
           },
           {
             "label": "CRI",
             "value": ">80"
           },
           {
-            "label": "Operating Temp",
-            "value": "-35~45°C"
-          },
-          {
             "label": "LED Chips",
             "value": "Sanan 2835"
           },
           {
-            "label": "Beam Angle",
-            "value": "360°"
+            "label": "PC Surge Protection",
+            "value": "2kV"
+          },
+          {
+            "label": "IEC60598 IES File",
+            "value": "Yes"
+          },
+          {
+            "label": "Additional Features",
+            "value": "Aluminium Pole, 304 Stainless steel screws *5 YEAR WARRANTY DOWNLOAD SPEC SHEET:"
           }
         ]
       },
@@ -88,10 +121,6 @@
           {
             "label": "Input Voltage",
             "value": "100-265V"
-          },
-          {
-            "label": "Surge Protection",
-            "value": "2kV"
           },
           {
             "label": "Dimmable",
@@ -109,7 +138,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

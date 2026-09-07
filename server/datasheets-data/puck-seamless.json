@@ -4,12 +4,28 @@
     "rev": "1.0"
   },
   "name": "PUCK SEAMLESS",
-  "category": "LINEAR LIGHTING",
+  "category": "LINEARS",
   "variant": "Integrated seamless linear with a <3mm end-cap line for continuous runs, in 1200mm and 2400mm.",
-  "stats": [],
+  "stats": [
+    {
+      "label": "Power",
+      "value": "58W (1200mm) / 116W (2400mm)",
+      "unit": ""
+    },
+    {
+      "label": "CCT",
+      "value": "4000K/5000K (options available)",
+      "unit": ""
+    },
+    {
+      "label": "Beam Angle",
+      "value": "160",
+      "unit": "°"
+    }
+  ],
   "heroImage": {
-    "src": "../public/product-images/puck-seamless.png",
-    "alt": "PUCK SEAMLESS"
+    "src": "../public/scraped/linears/puck-seamless/01-puck-800x601.png",
+    "alt": "Puck Seamless"
   },
   "overview": [
     "Integrated seamless linear with a <3mm end-cap line for continuous runs, in 1200mm and 2400mm."
@@ -29,11 +45,28 @@
   "columns": {
     "left": [
       {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Beam Angle",
+            "value": "160°"
+          },
+          {
+            "label": "Mounting",
+            "value": "End-to-end seamless installation"
+          },
+          {
+            "label": "Dimensions",
+            "value": "36mm × 70mm profile"
+          }
+        ]
+      },
+      {
         "title": "Compliance",
         "rows": [
           {
-            "label": "Guarantee",
-            "value": "6 years operational"
+            "label": "Fire Rating",
+            "value": "UL-94 V2 compliant"
           }
         ]
       }
@@ -43,28 +76,88 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "Efficacy",
+            "label": "Nominal Lifetime (L70)",
+            "value": "60,000 hours (IES LM-80, TM-21)"
+          },
+          {
+            "label": "Operational Guarantee (24/7)",
+            "value": "6 years"
+          },
+          {
+            "label": "Light Output Guarantee (24/7)",
+            "value": "3 years"
+          },
+          {
+            "label": "Luminous Efficacy",
             "value": "110 lm/W"
           },
           {
             "label": "CCT",
-            "value": "4000K / 5000K"
+            "value": "4000K/5000K (options available)"
           },
           {
             "label": "CRI",
-            "value": "83 (GAI 96)"
+            "value": "83"
           },
           {
-            "label": "Beam Angle",
-            "value": "160°"
+            "label": "GAI",
+            "value": "96"
           },
           {
-            "label": "Lengths",
-            "value": "1200mm / 2400mm"
+            "label": "Light Quality",
+            "value": "Type A compliant (LRC, New York)"
           },
           {
-            "label": "Lifetime",
-            "value": "L70 60,000 hrs"
+            "label": "Stroboscopic Effect (100Hz)",
+            "value": "80% flicker free"
+          },
+          {
+            "label": "Operating Voltage",
+            "value": "220-240V AC"
+          },
+          {
+            "label": "Min Sustained Voltage",
+            "value": "No minimum, operational from 150V"
+          },
+          {
+            "label": "Max Sustained Voltage",
+            "value": "250V for 2 minutes"
+          },
+          {
+            "label": "On/Off Switching",
+            "value": "Unlimited"
+          },
+          {
+            "label": "Delay to Full Brightness",
+            "value": "Immediate"
+          },
+          {
+            "label": "Max Ambient Temperature (T Ambient)",
+            "value": "+30°C"
+          },
+          {
+            "label": "Min Ambient Temperature (T Ambient)",
+            "value": "-40°C"
+          },
+          {
+            "label": "Risk of Breakage",
+            "value": "Low, polycarbonate housing extruded to 1mm (no glass)"
+          },
+          {
+            "label": "Electrical Safety",
+            "value": "IEC60598-1, IEC60598-2-5 compliant"
+          },
+          {
+            "label": "WiFi/Barcode/Radio",
+            "value": "No interference"
+          },
+          {
+            "label": "THD",
+            "value": "IEC 61000-3-2 Class D Compliant"
+          },
+          {
+            "label": "Seamless Design",
+            "value": "Thin end cap line (<3mm)"
           }
         ]
       },
@@ -76,8 +169,12 @@
             "value": "58W (1200mm) / 116W (2400mm)"
           },
           {
-            "label": "Voltage",
-            "value": "220–240V AC"
+            "label": "Power Factor",
+            "value": ">0.98"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "1.5kV"
           }
         ]
       }
@@ -91,7 +188,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

@@ -8,19 +8,24 @@
   "variant": "3CCT round COB downlight from 16W to 25W with UGR<19 and Bridgelux LED chips.",
   "stats": [
     {
-      "label": "Power",
-      "value": "16–25",
-      "unit": "W"
+      "label": "Wattage",
+      "value": "25W/20w/18w/16w",
+      "unit": ""
     },
     {
-      "label": "Lumens",
-      "value": "1920–3000",
-      "unit": "lm"
+      "label": "Lumen Output",
+      "value": "25W = 3000lm \\",
+      "unit": ""
+    },
+    {
+      "label": "UGR",
+      "value": "<19",
+      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/sauron.png",
-    "alt": "SAURON"
+    "src": "../public/scraped/downlights/sauron/01-pioled-lighting-hd016-25-20-18-16w-sauron-recessed-round-led-downlight.jpg",
+    "alt": "Sauron"
   },
   "overview": [
     "3CCT round COB downlight from 16W to 25W with UGR<19 and Bridgelux LED chips."
@@ -38,38 +43,69 @@
     "Commercial interiors"
   ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Colour",
+            "value": "White,"
+          },
+          {
+            "label": "Housing",
+            "value": "Aluminium"
+          },
+          {
+            "label": "Trim Colour",
+            "value": "Black, White"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Operating temp",
+            "value": "-15~45°C"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
           {
-            "label": "Lumens",
-            "value": "1,920lm – 3,000lm"
-          },
-          {
-            "label": "CCT",
-            "value": "3CCT (3000K / 4000K / 6000K)"
-          },
-          {
-            "label": "CRI",
-            "value": "> 80"
-          },
-          {
             "label": "UGR",
-            "value": "< 19"
+            "value": "<19"
           },
           {
-            "label": "Beam",
-            "value": "45°"
+            "label": "Black Trim optional Colour Temperature",
+            "value": "3CCT (3000K/4000K/6000K)"
+          },
+          {
+            "label": "Lumen Output",
+            "value": "25W = 3000lm \\"
+          },
+          {
+            "label": "Flicker Free CRI",
+            "value": ">80"
           },
           {
             "label": "LED Chips",
-            "value": "Bridgelux COB"
+            "value": "USA"
           },
           {
-            "label": "Surge Protection",
-            "value": "3kV"
+            "label": "Bridgelux COB Beam",
+            "value": "45°"
+          },
+          {
+            "label": "IEC60598 IES File",
+            "value": "Yes"
+          },
+          {
+            "label": "Additional Features",
+            "value": "Flicker free AGT Driver *5 YEAR WARRANTY DOWNLOAD SPEC SHEET"
           }
         ]
       },
@@ -78,15 +114,23 @@
         "rows": [
           {
             "label": "Wattage",
-            "value": "16W / 18W / 20W / 25W"
+            "value": "25W/20w/18w/16w"
           },
           {
-            "label": "Voltage",
-            "value": "200–277V AC"
+            "label": "Input Voltage",
+            "value": "200- 277V"
           },
           {
-            "label": "Dimming",
-            "value": "Optional dimmable driver"
+            "label": "Surge Protection",
+            "value": "3kV"
+          },
+          {
+            "label": "Dimmable",
+            "value": "Optional"
+          },
+          {
+            "label": "Dimmable Driver Certifications",
+            "value": "CE, RoHS,"
           }
         ]
       }
@@ -100,7 +144,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

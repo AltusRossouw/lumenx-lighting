@@ -4,8 +4,8 @@
     "rev": "1.0"
   },
   "name": "VETRO",
-  "category": "INDOOR LIGHTING",
-  "variant": "",
+  "category": "INDOOR ARCHITECTURAL",
+  "variant": "Vetro is a surface solution with a noble double-thickness pressed glass and waterproof properties",
   "stats": [
     {
       "label": "Power",
@@ -13,22 +13,22 @@
       "unit": "W"
     },
     {
+      "label": "Wattage",
+      "value": "22.4",
+      "unit": "W"
+    },
+    {
       "label": "Lumens",
       "value": "1240",
       "unit": "lm"
-    },
-    {
-      "label": "IP Rating",
-      "value": "IP44",
-      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/ledsc4-vetro-10124.png",
-    "alt": "VETRO"
+    "src": "../public/scraped/indoor-architectural/vetro/08-f2911c0a04a7459e-a515bd33aca78898-2000.png",
+    "alt": "Vetro"
   },
   "overview": [
-    "Essential that resists moisture"
+    "Vetro is a surface solution with a noble double-thickness pressed glass and waterproof properties."
   ],
   "features": [
     "Waterproof properties with IP44",
@@ -41,32 +41,51 @@
     "Hospitality"
   ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Colour Temperature",
+            "value": "3000K"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP44"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
           {
+            "label": "Lumens",
+            "value": "1240 lm"
+          },
+          {
             "label": "Lumen Output",
             "value": "1240 lm"
           },
           {
-            "label": "Colour Temperature",
-            "value": "3000K"
-          },
-          {
             "label": "CRI",
             "value": "80"
-          },
-          {
-            "label": "IP Rating",
-            "value": "IP44"
           }
         ]
       },
       {
         "title": "Electrical",
         "rows": [
+          {
+            "label": "Power",
+            "value": "22.4 W"
+          },
           {
             "label": "Wattage",
             "value": "22.4 W"
@@ -87,7 +106,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

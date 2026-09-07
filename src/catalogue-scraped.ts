@@ -289,8 +289,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "bunker",
     name: "Bunker",
     category: "bulkheads",
-    summary: "The Bunker is a die-cast aluminium IP65 bulkhead engineered for exterior and semi-exterior environments.",
-    description: "The Bunker is a die-cast aluminium IP65 bulkhead engineered for exterior and semi-exterior environments. Its 4CCT switch provides four selectable colour temperatures, while the aluminium body dissipates heat and resists impact better than polycarbonate alternatives. A tamper-resistant construction suits public and semi-public installations.",
+    summary: "The Bunker is a LumenX bulkhead.",
+    description: "The Bunker is a LumenX bulkhead. It is designed for Exterior walls, Entrances, Underground parking environments. Rated IP65. Built on a Die-cast aluminium platform.",
     specs: [
       { label: "IP Rating", value: "IP65" },
       { label: "Housing", value: "Die-cast aluminium" },
@@ -967,8 +967,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "umgeni",
     name: "Umgeni",
     category: "highbays",
-    summary: "The Umgeni high-performance linear highbay is designed for demanding commercial and industrial environments.",
-    description: "The Umgeni high-performance linear highbay is designed for demanding commercial and industrial environments. Built for durability and engineered for efficiency, Umgeni delivers powerful, uniform illumination with lumen packages of over 35 000lm. Its robust construction, sleek linear form, and high efficiency make it the ideal solution for warehouses, factories, logistics hubs, and large indoor spaces where reliability and light quality are non-negotiable.",
+    summary: "High-performance linear highbay delivering over 35,000 lumens with excellent thermal design.",
+    description: "High-performance linear highbay delivering over 35,000 lumens with excellent thermal design.",
     specs: [
       { label: "Wattage", value: "151W, 154W, 205W, 210W" },
       { label: "Configuration", value: "Standard" },
@@ -2051,8 +2051,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "protega-gen-2",
     name: "Protega Gen 2",
     category: "linears",
-    summary: "The Protega has evolved with Gen 2, it’s sleek design features a lighter profile and with it’s adaptable configuration is now even more easily maintained.",
-    description: "The Protega has evolved with Gen 2, it’s sleek design features a lighter profile and with it’s adaptable configuration is now even more easily maintained. The new Gen 2’s design is focused on it’s efficiency which has been greatly improved to feature up to an impressive 171 Lm/W. The Protega Gen 2 is the perfect choice for any high-performance lighting application in modern retail or commercial spaces.",
+    summary: "LED linear luminaire delivering up to 171 lm/W in a sleek, easily maintained profile.",
+    description: "LED linear luminaire delivering up to 171 lm/W in a sleek, easily maintained profile.",
     specs: [
       { label: "Wattage", value: "32W - 98W" },
       { label: "Color", value: "Black, White" },
@@ -2193,8 +2193,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "lf55",
     name: "LF55",
     category: "linears",
-    summary: "Introducing the Light Frame Family.",
-    description: "Introducing the Light Frame Family. A collective of highly effective, stylish and versatile constant current linear systems. In this family you'll find some of our best linear luminaires which include the Light Frame 55, Light Frame 55X80 and Light Frame 80 profiles which are all available in variety of sizes / lengths, dimming and emergency control options (on request), a range of luminaire colour temperatures ( CCT ) available, various mounting options and a wide selection wattage / lumen packages available.",
+    summary: "55×80mm Light Frame family linear for high-output industrial and commercial use.",
+    description: "55×80mm Light Frame family linear for high-output industrial and commercial use.",
     specs: [
       { label: "Length", value: "600 - 2300mm" },
       { label: "Colour", value: "Black, White, Silver" },
@@ -3113,7 +3113,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     name: "Fuji Square",
     category: "outdoor-architectural",
     summary: "The Fuji Square is a LumenX outdoor architectural luminaire.",
-    description: "The Fuji Square is a LumenX outdoor architectural luminaire. It is designed for Facades, Gardens, Pathways environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
+    description: "The Fuji Square is a LumenX outdoor architectural luminaire. It is designed for Exterior, Commercial, Municipal environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
     specs: [
       { label: "Wattage", value: "12W" },
       { label: "Colour Temperature", value: "4CCT (2200K/3000K/4000K/6000K)" },
@@ -3141,10 +3141,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Aluminium + housing",
     ],
     applications: [
-      "Facades",
-      "Gardens",
-      "Pathways",
-      "Plazas",
+      "Exterior",
+      "Commercial",
+      "Municipal",
     ],
     imageUrl: "/scraped/outdoor-architectural/fuji-square/01-pioled-lighting-fb004-12w-fuji-square-ip65-bollard-4cct-black.jpg",// hero
     images: [
@@ -3158,7 +3157,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     name: "Fuji Round",
     category: "outdoor-architectural",
     summary: "The Fuji Round is a LumenX outdoor architectural luminaire.",
-    description: "The Fuji Round is a LumenX outdoor architectural luminaire. It is designed for Facades, Gardens, Pathways environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
+    description: "The Fuji Round is a LumenX outdoor architectural luminaire. It is designed for Exterior, Commercial, Municipal environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
     specs: [
       { label: "Wattage", value: "12W" },
       { label: "Colour Temperature", value: "4CCT (2200K/3000K/4000K/6000K)" },
@@ -3186,10 +3185,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Aluminium + housing",
     ],
     applications: [
-      "Facades",
-      "Gardens",
-      "Pathways",
-      "Plazas",
+      "Exterior",
+      "Commercial",
+      "Municipal",
     ],
     imageUrl: "/scraped/outdoor-architectural/fuji-round/01-pioled-lighting-fb003-12w-fuji-round-ip65-bollard-4cct-black.png",// hero
     images: [
@@ -3203,7 +3201,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     name: "Everest Square",
     category: "outdoor-architectural",
     summary: "The Everest Square is a LumenX outdoor architectural luminaire.",
-    description: "The Everest Square is a LumenX outdoor architectural luminaire. It is designed for Facades, Gardens, Pathways environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
+    description: "The Everest Square is a LumenX outdoor architectural luminaire. It is designed for Exterior, Commercial, Municipal environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
     specs: [
       { label: "Wattage", value: "12W" },
       { label: "Colour Temperature", value: "4CCT (2200K/3000K/4000K/6000K)" },
@@ -3231,10 +3229,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Aluminium + housing",
     ],
     applications: [
-      "Facades",
-      "Gardens",
-      "Pathways",
-      "Plazas",
+      "Exterior",
+      "Commercial",
+      "Municipal",
     ],
     imageUrl: "/scraped/outdoor-architectural/everest-square/01-pioled-lighting-fb002-12w-everest-square-ip65-bollard-4cct-black-1.jpg",// hero
     images: [
@@ -3248,7 +3245,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     name: "Everest Round",
     category: "outdoor-architectural",
     summary: "The Everest Round is a LumenX outdoor architectural luminaire.",
-    description: "The Everest Round is a LumenX outdoor architectural luminaire. It is designed for Facades, Gardens, Pathways environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
+    description: "The Everest Round is a LumenX outdoor architectural luminaire. It is designed for Exterior, Commercial, Municipal environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
     specs: [
       { label: "Wattage", value: "12W" },
       { label: "Colour Temperature", value: "4CCT (2200K/3000K/4000K/6000K)" },
@@ -3276,10 +3273,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Aluminium + housing",
     ],
     applications: [
-      "Facades",
-      "Gardens",
-      "Pathways",
-      "Plazas",
+      "Exterior",
+      "Commercial",
+      "Municipal",
     ],
     imageUrl: "/scraped/outdoor-architectural/everest-round/01-pioled-lighting-fb001-12w-everest-round-ip65-bollard-4cct-black-1.png",// hero
     images: [
@@ -3292,8 +3288,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "zod101-square-led-wall",
     name: "ZOD101 Square LED Wall",
     category: "outdoor-architectural",
-    summary: "The ZOD101-LED-BL is a square decorative wall-mounted fixture, ideal for coastal environments.",
-    description: "The ZOD101-LED-BL is a square decorative wall-mounted fixture, ideal for coastal environments. Designed with a polycarbonate housing and diffuser, it offers exceptional durability and resistance to corrosion. The integrated 12W 4000K LED light source delivers crisp, efficient illumination in any outdoor setting.",
+    summary: "ZOD101 Square LED Wall — decorative wall light from LumenX: IP65 rated, 12W with up to 1200 lm in 4000K, designed for covered and outdoor wall mounting.",
+    description: "ZOD101 Square LED Wall — decorative wall light from LumenX: IP65 rated, 12W with up to 1200 lm in 4000K, designed for covered and outdoor wall mounting.",
     specs: [
       { label: "Power", value: "12 W" },
       { label: "Lumens", value: "1200 lm" },
@@ -3337,8 +3333,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "zod102-round-led-wall",
     name: "ZOD102 Round LED Wall",
     category: "outdoor-architectural",
-    summary: "The ZOD102-LED-BL is a round, wall-mounted luminaire ideal for coastal or high-corrosion environments.",
-    description: "The ZOD102-LED-BL is a round, wall-mounted luminaire ideal for coastal or high-corrosion environments. Designed with an integrated 12W LED in a 4000K neutral white, it offers a clean and modern light profile for both commercial and residential use. Engineered with durable polycarbonate housing and diffuser, this IP65-rated fixture is perfect for reliable outdoor lighting without compromising on aesthetics.",
+    summary: "ZOD102 Round LED Wall — decorative coastal-ready wall light from LumenX: IP65 rated, 12W with up to 1200 lm in 4000K, designed for covered and outdoor wall mounting.",
+    description: "ZOD102 Round LED Wall — decorative coastal-ready wall light from LumenX: IP65 rated, 12W with up to 1200 lm in 4000K, designed for covered and outdoor wall mounting.",
     specs: [
       { label: "Power", value: "12 W" },
       { label: "Lumens", value: "1200 lm" },
@@ -3383,7 +3379,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     name: "Orbit",
     category: "outdoor-architectural",
     summary: "The Orbit is a LumenX outdoor architectural luminaire.",
-    description: "The Orbit is a LumenX outdoor architectural luminaire. It is designed for Facades, Gardens, Pathways environments. Available in 36W/48W/60W. Available in 3CCT (6000K/4000K/3000K).",
+    description: "The Orbit is a LumenX outdoor architectural luminaire. It is designed for Exterior, Commercial, Municipal environments. Available in 36W/48W/60W. Available in 3CCT (6000K/4000K/3000K).",
     specs: [
       { label: "Wattage", value: "36W/48W/60W" },
       { label: "Colour Temperature", value: "3CCT (6000K/4000K/3000K)" },
@@ -3412,10 +3408,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Pure Aluminium + housing",
     ],
     applications: [
-      "Facades",
-      "Gardens",
-      "Pathways",
-      "Plazas",
+      "Exterior",
+      "Commercial",
+      "Municipal",
     ],
     imageUrl: "/scraped/outdoor-architectural/orbit/01-pioled-lighting-hp001-4-60w-120w-orbit-ip65-post-top-lamp-3cct-1.jpg",// hero
     images: [
@@ -3429,7 +3424,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     name: "Vista",
     category: "outdoor-architectural",
     summary: "The Vista is a LumenX outdoor architectural luminaire.",
-    description: "The Vista is a LumenX outdoor architectural luminaire. It is designed for Facades, Gardens, Pathways environments. Available in 20/35W. Available in 3CCT (3000K/4000K/6000K).",
+    description: "The Vista is a LumenX outdoor architectural luminaire. It is designed for Exterior, Commercial, Municipal environments. Available in 20/35W. Available in 3CCT (3000K/4000K/6000K).",
     specs: [
       { label: "Wattage", value: "20/35W" },
       { label: "Colour Temperature", value: "3CCT (3000K/4000K/6000K)" },
@@ -3456,10 +3451,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
       "Aluminum housing",
     ],
     applications: [
-      "Facades",
-      "Gardens",
-      "Pathways",
-      "Plazas",
+      "Exterior",
+      "Commercial",
+      "Municipal",
     ],
     imageUrl: "/scraped/outdoor-architectural/vista/01-pioled-lighting-vista-35-20w-230v-post-top-3cct.png",// hero
     images: [
@@ -3514,8 +3508,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "is-2360-r",
     name: "IS 2360 R",
     category: "sensors",
-    summary: "LumenX inside. Intelligent technology for installation. The perfect infrared sensor for installing in projecting roofs and suspended ceilings. The IS 2360 DE EC.",
-    description: "LumenX inside. Intelligent technology for installation. The perfect infrared sensor for installing in projecting roofs and suspended ceilings. The IS 2360 DE ECO has a reach of up to 8 m in diameter and an impressive 360° angle of coverage. The detection zone can be adjusted where necessary by using shrouds.",
+    summary: "The IS 2360 R is a LumenX sensor.",
+    description: "The IS 2360 R is a LumenX sensor. It is designed for Offices, Warehouses, Corridors environments. Rated IP54.",
     specs: [
       { label: "Reach", value: "8 m" },
       { label: "Angle", value: "360 °" },
@@ -3792,8 +3786,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "is-3360",
     name: "IS 3360",
     category: "sensors",
-    summary: "Higher, further, faster. Infrared presence detector IS 3360 for indoors and out, ideal for watching over high spaces and large areas, such as multi-storey and u.",
-    description: "Higher, further, faster. Infrared presence detector IS 3360 for indoors and out, ideal for watching over high spaces and large areas, such as multi-storey and underground car parks, installation height up to 4 m, 360° angle of coverage, reach 20 m max. (tangential), heavy-duty relay for high switching capacity. Available either in round or square surface-mounted, concealed or In-ceiling installation.",
+    summary: "The IS 3360 is a LumenX sensor.",
+    description: "The IS 3360 is a LumenX sensor. It is designed for Offices, Warehouses, Corridors environments. Rated IP20.",
     specs: [
       { label: "Reach", value: "40 m" },
       { label: "Angle", value: "360 °" },
@@ -3832,8 +3826,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "is-3360-highbay",
     name: "IS 3360 Highbay",
     category: "sensors",
-    summary: "A head for heights. Powerful reach. Reliable. IS 3360 MX Highbay motion detector – ideal for high ceilings in industrial buildings or commercial properties. For.",
-    description: "A head for heights. Powerful reach. Reliable. IS 3360 MX Highbay motion detector – ideal for high ceilings in industrial buildings or commercial properties. For mounting heights of up to 14 m. High-precision 360° infrared sensor. Maximum reach: 18 m. For watching over up to 1000 sq.m. Available as square surface-mounted and concealed version.",
+    summary: "The IS 3360 Highbay is a LumenX sensor.",
+    description: "The IS 3360 Highbay is a LumenX sensor. It is designed for Offices, Warehouses, Corridors environments. Rated IP54.",
     specs: [
       { label: "Reach", value: "36 m" },
       { label: "Angle", value: "360 °" },
@@ -3872,8 +3866,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "is-345-highbay",
     name: "IS 345 Highbay",
     category: "sensors",
-    summary: "Surveillance on the highest level.",
-    description: "Surveillance on the highest level. Infrared motion detector IS 345 MX Highbay for indoors, ideal for large heights in depots, high-bay warehouses, machine shops, check-in areas and departure lounges, installation height 16 m, detection zone 30 x 4 m (radial), large terminal compartment for easy installation, heavy-duty relay for high switching capacity. Available as square surface-mounted and concealed version.",
+    summary: "The IS 345 Highbay is a LumenX sensor.",
+    description: "The IS 345 Highbay is a LumenX sensor. It is designed for Offices, Warehouses, Corridors environments. Rated IP54.",
     specs: [
       { label: "Reach", value: "4 m" },
       { label: "Angle", value: "360 °" },
@@ -4499,8 +4493,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "sky-ele-15-solar-post-top",
     name: "Sky ELE-15 Solar Post Top",
     category: "solar",
-    summary: "The SKY-ELE-15 is a compact yet powerful solar-powered LED post top fitting, designed for areas with no access to electrical infrastructure.",
-    description: "The SKY-ELE-15 is a compact yet powerful solar-powered LED post top fitting, designed for areas with no access to electrical infrastructure. With a fully integrated battery and solar panel, this self-sustaining light provides high brightness throughout the night—no motion sensor needed. Its IP65-rated aluminium body ensures reliable performance even in harsh outdoor environments. Ideal for estates, public parks, isolated streets, and gate posts, this unit requires zero wiring and minimal maintenance.",
+    summary: "All-in-one solar-powered LED post top fitting for areas with no electrical infrastructure — fully integrated battery, zero wiring and minimal maintenance.",
+    description: "All-in-one solar-powered LED post top fitting for areas with no electrical infrastructure — fully integrated battery, zero wiring and minimal maintenance. Ideal for estates, public parks, isolated streets and gate posts.",
     specs: [
       { label: "Power", value: "20 W" },
       { label: "Lumens", value: "2000 lm" },
@@ -4539,8 +4533,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "sky-spt-150-solar-post-top",
     name: "Sky SPT-150 Solar Post Top",
     category: "solar",
-    summary: "The SKY-SPT-150 is a compact, all-in-one solar LED post top luminaire designed for outdoor areas without electrical infrastructure.",
-    description: "The SKY-SPT-150 is a compact, all-in-one solar LED post top luminaire designed for outdoor areas without electrical infrastructure. Integrated with a solar panel, battery, and motion/daylight sensors, this unit provides efficient, autonomous lighting with minimal maintenance. Perfect for estates, isolated areas, and security perimeters, the SKY-SPT-150 delivers reliable performance for both safety and aesthetics.",
+    summary: "Self-sustaining solar-powered post top light delivering reliable performance for estates, isolated areas and security perimeters — no electrical connection required.",
+    description: "Self-sustaining solar-powered post top light delivering reliable performance for estates, isolated areas and security perimeters — no electrical connection required.",
     specs: [
       { label: "Lumens", value: "1100 lm" },
       { label: "IP Rating", value: "IP65" },
@@ -4571,8 +4565,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "vista-solar-post-top",
     name: "Vista Solar Post Top",
     category: "solar",
-    summary: "Vista Solar Post Top — outdoor LED luminaire from LumenX, supplied by LumenX.",
-    description: "Vista Solar Post Top — outdoor LED luminaire from LumenX, supplied by LumenX.",
+    summary: "The Vista Solar Post Top is a LumenX solar luminaire.",
+    description: "The Vista Solar Post Top is a LumenX solar luminaire. It is designed for Exterior, Commercial, Municipal environments. Available in 25W. Available in 3CCT (3000K/4000K/6000K) +.",
     specs: [
       { label: "Wattage", value: "25W" },
       { label: "Colour Temperature", value: "3CCT (3000K/4000K/6000K) +" },
@@ -4702,8 +4696,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "standard",
     name: "Standard",
     category: "track",
-    summary: "Our new spotlight, Standard, offers the same exceptional illumination as our flagship Cafeteria—but in a more compact design.",
-    description: "Our new spotlight, Standard, offers the same exceptional illumination as our flagship Cafeteria—but in a more compact design. Ideal for retail and commercial spaces where space matters, Standard delivers powerful, consistent lighting performance without compromising on style. Availability In Special Colors And Applications (Meat & Bread)",
+    summary: "Compact LED track light with adjustable beam and special colour options.",
+    description: "Compact LED track light with adjustable beam and special colour options.",
     specs: [
       { label: "Wattage", value: "30W, 34W" },
       { label: "Colour", value: "Black, White" },
@@ -4785,8 +4779,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "blaster",
     name: "Blaster",
     category: "track",
-    summary: "35/30/28W 3-wire track spot with 340° rotation and CRI>90.",
-    description: "35/30/28W 3-wire track spot with 340° rotation and CRI>90.",
+    summary: "The Blaster is a LumenX track luminaire.",
+    description: "The Blaster is a LumenX track luminaire. It is designed for Retail, Showrooms, Galleries environments. Available in 35/30/28W. Available in 3CCT (3000K/4000K/6000K) Lumen Output:28W = >3220lm \\.",
     specs: [
       { label: "Wattage", value: "35/30/28W" },
       { label: "Colour Temperature", value: "3CCT (3000K/4000K/6000K) Lumen Output:28W = >3220lm \\" },
@@ -5076,8 +5070,8 @@ export const SCRAPED_PRODUCTS: Product[] = [
     slug: "metropolis",
     name: "Metropolis",
     category: "vapourproof",
-    summary: "Metropolis is our high-performance vapour-proof LED linear fitting, engineered to deliver reliable lighting in the most demanding environments.",
-    description: "Metropolis is our high-performance vapour-proof LED linear fitting, engineered to deliver reliable lighting in the most demanding environments. With durable IP66 protection and robust construction, it’s ideal for both indoor and outdoor commercial or industrial applications. Whether you’re looking for efficient standalone illumination or multiple fixtures across your space, Metropolis combines strength, longevity, and consistent performance. Polycarbonate (PC), UV stable, impact resistant.Body Seal - Polyurethane (PUR), foamed body groove.Clips - Polyamide (PA) + 15 % glass fibre or stainless steel & polyamide (PA).Cable Glands: Screwed PG 13,5, or rubber (SBS).",
+    summary: "IP66 vapour-proof linear with chemical resistance and interchangeable gear tray.",
+    description: "IP66 vapour-proof linear with chemical resistance and interchangeable gear tray.",
     specs: [
       { label: "Wattage", value: "34W - 60W" },
       { label: "Configuration", value: "Standard" },

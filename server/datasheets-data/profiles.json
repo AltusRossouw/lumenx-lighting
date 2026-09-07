@@ -4,9 +4,25 @@
     "rev": "1.0"
   },
   "name": "PROFILES",
-  "category": "PROFILES & ACCESSORIES",
+  "category": "PROFILES",
   "variant": "Aluminium LED lighting channels · recessed, surface & corner",
-  "stats": [],
+  "stats": [
+    {
+      "label": "Material",
+      "value": "Aluminium",
+      "unit": ""
+    },
+    {
+      "label": "Size (representative Eco-L001)",
+      "value": "25.7 × 7mm",
+      "unit": ""
+    },
+    {
+      "label": "Length",
+      "value": "3",
+      "unit": "m"
+    }
+  ],
   "heroImage": {
     "src": "../public/product-images/profiles.jpg",
     "alt": "Profiles"
@@ -42,6 +58,10 @@
           {
             "label": "Length",
             "value": "3 m"
+          },
+          {
+            "label": "Finish",
+            "value": "Silver anodised / black"
           }
         ]
       }
@@ -50,10 +70,6 @@
       {
         "title": "Product Information",
         "rows": [
-          {
-            "label": "Finish",
-            "value": "Silver anodised / black"
-          },
           {
             "label": "Cover",
             "value": "PC opal / black"
@@ -78,7 +94,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

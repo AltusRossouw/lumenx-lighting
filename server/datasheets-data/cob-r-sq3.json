@@ -11,11 +11,21 @@
       "label": "IP Rating",
       "value": "IP20",
       "unit": ""
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "3080 = 3000K (CRI80), 4080 = 4000K (CRI80)",
+      "unit": ""
+    },
+    {
+      "label": "Beam Angle",
+      "value": "15°, 30°, 45°, 60°",
+      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/cob-r-sq3.png",
-    "alt": "COB-R-SQ3"
+    "src": "../public/scraped/downlights/cob-square-triple-downlight/01-cob-r-sq3.jpg",
+    "alt": "COB Square Triple Downlight"
   },
   "overview": [
     "The COB-R-SQ3 is the triple-module flagship of the COB-R square swivel downlight range, delivering maximum output for large open-plan retail and commercial spaces. Swivel trims, specialty colours and full control flexibility make it a powerful architectural accent tool."
@@ -33,30 +43,89 @@
     "Commercial spaces"
   ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Trim adjustability",
+            "value": "Swivel Trim"
+          },
+          {
+            "label": "Optic Type",
+            "value": "Reflector"
+          },
+          {
+            "label": "Mounting Type",
+            "value": "Ceiling cut-out"
+          },
+          {
+            "label": "Colour Rendering Index (CRI)",
+            "value": "CRI80 , CRI90 (CRI95+ on request)"
+          },
+          {
+            "label": "Colour Temperature",
+            "value": "3080 = 3000K (CRI80), 4080 = 4000K (CRI80)"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "15°, 30°, 45°, 60°"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          },
+          {
+            "label": "Warranty",
+            "value": "5 year warranty as per LEDwise standard terms of warranty"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
         "rows": [
           {
-            "label": "Type",
-            "value": "Triple-module square swivel"
+            "label": "Fitting Material",
+            "value": "High pressure die cast aluminium housing"
           },
           {
-            "label": "Beam Angle",
-            "value": "15° / 30° / 45° / 60°"
+            "label": "Available finishes",
+            "value": "Powder coated white"
           },
           {
-            "label": "CRI",
-            "value": "80 / 90 (95+ on request)"
+            "label": "LED Colours (CCT)",
+            "value": "3000K, 4000K + speciality retail, food and health colours"
           },
           {
-            "label": "CCT",
-            "value": "3000K / 4000K + specialty"
+            "label": "LED Colour Consistency",
+            "value": "<3 SDCM"
           },
           {
-            "label": "IP Rating",
-            "value": "IP20"
+            "label": "LED Lifetime",
+            "value": "L80B10 >50,000 hrs at Ta = 25° Celsius"
+          },
+          {
+            "label": "Operating Voltage/ Frequency",
+            "value": "220 – 240 V/ 50 – 60 Hz"
+          },
+          {
+            "label": "Optional Add-ons",
+            "value": "Min. 1 hour emergency version available"
+          },
+          {
+            "label": "Manufacture",
+            "value": "Assembled in South Africa"
+          },
+          {
+            "label": "Fitting Colour",
+            "value": "WT"
           }
         ]
       },
@@ -64,8 +133,12 @@
         "title": "Electrical",
         "rows": [
           {
-            "label": "Control",
-            "value": "Non-dim / DALI / Bluetooth"
+            "label": "Control Options",
+            "value": "non-dim (N), DALI (DALI), Bluetooth (BLU)"
+          },
+          {
+            "label": "Control Type",
+            "value": "Non-dim, DALI-dim"
           }
         ]
       }
@@ -79,7 +152,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

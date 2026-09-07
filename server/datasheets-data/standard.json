@@ -4,12 +4,28 @@
     "rev": "1.0"
   },
   "name": "STANDARD",
-  "category": "TRACK LIGHTING",
+  "category": "TRACK",
   "variant": "Compact LED track light with adjustable beam and special colour options.",
-  "stats": [],
+  "stats": [
+    {
+      "label": "Wattage",
+      "value": "30W, 34W",
+      "unit": ""
+    },
+    {
+      "label": "Colour",
+      "value": "Black, White",
+      "unit": ""
+    },
+    {
+      "label": "Type",
+      "value": "LED track light",
+      "unit": ""
+    }
+  ],
   "heroImage": {
-    "src": "../public/product-images/standard.png",
-    "alt": "STANDARD"
+    "src": "../public/scraped/track/standard/01-standard.jpg",
+    "alt": "Standard"
   },
   "overview": [
     "Compact LED track light with adjustable beam and special colour options."
@@ -26,11 +42,14 @@
     "Galleries"
   ],
   "columns": {
-    "left": [],
-    "right": [
+    "left": [
       {
-        "title": "Product Information",
+        "title": "Physical",
         "rows": [
+          {
+            "label": "Colour",
+            "value": "Black, White"
+          },
           {
             "label": "Type",
             "value": "LED track light"
@@ -45,6 +64,17 @@
           }
         ]
       }
+    ],
+    "right": [
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "30W, 34W"
+          }
+        ]
+      }
     ]
   },
   "drawing": {
@@ -55,7 +85,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

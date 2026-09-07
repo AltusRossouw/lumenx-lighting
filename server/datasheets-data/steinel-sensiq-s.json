@@ -5,33 +5,81 @@
   },
   "name": "SENS IQ S",
   "category": "SENSORS",
-  "variant": "",
+  "variant": "sensIQ S white - The evolution of perfection",
   "stats": [
     {
-      "label": "Reach",
-      "value": "20",
-      "unit": "m"
+      "label": "Application, place",
+      "value": "Indoors, Outdoors",
+      "unit": ""
     },
     {
-      "label": "Angle",
+      "label": "Installation",
+      "value": "Surface wiring",
+      "unit": ""
+    },
+    {
+      "label": "Detection angle",
       "value": "300",
       "unit": "°"
-    },
-    {
-      "label": "IP Rating",
-      "value": "IP54",
-      "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/steinel-sensiq-s.png",
-    "alt": "SENS IQ S"
+    "src": "../public/scraped/sensors/sens-iq-s/01-16993-sensiq-s-4007841004064-pro-ab01-x-x-knx-whi-x-110017968-web-new.jpg",
+    "alt": "Sens IQ S"
   },
-  "overview": [],
-  "features": [],
-  "applications": [],
+  "overview": [
+    "sensIQ S white - The evolution of perfection. The sensIQ S is just as perfect as its larger role model. For indoors and outdoors, ideal for building entrances, loading bays, for mounting heights of up"
+  ],
+  "features": [
+    "white finish",
+    "Plastic"
+  ],
+  "applications": [
+    "Offices",
+    "Warehouses",
+    "Corridors",
+    "Parking"
+  ],
   "columns": {
-    "left": [],
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Mounting height max.",
+            "value": "5,00 m"
+          },
+          {
+            "label": "Dimensions (L x W x H)",
+            "value": "128 x 114 x 74 mm"
+          },
+          {
+            "label": "Type",
+            "value": "Motion detectors"
+          },
+          {
+            "label": "Colour",
+            "value": "white"
+          },
+          {
+            "label": "Colour, RAL",
+            "value": "9010"
+          },
+          {
+            "label": "Material",
+            "value": "Plastic"
+          },
+          {
+            "label": "Mounting height",
+            "value": "2 – 5,00 m"
+          },
+          {
+            "label": "Type of interconnection",
+            "value": "Master/master, Master/slave"
+          }
+        ]
+      }
+    ],
     "right": [
       {
         "title": "Product Information",
@@ -53,36 +101,136 @@
             "value": "r = 20 m (1047 m²)"
           },
           {
-            "label": "Mounting height max.",
-            "value": "5,00 m"
-          },
-          {
             "label": "Interconnection via",
-            "value": "Cable"
+            "value": "KNX bus"
           },
           {
             "label": "Version",
             "value": "white"
           },
           {
+            "label": "Article number",
+            "value": "059613"
+          },
+          {
             "label": "PU1, net weight",
-            "value": "0,252 kg"
+            "value": "0,225 kg"
           },
           {
-            "label": "infrared sensor 3 x 100°",
-            "value": "3 zones scalable 2-20m"
+            "label": "Manufacturer's Warranty",
+            "value": "5 years"
           },
           {
-            "label": "max. 2000 W",
-            "value": "IP54"
+            "label": "Settings via",
+            "value": "ETS software, Remote control, Bus, Smart Remote"
           },
           {
-            "label": "2 - 2000 lux daylight operation",
-            "value": "5 sec - 15 min"
+            "label": "With remote control",
+            "value": "Yes"
           },
           {
-            "label": "ideal 2 - 5 m",
-            "value": "Teach mode"
+            "label": "PU1, EAN",
+            "value": "4007841059613"
+          },
+          {
+            "label": "Application, room",
+            "value": "multi-storey / underground car park, outdoors, warehouse, front door, all round the building, courtyard & driveway, Indoors"
+          },
+          {
+            "label": "Includes corner wall mount",
+            "value": "Yes"
+          },
+          {
+            "label": "Installation site",
+            "value": "wall, corner"
+          },
+          {
+            "label": "Ambient temperature",
+            "value": "from -20 up to 50 °C"
+          },
+          {
+            "label": "With bus coupling",
+            "value": "Yes"
+          },
+          {
+            "label": "European Article Number (EAN)",
+            "value": "4007841059613"
+          },
+          {
+            "label": "Angle of aperture",
+            "value": "180 °"
+          },
+          {
+            "label": "Rated current",
+            "value": "10 mA"
+          },
+          {
+            "label": "Optimum mounting height",
+            "value": "2 m"
+          },
+          {
+            "label": "Sneak-by guard",
+            "value": "Yes"
+          },
+          {
+            "label": "Capability of masking out individual segments",
+            "value": "Yes"
+          },
+          {
+            "label": "Electronic scalability",
+            "value": "No"
+          },
+          {
+            "label": "Mechanical scalability",
+            "value": "Yes"
+          },
+          {
+            "label": "Reach, radial",
+            "value": "r = 4 m (42 m²)"
+          },
+          {
+            "label": "Twilight setting",
+            "value": "2 – 1000 lx"
+          },
+          {
+            "label": "Time setting",
+            "value": "60 s – 15 Min."
+          },
+          {
+            "label": "Basic light level function",
+            "value": "Yes"
+          },
+          {
+            "label": "Main light adjustable",
+            "value": "0 - 100 %"
+          },
+          {
+            "label": "Twilight setting TEACH",
+            "value": "Yes"
+          },
+          {
+            "label": "Constant-lighting control",
+            "value": "Yes"
+          },
+          {
+            "label": "KNX functions",
+            "value": "Light output 2x, Presence output, Light level, Constant-lighting control, Basic light level function, Photo-cell controller, Close range, Individual pyro evaluation, Logic gate"
+          },
+          {
+            "label": "Interconnection",
+            "value": "Yes"
+          },
+          {
+            "label": "KNX Medium",
+            "value": "TP 256"
+          },
+          {
+            "label": "KNX Secure",
+            "value": "No"
+          },
+          {
+            "label": "Product category",
+            "value": "Motion detector"
           }
         ]
       }
@@ -96,7 +244,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

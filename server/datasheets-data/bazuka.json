@@ -4,12 +4,28 @@
     "rev": "1.0"
   },
   "name": "BAZUKA",
-  "category": "TRACK LIGHTING",
+  "category": "TRACK",
   "variant": "3-wire track / surface mount spot for flexible accent lighting.",
-  "stats": [],
+  "stats": [
+    {
+      "label": "Wattage",
+      "value": "25W / 15W / 35W / 18W / 30W/35W/40W/50W",
+      "unit": ""
+    },
+    {
+      "label": "Lumen Output",
+      "value": "2 500lm / 1 500lm / 3 500lm / 800lm PF: / 100lm/W / 36°",
+      "unit": ""
+    },
+    {
+      "label": "Colour Temperature",
+      "value": "3CCT (3000K/4000K/6000K) / 3000K / 6000K/4000K / 3CCT(3000K/4000K/6000K)",
+      "unit": ""
+    }
+  ],
   "heroImage": {
-    "src": "../public/product-images/bazuka.png",
-    "alt": "BAZUKA"
+    "src": "../public/scraped/track/bazuka/member-01-pioled-lighting-tkb099-25w-bazuka-3-wire-track-3cct-honeycomb-black.png",
+    "alt": "Bazuka"
   },
   "overview": [
     "3-wire track / surface mount spot for flexible accent lighting."
@@ -33,6 +49,43 @@
           {
             "label": "Mounting",
             "value": "Track / Surface"
+          },
+          {
+            "label": "Type",
+            "value": "3-wire track / surface spot"
+          },
+          {
+            "label": "Colour Temperature",
+            "value": "3CCT (3000K/4000K/6000K) / 3000K / 6000K/4000K / 3CCT(3000K/4000K/6000K)"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "36° / 270°"
+          },
+          {
+            "label": "Housing",
+            "value": "Aluminium / Round, Square / CNC / Glass"
+          },
+          {
+            "label": "Colour",
+            "value": "Matt / Silver / White"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "Operating Temp",
+            "value": "-15~45°C / -20~45°C"
+          },
+          {
+            "label": "IK Rating",
+            "value": "IK05"
+          },
+          {
+            "label": "Certifications",
+            "value": "CE, EMC / CE / CE, EMC, IEC60598"
           }
         ]
       }
@@ -42,8 +95,41 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "Type",
-            "value": "3-wire track / surface spot"
+            "label": "Lumen Output",
+            "value": "2 500lm / 1 500lm / 3 500lm / 800lm PF: / 100lm/W / 36°"
+          },
+          {
+            "label": "CRI",
+            "value": ">83 / >85"
+          },
+          {
+            "label": "LED Chips",
+            "value": "Bridgelux / 2835 / High"
+          },
+          {
+            "label": "available in",
+            "value": "White / Black / Black/White"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "25W / 15W / 35W / 18W / 30W/35W/40W/50W"
+          },
+          {
+            "label": "Input Voltage",
+            "value": "200-277V / 200V-265V / 200-265V / 180V- 265V"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "3kV / 1kv / 2kV"
+          },
+          {
+            "label": "Dimmable",
+            "value": "Yes with 35W / Yes / No"
           }
         ]
       }
@@ -57,7 +143,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer's data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {
