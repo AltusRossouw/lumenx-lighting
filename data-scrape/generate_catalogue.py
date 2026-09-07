@@ -271,6 +271,27 @@ def merge_specs(primary, secondary):
     return out
 
 
+def datasheet_hero(ds):
+    """Return the curated hero image for a datasheet, or None.
+
+    The datasheet heroImage points at a curated product render in
+    public/product-images/ (e.g. '../public/product-images/gu10.png') which is
+    served at /product-images/<file>. Returns an absolute web path.
+    """
+    if not ds:
+        return None
+    src = (ds.get('heroImage') or {}).get('src', '')
+    if not src:
+        return None
+    # '../public/product-images/gu10.png' -> '/product-images/gu10.png'
+    rel = src.replace('../', '').lstrip('/')
+    if rel.startswith('public/'):
+        rel = rel[len('public/'):]
+    if '/scraped/' in rel:
+        return None
+    return '/' + rel.lstrip('/')
+
+
 def parse_spec_dump(text):
     """Parse a colon-delimited 'Label: value' spec dump into [{label, value}]."""
     text = clean_text(text or '')
@@ -910,6 +931,35 @@ def main():
         if not image_objs:
             # Fallback placeholder so the page still renders.
             image_objs = [{'src': f'/product-images/categories/{cat_id}.jpg', 'fit': 'cover', 'alt': name_clean}]
+
+        # Prefer the curated datasheet hero render (a proper product photo from
+        # public/product-images/) as the main image, prepending it to the gallery
+        # so the carousel still has the scraped photos behind it. This fixes
+        # products whose scraped hero was a poor/odd photo (e.g. a tiny module).
+        hero_path = datasheet_hero(ds)
+        if hero_path:
+            # Avoid duplicating the curated hero if it's already the first image.
+            if not (image_objs and image_objs[0]['src'] == hero_path):
+                hero_w = hero_h = None
+                hero_abs = os.path.join(ROOT, 'public', hero_path.lstrip('/'))
+                if os.path.exists(hero_abs):
+                    try:
+                        with open(hero_abs, 'rb') as fh:
+                            head = fh.read(33)
+                        if head[:8] == b'\x89PNG\r\n\x1a\n':
+                            import struct as _struct
+                            hero_w, hero_h = _struct.unpack('>II', head[16:24])
+                        elif head[:2] == b'\xff\xd8':
+                            from PIL import Image as _Image
+                            im = _Image.open(hero_abs)
+                            hero_w, hero_h = im.size
+                    except Exception:
+                        hero_w = hero_h = None
+                hero_obj = {'src': hero_path, 'fit': 'contain', 'alt': name_clean}
+                if hero_w and hero_h:
+                    hero_obj['width'] = hero_w
+                    hero_obj['height'] = hero_h
+                image_objs.insert(0, hero_obj)
 
         imageUrl = image_objs[0]['src']
         all_images = image_objs
