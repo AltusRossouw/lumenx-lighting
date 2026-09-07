@@ -259,6 +259,182 @@ def load_collection_specs():
     return data
 
 
+# ── Generated datasheet payloads (server/datasheets-data/<slug>.json) ──
+# Every product gets a datasheet JSON rendered to PDF by the datasheet-pdf
+# service when the user clicks "Spec Sheet". We generate these from the current
+# (rebranded, spec-enriched) catalogue data so the PDF matches the site.
+
+DASH_OUT_DIR = os.path.join(ROOT, 'server', 'datasheets-data')
+
+# LumenX-renamed product slug -> datasheet-data slug (legacy hand-curated files
+# are keyed by the old/supplier slug).
+DATASHEET_SLUG_ALIASES = {
+    'diffused-downlight': 'aegeon',
+    'cob-adjustable-downlight': 'lean-153',
+    'cob-anti-glare-downlight': 'cob-dr',
+    'small-cob-anti-glare-downlight': 'x-tf8',
+    'cob-square-downlight': 'cob-r-sq1',
+    'cob-square-double-downlight': 'cob-r-sq2',
+    'cob-square-triple-downlight': 'cob-r-sq3',
+    'gu10-downlight': 'gu10',
+    'surface-adjustable-downlight': 'pakman',
+    'pearl': 'kinglong-pearl-series',
+    'fuji-square': 'fuji-bollard-square',
+    'fuji-round': 'fuji-bollard-round',
+    'everest-square': 'everest-bollard-square',
+    'everest-round': 'everest-bollard-round',
+    'orbit': 'orbit-post-top',
+    'vista': 'vista-post-top',
+    'dual-hf-corridoor': 'steinel-dual-hf-corridor',
+}
+
+
+def load_datasheet_name_to_slug():
+    """Return {normalized_name: slug} for all datasheets-data JSON files."""
+    mapping = {}
+    if os.path.isdir(DASH_DATA_DIR):
+        for f in sorted(os.listdir(DASH_DATA_DIR)):
+            if not f.endswith('.json'):
+                continue
+            try:
+                d = json.load(open(os.path.join(DASH_DATA_DIR, f), encoding='utf-8'))
+            except Exception:
+                continue
+            mapping.setdefault(norm_key(d.get('name')), f[:-5])
+    return mapping
+
+
+def datasheet_slug_for(name, product_slug):
+    """Resolve the datasheet-data slug for a product (by alias, then name)."""
+    if product_slug in DATASHEET_SLUG_ALIASES:
+        return DATASHEET_SLUG_ALIASES[product_slug]
+    slug = load_datasheet_name_to_slug().get(norm_key(name))
+    return slug or slugify(name) or product_slug
+
+
+# Spec-label → datasheet column grouping.
+PHYSICAL_LABELS = re.compile(
+    r'^(housing|mounting|mounting type|colour|color|finish|material|type|dimensions?|'
+    r'product size|size|trim|adjustab|tilt|beam|optic|profile|length|width|height)', re.I)
+ELECTRICAL_LABELS = re.compile(
+    r'^(wattage|power|voltage|input voltage|power factor|dimming|dimmable|control|'
+    r'surge|driver|battery|charging)', re.I)
+COMPLIANCE_LABELS = re.compile(
+    r'^(certification|certif|warranty|guarantee|compliance|safety|fire rating|'
+    r'lifetime|life span|lifespan|operating temp|operating temperature|ip rating|'
+    r'ik rating|rohs|ce|emc|erp|ies)', re.I)
+
+# Headline stats (top 3) — prefer these labels, in order.
+STAT_LABELS = ['Power', 'Wattage', 'Lumens', 'Lumen Output', 'Efficacy',
+               'IP Rating', 'Colour Temperature', 'CCT', 'Beam Angle', 'CRI']
+
+
+def split_spec_units(value):
+    """Split a spec value into (number, unit) where sensible, e.g. '35W' -> ('35','W')."""
+    v = clean_text(value or '')
+    m = re.match(r'^([\d.,\s–\-~]+)\s*([a-zA-Z°%]+)$', v)
+    if m:
+        return m.group(1).strip(), m.group(2).strip()
+    return v, ''
+
+
+def build_datasheet_payload(product):
+    """Build a datasheet JSON payload for a product from its catalogue record."""
+    specs = product.get('specs') or []
+    name = product['name']
+
+    # Headline stats (up to 3, preferred labels, unit-split).
+    stats = []
+    seen_stat = set()
+    for want in STAT_LABELS:
+        for s in specs:
+            if s['label'].lower() == want.lower() and want.lower() not in seen_stat:
+                num, unit = split_spec_units(s['value'])
+                stats.append({'label': want, 'value': num, 'unit': unit})
+                seen_stat.add(want.lower())
+                break
+        if len(stats) >= 3:
+            break
+    if len(stats) < 3:
+        for s in specs:
+            lab = s['label'].lower()
+            if lab in seen_stat:
+                continue
+            num, unit = split_spec_units(s['value'])
+            stats.append({'label': s['label'], 'value': num, 'unit': unit})
+            seen_stat.add(lab)
+            if len(stats) >= 3:
+                break
+
+    # Group the remaining specs into columns.
+    physical = []
+    electrical = []
+    compliance = []
+    info = []
+    for s in specs:
+        lab = s['label']
+        if PHYSICAL_LABELS.match(lab):
+            physical.append({'label': lab, 'value': s['value']})
+        elif ELECTRICAL_LABELS.match(lab):
+            electrical.append({'label': lab, 'value': s['value']})
+        elif COMPLIANCE_LABELS.match(lab):
+            compliance.append({'label': lab, 'value': s['value']})
+        else:
+            info.append({'label': lab, 'value': s['value']})
+
+    left = []
+    if physical:
+        left.append({'title': 'Physical', 'rows': physical[:14]})
+    if compliance:
+        left.append({'title': 'Compliance', 'rows': compliance[:14]})
+    right = []
+    if info:
+        right.append({'title': 'Product Information', 'rows': info[:20]})
+    if electrical:
+        right.append({'title': 'Electrical', 'rows': electrical[:14]})
+
+    hero_src = product['imageUrl']
+    # heroImage src uses ../public/… convention relative to the template.
+    hero_rel = hero_src
+    if hero_src.startswith('/scraped/'):
+        hero_rel = '../public' + hero_src
+    elif hero_src.startswith('/product-images/'):
+        hero_rel = '../public' + hero_src
+    else:
+        hero_rel = '../public' + hero_src
+
+    # Summary (first sentence) doubles as the variant line.
+    variant = product.get('summary') or ''
+    variant = re.split(r'(?<=[.!?])\s', variant)[0].strip().rstrip('.')
+
+    return {
+        'fileStem': name,
+        'meta': {'rev': '1.0'},
+        'name': name.upper(),
+        'category': product['category'].replace('-', ' ').upper(),
+        'variant': variant,
+        'stats': stats,
+        'heroImage': {'src': hero_rel, 'alt': name},
+        'overview': [product.get('description') or variant],
+        'features': product.get('features') or [],
+        'applications': product.get('applications') or [],
+        'columns': {'left': left, 'right': right},
+        'drawing': {'src': '', 'alt': 'Dimension drawing'},
+        'notes': [
+            'E &amp; O.E (Errors And Omissions Excepted).',
+            'Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.',
+            'Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.',
+            'Nominal flux values are stated at 25° C, based on LED manufacturer\u2019s data.',
+            'Installation environmental conditions may impact the performance and efficiency of the luminaire.',
+        ],
+        'contact': {
+            'web': 'www.lumenx.co.za',
+            'email': 'info@lumenx.co.za',
+            'phone': '+27 83 499 5340',
+        },
+    }
+
+
 def flatten_datasheet_specs(ds):
     """Flatten a datasheet's stats + columns.*.rows into [{label, value}]."""
     rows = []
@@ -1045,16 +1221,11 @@ def main():
         all_images = image_objs
 
         # ── Datasheet PDF ──
-        pdf_url = None
-        pdf_file = pj.get('pdfFile')
-        if pdf_file:
-            src_pdf = os.path.join(folder_path, pdf_file)
-            if os.path.exists(src_pdf) and pdf_file.lower().endswith('.pdf'):
-                dst_pdf = os.path.join(DATASHEETS, f'{slug}.pdf')
-                if not os.path.exists(dst_pdf):
-                    shutil.copy2(src_pdf, dst_pdf)
-                    copied_pdfs += 1
-                pdf_url = f'/api/download/datasheet/{slug}.pdf'
+        # Every product gets a generated datasheet PDF (rendered on demand from
+        # server/datasheets-data/<slug>.json + the shared template) via the
+        # /api/download/datasheet/generated/<slug> route.
+        ds_slug = datasheet_slug_for(name_clean, slug)
+        pdf_url = f'/api/download/datasheet/generated/{ds_slug}'
 
         # Product record (superset of the site's Product type).
         product = {
@@ -1069,8 +1240,8 @@ def main():
             'imageUrl': imageUrl,
             'images': all_images,
         }
-        if pdf_url:
-            product['pdfUrl'] = pdf_url
+        product['pdfUrl'] = pdf_url
+        product['datasheetSlug'] = ds_slug
         if warranty:
             product['warranty'] = warranty
 
@@ -1143,31 +1314,47 @@ def main():
     print(f'Products: {len(products)}')
     print(f'Categories: {len(categories)}')
     print(f'Images copied: {copied_images}')
-    print(f'PDFs copied: {copied_pdfs}')
 
-    # Remove orphaned scraped datasheets (non-LumenX) that are no longer
-    # referenced, so renaming a product doesn't leave stale downloads behind.
-    referenced_slugs = {s.replace('.pdf', '') for s in os.listdir(DATASHEETS) if s.endswith('.pdf') and not s.startswith('LumenX_Datasheet')}
-    wanted_slugs = set()
+    # Ensure a datasheet JSON exists for every product's datasheet slug, and
+    # rebrand its name/fileStem to the LumenX name (keeping curated specs).
+    os.makedirs(DASH_OUT_DIR, exist_ok=True)
+    datasheet_written = 0
+    datasheet_rebranded = 0
     for p in products:
-        if p.get('pdfUrl'):
-            wanted_slugs.add(p['pdfUrl'].rsplit('/', 1)[-1].replace('.pdf', ''))
-    removed = 0
-    if os.path.isdir(DATASHEETS):
-        for f in os.listdir(DATASHEETS):
-            if f.endswith('.pdf') and not f.startswith('LumenX_Datasheet'):
-                slug = f[:-4]
-                if slug not in wanted_slugs:
-                    try:
-                        os.remove(os.path.join(DATASHEETS, f))
-                        removed += 1
-                    except OSError:
-                        pass
-    print(f'Stale datasheets removed: {removed}')
-
-    os.makedirs(os.path.dirname(OUT_TS), exist_ok=True)
-    with open(OUT_TS, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(lines))
+        ds_slug = p.get('datasheetSlug')
+        if not ds_slug:
+            continue
+        existing = os.path.join(DASH_OUT_DIR, f'{ds_slug}.json')
+        name_upper = p['name'].upper()
+        if os.path.exists(existing):
+            try:
+                payload = json.load(open(existing, encoding='utf-8'))
+                changed = False
+                if payload.get('name') != name_upper:
+                    payload['name'] = name_upper
+                    changed = True
+                if payload.get('fileStem') != p['name']:
+                    payload['fileStem'] = p['name']
+                    changed = True
+                # scrub brand from variant/overview too
+                if payload.get('variant'):
+                    v = scrub_brands(payload['variant'])
+                    if v != payload['variant']:
+                        payload['variant'] = v
+                        changed = True
+                if changed:
+                    with open(existing, 'w', encoding='utf-8') as f:
+                        json.dump(payload, f, ensure_ascii=False, indent=2)
+                    datasheet_rebranded += 1
+            except Exception:
+                pass
+        else:
+            payload = build_datasheet_payload(p)
+            with open(existing, 'w', encoding='utf-8') as f:
+                json.dump(payload, f, ensure_ascii=False, indent=2)
+            datasheet_written += 1
+    print(f'Datasheet JSONs generated (missing only): {datasheet_written}')
+    print(f'Datasheet JSONs rebranded: {datasheet_rebranded}')
     print(f'Wrote: {OUT_TS}')
 
 

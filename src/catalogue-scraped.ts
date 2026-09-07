@@ -181,7 +181,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/bulkheads/rhea/01-1-1-800x383.png", fit: "contain", alt: "01-1-1-800x383.png", width: 800, height: 383 },
       { src: "/scraped/bulkheads/rhea/02-rhea-bulkhead-dimensions.png", fit: "contain", alt: "02-rhea-bulkhead-dimensions.png", width: 610, height: 382 },
     ],
-    pdfUrl: "/api/download/datasheet/rhea.pdf",
+    pdfUrl: "/api/download/datasheet/generated/rhea",
     warranty: "6 years",
   },
   {
@@ -239,7 +239,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/bulkheads/phoebe/01-2-1-800x431.png", fit: "contain", alt: "01-2-1-800x431.png", width: 800, height: 431 },
       { src: "/scraped/bulkheads/phoebe/02-phoebe-bulkhead-dimensions.png", fit: "contain", alt: "02-phoebe-bulkhead-dimensions.png", width: 610, height: 382 },
     ],
-    pdfUrl: "/api/download/datasheet/phoebe.pdf",
+    pdfUrl: "/api/download/datasheet/generated/phoebe",
     warranty: "8 years",
   },
   {
@@ -282,7 +282,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/bulkheads/hero/01-pioled-lighting-hero-ip65-led-bulkhead-3cct-round-black-and-white.jpg", fit: "contain", alt: "01-pioled-lighting-hero-ip65-led-bulkhead-3cct-round-black-and-white.jpg", width: 1024, height: 1024 },
     ],
-    pdfUrl: "/api/download/datasheet/hero.pdf",
+    pdfUrl: "/api/download/datasheet/generated/hero",
     warranty: "5-year warranty",
   },
   {
@@ -329,6 +329,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/bulkheads/bunker/member-02-pioled-lighting-ic018-bunker-aluminium-ip65-bulkhead-black-square-600x.png", fit: "contain", alt: "member-02-pioled-lighting-ic018-bunker-aluminium-ip65-bulkhead-black-square-600x.png", width: 600, height: 600 },
       { src: "/scraped/bulkheads/bunker/member-03-pioled-lighting-ic014-bunker-aluminium-ip65-bulkhead-black-1.png", fit: "contain", alt: "member-03-pioled-lighting-ic014-bunker-aluminium-ip65-bulkhead-black-1.png", width: 1024, height: 1024 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/bunker",
   },
   {
     slug: "diffused-downlight",
@@ -371,6 +372,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/downlights/diffused-downlight/01-aegeon.jpg", fit: "contain", alt: "01-aegeon.jpg", width: 2048, height: 1409 },
       { src: "/scraped/downlights/diffused-downlight/02-aegeon-downlight.jpg", fit: "contain", alt: "02-aegeon-downlight.jpg", width: 1600, height: 1200 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/aegeon",
   },
   {
     slug: "cob-adjustable-downlight",
@@ -403,6 +405,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/downlights/cob-adjustable-downlight/01-aegeon.jpg", fit: "contain", alt: "01-aegeon.jpg", width: 2048, height: 1409 },
       { src: "/scraped/downlights/cob-adjustable-downlight/02-aegeon-downlight.jpg", fit: "contain", alt: "02-aegeon-downlight.jpg", width: 1600, height: 1200 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/lean-153",
   },
   {
     slug: "cob-anti-glare-downlight",
@@ -448,7 +451,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/downlights/cob-anti-glare-downlight/05-cob-dr-l.png", fit: "contain", alt: "05-cob-dr-l.png", width: 1000, height: 1000 },
       { src: "/scraped/downlights/cob-anti-glare-downlight/06-cob-dr-l-dimensions.png", fit: "contain", alt: "06-cob-dr-l-dimensions.png", width: 1058, height: 1058 },
     ],
-    pdfUrl: "/api/download/datasheet/cob-anti-glare-downlight.pdf",
+    pdfUrl: "/api/download/datasheet/generated/cob-dr",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
   },
   {
@@ -491,7 +494,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/downlights/small-cob-anti-glare-downlight/01-x-tf8.jpg", fit: "contain", alt: "01-x-tf8.jpg", width: 1058, height: 1058 },
     ],
-    pdfUrl: "/api/download/datasheet/small-cob-anti-glare-downlight.pdf",
+    pdfUrl: "/api/download/datasheet/generated/x-tf8",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
   },
   {
@@ -534,7 +537,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/downlights/cob-square-downlight/01-cob-sq1-scaled.jpg", fit: "contain", alt: "01-cob-sq1-scaled.jpg", width: 2560, height: 2010 },
     ],
-    pdfUrl: "/api/download/datasheet/cob-square-downlight.pdf",
+    pdfUrl: "/api/download/datasheet/generated/cob-r-sq1",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
   },
   {
@@ -577,7 +580,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/downlights/cob-square-double-downlight/01-cob-sq2-scaled-e1585665645179.jpg", fit: "contain", alt: "01-cob-sq2-scaled-e1585665645179.jpg", width: 1861, height: 1058 },
     ],
-    pdfUrl: "/api/download/datasheet/cob-square-double-downlight.pdf",
+    pdfUrl: "/api/download/datasheet/generated/cob-r-sq2",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
   },
   {
@@ -624,7 +627,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/downlights/cob-square-triple-downlight/01-cob-r-sq3.jpg", fit: "contain", alt: "01-cob-r-sq3.jpg", width: 1058, height: 1058 },
       { src: "/scraped/downlights/cob-square-triple-downlight/02-cob-r-sq3-dimensions.jpg", fit: "contain", alt: "02-cob-r-sq3-dimensions.jpg", width: 1058, height: 1058 },
     ],
-    pdfUrl: "/api/download/datasheet/cob-square-triple-downlight.pdf",
+    pdfUrl: "/api/download/datasheet/generated/cob-r-sq3",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
   },
   {
@@ -668,7 +671,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/downlights/sauron/01-pioled-lighting-hd016-25-20-18-16w-sauron-recessed-round-led-downlight.jpg", fit: "contain", alt: "01-pioled-lighting-hd016-25-20-18-16w-sauron-recessed-round-led-downlight.jpg", width: 1024, height: 1024 },
     ],
-    pdfUrl: "/api/download/datasheet/sauron.pdf",
+    pdfUrl: "/api/download/datasheet/generated/sauron",
     warranty: "5-year warranty",
   },
   {
@@ -717,6 +720,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/downlights/legend/member-03-pioled-lighting-i060-10w-legend-recessed-round-led-downlight-3cct-ip44.jpg", fit: "contain", alt: "member-03-pioled-lighting-i060-10w-legend-recessed-round-led-downlight-3cct-ip44.jpg", width: 1024, height: 1024 },
       { src: "/scraped/downlights/legend/member-04-pioled-lighting-r201-s8818.png", fit: "contain", alt: "member-04-pioled-lighting-r201-s8818.png", width: 1024, height: 1024 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/legend",
     warranty: "5 Years",
   },
   {
@@ -766,6 +770,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/downlights/gu10-downlight/member-01-pioled-lighting-d001-6-5w-vers-non-dimmable-gu10-3cct-1.jpg", fit: "contain", alt: "member-01-pioled-lighting-d001-6-5w-vers-non-dimmable-gu10-3cct-1.jpg", width: 1024, height: 1024 },
       { src: "/scraped/downlights/gu10-downlight/member-04-pioled-lighting-im028-im102-14w-led-retrofit-module.png", fit: "contain", alt: "member-04-pioled-lighting-im028-im102-14w-led-retrofit-module.png", width: 1024, height: 1024 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/gu10",
   },
   {
     slug: "surface-adjustable-downlight",
@@ -811,6 +816,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/downlights/surface-adjustable-downlight/member-02-pioled-lighting-hd024-25w-pakman-3cct-tiltable-surface-mount-downlight.jpg", fit: "contain", alt: "member-02-pioled-lighting-hd024-25w-pakman-3cct-tiltable-surface-mount-downlight.jpg", width: 1024, height: 1024 },
       { src: "/scraped/downlights/surface-adjustable-downlight/member-03-pioled-lighting-hd022-15w-pakman-3cct-tiltable-surface-mount-downlight.jpg", fit: "contain", alt: "member-03-pioled-lighting-hd022-15w-pakman-3cct-tiltable-surface-mount-downlight.jpg", width: 1024, height: 1024 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/pakman",
     warranty: "5 Years",
   },
   {
@@ -857,7 +863,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/downlights/mario/01-pioled-lighting-hd020-35w-mario-led-round-tilt-downlight-3cct-1.jpg", fit: "contain", alt: "01-pioled-lighting-hd020-35w-mario-led-round-tilt-downlight-3cct-1.jpg", width: 1024, height: 1024 },
     ],
-    pdfUrl: "/api/download/datasheet/mario.pdf",
+    pdfUrl: "/api/download/datasheet/generated/mario",
     warranty: "5 Years",
   },
   {
@@ -911,7 +917,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/floods/flood/01-floodlight-800x720.png", fit: "contain", alt: "01-floodlight-800x720.png", width: 800, height: 720 },
     ],
-    pdfUrl: "/api/download/datasheet/flood.pdf",
+    pdfUrl: "/api/download/datasheet/generated/flood",
     warranty: "5 years",
   },
   {
@@ -954,7 +960,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/highbays/ace/01-ace-s-black-with-transparent-background.png", fit: "contain", alt: "01-ace-s-black-with-transparent-background.png", width: 1920, height: 1483 },
       { src: "/scraped/highbays/ace/02-ace-s-white-with-transparent-background.png", fit: "contain", alt: "02-ace-s-white-with-transparent-background.png", width: 1920, height: 1483 },
     ],
-    pdfUrl: "/api/download/datasheet/ace.pdf",
+    pdfUrl: "/api/download/datasheet/generated/ace-hp",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
   },
   {
@@ -987,6 +993,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/highbays/umgeni/01-umgeni-linear-highbay.jpg", fit: "contain", alt: "01-umgeni-linear-highbay.jpg", width: 4080, height: 1836 },
       { src: "/scraped/highbays/umgeni/02-umgeni.jpg", fit: "contain", alt: "02-umgeni.jpg", width: 1536, height: 2048 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/umgeni",
   },
   {
     slug: "thermisto",
@@ -1031,6 +1038,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/highbays/thermisto/04-1571807246438.jpg", fit: "contain", alt: "04-1571807246438.jpg", width: 1478, height: 1108 },
       { src: "/scraped/highbays/thermisto/05-1571807247040.jpg", fit: "contain", alt: "05-1571807247040.jpg", width: 800, height: 599 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/thermisto",
   },
   {
     slug: "delta",
@@ -1071,7 +1079,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/highbays/delta/01-pioled-lighting-hb1045-delta-padel-court-sq.png", fit: "contain", alt: "01-pioled-lighting-hb1045-delta-padel-court-sq.png", width: 1024, height: 1024 },
     ],
-    pdfUrl: "/api/download/datasheet/delta.pdf",
+    pdfUrl: "/api/download/datasheet/generated/delta",
     warranty: "5-year warranty",
   },
   {
@@ -1116,6 +1124,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/product-images/raptor.png", fit: "contain", alt: "Raptor", width: 300, height: 300 },
       { src: "/product-images/categories/highbays.jpg", fit: "cover", alt: "Raptor" },
     ],
+    pdfUrl: "/api/download/datasheet/generated/raptor",
   },
   {
     slug: "circular",
@@ -1156,6 +1165,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/indoor-architectural/circular/07-circular-ld-90-amb-26-14.jpg", fit: "contain", alt: "07-circular-ld-90-amb-26-14.jpg", width: 2500, height: 1558 },
       { src: "/scraped/indoor-architectural/circular/08-circular-ld-94-amb-26-05.jpg", fit: "contain", alt: "08-circular-ld-94-amb-26-05.jpg", width: 2000, height: 1333 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-circular-10002",
   },
   {
     slug: "circular-vertical",
@@ -1196,6 +1206,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/indoor-architectural/circular-vertical/12-15b3b15bc2644daa-b476e67c13c12a43-2000-1-6.png", fit: "contain", alt: "12-15b3b15bc2644daa-b476e67c13c12a43-2000-1-6.png", width: 2000, height: 2000 },
       { src: "/scraped/indoor-architectural/circular-vertical/02-circular-vertic-amb-26-14.jpg", fit: "contain", alt: "02-circular-vertic-amb-26-14.jpg", width: 2500, height: 1558 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-circular-vertical-10374",
   },
   {
     slug: "attic",
@@ -1233,6 +1244,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/indoor-architectural/attic/11-attic-ld-40-amb-05-60-003.jpg", fit: "contain", alt: "11-attic-ld-40-amb-05-60-003.jpg", width: 2500, height: 1558 },
       { src: "/scraped/indoor-architectural/attic/12-attic-ld-40-amb-05-60-004.jpg", fit: "contain", alt: "12-attic-ld-40-amb-05-60-004.jpg", width: 2500, height: 1558 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-attic-10009",
   },
   {
     slug: "vetro",
@@ -1269,6 +1281,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/indoor-architectural/vetro/04-ambients-sl-0000-vetro-ld-540-amb-14-14.jpg", fit: "contain", alt: "04-ambients-sl-0000-vetro-ld-540-amb-14-14.jpg", width: 2500, height: 1558 },
       { src: "/scraped/indoor-architectural/vetro/05-ambients-sl-0001-vetro-ld-540-gen-14-14.jpg", fit: "contain", alt: "05-ambients-sl-0001-vetro-ld-540-gen-14-14.jpg", width: 2500, height: 1558 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-vetro-10124",
   },
   {
     slug: "fabric-tape",
@@ -1312,6 +1325,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/indoor-architectural/fabric-tape/member-11-a546d4-c0349e3bb89f4e3abb099df9f6bc7d78-mv2.jpg", fit: "contain", alt: "member-11-a546d4-c0349e3bb89f4e3abb099df9f6bc7d78-mv2.jpg", width: 147, height: 147 },
       { src: "/scraped/indoor-architectural/fabric-tape/member-12-a546d4-f2630fc8c3a447e3b55155cc460aba7c-mv2.jpg", fit: "contain", alt: "member-12-a546d4-f2630fc8c3a447e3b55155cc460aba7c-mv2.jpg", width: 147, height: 147 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/superlume-fabric-tape",
   },
   {
     slug: "cloud-bell",
@@ -1367,6 +1381,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/decorative/cloud-bell/12-cloudbell-case4.jpg", fit: "contain", alt: "12-cloudbell-case4.jpg", width: 3173, height: 4304 },
       { src: "/scraped/decorative/cloud-bell/01-cloudbell-banner.jpg", fit: "contain", alt: "01-cloudbell-banner.jpg", width: 2492, height: 3324 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/kinglong-cloud-bell-series",
     warranty: "3 Years · LED Driver: 5 Years",
   },
   {
@@ -1426,6 +1441,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/decorative/pearl/12-pearl-case4.jpg", fit: "contain", alt: "12-pearl-case4.jpg", width: 3173, height: 4304 },
       { src: "/scraped/decorative/pearl/01-pearl-banner.jpg", fit: "contain", alt: "01-pearl-banner.jpg", width: 2569, height: 3425 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/kinglong-pearl-series",
     warranty: "3 Years · LED Driver: 5 Years",
   },
   {
@@ -1485,6 +1501,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/decorative/dream-pen/12-dreampen-case4.jpg", fit: "contain", alt: "12-dreampen-case4.jpg", width: 2492, height: 3324 },
       { src: "/scraped/decorative/dream-pen/01-dreampen-banner.png", fit: "contain", alt: "01-dreampen-banner.png", width: 2304, height: 3072 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/kinglong-dream-pen-series",
     warranty: "5 Years (aluminium structure) · LED Driver: 5 Years",
   },
   {
@@ -1544,6 +1561,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/decorative/jiangnan/12-jiangnan-case4.jpg", fit: "contain", alt: "12-jiangnan-case4.jpg", width: 2492, height: 3324 },
       { src: "/scraped/decorative/jiangnan/01-jiangnan-banner.png", fit: "contain", alt: "01-jiangnan-banner.png", width: 2304, height: 3072 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/kinglong-jiangnan-series",
     warranty: "3 Years · LED Driver: 5 Years",
   },
   {
@@ -1602,6 +1620,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/decorative/crystal-cloud/12-crystalcloud-case4.jpg", fit: "contain", alt: "12-crystalcloud-case4.jpg", width: 2077, height: 2770 },
       { src: "/scraped/decorative/crystal-cloud/01-crystalcloud-banner.jpg", fit: "contain", alt: "01-crystalcloud-banner.jpg", width: 1376, height: 768 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/kinglong-crystal-cloud-series",
     warranty: "3 Years · LED Driver: 5 Years",
   },
   {
@@ -1657,7 +1676,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/linears/puck-seamless/01-puck-800x601.png", fit: "contain", alt: "01-puck-800x601.png", width: 800, height: 601 },
       { src: "/scraped/linears/puck-seamless/02-puck-seamless-dimensions.png", fit: "contain", alt: "02-puck-seamless-dimensions.png", width: 1894, height: 524 },
     ],
-    pdfUrl: "/api/download/datasheet/puck-seamless.pdf",
+    pdfUrl: "/api/download/datasheet/generated/puck-seamless",
     warranty: "6 years",
   },
   {
@@ -1710,7 +1729,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/linears/puck-profile-70x36/01-ledlights4-800x534.png", fit: "contain", alt: "01-ledlights4-800x534.png", width: 800, height: 534 },
     ],
-    pdfUrl: "/api/download/datasheet/puck-profile-70x36.pdf",
+    pdfUrl: "/api/download/datasheet/generated/puck-profile-70x36",
     warranty: "6 years",
   },
   {
@@ -1763,7 +1782,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/linears/puck-profile-40x43/01-ledlights1-800x534.png", fit: "contain", alt: "01-ledlights1-800x534.png", width: 800, height: 534 },
     ],
-    pdfUrl: "/api/download/datasheet/puck-profile-40x43.pdf",
+    pdfUrl: "/api/download/datasheet/generated/puck-profile-40x43",
     warranty: "6 years",
   },
   {
@@ -1816,7 +1835,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/linears/kepler/01-kepler-800x883.png", fit: "contain", alt: "01-kepler-800x883.png", width: 800, height: 883 },
     ],
-    pdfUrl: "/api/download/datasheet/kepler.pdf",
+    pdfUrl: "/api/download/datasheet/generated/kepler",
     warranty: "8 years",
   },
   {
@@ -1858,7 +1877,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/linears/lds5083/01-ld-50-s-render-2.png", fit: "contain", alt: "01-ld-50-s-render-2.png", width: 900, height: 832 },
     ],
-    pdfUrl: "/api/download/datasheet/lds5083.pdf",
+    pdfUrl: "/api/download/datasheet/generated/lds-5083",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
   },
   {
@@ -1899,7 +1918,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/linears/ldr6563/01-ldr-s.jpg", fit: "contain", alt: "01-ldr-s.jpg", width: 1346, height: 1346 },
     ],
-    pdfUrl: "/api/download/datasheet/ldr6563.pdf",
+    pdfUrl: "/api/download/datasheet/generated/ldr-6563",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
   },
   {
@@ -1940,7 +1959,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/linears/lrd9063/01-ldr-s.jpg", fit: "contain", alt: "01-ldr-s.jpg", width: 1346, height: 1346 },
     ],
-    pdfUrl: "/api/download/datasheet/lrd9063.pdf",
+    pdfUrl: "/api/download/datasheet/generated/lrd-9063",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
   },
   {
@@ -1981,7 +2000,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/linears/base/01-baton-1200-wt.jpg", fit: "contain", alt: "01-baton-1200-wt.jpg", width: 500, height: 500 },
     ],
-    pdfUrl: "/api/download/datasheet/base.pdf",
+    pdfUrl: "/api/download/datasheet/generated/base",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
   },
   {
@@ -2025,7 +2044,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/linears/ace/02-ace-s-white-with-transparent-background.png", fit: "contain", alt: "02-ace-s-white-with-transparent-background.png", width: 1920, height: 1483 },
       { src: "/scraped/linears/ace/03-ace-c-with-transparent-background-v2.png", fit: "contain", alt: "03-ace-c-with-transparent-background-v2.png", width: 958, height: 739 },
     ],
-    pdfUrl: "/api/download/datasheet/ace.pdf",
+    pdfUrl: "/api/download/datasheet/generated/ace-hp",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
   },
   {
@@ -2058,6 +2077,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/linears/protega-gen-2/01-protegagen2.jpg", fit: "contain", alt: "01-protegagen2.jpg", width: 4132, height: 1692 },
       { src: "/scraped/linears/protega-gen-2/02-protegagen2white.png", fit: "contain", alt: "02-protegagen2white.png", width: 4132, height: 1692 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/protega-gen-2",
   },
   {
     slug: "thermisto",
@@ -2102,6 +2122,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/linears/thermisto/04-1571807246438.jpg", fit: "contain", alt: "04-1571807246438.jpg", width: 1478, height: 1108 },
       { src: "/scraped/linears/thermisto/05-1571807247040.jpg", fit: "contain", alt: "05-1571807247040.jpg", width: 800, height: 599 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/thermisto",
   },
   {
     slug: "lf40",
@@ -2134,6 +2155,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/linears/lf40/03-2u-image3.jpg", fit: "contain", alt: "03-2u-image3.jpg", width: 1800, height: 1200 },
       { src: "/scraped/linears/lf40/04-2u-image2.jpg", fit: "contain", alt: "04-2u-image2.jpg", width: 1800, height: 1200 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/lf40",
   },
   {
     slug: "lf20",
@@ -2165,6 +2187,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/linears/lf20/02-lf20lifestylefin.jpg", fit: "contain", alt: "02-lf20lifestylefin.jpg", width: 2296, height: 4080 },
       { src: "/scraped/linears/lf20/03-lf20-linear-site-picnic.jpg", fit: "contain", alt: "03-lf20-linear-site-picnic.jpg", width: 2364, height: 1773 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/lf20",
   },
   {
     slug: "lf55",
@@ -2217,6 +2240,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/linears/lf55/04-lamborghini-image2copy1.jpg", fit: "contain", alt: "04-lamborghini-image2copy1.jpg", width: 3370, height: 2766 },
       { src: "/scraped/linears/lf55/05-lamborghini-image2copy.jpg", fit: "contain", alt: "05-lamborghini-image2copy.jpg", width: 3370, height: 2766 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/lf55",
   },
   {
     slug: "soniq",
@@ -2260,6 +2284,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/linears/soniq/member-02-pioled-lighting-ll707-10w-1ft-soniq-seamless-linkable-linear-light-3cc.png", fit: "contain", alt: "member-02-pioled-lighting-ll707-10w-1ft-soniq-seamless-linkable-linear-light-3cc.png", width: 1024, height: 1024 },
       { src: "/scraped/linears/soniq/member-03-pioled-lighting-ll705-4ft-soniq-seamless-linkable-linear-light-3cct-bl.png", fit: "contain", alt: "member-03-pioled-lighting-ll705-4ft-soniq-seamless-linkable-linear-light-3cct-bl.png", width: 1024, height: 1024 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/soniq",
   },
   {
     slug: "eko",
@@ -2296,6 +2321,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/eko/12-3d0c661fd5c94d49-a42a0a13a7dc903d-2000-1-1.png", fit: "contain", alt: "12-3d0c661fd5c94d49-a42a0a13a7dc903d-2000-1-1.png", width: 2000, height: 2000 },
       { src: "/scraped/outdoor-architectural/eko/02-eko-lo-140-amb-37-60-al.jpg", fit: "contain", alt: "02-eko-lo-140-amb-37-60-al.jpg", width: 2500, height: 1558 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-eko-10141",
   },
   {
     slug: "cube",
@@ -2336,6 +2362,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/cube/12-65272d1c2dd54154-a400e81aea18a2e3-2000-21.png", fit: "contain", alt: "12-65272d1c2dd54154-a400e81aea18a2e3-2000-21.png", width: 2000, height: 2000 },
       { src: "/scraped/outdoor-architectural/cube/02-cube-lo-452-amb-37-z5.jpg", fit: "contain", alt: "02-cube-lo-452-amb-37-z5.jpg", width: 2500, height: 1558 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-cube-spot-10301",
   },
   {
     slug: "hubble",
@@ -2376,6 +2403,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/hubble/02-hubble-amb-37-z5.jpg", fit: "contain", alt: "02-hubble-amb-37-z5.jpg", width: 2500, height: 1558 },
       { src: "/scraped/outdoor-architectural/hubble/03-hubble-lo-117-amb-37-z5.jpg", fit: "contain", alt: "03-hubble-lo-117-amb-37-z5.jpg", width: 2500, height: 1558 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-hubble-10143",
   },
   {
     slug: "eko-2",
@@ -2412,6 +2440,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/eko-2/12-e4ad9706c6644990-857b542dfd051b3c-2000-1.png", fit: "contain", alt: "12-e4ad9706c6644990-857b542dfd051b3c-2000-1.png", width: 2000, height: 2000 },
       { src: "/scraped/outdoor-architectural/eko-2/02-eko-lo-404-amb-37-z5.jpg", fit: "contain", alt: "02-eko-lo-404-amb-37-z5.jpg", width: 2500, height: 1558 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-eko-10141",
   },
   {
     slug: "ele",
@@ -2449,6 +2478,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/ele/07-a279157b3f894793-a64d94b862c0865a-2000-1.png", fit: "contain", alt: "07-a279157b3f894793-a64d94b862c0865a-2000-1.png", width: 2000, height: 2000 },
       { src: "/scraped/outdoor-architectural/ele/08-a279157b3f894793-a64d94b862c0865a-2000.png", fit: "contain", alt: "08-a279157b3f894793-a64d94b862c0865a-2000.png", width: 2000, height: 2000 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-ele-10218",
   },
   {
     slug: "modis",
@@ -2486,6 +2516,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/modis/12-075a6d7add8044eb-94dce3a3e141db60-2000-32.png", fit: "contain", alt: "12-075a6d7add8044eb-94dce3a3e141db60-2000-32.png", width: 2000, height: 2000 },
       { src: "/scraped/outdoor-architectural/modis/03-modis-lo-456-amb-37-ant.jpg", fit: "contain", alt: "03-modis-lo-456-amb-37-ant.jpg", width: 2500, height: 1558 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-modis-10316",
   },
   {
     slug: "moal",
@@ -2526,6 +2557,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/moal/05-moal-amb-37-dc-005.jpg", fit: "contain", alt: "05-moal-amb-37-dc-005.jpg", width: 2500, height: 1558 },
       { src: "/scraped/outdoor-architectural/moal/06-moal-amb-37-dc-1.jpg", fit: "contain", alt: "06-moal-amb-37-dc-1.jpg", width: 2500, height: 1558 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-moal-10202",
   },
   {
     slug: "row",
@@ -2561,6 +2593,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/row/02-row-gen-26-dc.jpg", fit: "contain", alt: "02-row-gen-26-dc.jpg", width: 2500, height: 1558 },
       { src: "/scraped/outdoor-architectural/row/06-57409ccd24d14097-be33bc4f802fd15c-2000.png", fit: "contain", alt: "06-57409ccd24d14097-be33bc4f802fd15c-2000.png", width: 2000, height: 2000 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-row-10319",
   },
   {
     slug: "ele-2",
@@ -2601,6 +2634,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/ele-2/11-41bbaff4f9834ddf-8d75d21e1df71337-2000.png", fit: "contain", alt: "11-41bbaff4f9834ddf-8d75d21e1df71337-2000.png", width: 2000, height: 2000 },
       { src: "/scraped/outdoor-architectural/ele-2/02-ele-lo-402-amb-37-z5.jpg", fit: "contain", alt: "02-ele-lo-402-amb-37-z5.jpg", width: 2500, height: 1558 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-ele-10218",
   },
   {
     slug: "proud",
@@ -2637,6 +2671,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/proud/07-b1c4a6f1f4114d77-95b47064c648d5a2-2000.png", fit: "contain", alt: "07-b1c4a6f1f4114d77-95b47064c648d5a2-2000.png", width: 2000, height: 2000 },
       { src: "/scraped/outdoor-architectural/proud/08-b1c4a6f1f4114d77-95b47064c648d5a2-2000-1.png", fit: "contain", alt: "08-b1c4a6f1f4114d77-95b47064c648d5a2-2000-1.png", width: 2000, height: 2000 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-proud-10224",
   },
   {
     slug: "lyon",
@@ -2673,6 +2708,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/lyon/03-web-mainimage-lyon-lo-372-gen-26-z5.png", fit: "contain", alt: "03-web-mainimage-lyon-lo-372-gen-26-z5.png", width: 480, height: 480 },
       { src: "/scraped/outdoor-architectural/lyon/07-5c7624c2f47e4a93-886b21f6c2a703a0-2000.png", fit: "contain", alt: "07-5c7624c2f47e4a93-886b21f6c2a703a0-2000.png", width: 2000, height: 2000 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-lyon-10221",
   },
   {
     slug: "zig-zag",
@@ -2711,6 +2747,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/zig-zag/02-zigzag-amb-37-z5.jpg", fit: "contain", alt: "02-zigzag-amb-37-z5.jpg", width: 2500, height: 1558 },
       { src: "/scraped/outdoor-architectural/zig-zag/03-zigzag-amb-37-z5-002.jpg", fit: "contain", alt: "03-zigzag-amb-37-z5-002.jpg", width: 2500, height: 1558 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-zigzag-10225",
   },
   {
     slug: "helion",
@@ -2745,6 +2782,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/helion/03-web-mainimage-helion-lo-361-gen-26-z5.png", fit: "contain", alt: "03-web-mainimage-helion-lo-361-gen-26-z5.png", width: 480, height: 480 },
       { src: "/scraped/outdoor-architectural/helion/02-helion-amb-z5.jpg", fit: "contain", alt: "02-helion-amb-z5.jpg", width: 2500, height: 1558 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-helion-10219",
   },
   {
     slug: "cube-linear",
@@ -2785,6 +2823,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/cube-linear/11-ef5e547e8310495a-b28faa11a786f27a-2000-15-6.png", fit: "contain", alt: "11-ef5e547e8310495a-b28faa11a786f27a-2000-15-6.png", width: 2000, height: 2000 },
       { src: "/scraped/outdoor-architectural/cube-linear/12-ef5e547e8310495a-b28faa11a786f27a-2000-26.png", fit: "contain", alt: "12-ef5e547e8310495a-b28faa11a786f27a-2000-26.png", width: 2000, height: 2000 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-cube-linear-recessed-10128",
   },
   {
     slug: "gea-cob",
@@ -2821,6 +2860,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/gea-cob/12-f28fa54d99144f44-855a4391f5ab57c2-2000-1-1.png", fit: "contain", alt: "12-f28fa54d99144f44-855a4391f5ab57c2-2000-1-1.png", width: 2000, height: 2000 },
       { src: "/scraped/outdoor-architectural/gea-cob/02-ambients-sl-0003-gea-lo-363-amb-37-ca-ino-pc.jpg", fit: "contain", alt: "02-ambients-sl-0003-gea-lo-363-amb-37-ca-ino-pc.jpg", width: 2500, height: 1558 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-gea-cob-10155",
   },
   {
     slug: "finestra",
@@ -2858,6 +2898,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/finestra/08-f3cfd2e874ed4773-b2975f7948760ab9-2000.png", fit: "contain", alt: "08-f3cfd2e874ed4773-b2975f7948760ab9-2000.png", width: 2000, height: 2000 },
       { src: "/scraped/outdoor-architectural/finestra/02-finestra-amb-37-14.jpg", fit: "contain", alt: "02-finestra-amb-37-14.jpg", width: 2500, height: 1558 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-finestra-10183",
   },
   {
     slug: "cosmos",
@@ -2898,6 +2939,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/cosmos/11-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-5.png", fit: "contain", alt: "11-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-5.png", width: 2000, height: 2000 },
       { src: "/scraped/outdoor-architectural/cosmos/12-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-4.png", fit: "contain", alt: "12-3c548fe26e6a42c0-bcd50fe47807e4f0-2000-4.png", width: 2000, height: 2000 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-cosmos-10172",
   },
   {
     slug: "afrodita",
@@ -2937,6 +2979,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/afrodita/05-afrodita-amb-z5.jpg", fit: "contain", alt: "05-afrodita-amb-z5.jpg", width: 2500, height: 1558 },
       { src: "/scraped/outdoor-architectural/afrodita/06-afrodita-lo-22-amb-z5.jpg", fit: "contain", alt: "06-afrodita-lo-22-amb-z5.jpg", width: 2500, height: 1558 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-afrodita-led-10168",
   },
   {
     slug: "mega",
@@ -2974,6 +3017,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/mega/02-mega-amb-m1-m1-bl-na.jpg", fit: "contain", alt: "02-mega-amb-m1-m1-bl-na.jpg", width: 2500, height: 1558 },
       { src: "/scraped/outdoor-architectural/mega/04-mega-lo-203-amb-m1-m1-bl-na.jpg", fit: "contain", alt: "04-mega-lo-203-amb-m1-m1-bl-na.jpg", width: 2500, height: 1558 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-mega-10230",
   },
   {
     slug: "cisne-colgante",
@@ -3010,6 +3054,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/cisne-colgante/07-tpylf4dixa96albkui1l.jpg", fit: "contain", alt: "07-tpylf4dixa96albkui1l.jpg", width: 2000, height: 2000 },
       { src: "/scraped/outdoor-architectural/cisne-colgante/02-cisne-lo-2-amb-26-14.jpg", fit: "contain", alt: "02-cisne-lo-2-amb-26-14.jpg", width: 2500, height: 1558 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/ledsc4-cisne-colgante-10231",
   },
   {
     slug: "palm-coco",
@@ -3061,6 +3106,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/outdoor-architectural/palm-coco/member-11-a546d4-c0349e3bb89f4e3abb099df9f6bc7d78-mv2.jpg", fit: "contain", alt: "member-11-a546d4-c0349e3bb89f4e3abb099df9f6bc7d78-mv2.jpg", width: 147, height: 147 },
       { src: "/scraped/outdoor-architectural/palm-coco/member-12-a546d4-f2630fc8c3a447e3b55155cc460aba7c-mv2.jpg", fit: "contain", alt: "member-12-a546d4-f2630fc8c3a447e3b55155cc460aba7c-mv2.jpg", width: 147, height: 147 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/superlume-palm-and-coco",
   },
   {
     slug: "fuji-square",
@@ -3104,7 +3150,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/outdoor-architectural/fuji-square/01-pioled-lighting-fb004-12w-fuji-square-ip65-bollard-4cct-black.jpg", fit: "contain", alt: "01-pioled-lighting-fb004-12w-fuji-square-ip65-bollard-4cct-black.jpg", width: 1024, height: 1024 },
     ],
-    pdfUrl: "/api/download/datasheet/fuji-square.pdf",
+    pdfUrl: "/api/download/datasheet/generated/fuji-bollard-square",
     warranty: "5-year warranty",
   },
   {
@@ -3149,7 +3195,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/outdoor-architectural/fuji-round/01-pioled-lighting-fb003-12w-fuji-round-ip65-bollard-4cct-black.png", fit: "contain", alt: "01-pioled-lighting-fb003-12w-fuji-round-ip65-bollard-4cct-black.png", width: 1024, height: 1024 },
     ],
-    pdfUrl: "/api/download/datasheet/fuji-round.pdf",
+    pdfUrl: "/api/download/datasheet/generated/fuji-bollard-round",
     warranty: "5-year warranty",
   },
   {
@@ -3194,7 +3240,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/outdoor-architectural/everest-square/01-pioled-lighting-fb002-12w-everest-square-ip65-bollard-4cct-black-1.jpg", fit: "contain", alt: "01-pioled-lighting-fb002-12w-everest-square-ip65-bollard-4cct-black-1.jpg", width: 1024, height: 1024 },
     ],
-    pdfUrl: "/api/download/datasheet/everest-square.pdf",
+    pdfUrl: "/api/download/datasheet/generated/everest-bollard-square",
     warranty: "5-year warranty",
   },
   {
@@ -3239,7 +3285,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/outdoor-architectural/everest-round/01-pioled-lighting-fb001-12w-everest-round-ip65-bollard-4cct-black-1.png", fit: "contain", alt: "01-pioled-lighting-fb001-12w-everest-round-ip65-bollard-4cct-black-1.png", width: 1024, height: 1024 },
     ],
-    pdfUrl: "/api/download/datasheet/everest-round.pdf",
+    pdfUrl: "/api/download/datasheet/generated/everest-bollard-round",
     warranty: "5-year warranty",
   },
   {
@@ -3285,6 +3331,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/outdoor-architectural/zod101-square-led-wall/01-a546d4-5ec889d42ad848f1af0ecaa21e516686-mv2.png", fit: "contain", alt: "01-a546d4-5ec889d42ad848f1af0ecaa21e516686-mv2.png", width: 1080, height: 1080 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/zod101-square-led-wall",
   },
   {
     slug: "zod102-round-led-wall",
@@ -3329,6 +3376,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/outdoor-architectural/zod102-round-led-wall/01-a546d4-d29eac5d5d6c47e6a9d396a256db1d7c-mv2.png", fit: "contain", alt: "01-a546d4-d29eac5d5d6c47e6a9d396a256db1d7c-mv2.png", width: 1080, height: 1080 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/zod102-round-led-wall",
   },
   {
     slug: "orbit",
@@ -3373,7 +3421,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/outdoor-architectural/orbit/01-pioled-lighting-hp001-4-60w-120w-orbit-ip65-post-top-lamp-3cct-1.jpg", fit: "contain", alt: "01-pioled-lighting-hp001-4-60w-120w-orbit-ip65-post-top-lamp-3cct-1.jpg", width: 1024, height: 1024 },
     ],
-    pdfUrl: "/api/download/datasheet/orbit.pdf",
+    pdfUrl: "/api/download/datasheet/generated/orbit-post-top",
     warranty: "5-year warranty",
   },
   {
@@ -3417,7 +3465,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/outdoor-architectural/vista/01-pioled-lighting-vista-35-20w-230v-post-top-3cct.png", fit: "contain", alt: "01-pioled-lighting-vista-35-20w-230v-post-top-3cct.png", width: 1024, height: 1024 },
     ],
-    pdfUrl: "/api/download/datasheet/vista.pdf",
+    pdfUrl: "/api/download/datasheet/generated/vista-post-top",
     warranty: "5-year warranty",
   },
   {
@@ -3460,6 +3508,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/panels/veris/01-veris.jpg", fit: "contain", alt: "01-veris.jpg", width: 4608, height: 1605 },
       { src: "/scraped/panels/veris/02-eazi-access-december-2017-00006-rt.jpg", fit: "contain", alt: "02-eazi-access-december-2017-00006-rt.jpg", width: 2048, height: 1365 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/veris",
   },
   {
     slug: "is-2360-r",
@@ -3499,6 +3548,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/sensors/is-2360-r/01-grp-group-teaser-licht-jpg.webp", fit: "contain", alt: "01-grp-group-teaser-licht-jpg.webp", width: 680, height: 382 },
       { src: "/scraped/sensors/is-2360-r/02-grp-group-teaser-sensorik-jpg.webp", fit: "contain", alt: "02-grp-group-teaser-sensorik-jpg.webp", width: 680, height: 382 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/steinel-is-2360-r",
   },
   {
     slug: "is-2360-s",
@@ -3583,7 +3633,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/sensors/is-2360-s/01-17253-is-2360-eco-ohne-schatten.jpg", fit: "contain", alt: "01-17253-is-2360-eco-ohne-schatten.jpg", width: 2000, height: 2000 },
       { src: "/scraped/sensors/is-2360-s/02-62456-ste-schaltplan-22-com-1.jpg", fit: "cover", alt: "02-62456-ste-schaltplan-22-com-1.jpg", width: 2000, height: 1500 },
     ],
-    pdfUrl: "/api/download/datasheet/is-2360-s.pdf",
+    pdfUrl: "/api/download/datasheet/generated/steinel-is-2360-s",
     warranty: "5 years",
   },
   {
@@ -3642,7 +3692,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/sensors/light-sensor/01-17116-light-sensor-dual-4007841033637-pro-ab-x-x-up-eckig-whi-1-1-1100.jpg", fit: "contain", alt: "01-17116-light-sensor-dual-4007841033637-pro-ab-x-x-up-eckig-whi-1-1-1100.jpg", width: 2000, height: 2000 },
       { src: "/scraped/sensors/light-sensor/02-62039-light-sensor-dual-unterputz-eckig.jpg", fit: "contain", alt: "02-62039-light-sensor-dual-unterputz-eckig.jpg", width: 2000, height: 1500 },
     ],
-    pdfUrl: "/api/download/datasheet/light-sensor.pdf",
+    pdfUrl: "/api/download/datasheet/generated/steinel-light-sensor",
     warranty: "5 years",
   },
   {
@@ -3735,7 +3785,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/sensors/dualtech/04-17356-fernbedienung-rc8-4007841559410-110021956.jpg", fit: "contain", alt: "04-17356-fernbedienung-rc8-4007841559410-110021956.jpg", width: 2000, height: 2000 },
       { src: "/scraped/sensors/dualtech/02-62453-ste-schaltplan-26-a-com-1-master.jpg", fit: "cover", alt: "02-62453-ste-schaltplan-26-a-com-1-master.jpg", width: 2000, height: 1500 },
     ],
-    pdfUrl: "/api/download/datasheet/dualtech.pdf",
+    pdfUrl: "/api/download/datasheet/generated/steinel-dualtech",
     warranty: "5 years",
   },
   {
@@ -3776,6 +3826,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/product-images/steinel-is-3360.png", fit: "contain", alt: "IS 3360", width: 360, height: 360 },
       { src: "/product-images/categories/sensors.jpg", fit: "cover", alt: "IS 3360" },
     ],
+    pdfUrl: "/api/download/datasheet/generated/steinel-is-3360",
   },
   {
     slug: "is-3360-highbay",
@@ -3815,6 +3866,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/product-images/steinel-is-3360-highbay.png", fit: "contain", alt: "IS 3360 Highbay", width: 360, height: 360 },
       { src: "/product-images/categories/sensors.jpg", fit: "cover", alt: "IS 3360 Highbay" },
     ],
+    pdfUrl: "/api/download/datasheet/generated/steinel-is-3360-highbay",
   },
   {
     slug: "is-345-highbay",
@@ -3854,6 +3906,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/product-images/steinel-is-345-highbay.png", fit: "contain", alt: "IS 345 Highbay", width: 360, height: 360 },
       { src: "/product-images/categories/sensors.jpg", fit: "cover", alt: "IS 345 Highbay" },
     ],
+    pdfUrl: "/api/download/datasheet/generated/steinel-is-345-highbay",
   },
   {
     slug: "dual-hf-corridoor",
@@ -3945,7 +3998,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/sensors/dual-hf-corridoor/08-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", fit: "contain", alt: "08-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", width: 2000, height: 2000 },
       { src: "/scraped/sensors/dual-hf-corridoor/03-62453-ste-schaltplan-26-a-com-1-master.jpg", fit: "cover", alt: "03-62453-ste-schaltplan-26-a-com-1-master.jpg", width: 2000, height: 1500 },
     ],
-    pdfUrl: "/api/download/datasheet/dual-hf-corridoor.pdf",
+    pdfUrl: "/api/download/datasheet/generated/steinel-dual-hf-corridor",
     warranty: "5 years",
   },
   {
@@ -4026,7 +4079,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/sensors/hf-360/06-17008-schutzkorb-4007841003036-pro-ab01-x-x-x-x-x-110011664-web.jpg", fit: "contain", alt: "06-17008-schutzkorb-4007841003036-pro-ab01-x-x-x-x-x-110011664-web.jpg", width: 2000, height: 2000 },
       { src: "/scraped/sensors/hf-360/03-62453-ste-schaltplan-26-a-com-1-master.jpg", fit: "cover", alt: "03-62453-ste-schaltplan-26-a-com-1-master.jpg", width: 2000, height: 1500 },
     ],
-    pdfUrl: "/api/download/datasheet/hf-360.pdf",
+    pdfUrl: "/api/download/datasheet/generated/steinel-hf-360",
     warranty: "5 years",
   },
   {
@@ -4110,7 +4163,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/sensors/is-2180/01-17215-is-2180-2-4007841603717-pro-ab01-x-x-x-bla-x-106679306-web-new.jpg", fit: "contain", alt: "01-17215-is-2180-2-4007841603717-pro-ab01-x-x-x-bla-x-106679306-web-new.jpg", width: 2000, height: 2000 },
       { src: "/scraped/sensors/is-2180/02-90145-ste-schaltplan-36-a-8x3.jpg", fit: "cover", alt: "02-90145-ste-schaltplan-36-a-8x3.jpg", width: 2000, height: 750 },
     ],
-    pdfUrl: "/api/download/datasheet/is-2180.pdf",
+    pdfUrl: "/api/download/datasheet/generated/steinel-is-2180",
     warranty: "5 years",
   },
   {
@@ -4205,7 +4258,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/sensors/ir-quattro-micro/08-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", fit: "contain", alt: "08-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", width: 2000, height: 2000 },
       { src: "/scraped/sensors/ir-quattro-micro/05-62453-ste-schaltplan-26-a-com-1-master.jpg", fit: "cover", alt: "05-62453-ste-schaltplan-26-a-com-1-master.jpg", width: 2000, height: 1500 },
     ],
-    pdfUrl: "/api/download/datasheet/ir-quattro-micro.pdf",
+    pdfUrl: "/api/download/datasheet/generated/steinel-ir-quattro-micro",
     warranty: "5 years",
   },
   {
@@ -4296,7 +4349,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/sensors/ir-quattro-hd/07-17008-schutzkorb-4007841003036-pro-ab01-x-x-x-x-x-110011664-web.jpg", fit: "contain", alt: "07-17008-schutzkorb-4007841003036-pro-ab01-x-x-x-x-x-110011664-web.jpg", width: 2000, height: 2000 },
       { src: "/scraped/sensors/ir-quattro-hd/03-62453-ste-schaltplan-26-a-com-1-master.jpg", fit: "cover", alt: "03-62453-ste-schaltplan-26-a-com-1-master.jpg", width: 2000, height: 1500 },
     ],
-    pdfUrl: "/api/download/datasheet/ir-quattro-hd.pdf",
+    pdfUrl: "/api/download/datasheet/generated/steinel-ir-quattro-hd",
     warranty: "5 years",
   },
   {
@@ -4368,7 +4421,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/sensors/sens-iq-s/02-17618-anwendungsillustration-sensiq-s.jpg", fit: "contain", alt: "02-17618-anwendungsillustration-sensiq-s.jpg", width: 1280, height: 719 },
       { src: "/scraped/sensors/sens-iq-s/03-120402-4-fach-pyro-system-sensiq-knx.jpg", fit: "contain", alt: "03-120402-4-fach-pyro-system-sensiq-knx.jpg", width: 1250, height: 1250 },
     ],
-    pdfUrl: "/api/download/datasheet/sens-iq-s.pdf",
+    pdfUrl: "/api/download/datasheet/generated/steinel-sensiq-s",
     warranty: "5 years",
   },
   {
@@ -4404,7 +4457,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/sensors/smart-remote/01-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", fit: "contain", alt: "01-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg", width: 2000, height: 2000 },
       { src: "/scraped/sensors/smart-remote/02-17468-smart-remote-4007841009151-pro-ab02-x-x-x-bla-x-110036719-web.jpg", fit: "contain", alt: "02-17468-smart-remote-4007841009151-pro-ab02-x-x-x-bla-x-110036719-web.jpg", width: 2000, height: 2000 },
     ],
-    pdfUrl: "/api/download/datasheet/smart-remote.pdf",
+    pdfUrl: "/api/download/datasheet/generated/steinel-smart-remote",
     warranty: "5 years",
   },
   {
@@ -4439,7 +4492,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/sensors/service-remote/01-17356-fernbedienung-rc8-4007841559410-110021956.jpg", fit: "contain", alt: "01-17356-fernbedienung-rc8-4007841559410-110021956.jpg", width: 2000, height: 2000 },
     ],
-    pdfUrl: "/api/download/datasheet/service-remote.pdf",
+    pdfUrl: "/api/download/datasheet/generated/steinel-service-remote",
     warranty: "5 years",
   },
   {
@@ -4480,6 +4533,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/solar/sky-ele-15-solar-post-top/01-a546d4-ccc9e61871494e7d8d36fa4a943dcf99-mv2.png", fit: "contain", alt: "01-a546d4-ccc9e61871494e7d8d36fa4a943dcf99-mv2.png", width: 1080, height: 1080 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/sky-ele-15-solar-post-top",
   },
   {
     slug: "sky-spt-150-solar-post-top",
@@ -4511,6 +4565,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/solar/sky-spt-150-solar-post-top/01-a546d4-e58c2abd51ed4328a8c1e08c606abcc0-mv2.png", fit: "contain", alt: "01-a546d4-e58c2abd51ed4328a8c1e08c606abcc0-mv2.png", width: 1080, height: 1080 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/sky-spt-150-solar-post-top",
   },
   {
     slug: "vista-solar-post-top",
@@ -4552,7 +4607,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/solar/vista-solar-post-top/01-pioled-lighting-vista-25w-mono-solar-post-top-3cct-rgb.jpg", fit: "contain", alt: "01-pioled-lighting-vista-25w-mono-solar-post-top-3cct-rgb.jpg", width: 1024, height: 1024 },
     ],
-    pdfUrl: "/api/download/datasheet/vista-solar-post-top.pdf",
+    pdfUrl: "/api/download/datasheet/generated/vista-solar-post-top",
     warranty: "3-year warranty",
   },
   {
@@ -4595,7 +4650,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/strips/cob/01-pioled-lighting-s303-sr303-a-10w-24v-cob-ip20-strip-3000k-1.jpg", fit: "contain", alt: "01-pioled-lighting-s303-sr303-a-10w-24v-cob-ip20-strip-3000k-1.jpg", width: 1024, height: 1024 },
     ],
-    pdfUrl: "/api/download/datasheet/cob.pdf",
+    pdfUrl: "/api/download/datasheet/generated/cob-strip-lumenx",
     warranty: "3-year warranty",
   },
   {
@@ -4641,6 +4696,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/profiles/profiles/member-11-zh03qa9-v2-1x1-234x234.jpg", fit: "contain", alt: "member-11-zh03qa9-v2-1x1-234x234.jpg", width: 234, height: 234 },
       { src: "/scraped/profiles/profiles/member-12-ic-dynamic-module-1x1-234x234.jpg", fit: "contain", alt: "member-12-ic-dynamic-module-1x1-234x234.jpg", width: 234, height: 234 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/profiles",
   },
   {
     slug: "standard",
@@ -4674,6 +4730,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/track/standard/04-rubicon-office-informal-meeting-lounge-5.jpg", fit: "contain", alt: "04-rubicon-office-informal-meeting-lounge-5.jpg", width: 2048, height: 1367 },
       { src: "/scraped/track/standard/05-rubicon-office-informal-meeting-lounge-9.jpg", fit: "contain", alt: "05-rubicon-office-informal-meeting-lounge-9.jpg", width: 2048, height: 1367 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/standard",
   },
   {
     slug: "bazuka",
@@ -4722,6 +4779,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/track/bazuka/member-06-pioled-lighting-tkb099d-25w-3-wire-dim-driver.png", fit: "contain", alt: "member-06-pioled-lighting-tkb099d-25w-3-wire-dim-driver.png", width: 1024, height: 1024 },
       { src: "/scraped/track/bazuka/member-07-pioled-lighting-tkb098d-15w-3-wire-dim-driver.png", fit: "contain", alt: "member-07-pioled-lighting-tkb098d-15w-3-wire-dim-driver.png", width: 1024, height: 1024 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/bazuka",
   },
   {
     slug: "blaster",
@@ -4762,7 +4820,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/track/blaster/01-pioled-lighting-tkw101-blaster-high-power-3-wire-track-spot-white-c.png", fit: "contain", alt: "01-pioled-lighting-tkw101-blaster-high-power-3-wire-track-spot-white-c.png", width: 1024, height: 1024 },
     ],
-    pdfUrl: "/api/download/datasheet/blaster.pdf",
+    pdfUrl: "/api/download/datasheet/generated/blaster",
     warranty: "5-year warranty",
   },
   {
@@ -4807,6 +4865,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/track/leda/member-02-pioled-lighting-tk004-3ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png", fit: "contain", alt: "member-02-pioled-lighting-tk004-3ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png", width: 600, height: 600 },
       { src: "/scraped/track/leda/member-03-pioled-lighting-tk002-2ft-leda-3-wire-track-tiltable-linear-3cct-white.png", fit: "contain", alt: "member-03-pioled-lighting-tk002-2ft-leda-3-wire-track-tiltable-linear-3cct-white.png", width: 1024, height: 1024 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/leda",
   },
   {
     slug: "snypa",
@@ -4852,6 +4911,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/track/snypa/member-03-pioled-lighting-r312-snypa-gu10-surface-110m-white-fitting-honeycomb-1.jpg", fit: "contain", alt: "member-03-pioled-lighting-r312-snypa-gu10-surface-110m-white-fitting-honeycomb-1.jpg", width: 1024, height: 1024 },
       { src: "/scraped/track/snypa/member-04-pioled-lighting-r301-snypa-gu10-3-wire-track-110m-black-fitting-1.jpg", fit: "contain", alt: "member-04-pioled-lighting-r301-snypa-gu10-3-wire-track-110m-black-fitting-1.jpg", width: 1024, height: 1024 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/snypa",
   },
   {
     slug: "neptune",
@@ -4910,7 +4970,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/vapourproof/neptune/01-neptune-800x416.png", fit: "contain", alt: "01-neptune-800x416.png", width: 800, height: 416 },
       { src: "/scraped/vapourproof/neptune/02-neptune-dimensions.png", fit: "contain", alt: "02-neptune-dimensions.png", width: 1774, height: 592 },
     ],
-    pdfUrl: "/api/download/datasheet/neptune.pdf",
+    pdfUrl: "/api/download/datasheet/generated/neptune",
     warranty: "8 years (365d x 24h)",
   },
   {
@@ -4964,7 +5024,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/vapourproof/titan/01-titan-800x418.png", fit: "contain", alt: "01-titan-800x418.png", width: 800, height: 418 },
       { src: "/scraped/vapourproof/titan/02-titan-dimensions.png", fit: "contain", alt: "02-titan-dimensions.png", width: 1774, height: 592 },
     ],
-    pdfUrl: "/api/download/datasheet/titan.pdf",
+    pdfUrl: "/api/download/datasheet/generated/titan",
     warranty: "6 years",
   },
   {
@@ -5010,6 +5070,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/vapourproof/saxa/04-img-0297.jpg", fit: "contain", alt: "04-img-0297.jpg", width: 2048, height: 1150 },
       { src: "/scraped/vapourproof/saxa/05-img-0298.jpg", fit: "contain", alt: "05-img-0298.jpg", width: 2048, height: 1150 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/saxa",
   },
   {
     slug: "metropolis",
@@ -5042,6 +5103,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/vapourproof/metropolis/03-whatsapp-image-2025-09-18-at-12-11-52.jpg", fit: "contain", alt: "03-whatsapp-image-2025-09-18-at-12-11-52.jpg", width: 1536, height: 2048 },
       { src: "/scraped/vapourproof/metropolis/04-whatsapp-image-2025-09-23-at-09-09-09-1.jpg", fit: "contain", alt: "04-whatsapp-image-2025-09-23-at-09-09-09-1.jpg", width: 1280, height: 960 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/metropolis",
   },
   {
     slug: "vp",
@@ -5082,7 +5144,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     images: [
       { src: "/scraped/vapourproof/vp/01-vp-1200-2021.jpg", fit: "contain", alt: "01-vp-1200-2021.jpg", width: 1058, height: 1058 },
     ],
-    pdfUrl: "/api/download/datasheet/vp.pdf",
+    pdfUrl: "/api/download/datasheet/generated/vp",
     warranty: "5 year warranty as per LEDwise standard terms of warranty",
   },
   {
@@ -5131,5 +5193,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { src: "/scraped/vapourproof/kuda/member-03-pioled-lighting-ll908-9-kuda-ip65-3cct-linear-batten-white-1.jpg", fit: "contain", alt: "member-03-pioled-lighting-ll908-9-kuda-ip65-3cct-linear-batten-white-1.jpg", width: 1024, height: 1024 },
       { src: "/scraped/vapourproof/kuda/member-04-pioled-lighting-ll908-9-kuda-ip65-3cct-linear-batten-white-1.jpg", fit: "contain", alt: "member-04-pioled-lighting-ll908-9-kuda-ip65-3cct-linear-batten-white-1.jpg", width: 1024, height: 1024 },
     ],
+    pdfUrl: "/api/download/datasheet/generated/kuda",
   },
 ];
