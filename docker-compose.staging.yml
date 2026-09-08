@@ -51,5 +51,40 @@ services:
       retries: 3
       start_period: 20s
 
+  updater:
+    image: docker:28-git
+    container_name: lumenx-staging-updater
+    restart: unless-stopped
+    environment:
+      REPO_URL: https://github.com/AltusRossouw/lumenx-lighting.git
+      REPO_REF: staging
+      UPDATE_INTERVAL_SECONDS: "300"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - lumenx_staging_updater:/work
+    working_dir: /work
+    command:
+      - sh
+      - -c
+      - |
+        set -eu
+        while true; do
+          latest="$$(git ls-remote "$${REPO_URL}" "refs/heads/$${REPO_REF}" | awk '{print $$1}')"
+          current="$$(cat .last-deployed 2>/dev/null || true)"
+          if [ -n "$${latest}" ] && [ "$${latest}" != "$${current}" ]; then
+            if [ ! -d repo/.git ]; then
+              rm -rf repo
+              git clone --branch "$${REPO_REF}" --single-branch "$${REPO_URL}" repo
+            else
+              git -C repo fetch origin "$${REPO_REF}"
+              git -C repo reset --hard "origin/$${REPO_REF}"
+            fi
+            docker compose -p lumenx-staging -f repo/docker-compose.staging.yml up -d --build --remove-orphans
+            printf '%s\n' "$${latest}" > .last-deployed
+          fi
+          sleep "$${UPDATE_INTERVAL_SECONDS}"
+        done
+
 volumes:
   lumenx_staging_pgdata:
+  lumenx_staging_updater:
