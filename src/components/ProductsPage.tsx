@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { PRODUCT_CATEGORIES } from '../data';
@@ -6,66 +6,21 @@ import { useSiteContent } from '../content';
 import { ArrowRight, ShieldCheck, Zap, Clock } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
-/* Categories that have a hover "light-up" video. Newer categories use the
-   static image only until an animation is produced. */
-const HAS_ANIMATION = new Set([
-  'bulkheads', 'downlights', 'floods', 'highbays', 'linears',
-  'panels', 'strips', 'track', 'vapourproof',
-]);
-
-/* ── Category card with hover "light-up" animation ── */
+/* ── Product category card ── */
 const CategoryCard: React.FC<{ category: (typeof PRODUCT_CATEGORIES)[number]; index: number }> = ({ category, index }) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const handleEnter = () => {
-    const v = videoRef.current;
-    if (v) {
-      v.playbackRate = 2.5; // light-up completes almost immediately
-      v.play().catch(() => {});
-    }
-  };
-
-  const handleLeave = () => {
-    const v = videoRef.current;
-    if (v) {
-      v.pause();
-      v.currentTime = 0;
-      v.playbackRate = 1;
-    }
-  };
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.1 + index * 0.08 }}
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
-      className="group relative overflow-hidden gradient-border-card card-lift flex flex-col"
+      className="group relative overflow-hidden gradient-border-card flex flex-col"
     >
-      {/* Image / light-up animation */}
       <Link to={`/products/${category.id}`} className="aspect-video overflow-hidden relative block bg-black" aria-label={category.title}>
         <img
           src={category.imageUrl}
           alt={category.title}
           loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-        />
-        {HAS_ANIMATION.has(category.id) && (
-          <video
-            ref={videoRef}
-            src={`/product-images/categories/animations/${category.id}.mp4`}
-            poster={category.imageUrl}
-            muted
-            playsInline
-            preload="auto"
-            className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-150"
-          />
-        )}
-        {/* Ambient glow on hover — the fixture "switches on" */}
-        <div
-          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse 65% 55% at 50% 45%, rgba(0,212,255,0.16), transparent 72%)' }}
+          className={`absolute inset-0 w-full h-full object-cover ${category.id === 'track' ? 'scale-[1.25] object-bottom' : ''}`}
         />
         <div className="absolute top-4 left-4">
           <span className="px-3 py-1 text-[10px] font-mono tracking-wider uppercase rounded-full bg-primary/10 border border-primary/20 text-primary">

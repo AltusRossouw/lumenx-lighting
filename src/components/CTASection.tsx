@@ -53,7 +53,7 @@ export const CTASection: React.FC = () => {
           >
             <div className="relative overflow-hidden rounded-2xl border border-[#1E293B]">
               <img
-                src="/installation-images/triangular-facade-accent-lighting.jpeg"
+                src="/installation-images/hero/facade-triangular.jpg"
                 alt="Architectural LED facade illumination at dusk."
                 loading="lazy"
                 className="w-full h-72 sm:h-96 object-cover"

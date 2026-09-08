@@ -1,21 +1,25 @@
 import { Product, ProductCategory, ProductImage } from './types';
-import { SCRAPED_CATEGORIES, SCRAPED_PRODUCTS } from './catalogue-scraped';
+import { SCRAPED_CATEGORIES } from './catalogue-scraped';
+import { OFFICIAL_PRODUCTS } from './official-products';
 
 /**
- * LumenX product catalogue — rebuilt from the supplier scrape.
+ * LumenX product catalogue — limited to products with an official LumenX sheet.
  *
- * The product data, descriptions, spec tables, supplier photos and datasheets
- * come from `data-scrape/products` (regenerate with
- * `python3 data-scrape/generate_catalogue.py`, which re-emits
- * `src/catalogue-scraped.ts`). Every product carries an ordered `images` array
- * (hero first) used by the product-page carousel.
+ * Rich scraped records are reused where they match an official product, while
+ * the runtime allowlist and official PDF links live in `official-products.ts`.
+ * Every product carries an ordered `images` array (hero first) used by the
+ * product-page carousel.
  */
 
 /* ── Categories ── */
-export const PRODUCT_CATEGORIES: ProductCategory[] = SCRAPED_CATEGORIES;
+const OFFICIAL_CATEGORY_IDS = new Set(OFFICIAL_PRODUCTS.map((product) => product.category));
+
+export const PRODUCT_CATEGORIES: ProductCategory[] = SCRAPED_CATEGORIES.filter((category) =>
+  OFFICIAL_CATEGORY_IDS.has(category.id),
+);
 
 /* ── Products ── */
-export const PRODUCTS: Product[] = SCRAPED_PRODUCTS;
+export const PRODUCTS: Product[] = OFFICIAL_PRODUCTS;
 
 /** Products grouped by category id (derived). */
 export const PRODUCTS_BY_CATEGORY: Record<string, Product[]> = PRODUCTS.reduce(
@@ -51,7 +55,7 @@ export function getProductImages(product: Product): ProductImage[] {
  * straight through.
  */
 export const datasheetDownloadUrl = (pdfUrl: string): string => {
-  if (pdfUrl.startsWith('/api/')) return pdfUrl;
+  if (pdfUrl.startsWith('/api/') || pdfUrl.startsWith('/catalogues/')) return pdfUrl;
   const name = pdfUrl.split('/').filter(Boolean).pop() || '';
   return `/api/download/datasheet/${encodeURIComponent(name)}`;
 };
@@ -69,7 +73,7 @@ export function getAllDatasheets(): { name: string; href: string }[] {
   return sheets.sort((a, b) => a.name.localeCompare(b.name));
 }
 
-/** Complete local datasheet library (LumenX-branded + supplier-linked ranges). */
+/** Complete official LumenX datasheet library exposed by the site. */
 export const DATASHEET_LIBRARY: { name: string; href: string }[] = getAllDatasheets();
 
 /** A single datasheet entry carrying its product category for grouping. */
