@@ -1,0 +1,28 @@
+{
+  "PANEL LIGHTING": "LINEAR LIGHTING",
+  "RECESSED PANEL": "PUCK SEAMLESS",
+  "30-50W": "58/116W",
+  "3900-6500": "6380/12760",
+  "__OVERVIEW_TRIGGER__": "back-lit panel",
+  "__OVERVIEW_CONTAINS__": "Integrated seamless linear LED light with a thin end-cap line under 3mm, direct-drive operation and surface or suspended mounting.",
+  "__OMIT__": ["UGR", "IP Rating", "Frequency"],
+  "__OMIT_STATS__": ["IP20", "RATING"],
+  "__ROWS__": {
+    "Lumen Output": "6380 / 12760 lm",
+    "Lumen Efficacy": "110 lm/W",
+    "Colour Temperature": "4000K / 5000K",
+    "CRI": "83",
+    "Beam Angle": "160°",
+    "Operating Temp": "+30 ~ -40 °C",
+    "Lifespan": "60 000 hours",
+    "Wattage": "58W (1200mm) / 116W (2400mm)",
+    "Input Voltage": "220–240V AC",
+    "Power Factor": ">0.98",
+    "Surge Protection": "1.5kV",
+    "Dimmable": "DALI / 0–10V / DMX",
+    "Flicker": "Flicker-free",
+    "Dimensions (mm)": "36mm × 70mm profile",
+    "Mounting": "Surface / suspended",
+    "Warranty": "6 Years"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "PANEL LIGHTING": "TRACK SPOTS AND TRACKS",
+  "RECESSED PANEL": "BAZUKA",
+  "30-50W": "15/25/35W",
+  "3900-6500": "3500",
+  "__OVERVIEW_TRIGGER__": "back-lit panel",
+  "__OVERVIEW_CONTAINS__": "3-wire track and surface-mount spot range with adjustable aiming, selectable CCT and flexible output for retail and display lighting.",
+  "__OMIT__": ["Lumen Efficacy", "IP Rating", "UGR", "Lifespan", "Power Factor", "Frequency", "Flicker", "Weight", "Certifications", "Class Rating"],
+  "__ROWS__": {
+    "Wattage": "15W / 25W / 35W",
+    "Lumen Output": "2500 / 3500 lm",
+    "Colour Temperature": "3000K / 4000K / 6000K",
+    "CRI": ">83 / >85",
+    "Beam Angle": "36° / 270°",
+    "Operating Temp": "-15 ~ 45 °C",
+    "Input Voltage": "200–277V",
+    "Surge Protection": "3kV",
+    "Dimmable": "Yes / No",
+    "Dimensions (mm)": "Track / surface mounting",
+    "Mounting": "Track / surface mounting",
+    "Warranty": "5 Years"
+  }
+}

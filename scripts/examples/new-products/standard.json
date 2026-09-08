@@ -1,0 +1,15 @@
+{
+  "PANEL LIGHTING": "TRACK SPOTS AND TRACKS",
+  "RECESSED PANEL": "STANDARD",
+  "30-50W": "30/34W",
+  "__OVERVIEW_TRIGGER__": "back-lit panel",
+  "__OVERVIEW_CONTAINS__": "Compact LED track light with adjustable beam, consistent output and special colour options for retail and display applications.",
+  "__OMIT__": ["Lumen Output", "Lumen Efficacy", "Colour Temperature", "CRI", "Beam Angle", "UGR", "IP Rating", "Operating Temp", "Lifespan", "Power Factor", "Surge Protection", "Dimmable", "Flicker", "Weight", "Certifications", "Class Rating"],
+  "__OMIT_STATS__": ["3900-6500", "LUMENS"],
+  "__ROWS__": {
+    "Wattage": "30W / 34W",
+    "Housing": "LED track light",
+    "Dimensions (mm)": "Track light fitting",
+    "Mounting": "Track mounting"
+  }
+}

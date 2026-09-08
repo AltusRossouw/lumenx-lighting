@@ -1,0 +1,28 @@
+{
+  "PANEL LIGHTING": "VAPOUR PROOF",
+  "RECESSED PANEL": "NEPTUNE",
+  "30-50W": "VAR.",
+  "IP20": "IP65",
+  "__OVERVIEW_TRIGGER__": "back-lit panel",
+  "__OVERVIEW_CONTAINS__": "Integrated IP65 linear LED light with direct-drive operation, optional battery backup and radar motion sensing for demanding industrial environments.",
+  "__OMIT__": ["Lumen Output", "UGR", "Frequency", "Weight", "Certifications", "Class Rating"],
+  "__OMIT_STATS__": ["3900-6500", "LUMENS"],
+  "__ROWS__": {
+    "Lumen Efficacy": "135 lm/W",
+    "Colour Temperature": "5000K",
+    "CRI": "83",
+    "Beam Angle": "120°",
+    "IP Rating": "IP65",
+    "Operating Temp": "-40 ~ 35 °C",
+    "Lifespan": "70 000 hours",
+    "Wattage": "See configurations",
+    "Input Voltage": "220–240V AC",
+    "Power Factor": ">0.98",
+    "Surge Protection": "1.5kV",
+    "Dimmable": "Optional variable switching",
+    "Flicker": "Flicker-free",
+    "Housing": "Polycarbonate",
+    "Mounting": "Surface / suspended",
+    "Warranty": "8 Years"
+  }
+}

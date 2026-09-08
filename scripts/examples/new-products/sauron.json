@@ -1,0 +1,25 @@
+{
+  "PANEL LIGHTING": "DOWNLIGHTS",
+  "RECESSED PANEL": "SAURON",
+  "30-50W": "16–25W",
+  "3900-6500": "3000",
+  "__OVERVIEW_TRIGGER__": "back-lit panel",
+  "__OVERVIEW_CONTAINS__": "3CCT round COB downlight from 16W to 25W with UGR<19, Bridgelux COB LED chips and a flicker-free AGT driver.",
+  "__OMIT__": ["Lumen Efficacy", "IP Rating", "Lifespan", "Power Factor", "Frequency", "Certifications", "Class Rating"],
+  "__OMIT_STATS__": ["IP20", "RATING"],
+  "__ROWS__": {
+    "Wattage": "16W / 18W / 20W / 25W",
+    "Lumen Output": "3000 lm (25W)",
+    "Colour Temperature": "3000K / 4000K / 6000K",
+    "CRI": ">80",
+    "Beam Angle": "45°",
+    "UGR": "<19",
+    "Operating Temp": "-15 ~ 45 °C",
+    "Input Voltage": "200–277V",
+    "Surge Protection": "3kV",
+    "Dimmable": "Optional",
+    "Flicker": "Flicker-free",
+    "Dimensions (mm)": "Recessed round downlight",
+    "Warranty": "5 Years"
+  }
+}

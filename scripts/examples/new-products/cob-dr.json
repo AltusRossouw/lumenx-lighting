@@ -1,0 +1,19 @@
+{
+  "PANEL LIGHTING": "DOWNLIGHTS",
+  "RECESSED PANEL": "COB-DR",
+  "30-50W": "7W–35W",
+  "__OVERVIEW_TRIGGER__": "back-lit panel",
+  "__OVERVIEW_CONTAINS__": "Round COB recessed downlight range with a deep-recessed reflector for glare control, CRI90 options and flexible dimming control.",
+  "__OMIT__": ["Lumen Output", "Lumen Efficacy", "Beam Angle", "UGR", "Operating Temp", "Power Factor", "Surge Protection", "Flicker", "Weight", "Certifications", "Class Rating"],
+  "__OMIT_STATS__": ["3900-6500", "LUMENS"],
+  "__ROWS__": {
+    "Wattage": "7W – 35W",
+    "Colour Temperature": "3000K / 4000K",
+    "CRI": "CRI80 / CRI90",
+    "IP Rating": "IP20",
+    "Lifespan": "L80B10 >50 000 hrs",
+    "Dimmable": "Non-dim / phase-cut / DALI / Bluetooth",
+    "Input Voltage": "220–240V AC",
+    "Warranty": "5 Years"
+  }
+}
