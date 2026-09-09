@@ -1,4 +1,4 @@
-import type { Product } from './types';
+import type { Product, ProductImage } from './types';
 import { SCRAPED_PRODUCTS } from './catalogue-scraped';
 
 const officialSheet = (filename: string) => `/catalogues/lumenx/${filename}`;
@@ -44,18 +44,22 @@ const fromScraped = (
   slug: string,
   name: string,
   sheet: string,
-  options: { publicSlug?: string; hero?: string } = {},
+  options: { publicSlug?: string; hero?: string; images?: ProductImage[] } = {},
 ): Product => {
   const product = SCRAPED_PRODUCTS.find((item) => item.category === category && item.slug === slug);
   if (!product) throw new Error(`Missing scraped product: ${category}/${slug}`);
   const hero = options.hero ?? product.imageUrl;
+  const images = options.images ?? [
+    { src: hero, fit: 'contain', alt: name },
+    ...(product.images ?? []).filter((image) => image.src !== hero),
+  ];
   return {
     ...product,
     slug: options.publicSlug ?? slug,
     name,
     pdfUrl: officialSheet(sheet),
     imageUrl: hero,
-    images: [{ src: hero, fit: 'contain', alt: name }, ...(product.images ?? []).filter((image) => image.src !== hero)],
+    images,
   };
 };
 
@@ -169,7 +173,11 @@ export const OFFICIAL_PRODUCTS: Product[] = [
     applications: ['Parking structures', 'Canopies', 'Industrial corridors', 'Loading bays'],
     sheet: 'lumenx-datasheet-48w-3-cct-triproof.pdf',
   }),
-  fromScraped('downlights', 'cob-adjustable-downlight', 'COB Adjustable Downlight', 'lumenx-datasheet-lean-153.pdf', { publicSlug: 'lean-153', hero: '/product-images/lean-153.png' }),
+  fromScraped('downlights', 'cob-adjustable-downlight', 'COB Adjustable Downlight', 'lumenx-datasheet-lean-153.pdf', {
+    publicSlug: 'lean-153',
+    hero: '/product-images/lean-153.png',
+    images: [{ src: '/product-images/lean-153.png', fit: 'contain', alt: 'COB Adjustable Downlight' }],
+  }),
   fromScraped('downlights', 'cob-anti-glare-downlight', 'COB Anti-glare Downlight', 'lumenx-datasheet-cob-dr.pdf', { publicSlug: 'cob-dr', hero: '/product-images/cob-dr.png' }),
   fromScraped('downlights', 'sauron', 'Sauron', 'lumenx-datasheet-sauron.pdf', { hero: '/product-images/sauron.png' }),
   fromScraped('track', 'standard', 'Standard', 'lumenx-datasheet-standard.pdf', { hero: '/product-images/standard.png' }),
