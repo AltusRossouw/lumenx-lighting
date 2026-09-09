@@ -10,6 +10,7 @@
     "server": "node server/index.js",
     "start": "node server/index.js",
     "build": "vite build",
+    "prebuild": "node scripts/generate-sitemap.mjs",
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",

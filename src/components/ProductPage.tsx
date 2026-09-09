@@ -29,8 +29,8 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
     let active = true;
     api
       .me()
-      .then(() => {
-        if (active) setIesAuthed(true);
+      .then(({ user }) => {
+        if (active) setIesAuthed(Boolean(user));
       })
       .catch(() => {});
     return () => {

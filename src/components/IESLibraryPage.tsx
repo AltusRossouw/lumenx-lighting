@@ -21,6 +21,11 @@ export const IESLibraryPage: React.FC = () => {
       try {
         const { user: me } = await api.me();
         if (!active) return;
+        if (!me) {
+          setUser(null);
+          setState('anonymous');
+          return;
+        }
         setUser(me);
         setState('authenticated');
         const { files: list } = await api.listIes();

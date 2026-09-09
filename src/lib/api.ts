@@ -122,7 +122,7 @@ export const api = {
       method: 'POST',
       body: JSON.stringify({ token, password }),
     }),
-  me: () => request<{ user: User }>('/api/auth/me'),
+  me: () => request<{ user: User | null }>('/api/auth/me'),
 
   // Admin (email + password login; no key needed in the browser)
   adminLogin: (email: string, password: string) =>

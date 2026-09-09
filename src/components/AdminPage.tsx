@@ -63,7 +63,7 @@ export const AdminPage: React.FC = () => {
       try {
         const { user: me } = await api.me();
         if (!active) return;
-        if (me.role === 'admin') {
+        if (me?.role === 'admin') {
           setAdminEmail(me.email);
           setAuthState('authenticated');
           await Promise.all([loadUsers(), loadDownloads(), loadLeads()]);

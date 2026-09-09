@@ -8,7 +8,7 @@ import { config } from '../config.js';
 import { hashPassword, verifyPassword } from '../services/password.js';
 import { signToken, cookieOptions } from '../services/token.js';
 import { sendEmail } from '../services/mail.js';
-import { requireAuth } from '../middleware/auth.js';
+import { loadSessionUser } from '../middleware/auth.js';
 import { isValidEmail, isValidPassword, normalizeEmail } from '../middleware/validation.js';
 
 const publicUser = (row) =>
@@ -183,8 +183,15 @@ export const authRouter = () => {
     }
   });
 
-  // GET /api/auth/me — the current session's user (or 401).
-  router.get('/me', requireAuth, (req, res) => res.json({ user: publicUser(req.user) }));
+  // GET /api/auth/me — the current session's user (or null when signed out).
+  router.get('/me', async (req, res, next) => {
+    try {
+      const user = await loadSessionUser(req);
+      return res.json({ user: publicUser(user) });
+    } catch (err) {
+      return next(err);
+    }
+  });
 
   return router;
 };

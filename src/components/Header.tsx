@@ -38,7 +38,7 @@ export const Header: React.FC = () => {
       .me()
       .then(({ user: me }) => {
         if (active) {
-          setAuthed(true);
+          setAuthed(Boolean(me));
           setUser(me);
         }
       })

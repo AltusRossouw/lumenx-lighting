@@ -1,22 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.lumenx.co.za/</loc></url>
-  <url><loc>https://www.lumenx.co.za/the-solution</loc></url>
-  <url><loc>https://www.lumenx.co.za/products</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/bulkheads</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/downlights</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/floods</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/highbays</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/linears</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/panels</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/strips</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/track</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/vapourproof</loc></url>
-  <url><loc>https://www.lumenx.co.za/resources</loc></url>
+  <url><loc>https://www.lumenx.co.za/about</loc></url>
+  <url><loc>https://www.lumenx.co.za/contact</loc></url>
   <url><loc>https://www.lumenx.co.za/design-tool</loc></url>
   <url><loc>https://www.lumenx.co.za/ies</loc></url>
   <url><loc>https://www.lumenx.co.za/planner</loc></url>
-  <url><loc>https://www.lumenx.co.za/about</loc></url>
-  <url><loc>https://www.lumenx.co.za/contact</loc></url>
   <url><loc>https://www.lumenx.co.za/privacy</loc></url>
+  <url><loc>https://www.lumenx.co.za/products</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/bulkheads</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/bulkheads/alu-bulkhead</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/bulkheads/pc-bulkhead</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/downlights</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/downlights/9w-surface-downlight</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/downlights/cob-dr</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/downlights/diffused-downlight</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/downlights/lean-153</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/downlights/sauron</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/floods</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/floods/60w-street-light</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/floods/flood</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/highbays</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/highbays/thermisto</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/highbays/v200-highbay</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/linears</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/linears/lds5083</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/linears/lf55</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/linears/puck-seamless</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/panels</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/panels/300x1200-recessed-panel</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/panels/recessed-panel</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/strips</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/strips/high-voltage-strip</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/track</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/track/35w-track-spot</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/track/bazuka</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/track/standard</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/vapourproof</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/vapourproof/48w-3-cct-triproof</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/vapourproof/neptune</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/vapourproof/saxa</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/vapourproof/titan</loc></url>
+  <url><loc>https://www.lumenx.co.za/resources</loc></url>
+  <url><loc>https://www.lumenx.co.za/the-solution</loc></url>
 </urlset>
