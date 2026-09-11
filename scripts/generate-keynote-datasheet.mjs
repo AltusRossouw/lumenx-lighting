@@ -51,6 +51,10 @@ const preparedDimension = dimension ? padImage(dimension, safeAreas.dimension, t
 let result;
 try {
   const appleScript = buildAppleScript({ template: workingTemplate, output, keyOutput, hero: preparedHero, dimension: preparedDimension, replacements });
+  if (process.env.DEBUG_AS === '1') {
+    fs.writeFileSync('/tmp/debug-as.txt', appleScript);
+    console.error('wrote /tmp/debug-as.txt');
+  }
   result = spawnSync('/usr/bin/osascript', ['-'], {
     input: appleScript,
     encoding: 'utf8',
@@ -63,6 +67,9 @@ try {
 if (result.status !== 0) {
   console.error(result.stderr.trim() || 'Keynote export failed.');
   process.exit(result.status || 1);
+}
+if (process.env.DEBUG_AS === '1' && result.stdout) {
+  console.error('[AS LOG]', result.stdout.trim());
 }
 
 if (!fs.existsSync(output)) {
@@ -82,7 +89,14 @@ function buildAppleScript({ template, output, keyOutput, hero, dimension, replac
   const dimensionRatio = dimension ? imageRatio(dimension) : 1;
   const replacementPairs = Object.entries(replacements)
     .filter(([key]) => !key.startsWith('__'))
-    .map(([from, to]) => `{${quote(from)}, ${quote(to)}}`)
+    .map(([from, to]) => `{${quote(from)}, ${asExpression(to)}}`)
+    .join(', ');
+  const tableCells = (replacements.__TABLE_CELLS__ || [])
+    .map(([row, col, text]) => `{${row}, ${col}, ${quote(text)}}`)
+    .join(', ');
+  const notes = replacements.__NOTES__ ? asExpression(replacements.__NOTES__) : 'missing value';
+  const dimensionFills = (replacements.__DIMENSION_FILLS__ || [])
+    .map(([minX, file]) => `{${minX}, ${quote(path.resolve(file))}}`)
     .join(', ');
   const overview = replacements.__OVERVIEW_CONTAINS__
     ? quote(replacements.__OVERVIEW_CONTAINS__)
@@ -91,10 +105,19 @@ function buildAppleScript({ template, output, keyOutput, hero, dimension, replac
   const omitCondition = (replacements.__OMIT__ || [])
     .map((label) => `(currentText is ${quote(label)} or currentText is (" " & ${quote(label)}))`)
     .join(' or ') || 'false';
+  const omitTextCondition = (replacements.__OMIT__ || [])
+    .map((label) => `(itemText is ${quote(label)} or itemText is (" " & ${quote(label)}))`)
+    .join(' or ') || 'false';
   const omitStatsCondition = (replacements.__OMIT_STATS__ || [])
     .map((label) => `(currentText is ${quote(label)} or currentText is (" " & ${quote(label)}))`)
     .join(' or ') || 'false';
+  const omitStatsTextCondition = (replacements.__OMIT_STATS__ || [])
+    .map((label) => `(itemText is ${quote(label)} or itemText is (" " & ${quote(label)}))`)
+    .join(' or ') || 'false';
   const rowPairs = Object.entries(replacements.__ROWS__ || {})
+    .map(([label, value]) => `{${quote(label)}, ${quote(value)}}`)
+    .join(', ');
+  const statPairs = Object.entries(replacements.__STATS__ || {})
     .map(([label, value]) => `{${quote(label)}, ${quote(value)}}`)
     .join(', ');
   const heroBlock = hero
@@ -130,20 +153,24 @@ function buildAppleScript({ template, output, keyOutput, hero, dimension, replac
           try
             set candidatePosition to position of candidateImage
             if item 2 of candidatePosition > 600 then
-              set frameWidth to width of candidateImage
-              set frameHeight to height of candidateImage
-              set frameX to item 1 of candidatePosition
-              set frameY to item 2 of candidatePosition
-              set file name of candidateImage to (POSIX file ${quote(path.resolve(dimension))})
-              set fittedWidth to frameWidth
-              set fittedHeight to frameWidth / ${dimensionRatio}
-              if fittedHeight > frameHeight then
-                set fittedHeight to frameHeight
-                set fittedWidth to frameHeight * ${dimensionRatio}
+              if (width of candidateImage) > (height of candidateImage) then
+                set frameWidth to width of candidateImage
+                set frameHeight to height of candidateImage
+                set frameX to item 1 of candidatePosition
+                set frameY to item 2 of candidatePosition
+                set file name of candidateImage to (POSIX file ${quote(path.resolve(dimension))})
+                set fittedWidth to frameWidth
+                set fittedHeight to frameWidth / ${dimensionRatio}
+                if fittedHeight > frameHeight then
+                  set fittedHeight to frameHeight
+                  set fittedWidth to frameHeight * ${dimensionRatio}
+                end if
+                set width of candidateImage to fittedWidth
+                set height of candidateImage to fittedHeight
+                set position of candidateImage to {frameX + ((frameWidth - fittedWidth) / 2), frameY + ((frameHeight - fittedHeight) / 2)}
+              else
+                set opacity of candidateImage to 0
               end if
-              set width of candidateImage to fittedWidth
-              set height of candidateImage to fittedHeight
-              set position of candidateImage to {frameX + ((frameWidth - fittedWidth) / 2), frameY + ((frameHeight - fittedHeight) / 2)}
             end if
           end try
         end repeat
@@ -181,6 +208,10 @@ function buildAppleScript({ template, output, keyOutput, hero, dimension, replac
     set doc to front document
     set replacements to {${replacementPairs}}
     set rowReplacements to {${rowPairs}}
+    set statReplacements to {${statPairs}}
+    set tableCells to {${tableCells}}
+    set notes to ${notes}
+    set dimensionFills to {${dimensionFills}}
     set omittedLeftYs to {}
     set omittedRightYs to {}
     repeat with slideRef in slides of doc
@@ -204,12 +235,30 @@ function buildAppleScript({ template, output, keyOutput, hero, dimension, replac
         try
           set itemPosition to position of itemObj
           set itemText to object text of itemObj as text
-          if ${omitCondition} or ${omitStatsCondition} or itemText is "—" or itemText is "-" then delete itemObj
+          set deletedFlag to false
+          if ${omitTextCondition} or ${omitStatsTextCondition} or itemText is "—" or itemText is "-" then
+            delete itemObj
+            set deletedFlag to true
+          end if
           repeat with omittedY in omittedLeftYs
-            if (item 1 of itemPosition) < 300 and (abs((item 2 of itemPosition) - (contents of omittedY)) < 3) then delete itemObj
+            if not deletedFlag then
+              set omitDy to (item 2 of itemPosition) - (contents of omittedY)
+              if omitDy < 0 then set omitDy to -omitDy
+              if (item 1 of itemPosition) < 300 and omitDy < 3 then
+                delete itemObj
+                set deletedFlag to true
+              end if
+            end if
           end repeat
           repeat with omittedY in omittedRightYs
-            if (item 1 of itemPosition) > 300 and (abs((item 2 of itemPosition) - (contents of omittedY)) < 3) then delete itemObj
+            if not deletedFlag then
+              set omitDy to (item 2 of itemPosition) - (contents of omittedY)
+              if omitDy < 0 then set omitDy to -omitDy
+              if (item 1 of itemPosition) > 300 and omitDy < 3 then
+                delete itemObj
+                set deletedFlag to true
+              end if
+            end if
           end repeat
         end try
       end repeat
@@ -227,7 +276,25 @@ function buildAppleScript({ template, output, keyOutput, hero, dimension, replac
               set valueItem to text item valueIndex of slideObj
               try
                 set valuePosition to position of valueItem
-                if (item 1 of valuePosition > (item 1 of labelPosition)) and (abs((item 2 of valuePosition) - (item 2 of labelPosition)) < 3) then set object text of valueItem to item 2 of rowPair
+                set rowDy to (item 2 of valuePosition) - (item 2 of labelPosition)
+                if rowDy < 0 then set rowDy to -rowDy
+                if (item 1 of valuePosition > (item 1 of labelPosition)) and rowDy < 3 then set object text of valueItem to item 2 of rowPair
+              end try
+            end repeat
+          end if
+        end repeat
+        repeat with statRef in statReplacements
+          set statPair to contents of statRef
+          if currentText is item 1 of statPair then
+            set statPosition to position of itemObj
+            repeat with statIndex from (count of text items of slideObj) to 1 by -1
+              set statValueItem to text item statIndex of slideObj
+              try
+                set statValuePosition to position of statValueItem
+                set statDx to (item 1 of statValuePosition) - (item 1 of statPosition)
+                if statDx < 0 then set statDx to -statDx
+                set statDy to (item 2 of statPosition) - (item 2 of statValuePosition)
+                if statDx < 35 and statDy > 0 and statDy < 60 then set object text of statValueItem to item 2 of statPair
               end try
             end repeat
           end if
@@ -249,17 +316,53 @@ function buildAppleScript({ template, output, keyOutput, hero, dimension, replac
         try
           if (object text of itemObj as text) is "—" or (object text of itemObj as text) is "-" then delete itemObj
         end try
-      end repeat${dimension ? '' : `
+      end repeat
+      if (count of tableCells) > 0 then
+        try
+          repeat with cellRef in tableCells
+            set cellPair to contents of cellRef
+            set value of (cell (item 2 of cellPair) of row (item 1 of cellPair) of table 1 of slideObj) to item 3 of cellPair
+          end repeat
+        end try
+      end if
+      if notes is not missing value then
+        tell slideObj
+          set noteItem to make new text item with properties {object text: notes, position: {312, 768}, width: 285, height: 44}
+        end tell
+        tell object text of noteItem
+          set size to 5
+          set its font to "Helvetica"
+          set its color to {30326, 30583, 30840}
+        end tell
+      end if${dimension ? '' : `
       repeat with itemIndex from (count of text items of slideObj) to 1 by -1
         set itemObj to text item itemIndex of slideObj
         try
           if (object text of itemObj as text) is "DIMENSION DRAWING" then delete itemObj
         end try
       end repeat`}${dimensionBlock}${dimensionRuleBlock}${heroBlock}
+      if (count of dimensionFills) > 0 then
+        repeat with imageRef in images of slideObj
+          set candidateImage to contents of imageRef
+          try
+            set candidatePosition to position of candidateImage
+            if (item 2 of candidatePosition) > 600 then
+              repeat with fillRef in dimensionFills
+                set fillPair to contents of fillRef
+                if (item 1 of candidatePosition) >= (item 1 of fillPair) then
+                  set file name of candidateImage to (POSIX file (item 2 of fillPair))
+                  set opacity of candidateImage to 100
+                end if
+              end repeat
+            end if
+          end try
+        end repeat
+      end if
     end repeat
     save doc in (POSIX file ${quote(path.resolve(keyOutput))})
     export doc to (POSIX file ${quote(path.resolve(output))}) as PDF
     close doc saving no
+    return "clean"
   end tell
 end run
 `;
@@ -292,7 +395,13 @@ function quote(value) {
     .replace(/\\u2028/g, '\\u2028')
     .replace(/\\u2029/g, '\\u2029');
 }
-
+// Quote a value for AppleScript; values containing newlines become a string
+// concatenation using (character id 10) so Keynote gets real line breaks.
+function asExpression(value) {
+  const parts = String(value).split('\n');
+  if (parts.length === 1) return quote(value);
+  return '(' + parts.map((part) => quote(part)).join(' & (character id 10) & ') + ')';
+}
 function imageAspectRatio(imagePath) {
   const result = spawnSync('/usr/bin/sips', ['-g', 'pixelWidth', '-g', 'pixelHeight', imagePath], { encoding: 'utf8' });
   if (result.status !== 0) throw new Error(`Could not read image dimensions: ${imagePath}`);

@@ -180,6 +180,6 @@ export const OFFICIAL_PRODUCTS: Product[] = [
   }),
   fromScraped('downlights', 'cob-anti-glare-downlight', 'COB Anti-glare Downlight', 'lumenx-datasheet-cob-dr.pdf', { publicSlug: 'cob-dr', hero: '/product-images/cob-dr.png' }),
   fromScraped('downlights', 'sauron', 'Sauron', 'lumenx-datasheet-sauron.pdf', { hero: '/product-images/sauron.png' }),
-  fromScraped('track', 'standard', 'Standard', 'lumenx-datasheet-standard.pdf', { hero: '/product-images/standard.png' }),
+  fromScraped('track', 'standard', 'Standard', 'lumenx-datasheet-standard.pdf', { hero: '/scraped/track/standard/01-standard.jpg' }),
   fromScraped('track', 'bazuka', 'Bazuka', 'lumenx-datasheet-bazuka.pdf', { hero: '/product-images/bazuka.png' }),
 ];

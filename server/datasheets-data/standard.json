@@ -5,22 +5,22 @@
   },
   "name": "STANDARD",
   "category": "TRACK",
-  "variant": "Compact LED track light with adjustable beam and special colour options.",
+  "variant": "Compact die-cast aluminium LED track spot with adjustable optics and CRI 90+.",
   "stats": [
+    {
+      "label": "Power",
+      "value": "30-34",
+      "unit": "W"
+    },
     {
       "label": "Wattage",
       "value": "30W, 34W",
       "unit": ""
     },
     {
-      "label": "Colour",
-      "value": "Black, White",
-      "unit": ""
-    },
-    {
-      "label": "Type",
-      "value": "LED track light",
-      "unit": ""
+      "label": "Lumens",
+      "value": "3300-3900",
+      "unit": "lm"
     }
   ],
   "heroImage": {
@@ -28,18 +28,18 @@
     "alt": "Standard"
   },
   "overview": [
-    "Compact LED track light with adjustable beam and special colour options."
+    "Compact die-cast aluminium track spot with fully adjustable tilt and rotate action. CRI 90+ light with special colour options for meat and bread retail."
   ],
   "features": [
-    "Compact, consistent output",
-    "Adjustable beam",
-    "Special colour options"
+    "Premium high-efficiency LED chip",
+    "Fully adjustable tilt and rotate action",
+    "Special colour options for meat & bread retail",
+    "Lumen/wattage package adjustable downwards"
   ],
   "applications": [
-    "Retail",
-    "Commercial",
-    "Display",
-    "Galleries"
+    "Retail Store",
+    "Shopping Centre",
+    "Commercial Office"
   ],
   "columns": {
     "left": [
@@ -47,31 +47,77 @@
         "title": "Physical",
         "rows": [
           {
-            "label": "Colour",
-            "value": "Black, White"
+            "label": "Dimensions (mm)",
+            "value": "169.5 x 108 x 32mm (\u00d884)"
           },
           {
-            "label": "Type",
-            "value": "LED track light"
+            "label": "Housing",
+            "value": "Die-cast aluminium"
           },
           {
-            "label": "Beam",
-            "value": "Adjustable"
+            "label": "Mounting",
+            "value": "Global 3-phase track"
           },
           {
-            "label": "Colours",
-            "value": "Special options available"
+            "label": "Luminaire Colour",
+            "value": "Black / White / Silver"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          },
+          {
+            "label": "Lifetime",
+            "value": "L80B10 @ 50 000 hrs"
           }
         ]
       }
     ],
     "right": [
       {
+        "title": "Product Information",
+        "rows": [
+          {
+            "label": "Lumen Output",
+            "value": "3300-3900 lm"
+          },
+          {
+            "label": "Efficacy",
+            "value": "Up to 118 lm/W"
+          },
+          {
+            "label": "CCT",
+            "value": "3000K / 3500K / 4000K"
+          },
+          {
+            "label": "CRI",
+            "value": "90+"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "15\u00b0 / 36\u00b0 / 50\u00b0"
+          }
+        ]
+      },
+      {
         "title": "Electrical",
         "rows": [
           {
             "label": "Wattage",
             "value": "30W, 34W"
+          },
+          {
+            "label": "Input Voltage",
+            "value": "220-240V AC"
+          },
+          {
+            "label": "Dimmable",
+            "value": "ON/OFF \u00b7 DALI \u00b7 Casambi \u00b7 Wireless"
           }
         ]
       }
@@ -85,7 +131,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
+    "Nominal flux values are stated at 25\u00b0 C, based on LED manufacturer\u2019s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {
