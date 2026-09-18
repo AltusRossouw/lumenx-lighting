@@ -39,19 +39,32 @@ const createOfficialProduct = ({
   pdfUrl: officialSheet(sheet),
 });
 
+/**
+ * Build one catalogue entry from its scraped record.
+ *
+ * `hero` replaces the scraped lead image and always heads the gallery. The scraped
+ * list is then appended, minus the hero itself.
+ *
+ * `exclude` drops further scraped entries by src. It exists because a scraped `01-*`
+ * image is frequently the SAME picture as the curated `/product-images/` hero —
+ * sometimes byte-identical, sometimes the same shot re-saved opaque instead of as a
+ * transparent cutout — so comparing src alone is not enough to spot the repeat. List
+ * those duplicates here; otherwise the product page shows one photo twice.
+ */
 const fromScraped = (
   category: string,
   slug: string,
   name: string,
   sheet: string,
-  options: { publicSlug?: string; hero?: string; images?: ProductImage[] } = {},
+  options: { publicSlug?: string; hero?: string; images?: ProductImage[]; exclude?: string[] } = {},
 ): Product => {
   const product = SCRAPED_PRODUCTS.find((item) => item.category === category && item.slug === slug);
   if (!product) throw new Error(`Missing scraped product: ${category}/${slug}`);
   const hero = options.hero ?? product.imageUrl;
+  const skip = new Set([hero, ...(options.exclude ?? [])]);
   const images = options.images ?? [
     { src: hero, fit: 'contain', alt: name },
-    ...(product.images ?? []).filter((image) => image.src !== hero),
+    ...(product.images ?? []).filter((image) => !skip.has(image.src)),
   ];
   return {
     ...product,
@@ -94,7 +107,7 @@ export const OFFICIAL_PRODUCTS: Product[] = [
     applications: ['Retail stores', 'Hospitality', 'Residential', 'Corridors'],
     sheet: 'lumenx-datasheet-9w-surface-downlight.pdf',
   }),
-  fromScraped('downlights', 'diffused-downlight', 'Diffused Downlight', 'lumenx-datasheet-aegeon-downlight.pdf', { hero: '/product-images/Aegeon_Downlight.png' }),
+  fromScraped('downlights', 'diffused-downlight', 'Diffused Downlight', 'lumenx-datasheet-aegeon-downlight.pdf', { hero: '/product-images/Aegeon_Downlight.png', exclude: ['/scraped/downlights/diffused-downlight/01-aegeon.jpg'] }),
   fromScraped('floods', 'flood', 'Performance Floods', 'lumenx-datasheet-performance-floods.pdf', { hero: '/product-images/Performance_Floods.png' }),
   createOfficialProduct({
     slug: '60w-street-light', name: '60W Street Light', category: 'floods',
@@ -116,7 +129,7 @@ export const OFFICIAL_PRODUCTS: Product[] = [
     applications: ['Manufacturing plants', 'Logistics warehouses', 'Assembly halls', 'Exhibition centres'],
     sheet: 'lumenx-datasheet-v200-highbay.pdf',
   }),
-  fromScraped('highbays', 'thermisto', 'Thermisto', 'lumenx-datasheet-thermisto.pdf', { hero: '/product-images/Thermisto.png' }),
+  fromScraped('highbays', 'thermisto', 'Thermisto', 'lumenx-datasheet-thermisto.pdf', { hero: '/product-images/Thermisto.png', exclude: ['/scraped/highbays/thermisto/01-themisto-lowbay-55-surface-suspension.jpg'] }),
   createOfficialProduct({
     slug: '600x1200-recessed-panel', name: '600x1200 Recessed Panel', category: 'panels',
     summary: 'Wide-format recessed LED panel for modern architectural ceiling layouts.',
@@ -137,7 +150,7 @@ export const OFFICIAL_PRODUCTS: Product[] = [
     applications: ['Facade accent', 'Cove lighting', 'Landscape edges', 'Signage illumination'],
     sheet: 'lumenx-datasheet-high-voltage-strip.pdf',
   }),
-  fromScraped('linears', 'puck-seamless', 'Puck Seamless', 'lumenx-datasheet-puck-seamless.pdf', { hero: '/product-images/puck-seamless.png' }),
+  fromScraped('linears', 'puck-seamless', 'Puck Seamless', 'lumenx-datasheet-puck-seamless.pdf', { hero: '/product-images/puck-seamless.png', exclude: ['/scraped/linears/puck-seamless/01-puck-800x601.png'] }),
   fromScraped('linears', 'puck-profile-40x43', 'Puck Profile 40x43', 'lumenx-datasheet-puck-profile-40x43.pdf', { hero: '/product-images/orbitx-puck-40x43.png' }),
   fromScraped('linears', 'puck-profile-70x36', 'Puck Profile 70x36', 'lumenx-datasheet-puck-profile-70x36.pdf', { hero: '/product-images/orbitx-puck-70x36.png' }),
   fromScraped('linears', 'lds5083', 'Linear 50x83mm', 'lumenx-datasheet-linear-50x83mm.pdf', { hero: '/product-images/Linear_50x83mm.png' }),
@@ -152,8 +165,8 @@ export const OFFICIAL_PRODUCTS: Product[] = [
     applications: ['Corporate offices', 'Call centres', 'Schools', 'Retail stores'],
     sheet: 'lumenx-datasheet-recessed-panel.pdf',
   }),
-  fromScraped('vapourproof', 'neptune', 'Neptune', 'lumenx-datasheet-neptune.pdf', { hero: '/product-images/neptune.png' }),
-  fromScraped('vapourproof', 'titan', 'Titan', 'lumenx-datasheet-titan.pdf', { hero: '/product-images/titan.png' }),
+  fromScraped('vapourproof', 'neptune', 'Neptune', 'lumenx-datasheet-neptune.pdf', { hero: '/product-images/neptune.png', exclude: ['/scraped/vapourproof/neptune/01-neptune-800x416.png'] }),
+  fromScraped('vapourproof', 'titan', 'Titan', 'lumenx-datasheet-titan.pdf', { hero: '/product-images/titan.png', exclude: ['/scraped/vapourproof/titan/01-titan-800x418.png'] }),
   fromScraped('vapourproof', 'saxa', 'Saxa Triproof', 'lumenx-datasheet-saxa-triproof.pdf', { hero: '/product-images/Saxa_Triproof.png' }),
   createOfficialProduct({
     slug: '35w-track-spot', name: '35W Track Spot', category: 'track',
@@ -181,7 +194,7 @@ export const OFFICIAL_PRODUCTS: Product[] = [
     images: [{ src: '/product-images/lean-153.png', fit: 'contain', alt: 'COB Adjustable Downlight' }],
   }),
   fromScraped('downlights', 'cob-anti-glare-downlight', 'COB Anti-glare Downlight', 'lumenx-datasheet-cob-dr.pdf', { publicSlug: 'cob-dr', hero: '/product-images/cob-dr.png' }),
-  fromScraped('downlights', 'sauron', 'Sauron', 'lumenx-datasheet-sauron.pdf', { hero: '/product-images/sauron.png' }),
+  fromScraped('downlights', 'sauron', 'Sauron', 'lumenx-datasheet-sauron.pdf', { hero: '/product-images/sauron.png', exclude: ['/scraped/downlights/sauron/01-pioled-lighting-hd016-25-20-18-16w-sauron-recessed-round-led-downlight.jpg'] }),
   fromScraped('track', 'standard', 'Standard', 'lumenx-datasheet-standard.pdf', { hero: '/scraped/track/standard/01-standard.jpg' }),
-  fromScraped('track', 'bazuka', 'Bazuka', 'lumenx-datasheet-bazuka.pdf', { hero: '/product-images/bazuka.png' }),
+  fromScraped('track', 'bazuka', 'Bazuka', 'lumenx-datasheet-bazuka.pdf', { hero: '/product-images/bazuka.png', exclude: ['/scraped/track/bazuka/member-06-pioled-lighting-tkb099d-25w-3-wire-dim-driver.png'] }),
 ];

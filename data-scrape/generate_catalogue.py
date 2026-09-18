@@ -9,6 +9,7 @@ the exact shape the LumenX site expects.
 
 Run from the repo root:  python3 data-scrape/generate_catalogue.py
 """
+import hashlib
 import json
 import os
 import re
@@ -1041,6 +1042,7 @@ def main():
                 folders.append((cat_dir, entry, folder_path))
 
     copied_images = 0
+    skipped_duplicate_images = 0
     copied_pdfs = 0
 
     # Start fresh so slug changes don't leave stale image directories behind.
@@ -1197,11 +1199,20 @@ def main():
                 ),
             )
             os.makedirs(dest_dir, exist_ok=True)
+            seen_image_hashes = set()
             for i in ordered:
                 fname = i['file']
                 src = os.path.join(img_dir, fname)
                 if not os.path.exists(src) or not fname:
                     continue
+                # Supplier collection pages often carry the same photo under two
+                # names (e.g. two "dim driver" variants). Keep the first and drop
+                # repeats, otherwise the product gallery shows one picture twice.
+                digest = hashlib.md5(open(src, 'rb').read()).hexdigest()
+                if digest in seen_image_hashes:
+                    skipped_duplicate_images += 1
+                    continue
+                seen_image_hashes.add(digest)
                 dst = os.path.join(dest_dir, fname)
                 if not os.path.exists(dst):
                     shutil.copy2(src, dst)
@@ -1364,6 +1375,7 @@ def main():
     print(f'Products: {len(products)}')
     print(f'Categories: {len(categories)}')
     print(f'Images copied: {copied_images}')
+    print(f'Duplicate images skipped: {skipped_duplicate_images}')
 
     # Regenerate every datasheet JSON from the current (spec-enriched) product
     # data. The website's spec table is the authoritative source, and the old
