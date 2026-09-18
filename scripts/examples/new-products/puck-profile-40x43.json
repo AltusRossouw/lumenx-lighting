@@ -1,0 +1,74 @@
+{
+  "Linear 50x83mm": "Puck Profile 40x43",
+  "__OVERVIEW_TRIGGER__": "opal diffuser",
+  "__OVERVIEW_CONTAINS__": "40x43mm integrated seamless linear LED system with a thin end-cap line under 3mm, direct-drive operation (no external driver) and a seamless look when mounted end-to-end. Made from polycarbonate and manufactured locally.",
+  "__OMIT__": [
+    "UGR",
+    "IP Rating",
+    "Frequency"
+  ],
+  "__ROWS__": {
+    "Dimensions (mm)": "40mm x 43mm",
+    "Housing": "Polycarbonate",
+    "Mounting": "Surface / Suspended / Recessed",
+    "Warranty": "6 Years",
+    "Lumen Output": "4000 / 8000 lm",
+    "Lumen Efficacy": "110 lm/W",
+    "Colour Temperature": "5000K (options available)",
+    "CRI": "83",
+    "Beam Angle": "160\u00b0",
+    "Operating Temp": "+30 ~ -40 \u00b0C",
+    "Lifespan": "60 000 hours",
+    "Luminaire Colour": "White",
+    "Wattage": "32W (1200mm) / 64W (2400mm)",
+    "Power Factor": ">0.98",
+    "Dimmable": "Direct drive - no driver required"
+  },
+  "__TABLE_CELLS__": [
+    [
+      2,
+      1,
+      "32W"
+    ],
+    [
+      2,
+      2,
+      "4000"
+    ],
+    [
+      2,
+      3,
+      "4000"
+    ],
+    [
+      2,
+      4,
+      "1200"
+    ],
+    [
+      3,
+      1,
+      "64W"
+    ],
+    [
+      3,
+      2,
+      "8000"
+    ],
+    [
+      3,
+      3,
+      "8000"
+    ],
+    [
+      3,
+      4,
+      "2400"
+    ]
+  ],
+  "__STATS__": {
+    "POWER": "32-64",
+    "LUMENS": "4-8k lm",
+    "RATING": "\u2013"
+  }
+}

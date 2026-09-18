@@ -1,0 +1,74 @@
+{
+  "Linear 50x83mm": "Puck Profile 70x36",
+  "__OVERVIEW_TRIGGER__": "opal diffuser",
+  "__OVERVIEW_CONTAINS__": "70x36mm integrated seamless linear LED system with a thin end-cap line under 3mm, direct-drive operation (no external driver) and a seamless look when mounted end-to-end. Made from polycarbonate and manufactured locally.",
+  "__OMIT__": [
+    "UGR",
+    "IP Rating",
+    "Frequency"
+  ],
+  "__ROWS__": {
+    "Dimensions (mm)": "70mm x 36mm",
+    "Housing": "Polycarbonate",
+    "Mounting": "Surface / Suspended / Recessed",
+    "Warranty": "6 Years",
+    "Lumen Output": "6000 / 12000 lm",
+    "Lumen Efficacy": "110 lm/W",
+    "Colour Temperature": "5000K (options available)",
+    "CRI": "83",
+    "Beam Angle": "160\u00b0",
+    "Operating Temp": "+30 ~ -40 \u00b0C",
+    "Lifespan": "60 000 hours",
+    "Luminaire Colour": "White",
+    "Wattage": "52W (1200mm) / 104W (2400mm)",
+    "Power Factor": ">0.98",
+    "Dimmable": "Direct drive - no driver required"
+  },
+  "__TABLE_CELLS__": [
+    [
+      2,
+      1,
+      "52W"
+    ],
+    [
+      2,
+      2,
+      "6000"
+    ],
+    [
+      2,
+      3,
+      "6000"
+    ],
+    [
+      2,
+      4,
+      "1200"
+    ],
+    [
+      3,
+      1,
+      "104W"
+    ],
+    [
+      3,
+      2,
+      "12000"
+    ],
+    [
+      3,
+      3,
+      "12000"
+    ],
+    [
+      3,
+      4,
+      "2400"
+    ]
+  ],
+  "__STATS__": {
+    "POWER": "52-104",
+    "LUMENS": "6-12k lm",
+    "RATING": "\u2013"
+  }
+}

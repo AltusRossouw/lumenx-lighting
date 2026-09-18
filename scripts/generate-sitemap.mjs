@@ -61,8 +61,13 @@ for (const line of SRC.split('\n')) {
 }
 if (current && current.category && current.slug) products.push(current);
 
-if (products.length !== 24) {
-  console.error(`sitemap: expected 24 official products, parsed ${products.length}`);
+// Update this whenever a product is added to or removed from OFFICIAL_PRODUCTS.
+const EXPECTED_PRODUCT_COUNT = 26;
+
+if (products.length !== EXPECTED_PRODUCT_COUNT) {
+  console.error(
+    `sitemap: expected ${EXPECTED_PRODUCT_COUNT} official products, parsed ${products.length}`,
+  );
   process.exit(1);
 }
 for (const p of products) {

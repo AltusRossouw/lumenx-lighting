@@ -20,11 +20,11 @@ const CategoryCard: React.FC<{ category: (typeof PRODUCT_CATEGORIES)[number]; in
           src={category.imageUrl}
           alt={category.title}
           loading="lazy"
-          className={`absolute inset-0 w-full h-full object-cover ${category.id === 'track' ? 'scale-[1.25] object-bottom' : ''}`}
+          className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute top-4 left-4">
           <span className="px-3 py-1 text-[10px] font-mono tracking-wider uppercase rounded-full bg-primary/10 border border-primary/20 text-primary">
-            Category
+            {category.title}
           </span>
         </div>
       </Link>
