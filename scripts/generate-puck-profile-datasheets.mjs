@@ -29,7 +29,7 @@ const TEMPLATE = 'public/catalogues/lumenx/lumenx-datasheet-linear-50x83mm.key';
 
 // Drawing position on the A4 page, measured from the shipped 50x83mm sheet
 // (top-left origin, points).
-const RECT = { x: 18, yTop: 694, w: 341, h: 91 };
+const RECT = { x: 18, yTop: 668, w: 282, h: 118 };
 
 const SIZES = ['40x43', '70x36'];
 
