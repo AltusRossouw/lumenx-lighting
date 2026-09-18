@@ -193,7 +193,19 @@ export const OFFICIAL_PRODUCTS: Product[] = [
     hero: '/product-images/lean-153.png',
     images: [{ src: '/product-images/lean-153.png', fit: 'contain', alt: 'COB Adjustable Downlight' }],
   }),
-  fromScraped('downlights', 'cob-anti-glare-downlight', 'COB Anti-glare Downlight', 'lumenx-datasheet-cob-dr.pdf', { publicSlug: 'cob-dr', hero: '/product-images/cob-dr.png' }),
+  fromScraped('downlights', 'cob-anti-glare-downlight', 'COB Anti-glare Downlight', 'lumenx-datasheet-cob-dr.pdf', {
+    publicSlug: 'cob-dr',
+    hero: '/product-images/cob-dr.png',
+    // Gallery is the three size variants only. The hero IS the S-size shot, so the
+    // scraped copy of it is redundant; the S/M/L dimension drawings are dropped too
+    // because they live on the datasheet this product already links to.
+    exclude: [
+      '/scraped/downlights/cob-anti-glare-downlight/01-cob-dr-s.png',
+      '/scraped/downlights/cob-anti-glare-downlight/02-cob-dr-s-dimensions-1.png',
+      '/scraped/downlights/cob-anti-glare-downlight/04-cob-dr-m-dimensions.png',
+      '/scraped/downlights/cob-anti-glare-downlight/06-cob-dr-l-dimensions.png',
+    ],
+  }),
   fromScraped('downlights', 'sauron', 'Sauron', 'lumenx-datasheet-sauron.pdf', { hero: '/product-images/sauron.png', exclude: ['/scraped/downlights/sauron/01-pioled-lighting-hd016-25-20-18-16w-sauron-recessed-round-led-downlight.jpg'] }),
   fromScraped('track', 'standard', 'Standard', 'lumenx-datasheet-standard.pdf', { hero: '/scraped/track/standard/01-standard.jpg' }),
   fromScraped('track', 'bazuka', 'Bazuka', 'lumenx-datasheet-bazuka.pdf', { hero: '/product-images/bazuka.png', exclude: ['/scraped/track/bazuka/member-06-pioled-lighting-tkb099d-25w-3-wire-dim-driver.png'] }),
