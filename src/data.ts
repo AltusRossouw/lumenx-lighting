@@ -78,7 +78,7 @@ export const COMPLETE_SOLUTION: CompleteSolutionCapability[] = [
 
 // Product catalogue is defined in ./products.ts and re-exported here
 // for backward-compatible imports across the app.
-export { PRODUCT_CATEGORIES, PRODUCTS_BY_CATEGORY } from './products';
+export { PRODUCT_CATEGORIES, PRODUCTS_BY_CATEGORY, LIGHTING_CATEGORIES, SENSOR_CATEGORIES } from './products';
 
 export const INDUSTRIES: Industry[] = [
   { name: 'Commercial developments', iconImg: '/icons/sector-commercial.svg' },

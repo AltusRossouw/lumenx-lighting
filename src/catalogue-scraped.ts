@@ -62,10 +62,18 @@ export const SCRAPED_CATEGORIES: ProductCategory[] = [
   {
     id: "outdoor-architectural",
     title: "Architectural — Outdoor",
-    description: "Outdoor spots, bollards, post-tops, wall lights and in-ground luminaires for considered exterior architecture and landscape.",
+    description: "Outdoor spots, post-tops, wall lights and in-ground luminaires for considered exterior architecture and landscape.",
     applications: "Facades, gardens, pathways, plazas and streetscapes",
     imageUrl: "/product-images/categories/outdoor-architectural.jpg",
     linkLabel: "Explore Architectural — Outdoor",
+  },
+  {
+    id: "bollards",
+    title: "Bollards",
+    description: "Ground-mounted LED bollards for pathway, garden and precinct lighting — round and square profiles in a range of heights and finishes.",
+    applications: "Pathways, gardens, precincts, parks and hospitality exteriors",
+    imageUrl: "/product-images/categories/bollards.jpg",
+    linkLabel: "Explore Bollards",
   },
   {
     id: "panels",
@@ -3061,7 +3069,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
   {
     slug: "palm-coco",
     name: "Palm & Coco",
-    category: "outdoor-architectural",
+    category: "bollards",
     summary: "Stylish outdoor LED bollard for landscape lighting — the Palm & Coco delivers up to 1800 lm with selectable colour temperature, a UV-resistant clear diffuser and a robust ground-mount aluminium body.",
     description: "Stylish outdoor LED bollard for landscape lighting — the Palm & Coco delivers up to 1800 lm with selectable colour temperature, a UV-resistant clear diffuser and a robust ground-mount aluminium body.",
     specs: [
@@ -3113,7 +3121,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
   {
     slug: "fuji-square",
     name: "Fuji Square",
-    category: "outdoor-architectural",
+    category: "bollards",
     summary: "The Fuji Square is a LumenX outdoor architectural luminaire.",
     description: "The Fuji Square is a LumenX outdoor architectural luminaire. It is designed for Exterior, Commercial, Municipal environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
     specs: [
@@ -3157,7 +3165,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
   {
     slug: "fuji-round",
     name: "Fuji Round",
-    category: "outdoor-architectural",
+    category: "bollards",
     summary: "The Fuji Round is a LumenX outdoor architectural luminaire.",
     description: "The Fuji Round is a LumenX outdoor architectural luminaire. It is designed for Exterior, Commercial, Municipal environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
     specs: [
@@ -3201,7 +3209,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
   {
     slug: "everest-square",
     name: "Everest Square",
-    category: "outdoor-architectural",
+    category: "bollards",
     summary: "The Everest Square is a LumenX outdoor architectural luminaire.",
     description: "The Everest Square is a LumenX outdoor architectural luminaire. It is designed for Exterior, Commercial, Municipal environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
     specs: [
@@ -3245,7 +3253,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
   {
     slug: "everest-round",
     name: "Everest Round",
-    category: "outdoor-architectural",
+    category: "bollards",
     summary: "The Everest Round is a LumenX outdoor architectural luminaire.",
     description: "The Everest Round is a LumenX outdoor architectural luminaire. It is designed for Exterior, Commercial, Municipal environments. Available in 12W. Available in 4CCT (2200K/3000K/4000K/6000K).",
     specs: [

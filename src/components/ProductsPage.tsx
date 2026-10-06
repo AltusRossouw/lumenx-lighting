@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { PRODUCT_CATEGORIES } from '../data';
+import { LIGHTING_CATEGORIES, PRODUCT_CATEGORIES, SENSOR_CATEGORIES } from '../data';
 import { useSiteContent } from '../content';
 import { ArrowRight, ShieldCheck, Zap, Clock } from 'lucide-react';
 import { PageHeroBackground } from './animations';
@@ -80,11 +80,36 @@ export const ProductsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Product Categories Grid */}
+      {/* Sensors — not luminaires, so they lead the range, above Lighting Solutions */}
+      {SENSOR_CATEGORIES.length > 0 && (
+        <section className="pb-14 sm:pb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center gap-4 mb-8">
+              <h2 className="font-display text-xl sm:text-2xl font-bold text-white tracking-[-0.02em]">
+                Sensors
+              </h2>
+              <span className="h-px flex-1 bg-gradient-to-r from-primary/40 to-transparent" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {SENSOR_CATEGORIES.map((category, i) => (
+                <CategoryCard key={category.id} category={category} index={i} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Lighting Solutions — the luminaire range */}
       <section className="pb-20 sm:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-4 mb-8">
+            <h2 className="font-display text-xl sm:text-2xl font-bold text-white tracking-[-0.02em]">
+              Lighting Solutions
+            </h2>
+            <span className="h-px flex-1 bg-gradient-to-r from-primary/40 to-transparent" />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PRODUCT_CATEGORIES.map((category, i) => (
+            {LIGHTING_CATEGORIES.map((category, i) => (
               <CategoryCard key={category.id} category={category} index={i} />
             ))}
           </div>

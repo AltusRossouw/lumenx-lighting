@@ -12,10 +12,23 @@ import { OFFICIAL_PRODUCTS } from './official-products';
  */
 
 /* ── Categories ── */
-const OFFICIAL_CATEGORY_IDS = new Set(OFFICIAL_PRODUCTS.map((product) => product.category));
+/**
+ * Every catalogue category is published, not only the ones that already carry
+ * products. The range is being built out category by category, and a category
+ * with no products yet renders the "Range details coming soon" state on
+ * ProductDetailPage rather than 404ing.
+ */
+export const PRODUCT_CATEGORIES: ProductCategory[] = SCRAPED_CATEGORIES;
 
-export const PRODUCT_CATEGORIES: ProductCategory[] = SCRAPED_CATEGORIES.filter((category) =>
-  OFFICIAL_CATEGORY_IDS.has(category.id),
+/** Sensors are not luminaires, so they sit above the "Lighting Solutions" heading. */
+const NON_LIGHTING_CATEGORY_IDS = new Set(['sensors']);
+
+export const SENSOR_CATEGORIES: ProductCategory[] = PRODUCT_CATEGORIES.filter((category) =>
+  NON_LIGHTING_CATEGORY_IDS.has(category.id),
+);
+
+export const LIGHTING_CATEGORIES: ProductCategory[] = PRODUCT_CATEGORIES.filter(
+  (category) => !NON_LIGHTING_CATEGORY_IDS.has(category.id),
 );
 
 /* ── Products ── */

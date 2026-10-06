@@ -28,3 +28,18 @@ data-scrape/product-lists/
 
 # …but keep the reproducible scraper scripts themselves.
 !data-scrape/tools/scrape-collections.mjs
+# CocoIndex Code (ccc)
+/.cocoindex_code/
+
+# Supplier material supplied by the client — 400MB+ of catalogues, IES dumps and
+# a pricing workbook. Must never enter version control (this repo is public).
+docs/fromKaylen/
+
+# DSH agent state
+.dsh/
+
+# Generated datasheet replacement maps (rebuild with
+# scripts/build-datasheet-replacements.py) and Python bytecode.
+scripts/examples/generated/
+scripts/__pycache__/
+__pycache__/
