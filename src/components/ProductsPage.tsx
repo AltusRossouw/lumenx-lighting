@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { LIGHTING_CATEGORIES, PRODUCT_CATEGORIES, SENSOR_CATEGORIES } from '../data';
 import { useSiteContent } from '../content';
 import { ArrowRight, ShieldCheck, Zap, Clock } from 'lucide-react';
 import { PageHeroBackground } from './animations';
+
+/* ── Ranges shown by the selector at the top of the page ── */
+type RangeId = 'lighting' | 'sensors';
+
+const RANGES: { id: RangeId; label: string; categories: typeof PRODUCT_CATEGORIES }[] = [
+  { id: 'lighting', label: 'Lighting Solutions', categories: LIGHTING_CATEGORIES },
+  { id: 'sensors', label: 'Sensors', categories: SENSOR_CATEGORIES },
+];
 
 /* ── Product category card ── */
 const CategoryCard: React.FC<{ category: (typeof PRODUCT_CATEGORIES)[number]; index: number }> = ({ category, index }) => {
@@ -50,6 +58,11 @@ const CategoryCard: React.FC<{ category: (typeof PRODUCT_CATEGORIES)[number]; in
 
 export const ProductsPage: React.FC = () => {
   const { products } = useSiteContent();
+  const [activeRange, setActiveRange] = useState<RangeId>('lighting');
+  const activeRangeData = useMemo(
+    () => RANGES.find((range) => range.id === activeRange) ?? RANGES[0],
+    [activeRange],
+  );
   return (
     <div className="min-h-screen">
       {/* Products Hero */}
@@ -75,36 +88,44 @@ export const ProductsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Sensors — not luminaires, so they lead the range, above Lighting Solutions */}
-      {SENSOR_CATEGORIES.length > 0 && (
-        <section className="pb-14 sm:pb-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-4 mb-8">
-              <h2 className="font-display text-xl sm:text-2xl font-bold text-white tracking-[-0.02em]">
-                Sensors
-              </h2>
-              <span className="h-px flex-1 bg-gradient-to-r from-primary/40 to-transparent" />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {SENSOR_CATEGORIES.map((category, i) => (
-                <CategoryCard key={category.id} category={category} index={i} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Lighting Solutions — the luminaire range */}
+      {/* Range selector — Sensors are not luminaires, so they are their own range */}
       <section className="pb-20 sm:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-8">
-            <h2 className="font-display text-xl sm:text-2xl font-bold text-white tracking-[-0.02em]">
-              Lighting Solutions
-            </h2>
-            <span className="h-px flex-1 bg-gradient-to-r from-primary/40 to-transparent" />
+          <div
+            role="tablist"
+            aria-label="Product range"
+            className="flex flex-wrap items-center justify-center gap-3 mb-10"
+          >
+            {RANGES.map((range) => {
+              const isActive = range.id === activeRange;
+              return (
+                <button
+                  key={range.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => setActiveRange(range.id)}
+                  className={`inline-flex items-center gap-2 px-5 py-2.5 text-xs font-mono tracking-wider uppercase rounded-full border transition-colors duration-200 cursor-pointer ${
+                    isActive
+                      ? 'bg-primary text-[#04070D] border-primary'
+                      : 'bg-primary/5 text-slate-300 border-[#1E293B]/80 hover:border-primary/40 hover:text-primary'
+                  }`}
+                >
+                  {range.label}
+                  <span
+                    className={`text-[10px] px-1.5 py-0.5 rounded-full ${
+                      isActive ? 'bg-[#04070D]/15 text-[#04070D]' : 'bg-white/5 text-slate-500'
+                    }`}
+                  >
+                    {range.categories.length}
+                  </span>
+                </button>
+              );
+            })}
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {LIGHTING_CATEGORIES.map((category, i) => (
+            {activeRangeData.categories.map((category, i) => (
               <CategoryCard key={category.id} category={category} index={i} />
             ))}
           </div>
