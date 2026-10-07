@@ -1,14 +1,17 @@
 import { Product, ProductCategory, ProductImage } from './types';
 import { SCRAPED_CATEGORIES } from './catalogue-scraped';
-import { OFFICIAL_PRODUCTS } from './official-products';
+import { ALL_PRODUCTS } from './catalogue-full';
 
 /**
- * LumenX product catalogue — limited to products with an official LumenX sheet.
+ * LumenX product catalogue.
  *
- * Rich scraped records are reused where they match an official product, while
- * the runtime allowlist and official PDF links live in `official-products.ts`.
+ * The whole scraped range is published. Curated entries that carry a finished
+ * LumenX datasheet live in `official-products.ts`; the remainder come from
+ * `catalogue-full.ts` and have no datasheet yet — their product pages simply
+ * omit the download button.
+ *
  * Every product carries an ordered `images` array (hero first) used by the
- * product-page carousel.
+ * product-page carousel, headed by its tile from `make-product-tiles.py`.
  */
 
 /* ── Categories ── */
@@ -32,7 +35,7 @@ export const LIGHTING_CATEGORIES: ProductCategory[] = PRODUCT_CATEGORIES.filter(
 );
 
 /* ── Products ── */
-export const PRODUCTS: Product[] = OFFICIAL_PRODUCTS;
+export const PRODUCTS: Product[] = ALL_PRODUCTS;
 
 /** Products grouped by category id (derived). */
 export const PRODUCTS_BY_CATEGORY: Record<string, Product[]> = PRODUCTS.reduce(

@@ -51,6 +51,18 @@ const createOfficialProduct = ({
  * transparent cutout — so comparing src alone is not enough to spot the repeat. List
  * those duplicates here; otherwise the product page shows one photo twice.
  */
+/**
+ * Scraped products already represented here, keyed `<category>/<slug>`.
+ *
+ * The rest of the catalogue is published straight from the scrape, so it needs
+ * to know which records a curated entry has claimed — otherwise those products
+ * appear twice. `fromScraped` records its key as the array below is evaluated,
+ * which completes before this module finishes loading.
+ */
+const consumedScrapedKeys = new Set<string>();
+
+export const CONSUMED_SCRAPED_PRODUCTS: ReadonlySet<string> = consumedScrapedKeys;
+
 const fromScraped = (
   category: string,
   slug: string,
@@ -60,6 +72,7 @@ const fromScraped = (
 ): Product => {
   const product = SCRAPED_PRODUCTS.find((item) => item.category === category && item.slug === slug);
   if (!product) throw new Error(`Missing scraped product: ${category}/${slug}`);
+  consumedScrapedKeys.add(`${category}/${slug}`);
   const hero = options.hero ?? product.imageUrl;
   const skip = new Set([hero, ...(options.exclude ?? [])]);
   const images = options.images ?? [

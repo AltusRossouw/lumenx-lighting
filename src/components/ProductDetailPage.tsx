@@ -203,15 +203,15 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
                   {/* Image */}
                   <Link
                     to={`/products/${category.id}/${product.slug}`}
-                    className="relative h-56 overflow-hidden block bg-white"
+                    className="relative h-56 overflow-hidden block bg-[#08202C]"
                     aria-label={product.name}
                   >
-                    {/* hero image — always show the whole product (no crop) */}
+                    {/* tile — the product shot already carries the shared gradient */}
                     <img
                       src={getProductImages(product)[0].src}
                       alt={product.name}
                       loading="lazy"
-                      className="absolute inset-0 w-full h-full object-contain p-4 transition-transform duration-700"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
                     />
                   </Link>
 
