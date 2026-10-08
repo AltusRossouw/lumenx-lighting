@@ -1,0 +1,85 @@
+{
+  "fileStem": "48W 3 CCT Triproof",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "48W 3 CCT TRIPROOF",
+  "category": "VAPOUR PROOF",
+  "variant": "5ft switchable-CCT triproof linear with 3000K, 4000K and 5700K settings.",
+  "stats": [
+    {
+      "label": "Wattage",
+      "value": "48",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "7,200",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP65",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "../public/product-images/cutouts/vapourproof/48w-3-cct-triproof.png",
+    "alt": "48W 3 CCT Triproof"
+  },
+  "overview": [
+    "A 5ft IP65 triproof linear with selectable colour temperature for parking structures, canopies, industrial corridors and loading bays."
+  ],
+  "features": [
+    "Switchable CCT",
+    "IP65 protection",
+    "Polycarbonate housing"
+  ],
+  "applications": [
+    "Parking structures",
+    "Canopies",
+    "Industrial corridors",
+    "Loading bays"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP65"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Technical Data",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "7,200 lm"
+          },
+          {
+            "label": "CCT",
+            "value": "3000K / 4000K / 5700K"
+          },
+          {
+            "label": "Length",
+            "value": "5ft / 1500mm"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "48W"
+          }
+        ]
+      }
+    ]
+  }
+}

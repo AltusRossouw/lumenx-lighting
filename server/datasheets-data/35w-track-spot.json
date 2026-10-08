@@ -1,0 +1,89 @@
+{
+  "fileStem": "35W Track Spot",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "35W TRACK SPOT",
+  "category": "TRACK LIGHTING",
+  "variant": "High-output LED track spot with adjustable beam for accent and display lighting.",
+  "stats": [
+    {
+      "label": "Wattage",
+      "value": "35",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "3,500",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "../public/product-images/cutouts/track/35w-track-spot.png",
+    "alt": "35W Track Spot"
+  },
+  "overview": [
+    "A precision 35W LED track spot with adjustable beam options for retail, galleries, showrooms and museum applications."
+  ],
+  "features": [
+    "Adjustable beam",
+    "High CRI output",
+    "3-circuit track compatible"
+  ],
+  "applications": [
+    "Art galleries",
+    "Auto showrooms",
+    "Fashion retail",
+    "Museum exhibits"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Technical Data",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "3,500 lm"
+          },
+          {
+            "label": "CRI",
+            "value": "90+"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "15° / 24° / 38°"
+          },
+          {
+            "label": "Track",
+            "value": "3-circuit compatible"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "35W"
+          }
+        ]
+      }
+    ]
+  }
+}

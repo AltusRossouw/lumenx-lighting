@@ -1,7 +1,24 @@
 import type { Product, ProductImage } from './types';
 import { SCRAPED_PRODUCTS } from './catalogue-scraped';
 
-const officialSheet = (filename: string) => `/catalogues/lumenx/${filename}`;
+/**
+ * Where a datasheet comes from.
+ *
+ * Every product renders through the shared HTML/Chromium pipeline, which is the
+ * only route that works on the server — the Keynote build needs macOS and
+ * Keynote, so it cannot run in production. Payloads are named after the product
+ * slug, except for the two below, whose payloads carry the supplier's own stem.
+ *
+ * `sheet:` on a curated entry is now only the name of its Keynote PDF. Those
+ * PDFs are still in the repo; nothing links to them.
+ */
+const DATASHEET_PAYLOAD: Record<string, string> = {
+  'diffused-downlight': 'aegeon', // the Aegeon is the diffused downlight
+  lds5083: 'lds-5083',
+};
+
+const datasheetUrl = (slug: string) =>
+  `/api/download/datasheet/generated/${DATASHEET_PAYLOAD[slug] ?? slug}`;
 
 const createOfficialProduct = ({
   slug,
@@ -36,7 +53,7 @@ const createOfficialProduct = ({
   applications,
   imageUrl: image,
   images: [{ src: image, fit: 'contain', alt: name }],
-  pdfUrl: officialSheet(sheet),
+  pdfUrl: datasheetUrl(slug),
 });
 
 /**
@@ -83,7 +100,7 @@ const fromScraped = (
     ...product,
     slug: options.publicSlug ?? slug,
     name,
-    pdfUrl: officialSheet(sheet),
+    pdfUrl: datasheetUrl(options.publicSlug ?? slug),
     imageUrl: hero,
     images,
   };

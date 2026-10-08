@@ -1,0 +1,102 @@
+{
+  "fileStem": "600x1200 Recessed Panel",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "600X1200 RECESSED PANEL",
+  "category": "PANELS",
+  "variant": "Wide-format recessed LED panel for modern architectural ceiling layouts.",
+  "stats": [
+    {
+      "label": "Wattage",
+      "value": "50",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "6,500",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "../public/product-images/cutouts/panels/600x1200-recessed-panel.png",
+    "alt": "600x1200 Recessed Panel"
+  },
+  "overview": [
+    "A 600x1200mm back-lit recessed LED panel delivering uniform, low-glare illumination for elongated architectural ceiling layouts. UGR <19 and flicker-free."
+  ],
+  "features": [
+    "Uniform edge-to-edge illumination",
+    "Flicker-free driver",
+    "Architectural 600x1200 format"
+  ],
+  "applications": [
+    "Architectural offices",
+    "Boardrooms",
+    "Reception areas",
+    "Corridors"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Dimensions",
+            "value": "595 x 1195 x 30mm"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Technical Data",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "6,500 lm"
+          },
+          {
+            "label": "UGR",
+            "value": "<19"
+          },
+          {
+            "label": "CRI",
+            "value": ">80"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "120°"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "50W"
+          },
+          {
+            "label": "Driver",
+            "value": "Flicker-free"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "fileStem": "PC Bulkhead",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "PC BULKHEAD",
+  "category": "BULKHEADS",
+  "variant": "Cost-effective polycarbonate bulkhead with UV-stabilised housing for public and semi-public areas.",
+  "stats": [
+    {
+      "label": "Wattage",
+      "value": "12W – 24W",
+      "unit": ""
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP65",
+      "unit": ""
+    },
+    {
+      "label": "Housing",
+      "value": "UV-stabilised polycarbonate",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "../public/product-images/cutouts/bulkheads/pc-bulkhead.png",
+    "alt": "PC Bulkhead"
+  },
+  "overview": [
+    "A durable IP65 polycarbonate bulkhead with anti-tamper construction and UV-stabilised housing for reliable general and emergency applications."
+  ],
+  "features": [
+    "UV-stabilised housing",
+    "Anti-tamper screws",
+    "IP65 protection"
+  ],
+  "applications": [
+    "Public stairwells",
+    "Underground parking",
+    "Community halls",
+    "Storage rooms"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Housing",
+            "value": "UV-stabilised polycarbonate"
+          },
+          {
+            "label": "Mounting",
+            "value": "Wall / ceiling surface"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP65"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "12W – 24W"
+          }
+        ]
+      }
+    ]
+  }
+}

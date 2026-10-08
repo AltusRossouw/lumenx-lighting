@@ -1,0 +1,85 @@
+{
+  "fileStem": "9W Surface Downlight",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "9W SURFACE DOWNLIGHT",
+  "category": "DOWNLIGHTS",
+  "variant": "Compact surface-mounted LED downlight for retail, hospitality and residential applications.",
+  "stats": [
+    {
+      "label": "Wattage",
+      "value": "9",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "1,250",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "../public/product-images/cutouts/downlights/9w-surface-downlight.png",
+    "alt": "9W Surface Downlight"
+  },
+  "overview": [
+    "A compact surface-mounted LED downlight with high CRI and a clean form for retail, hospitality, residential and circulation spaces."
+  ],
+  "features": [
+    "High CRI output",
+    "Surface-mounted format",
+    "3000K / 4000K / 6000K"
+  ],
+  "applications": [
+    "Retail stores",
+    "Hospitality",
+    "Residential",
+    "Corridors"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Technical Data",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "1,250 lm"
+          },
+          {
+            "label": "CRI",
+            "value": "90+"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "60°"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "9W"
+          }
+        ]
+      }
+    ]
+  }
+}

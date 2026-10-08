@@ -1,0 +1,85 @@
+{
+  "fileStem": "High Voltage Strip",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "HIGH VOLTAGE STRIP",
+  "category": "LED STRIPS",
+  "variant": "Flexible high-voltage LED strip operating directly from 220–240V mains without a driver.",
+  "stats": [
+    {
+      "label": "Wattage",
+      "value": "9W/m – 14W/m",
+      "unit": ""
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP65",
+      "unit": ""
+    },
+    {
+      "label": "Voltage",
+      "value": "220–240V AC direct",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "../public/product-images/cutouts/strips/high-voltage-strip.png",
+    "alt": "High Voltage Strip"
+  },
+  "overview": [
+    "A cuttable high-voltage LED strip for architectural accent lighting, signage and landscape edges, with IP65 outdoor protection."
+  ],
+  "features": [
+    "No driver required",
+    "Cuttable every metre",
+    "Outdoor-rated construction"
+  ],
+  "applications": [
+    "Facade accent",
+    "Cove lighting",
+    "Landscape edges",
+    "Signage illumination"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP65"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Technical Data",
+        "rows": [
+          {
+            "label": "Cutting",
+            "value": "Every 1 metre"
+          },
+          {
+            "label": "CRI",
+            "value": "80+"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "9W/m – 14W/m"
+          },
+          {
+            "label": "Voltage",
+            "value": "220–240V AC direct"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "fileStem": "60W Street Light",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "60W STREET LIGHT",
+  "category": "FLOODLIGHTS",
+  "variant": "Municipal-grade LED street light with precision roadway optics and zero upward light ratio.",
+  "stats": [
+    {
+      "label": "Wattage",
+      "value": "60",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "10,200",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP66",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "../public/product-images/cutouts/floods/60w-street-light.png",
+    "alt": "60W Street Light"
+  },
+  "overview": [
+    "A high-output roadway luminaire with tool-free top opening, precision optics and dark-sky-conscious performance for municipal and access-road projects."
+  ],
+  "features": [
+    "Precision roadway optics",
+    "Tool-free top opening",
+    "Zero upward light ratio"
+  ],
+  "applications": [
+    "Residential streets",
+    "Urban roads",
+    "Industrial access",
+    "Public parks"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP66"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Technical Data",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "10,200 lm"
+          },
+          {
+            "label": "Optics",
+            "value": "Type II / III roadway"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "60W"
+          },
+          {
+            "label": "Surge Protection",
+            "value": "10kV"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "fileStem": "V200 UFO Highbay",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "V200 UFO HIGHBAY",
+  "category": "HIGHBAYS",
+  "variant": "High-performance 160W UFO highbay delivering up to 32,000 lumens for high-ceiling industrial spaces.",
+  "stats": [
+    {
+      "label": "Wattage",
+      "value": "160",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "32,000",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP65",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "../public/product-images/cutouts/highbays/v200-highbay.png",
+    "alt": "V200 UFO Highbay"
+  },
+  "overview": [
+    "A high-output UFO highbay with passive cooling and multiple beam options for manufacturing, logistics and other high-ceiling environments."
+  ],
+  "features": [
+    "32,000 lm output",
+    "Passive cooling",
+    "Multiple beam options"
+  ],
+  "applications": [
+    "Manufacturing plants",
+    "Logistics warehouses",
+    "Assembly halls",
+    "Exhibition centres"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Mounting",
+            "value": "Ring hook / bracket"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP65"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Technical Data",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "32,000 lm"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "60° / 90° / 120°"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "160W"
+          }
+        ]
+      }
+    ]
+  }
+}

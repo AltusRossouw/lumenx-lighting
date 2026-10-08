@@ -1,0 +1,102 @@
+{
+  "fileStem": "Recessed Panel",
+  "meta": {
+    "rev": "1.0"
+  },
+  "name": "RECESSED PANEL",
+  "category": "PANELS",
+  "variant": "Standard 600x600 recessed LED panel for clean, uniform illumination across commercial interiors.",
+  "stats": [
+    {
+      "label": "Wattage",
+      "value": "30",
+      "unit": "W"
+    },
+    {
+      "label": "Lumens",
+      "value": "3,900",
+      "unit": "lm"
+    },
+    {
+      "label": "IP Rating",
+      "value": "IP20",
+      "unit": ""
+    }
+  ],
+  "heroImage": {
+    "src": "../public/product-images/cutouts/panels/recessed-panel.png",
+    "alt": "Recessed Panel"
+  },
+  "overview": [
+    "A 600x600mm back-lit recessed LED panel for T-bar ceiling grids and general commercial illumination, with low-glare UGR <19 optics and a flicker-free driver."
+  ],
+  "features": [
+    "Low-glare output",
+    "Flicker-free driver",
+    "Edge-to-edge illumination"
+  ],
+  "applications": [
+    "Corporate offices",
+    "Call centres",
+    "Schools",
+    "Retail stores"
+  ],
+  "columns": {
+    "left": [
+      {
+        "title": "Physical",
+        "rows": [
+          {
+            "label": "Dimensions",
+            "value": "595 x 595 x 30mm"
+          }
+        ]
+      },
+      {
+        "title": "Compliance",
+        "rows": [
+          {
+            "label": "IP Rating",
+            "value": "IP20"
+          }
+        ]
+      }
+    ],
+    "right": [
+      {
+        "title": "Technical Data",
+        "rows": [
+          {
+            "label": "Lumens",
+            "value": "3,900 lm"
+          },
+          {
+            "label": "UGR",
+            "value": "<19"
+          },
+          {
+            "label": "CRI",
+            "value": ">80"
+          },
+          {
+            "label": "Beam Angle",
+            "value": "120°"
+          }
+        ]
+      },
+      {
+        "title": "Electrical",
+        "rows": [
+          {
+            "label": "Wattage",
+            "value": "30W"
+          },
+          {
+            "label": "Driver",
+            "value": "Flicker-free"
+          }
+        ]
+      }
+    ]
+  }
+}
