@@ -37,6 +37,18 @@ tiles = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(tiles)
 
 
+def solidify(alpha, lo=0.30, hi=0.70):
+    """Push a ghostly mask solid.
+
+    rembg returns partial alpha for a very pale product — Leda's white track
+    linear came back 63% opaque, which composites as a washed-out smear rather
+    than a fitting. Stretching the mid-tones fixes it and leaves a healthy
+    cut-out (94%+) essentially untouched.
+    """
+    f = alpha.astype(np.float32) / 255.0
+    return (np.clip((f - lo) / (hi - lo), 0, 1) * 255).astype(np.uint8)
+
+
 def chosen_source(cands):
     """The same source the tile renderer would pick."""
     scored = []
@@ -52,6 +64,24 @@ def chosen_source(cands):
     return max(strict or scored)[2]
 
 
+def has_own_alpha(path, threshold=0.05):
+    """Did the supplier already cut this out?
+
+    Their cut-out beats the model's: rembg segments whatever it judges to be the
+    subject, and on High Voltage Strip it kept the coil but dropped the tail and
+    connector. If the file already carries real transparency there is nothing to
+    segment, so it is used as-is.
+    """
+    try:
+        im = Image.open(path)
+    except Exception:                                     # noqa: BLE001
+        return False
+    if im.mode not in ('RGBA', 'LA', 'P'):
+        return False
+    a = np.array(im.convert('RGBA'))[:, :, 3]
+    return bool((a < 10).mean() > threshold)
+
+
 def main():
     from rembg import new_session, remove
 
@@ -64,7 +94,11 @@ def main():
     if args:
         items = [i for i in items if i[1] in args]
 
-    session = new_session('u2net')
+    # isnet-general-use, not u2net. Measured across the catalogue it is equal or
+    # better on every product, and decisively better on pale fittings on pale
+    # backdrops, where u2net returns a near-empty mask: profiles went 2.6% -> 95.6%
+    # solid, lf20 28% -> 57%, Leda 63% -> 70%.
+    session = new_session('isnet-general-use')
     done = skipped = failed = 0
     started = time.time()
 
@@ -80,15 +114,19 @@ def main():
             failed += 1
             continue
         try:
-            im = Image.open(src).convert('RGB')
-            cut = remove(im, session=session, alpha_matting=False)
+            if has_own_alpha(src):
+                cut = Image.open(src).convert('RGBA')
+            else:
+                cut = remove(Image.open(src).convert('RGB'), session=session, alpha_matting=False)
         except Exception as exc:                          # noqa: BLE001
             print(f'  FAIL  {category}/{slug:28} {exc}')
             failed += 1
             continue
 
         # trim to the subject so the tile renderer only has to scale
-        a = np.array(cut)[:, :, 3]
+        a = solidify(np.array(cut)[:, :, 3])
+        cut = Image.fromarray(
+            np.dstack([np.array(cut)[:, :, :3], a]).astype(np.uint8), 'RGBA')
         ys, xs = np.where(a > 10)
         if len(xs):
             cut = cut.crop((xs.min(), ys.min(), xs.max() + 1, ys.max() + 1))
