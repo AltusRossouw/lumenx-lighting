@@ -24,8 +24,10 @@ import os
 import sys
 import time
 
+from collections import deque
+
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageFilter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'public', 'product-images', 'cutouts')
@@ -47,6 +49,73 @@ def solidify(alpha, lo=0.30, hi=0.70):
     """
     f = alpha.astype(np.float32) / 255.0
     return (np.clip((f - lo) / (hi - lo), 0, 1) * 255).astype(np.uint8)
+
+
+def _largest_component(mask):
+    """Keep only the biggest connected blob, so JPEG speckle is dropped."""
+    img = Image.fromarray(mask, 'L')
+    px = img.load()
+    w, h = img.size
+    seen = np.zeros((h, w), bool)
+    best = []
+    for y0 in range(0, h, 3):
+        for x0 in range(0, w, 3):
+            if px[x0, y0] <= 128 or seen[y0, x0]:
+                continue
+            q = deque([(x0, y0)])
+            seen[y0, x0] = True
+            comp = []
+            while q:
+                x, y = q.popleft()
+                comp.append((x, y))
+                for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                    nx, ny = x + dx, y + dy
+                    if 0 <= nx < w and 0 <= ny < h and not seen[ny, nx] and px[nx, ny] > 128:
+                        seen[ny, nx] = True
+                        q.append((nx, ny))
+            if len(comp) > len(best):
+                best = comp
+    out = np.zeros((h, w), np.uint8)
+    for x, y in best:
+        out[y, x] = 255
+    return out
+
+
+def extent(cut):
+    """The cut-out's long edge, in pixels."""
+    a = np.array(cut)[:, :, 3]
+    ys, xs = np.where(a > 10)
+    if not len(xs):
+        return 0
+    return max(xs.max() - xs.min() + 1, ys.max() - ys.min() + 1)
+
+
+def threshold_cutout(im):
+    """Fallback for a pale product on a pale backdrop.
+
+    The models key on contrast, and a white extrusion on a white sweep gives
+    them almost nothing to find. LF20 is the case that exposed this: isnet keeps
+    about 57% of the frame — a corner of the profile, with two screw holes — and
+    returns it as a perfectly confident PNG. Every other model tested did the
+    same or worse.
+
+    The backdrop there is a single flat value, so the product can instead be
+    taken as everything a few levels darker, cleaned of JPEG speckle and reduced
+    to its largest blob. Returns None when the backdrop is not pale enough for
+    that to be safe.
+    """
+    rgb = im.convert('RGB')
+    g = np.array(rgb.convert('L')).astype(np.int16)
+    band = np.concatenate([g[:4].ravel(), g[-4:].ravel(), g[:, :4].ravel(), g[:, -4:].ravel()])
+    bg = int(np.bincount(band).argmax())
+    if bg < 235:
+        return None
+    mask = (g < bg - 7).astype(np.uint8) * 255
+    mask = np.array(Image.fromarray(mask, 'L').filter(ImageFilter.MedianFilter(5)))
+    mask = _largest_component(mask)
+    if mask.sum() == 0:
+        return None
+    return Image.fromarray(np.dstack([np.array(rgb), mask]).astype(np.uint8), 'RGBA')
 
 
 def chosen_source(cands):
@@ -114,10 +183,21 @@ def main():
             failed += 1
             continue
         try:
+            source_im = Image.open(src)
             if has_own_alpha(src):
-                cut = Image.open(src).convert('RGBA')
+                cut = source_im.convert('RGBA')
             else:
-                cut = remove(Image.open(src).convert('RGB'), session=session, alpha_matting=False)
+                rgb = source_im.convert('RGB')
+                cut = remove(rgb, session=session, alpha_matting=False)
+                # On a pale backdrop, trust whichever keeps more of the product.
+                # This only ever adds coverage, so it cannot make a good cut-out
+                # worse; it exists because the models confidently return a corner
+                # of a white fitting as if it were the whole thing.
+                alt = threshold_cutout(rgb)
+                if alt is not None and extent(alt) > extent(cut):
+                    print(f'  note  {category}/{slug:28} model kept {extent(cut)}px '
+                          f'of {max(rgb.size)}, threshold kept {extent(alt)}px')
+                    cut = alt
         except Exception as exc:                          # noqa: BLE001
             print(f'  FAIL  {category}/{slug:28} {exc}')
             failed += 1

@@ -180,7 +180,12 @@ function buildAppleScript({ template, output, keyOutput, hero, dimension, replac
         repeat with imageRef in images of slideObj
           set candidateImage to contents of imageRef
           try
-            if (item 2 of (position of candidateImage)) > 600 then set opacity of candidateImage to 0
+            -- Split into two statements. The nested "item 2 of (position of x)"
+            -- form evaluates to nothing here, so the drawing was never hidden and
+            -- every sheet generated without --dimension kept the template's drawing.
+            set imagePosition to position of candidateImage
+            set hideY to (item 2 of imagePosition) as integer
+            if hideY > 600 then set opacity of candidateImage to 0
           end try
         end repeat
       end try`;
@@ -270,7 +275,7 @@ function buildAppleScript({ template, output, keyOutput, hero, dimension, replac
         end try
         repeat with rowRef in rowReplacements
           set rowPair to contents of rowRef
-          if currentText is item 1 of rowPair then
+          if currentText is item 1 of rowPair or currentText is (item 1 of rowPair & " ") or currentText is (" " & item 1 of rowPair) then
             set labelPosition to position of itemObj
             repeat with valueIndex from (count of text items of slideObj) to 1 by -1
               set valueItem to text item valueIndex of slideObj
@@ -278,14 +283,19 @@ function buildAppleScript({ template, output, keyOutput, hero, dimension, replac
                 set valuePosition to position of valueItem
                 set rowDy to (item 2 of valuePosition) - (item 2 of labelPosition)
                 if rowDy < 0 then set rowDy to -rowDy
-                if (item 1 of valuePosition > (item 1 of labelPosition)) and rowDy < 3 then set object text of valueItem to item 2 of rowPair
+                set rowDx to (item 1 of valuePosition) - (item 1 of labelPosition)
+                -- Bound the search to the label's own value column. Without this a
+                -- left-column row label reaches 279pt across the page and overwrites
+                -- the right column's ELECTRICAL heading whenever the two share a Y
+                -- (Dimensions (mm) y=463 vs ELECTRICAL y=464 in the saxa template).
+                if rowDx > 0 and rowDx < 200 and rowDy < 3 then set object text of valueItem to item 2 of rowPair
               end try
             end repeat
           end if
         end repeat
         repeat with statRef in statReplacements
           set statPair to contents of statRef
-          if currentText is item 1 of statPair then
+          if currentText is item 1 of statPair or currentText is (item 1 of statPair & " ") or currentText is (" " & item 1 of statPair) then
             set statPosition to position of itemObj
             repeat with statIndex from (count of text items of slideObj) to 1 by -1
               set statValueItem to text item statIndex of slideObj
@@ -305,7 +315,10 @@ function buildAppleScript({ template, output, keyOutput, hero, dimension, replac
         end if
         repeat with pairRef in replacements
           set pair to contents of pairRef
-          if currentText is item 1 of pair or currentText is (" " & item 1 of pair) then
+          -- Templates pad text items with a leading OR trailing space ("LINEARS " in the
+            -- saxa watermark is 8 chars for 7 letters). Matching only the leading
+            -- variant silently skipped those items.
+            if currentText is item 1 of pair or currentText is (" " & item 1 of pair) or currentText is (item 1 of pair & " ") then
             set object text of itemObj to item 2 of pair
             set currentText to item 2 of pair
           end if

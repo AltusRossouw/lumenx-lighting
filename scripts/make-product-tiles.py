@@ -37,8 +37,13 @@ HEIGHT_FRAC = 0.58
 # records only ever captured a placeholder or a lifestyle frame. Where a better
 # file already exists in the repo, point at it here rather than re-scraping.
 SRC_OVERRIDE = {
-    # the scraped record holds Steinel's orange placeholder; this is the product
-    'sensors/smart-remote': 'public/product-images/steinel-smart-remote.png',
+    # NOTE: do not "fix" smart-remote by pointing it at steinel-smart-remote.png —
+    # despite the filename that file is a motion detector. The scraped image, an
+    # orange app screen, is the actual product.
+    # scraped only ever captured two lifestyle teasers for this one
+    'sensors/is-2360-r': 'public/product-images/steinel-is-2360-r.png',
+    # the scraped folder is a "related products" carousel of unrelated fittings
+    'profiles/profiles': 'public/product-images/profiles.jpg',
 }
 MAX_CANDIDATES = 10
 
