@@ -1,6 +1,7 @@
 import { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useParams, useLocation } from 'react-router-dom';
 import { useSiteContent, loadSiteContent } from './content';
+import { getCategory, getProduct } from './products';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { HomePage } from './components/HomePage';
@@ -75,7 +76,29 @@ function SeoManager() {
   ];
 
   useEffect(() => {
-    const entry = SEO_MAP.find((e) => e.match.test(pathname));
+    // Product and category pages carry the entity's own name rather than a
+    // generic label, so 118 product pages do not all share one <title>.
+    const product = pathname.match(/^\/products\/([^/]+)\/([^/]+)$/);
+    const categoryOnly = pathname.match(/^\/products\/([^/]+)$/);
+
+    let dynamic: { title: string; description?: string } | undefined;
+    if (product) {
+      const match = getProduct(product[1], product[2]);
+      if (match) {
+        const category = getCategory(match.category);
+        dynamic = {
+          title: `${match.name} — ${category?.title ?? 'Products'} | LumenX Lighting`,
+          description: match.summary,
+        };
+      }
+    } else if (categoryOnly) {
+      const match = getCategory(categoryOnly[1]);
+      if (match) {
+        dynamic = { title: `${match.title} — LumenX Lighting`, description: match.description };
+      }
+    }
+
+    const entry = dynamic ?? SEO_MAP.find((e) => e.match.test(pathname));
     if (!entry) return;
     document.title = entry.title;
     if (entry.description) {

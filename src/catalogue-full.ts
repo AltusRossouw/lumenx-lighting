@@ -1,4 +1,4 @@
-import { Product } from './types';
+import { Product, ProductSpec } from './types';
 import { SCRAPED_PRODUCTS } from './catalogue-scraped';
 import { CONSUMED_SCRAPED_PRODUCTS, OFFICIAL_PRODUCTS } from './official-products';
 
@@ -14,6 +14,45 @@ import { CONSUMED_SCRAPED_PRODUCTS, OFFICIAL_PRODUCTS } from './official-product
  * product page already guards for. Add one by moving the product into
  * `official-products.ts` with a `sheet:` argument.
  */
+
+/**
+ * Label synonyms, so a spec listed twice under two names is shown once.
+ *
+ * Supplier feeds repeat the same fact under near-synonyms — "Lumens" and
+ * "Lumen Output", "PU1, EAN" and "European Article Number (EAN)". Note this
+ * deliberately does NOT dedupe on value alone: "No" legitimately appears for
+ * half a dozen different sensor settings.
+ */
+const SPEC_SYNONYMS: Record<string, string> = {
+  'lumen output': 'lumens',
+  'luminous flux': 'lumens',
+  wattage: 'power',
+  'nominal wattage': 'power',
+  'rated wattage': 'power',
+  'colour temperature': 'cct',
+  'correlated colour temperature': 'cct',
+  'european article number (ean)': 'ean',
+  'pu1, ean': 'ean',
+  'product category': 'type',
+  version: 'colour',
+  'reach, radial': 'reach, tangential',
+  'lamp colour': 'colour',
+};
+
+const canonicalLabel = (label: string): string => {
+  const key = label.toLowerCase().replace(/\s+/g, ' ').trim();
+  return SPEC_SYNONYMS[key] ?? key;
+};
+
+const dedupeSpecs = (specs: ProductSpec[]): ProductSpec[] => {
+  const seen = new Set<string>();
+  return specs.filter((spec) => {
+    const key = `${canonicalLabel(spec.label)}|${spec.value.trim().toLowerCase()}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+};
 
 /** Tile rendered onto the shared gradient by `scripts/make-product-tiles.py`. */
 export const productTile = (category: string, slug: string): string =>
@@ -31,6 +70,7 @@ const withTile = (product: Product): Product => {
   const rest = (product.images ?? []).filter((image) => image.src !== product.imageUrl);
   return {
     ...product,
+    specs: dedupeSpecs(product.specs ?? []),
     imageUrl: tile,
     images: [{ src: tile, fit: 'contain' as const, alt: product.name }, ...rest],
   };
