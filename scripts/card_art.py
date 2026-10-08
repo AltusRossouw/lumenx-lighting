@@ -199,8 +199,35 @@ def compose_glow(src, dest, height_frac=0.58, quality=92):
     return (w, h)
 
 
+def compose_cutout(cut_path, dest, height_frac=0.62, y_shift=-0.02, width_frac=0.82, quality=92):
+    """Place an already-segmented cut-out (see scripts/make-cutouts.py) on the gradient.
+
+    This is the path everything takes now. The cut-out comes from rembg, so there
+    is no backdrop left to reason about — only scaling and compositing.
+    """
+    im = Image.open(cut_path).convert('RGBA')
+    a = np.array(im)[:, :, 3]
+    ys, xs = np.where(a > 10)
+    if len(xs):
+        im = im.crop((xs.min(), ys.min(), xs.max() + 1, ys.max() + 1))
+    target = int(H * height_frac)
+    r = target / im.height
+    if im.width * r > W * width_frac:
+        r = (W * width_frac) / im.width
+    im = resize_rgba(im, (max(1, int(im.width * r)), max(1, int(im.height * r))))
+    base = gradient()
+    base.paste(im, ((W - im.width) // 2, int((H - im.height) // 2 + H * y_shift)), im)
+    base.save(dest, quality=quality, optimize=True)
+    return im.size
+
+
 def compose(src, dest, height_frac=0.62, y_shift=-0.02, width_frac=0.82, quality=92):
-    """Render one product shot onto the shared gradient at 16:9."""
+    """Render one product shot onto the shared gradient at 16:9.
+
+    Kept for sources with no cached cut-out; the segmentation path above is the
+    one that produces good results, and `scripts/make-cutouts.py` covers every
+    product.
+    """
     if is_light_on_light(src):
         return compose_glow(src, dest, quality=quality)
     im = prepare(src)

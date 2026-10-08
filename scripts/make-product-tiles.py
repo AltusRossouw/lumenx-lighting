@@ -30,6 +30,16 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'public', 'product-images', 'tiles')
 
 HEIGHT_FRAC = 0.58
+
+# Manual source overrides, keyed "<category>/<slug>".
+#
+# The scraper does not always end up with the supplier's product shot — some
+# records only ever captured a placeholder or a lifestyle frame. Where a better
+# file already exists in the repo, point at it here rather than re-scraping.
+SRC_OVERRIDE = {
+    # the scraped record holds Steinel's orange placeholder; this is the product
+    'sensors/smart-remote': 'public/product-images/steinel-smart-remote.png',
+}
 MAX_CANDIDATES = 10
 
 # Filenames that are drawings, tables or wiring diagrams rather than product
@@ -85,6 +95,13 @@ def official_products():
     return out
 
 
+def _apply_override(category, slug, cands):
+    override = SRC_OVERRIDE.get(f'{category}/{slug}')
+    if override and os.path.exists(os.path.join(ROOT, override)):
+        return [os.path.join(ROOT, override)] + cands
+    return cands
+
+
 def products():
     """Every scraped product with its candidate images, hero first."""
     src = open(os.path.join(ROOT, 'src', 'catalogue-scraped.ts')).read()
@@ -100,7 +117,7 @@ def products():
             full = 'public' + p
             if full not in cands:
                 cands.append(full)
-        out.append((category, slug, name, cands))
+        out.append((category, slug, name, _apply_override(category, slug, cands)))
     return out
 
 
@@ -209,6 +226,11 @@ def render(category, slug, name, cands, force=False, report=False):
         return 'scored', os.path.relpath(best, ROOT) + tag, best_score
 
     os.makedirs(dest_dir, exist_ok=True)
+    # prefer the segmented cut-out; it beats anything the colour-based path can do
+    cut = os.path.join(ROOT, 'public', 'product-images', 'cutouts', category, f'{slug}.png')
+    if os.path.exists(cut):
+        card_art.compose_cutout(cut, dest, height_frac=HEIGHT_FRAC)
+        return 'rendered', os.path.relpath(best, ROOT), best_score
     card_art.compose(best, dest, height_frac=HEIGHT_FRAC)
     return ('rendered' if best_strict else 'rendered-fallback'), os.path.relpath(best, ROOT), best_score
 
