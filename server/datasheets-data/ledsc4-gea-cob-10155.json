@@ -13,18 +13,13 @@
       "unit": "lm"
     },
     {
-      "label": "Lumen Output",
-      "value": "869–934",
-      "unit": "lm"
-    },
-    {
       "label": "Colour Temperature",
       "value": "2700K / 3000K / 4000K",
       "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/outdoor-architectural/gea-cob/10-f28fa54d99144f44-855a4391f5ab57c2-2000-1-3.png",
+    "src": "../public/product-images/cutouts/outdoor-architectural/gea-cob.png",
     "alt": "Gea Cob"
   },
   "overview": [
@@ -61,7 +56,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
@@ -70,17 +65,7 @@
         ]
       }
     ],
-    "right": [
-      {
-        "title": "Specifications",
-        "rows": [
-          {
-            "label": "Lumen Output",
-            "value": "869–934 lm"
-          }
-        ]
-      }
-    ]
+    "right": []
   },
   "drawing": {
     "src": "",

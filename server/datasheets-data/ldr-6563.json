@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/linears/ldr6563/01-ldr-s.jpg",
+    "src": "../public/product-images/cutouts/linears/ldr6563.png",
     "alt": "LDR6563"
   },
   "overview": [
@@ -74,7 +74,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "(3080) 3000K",
@@ -97,7 +97,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "LED Colour Consistency",

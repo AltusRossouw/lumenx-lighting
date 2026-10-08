@@ -13,18 +13,13 @@
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "8–968",
-      "unit": "W"
-    },
-    {
       "label": "Lumens",
       "value": "224–10863",
       "unit": "lm"
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/outdoor-architectural/hubble/07-35ea6c6d92a747ee-8db5a94b3c45e7ff-2000-4.png",
+    "src": "../public/product-images/cutouts/outdoor-architectural/hubble.png",
     "alt": "Hubble"
   },
   "overview": [
@@ -53,7 +48,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
@@ -64,12 +59,8 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
-          {
-            "label": "Lumen Output",
-            "value": "224–10863 lm"
-          },
           {
             "label": "CRI",
             "value": "80"
@@ -81,10 +72,6 @@
         "rows": [
           {
             "label": "Power",
-            "value": "8–968 W"
-          },
-          {
-            "label": "Wattage",
             "value": "8–968 W"
           },
           {

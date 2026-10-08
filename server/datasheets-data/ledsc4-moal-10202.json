@@ -13,18 +13,13 @@
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "16.3",
-      "unit": "W"
-    },
-    {
       "label": "Lumens",
       "value": "729",
       "unit": "lm"
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/outdoor-architectural/moal/10-7a35dab1b5c147f9-90544533412351b0-2000.png",
+    "src": "../public/product-images/cutouts/outdoor-architectural/moal.png",
     "alt": "Moal"
   },
   "overview": [
@@ -62,7 +57,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
@@ -73,12 +68,8 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
-          {
-            "label": "Lumen Output",
-            "value": "729 lm"
-          },
           {
             "label": "CRI",
             "value": "92"
@@ -90,10 +81,6 @@
         "rows": [
           {
             "label": "Power",
-            "value": "16.3 W"
-          },
-          {
-            "label": "Wattage",
             "value": "16.3 W"
           },
           {

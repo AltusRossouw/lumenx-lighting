@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/track/bazuka/member-01-pioled-lighting-tkb099-25w-bazuka-3-wire-track-3cct-honeycomb-black.png",
+    "src": "../public/product-images/cutouts/track/bazuka.png",
     "alt": "Bazuka"
   },
   "overview": [
@@ -90,7 +90,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumen Output",
@@ -105,7 +105,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "LED Chips",

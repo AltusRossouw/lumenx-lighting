@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/outdoor-architectural/everest-square/01-pioled-lighting-fb002-12w-everest-square-ip65-bollard-4cct-black-1.jpg",
+    "src": "../public/product-images/cutouts/bollards/everest-square.png",
     "alt": "Everest Square"
   },
   "overview": [
@@ -81,7 +81,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumen Per Watt",
@@ -100,7 +100,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "PC Surge Protection",

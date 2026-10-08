@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/downlights/small-cob-anti-glare-downlight/01-x-tf8.jpg",
+    "src": "../public/product-images/cutouts/downlights/small-cob-anti-glare-downlight.png",
     "alt": "Small COB Anti-glare Downlight"
   },
   "overview": [
@@ -79,7 +79,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "3080 (3000K)",
@@ -102,7 +102,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "LED Colour Consistency",

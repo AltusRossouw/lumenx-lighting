@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/sensors/is-2180/01-17215-is-2180-2-4007841603717-pro-ab01-x-x-x-bla-x-106679306-web-new.jpg",
+    "src": "../public/product-images/cutouts/sensors/is-2180.png",
     "alt": "IS 2180"
   },
   "overview": [
@@ -81,7 +81,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Application, place",
@@ -180,7 +180,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Fluorescent lamps, parallel-corrected",
@@ -205,10 +205,6 @@
           {
             "label": "Capacitive load in μF",
             "value": "132 µF"
-          },
-          {
-            "label": "European Article Number (EAN)",
-            "value": "4007841034702"
           },
           {
             "label": "Angle of aperture",

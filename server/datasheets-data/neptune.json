@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/vapourproof/neptune/01-neptune-800x416.png",
+    "src": "../public/product-images/cutouts/vapourproof/neptune.png",
     "alt": "Neptune"
   },
   "overview": [
@@ -71,7 +71,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Operational Guarantee",
@@ -126,7 +126,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "On/Off Switching",

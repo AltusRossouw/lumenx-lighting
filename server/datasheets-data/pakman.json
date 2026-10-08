@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/downlights/surface-adjustable-downlight/member-01-pioled-lighting-hd026-35w-pakman-3cct-tiltable-surface-mount-downlight.jpg",
+    "src": "../public/product-images/cutouts/downlights/surface-adjustable-downlight.png",
     "alt": "Surface Adjustable Downlight"
   },
   "overview": [
@@ -87,7 +87,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
@@ -102,7 +102,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "CRI",

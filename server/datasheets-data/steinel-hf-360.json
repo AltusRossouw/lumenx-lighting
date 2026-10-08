@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/sensors/hf-360/01-17334-hf-360-4007841002800-pro-ab01-x-x-com1-whi-x-110011563-web.jpg",
+    "src": "../public/product-images/cutouts/sensors/hf-360.png",
     "alt": "HF 360"
   },
   "overview": [
@@ -81,7 +81,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Application, place",
@@ -158,17 +158,13 @@
           {
             "label": "Mains power supply",
             "value": "230 V / 50 – 60 Hz"
-          },
-          {
-            "label": "European Article Number (EAN)",
-            "value": "4007841079512"
           }
         ]
       }
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Angle of aperture",
@@ -211,10 +207,6 @@
             "value": "No"
           },
           {
-            "label": "Reach, radial",
-            "value": "Ø 12 m (113 m²)"
-          },
-          {
             "label": "Functions",
             "value": "Normal / test mode, Semi-/fully automatic, Pushbutton / switch mode, Manual ON / ON-OFF"
           },
@@ -245,10 +237,6 @@
           {
             "label": "Interconnection",
             "value": "Yes"
-          },
-          {
-            "label": "Product category",
-            "value": "Presence detector"
           }
         ]
       },

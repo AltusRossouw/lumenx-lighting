@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/product-images/steinel-is-3360-highbay.png",
+    "src": "../public/product-images/cutouts/sensors/is-3360-highbay.png",
     "alt": "IS 3360 Highbay"
   },
   "overview": [
@@ -61,7 +61,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Reach",
@@ -92,7 +92,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Interconnection via",

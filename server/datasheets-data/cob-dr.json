@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/downlights/cob-anti-glare-downlight/01-cob-dr-s.png",
+    "src": "../public/product-images/cutouts/downlights/cob-anti-glare-downlight.png",
     "alt": "COB Anti-glare Downlight"
   },
   "overview": [
@@ -79,7 +79,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Fitting Material",
@@ -102,7 +102,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "LED Lifetime",

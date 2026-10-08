@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/track/standard/01-standard.jpg",
+    "src": "../public/product-images/cutouts/track/standard.png",
     "alt": "Standard"
   },
   "overview": [
@@ -48,7 +48,7 @@
         "rows": [
           {
             "label": "Dimensions (mm)",
-            "value": "169.5 x 108 x 32mm (\u00d884)"
+            "value": "169.5 x 108 x 32mm (Ø84)"
           },
           {
             "label": "Housing",
@@ -100,7 +100,7 @@
           },
           {
             "label": "Beam Angle",
-            "value": "15\u00b0 / 36\u00b0 / 50\u00b0"
+            "value": "15° / 36° / 50°"
           }
         ]
       },
@@ -117,7 +117,7 @@
           },
           {
             "label": "Dimmable",
-            "value": "ON/OFF \u00b7 DALI \u00b7 Casambi \u00b7 Wireless"
+            "value": "ON/OFF · DALI · Casambi · Wireless"
           }
         ]
       }
@@ -131,7 +131,7 @@
     "E &amp; O.E (Errors And Omissions Excepted).",
     "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
     "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
-    "Nominal flux values are stated at 25\u00b0 C, based on LED manufacturer\u2019s data.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
     "Installation environmental conditions may impact the performance and efficiency of the luminaire."
   ],
   "contact": {

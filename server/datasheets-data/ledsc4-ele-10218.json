@@ -13,18 +13,13 @@
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "26–49",
-      "unit": "W"
-    },
-    {
       "label": "Lumens",
       "value": "2456–5458",
       "unit": "lm"
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/outdoor-architectural/ele-2/06-99ff0b0537784933-aeda62ccab5e4d99-2000-2.png",
+    "src": "../public/product-images/cutouts/outdoor-architectural/ele-2.png",
     "alt": "Ele"
   },
   "overview": [
@@ -62,7 +57,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
@@ -73,12 +68,8 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
-          {
-            "label": "Lumen Output",
-            "value": "2456–5458 lm"
-          },
           {
             "label": "CRI",
             "value": "80"
@@ -90,10 +81,6 @@
         "rows": [
           {
             "label": "Power",
-            "value": "26–49 W"
-          },
-          {
-            "label": "Wattage",
             "value": "26–49 W"
           },
           {

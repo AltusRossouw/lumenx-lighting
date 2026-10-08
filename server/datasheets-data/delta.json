@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/highbays/delta/01-pioled-lighting-hb1045-delta-padel-court-sq.png",
+    "src": "../public/product-images/cutouts/highbays/delta.png",
     "alt": "Delta"
   },
   "overview": [
@@ -79,7 +79,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumen Output",
@@ -98,7 +98,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Aluminium Surge Protection",

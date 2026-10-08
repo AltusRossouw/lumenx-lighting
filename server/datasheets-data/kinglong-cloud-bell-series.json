@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/decorative/cloud-bell/03-cloudbell-s1-l2127-w1116-h1403.png",
+    "src": "../public/product-images/cutouts/decorative/cloud-bell.png",
     "alt": "Cloud Bell"
   },
   "overview": [
@@ -87,7 +87,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lead Time",
@@ -102,7 +102,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Frame",

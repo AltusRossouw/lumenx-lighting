@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/sensors/ir-quattro-micro/01-18000-ir-quattro-micro-ohne-schatten.jpg",
+    "src": "../public/product-images/cutouts/sensors/ir-quattro-micro.png",
     "alt": "IR Quattro Micro"
   },
   "overview": [
@@ -81,7 +81,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Application, place",
@@ -188,7 +188,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Fluorescent lamps, parallel-corrected",
@@ -213,10 +213,6 @@
           {
             "label": "Capacitive load in μF",
             "value": "176 µF"
-          },
-          {
-            "label": "European Article Number (EAN)",
-            "value": "4007841053789"
           },
           {
             "label": "Angle of aperture",
@@ -289,10 +285,6 @@
           {
             "label": "Interconnection",
             "value": "Yes"
-          },
-          {
-            "label": "Product category",
-            "value": "Presence detector"
           }
         ]
       },

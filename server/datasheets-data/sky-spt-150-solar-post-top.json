@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/solar/sky-spt-150-solar-post-top/01-a546d4-e58c2abd51ed4328a8c1e08c606abcc0-mv2.png",
+    "src": "../public/product-images/cutouts/solar/sky-spt-150-solar-post-top.png",
     "alt": "Sky SPT-150 Solar Post Top"
   },
   "overview": [
@@ -65,7 +65,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
@@ -80,7 +80,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Storage Capacity",

@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/sensors/light-sensor/01-17116-light-sensor-dual-4007841033637-pro-ab-x-x-up-eckig-whi-1-1-1100.jpg",
+    "src": "../public/product-images/cutouts/sensors/light-sensor.png",
     "alt": "Light Sensor"
   },
   "overview": [
@@ -76,7 +76,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Application, place",
@@ -131,7 +131,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "IP-rating",
@@ -144,10 +144,6 @@
           {
             "label": "With bus coupling",
             "value": "Yes"
-          },
-          {
-            "label": "European Article Number (EAN)",
-            "value": "4007841058326"
           },
           {
             "label": "Rated current",

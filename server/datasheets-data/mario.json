@@ -13,18 +13,13 @@
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "35",
-      "unit": "W"
-    },
-    {
       "label": "Lumens",
       "value": "3500",
       "unit": "lm"
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/downlights/mario/01-pioled-lighting-hd020-35w-mario-led-round-tilt-downlight-3cct-1.jpg",
+    "src": "../public/product-images/cutouts/downlights/mario.png",
     "alt": "Mario"
   },
   "overview": [
@@ -95,22 +90,18 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
             "value": "3500 lm"
-          },
-          {
-            "label": "Lumen Output",
-            "value": "3 500 lm"
           }
         ]
       }
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "CRI",
@@ -127,10 +118,6 @@
         "rows": [
           {
             "label": "Power",
-            "value": "35 W"
-          },
-          {
-            "label": "Wattage",
             "value": "35 W"
           },
           {

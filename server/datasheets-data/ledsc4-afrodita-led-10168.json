@@ -13,18 +13,13 @@
       "unit": "lm"
     },
     {
-      "label": "Lumen Output",
-      "value": "2880–2952",
-      "unit": "lm"
-    },
-    {
       "label": "Colour Temperature",
       "value": "2700K / 3000K / 4000K",
       "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/outdoor-architectural/afrodita/12-6ea9d3e7025348cb-9ba591aff40652b5-2000-1-5.png",
+    "src": "../public/product-images/cutouts/outdoor-architectural/afrodita.png",
     "alt": "Afrodita"
   },
   "overview": [
@@ -58,7 +53,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
@@ -68,15 +63,6 @@
       }
     ],
     "right": [
-      {
-        "title": "Specifications",
-        "rows": [
-          {
-            "label": "Lumen Output",
-            "value": "2880–2952 lm"
-          }
-        ]
-      },
       {
         "title": "Electrical",
         "rows": [

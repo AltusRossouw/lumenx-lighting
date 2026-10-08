@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/downlights/legend/member-01-pioled-lighting-i063-35w-legend-recessed-round-led-downlight-3cct-ip44.jpg",
+    "src": "../public/product-images/cutouts/downlights/legend.png",
     "alt": "Legend"
   },
   "overview": [
@@ -83,7 +83,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
@@ -102,7 +102,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "CRI",

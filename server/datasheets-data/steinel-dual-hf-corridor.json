@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/sensors/dual-hf-corridoor/01-17403-dual-hf-4007841002978-pro-ab01-x-x-com1-whi-x-110011582-web-new.jpg",
+    "src": "../public/product-images/cutouts/sensors/dual-hf-corridoor.png",
     "alt": "Dual HF Corridoor"
   },
   "overview": [
@@ -81,7 +81,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Application, place",
@@ -188,7 +188,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "LED lamps > 2 W < 8 W",
@@ -201,10 +201,6 @@
           {
             "label": "Capacitive load in μF",
             "value": "176 µF"
-          },
-          {
-            "label": "European Article Number (EAN)",
-            "value": "4007841002978"
           },
           {
             "label": "Angle of aperture",
@@ -247,10 +243,6 @@
             "value": "No"
           },
           {
-            "label": "Reach, radial",
-            "value": "20 x 3 m (60 m²)"
-          },
-          {
             "label": "Functions",
             "value": "Normal / test mode, Semi-/fully automatic, Pushbutton / switch mode, Manual ON / ON-OFF"
           },
@@ -285,10 +277,6 @@
           {
             "label": "Interconnection, number",
             "value": "max. 10 sensors"
-          },
-          {
-            "label": "Product category",
-            "value": "Presence detector"
           }
         ]
       },

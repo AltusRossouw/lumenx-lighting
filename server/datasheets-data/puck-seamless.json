@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/linears/puck-seamless/01-puck-800x601.png",
+    "src": "../public/product-images/cutouts/linears/puck-seamless.png",
     "alt": "Puck Seamless"
   },
   "overview": [
@@ -71,7 +71,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Nominal Lifetime (L70)",
@@ -118,7 +118,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Min Sustained Voltage",

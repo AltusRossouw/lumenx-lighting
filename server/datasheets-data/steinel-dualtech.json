@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/sensors/dualtech/01-17398-dualtech-4007841007997-pro-ab01-x-x-com1-whi-x-110034417-web-new.jpg",
+    "src": "../public/product-images/cutouts/sensors/dualtech.png",
     "alt": "DualTech"
   },
   "overview": [
@@ -81,7 +81,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Application, place",
@@ -196,15 +196,11 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Capacitive load in μF",
             "value": "176 µF"
-          },
-          {
-            "label": "European Article Number (EAN)",
-            "value": "4007841007997"
           },
           {
             "label": "Angle of aperture",
@@ -241,10 +237,6 @@
           {
             "label": "Mechanical scalability",
             "value": "No"
-          },
-          {
-            "label": "Reach, radial",
-            "value": "Ultrasonic: Ultraschall: Ø 10 m (Ultraschall: 79 m²)"
           },
           {
             "label": "Reach, presence",
@@ -301,10 +293,6 @@
           {
             "label": "Interconnection, number",
             "value": "max. 10 sensors"
-          },
-          {
-            "label": "Product category",
-            "value": "Presence detector"
           }
         ]
       },

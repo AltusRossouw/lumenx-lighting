@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/linears/ace/01-ace-s-black-with-transparent-background.png",
+    "src": "../public/product-images/cutouts/linears/ace.png",
     "alt": "ACE"
   },
   "overview": [
@@ -75,7 +75,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "(3080) 3000K",
@@ -98,7 +98,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "LED Colour Consistency",

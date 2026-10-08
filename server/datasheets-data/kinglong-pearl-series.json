@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/decorative/pearl/03-pearl-s1-l690-w149-h2001.png",
+    "src": "../public/product-images/cutouts/decorative/pearl.png",
     "alt": "Pearl"
   },
   "overview": [
@@ -87,7 +87,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lead Time",
@@ -106,7 +106,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Frame",

@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/sensors/is-2360-r/01-grp-group-teaser-licht-jpg.webp",
+    "src": "../public/product-images/cutouts/sensors/is-2360-r.png",
     "alt": "IS 2360 R"
   },
   "overview": [
@@ -61,7 +61,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Reach",
@@ -92,7 +92,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Interconnection via",

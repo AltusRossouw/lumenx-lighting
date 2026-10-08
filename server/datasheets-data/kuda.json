@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/vapourproof/kuda/member-01-pioled-lighting-ll913-kuda-max-5ft-emergency-kit-space-1.png",
+    "src": "../public/product-images/cutouts/vapourproof/kuda.png",
     "alt": "Kuda"
   },
   "overview": [
@@ -94,7 +94,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumen Output",
@@ -113,7 +113,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "lens",

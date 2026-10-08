@@ -358,6 +358,36 @@ def split_spec_units(value):
     return v, ''
 
 
+# ── Datasheet payload tidy-up ──────────────────────────────────────────────
+# The raw payload repeats itself: the spec columns carry a catch-all section
+# titled "Specifications" in both columns, and rows appear twice under
+# near-synonym labels ("Lumens" and "Lumen Output" showing the same number).
+# Both are visible on the rendered sheet. scripts/normalise-datasheet-payloads.py
+# owns that logic so the generator and the one-off tidy stay in step.
+def _load_payload_tidy():
+    import importlib.util
+    path = os.path.join(ROOT, 'scripts', 'normalise-datasheet-payloads.py')
+    spec = importlib.util.spec_from_file_location('lumenx_payload_tidy', path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+try:
+    _TIDY = _load_payload_tidy()
+except Exception as exc:  # noqa: BLE001
+    print(f'warning: datasheet tidy-up unavailable ({exc})')
+    _TIDY = None
+
+
+def tidy_payload(payload, slug):
+    """De-duplicate the payload and point its hero at the product cut-out."""
+    if _TIDY is None:
+        return payload
+    payload = _TIDY.normalise(payload)
+    hero = _TIDY.cutout_for_payload().get(slug)
+    return _TIDY.apply_heroes(payload, hero)
+
 def build_datasheet_payload(product, old=None):
     """Build a datasheet JSON payload for a product from its catalogue record.
 
@@ -1418,6 +1448,7 @@ def main():
             except Exception:
                 old = None
         payload = build_datasheet_payload(p, old)
+        payload = tidy_payload(payload, ds_slug)
         with open(existing, 'w', encoding='utf-8') as f:
             json.dump(payload, f, ensure_ascii=False, indent=2)
         datasheet_written += 1

@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/bulkheads/rhea/01-1-1-800x383.png",
+    "src": "../public/product-images/cutouts/bulkheads/rhea.png",
     "alt": "Rhea"
   },
   "overview": [
@@ -68,7 +68,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Nominal Lifetime (L70)",
@@ -119,7 +119,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Max Sustained Voltage",

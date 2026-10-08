@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/sensors/service-remote/01-17356-fernbedienung-rc8-4007841559410-110021956.jpg",
+    "src": "../public/product-images/cutouts/sensors/service-remote.png",
     "alt": "Service Remote"
   },
   "overview": [
@@ -60,7 +60,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Article number",
@@ -79,7 +79,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Manufacturer's Warranty",
@@ -87,10 +87,6 @@
           },
           {
             "label": "PU1, EAN",
-            "value": "4007841559410"
-          },
-          {
-            "label": "European Article Number (EAN)",
             "value": "4007841559410"
           },
           {

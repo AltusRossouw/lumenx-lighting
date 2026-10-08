@@ -13,18 +13,13 @@
       "unit": "lm"
     },
     {
-      "label": "Lumen Output",
-      "value": "3255–4340",
-      "unit": "lm"
-    },
-    {
       "label": "Light Source",
       "value": "E27",
       "unit": ""
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/indoor-architectural/attic/01-web-mainimage-attic-gen-05-006.png",
+    "src": "../public/product-images/cutouts/indoor-architectural/attic.png",
     "alt": "Attic"
   },
   "overview": [
@@ -43,7 +38,7 @@
   "columns": {
     "left": [
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
@@ -54,12 +49,8 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
-          {
-            "label": "Lumen Output",
-            "value": "3255–4340 lm"
-          },
           {
             "label": "Light Source",
             "value": "E27"

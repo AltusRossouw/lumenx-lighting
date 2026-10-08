@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/linears/base/01-baton-1200-wt.jpg",
+    "src": "../public/product-images/cutouts/linears/base.png",
     "alt": "BASE"
   },
   "overview": [
@@ -74,7 +74,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "(3080) 3000K",
@@ -97,7 +97,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "LED Colour Consistency",

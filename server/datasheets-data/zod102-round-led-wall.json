@@ -13,18 +13,13 @@
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "12",
-      "unit": "W"
-    },
-    {
       "label": "Lumens",
       "value": "1200",
       "unit": "lm"
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/outdoor-architectural/zod102-round-led-wall/01-a546d4-d29eac5d5d6c47e6a9d396a256db1d7c-mv2.png",
+    "src": "../public/product-images/cutouts/outdoor-architectural/zod102-round-led-wall.png",
     "alt": "ZOD102 Round LED Wall"
   },
   "overview": [
@@ -78,7 +73,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
@@ -97,7 +92,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Product Weight",
@@ -122,10 +117,6 @@
         "rows": [
           {
             "label": "Power",
-            "value": "12 W"
-          },
-          {
-            "label": "Wattage",
             "value": "12 W"
           },
           {

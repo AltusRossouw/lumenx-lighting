@@ -13,18 +13,13 @@
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "22.4",
-      "unit": "W"
-    },
-    {
       "label": "Lumens",
       "value": "1240",
       "unit": "lm"
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/indoor-architectural/vetro/08-f2911c0a04a7459e-a515bd33aca78898-2000.png",
+    "src": "../public/product-images/cutouts/indoor-architectural/vetro.png",
     "alt": "Vetro"
   },
   "overview": [
@@ -61,7 +56,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
@@ -72,12 +67,8 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
-          {
-            "label": "Lumen Output",
-            "value": "1240 lm"
-          },
           {
             "label": "CRI",
             "value": "80"
@@ -89,10 +80,6 @@
         "rows": [
           {
             "label": "Power",
-            "value": "22.4 W"
-          },
-          {
-            "label": "Wattage",
             "value": "22.4 W"
           },
           {

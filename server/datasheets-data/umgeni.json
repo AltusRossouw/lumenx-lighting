@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/highbays/umgeni/01-umgeni-linear-highbay.jpg",
+    "src": "../public/product-images/cutouts/highbays/umgeni.png",
     "alt": "Umgeni"
   },
   "overview": [
@@ -53,7 +53,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Configuration",
@@ -68,7 +68,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Output",

@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/downlights/cob-square-triple-downlight/01-cob-r-sq3.jpg",
+    "src": "../public/product-images/cutouts/downlights/cob-square-triple-downlight.png",
     "alt": "COB Square Triple Downlight"
   },
   "overview": [
@@ -87,7 +87,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Fitting Material",
@@ -110,7 +110,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "LED Lifetime",

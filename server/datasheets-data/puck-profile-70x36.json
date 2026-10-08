@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/linears/puck-profile-70x36/01-ledlights4-800x534.png",
+    "src": "../public/product-images/cutouts/linears/puck-profile-70x36.png",
     "alt": "Puck Profile 70x36"
   },
   "overview": [
@@ -66,7 +66,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Operational Guarantee (365d × 24h)",
@@ -113,7 +113,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Minimum Sustained Voltage",

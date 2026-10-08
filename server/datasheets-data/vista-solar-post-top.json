@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/solar/vista-solar-post-top/01-pioled-lighting-vista-25w-mono-solar-post-top-3cct-rgb.jpg",
+    "src": "../public/product-images/cutouts/solar/vista-solar-post-top.png",
     "alt": "Vista Solar Post Top"
   },
   "overview": [
@@ -81,7 +81,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "RGB Motion Sensor",
@@ -100,7 +100,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "LED Chips",

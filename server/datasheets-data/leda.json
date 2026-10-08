@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/track/leda/member-01-pioled-lighting-tk005-4ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png",
+    "src": "../public/product-images/cutouts/track/leda.png",
     "alt": "Leda"
   },
   "overview": [
@@ -90,7 +90,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumen Output",
@@ -105,7 +105,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "LED Chips",

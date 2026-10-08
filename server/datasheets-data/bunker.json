@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/bulkheads/bunker/member-01-pioled-lighting-ic014e-12-16-18w-ip65-4cct-bunker-die-cast-aluminium-b.png",
+    "src": "../public/product-images/cutouts/bulkheads/bunker.png",
     "alt": "Bunker"
   },
   "overview": [
@@ -91,7 +91,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumen Output",
@@ -106,7 +106,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "available in",

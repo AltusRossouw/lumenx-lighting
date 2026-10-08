@@ -13,18 +13,13 @@
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "19.3",
-      "unit": "W"
-    },
-    {
       "label": "Lumens",
       "value": "1071",
       "unit": "lm"
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/outdoor-architectural/row/05-57c5600015c24df8-b98cbc1063fa2ff8-2000-1.png",
+    "src": "../public/product-images/cutouts/outdoor-architectural/row.png",
     "alt": "Row"
   },
   "overview": [
@@ -62,7 +57,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
@@ -73,12 +68,8 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
-          {
-            "label": "Lumen Output",
-            "value": "1071 lm"
-          },
           {
             "label": "CRI",
             "value": "80"
@@ -90,10 +81,6 @@
         "rows": [
           {
             "label": "Power",
-            "value": "19.3 W"
-          },
-          {
-            "label": "Wattage",
             "value": "19.3 W"
           },
           {

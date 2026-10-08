@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/linears/thermisto/01-themisto-lowbay-55-surface-suspension.jpg",
+    "src": "../public/product-images/cutouts/linears/thermisto.png",
     "alt": "Thermisto"
   },
   "overview": [
@@ -79,7 +79,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
@@ -94,7 +94,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "CCT",

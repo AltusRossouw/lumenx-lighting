@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/downlights/diffused-downlight/01-aegeon.jpg",
+    "src": "../public/product-images/cutouts/downlights/diffused-downlight.png",
     "alt": "Diffused Downlight"
   },
   "overview": [
@@ -79,7 +79,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
@@ -94,7 +94,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "CCT",

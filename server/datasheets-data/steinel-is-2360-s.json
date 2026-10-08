@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/sensors/is-2360-s/01-17253-is-2360-eco-ohne-schatten.jpg",
+    "src": "../public/product-images/cutouts/sensors/is-2360-s.png",
     "alt": "IS 2360 S"
   },
   "overview": [
@@ -81,7 +81,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Application, place",
@@ -184,7 +184,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Fluorescent lamps, parallel-corrected",
@@ -209,10 +209,6 @@
           {
             "label": "Capacitive load in μF",
             "value": "132 µF"
-          },
-          {
-            "label": "European Article Number (EAN)",
-            "value": "4007841006556"
           },
           {
             "label": "Angle of aperture",

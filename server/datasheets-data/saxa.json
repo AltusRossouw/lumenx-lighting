@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/vapourproof/saxa/01-saxa-triproof.jpg",
+    "src": "../public/product-images/cutouts/vapourproof/saxa.png",
     "alt": "Saxa"
   },
   "overview": [
@@ -75,7 +75,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Configuration",
@@ -90,7 +90,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Efficacy",

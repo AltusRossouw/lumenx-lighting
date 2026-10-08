@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/linears/lds5083/01-ld-50-s-render-2.png",
+    "src": "../public/product-images/cutouts/linears/lds5083.png",
     "alt": "LDS5083"
   },
   "overview": [
@@ -75,7 +75,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "(3080) 3000K",
@@ -98,7 +98,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "LED Colour Consistency",

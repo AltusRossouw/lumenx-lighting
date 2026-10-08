@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/solar/sky-ele-15-solar-post-top/01-a546d4-ccc9e61871494e7d8d36fa4a943dcf99-mv2.png",
+    "src": "../public/product-images/cutouts/solar/sky-ele-15-solar-post-top.png",
     "alt": "Sky ELE-15 Solar Post Top"
   },
   "overview": [
@@ -72,7 +72,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
@@ -91,7 +91,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Recommended Mounting Height",

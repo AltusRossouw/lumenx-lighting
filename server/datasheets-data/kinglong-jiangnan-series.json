@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/decorative/jiangnan/03-jiangnan-s1-l800-w800-h1218.png",
+    "src": "../public/product-images/cutouts/decorative/jiangnan.png",
     "alt": "Jiangnan"
   },
   "overview": [
@@ -87,7 +87,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lead Time",
@@ -106,7 +106,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Frame",

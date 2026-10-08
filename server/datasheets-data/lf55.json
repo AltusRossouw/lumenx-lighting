@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/linears/lf55/01-lightframefamily5555x8080copy.jpg",
+    "src": "../public/product-images/cutouts/linears/lf55.png",
     "alt": "LF55"
   },
   "overview": [
@@ -86,7 +86,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
@@ -101,7 +101,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "CCT",

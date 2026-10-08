@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/outdoor-architectural/orbit/01-pioled-lighting-hp001-4-60w-120w-orbit-ip65-post-top-lamp-3cct-1.jpg",
+    "src": "../public/product-images/cutouts/outdoor-architectural/orbit.png",
     "alt": "Orbit"
   },
   "overview": [
@@ -78,7 +78,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumen Output",
@@ -97,7 +97,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "LED Chips",

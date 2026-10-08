@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/bulkheads/hero/01-pioled-lighting-hero-ip65-led-bulkhead-3cct-round-black-and-white.jpg",
+    "src": "../public/product-images/cutouts/bulkheads/hero.png",
     "alt": "Hero"
   },
   "overview": [
@@ -79,7 +79,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Available in",
@@ -98,7 +98,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "CRI",

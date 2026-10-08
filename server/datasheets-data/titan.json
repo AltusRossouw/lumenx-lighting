@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/vapourproof/titan/01-titan-800x418.png",
+    "src": "../public/product-images/cutouts/vapourproof/titan.png",
     "alt": "Titan"
   },
   "overview": [
@@ -67,7 +67,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Nominal Lifetime (L70)",
@@ -114,7 +114,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Min Sustained Voltage",

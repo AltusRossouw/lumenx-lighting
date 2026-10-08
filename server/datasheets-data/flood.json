@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/floods/flood/01-floodlight-800x720.png",
+    "src": "../public/product-images/cutouts/floods/flood.png",
     "alt": "Flood"
   },
   "overview": [
@@ -71,7 +71,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Operational Guarantee (365d × 12h)",
@@ -118,7 +118,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Maximum Sustained Voltage",

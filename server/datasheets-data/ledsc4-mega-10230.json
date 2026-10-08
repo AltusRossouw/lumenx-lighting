@@ -13,18 +13,13 @@
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "81.4",
-      "unit": "W"
-    },
-    {
       "label": "Lumens",
       "value": "8303",
       "unit": "lm"
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/outdoor-architectural/mega/07-1d70a59ea358434d-9f2376280dac70d8-2000.png",
+    "src": "../public/product-images/cutouts/outdoor-architectural/mega.png",
     "alt": "Mega"
   },
   "overview": [
@@ -55,7 +50,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
@@ -66,12 +61,8 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
-          {
-            "label": "Lumen Output",
-            "value": "8303 lm"
-          },
           {
             "label": "CRI",
             "value": "80"
@@ -83,10 +74,6 @@
         "rows": [
           {
             "label": "Power",
-            "value": "81.4 W"
-          },
-          {
-            "label": "Wattage",
             "value": "81.4 W"
           },
           {

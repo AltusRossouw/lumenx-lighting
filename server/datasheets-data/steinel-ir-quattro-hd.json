@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/sensors/ir-quattro-hd/01-17263-ir-quattro-hd-4007841002794-pro-ab01-x-x-com1-whi-x-110011562-we.jpg",
+    "src": "../public/product-images/cutouts/sensors/ir-quattro-hd.png",
     "alt": "IR Quattro HD"
   },
   "overview": [
@@ -81,7 +81,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Application, place",
@@ -184,7 +184,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "LED lamps < 2 W",
@@ -201,10 +201,6 @@
           {
             "label": "Capacitive load in μF",
             "value": "176 µF"
-          },
-          {
-            "label": "European Article Number (EAN)",
-            "value": "4007841002794"
           },
           {
             "label": "Angle of aperture",
@@ -281,10 +277,6 @@
           {
             "label": "Interconnection, number",
             "value": "max. 10 sensors"
-          },
-          {
-            "label": "Product category",
-            "value": "Presence detector"
           }
         ]
       },

@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/vapourproof/vp/01-vp-1200-2021.jpg",
+    "src": "../public/product-images/cutouts/vapourproof/vp.png",
     "alt": "VP"
   },
   "overview": [
@@ -75,7 +75,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "3080 (3000K)",
@@ -98,7 +98,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "LED Colour Consistency",

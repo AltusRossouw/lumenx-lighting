@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/outdoor-architectural/fuji-round/01-pioled-lighting-fb003-12w-fuji-round-ip65-bollard-4cct-black.png",
+    "src": "../public/product-images/cutouts/bollards/fuji-round.png",
     "alt": "Fuji Round"
   },
   "overview": [
@@ -81,7 +81,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumen Per Watt",
@@ -100,7 +100,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "PC Surge Protection",

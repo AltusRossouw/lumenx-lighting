@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/sensors/smart-remote/01-16980-smart-remote-4007841009151-pro-ab01-x-x-x-bla-x-110036719-web-ne.jpg",
+    "src": "../public/product-images/cutouts/sensors/smart-remote.png",
     "alt": "Smart Remote"
   },
   "overview": [
@@ -56,7 +56,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Article number",
@@ -75,7 +75,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Manufacturer's Warranty",
@@ -83,10 +83,6 @@
           },
           {
             "label": "PU1, EAN",
-            "value": "4007841009151"
-          },
-          {
-            "label": "European Article Number (EAN)",
             "value": "4007841009151"
           },
           {

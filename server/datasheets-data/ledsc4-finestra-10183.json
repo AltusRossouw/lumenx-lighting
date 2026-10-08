@@ -13,18 +13,13 @@
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "5.4–10.8",
-      "unit": "W"
-    },
-    {
       "label": "Lumens",
       "value": "281–414",
       "unit": "lm"
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/outdoor-architectural/finestra/05-1a9ae15092ff49fc-91d4481920a52756-2000.png",
+    "src": "../public/product-images/cutouts/outdoor-architectural/finestra.png",
     "alt": "Finestra"
   },
   "overview": [
@@ -62,7 +57,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumens",
@@ -73,12 +68,8 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
-          {
-            "label": "Lumen Output",
-            "value": "281–414 lm"
-          },
           {
             "label": "CRI",
             "value": "80"
@@ -90,10 +81,6 @@
         "rows": [
           {
             "label": "Power",
-            "value": "5.4–10.8 W"
-          },
-          {
-            "label": "Wattage",
             "value": "5.4–10.8 W"
           },
           {

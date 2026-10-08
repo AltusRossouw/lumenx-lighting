@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/track/snypa/member-01-pioled-lighting-r315-snypa-gu10-surface-mount-110m-black-fitting.jpg",
+    "src": "../public/product-images/cutouts/track/snypa.png",
     "alt": "Snypa"
   },
   "overview": [
@@ -90,7 +90,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumen Output",
@@ -105,7 +105,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "available in",

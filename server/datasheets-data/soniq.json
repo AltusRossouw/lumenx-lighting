@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/linears/soniq/member-01-pioled-lighting-ll709-8ft-3-wattage-soniq-seamless-linkable-linear-lig.png",
+    "src": "../public/product-images/cutouts/linears/soniq.png",
     "alt": "Soniq"
   },
   "overview": [
@@ -86,7 +86,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Lumen Output",
@@ -101,7 +101,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "CRI",

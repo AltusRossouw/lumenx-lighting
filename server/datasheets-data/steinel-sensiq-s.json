@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/sensors/sens-iq-s/01-16993-sensiq-s-4007841004064-pro-ab01-x-x-knx-whi-x-110017968-web-new.jpg",
+    "src": "../public/product-images/cutouts/sensors/sens-iq-s.png",
     "alt": "Sens IQ S"
   },
   "overview": [
@@ -80,7 +80,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "Application, place",
@@ -149,17 +149,13 @@
           {
             "label": "With bus coupling",
             "value": "Yes"
-          },
-          {
-            "label": "European Article Number (EAN)",
-            "value": "4007841059613"
           }
         ]
       }
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "Angle of aperture",

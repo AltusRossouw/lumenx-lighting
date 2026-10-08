@@ -24,7 +24,7 @@
     }
   ],
   "heroImage": {
-    "src": "../public/scraped/downlights/cob-square-double-downlight/01-cob-sq2-scaled-e1585665645179.jpg",
+    "src": "../public/product-images/cutouts/downlights/cob-square-double-downlight.png",
     "alt": "COB Square Double Downlight"
   },
   "overview": [
@@ -79,7 +79,7 @@
         ]
       },
       {
-        "title": "Specifications",
+        "title": "Technical Data",
         "rows": [
           {
             "label": "3080 (3000K)",
@@ -102,7 +102,7 @@
     ],
     "right": [
       {
-        "title": "Specifications",
+        "title": "Product Information",
         "rows": [
           {
             "label": "LED Colour Consistency",
