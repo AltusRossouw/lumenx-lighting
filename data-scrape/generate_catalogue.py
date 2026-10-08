@@ -55,6 +55,12 @@ CATEGORY_MAP = {
         'applications': 'Warehouses, factories, logistics and manufacturing facilities',
         'linkLabel': 'Explore Highbays',
     }),
+    'Bollards': ('bollards', {
+        'title': 'Bollards',
+        'description': 'Ground-mounted post-top and bollard luminaires for paths, gardens, driveways and the public realm.',
+        'applications': 'Pathways, gardens, driveways, parks and pedestrian precincts',
+        'linkLabel': 'Explore Bollards',
+    }),
     'Linears': ('linears', {
         'title': 'Linear Lighting',
         'description': 'Continuous, seamless and profile linear systems for architectural, retail and workspace environments — surface, suspended or recessed.',
@@ -126,6 +132,19 @@ CATEGORY_MAP = {
 # Special-case: Strips/02-lby-profiles is actually profiles/accessories.
 FOLDER_CATEGORY_OVERRIDE = {
     'Strips/02-lby-profiles': 'Profiles',
+    # Split out of Outdoor Architectural so they read as their own range.
+    'Outdoor Architectural/22-pioled-fuji-square': 'Bollards',
+    'Outdoor Architectural/23-pioled-fuji-round': 'Bollards',
+    'Outdoor Architectural/24-pioled-everest-square': 'Bollards',
+    'Outdoor Architectural/25-pioled-everest-round': 'Bollards',
+}
+
+# Products deliberately not published, keyed by their folder under products/.
+#
+# This lives here rather than in the generated catalogue so that re-running the
+# generator does not silently bring them back. The source scrape is left intact.
+EXCLUDED_PRODUCTS = {
+    'Outdoor Architectural/21-superlume-palm-coco',   # withdrawn — replaced in range
 }
 
 # ─────────────────────────────────────────────────────────────────────────
@@ -1038,8 +1057,11 @@ def main():
             continue
         for entry in sorted(os.listdir(cat_path)):
             folder_path = os.path.join(cat_path, entry)
-            if os.path.isdir(folder_path):
-                folders.append((cat_dir, entry, folder_path))
+            if not os.path.isdir(folder_path):
+                continue
+            if f'{cat_dir}/{entry}' in EXCLUDED_PRODUCTS:
+                continue
+            folders.append((cat_dir, entry, folder_path))
 
     copied_images = 0
     skipped_duplicate_images = 0

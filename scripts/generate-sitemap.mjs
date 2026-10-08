@@ -93,7 +93,7 @@ for (const line of scr) {
 
 // Update this when the published range changes. It guards the parser against
 // silently emitting a short sitemap after a source reshuffle.
-const EXPECTED_PRODUCT_COUNT = 118;
+const EXPECTED_PRODUCT_COUNT = 117;
 
 if (products.length !== EXPECTED_PRODUCT_COUNT) {
   console.error(

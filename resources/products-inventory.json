@@ -1651,21 +1651,7 @@
       "pilotDatasheet": false,
       "hasDatasheet": true
     },
-    {
-      "section": "Outdoor Architectural",
-      "cat": "Outdoor Architectural",
-      "supplier": "Superlume",
-      "name": "Palm & Coco",
-      "lumenxName": "",
-      "url": "https://www.superlume.co.za/category/all-products?Product+type=Fabric%20Tape%20Lighting%20Range",
-      "hasLink": true,
-      "localPdf": false,
-      "siteSlug": null,
-      "siteStatus": null,
-      "note": "",
-      "pilotDatasheet": false,
-      "hasDatasheet": false
-    },
+    null,
     {
       "section": "Outdoor Architectural",
       "cat": "Outdoor Architectural",
