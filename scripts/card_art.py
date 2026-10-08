@@ -56,7 +56,7 @@ def _dominant_border_colour(im, band=4):
     return colours[counts.argmax()], counts.max() / len(px)
 
 
-def strip_border_background(im, tol=38):
+def strip_border_background(im, tol=38, edge_guard=0):
     """Remove the backdrop, whatever colour it is.
 
     Supplier shots come on white, light grey and black. Matching only near-white
@@ -75,10 +75,22 @@ def strip_border_background(im, tol=38):
 
     bg_img = Image.new('RGB', (w, h), tuple(int(c) for c in bg))
     diff = np.abs(np.array(im, dtype=np.int16) - np.array(bg_img, dtype=np.int16)).sum(axis=2)
+
+    # Edge guard. On a white product against a white background, colour alone
+    # cannot separate them at any tolerance: too loose and the fill creeps
+    # through the product and shreds it, too tight and nothing is removed at all.
+    # Requiring a pixel to sit in a FLAT region as well as match the backdrop
+    # stops the fill at the product's outline, because that is where the
+    # gradient is.
+    grey = np.array(im.convert('L'), dtype=np.int16)
+    gy, gx = np.gradient(grey)
+    grad = np.hypot(gx, gy)
+    removable = (diff <= tol) & (grad <= edge_guard)
+
     # .copy() matters: Image.fromarray returns a READ-ONLY image and
     # ImageDraw.floodfill silently does nothing on one, so the backdrop would
     # never be removed and every grey/black background would stay a visible box.
-    near = Image.fromarray(np.where(diff <= tol, 255, 0).astype(np.uint8), 'L').copy()
+    near = Image.fromarray(np.where(removable, 255, 0).astype(np.uint8), 'L').copy()
 
     for x in range(w):
         for y in (0, h - 1):

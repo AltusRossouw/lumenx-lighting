@@ -35,6 +35,17 @@ MAX_CANDIDATES = 10
 # Filenames that are drawings, tables or wiring diagrams rather than product
 # photography. They score well on size and aspect but put a spec table or a
 # "see configurations" panel on the card.
+# Supplier photo naming tells you a lot. LEDsC4 publish the real product shot as
+# "01-web-mainimage-<product>", and their ambience/interior shots as "amb", plus
+# CDN renders under a long hex hash. The scraper's chosen hero is frequently one
+# of the latter, so the score has to prefer the main image.
+PHOTO_MAIN = re.compile(r'web-mainimage|mainimage|main-image', re.I)
+PHOTO_FIRST = re.compile(r'^0?1[-_]')             # the supplier's first image
+PHOTO_RELATED = re.compile(r'^member[-_]', re.I)  # "related products" carousel thumb
+PHOTO_SCENE = re.compile(
+    r'(?:^|[-_ ])(amb|ambient|moodbild|scene|application|install|project|teaser|grp|detail)', re.I)
+HASHY = re.compile(r'[0-9a-f]{16,}', re.I)
+
 # Anchored on a separator, so "tiltable" is not read as "table".
 NOT_PHOTO = re.compile(
     r'(?:^|[-_ ])(dimension|schematic|drawing|diagram|schaltplan|wiring|table|'
@@ -122,7 +133,7 @@ def score_candidate(path):
         strict = True
         prepared = card_art.prepare(path)
     else:
-        if share < 0.18:
+        if share < 0.50:
             # no uniform backdrop: it is a lifestyle or composite shot. Only
             # worth using if nothing else exists.
             strict = False
@@ -139,18 +150,34 @@ def score_candidate(path):
     if pw < 90 or ph < 90:
         return None
     AR = pw / ph
-    if AR > 8 or AR < 0.13:
-        return None                                       # a sliver, not a product
+    # Bollards, posts and strip lights are genuinely thin. Rejecting those as
+    # "slivers" pushed the score onto an ambience photo instead, which is how
+    # Helion ended up with a picture of a house at dusk.
+    if AR > 12 or AR < 0.035:
+        return None
 
     fill = (pw * ph) / (w * h)
     centre_bonus = 1.0 - min(abs(AR - 1.3) / 2.0, 0.5)
+    # Resolution is only a tie-breaker. Weighted any harder, a 2500px ambience
+    # photo beat the 480px shot of the actual product.
     resolution = min((w * h) / 1_000_000, 3.0) ** 0.5
     s = 100.0
     s *= 0.4 + min(fill, 0.6) * 1.4
     s *= 0.75 + stripped_share * 0.6
     s *= centre_bonus
-    s *= 0.7 + resolution * 0.35
+    s *= 0.85 + resolution * 0.15
     s *= 1.0 + min((pw * ph) ** 0.5 / 1400, 0.6)
+    base = os.path.basename(path)
+    if PHOTO_MAIN.search(base):
+        s *= 6.0                                          # the supplier's own product shot
+    if PHOTO_FIRST.search(base):
+        s *= 1.8                                          # the supplier's lead image
+    if PHOTO_RELATED.search(base):
+        s *= 0.30                                         # a different product's thumbnail
+    if PHOTO_SCENE.search(base):
+        s *= 0.08                                         # an ambience/lifestyle frame
+    if HASHY.search(base):
+        s *= 0.55                                         # CDN render, usually not the product
     if not strict:
         s *= 0.25                                         # last resort only
     if tiny:
