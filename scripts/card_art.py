@@ -13,7 +13,7 @@ product is white anyway and touches the edge, no knockout can save it — choose
 different source image.
 """
 import numpy as np
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFilter
 
 # canvas
 W, H = 1600, 900
@@ -102,8 +102,18 @@ def strip_border_background(im, tol=38, edge_guard=0):
                 ImageDraw.floodfill(near, (x, y), 128, thresh=0)
 
     transparent = np.array(near) == 128
+    alpha = Image.fromarray(np.where(transparent, 0, 255).astype(np.uint8), 'L')
+
+    # Erode, then feather. A binary mask leaves every anti-aliased pixel along
+    # the product's outline behind, which reads as a jagged white fringe around
+    # the whole fitting and scattered speckles in the corners. Shrinking the mask
+    # by a pixel cuts that fringe away; the feather stops the new edge looking
+    # like it was cut with scissors.
+    alpha = alpha.filter(ImageFilter.MinFilter(3))
+    alpha = alpha.filter(ImageFilter.GaussianBlur(0.5))
+
     return Image.fromarray(
-        np.dstack([np.array(im), np.where(transparent, 0, 255).astype(np.uint8)]).astype(np.uint8),
+        np.dstack([np.array(im), np.array(alpha)]).astype(np.uint8),
         'RGBA')
 
 
@@ -125,14 +135,80 @@ def prepare(src):
     return im
 
 
+def resize_rgba(im, size):
+    """Resize RGBA without dragging the transparent pixels' colour into the edge.
+
+    A cut-out keeps whatever colour its transparent pixels had — white, for a
+    photo shot on white. Resampling the channels directly averages that white
+    into every boundary pixel, which is what put a ragged white fringe around
+    each fitting. Premultiplying by alpha first, then dividing it back out, is
+    the fix.
+    """
+    a = np.array(im).astype(np.float32)
+    alpha = a[:, :, 3:4] / 255.0
+    pre = np.dstack([a[:, :, :3] * alpha, a[:, :, 3]])
+    out = np.array(Image.fromarray(pre.astype(np.uint8), 'RGBA').resize(size, Image.LANCZOS))
+    oa = out[:, :, 3:4] / 255.0
+    rgb = np.divide(out[:, :, :3], oa, out=np.zeros_like(out[:, :, :3], dtype=np.float32), where=oa > 0)
+    return Image.fromarray(
+        np.dstack([np.clip(rgb, 0, 255), out[:, :, 3]]).astype(np.uint8), 'RGBA')
+
+
+def is_light_on_light(src):
+    """Is this a pale product photographed on a pale backdrop?
+
+    Those cannot be cut out cleanly at any tolerance, because the pixel where
+    the product ends and the backdrop begins is the same colour on both sides —
+    the mask boundary lands wherever JPEG noise happens to stop the fill, which
+    shows up as a torn white fringe around the fitting.
+    """
+    try:
+        im = Image.open(src).convert('RGB')
+    except Exception:                                     # noqa: BLE001
+        return False
+    bg, share = _dominant_border_colour(im)
+    if share < 0.50 or int(bg.mean()) < 200:
+        return False                                      # dark backdrop: cut-out is fine
+    stripped = strip_border_background(im)
+    a = np.array(stripped)
+    kept = a[:, :, 3] > 128
+    if kept.sum() < 50:
+        return False
+    return float(np.array(im.convert('L'))[kept].mean()) > 185
+
+
+def compose_glow(src, dest, height_frac=0.58, quality=92):
+    """Place the whole photo on a soft elliptical glow that fades into the gradient.
+
+    Used for pale-on-pale shots. Rather than pretending to cut the product out,
+    it reads as light spilling from the fitting, which suits the brand.
+    """
+    im = Image.open(src).convert('RGB')
+    target = int(H * height_frac)
+    r = target / im.height
+    if im.width * r > W * 0.86:
+        r = (W * 0.86) / im.width
+    w, h = max(1, int(im.width * r)), max(1, int(im.height * r))
+    im = im.resize((w, h), Image.LANCZOS)
+    yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
+    d = np.sqrt(((xx - w / 2) / (w / 2)) ** 2 + ((yy - h / 2) / (h / 2)) ** 2)
+    a = np.clip((1.05 - d) / (1.05 - 0.55), 0, 1)
+    base = gradient()
+    base.paste(im, ((W - w) // 2, (H - h) // 2), Image.fromarray((a * 255).astype(np.uint8), 'L'))
+    base.save(dest, quality=quality, optimize=True)
+    return (w, h)
+
+
 def compose(src, dest, height_frac=0.62, y_shift=-0.02, width_frac=0.82, quality=92):
     """Render one product shot onto the shared gradient at 16:9."""
+    if is_light_on_light(src):
+        return compose_glow(src, dest, quality=quality)
     im = prepare(src)
     target = int(H * height_frac)
     r = target / im.height
     if im.width * r > W * width_frac:
         r = (W * width_frac) / im.width
-    im = im.resize((max(1, int(im.width * r)), max(1, int(im.height * r))), Image.LANCZOS)
+    im = resize_rgba(im, (max(1, int(im.width * r)), max(1, int(im.height * r))))
     base = gradient()
     base.paste(im, ((W - im.width) // 2, int((H - im.height) // 2 + H * y_shift)), im)
     base.save(dest, quality=quality, optimize=True)
