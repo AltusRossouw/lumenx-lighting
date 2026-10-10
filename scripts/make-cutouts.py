@@ -51,6 +51,27 @@ def solidify(alpha, lo=0.30, hi=0.70):
     return (np.clip((f - lo) / (hi - lo), 0, 1) * 255).astype(np.uint8)
 
 
+def harden(alpha, target=0.75, cut=128):
+    """Binarise a mask that is still translucent after solidify().
+
+    solidify() stretches the mid-tones, but a mask that sits broadly around 0.5
+    just maps to a broad mask around 0.5 — it stays a ghost. LF40 came out 29%
+    solid, Light Sensor 48%, Fabric Tape 60%: on the gradient the backdrop shows
+    straight through them and they read as overlapping layers rather than a
+    product.
+
+    Anything still below `target` solid is cut at the midpoint instead, which
+    keeps the segmented shape and makes it opaque. A healthy cut-out is returned
+    untouched.
+    """
+    sub = alpha > 10
+    if not sub.any():
+        return alpha
+    if (alpha >= 250)[sub].mean() >= target:
+        return alpha
+    return np.where(alpha >= cut, 255, 0).astype(np.uint8)
+
+
 def _largest_component(mask):
     """Keep only the biggest connected blob, so JPEG speckle is dropped."""
     img = Image.fromarray(mask, 'L')

@@ -203,10 +203,16 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
                   {/* Image */}
                   <Link
                     to={`/products/${category.id}/${product.slug}`}
-                    className="relative h-56 overflow-hidden block bg-[#08202C]"
+                    className="relative aspect-video overflow-hidden block bg-[#08202C]"
                     aria-label={product.name}
                   >
-                    {/* tile — the product shot already carries the shared gradient */}
+                    {/*
+                      aspect-video, not a fixed height. The tiles are 16:9 with the
+                      product centred; cropping them to a wider box with object-cover
+                      cut the top and bottom off the fitting — a 660x224 card is
+                      2.95:1 against the tile's 1.78:1, which removed 40% of the
+                      product's height. Matching the aspect shows the whole thing.
+                    */}
                     <img
                       src={getProductImages(product)[0].src}
                       alt={product.name}
