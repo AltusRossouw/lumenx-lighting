@@ -89,6 +89,19 @@ def harden(alpha, target=0.75, cut=128):
 FILL_HOLES = {
     'outdoor-architectural/zod101-square-led-wall',  # glowing face punched out
     'bulkheads/bunker',                              # diffuser punched out
+    # The model drops a low-contrast face from an extrusion or a diffuser and
+    # leaves the rest of the silhouette around it. On the gradient the gap shows
+    # as a seam running the length of the product.
+    'track/leda',
+    'linears/ldr6563',
+    'linears/lrd9063',
+    'linears/protega-gen-2',
+    # NOTE: cube, cube-linear, light-sensor and ir-quattro-micro were tried here
+    # and reverted — filling them took the light-emitting face or the surrounding
+    # housing with it and looked worse than the seam it removed. The method can
+    # only tell that a region is enclosed, not that it is part of the product.
+    'sensors/service-remote',
+    'solar/sky-spt-150-solar-post-top',
 }
 
 
