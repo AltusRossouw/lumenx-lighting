@@ -44,6 +44,10 @@ SRC_OVERRIDE = {
     'sensors/is-2360-r': 'public/product-images/steinel-is-2360-r.png',
     # the scraped folder is a "related products" carousel of unrelated fittings
     'profiles/profiles': 'public/product-images/profiles.jpg',
+    # scored highest on the family shot: a marketing composite of the range laid
+    # out in a circle, which segmented as a ring with fragments inside it. The
+    # clean studio shots of the same fitting are two files along.
+    'linears/lf55': 'public/scraped/linears/lf55/02-lightframe55surfaceblack.jpg',
 }
 MAX_CANDIDATES = 10
 
@@ -98,6 +102,23 @@ def official_products():
         if cands:
             out.append((cat, slug, name, cands))
     return out
+
+
+def forced_source(cands):
+    """The override path at the head of `cands`, when one was applied.
+
+    _apply_override puts it first, so the head is the override whenever the
+    normalised path differs from a plain scraped one.
+    """
+    if not cands:
+        return None
+    head = os.path.normpath(cands[0])
+    if 'product-images' in head or head.startswith(os.path.join(ROOT, 'public', 'scraped')):
+        # a scraped/override path that the override list actually names
+        for path in SRC_OVERRIDE.values():
+            if os.path.normpath(os.path.join(ROOT, path)) == head:
+                return cands[0]
+    return None
 
 
 def _apply_override(category, slug, cands):
@@ -193,7 +214,12 @@ def score_candidate(path):
     if PHOTO_MAIN.search(base):
         s *= 6.0                                          # the supplier's own product shot
     if PHOTO_FIRST.search(base):
-        s *= 1.8                                          # the supplier's lead image
+        # The supplier's lead image, and the strongest single signal there is.
+        # The product page also carries accessories — remotes, cages, mounting
+        # boxes — and being simple shapes they score well on their own. At a
+        # smaller weight the IR Quattro Micro picked a remote control over the
+        # detector, 232 to 217.
+        s *= 3.5
     if PHOTO_RELATED.search(base):
         s *= 0.30                                         # a different product's thumbnail
     if PHOTO_SCENE.search(base):

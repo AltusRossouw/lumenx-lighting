@@ -72,6 +72,72 @@ def harden(alpha, target=0.75, cut=128):
     return np.where(alpha >= cut, 255, 0).astype(np.uint8)
 
 
+# Products where the model left the illuminated face out of the mask. The panel
+# is white and so is the backdrop, so no colour or edge test can tell them apart —
+# this has to be a per-product decision rather than a heuristic.
+#
+# Filling holes is NOT safe as a blanket rule: rings (Circular, Proud) and wire
+# pendants (Cloud Bell, Pearl, Jiangnan) legitimately enclose empty space, and
+# filling those would block them in solid.
+FILL_HOLES = {
+    'outdoor-architectural/zod101-square-led-wall',  # glowing face punched out
+    'bulkheads/bunker',                              # diffuser punched out
+}
+
+
+def fill_holes(alpha):
+    """Make enclosed transparent regions opaque.
+
+    A mask with a hole in it shows the gradient straight through the product,
+    which reads as a missing panel rather than a cut-out.
+
+    Only the alpha is touched here. rembg zeroes the colour under transparent
+    pixels, so filling the alpha alone exposes black — the caller has to take the
+    colour back from the source, which is what restore_holes does.
+    """
+    m = alpha > 10
+    h, w = m.shape
+    outside = np.zeros((h, w), bool)
+    q = deque()
+    for x in range(w):
+        for y in (0, h - 1):
+            if not m[y, x] and not outside[y, x]:
+                outside[y, x] = True
+                q.append((x, y))
+    for y in range(h):
+        for x in (0, w - 1):
+            if not m[y, x] and not outside[y, x]:
+                outside[y, x] = True
+                q.append((x, y))
+    while q:
+        x, y = q.popleft()
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            nx, ny = x + dx, y + dy
+            if 0 <= nx < w and 0 <= ny < h and not m[ny, nx] and not outside[ny, nx]:
+                outside[ny, nx] = True
+                q.append((nx, ny))
+    holes = (~m) & (~outside)
+    if not holes.any():
+        return alpha
+    return np.where(holes, 255, alpha).astype(np.uint8)
+
+
+def restore_holes(cut, source_rgb):
+    """Fill a cut-out's holes, taking the colour back from the source image.
+
+    The cut-out and the source are the same size at this point, so the pixels
+    line up.
+    """
+    a = np.array(cut)
+    alpha = a[:, :, 3]
+    filled = fill_holes(alpha)
+    if np.array_equal(filled, alpha):
+        return cut
+    src = np.array(source_rgb.convert('RGB').resize(cut.size))
+    rgb = np.where((filled[:, :, None] != alpha[:, :, None]), src, a[:, :, :3])
+    return Image.fromarray(np.dstack([rgb, filled]).astype(np.uint8), 'RGBA')
+
+
 def _largest_component(mask):
     """Keep only the biggest connected blob, so JPEG speckle is dropped."""
     img = Image.fromarray(mask, 'L')
@@ -140,7 +206,16 @@ def threshold_cutout(im):
 
 
 def chosen_source(cands):
-    """The same source the tile renderer would pick."""
+    """The same source the tile renderer would pick.
+
+    A SRC_OVERRIDE entry wins outright rather than merely joining the candidates
+    — the scorer does not know a marketing composite from a product shot, so
+    leaving it to score means the override gets outvoted by the very image it
+    exists to avoid.
+    """
+    forced = tiles.forced_source(cands)
+    if forced:
+        return forced
     scored = []
     for p in cands[:tiles.MAX_CANDIDATES]:
         if not os.path.exists(p):
@@ -226,6 +301,11 @@ def main():
 
         # trim to the subject so the tile renderer only has to scale
         a = solidify(np.array(cut)[:, :, 3])
+        if f'{category}/{slug}' in FILL_HOLES:
+            cut = restore_holes(
+                Image.fromarray(np.dstack([np.array(cut)[:, :, :3], a]).astype(np.uint8), 'RGBA'),
+                rgb)
+            a = np.array(cut)[:, :, 3]
         cut = Image.fromarray(
             np.dstack([np.array(cut)[:, :, :3], a]).astype(np.uint8), 'RGBA')
         ys, xs = np.where(a > 10)
