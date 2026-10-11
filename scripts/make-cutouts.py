@@ -67,7 +67,14 @@ def harden(alpha, target=0.75, cut=128):
     sub = alpha > 10
     if not sub.any():
         return alpha
-    if (alpha >= 250)[sub].mean() >= target:
+    solid = (alpha >= 250)[sub].mean()
+    # The tenth percentile catches a different fault from the solid share: a mask
+    # can be 80% solid and still have a whole sub-assembly — Blaster's track
+    # adapter — sitting at ~54% opacity, which shows the gradient through it.
+    # Cut-outs that are merely soft-edged sit at 210+, so this only fires on the
+    # ones that are actually see-through.
+    p10 = float(np.percentile(alpha[sub], 10))
+    if solid >= target and p10 >= 180:
         return alpha
     return np.where(alpha >= cut, 255, 0).astype(np.uint8)
 
@@ -301,6 +308,7 @@ def main():
 
         # trim to the subject so the tile renderer only has to scale
         a = solidify(np.array(cut)[:, :, 3])
+        a = harden(a)
         if f'{category}/{slug}' in FILL_HOLES:
             cut = restore_holes(
                 Image.fromarray(np.dstack([np.array(cut)[:, :, :3], a]).astype(np.uint8), 'RGBA'),
