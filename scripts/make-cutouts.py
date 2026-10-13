@@ -247,6 +247,19 @@ def threshold_cutout(im):
     return Image.fromarray(np.dstack([np.array(rgb), mask]).astype(np.uint8), 'RGBA')
 
 
+# Products where a different segmentation model is clearly better.
+#
+# isnet-general-use wins across the catalogue and is the default, but on the
+# IS 345 housing it drops the right-hand corner of the casing — and because that
+# gap reaches the outer background, hole-filling cannot reach it. u2net keeps the
+# whole housing. Switching the default back would disturb 119 other cut-outs, so
+# this stays per-product.
+MODEL_OVERRIDE = {
+    'sensors/is-345-highbay': 'u2net',
+    'sensors/is-3360-highbay': 'u2net',   # isnet leaves it 88.7% solid, u2net 98.8%
+}
+
+
 def chosen_source(cands):
     """The same source the tile renderer would pick.
 
@@ -289,6 +302,15 @@ def has_own_alpha(path, threshold=0.05):
     return bool((a < 10).mean() > threshold)
 
 
+def session_for(key, cache={}):
+    """One rembg session per model, created on demand."""
+    name = MODEL_OVERRIDE.get(key, 'isnet-general-use')
+    if name not in cache:
+        from rembg import new_session
+        cache[name] = new_session(name)
+    return cache[name]
+
+
 def main():
     from rembg import new_session, remove
 
@@ -305,7 +327,7 @@ def main():
     # better on every product, and decisively better on pale fittings on pale
     # backdrops, where u2net returns a near-empty mask: profiles went 2.6% -> 95.6%
     # solid, lf20 28% -> 57%, Leda 63% -> 70%.
-    session = new_session('isnet-general-use')
+    sessions = {}
     done = skipped = failed = 0
     started = time.time()
 
@@ -326,7 +348,7 @@ def main():
                 cut = source_im.convert('RGBA')
             else:
                 rgb = source_im.convert('RGB')
-                cut = remove(rgb, session=session, alpha_matting=False)
+                cut = remove(rgb, session=session_for(f'{category}/{slug}'), alpha_matting=False)
                 # On a pale backdrop, trust whichever keeps more of the product.
                 # This only ever adds coverage, so it cannot make a good cut-out
                 # worse; it exists because the models confidently return a corner
