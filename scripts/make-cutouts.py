@@ -102,6 +102,12 @@ FILL_HOLES = {
     # only tell that a region is enclosed, not that it is part of the product.
     'sensors/service-remote',
     'panels/600x1200-recessed-panel',                # patch of the diffuser dropped
+    # white detector housings on a white sweep; the model drops patches of the
+    # casing. These arrived from the supplier's own product pages, so the source
+    # is as good as it gets.
+    'sensors/is-3360',
+    'sensors/is-3360-highbay',
+    'sensors/is-345-highbay',
     'solar/sky-spt-150-solar-post-top',
 }
 

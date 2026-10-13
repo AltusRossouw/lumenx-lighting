@@ -48,6 +48,12 @@ SRC_OVERRIDE = {
     # out in a circle, which segmented as a ring with fragments inside it. The
     # clean studio shots of the same fitting are two files along.
     'linears/lf55': 'public/scraped/linears/lf55/02-lightframe55surfaceblack.jpg',
+    # The three is-3360/is-345 files held a copy of the Smart Remote photo and
+    # steinel-smart-remote.png held a sensor, so these products were showing the
+    # wrong device entirely. Pulled from the supplier's own product pages.
+    'sensors/is-3360': 'public/product-images/steinel-is-3360.png',
+    'sensors/is-3360-highbay': 'public/product-images/steinel-is-3360-highbay.png',
+    'sensors/is-345-highbay': 'public/product-images/steinel-is-345-highbay.png',
 }
 MAX_CANDIDATES = 10
 
