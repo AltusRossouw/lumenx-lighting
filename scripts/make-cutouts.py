@@ -101,6 +101,7 @@ FILL_HOLES = {
     # housing with it and looked worse than the seam it removed. The method can
     # only tell that a region is enclosed, not that it is part of the product.
     'sensors/service-remote',
+    'panels/600x1200-recessed-panel',                # patch of the diffuser dropped
     'solar/sky-spt-150-solar-post-top',
 }
 
@@ -188,13 +189,14 @@ def _largest_component(mask):
     return out
 
 
-def extent(cut):
-    """The cut-out's long edge, in pixels."""
-    a = np.array(cut)[:, :, 3]
-    ys, xs = np.where(a > 10)
-    if not len(xs):
-        return 0
-    return max(xs.max() - xs.min() + 1, ys.max() - ys.min() + 1)
+def coverage(cut):
+    """How many pixels of the frame the mask actually claims.
+
+    This used to compare bounding-box extents, which cannot tell two masks
+    apart when one has holes punched through it — Light Sensor's two candidates
+    differed by six pixels of extent while one covered 47% more of the product.
+    """
+    return int((np.array(cut)[:, :, 3] > 128).sum())
 
 
 def threshold_cutout(im):
@@ -217,11 +219,25 @@ def threshold_cutout(im):
     bg = int(np.bincount(band).argmax())
     if bg < 235:
         return None
-    mask = (g < bg - 7).astype(np.uint8) * 255
+    # A tight delta matters: the product's brightest faces sit within a couple of
+    # levels of the backdrop, and anything looser drops them and leaves gaps.
+    mask = (g < bg - 2).astype(np.uint8) * 255
     mask = np.array(Image.fromarray(mask, 'L').filter(ImageFilter.MedianFilter(5)))
     mask = _largest_component(mask)
     if mask.sum() == 0:
         return None
+
+    # The product's brightest face sits within a level or two of the backdrop, so
+    # the raw threshold picks it up in patches and leaves a chewed edge — LF20's
+    # whole top face flickers in and out. Shaving a few pixels off the boundary
+    # removes the fringe. Guarded, because on a thin profile that shave could
+    # take the product with it.
+    eroded = Image.fromarray(mask, 'L')
+    for _ in range(5):
+        eroded = eroded.filter(ImageFilter.MinFilter(3))
+    eroded = np.array(eroded)
+    if eroded.sum() >= 0.5 * mask.sum():
+        mask = eroded
     return Image.fromarray(np.dstack([np.array(rgb), mask]).astype(np.uint8), 'RGBA')
 
 
@@ -310,9 +326,10 @@ def main():
                 # worse; it exists because the models confidently return a corner
                 # of a white fitting as if it were the whole thing.
                 alt = threshold_cutout(rgb)
-                if alt is not None and extent(alt) > extent(cut):
-                    print(f'  note  {category}/{slug:28} model kept {extent(cut)}px '
-                          f'of {max(rgb.size)}, threshold kept {extent(alt)}px')
+                if alt is not None and coverage(alt) > coverage(cut):
+                    print(f'  note  {category}/{slug:28} model covered '
+                          f'{100 * coverage(cut) / (rgb.width * rgb.height):.0f}%, '
+                          f'threshold {100 * coverage(alt) / (rgb.width * rgb.height):.0f}%')
                     cut = alt
         except Exception as exc:                          # noqa: BLE001
             print(f'  FAIL  {category}/{slug:28} {exc}')
