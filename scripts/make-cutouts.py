@@ -227,6 +227,11 @@ def threshold_cutout(im):
         return None
     # A tight delta matters: the product's brightest faces sit within a couple of
     # levels of the backdrop, and anything looser drops them and leaves gaps.
+    # A looser margin (8) was tried here to clear the anti-aliased ramp at a pale
+    # product's edge, which is what leaves LF20 stepped. It fixed LF20 but put a
+    # scalloped edge on IS 3360, so it is not a net win — IS 3360 is clean at 2
+    # and LF20 is stepped at either. Reverted pending something that helps one
+    # without costing the other.
     mask = (g < bg - 2).astype(np.uint8) * 255
     mask = np.array(Image.fromarray(mask, 'L').filter(ImageFilter.MedianFilter(5)))
     mask = _largest_component(mask)
@@ -257,6 +262,10 @@ def threshold_cutout(im):
 MODEL_OVERRIDE = {
     'sensors/is-345-highbay': 'u2net',
     'sensors/is-3360-highbay': 'u2net',   # isnet leaves it 88.7% solid, u2net 98.8%
+    'solar/sky-spt-150-solar-post-top': 'u2net',  # 88.4% -> 98.8% solid
+    # isnet keeps 25% of LF55 and loses to the pale-backdrop threshold, which
+    # then chews its lower edge. u2net keeps 69% and wins outright.
+    'linears/lf55': 'u2net',
 }
 
 
