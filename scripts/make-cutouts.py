@@ -259,14 +259,22 @@ def threshold_cutout(im):
 # gap reaches the outer background, hole-filling cannot reach it. u2net keeps the
 # whole housing. Switching the default back would disturb 119 other cut-outs, so
 # this stays per-product.
-MODEL_OVERRIDE = {
-    'sensors/is-345-highbay': 'u2net',
-    'sensors/is-3360-highbay': 'u2net',   # isnet leaves it 88.7% solid, u2net 98.8%
-    'solar/sky-spt-150-solar-post-top': 'u2net',  # 88.4% -> 98.8% solid
-    # isnet keeps 25% of LF55 and loses to the pale-backdrop threshold, which
-    # then chews its lower edge. u2net keeps 69% and wins outright.
-    'linears/lf55': 'u2net',
-}
+# The default model. BiRefNet is the current state of the art for this task and
+# measures better than isnet or u2net on every hard case in the catalogue:
+#
+#   product        isnet cover/solid     birefnet cover/solid
+#   LF20            5.3% /  54.4%         40.4% / 97.3%
+#   LF55            4.9% /   0.7%         28.4% / 93.3%
+#   ZOD101         19.3% /  83.2%         29.4% / 98.8%
+#   IS 345         37.5% /  18.5%         39.3% / 98.2%
+#   Bunker          8.8% /  92.6% (6.9% holes)  18.0% / 97.6% (0% holes)
+#
+# It costs about 9s an image against 1-2s, which is the right trade for a
+# catalogue that is rebuilt by hand rather than on every deploy.
+DEFAULT_MODEL = 'birefnet-general'
+
+# Per-product exceptions, for anything the default turns out to handle badly.
+MODEL_OVERRIDE: dict[str, str] = {}
 
 
 def chosen_source(cands):
@@ -313,7 +321,7 @@ def has_own_alpha(path, threshold=0.05):
 
 def session_for(key, cache={}):
     """One rembg session per model, created on demand."""
-    name = MODEL_OVERRIDE.get(key, 'isnet-general-use')
+    name = MODEL_OVERRIDE.get(key, DEFAULT_MODEL)
     if name not in cache:
         from rembg import new_session
         cache[name] = new_session(name)
