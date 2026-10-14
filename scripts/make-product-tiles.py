@@ -48,6 +48,15 @@ SRC_OVERRIDE = {
     # out in a circle, which segmented as a ring with fragments inside it. The
     # clean studio shots of the same fitting are two files along.
     'linears/lf55': 'public/scraped/linears/lf55/02-lightframe55surfaceblack.jpg',
+    # The shipped ALU_BLUKHEAD.png stacks a side view over a front view, and the
+    # side view's dome is clipped flat. Cropped from the unclipped img-001.png to
+    # the round front view alone, so the card shows one product rather than two
+    # shapes with a floating dome.
+    'bulkheads/alu-bulkhead': 'public/product-images/alu-bulkhead-round.png',
+    # Same shape of problem: a side elevation over a front elevation, with the
+    # side view's dome clipped. member-02 is the square variant, cropped to its
+    # front view.
+    'bulkheads/bunker': 'public/product-images/bunker-round.png',
     # The three is-3360/is-345 files held a copy of the Smart Remote photo and
     # steinel-smart-remote.png held a sensor, so these products were showing the
     # wrong device entirely. Pulled from the supplier's own product pages.
@@ -93,8 +102,11 @@ def official_products():
         img = re.search(r"image: '([^']+)'", b)
         name = re.search(r"name: '([^']+)'", b)
         if slug and cat and img:
+            # SRC_OVERRIDE has to be applied here too. These products carry their
+            # hero in official-products.ts rather than a scraped folder, and
+            # without this an override keyed to one of them was silently ignored.
             out.append((cat.group(1), slug.group(1), name.group(1) if name else slug.group(1),
-                        ['public' + img.group(1)]))
+                        _apply_override(cat.group(1), slug.group(1), ['public' + img.group(1)])))
     for m in re.finditer(r"fromScraped\(\s*'([^']+)',\s*'([^']+)',\s*'([^']+)'(.*?)\),\n", src, re.S):
         cat, scraped, name, rest = m.groups()
         hero = re.search(r"hero: '([^']+)'", rest)

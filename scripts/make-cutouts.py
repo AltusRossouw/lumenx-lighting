@@ -344,10 +344,6 @@ def main():
     if args:
         items = [i for i in items if i[1] in args]
 
-    # isnet-general-use, not u2net. Measured across the catalogue it is equal or
-    # better on every product, and decisively better on pale fittings on pale
-    # backdrops, where u2net returns a near-empty mask: profiles went 2.6% -> 95.6%
-    # solid, lf20 28% -> 57%, Leda 63% -> 70%.
     sessions = {}
     done = skipped = failed = 0
     started = time.time()
