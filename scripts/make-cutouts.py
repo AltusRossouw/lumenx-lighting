@@ -109,6 +109,10 @@ FILL_HOLES = {
     'sensors/is-3360-highbay',
     'sensors/is-345-highbay',
     'solar/sky-spt-150-solar-post-top',
+    # BiRefNet leaves a small notch where the trim ring meets the diffuser on this
+    # housing. Both slugs are the same fitting under two names.
+    'downlights/diffused-downlight',
+    'downlights/cob-adjustable-downlight',
 }
 
 
