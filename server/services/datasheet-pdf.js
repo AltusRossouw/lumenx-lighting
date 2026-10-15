@@ -65,6 +65,12 @@ async function doGenerate(slug) {
     const htmlPath = path.join(tmpDir, `${slug}.html`);
     try {
       fs.writeFileSync(htmlPath, html);
+      // Drop the stale artifact first. The Chrome fallback below decides the
+      // render finished by polling for the output path, so leaving a previous
+      // PDF in place made it resolve on the first poll, kill Chrome, and report
+      // success without ever writing — the cache then never refreshed when a
+      // payload or the template changed.
+      fs.rmSync(pdfPath, { force: true });
       await renderHtmlToPdf(htmlPath, pdfPath);
     } finally {
       fs.rmSync(tmpDir, { recursive: true, force: true });
@@ -144,8 +150,14 @@ async function renderHtmlToPdf(htmlPath, pdfPath) {
   await new Promise((resolve, reject) => {
     const child = spawn(chrome, args, { stdio: 'ignore' });
     const started = Date.now();
+    // Chrome writes the PDF shortly before it exits, so a tick of grace lets the
+    // final poll see the file before an exit is treated as a failure.
+    let exitedAt = 0;
     const timer = setInterval(() => {
       if (fs.existsSync(pdfPath)) return finish(resolve);
+      if (exitedAt && Date.now() - exitedAt > 1000) {
+        return finish(() => reject(new Error('Chrome exited without producing the datasheet PDF.')));
+      }
       if (Date.now() - started > 60000) return finish(() => reject(new Error('Chrome datasheet render timed out.')));
     }, 300);
 
@@ -155,7 +167,9 @@ async function renderHtmlToPdf(htmlPath, pdfPath) {
     };
     const finish = (fn) => { cleanup(); child.kill('SIGKILL'); fn(); };
     child.on('error', (err) => { cleanup(); reject(err); });
-    child.on('exit', () => { /* PDF creation is polled; exit alone is not the signal */ });
+    // PDF creation is polled; exit alone is not the signal, but it does start the
+    // grace window above so a crash fails fast instead of hanging for 60s.
+    child.on('exit', () => { exitedAt = Date.now(); });
   });
 }
 
