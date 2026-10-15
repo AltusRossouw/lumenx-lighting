@@ -338,9 +338,10 @@ def main():
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
     force = '--force' in sys.argv
 
-    items = tiles.products()
-    items += [p for p in tiles.official_products()
-              if not any(p[0] == q[0] and p[1] == q[1] for q in items)]
+    # tiles.catalogue() merges scraped and curated entries, curated first. This
+    # used to drop any curated entry whose slug also appeared in the scrape,
+    # which silently discarded its hand-picked hero — see the note there.
+    items = tiles.catalogue()
     if args:
         items = [i for i in items if i[1] in args]
 
@@ -361,10 +362,15 @@ def main():
             continue
         try:
             source_im = Image.open(src)
+            # Bound on both branches. restore_holes() below reads it, and a
+            # FILL_HOLES product whose source already carries alpha used to reach
+            # that line with rgb unassigned -- an UnboundLocalError, not a
+            # fallback. Nothing hit it until a cropped composite with real alpha
+            # (Bunker) became a FILL_HOLES input.
+            rgb = source_im.convert('RGB')
             if has_own_alpha(src):
                 cut = source_im.convert('RGBA')
             else:
-                rgb = source_im.convert('RGB')
                 cut = remove(rgb, session=session_for(f'{category}/{slug}'), alpha_matting=False)
                 # On a pale backdrop, trust whichever keeps more of the product.
                 # This only ever adds coverage, so it cannot make a good cut-out

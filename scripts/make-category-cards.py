@@ -44,7 +44,10 @@ PICKS = {
     'vapourproof':            ['Neptune',                    'public/scraped/vapourproof/neptune/01-neptune-800x416.png'],
     'decorative':             ['Dream Pen',                  'public/scraped/decorative/dream-pen/03-dreampen-s1-l1231-w617-h1178.png'],
     'indoor-architectural':   ['Circular Vertical',          'public/scraped/indoor-architectural/circular-vertical/07-aea62d768c704212-b0f107f9acc8036a-2000-1-6.png'],
-    'outdoor-architectural':  ['Moal',                       'public/scraped/outdoor-architectural/moal/10-7a35dab1b5c147f9-90544533412351b0-2000.png'],
+    # Was Moal, which is a bollard — and on a Products page that reads almost
+    # identically to the Bollards card sitting next to it. Cube is a wall-washer
+    # and shares no silhouette with anything else in the grid.
+    'outdoor-architectural':  ['Cube',                       'public/scraped/outdoor-architectural/cube/08-2960c2a2159a46d3-8805edf6645f8ee9-2000-1-34.png'],
     'bollards':               ['Everest Round',              'public/scraped/outdoor-architectural/everest-round/01-pioled-lighting-fb001-12w-everest-round-ip65-bollard-4cct-black-1.png'],
 }
 

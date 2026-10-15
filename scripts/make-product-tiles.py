@@ -46,8 +46,12 @@ SRC_OVERRIDE = {
     'profiles/profiles': 'public/product-images/profiles.jpg',
     # scored highest on the family shot: a marketing composite of the range laid
     # out in a circle, which segmented as a ring with fragments inside it. The
-    # clean studio shots of the same fitting are two files along.
-    'linears/lf55': 'public/scraped/linears/lf55/02-lightframe55surfaceblack.jpg',
+    # clean studio shots of the same fitting are further along the folder.
+    #
+    # This pointed at 02-lightframe55surfaceblack.jpg, which is only 526x242 --
+    # the card scales the product to 522px tall, so it was being upscaled 2.2x
+    # and read soft. 06 is the same black finish as a 4652x2912 studio shot.
+    'linears/lf55': 'public/scraped/linears/lf55/06-lightframe55x80.jpg',
     # The shipped ALU_BLUKHEAD.png stacks a side view over a front view, and the
     # side view's dome is clipped flat. Cropped from the unclipped img-001.png to
     # the round front view alone, so the card shows one product rather than two
@@ -56,15 +60,86 @@ SRC_OVERRIDE = {
     # Same shape of problem: a side elevation over a front elevation, with the
     # side view's dome clipped. member-02 is the square variant, cropped to its
     # front view.
-    'bulkheads/bunker': 'public/product-images/bunker-round.png',
+    #
+    # This used to point at bunker-round.png, which was a byte-identical copy of
+    # alu-bulkhead-round.png -- ALU Bulkhead and Bunker were rendering the same
+    # picture on two different cards. bunker-square.png is the crop this comment
+    # always described, and showing Bunker square also keeps it distinct from
+    # the round ALU Bulkhead.
+    'bulkheads/bunker': 'public/product-images/bunker-square.png',
     # The three is-3360/is-345 files held a copy of the Smart Remote photo and
     # steinel-smart-remote.png held a sensor, so these products were showing the
     # wrong device entirely. Pulled from the supplier's own product pages.
     'sensors/is-3360': 'public/product-images/steinel-is-3360.png',
     'sensors/is-3360-highbay': 'public/product-images/steinel-is-3360-highbay.png',
     'sensors/is-345-highbay': 'public/product-images/steinel-is-345-highbay.png',
+
+    # Composites cropped to a single view, per the agreed default: where a
+    # supplier ships more than one object in one frame and there is no
+    # single-view alternative, show one object rather than the group.
+    #
+    # Hero and PC Bulkhead are the same four-piece exploded shot (they do appear
+    # to be the same polycarbonate range sold under two names -- worth a
+    # catalogue question, not an image one). Both are cropped to the round
+    # panel.
+    'bulkheads/hero': 'public/product-images/hero-round.png',
+    'bulkheads/pc-bulkhead': 'public/product-images/pc-bulkhead-round.png',
+    # Two views/finishes side by side on one sweep; each now shows one fitting.
+    # The two crops also happen to read differently -- Rhea domed, Phoebe flat
+    # with its fixing screws -- which keeps the two cards apart.
+    'bulkheads/rhea': 'public/product-images/rhea-single.png',
+    'bulkheads/phoebe': 'public/product-images/phoebe-single.png',
+    # A long linear and a short one in the same frame.
+    'linears/soniq': 'public/product-images/soniq-single.png',
+    # Fitting plus its loose adaptor and trim ring.
+    'track/snypa': 'public/product-images/snypa-single.png',
+    # A white and a black spot together; one reads as two products.
+    'track/35w-track-spot': 'public/product-images/35w-track-spot-single.png',
+    # Three cone pendants at different sizes in one frame. The crop is only
+    # 206px, so this card is soft -- flagged for a supplier shot.
+    'indoor-architectural/attic': 'public/product-images/attic-single.png',
+    # A linear batten with an unrelated round fitting beside it. Keeps the
+    # batten (--blob 1), which is the product this slug names.
+    'vapourproof/kuda': 'public/product-images/kuda-single.png',
 }
 MAX_CANDIDATES = 10
+
+# The scraper sometimes filed the category banner itself as one of a product's
+# gallery images — it is on the page, so it looked like a product photo. It put
+# the Sensors card in three products' candidate lists and the Highbays card in
+# Raptor's, where a 1600x900 banner outscored the real 300x300 product shot.
+CATEGORY_CARD = re.compile(r'/product-images/categories/')
+
+# Normalised paths that a human decision put at the head of a candidate list.
+FORCED = set()
+
+
+def curated_heroes():
+    """<category>/<slug> -> the hero a curated entry picked, from official-products.ts.
+
+    A curated hero is a human decision about which photo fronts a product, so it
+    belongs in the same "wins outright" tier as SRC_OVERRIDE rather than the
+    scoring pool. See catalogue() for why they were being ignored.
+    """
+    src = open(os.path.join(ROOT, 'src', 'official-products.ts')).read()
+    out = {}
+    for m in re.finditer(r"createOfficialProduct\(\{(.*?)\n  \}\),", src, re.S):
+        b = m.group(1)
+        slug = re.search(r"slug: '([^']+)'", b)
+        cat = re.search(r"category: '([^']+)'", b)
+        img = re.search(r"image: '([^']+)'", b)
+        if slug and cat and img:
+            out[f'{cat.group(1)}/{slug.group(1)}'] = 'public' + img.group(1)
+    for m in re.finditer(r"fromScraped\(\s*'([^']+)',\s*'([^']+)',\s*'([^']+)'(.*?)\),\n", src, re.S):
+        cat, scraped, _name, rest = m.groups()
+        pub = re.search(r"publicSlug: '([^']+)'", rest)
+        hero = re.search(r"hero: '([^']+)'", rest)
+        if hero:
+            out[f'{cat}/{pub.group(1) if pub else scraped}'] = 'public' + hero.group(1)
+    return out
+
+
+CURATED_HERO = curated_heroes()
 
 # Filenames that are drawings, tables or wiring diagrams rather than product
 # photography. They score well on size and aspect but put a spec table or a
@@ -118,32 +193,42 @@ def official_products():
         for g in re.findall(r"\{ src: '([^']+)'", rest):
             cands.append('public' + g)
         if cands:
-            out.append((cat, slug, name, cands))
+            # _apply_override has to run in this branch too. It was only applied
+            # to createOfficialProduct entries, so a hero on a fromScraped entry
+            # was never recorded as forced — the same omission as the note above,
+            # one branch further down.
+            out.append((cat, slug, name, _apply_override(cat, slug, cands)))
     return out
 
 
 def forced_source(cands):
-    """The override path at the head of `cands`, when one was applied.
+    """The path at the head of `cands` when a human decision put it there.
 
-    _apply_override puts it first, so the head is the override whenever the
-    normalised path differs from a plain scraped one.
+    This used to re-derive the answer by scanning SRC_OVERRIDE for a matching
+    value. That could not see a curated hero, so those lists looked unforced and
+    went to the scorer like any other candidate. _apply_override now records
+    what it forced, which is both simpler and correct.
     """
     if not cands:
         return None
-    head = os.path.normpath(cands[0])
-    if 'product-images' in head or head.startswith(os.path.join(ROOT, 'public', 'scraped')):
-        # a scraped/override path that the override list actually names
-        for path in SRC_OVERRIDE.values():
-            if os.path.normpath(os.path.join(ROOT, path)) == head:
-                return cands[0]
-    return None
+    return cands[0] if os.path.normpath(cands[0]) in FORCED else None
 
 
 def _apply_override(category, slug, cands):
-    override = SRC_OVERRIDE.get(f'{category}/{slug}')
-    if override and os.path.exists(os.path.join(ROOT, override)):
-        return [os.path.join(ROOT, override)] + cands
-    return cands
+    """Head the candidate list with a forced source, if one applies.
+
+    SRC_OVERRIDE is checked first: it is the more specific, later decision. Any
+    copy already in the list is dropped, so a forced path is never listed twice.
+    """
+    forced = SRC_OVERRIDE.get(f'{category}/{slug}') or CURATED_HERO.get(f'{category}/{slug}')
+    if not forced:
+        return cands
+    full = os.path.join(ROOT, forced)
+    if not os.path.exists(full):
+        return cands
+    FORCED.add(os.path.normpath(full))
+    rest = [c for c in cands if os.path.normpath(c) != os.path.normpath(full)]
+    return [full] + rest
 
 
 def products():
@@ -158,11 +243,39 @@ def products():
         gallery = re.findall(r'\{ src: "([^"]+)"', body)
         cands = []
         for p in ([hero.group(1)] if hero else []) + gallery:
+            if CATEGORY_CARD.search(p):
+                continue                    # the category banner is not a product photo
             full = 'public' + p
             if full not in cands:
                 cands.append(full)
         out.append((category, slug, name, _apply_override(category, slug, cands)))
     return out
+
+
+def catalogue():
+    """Every product to render, scraped and curated merged, keyed by category/slug.
+
+    This replaces a list comprehension that appended a curated product only when
+    its slug did not already appear in the scrape. Fourteen curated entries
+    collided and were dropped outright — and with them the hand-picked hero that
+    is the entire point of the entry. Thirteen of those products were rendering
+    whatever the scorer picked from the scraped folder while their chosen hero
+    sat unused in public/product-images.
+
+    Curated wins the collision now: its candidates head the list, so the forced
+    hero still leads, and the scraped candidates follow as alternatives.
+    """
+    merged = {}
+    for cat, slug, name, cands in products():
+        merged[(cat, slug)] = (cat, slug, name, cands)
+    for cat, slug, name, cands in official_products():
+        key = (cat, slug)
+        if key in merged:
+            rest = [c for c in merged[key][3] if c not in cands]
+            merged[key] = (cat, slug, name, cands + rest)
+        else:
+            merged[key] = (cat, slug, name, cands)
+    return list(merged.values())
 
 
 def score_candidate(path):
@@ -257,18 +370,28 @@ def render(category, slug, name, cands, force=False, report=False):
     if os.path.exists(dest) and not force and not report:
         return 'skipped', None, None
 
-    scored = []
-    for p in cands[:MAX_CANDIDATES]:
-        if not os.path.exists(p):
-            continue
-        r = score_candidate(p)
-        if r is not None:
-            scored.append((r[0], r[1], p))
-    if not scored:
-        return 'no-usable-image', None, None
-    # prefer a clean cut-out; fall back to the best of the rest
-    strict = [s for s in scored if s[1]]
-    best_score, best_strict, best = max(strict or scored)
+    # A forced source is a human decision, so it is the answer — not a candidate.
+    # This function used to score the whole list and ignore forced_source, which
+    # only stayed invisible because the tile is normally composited from the
+    # cached cut-out (and make-cutouts.py does honour the override). With no
+    # cut-out cached, the fallback silently rendered a different image than the
+    # override asked for, and --report named the scorer's pick either way.
+    forced = forced_source(cands)
+    if forced is not None:
+        best, best_strict, best_score = forced, True, float('inf')
+    else:
+        scored = []
+        for p in cands[:MAX_CANDIDATES]:
+            if not os.path.exists(p):
+                continue
+            r = score_candidate(p)
+            if r is not None:
+                scored.append((r[0], r[1], p))
+        if not scored:
+            return 'no-usable-image', None, None
+        # prefer a clean cut-out; fall back to the best of the rest
+        strict = [s for s in scored if s[1]]
+        best_score, best_strict, best = max(strict or scored)
 
     if report:
         tag = '' if best_strict else '  (no clean cut-out)'
@@ -288,9 +411,7 @@ def main():
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
     force = '--force' in sys.argv
     report = '--report' in sys.argv
-    items = products()
-    items += [p for p in official_products()
-              if not any(p[0] == q[0] and p[1] == q[1] for q in items)]
+    items = catalogue()
     if args:
         items = [i for i in items if i[1] in args]
 

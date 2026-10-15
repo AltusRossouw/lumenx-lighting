@@ -204,19 +204,55 @@ The current overrides, each with its reason in a comment:
 |---|---|---|
 | `sensors/is-2360-r` | `steinel-is-2360-r.png` | scrape only caught two lifestyle teasers |
 | `profiles/profiles` | `profiles.jpg` | scraped folder was an unrelated carousel |
-| `linears/lf55` | `02-lightframe55surfaceblack.jpg` | family shot segmented as a ring |
+| `linears/lf55` | `06-lightframe55x80.jpg` | family shot segmented as a ring |
 | `bulkheads/alu-bulkhead` | `alu-bulkhead-round.png` | composite, side view clipped |
-| `bulkheads/bunker` | `bunker-round.png` | composite, plus a hairline seam |
+| `bulkheads/bunker` | `bunker-square.png` | composite, plus a hairline seam |
 | `sensors/is-3360` | `steinel-is-3360.png` | shipped file was the wrong product |
 | `sensors/is-3360-highbay` | `steinel-is-3360-highbay.png` | shipped file was the wrong product |
 | `sensors/is-345-highbay` | `steinel-is-345-highbay.png` | shipped file was the wrong product |
+| `bulkheads/hero` | `hero-round.png` | four-piece exploded shot |
+| `bulkheads/pc-bulkhead` | `pc-bulkhead-round.png` | four-piece exploded shot |
+| `bulkheads/rhea` | `rhea-single.png` | two views/finishes in one frame |
+| `bulkheads/phoebe` | `phoebe-single.png` | two views/finishes in one frame |
+| `linears/soniq` | `soniq-single.png` | a long linear and a short one together |
+| `track/snypa` | `snypa-single.png` | fitting plus loose adaptor and trim ring |
+| `track/35w-track-spot` | `35w-track-spot-single.png` | a white and a black spot together |
+| `indoor-architectural/attic` | `attic-single.png` | three cone pendants at three sizes |
+| `vapourproof/kuda` | `kuda-single.png` | batten with an unrelated round fitting |
 
-> **Fixed bug worth knowing.** `official_products()` did **not** apply
-> `SRC_OVERRIDE`. Curated products carry their hero in `official-products.ts`
-> rather than a scraped folder, so an override keyed to one of them was silently
-> ignored — the fix appeared to do nothing and looked like a caching problem.
-> This is now corrected, but any override added before that fix may never have
-> taken effect.
+### Three bugs that made overrides and curated heroes do nothing
+
+1. **`official_products()` did not apply `SRC_OVERRIDE`.** Curated products
+   carry their hero in `official-products.ts` rather than a scraped folder, so
+   an override keyed to one of them was silently ignored.
+
+2. **The `fromScraped` branch of `official_products()` still did not apply it.**
+   Fix 1 was made on the `createOfficialProduct` branch only, so every
+   `fromScraped` entry was still skipped. This is why the curated heroes for
+   `diffused-downlight`, `flood`, `thermisto`, `puck-seamless`,
+   `puck-profile-40x43`, `puck-profile-70x36`, `lds5083`, `neptune`,
+   `titan`, `saxa`, `sauron` and `bazuka` were never used.
+
+3. **`main()` dropped curated entries that collided with a scraped slug.**
+   Both `make-product-tiles.py` and `make-cutouts.py` did:
+
+   ```python
+   items += [p for p in official_products()
+             if not any(p[0] == q[0] and p[1] == q[1] for q in items)]
+   ```
+
+   Fourteen curated entries collided and were discarded outright — and with them
+   the hand-picked `hero`, which is the whole point of the entry. Thirteen
+   products were rendering a scorer's pick from the scraped folder while their
+   chosen hero sat unused in `public/product-images`. `catalogue()` now merges
+   the two, curated first, so the forced hero leads and the scraped candidates
+   follow as alternatives.
+
+> `--report` used to name the scorer's pick even when an override applied,
+> because `render()` never consulted `forced_source`. The tile was still
+> correct — it is composited from the cut-out, and `make-cutouts.py` did honour
+> the override — but with no cut-out cached the fallback rendered the wrong
+> image, and the report was misleading either way. Both are fixed.
 
 **`MODEL_OVERRIDE`** — per-product segmentation model. Currently empty;
 `birefnet-general` handles everything.
