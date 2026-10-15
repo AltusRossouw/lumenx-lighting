@@ -40,8 +40,12 @@ SRC_OVERRIDE = {
     # NOTE: do not "fix" smart-remote by pointing it at steinel-smart-remote.png —
     # despite the filename that file is a motion detector. The scraped image, an
     # orange app screen, is the actual product.
-    # scraped only ever captured two lifestyle teasers for this one
-    'sensors/is-2360-r': 'public/product-images/steinel-is-2360-r.png',
+    # scraped only ever captured two lifestyle teasers for this one, and the
+    # supplier's own page serves only a 360x360 shot. The card renders the
+    # product 522px tall, so that was a 1.45x upscale. This points at the same
+    # photograph through Pixelmator's 3x ML Super Resolution (1080x1080); the
+    # untouched original is kept beside it as steinel-is-2360-r.png.
+    'sensors/is-2360-r': 'public/product-images/steinel-is-2360-r-upscaled.png',
     # the scraped folder is a "related products" carousel of unrelated fittings
     'profiles/profiles': 'public/product-images/profiles.jpg',
     # scored highest on the family shot: a marketing composite of the range laid
@@ -97,7 +101,15 @@ SRC_OVERRIDE = {
     'track/35w-track-spot': 'public/product-images/35w-track-spot-single.png',
     # Three cone pendants at different sizes in one frame. The crop is only
     # 206px, so this card is soft -- flagged for a supplier shot.
-    'indoor-architectural/attic': 'public/product-images/attic-single.png',
+    # ...and the 3x ML Super Resolution takes it to 618px, so it now downscales
+    # for the card instead of being blown up 2.5x.
+    'indoor-architectural/attic': 'public/product-images/attic-single-upscaled.png',
+    # Every one of the twelve candidates in this folder is a 147x147 thumbnail,
+    # which the card blew up 3.55x -- the worst image in the catalogue. The
+    # supplier only ever published thumbnails, so this is the same photograph at
+    # 441x441 via Pixelmator's 3x ML Super Resolution. Still a 1.18x upscale, but
+    # no longer mush. A real studio shot is still wanted from the supplier.
+    'indoor-architectural/fabric-tape': 'public/product-images/fabric-tape-upscaled.png',
     # A linear batten with an unrelated round fitting beside it. Keeps the
     # batten (--blob 1), which is the product this slug names.
     'vapourproof/kuda': 'public/product-images/kuda-single.png',
