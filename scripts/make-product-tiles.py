@@ -31,6 +31,10 @@ OUT = os.path.join(ROOT, 'public', 'product-images', 'tiles')
 
 HEIGHT_FRAC = 0.58
 
+# The flat treatment frames a whole, uncropped shot rather than a tight cut-out,
+# so the product sits smaller inside the tile than it did on the gradient.
+FLAT_HEIGHT_FRAC = 0.88
+
 # Manual source overrides, keyed "<category>/<slug>".
 #
 # The scraper does not always end up with the supplier's product shot — some
@@ -410,13 +414,13 @@ def render(category, slug, name, cands, force=False, report=False):
         return 'scored', os.path.relpath(best, ROOT) + tag, best_score
 
     os.makedirs(dest_dir, exist_ok=True)
-    # prefer the segmented cut-out; it beats anything the colour-based path can do
-    cut = os.path.join(ROOT, 'public', 'product-images', 'cutouts', category, f'{slug}.png')
-    if os.path.exists(cut):
-        card_art.compose_cutout(cut, dest, height_frac=HEIGHT_FRAC)
-        return 'rendered', os.path.relpath(best, ROOT), best_score
-    card_art.compose(best, dest, height_frac=HEIGHT_FRAC)
-    return ('rendered' if best_strict else 'rendered-fallback'), os.path.relpath(best, ROOT), best_score
+    # Flat treatment: the shot goes on a tile of its own backdrop colour, whole
+    # and uncropped. The cut-out path is deliberately no longer used here -- a
+    # mask is the one thing that cannot be made reliable on a pale product
+    # against a pale sweep, and it is where the halos, the notches and the
+    # flat-clipped domes came from.
+    card_art.compose_flat(best, dest, height_frac=FLAT_HEIGHT_FRAC)
+    return 'rendered', os.path.relpath(best, ROOT), best_score
 
 
 def main():

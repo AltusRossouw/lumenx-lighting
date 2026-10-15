@@ -221,6 +221,77 @@ def compose_cutout(cut_path, dest, height_frac=0.62, y_shift=-0.02, width_frac=0
     return im.size
 
 
+def tile_background(im):
+    """The colour a product's own backdrop should become on the tile.
+
+    This is the whole point of the flat treatment. Cutting a product out is where
+    the halos, the notches and the flat-clipped domes came from, and on a pale
+    product against a pale sweep no mask is reliable. So the product is not cut
+    out at all: the tile is painted the colour it was photographed on, and it
+    blends with nothing to get wrong at the edge.
+
+    A source with real alpha has no backdrop to match, so it goes on white --
+    which is what the printed catalogue does too.
+    """
+    alpha = np.array(im.convert('RGBA'))[:, :, 3]
+    if (alpha < 10).mean() > 0.05:
+        return (255, 255, 255)
+    bg, _share = _dominant_border_colour(im)
+    bg = tuple(int(c) for c in bg)
+    # Everything ends up on white. A sweep that is already white needs nothing;
+    # a grey one is lifted instead of matched, because matching leaves a seam --
+    # the dominant border colour is quantised and a JPEG sweep is never perfectly
+    # flat, so the tile and the image disagree by a few levels and the eye reads
+    # it as a rectangle. A white-point lift removes the disagreement entirely and
+    # gives the grid the single white frame the catalogue contract asks for.
+    return (255, 255, 255)
+
+
+def whiten(im, bg):
+    """Scale the image so its own backdrop reaches pure white.
+
+    Only the six grey-sweep sources take this path. It is a per-channel gain, so
+    it lifts the whole frame slightly; on those products (dark wall lights, a
+    white batten, post tops) that is invisible, and it is what lets them sit on
+    the same white tile as the other 101.
+    """
+    if min(bg) >= 244:
+        return im
+    a = np.array(im.convert('RGB')).astype(np.float32)
+    gain = np.array([255.0 / max(1, c) for c in bg], dtype=np.float32)
+    return Image.fromarray(np.clip(a * gain, 0, 255).astype(np.uint8), 'RGB')
+
+
+def compose_flat(src, dest, height_frac=0.88, width_frac=0.90, quality=92):
+    """Place a product shot, whole, on a flat tile of its own backdrop colour.
+
+    No segmentation, no mask, nothing to go wrong at the edges, and the product
+    is never cropped. Compare compose_cutout, which needs a mask and shows every
+    flaw in it.
+    """
+    im = Image.open(src)
+    rgba = im.convert('RGBA')
+    bg = tile_background(im)
+    if (np.array(rgba)[:, :, 3] < 10).mean() <= 0.05:
+        rgba = whiten(rgba, tuple(int(c) for c in _dominant_border_colour(im)[0])).convert('RGBA')
+    # Trim to the subject only when there is real alpha. On an opaque source the
+    # sweep IS the frame: trimming it would put a hard edge back.
+    a = np.array(rgba)[:, :, 3]
+    if (a < 10).mean() > 0.05:
+        ys, xs = np.where(a > 10)
+        if len(xs):
+            rgba = rgba.crop((xs.min(), ys.min(), xs.max() + 1, ys.max() + 1))
+    target = int(H * height_frac)
+    r = target / rgba.height
+    if rgba.width * r > W * width_frac:
+        r = (W * width_frac) / rgba.width
+    placed = resize_rgba(rgba, (max(1, int(rgba.width * r)), max(1, int(rgba.height * r))))
+    base = Image.new('RGB', (W, H), bg)
+    base.paste(placed, ((W - placed.width) // 2, (H - placed.height) // 2), placed)
+    base.save(dest, quality=quality, optimize=True)
+    return placed.size
+
+
 def compose(src, dest, height_frac=0.62, y_shift=-0.02, width_frac=0.82, quality=92):
     """Render one product shot onto the shared gradient at 16:9.
 
