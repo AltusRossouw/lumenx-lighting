@@ -41,6 +41,28 @@ CREATE TABLE IF NOT EXISTS downloads (
   created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
+-- Which photometric file belongs to which catalogue product.
+--
+-- This table is the source of truth for the per-product IES downloads. The
+-- committed frontend map (`src/ies-product-map.ts`) is a build artefact
+-- generated from it by `scripts/generate-ies-product-map.mjs` (`npm run
+-- ies:map`) rather than being edited by hand, and the admin "IES files" tab
+-- writes here through POST /api/admin/ies/upload.
+--
+-- One file belongs to exactly one product (the UNIQUE index on `filename`), so
+-- a file cannot be offered under two luminaires; re-assigning moves it.
+CREATE TABLE IF NOT EXISTS ies_product_files (
+  id            UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  product_slug  TEXT NOT NULL,
+  category_slug TEXT,
+  filename      TEXT NOT NULL,
+  original_name TEXT,
+  bytes         INTEGER,
+  source        TEXT NOT NULL DEFAULT 'upload',  -- 'upload' | 'import'
+  uploaded_by   TEXT,
+  created_at    TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
 -- Quote requests from the OrbitX lighting planner.
 CREATE TABLE IF NOT EXISTS quote_requests (
   id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -97,3 +119,8 @@ CREATE INDEX IF NOT EXISTS quote_requests_created_idx ON quote_requests (created
 CREATE INDEX IF NOT EXISTS quote_requests_email_idx   ON quote_requests (email);
 CREATE INDEX IF NOT EXISTS contact_requests_created_idx ON contact_requests (created_at DESC);
 CREATE INDEX IF NOT EXISTS contact_requests_email_idx   ON contact_requests (email);
+
+-- One IES file serves one product; the generator and the admin UI both rely on
+-- this (see the table comment above).
+CREATE UNIQUE INDEX IF NOT EXISTS ies_product_files_filename_idx ON ies_product_files (filename);
+CREATE INDEX IF NOT EXISTS ies_product_files_product_idx         ON ies_product_files (product_slug);

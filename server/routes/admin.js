@@ -1,9 +1,17 @@
-// Admin routes — user management and download tracking.
+// Admin routes — user management, download tracking and the IES library.
 // Protected by the `x-admin-key` header OR a signed-in admin session.
 
-import { Router } from 'express';
+import express, { Router } from 'express';
 import { query, queryOne } from '../db.js';
 import { requireAdmin } from '../middleware/auth.js';
+import {
+  assignIesFile,
+  buildProductMap,
+  listIesLibrary,
+  unassignIesFile,
+  validateIesUpload,
+  writeIesFile,
+} from '../services/ies-product-map.js';
 
 const adminView = (row) => ({
   id: row.id,
@@ -11,6 +19,13 @@ const adminView = (row) => ({
   role: row.role,
   created_at: row.created_at,
 });
+
+// Product slugs are URL-safe lowercase tokens (see src/types.ts `Product.slug`).
+const SLUG_RE = /^[a-z0-9][a-z0-9-]{0,80}$/;
+
+// IES files are text; 8 MB is far above the largest real LM-63 file (~120 KB)
+// while still bounding an admin-only upload.
+const rawIes = express.raw({ type: () => true, limit: '8mb' });
 
 export const adminRouter = () => {
   const router = Router();
@@ -92,6 +107,139 @@ export const adminRouter = () => {
          LIMIT 300`,
       );
       return res.json({ leads: result.rows });
+    } catch (err) {
+      return next(err);
+    }
+  });
+
+  // ── IES library ─────────────────────────────────────────────────────────
+  // Attach photometry to catalogue products. Associations are stored in
+  // `ies_product_files` and rendered into `src/ies-product-map.ts` by
+  // `npm run ies:map`; raw files land in the walled-garden IES directory.
+
+  // GET /api/admin/ies — every file with its product, plus the grouped map.
+  router.get('/ies', async (_req, res, next) => {
+    try {
+      const [{ files }, productMap] = await Promise.all([listIesLibrary(), buildProductMap()]);
+      return res.json({
+        files,
+        map: productMap.map,
+        missing: productMap.missing.map((row) => row.filename),
+        ambiguous: productMap.ambiguous,
+      });
+    } catch (err) {
+      return next(err);
+    }
+  });
+
+  // POST /api/admin/ies/upload?product=<slug>[&category=<slug>][&filename=<name>]
+  // Body is the raw file. The uploaded file is renamed to the repository's
+  // slugified convention and attached to `product` in one step.
+  //
+  // The error handler sits in the same route stack so a body-parser rejection
+  // (too large, aborted) answers 413/400 rather than falling through to the
+  // generic 500 handler.
+  const uploadBodyError = (err, _req, res, next) => {
+    if (err?.type === 'entity.too.large') {
+      return res.status(413).json({ error: 'That file is larger than the 8 MB upload limit.' });
+    }
+    if (err?.status >= 400 && err?.status < 500) {
+      return res.status(err.status).json({ error: 'The upload could not be read.' });
+    }
+    return next(err);
+  };
+
+  router.post('/ies/upload', rawIes, uploadBodyError, async (req, res, next) => {
+    try {
+      const productSlug = String(req.query.product ?? '').trim();
+      const categorySlug = String(req.query.category ?? '').trim() || null;
+      const originalName =
+        String(req.get('x-ies-filename') ?? '').trim() || String(req.query.filename ?? '').trim();
+
+      if (!SLUG_RE.test(productSlug)) {
+        return res.status(400).json({ error: 'A valid product slug is required.' });
+      }
+      if (categorySlug !== null && !SLUG_RE.test(categorySlug)) {
+        return res.status(400).json({ error: 'Invalid category slug.' });
+      }
+      if (!originalName) {
+        return res.status(400).json({ error: 'The uploaded file needs a name.' });
+      }
+      if (!originalName.toLowerCase().endsWith('.ies')) {
+        return res.status(400).json({ error: 'Only .ies files can be attached to a product.' });
+      }
+
+      const valid = validateIesUpload(req.body);
+      if (!valid.ok) {
+        return res.status(400).json({ error: valid.error });
+      }
+
+      const { filename, reused } = await writeIesFile(originalName, req.body);
+      const assignment = await assignIesFile({
+        productSlug,
+        categorySlug,
+        filename,
+        originalName,
+        bytes: req.body.length,
+        source: 'upload',
+        uploadedBy: req.user?.email ?? 'admin-key',
+      });
+
+      const { map, files } = await buildProductMap();
+      return res.status(reused ? 200 : 201).json({ ok: true, reused, file: assignment, map, files });
+    } catch (err) {
+      if (err?.status) return res.status(err.status).json({ error: err.message });
+      return next(err);
+    }
+  });
+
+  // POST /api/admin/ies/assign — attach a file that is already on disk.
+  router.post('/ies/assign', async (req, res, next) => {
+    try {
+      const productSlug = String(req.body?.productSlug ?? '').trim();
+      const categorySlug = String(req.body?.categorySlug ?? '').trim() || null;
+      const filename = String(req.body?.filename ?? '').trim();
+
+      if (!SLUG_RE.test(productSlug)) {
+        return res.status(400).json({ error: 'A valid product slug is required.' });
+      }
+      if (!filename.toLowerCase().endsWith('.ies') || filename.includes('/') || filename.includes('..')) {
+        return res.status(400).json({ error: 'A valid IES filename is required.' });
+      }
+
+      const { files } = await listIesLibrary();
+      if (!files.some((file) => file.filename === filename)) {
+        return res.status(404).json({ error: 'IES file not found.' });
+      }
+
+      const assignment = await assignIesFile({
+        productSlug,
+        categorySlug,
+        filename,
+        source: 'upload',
+        uploadedBy: req.user?.email ?? 'admin-key',
+      });
+
+      const { map } = await buildProductMap();
+      return res.json({ ok: true, file: assignment, map });
+    } catch (err) {
+      return next(err);
+    }
+  });
+
+  // DELETE /api/admin/ies/assign/:filename — detach (the file stays on disk).
+  router.delete('/ies/assign/:filename', async (req, res, next) => {
+    try {
+      const filename = String(req.params.filename ?? '').trim();
+      if (!filename.toLowerCase().endsWith('.ies') || filename.includes('/') || filename.includes('..')) {
+        return res.status(400).json({ error: 'A valid IES filename is required.' });
+      }
+      const removed = await unassignIesFile(filename);
+      if (removed === 0) {
+        return res.status(404).json({ error: 'That file is not attached to a product.' });
+      }
+      const { map } = await buildProductMap();
+      return res.json({ ok: true, removed, map });
     } catch (err) {
       return next(err);
     }

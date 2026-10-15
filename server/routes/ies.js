@@ -1,17 +1,23 @@
 // IES routes.
 //
-//  * GET /api/ies            — OPEN metadata listing (files + planner profiles).
-//  * GET /api/ies/:filename  — gated raw-file download (signed-in account only).
+//  * GET /api/ies               — OPEN metadata listing (files + planner profiles).
+//  * GET /api/ies/product-map   — OPEN product → filenames map (assignments).
+//  * GET /api/ies/:filename     — gated raw-file download (signed-in account only).
 //
 // Raw photometry for the OrbitX planner is streamed from the separate
 // `/api/planner/ies/:filename` route so the public planner never exposes the
 // gated download path.
+//
+// The product map is metadata only: it says which photometric file belongs to
+// which product, exactly as `GET /api/ies` already lists every file's name. The
+// files themselves stay behind `requireAuth` (client decision Q10).
 
 import { Router } from 'express';
 import fs from 'node:fs';
 import path from 'node:path';
 import { requireAuth } from '../middleware/auth.js';
 import { listIesFiles, resolveIesPath, humanizeIesLabel } from '../services/ies.js';
+import { buildProductMap } from '../services/ies-product-map.js';
 import { recordDownload } from '../services/downloads.js';
 
 const slugify = (value) =>
@@ -40,6 +46,17 @@ export const iesRouter = () => {
       const files = await listIesFiles();
       const profiles = files.map(toPlannerProfile);
       return res.json({ files, profiles });
+    } catch (err) {
+      return next(err);
+    }
+  });
+
+  // GET /api/ies/product-map — which files belong to which product slug.
+  // Must be declared before `/:filename` so it is not read as a filename.
+  router.get('/product-map', async (_req, res, next) => {
+    try {
+      const { map, files, missing, ambiguous } = await buildProductMap();
+      return res.json({ map, files, missing: missing.length, ambiguous });
     } catch (err) {
       return next(err);
     }

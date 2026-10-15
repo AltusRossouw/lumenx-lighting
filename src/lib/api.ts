@@ -176,3 +176,103 @@ export const api = {
       body: JSON.stringify({ email, report }),
     }),
 };
+
+/* ── IES library management (admin) ──────────────────────────────────────
+ *
+ * Associations live in the `ies_product_files` table and are rendered into
+ * `src/ies-product-map.ts` by `npm run ies:map`. Uploads are sent as raw bytes
+ * (not multipart): the server reads the body with express.raw, so no upload
+ * middleware or new dependency is needed.
+ */
+
+export interface IesLibraryFile {
+  filename: string;
+  assigned: boolean;
+  productSlug: string | null;
+  categorySlug: string | null;
+  originalName: string | null;
+  source: string | null;
+  uploadedBy: string | null;
+  createdAt: string | null;
+  /** Attached to a product, but the file is no longer in the IES directory. */
+  missing?: boolean;
+}
+
+export interface IesAdminMutation {
+  ok: boolean;
+  map: Record<string, string[]>;
+}
+
+export interface IesUploadResult extends IesAdminMutation {
+  reused: boolean;
+  files: number;
+  file: {
+    filename: string;
+    productSlug: string;
+    categorySlug: string | null;
+    bytes: number | null;
+  };
+}
+
+const asApiError = (message: string, status: number): ApiError => {
+  const err = new Error(message) as ApiError;
+  err.status = status;
+  return err;
+};
+
+/** Same contract as `request`, but for a raw binary body. */
+async function requestBinary<T>(path: string, body: ArrayBuffer, filename: string): Promise<T> {
+  let res: Response;
+  try {
+    res = await fetch(path, {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/octet-stream',
+        'X-IES-Filename': filename,
+      },
+      body,
+    });
+  } catch {
+    throw new Error('Cannot reach the server. Is the backend running?');
+  }
+
+  const text = await res.text();
+  const data = text ? JSON.parse(text) : {};
+  if (!res.ok) {
+    throw asApiError(data?.error || `Upload failed (${res.status})`, res.status);
+  }
+  return data as T;
+}
+
+export const iesAdminApi = {
+  library: () =>
+    request<{
+      files: IesLibraryFile[];
+      map: Record<string, string[]>;
+      missing: string[];
+      ambiguous: { slug: string; categories: string[] }[];
+    }>('/api/admin/ies'),
+
+  assign: (productSlug: string, categorySlug: string | null, filename: string) =>
+    request<IesAdminMutation>('/api/admin/ies/assign', {
+      method: 'POST',
+      body: JSON.stringify({ productSlug, categorySlug, filename }),
+    }),
+
+  detach: (filename: string) =>
+    request<IesAdminMutation & { removed: number }>(
+      `/api/admin/ies/assign/${encodeURIComponent(filename)}`,
+      { method: 'DELETE' },
+    ),
+
+  upload: async (productSlug: string, categorySlug: string | null, file: File) => {
+    const params = new URLSearchParams({ product: productSlug, filename: file.name });
+    if (categorySlug) params.set('category', categorySlug);
+    return requestBinary<IesUploadResult>(
+      `/api/admin/ies/upload?${params.toString()}`,
+      await file.arrayBuffer(),
+      file.name,
+    );
+  },
+};

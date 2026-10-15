@@ -3,11 +3,13 @@ import { motion } from 'motion/react';
 import { api, AdminUser, DownloadRecord, DownloadStats, Lead } from '../lib/api';
 import { PageHeroBackground } from './animations';
 import { ContentEditor } from './ContentEditor';
+import { AdminIesLibrary } from './AdminIesLibrary';
 import {
   AtSign,
   FileDown,
   FileText,
   Inbox,
+  Lightbulb,
   Loader2,
   Lock,
   LogOut,
@@ -19,7 +21,7 @@ import {
 
 type AuthState = 'loading' | 'login' | 'authenticated';
 type Filter = 'all' | 'admins';
-type Tab = 'users' | 'downloads' | 'leads' | 'content';
+type Tab = 'users' | 'downloads' | 'leads' | 'content' | 'ies';
 
 export const AdminPage: React.FC = () => {
   const [authState, setAuthState] = useState<AuthState>('loading');
@@ -225,6 +227,7 @@ export const AdminPage: React.FC = () => {
                     { id: 'users', label: 'Users', icon: Users },
                     { id: 'leads', label: 'Leads', icon: Inbox },
                     { id: 'downloads', label: 'Downloads', icon: FileDown },
+                    { id: 'ies', label: 'IES files', icon: Lightbulb },
                     { id: 'content', label: 'Content', icon: FileText },
                   ] as { id: Tab; label: string; icon: React.ComponentType<{ className?: string }> }[]
                 ).map((t) => {
@@ -399,6 +402,8 @@ export const AdminPage: React.FC = () => {
                 </>
               ) : tab === 'content' ? (
                 <ContentEditor />
+              ) : tab === 'ies' ? (
+                <AdminIesLibrary />
               ) : (
                 <>
                   {/* Leads */}

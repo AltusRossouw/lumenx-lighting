@@ -1,9 +1,30 @@
 import React, { useMemo, useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { getCategory, getProductsByCategory, getProductImages } from '../products';
+import { getCategory, getProductsByCategory, getProductImages, displayName } from '../products';
+import { resolveProductTiles, type ProductTile } from '../product-tiles';
 import { ArrowLeft, ArrowRight, Check, Search, X } from 'lucide-react';
 import { PageHeroBackground } from './animations';
+
+/**
+ * One of the four fixed specification tiles on a product card.
+ *
+ * A slot with no data renders the placeholder in muted italic, so an empty slot
+ * reads as a deliberate gap rather than a broken card.
+ */
+const SpecTile: React.FC<{ tile: ProductTile }> = ({ tile }) => (
+  <div className="px-2.5 py-1.5 rounded-md bg-white/[0.02] border border-[#1E293B]/60">
+    <p className="text-[9px] font-mono text-slate-500 uppercase tracking-wider">{tile.label}</p>
+    <p
+      className={`text-[11px] font-medium truncate ${
+        tile.placeholder ? 'text-slate-500 italic' : 'text-white'
+      }`}
+      title={tile.value}
+    >
+      {tile.value}
+    </p>
+  </div>
+);
 
 interface ProductDetailPageProps {
   categoryId: string;
@@ -191,8 +212,13 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {filtered.map((product, i) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filtered.map((product, i) => {
+                const tiles = resolveProductTiles(product);
+                // OrbitX fittings render with their brand prefix; the slug and
+                // the data underneath are untouched.
+                const name = displayName(product);
+                return (
                 <motion.div
                   key={product.slug}
                   initial={{ opacity: 0, y: 20 }}
@@ -204,7 +230,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
                   <Link
                     to={`/products/${category.id}/${product.slug}`}
                     className="relative aspect-video overflow-hidden block bg-[#08202C]"
-                    aria-label={product.name}
+                    aria-label={name}
                   >
                     {/*
                       aspect-video, not a fixed height. The tiles are 16:9 with the
@@ -215,7 +241,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
                     */}
                     <img
                       src={getProductImages(product)[0].src}
-                      alt={product.name}
+                      alt={name}
                       loading="lazy"
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
                     />
@@ -225,21 +251,28 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
                   <div className="p-6 flex flex-col flex-grow">
                     <Link to={`/products/${category.id}/${product.slug}`} className="block">
                       <h3 className="font-display text-lg font-bold text-white mb-2 tracking-tight group-hover:text-primary transition-colors duration-300">
-                        {product.name}
+                        {name}
                       </h3>
                     </Link>
                     <p className="text-sm text-slate-400 leading-relaxed flex-grow font-sans font-light">
                       {product.summary}
                     </p>
 
-                    {/* Key specs preview */}
+                    {/* Key specs preview — the same four slots on every
+                        product, so two cards can be read against each other.
+                        Column order is left: Guarantee, IP Rating; right:
+                        Wattage, Lumens / Watt. See src/product-tiles.ts. */}
                     <div className="mt-4 grid grid-cols-2 gap-2">
-                      {product.specs.slice(0, 4).map((spec) => (
-                        <div key={spec.label} className="px-2.5 py-1.5 rounded-md bg-white/[0.02] border border-[#1E293B]/60">
-                          <p className="text-[9px] font-mono text-slate-500 uppercase tracking-wider">{spec.label}</p>
-                          <p className="text-[11px] text-white font-medium truncate">{spec.value}</p>
-                        </div>
-                      ))}
+                      <div className="space-y-2">
+                        {tiles.slice(0, 2).map((tile) => (
+                          <SpecTile key={tile.key} tile={tile} />
+                        ))}
+                      </div>
+                      <div className="space-y-2">
+                        {tiles.slice(2, 4).map((tile) => (
+                          <SpecTile key={tile.key} tile={tile} />
+                        ))}
+                      </div>
                     </div>
 
                     {/* Applications */}
@@ -272,7 +305,8 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
                     </div>
                   </div>
                 </motion.div>
-              ))}
+                );
+              })}
             </div>
           )}
 

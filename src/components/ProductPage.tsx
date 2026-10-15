@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { getCategory, getProduct, getProductsByCategory, getProductImages, datasheetDownloadUrl, iesVariantLabel } from '../products';
+import { getCategory, getProduct, getProductsByCategory, getProductImages, datasheetDownloadUrl, iesVariantLabel, displayName } from '../products';
 import { iesFilesForProduct } from '../ies-product-map';
 import { api } from '../lib/api';
 import {
@@ -10,6 +10,7 @@ import {
   Check,
   FileDown,
   FileText,
+  Mail,
   ShieldCheck,
   Layers,
   Lock,
@@ -61,6 +62,9 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
   }
 
   const siblings = getProductsByCategory(categoryId);
+  // OrbitX fittings render with their brand prefix on every surface — heading,
+  // breadcrumb, gallery alt text and prev/next — while the slug stays put.
+  const name = displayName(product);
   const index = siblings.findIndex((p) => p.slug === slug);
   const prev = index > 0 ? siblings[index - 1] : undefined;
   const next = index >= 0 && index < siblings.length - 1 ? siblings[index + 1] : undefined;
@@ -83,7 +87,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
               {category.title}
             </Link>
             <span className="text-slate-700">/</span>
-            <span className="text-white">{product.name}</span>
+            <span className="text-white">{name}</span>
           </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
@@ -96,7 +100,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
               </div>
 
               <h1 className="font-display text-3xl sm:text-5xl font-bold text-white mb-4 tracking-[-0.02em]">
-                {product.name}
+                {name}
               </h1>
               <p className="text-lg text-primary/90 font-sans font-light mb-4">{product.summary}</p>
               <p className="text-slate-400 text-sm sm:text-base leading-relaxed font-sans font-light max-w-xl">
@@ -130,7 +134,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
             >
               <ProductImageGallery
                 images={galleryImages}
-                name={product.name}
+                name={name}
               />
             </motion.div>
           </div>
@@ -172,7 +176,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
                 ) : (
                   <div className="px-6 py-8 text-center">
                     <p className="text-sm text-slate-400 font-sans font-light">
-                      Full technical data for the {product.name} is available on request.
+                      Full technical data for the {name} is available on request.
                     </p>
                     <Link
                       to="/contact"
@@ -184,28 +188,43 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
                 )}
               </div>
 
-              {/* Downloads — the datasheet PDF is open, photometry is gated. */}
-              {(product.pdfUrl || iesFiles.length > 0) && (
-                <div className="mt-8">
-                  <div className="flex flex-wrap items-center gap-3">
-                    {product.pdfUrl && (
-                      <a href={datasheetDownloadUrl(product.pdfUrl)} download className="btn btn-outline btn-sm no-underline">
-                        <FileText className="w-4 h-4 text-slate-400" />
-                        <span>Spec Sheet</span>
-                        <span className="text-[10px] text-slate-500 font-mono">.PDF</span>
-                      </a>
-                    )}
-                    {iesFiles.length > 0 && !iesAuthed && (
-                      <Link
-                        to="/account"
-                        state={{ from: `/products/${categoryId}/${slug}` }}
-                        className="btn btn-outline btn-sm no-underline"
-                      >
-                        <Lock className="w-4 h-4 text-slate-400" />
-                        <span>Login or register to download .IES</span>
-                      </Link>
-                    )}
-                  </div>
+              {/*
+                Downloads — the datasheet PDF is open, photometry stays gated
+                (client decision Q10: do not open the downloads up).
+
+                This block deliberately has no outer guard. It used to be
+                wrapped in `{(product.pdfUrl || iesFiles.length > 0) && …}`,
+                which hid the whole thing — including the "contact us" route
+                below — on exactly the products that have no photometry yet.
+                That is backwards: those are the products where a specifier
+                needs to be told how to get the file.
+              */}
+              <div className="mt-8">
+                <div className="flex flex-wrap items-center gap-3">
+                  {product.pdfUrl && (
+                    <a href={datasheetDownloadUrl(product.pdfUrl)} download className="btn btn-outline btn-sm no-underline">
+                      <FileText className="w-4 h-4 text-slate-400" />
+                      <span>Spec Sheet</span>
+                      <span className="text-[10px] text-slate-500 font-mono">.PDF</span>
+                    </a>
+                  )}
+                  {iesFiles.length > 0 && !iesAuthed && (
+                    <Link
+                      to="/account"
+                      state={{ from: `/products/${categoryId}/${slug}` }}
+                      className="btn btn-outline btn-sm no-underline"
+                    >
+                      <Lock className="w-4 h-4 text-slate-400" />
+                      <span>Login or register to download .IES</span>
+                    </Link>
+                  )}
+                  {iesFiles.length === 0 && (
+                    <Link to="/contact" className="btn btn-outline btn-sm no-underline">
+                      <Mail className="w-4 h-4 text-slate-400" />
+                      <span>Contact us for the IES file</span>
+                    </Link>
+                  )}
+                </div>
 
                   {iesFiles.length > 0 && iesAuthed && (
                     <div className="mt-4 border border-[#1E293B]/70 bg-[#0A0F17] p-5">
@@ -249,7 +268,6 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
                     </div>
                   )}
                 </div>
-              )}
             </div>
 
             {/* Sidebar: features + applications */}
@@ -298,7 +316,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
                 <ArrowLeft className="w-5 h-5 text-slate-500 group-hover:text-primary group-hover:-translate-x-1 transition-all shrink-0" />
                 <div className="min-w-0">
                   <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-1">Previous</p>
-                  <p className="text-sm font-semibold text-white truncate font-display">{prev.name}</p>
+                  <p className="text-sm font-semibold text-white truncate font-display">{displayName(prev)}</p>
                 </div>
               </Link>
             ) : (
@@ -311,7 +329,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
               >
                 <div className="min-w-0">
                   <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-1">Next</p>
-                  <p className="text-sm font-semibold text-white truncate font-display">{next.name}</p>
+                  <p className="text-sm font-semibold text-white truncate font-display">{displayName(next)}</p>
                 </div>
                 <ArrowRight className="w-5 h-5 text-slate-500 group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0" />
               </Link>
@@ -326,7 +344,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
               Need a specification or quote?
             </h2>
             <p className="text-slate-400 text-sm mb-6 max-w-lg mx-auto font-sans font-light">
-              Our technical team can confirm availability, lead times and project pricing for the {product.name}.
+              Our technical team can confirm availability, lead times and project pricing for the {name}.
             </p>
             <Link to="/contact" className="btn btn-primary group inline-flex no-underline">
               <span className="flex items-center gap-2">
