@@ -14,13 +14,16 @@ import {
 } from 'lucide-react';
 
 // Fallback catalogue so the tool renders even when the backend is offline.
+// These must name real files in server/files/ies/. The previous list pointed at
+// the seeded sample files, which were removed: they carried generated
+// placeholder photometry under a LumenX product name.
 const FALLBACK_PRODUCTS: DesignProduct[] = [
-  { id: 'LumenX_V200_Highbay_160W.ies', name: 'V200 UFO Highbay 160W', lumens: 32000, watts: 160, manufacturer: 'LumenX' },
-  { id: 'LumenX_Saxa_Triproof_54W.ies', name: 'Saxa Triproof 54W', lumens: 6480, watts: 54, manufacturer: 'LumenX' },
-  { id: 'LumenX_60W_Street_Light.ies', name: '60W Street Light', lumens: 10200, watts: 60, manufacturer: 'LumenX' },
-  { id: 'LumenX_Recessed_Panel_600x600_24W.ies', name: 'Recessed Panel 600x600 24W', lumens: 3600, watts: 24, manufacturer: 'LumenX' },
-  { id: 'LumenX_9W_Surface_Downlight.ies', name: '9W Surface Downlight', lumens: 1250, watts: 9, manufacturer: 'LumenX' },
-  { id: 'LumenX_Performance_Flood_175W.ies', name: 'Performance Flood 175W', lumens: 22500, watts: 175, manufacturer: 'LumenX' },
+  { id: 'lumenx-3000k-10w-sauron-downlight.ies', name: 'Sauron Downlight 10W 3000K', lumens: 1000, watts: 10, manufacturer: 'LumenX' },
+  { id: 'lumenx-100w-90-heavy-duty-premium-floods.ies', name: 'Heavy Duty Premium Flood 100W 90°', lumens: 11093, watts: 100, manufacturer: 'LumenX' },
+  { id: 'lumenx-ies-file-of-120d-4000k-160w-ufo-hbay.ies', name: 'Raptor UFO Highbay 160W 120° 4000K', lumens: 0, watts: 160, manufacturer: 'LumenX' },
+  { id: 'lumenx-legend-20w-3k.ies', name: 'Legend Downlight 20W 3000K', lumens: 0, watts: 20, manufacturer: 'LumenX' },
+  { id: 'lumenx-6-5w-gu10-4000k.ies', name: 'GU10 6.5W 4000K', lumens: 0, watts: 6.5, manufacturer: 'LumenX' },
+  { id: 'lumenx-kuda-5ft-50w-3k-iesna2002.ies', name: 'Kuda 5ft 50W 3000K', lumens: 0, watts: 50, manufacturer: 'LumenX' },
 ];
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;

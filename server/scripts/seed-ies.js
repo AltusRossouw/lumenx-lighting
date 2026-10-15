@@ -1,7 +1,19 @@
 // Generate SAMPLE Luminex IES (LM-63) files into the protected IES directory.
-// These are placeholder photometric files so the walled garden and design tool
-// are demonstrable end-to-end. Replace them with the manufacturer's real
-// measurement files in production.
+//
+// ⚠️  DEVELOPMENT ONLY — DO NOT RUN AGAINST PRODUCTION OR STAGING.
+//
+// These files are fabricated: the candela values come from a Gaussian beam
+// formula, not a goniophotometer. They are written into the same directory the
+// walled garden serves from, so running this puts invented photometry behind a
+// LumenX product name where a specifier can download it and simulate a design
+// with it.
+//
+// Six of these were previously committed and had to be deleted. If the walled
+// garden needs populating, import the manufacturer's real measurement files;
+// use this only to exercise the routes locally, and keep the samples out of the
+// served set:
+//
+//   IES_DIR=/tmp/ies-samples npm run ies:seed
 //
 // Usage: npm run ies:seed
 

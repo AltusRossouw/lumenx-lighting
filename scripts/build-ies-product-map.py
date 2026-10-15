@@ -88,9 +88,26 @@ FILENAME_RULES = [
     ('gu10-downlight', 'gu10'),
     ('legend', 'legend'),
     ('veris', 'veris'),
+    # The Veris range covers the standard panel sizes; these two panel files
+    # arrived outside the supplier's Panels folder.
+    ('veris', '1200x300-led-panel'),
+    ('veris', 'theia-r'),
     ('diffused-downlight', 'aegeon'),
     ('thermisto', 'themisto'),
     ('thermisto', 'themisto-lensed'),
+    # High-bay files that arrived loose rather than in a family folder. Umgeni
+    # is the linear highbay in the 150-210W band, matching these wattages.
+    ('umgeni', 'hd-high-bay'),
+    # Deliberately NOT mapped: `lumenx-ies-file-of-400w-hbay-floodlight.ies`.
+    # Its name mixes "hbay" and "floodlight" and no product matches 400W, so
+    # assigning it would be a guess. Confirm which range it belongs to.
+    # Loose flood files: the Flood range covers the premium/emergency flood
+    # bodies.
+    ('flood', 'premium-floodlight'),
+    ('flood', 'booster-emergency'),
+    # Oarca is the 2ft/4ft linear family; the Theia-R panel-sized file arrived
+    # in its folder.
+    ('oarca', 'oacar'),
 ]
 
 
@@ -102,9 +119,12 @@ def repo_slug(filename):
 
 
 def load_repo_files():
+    # Case-sensitive on purpose: the real imports are all lowercase `lumenx-`.
+    # Matching case-insensitively also swept up the `LumenX_*.ies` seeded
+    # samples, which are fabricated and no longer present.
     files = sorted(os.path.basename(p)
                    for p in glob.glob(os.path.join(IES_DIR, '*.ies'))
-                   if os.path.basename(p).lower().startswith('lumenx'))
+                   if os.path.basename(p).startswith('lumenx-'))
     return files, set(files)
 
 
@@ -134,14 +154,16 @@ def walk_supplier_tree():
 def strip_redundant_copies(files):
     """Drop `-copy` files that are byte-identical to the file they duplicate.
 
-    Three supplier files were delivered twice (`... Sauron Downlight.IES` and
-    `... Sauron Downlight - Copy.IES`). Both imported, and all three pairs are
-    byte-identical, so listing both only offers the same photometry twice.
+    The supplier delivered a few files twice (`... Sauron Downlight.IES` and
+    `... Sauron Downlight - Copy.IES`, `PioLED_Raptor_...` and a `- Copy`
+    sibling). Both imported, and every pair is byte-identical, so listing both
+    offers the same photometry twice under two labels.
     """
     keep = []
     for filename in files:
-        if filename.endswith('-copy.ies'):
-            twin = os.path.join(IES_DIR, filename.replace('-copy.ies', '.ies'))
+        if '-copy.ies' in filename:
+            twin_name = filename.replace('-copy.ies', '.ies')
+            twin = os.path.join(IES_DIR, twin_name)
             if os.path.exists(twin):
                 with open(twin, 'rb') as a, open(os.path.join(IES_DIR, filename), 'rb') as b:
                     if a.read() == b.read():
@@ -216,12 +238,23 @@ def main():
     mapping, unclaimed, unmatched, collisions = build_map()
     total = sum(len(v) for v in mapping.values())
 
+    # Copies dropped as byte-identical twins are not "unclaimed" — they were
+    # deliberately left out, so report them apart from the real gaps.
+    copies = [f for f in unclaimed if '-copy.ies' in f]
+    gaps = [f for f in unclaimed if '-copy.ies' not in f]
+
     print(f'products with photometry : {len(mapping)}')
     print(f'IES files mapped         : {total}')
-    print(f'IES files unclaimed      : {len(unclaimed)}')
+    print(f'redundant copies dropped : {len(copies)}')
+    print(f'IES files with no product: {len(gaps)}')
     print(f'supplier files not in repo: {len(unmatched)}')
     for slug, files in mapping.items():
         print(f'  {slug:34s} {len(files):3d}')
+
+    if gaps:
+        print('\nno product identified for:')
+        for filename in gaps:
+            print(f'  {filename}')
 
     if collisions:
         print(f'\nfiles claimed by two products ({len(collisions)}) — '
