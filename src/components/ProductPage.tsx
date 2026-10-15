@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { getCategory, getProduct, getProductsByCategory, getProductImages, datasheetDownloadUrl } from '../products';
+import { getCategory, getProduct, getProductsByCategory, getProductImages, datasheetDownloadUrl, iesVariantLabel } from '../products';
+import { iesFilesForProduct } from '../ies-product-map';
 import { api } from '../lib/api';
 import {
   ArrowLeft,
@@ -24,6 +25,7 @@ interface ProductPageProps {
 
 export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) => {
   const [iesAuthed, setIesAuthed] = useState(false);
+  const [iesVisible, setIesVisible] = useState(10);
 
   useEffect(() => {
     let active = true;
@@ -38,8 +40,14 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
     };
   }, []);
 
+  // Reset the "show more" window when moving between products.
+  useEffect(() => {
+    setIesVisible(10);
+  }, [slug]);
+
   const category = getCategory(categoryId);
   const product = getProduct(categoryId, slug);
+  const iesFiles = iesFilesForProduct(slug);
 
   if (!category || !product) {
     return (
@@ -176,33 +184,70 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
                 )}
               </div>
 
-              {/* Downloads */}
-              {(product.pdfUrl || product.iesUrl) && (
-                <div className="mt-8 flex flex-wrap items-center gap-3">
-                  {product.pdfUrl && (
-                    <a href={datasheetDownloadUrl(product.pdfUrl)} download className="btn btn-outline btn-sm no-underline">
-                      <FileText className="w-4 h-4 text-slate-400" />
-                      <span>Spec Sheet</span>
-                      <span className="text-[10px] text-slate-500 font-mono">.PDF</span>
-                    </a>
-                  )}
-                  {product.iesUrl &&
-                    (iesAuthed ? (
-                      <a href={product.iesUrl} download className="btn btn-outline btn-sm no-underline">
-                        <FileDown className="w-4 h-4 text-slate-400" />
-                        <span>Photometric</span>
-                        <span className="text-[10px] text-slate-500 font-mono">.IES</span>
+              {/* Downloads — the datasheet PDF is open, photometry is gated. */}
+              {(product.pdfUrl || iesFiles.length > 0) && (
+                <div className="mt-8">
+                  <div className="flex flex-wrap items-center gap-3">
+                    {product.pdfUrl && (
+                      <a href={datasheetDownloadUrl(product.pdfUrl)} download className="btn btn-outline btn-sm no-underline">
+                        <FileText className="w-4 h-4 text-slate-400" />
+                        <span>Spec Sheet</span>
+                        <span className="text-[10px] text-slate-500 font-mono">.PDF</span>
                       </a>
-                    ) : (
+                    )}
+                    {iesFiles.length > 0 && !iesAuthed && (
                       <Link
                         to="/account"
                         state={{ from: `/products/${categoryId}/${slug}` }}
                         className="btn btn-outline btn-sm no-underline"
                       >
                         <Lock className="w-4 h-4 text-slate-400" />
-                        <span>Login for .IES</span>
+                        <span>Login or register to download .IES</span>
                       </Link>
-                    ))}
+                    )}
+                  </div>
+
+                  {iesFiles.length > 0 && iesAuthed && (
+                    <div className="mt-4 border border-[#1E293B]/70 bg-[#0A0F17] p-5">
+                      <div className="flex items-center gap-2 mb-1">
+                        <FileDown className="w-4 h-4 text-primary/60" />
+                        <h3 className="font-display text-sm font-semibold text-white tracking-tight">
+                          Photometric files
+                        </h3>
+                        <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">
+                          {iesFiles.length} .IES
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-500 mb-4">
+                        Raw LM-63 photometry for this product, for use in lighting-design software.
+                      </p>
+                      <ul className="divide-y divide-[#1E293B]/60">
+                        {iesFiles.slice(0, iesVisible).map((filename) => (
+                          <li key={filename} className="flex items-center justify-between gap-4 py-2">
+                            <span className="min-w-0 text-sm text-slate-300 truncate" title={filename}>
+                              {iesVariantLabel(filename)}
+                            </span>
+                            <a
+                              href={`/api/ies/${encodeURIComponent(filename)}`}
+                              download
+                              className="text-xs text-primary hover:underline font-mono shrink-0"
+                            >
+                              .IES ↓
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                      {iesFiles.length > iesVisible && (
+                        <button
+                          type="button"
+                          onClick={() => setIesVisible((n) => n + 25)}
+                          className="mt-3 text-xs text-primary hover:underline font-mono"
+                        >
+                          Show {Math.min(25, iesFiles.length - iesVisible)} more of {iesFiles.length} →
+                        </button>
+                      )}
+                    </div>
+                  )}
                 </div>
               )}
             </div>

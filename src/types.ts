@@ -47,8 +47,6 @@ export interface Product {
   images?: ProductImage[];
   /** Local datasheet download. */
   pdfUrl?: string;
-  /** Local photometric (.ies) download. */
-  iesUrl?: string;
   /** Warranty / guarantee statement. */
   warranty?: string;
 }
@@ -60,7 +58,6 @@ export interface ProductDetail {
   applications: string[];
   imageUrl: string;
   pdfUrl?: string;
-  iesUrl?: string;
 }
 
 export interface Industry {
@@ -132,4 +129,47 @@ export interface ManagingDirector {
   headshot: string;
   signatureImage: string;
   signatureAlt: string;
+}
+
+/* ── About page ─────────────────────────────────────────────────────────── */
+
+/** A single body paragraph in a team member's biography. */
+export interface TeamBlock {
+  body: string;
+}
+
+export interface TeamMember {
+  name: string;
+  role: string;
+  /** Portrait asset path — fixed image, its copy only is editable in /admin. */
+  image: string;
+  imageAlt: string;
+  /** One line on where this member's strength sits on a project. */
+  focus: string;
+  /** Biography, one paragraph per block so paragraph breaks survive editing. */
+  blocks: TeamBlock[];
+}
+
+export interface AboutPageContent {
+  hero: {
+    eyebrow: string;
+    heading: { lead: string; accent: string; tail: string };
+    subcopy: string;
+  };
+  team: {
+    label: string;
+    heading: string;
+    lede: string;
+    photo: string;
+    photoAlt: string;
+    photoCaption: string;
+    /** Credential strip beside the group photograph. */
+    highlights: { value: string; label: string }[];
+    members: TeamMember[];
+  };
+  closing: {
+    heading: { lead: string; accent: string; tail: string };
+    subcopy: string;
+    cta: string;
+  };
 }

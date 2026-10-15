@@ -122,12 +122,6 @@ export const listLuminexIesFiles = async () => {
   return files;
 };
 
-// Full path for an allowed IES file (used by the protected download route).
-export const resolveLuminexIesPath = (filename) => {
-  const safe = safeIesFilename(filename);
-  return safe ? path.join(config.iesDir, safe) : null;
-};
-
 // ── Broad IES catalogue (LumenX + partner brands) ─────────────────────────
 // The IES walled garden serves LumenX-branded files plus the OrbitX partner
 // brand. Files are brand-prefixed at import time, so the allowlist is the
@@ -244,8 +238,17 @@ export const listIesFiles = async () => {
   return files;
 };
 
-// Full path for any allowed IES file (used by the protected download route).
+// Full path for an allowed IES file (used by the protected download route).
 export const resolveIesPath = (filename) => {
   const safe = safeAllowedIesFilename(filename);
+  return safe ? path.join(config.iesDir, safe) : null;
+};
+
+// Legacy LumenX-only resolver, kept for the design tool, which offers the
+// LumenX catalogue alone. The planner must NOT use this: it advertises every
+// brand-prefixed file, so resolving with the narrower allowlist left all 84
+// OrbitX profiles returning 404 on download.
+export const resolveLuminexIesPath = (filename) => {
+  const safe = safeIesFilename(filename);
   return safe ? path.join(config.iesDir, safe) : null;
 };

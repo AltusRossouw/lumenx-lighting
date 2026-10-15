@@ -1,12 +1,14 @@
 // OrbitX planner photometry routes.
 // The lighting planner parses raw IES files to run photometric calculations.
-// These routes stream the same Luminex IES files the walled garden serves, and
-// are gated behind login exactly like the walled garden (no traversal).
+// These routes stream every brand-prefixed IES file the walled garden serves
+// (LumenX and OrbitX) and are gated behind login exactly like the walled
+// garden (no traversal). The allowlist must stay as broad as the list the
+// planner advertises, or advertised profiles 404 on download.
 
 import { Router } from 'express';
 import fs from 'node:fs';
 import path from 'node:path';
-import { resolveLuminexIesPath } from '../services/ies.js';
+import { resolveIesPath } from '../services/ies.js';
 import { requireAuth } from '../middleware/auth.js';
 
 export const plannerRouter = () => {
@@ -15,7 +17,7 @@ export const plannerRouter = () => {
   // GET /api/planner/ies/:filename — stream a raw IES file for photometry.
   router.get('/ies/:filename', requireAuth, (req, res, next) => {
     try {
-      const filePath = resolveLuminexIesPath(req.params.filename);
+      const filePath = resolveIesPath(req.params.filename);
       if (!filePath || !fs.existsSync(filePath)) {
         return res.status(404).json({ error: 'IES file not found.' });
       }

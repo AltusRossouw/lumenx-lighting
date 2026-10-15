@@ -76,6 +76,53 @@ export const datasheetDownloadUrl = (pdfUrl: string): string => {
   return `/api/download/datasheet/${encodeURIComponent(name)}`;
 };
 
+/**
+ * Turn an IES filename into a readable variant label.
+ *
+ * Files in `server/files/ies/` are slugified on import, so
+ * `lumenx-ies-file-of-120d-4000k-160w-ufo-hbay.ies` has to become something a
+ * specifier can choose between. Rather than echo the slug, surface the values
+ * that actually distinguish one photometric file from another — wattage,
+ * colour temperature and beam angle — then keep the descriptive tail.
+ */
+export const iesVariantLabel = (filename: string): string => {
+  const stem = filename
+    .replace(/\.ies$/i, '')
+    .replace(/^lumenx[_-]/i, '')
+    .replace(/^ies-file-of[_-]/i, '');
+
+  const watts = stem.match(/(\d{1,4})w\b/);
+  const cct = stem.match(/(\d{4})k\b/);
+  const beam = stem.match(/(\d{2,3})d\b/);
+
+  const facts = [
+    watts ? `${watts[1]}W` : '',
+    cct ? `${cct[1]}K` : '',
+    beam ? `${beam[1]}°` : '',
+  ].filter(Boolean);
+
+  const tail = stem
+    .replace(/(\d{1,4})w\b/g, ' ')
+    .replace(/(\d{4})k\b/g, ' ')
+    .replace(/(\d{2,3})d\b/g, ' ')
+    .replace(/\b(ufo|hbay|highbay|iesna\d*|ra\d+|lm|deg|cct|cri|rev\d)\b/g, ' ')
+    .replace(/[-_]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    // A few supplier files are literal duplicates suffixed "- Copy"; the word
+    // reads as noise beside its twin, so drop it.
+    .replace(/\bcopy\b/gi, ' ')
+    .split(' ')
+    .filter((word) => word.length > 2)
+    .slice(0, 4)
+    .join(' ')
+    .replace(/\s+/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+
+  const label = [facts.join(' · '), tail].filter(Boolean).join(' — ');
+  return label || stem.replace(/[-_]+/g, ' ');
+};
+
 /** Flat list of all unique local datasheet downloads. */
 export function getAllDatasheets(): { name: string; href: string }[] {
   const seen = new Set<string>();
