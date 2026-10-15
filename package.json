@@ -10,12 +10,17 @@
     "server": "node server/index.js",
     "start": "node server/index.js",
     "build": "vite build",
-    "prebuild": "node scripts/generate-sitemap.mjs",
+    "prebuild": "node scripts/check-product-tiles.mjs && node scripts/generate-sitemap.mjs",
+    "catalogue:generate": "python3 data-scrape/generate_catalogue.py && node scripts/apply-catalogue-overrides.mjs",
+    "catalogue:check": "node scripts/check-product-tiles.mjs",
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
     "db:migrate": "node server/scripts/migrate.js",
     "ies:seed": "node server/scripts/seed-ies.js",
+    "ies:map": "node scripts/generate-ies-product-map.mjs",
+    "ies:map:check": "node scripts/generate-ies-product-map.mjs --check",
+    "ies:map:import": "node server/scripts/import-ies-product-map.js",
     "admin:create": "node server/scripts/make-admin.js"
   },
   "dependencies": {

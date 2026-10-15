@@ -15,6 +15,14 @@ import { SCRAPED_PRODUCTS } from './catalogue-scraped';
 const DATASHEET_PAYLOAD: Record<string, string> = {
   'diffused-downlight': 'aegeon', // the Aegeon is the diffused downlight
   lds5083: 'lds-5083',
+  cob: 'cob-strip-lumenx', // the COB strip is the LumenX-branded strip payload
+  'cloud-bell': 'kinglong-cloud-bell-series', // payload carries the supplier's own stem
+  // Both payloads predate their catalogue entry and use a shorter stem: the
+  // OrbitX Retrofit LED Module's payload is `retrofit`, and the OrbitX
+  // floodlight range's is `flood` — the same file the curated "Performance
+  // Floods" entry reads, since both are the same OrbitX floodlight range.
+  'retrofit-module': 'retrofit',
+  'orbitx-floodlight': 'flood',
 };
 
 const datasheetUrl = (slug: string) =>
@@ -31,6 +39,7 @@ const createOfficialProduct = ({
   features,
   applications,
   sheet,
+  brand,
 }: {
   slug: string;
   name: string;
@@ -42,6 +51,8 @@ const createOfficialProduct = ({
   features: string[];
   applications: string[];
   sheet: string;
+  /** Partner brand id. OrbitX fittings display and sort as "OrbitX <name>". */
+  brand?: string;
 }): Product => ({
   slug,
   name,
@@ -54,6 +65,7 @@ const createOfficialProduct = ({
   imageUrl: image,
   images: [{ src: image, fit: 'contain', alt: name }],
   pdfUrl: datasheetUrl(slug),
+  ...(brand ? { brand } : {}),
 });
 
 /**
@@ -85,7 +97,19 @@ const fromScraped = (
   slug: string,
   name: string,
   sheet: string,
-  options: { publicSlug?: string; hero?: string; images?: ProductImage[]; exclude?: string[] } = {},
+  options: {
+    publicSlug?: string;
+    hero?: string;
+    images?: ProductImage[];
+    exclude?: string[];
+    /**
+     * Partner brand id. Usually unnecessary — the generator already stamps
+     * `brand` on the OrbitX records — but a curated entry that renames a
+     * scraped product has to carry it explicitly, because this spread puts the
+     * curated values last.
+     */
+    brand?: string;
+  } = {},
 ): Product => {
   const product = SCRAPED_PRODUCTS.find((item) => item.category === category && item.slug === slug);
   if (!product) throw new Error(`Missing scraped product: ${category}/${slug}`);
@@ -103,6 +127,7 @@ const fromScraped = (
     pdfUrl: datasheetUrl(options.publicSlug ?? slug),
     imageUrl: hero,
     images,
+    ...(options.brand ? { brand: options.brand } : {}),
   };
 };
 
@@ -138,9 +163,13 @@ export const OFFICIAL_PRODUCTS: Product[] = [
     sheet: 'lumenx-datasheet-9w-surface-downlight.pdf',
   }),
   fromScraped('downlights', 'diffused-downlight', 'Diffused Downlight', 'lumenx-datasheet-aegeon-downlight.pdf', { hero: '/product-images/Aegeon_Downlight.png', exclude: ['/scraped/downlights/diffused-downlight/01-aegeon.webp'] }),
-  fromScraped('floods', 'flood', 'Performance Floods', 'lumenx-datasheet-performance-floods.pdf', { hero: '/product-images/Performance_Floods.png' }),
+  // The OrbitX Floodlight. The curated entry keeps its published name so the
+  // URL does not move; the brand prefix is what makes it read as OrbitX.
+  fromScraped('floods', 'flood', 'Performance Floods', 'lumenx-datasheet-performance-floods.pdf', { hero: '/product-images/Performance_Floods.png', brand: 'orbitx' }),
   createOfficialProduct({
-    slug: '60w-street-light', name: '60W Street Light', category: 'floods',
+    // Filed under Floodlights until the 15 Oct review, where the client's point
+    // was simple: "this was a streetlight, so it doesn't go under floodlights."
+    slug: '60w-street-light', name: '60W Street Light', category: 'street',
     summary: 'Municipal-grade LED street light with precision roadway optics and zero upward light ratio.',
     description: 'A high-output roadway luminaire with tool-free top opening, precision optics and dark-sky-conscious performance for municipal and access-road projects.',
     image: '/product-images/60W_Street_light.png',
@@ -149,16 +178,9 @@ export const OFFICIAL_PRODUCTS: Product[] = [
     applications: ['Residential streets', 'Urban roads', 'Industrial access', 'Public parks'],
     sheet: 'lumenx-datasheet-60w-street-light.pdf',
   }),
-  createOfficialProduct({
-    slug: 'v200-highbay', name: 'V200 UFO Highbay', category: 'highbays',
-    summary: 'High-performance 160W UFO highbay delivering up to 32,000 lumens for high-ceiling industrial spaces.',
-    description: 'A high-output UFO highbay with passive cooling and multiple beam options for manufacturing, logistics and other high-ceiling environments.',
-    image: '/product-images/V200_Highbay.png',
-    specs: [{ label: 'Wattage', value: '160W' }, { label: 'Lumens', value: '32,000 lm' }, { label: 'IP Rating', value: 'IP65' }, { label: 'Beam Angle', value: '60° / 90° / 120°' }, { label: 'Mounting', value: 'Ring hook / bracket' }],
-    features: ['32,000 lm output', 'Passive cooling', 'Multiple beam options'],
-    applications: ['Manufacturing plants', 'Logistics warehouses', 'Assembly halls', 'Exhibition centres'],
-    sheet: 'lumenx-datasheet-v200-highbay.pdf',
-  }),
+  // The V200 UFO Highbay was deleted outright in the 15 Oct review (Q9): no
+  // discontinued flag, the page simply 404s. Its two IES files were removed
+  // from the photometry library at the same time.
   fromScraped('highbays', 'thermisto', 'Thermisto', 'lumenx-datasheet-thermisto.pdf', { hero: '/product-images/Thermisto.png', exclude: ['/scraped/highbays/thermisto/01-themisto-lowbay-55-surface-suspension.webp'] }),
   createOfficialProduct({
     slug: '600x1200-recessed-panel', name: '600x1200 Recessed Panel', category: 'panels',
@@ -239,4 +261,236 @@ export const OFFICIAL_PRODUCTS: Product[] = [
   fromScraped('downlights', 'sauron', 'Sauron', 'lumenx-datasheet-sauron.pdf', { hero: '/product-images/sauron.png', exclude: ['/scraped/downlights/sauron/01-pioled-lighting-hd016-25-20-18-16w-sauron-recessed-round-led-downlight.jpg'] }),
   fromScraped('track', 'standard', 'Standard', 'lumenx-datasheet-standard.pdf', { hero: '/scraped/track/standard/01-standard.webp' }),
   fromScraped('track', 'bazuka', 'Bazuka', 'lumenx-datasheet-bazuka.pdf', { hero: '/product-images/bazuka.png', exclude: ['/scraped/track/bazuka/member-06-pioled-lighting-tkb099d-25w-3-wire-dim-driver.png'] }),
+
+  // ── W8a · the LumenX-branded shots that were sitting unused in
+  //    public/product-images. Each of these products was fronting a supplier
+  //    photo with the "pioled" logo visible, so the clean asset heads the
+  //    gallery and the branded original is dropped from it by `exclude`.
+
+  // Client asked for "a different image"; the scraped shot is the only one and
+  // it is branded, so the three-quarter view replaces the flat front-on frame.
+  fromScraped('downlights', 'mario', 'Mario', 'lumenx-datasheet-mario.pdf', {
+    hero: '/product-images/mario.png',
+    exclude: ['/scraped/downlights/mario/01-pioled-lighting-hd020-35w-mario-led-round-tilt-downlight-3cct-1.jpg'],
+  }),
+  // "Enlarge the fitting in frame" plus "remove the logo". The shipped
+  // /product-images/blaster.png showed the fitting at 29% of a 1024px frame and
+  // carried the supplier's name on the driver label inside it, so the hero is a
+  // cropped, enlarged, de-branded derivative — see scripts/make-derivative-crops.py.
+  fromScraped('track', 'blaster', 'Blaster', 'lumenx-datasheet-blaster.pdf', {
+    hero: '/product-images/blaster-crop.png',
+    exclude: ['/scraped/track/blaster/01-pioled-lighting-tkw101-blaster-high-power-3-wire-track-spot-white-c.png'],
+  }),
+  // "Use the black one." The shipped leda.png is a three-fitting card, so the
+  // black track linear is cropped out of it on its own.
+  fromScraped('track', 'leda', 'Leda', 'lumenx-datasheet-leda.pdf', {
+    hero: '/product-images/leda-single.png',
+    exclude: [
+      '/scraped/track/leda/member-01-pioled-lighting-tk005-4ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png',
+      '/scraped/track/leda/member-02-pioled-lighting-tk004-3ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png',
+      '/scraped/track/leda/member-03-pioled-lighting-tk002-2ft-leda-3-wire-track-tiltable-linear-3cct-white.png',
+    ],
+  }),
+  fromScraped('vapourproof', 'kuda', 'Kuda', 'lumenx-datasheet-kuda.pdf', {
+    hero: '/product-images/kuda.png',
+    exclude: [
+      '/scraped/vapourproof/kuda/member-01-pioled-lighting-ll913-kuda-max-5ft-emergency-kit-space-1.png',
+      '/scraped/vapourproof/kuda/member-02-pioled-lighting-ll912-kuda-max-4ft-emergency-kit-space-1.png',
+      '/scraped/vapourproof/kuda/member-03-pioled-lighting-ll908-9-kuda-ip65-3cct-linear-batten-white-1.jpg',
+      '/scraped/vapourproof/kuda/member-04-pioled-lighting-ll908-9-kuda-ip65-3cct-linear-batten-white-1.jpg',
+    ],
+  }),
+  // Three sizes of the same linear on one card, each with the supplier's logo.
+  fromScraped('linears', 'soniq', 'Soniq', 'lumenx-datasheet-soniq.pdf', {
+    hero: '/product-images/soniq.png',
+    exclude: [
+      '/scraped/linears/soniq/member-01-pioled-lighting-ll709-8ft-3-wattage-soniq-seamless-linkable-linear-lig.png',
+      '/scraped/linears/soniq/member-02-pioled-lighting-ll707-10w-1ft-soniq-seamless-linkable-linear-light-3cc.png',
+      '/scraped/linears/soniq/member-03-pioled-lighting-ll705-4ft-soniq-seamless-linkable-linear-light-3cct-bl.png',
+    ],
+  }),
+  // Client: "the LEDs are blued out — use the COB image." The payload keeps the
+  // supplier's own stem, hence the DATASHEET_PAYLOAD entry above.
+  fromScraped('strips', 'cob', 'COB Strip', 'lumenx-datasheet-cob-strip-lumenx.pdf', {
+    hero: '/product-images/COB_STRIP.png',
+    exclude: ['/scraped/strips/cob/01-pioled-lighting-s303-sr303-a-10w-24v-cob-ip20-strip-3000k-1.jpg'],
+  }),
+  // Q8: "choose the most suitable" of the twelve. 06-cloudbell-s4 is the only
+  // candidate that still reads as the product at tile scale: its own alpha
+  // cut-out, every element in frame, none of them overlapping each other. The 03
+  // hero it replaces is a thin, half-transparent S1 strand.
+  //
+  // The category id is `architectural-indoor`: W5 merged Indoor Architectural
+  // and Decorative into that one category, and this record's category moved with
+  // it. The ASSET path is still /scraped/decorative/cloud-bell — that directory
+  // has not moved, so the hero and the exclude point at where the files are.
+  fromScraped('architectural-indoor', 'cloud-bell', 'Cloud Bell', 'lumenx-datasheet-kinglong-cloud-bell-series.pdf', {
+    hero: '/scraped/decorative/cloud-bell/06-cloudbell-s4-l1496-w1303-h982.webp',
+    exclude: ['/scraped/decorative/cloud-bell/03-cloudbell-s1-l2127-w1116-h1403.webp'],
+  }),
+
+  /* ── OrbitX lines added in the 15 Oct review (W6c, W6d) ─────────────────────
+   *
+   * Three OrbitX fittings were missing from the catalogue although their
+   * datasheet payloads and IES photometry were already built, and the client
+   * also wanted the floodlight range listed.
+   *
+   * Every value below comes from `specsheets-manual/OrbitX/*.pdf` — the
+   * authoritative source — not from a re-scrape. The payload slugs match the
+   * filenames already in `server/datasheets-data/`, and the IES filenames match
+   * the photometry already in `server/files/ies/`.
+   */
+  createOfficialProduct({
+    slug: 'jupiter', name: 'Jupiter 1200mm', category: 'highbays', brand: 'orbitx',
+    summary: 'Direct Drive 1200mm highbay linear delivering up to 25,000 lumens, backed by an 8-year operational guarantee.',
+    description:
+      'The OrbitX Jupiter is a 1200mm integrated IP65 linear highbay built on OrbitX Direct Drive technology. Thirteen power ratings from 20W to 200W cover everything from aisle lighting to tall-rack warehousing, and the polycarbonate extrusion carries no glass. Backed by an 8-year operational guarantee.',
+    // Stand-in: the vendor's Neptune photo. There is no Jupiter photograph in
+    // the repo yet, and a wrong-but-plausible shot beats a broken card — but it
+    // must be swapped before launch (see the OrbitX image gaps in the report).
+    image: '/product-images/orbitx-jupiter.png',
+    specs: [
+      { label: 'Operational Guarantee (365d × 24h)', value: '8 years' },
+      { label: 'Light Output Guarantee (365d × 24h)', value: '5 years' },
+      { label: 'Wattage', value: '20W – 200W (13 ratings: 20/40/60/80/100/112/120/128/140/150/160/180/200 W)' },
+      { label: 'Lumens', value: '2,500 – 25,000 lm' },
+      { label: 'Luminous Efficacy', value: '135 lm/W' },
+      { label: 'IP Rating', value: 'IP65' },
+      { label: 'Nominal Lifetime (L70)', value: '70 000 hours (IES LM-80, TM-21)' },
+      { label: 'Colour Temperature', value: '5000K (options available)' },
+      { label: 'CRI', value: '83' },
+      { label: 'Beam Angle', value: '120°' },
+      { label: 'Operating Voltage', value: '220–240V AC' },
+      { label: 'Power Factor', value: '>0.98' },
+      { label: 'Flicker', value: '80% flicker free at 100Hz (OHS and MHS Act compliant)' },
+      { label: 'Surge Protection', value: '1.5kV' },
+      { label: 'Fire Rating', value: 'UL-94 V0 compliant (no flaming droplets)' },
+      { label: 'Housing', value: 'Polycarbonate extrusion, 1mm, no glass' },
+      { label: 'T Ambient', value: '+35°C max / −40°C min' },
+      { label: 'Electrical Safety', value: 'IEC60598-1, IEC60598-2-5 compliant' },
+      { label: 'Dimensions', value: '1200 × 140 × 66mm' },
+      { label: 'Optional Battery Backup', value: '1000 lm for 4h, 6h charge time' },
+    ],
+    features: [
+      'OrbitX Direct Drive technology onboard',
+      '8-year operational guarantee',
+      '135 lm/W efficacy',
+      'IP65 polycarbonate housing — no glass',
+      'Optional battery backup and variable switching',
+    ],
+    applications: ['Warehouses', 'Manufacturing plants', 'Logistics aisles', 'High-ceiling industrial'],
+    sheet: 'lumenx-datasheet-jupiter.pdf',
+  }),
+  createOfficialProduct({
+    slug: 'puck-panel', name: 'Puck Panel 1200mm', category: 'panels', brand: 'orbitx',
+    summary: 'OrbitX 1200 × 600mm panel replacement delivering 6,000 lumens at 100 lm/W, with a 6-year operational guarantee.',
+    description:
+      'The OrbitX Puck Panel is a direct replacement for a 1200 × 600mm panel light, built on OrbitX Direct Drive technology. A 160° beam and Type A light quality make it suitable for offices and professional interiors, and it is available in black or white.',
+    image: '/product-images/orbitx-puck-panel.png',
+    specs: [
+      { label: 'Operational Guarantee (365d × 24h)', value: '6 years' },
+      { label: 'Light Output Guarantee (365d × 24h)', value: '3 years' },
+      { label: 'Wattage', value: '58W (1200 × 600mm) · 38W (600 × 600mm)' },
+      { label: 'Lumens', value: '6,000 lm (1200 × 600mm) · 4,000 lm (600 × 600mm)' },
+      { label: 'Luminous Efficacy', value: '100 lm/W' },
+      { label: 'Nominal Lifetime (L70)', value: '60 000 hours (IES LM-80, TM-21)' },
+      { label: 'Colour Temperature', value: '5000K (4000K available)' },
+      { label: 'CRI', value: '83' },
+      { label: 'Beam Angle', value: '160°' },
+      { label: 'Operating Voltage', value: '220–240V AC' },
+      { label: 'Power Factor', value: '>0.98' },
+      { label: 'Flicker', value: '80% flicker free at 100Hz (OHS and MHS Act compliant)' },
+      { label: 'Surge Protection', value: '1.5kV' },
+      { label: 'Fire Rating', value: 'UL-94 V0 compliant (no flaming droplets)' },
+      { label: 'Housing', value: 'Polycarbonate extrusion, 1mm, no glass' },
+      { label: 'Finish', value: 'Black or white' },
+      { label: 'T Ambient', value: '+30°C max / −40°C min' },
+      { label: 'Electrical Safety', value: 'IEC60598-1, IEC60598-2-5 compliant' },
+      { label: 'Dimensions', value: '1200 × 600 × 39mm' },
+    ],
+    features: [
+      'Direct replacement for a 1200 × 600 panel light',
+      'OrbitX Direct Drive technology onboard',
+      '6-year operational guarantee',
+      'Available in black or white',
+      '160° beam with Type A light quality',
+    ],
+    applications: ['Offices', 'Boardrooms', 'Education', 'Professional interiors'],
+    sheet: 'lumenx-datasheet-puck-panel.pdf',
+  }),
+  createOfficialProduct({
+    slug: 'retrofit-module', name: 'Retrofit Module 15W', category: 'bulkheads', brand: 'orbitx',
+    summary: '15W OrbitX retrofit LED module that converts an existing fitting to Direct Drive LED, with a 6-year operational guarantee.',
+    description:
+      'The OrbitX Retrofit LED Module replaces the lamp in an existing luminaire with a 15W, 2,000 lumen Direct Drive LED engine. It runs from 220V AC, carries an integrated surge arrestor and must be earthed. Optional radar motion and day/night sensors are available.',
+    // Stand-in: the vendor's Rhea bulkhead photo, same IP65 Direct Drive range.
+    // There is no retrofit-module photograph in the repo yet.
+    image: '/product-images/orbitx-retrofit-module.png',
+    specs: [
+      { label: 'Operational Guarantee (365d × 24h)', value: '6 years' },
+      { label: 'Light Output Guarantee (365d × 24h)', value: '3 years' },
+      { label: 'Wattage', value: '15W' },
+      { label: 'Lumens', value: '2,000 lm' },
+      { label: 'Luminous Efficacy', value: '120 lm/W' },
+      { label: 'IP Rating', value: 'IP65' },
+      { label: 'Nominal Lifetime (L70)', value: '70 000 hours (IES LM-80, TM-21)' },
+      { label: 'Colour Temperature', value: '5000K (4000K and other options available)' },
+      { label: 'CRI', value: '83' },
+      { label: 'Beam Angle', value: '160°' },
+      { label: 'Operating Voltage', value: '220–240V AC' },
+      { label: 'Power Factor', value: '>0.98' },
+      { label: 'Surge Protection', value: '1.5kV integrated surge arrestor' },
+      { label: 'Earthing', value: 'Must be earthed' },
+      { label: 'Fire Rating', value: 'UL-94 V2 compliant' },
+      { label: 'T Ambient', value: '+30°C max / −40°C min' },
+      { label: 'Dimensions', value: '⌀ 205mm, 10mm max height at surge arrestor' },
+      { label: 'Optional Radar Motion Sensor', value: 'Programmable sensitivity and time on' },
+      { label: 'Optional Day/Night Sensor', value: 'Switches on at dusk, off at dawn' },
+    ],
+    features: [
+      'Retrofits an existing luminaire to Direct Drive LED',
+      '6-year operational guarantee',
+      'Integrated surge arrestor',
+      'Optional radar motion and day/night sensors',
+      'Optional battery backup',
+    ],
+    applications: ['Bulkhead retrofits', 'Stairwells', 'Corridors', 'Parking areas'],
+    sheet: 'lumenx-datasheet-retrofit.pdf',
+  }),
+  createOfficialProduct({
+    slug: 'orbitx-floodlight', name: 'Floodlight', category: 'floods', brand: 'orbitx',
+    summary: 'IP66 OrbitX floodlight with an integrated day/night sensor, from 20W / 2,600 lm to 300W / 41,100 lm.',
+    description:
+      'The OrbitX Floodlight is an IP66 area luminaire with an integrated automatic day/night sensor, designed for African conditions. Five configurations run from 20W to 300W, each with a 120° beam and a −40°C to +40°C ambient range. Backed by a 6-year operational guarantee.',
+    image: '/product-images/orbitx-floodlight.png',
+    specs: [
+      { label: 'Operational Guarantee (365d × 24h)', value: '6 years' },
+      { label: 'Light Output Guarantee (365d × 24h)', value: '3 years' },
+      { label: 'Wattage', value: '20W / 35W / 70W / 150W / 300W' },
+      { label: 'Lumens', value: '2,600 lm / 4,500 lm / 9,800 lm / 18,900 lm / 41,100 lm' },
+      { label: 'Luminous Efficacy', value: '125 lm/W' },
+      { label: 'IP Rating', value: 'IP66' },
+      { label: 'Nominal Lifetime (L70)', value: '60 000 hours — over 10 years at 12h per day (IES LM-80, TM-21)' },
+      { label: 'Colour Temperature', value: '5000K (options available)' },
+      { label: 'CRI', value: '83' },
+      { label: 'Beam Angle', value: '120°' },
+      { label: 'Operating Voltage', value: '220–240V AC' },
+      { label: 'Power Factor', value: '>0.98' },
+      { label: 'Sensor', value: 'Integrated automatic day/night sensor' },
+      { label: 'T Ambient', value: '+40°C max / −40°C min' },
+      { label: 'Dimensions (20W / 35W)', value: '190 × 122 × 37mm' },
+      { label: 'Dimensions (70W)', value: '240 × 200 × 45mm' },
+      { label: 'Dimensions (150W)', value: '346 × 312 × 54mm' },
+      { label: 'Dimensions (300W)', value: '380 × 350 × 71mm' },
+    ],
+    features: [
+      'Integrated automatic day/night sensor',
+      'IP66 for exterior mounting',
+      'Designed for Africa — −40°C to +40°C',
+      '6-year operational guarantee',
+      'Five configurations from 20W to 300W',
+    ],
+    applications: ['Yards', 'Perimeters', 'Security lighting', 'Area and facade lighting'],
+    sheet: 'lumenx-datasheet-orbitx-floodlight.pdf',
+  }),
 ];

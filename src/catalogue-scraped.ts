@@ -4,12 +4,44 @@ import { Product, ProductCategory } from './types';
 
 export const SCRAPED_CATEGORIES: ProductCategory[] = [
   {
-    id: "bulkheads",
-    title: "Bulkheads",
-    description: "Robust wall and ceiling luminaires for corridors, stairwells, entrances and wet areas. Impact-resistant housings with IP ratings for indoor and outdoor use.",
-    applications: "Corridors, stairwells, entrances, plant rooms and exterior walkways",
-    imageUrl: "/product-images/categories/bulkheads.jpg",
-    linkLabel: "Explore Bulkheads",
+    id: "panels",
+    title: "Panels",
+    description: "Low-glare, flicker-free LED panels for clean general illumination across offices, education and healthcare environments.",
+    applications: "Offices, education, healthcare and corporate interiors",
+    imageUrl: "/product-images/categories/panels.jpg",
+    linkLabel: "Explore Panels",
+  },
+  {
+    id: "vapourproof",
+    title: "Vapour Proof",
+    description: "Sealed IP65/IP66 luminaires resistant to dust, moisture and vapour for demanding industrial, parking and washdown environments.",
+    applications: "Parking structures, food processing, warehousing and washdown areas",
+    imageUrl: "/product-images/categories/vapourproof.jpg",
+    linkLabel: "Explore Vapour Proof Lighting",
+  },
+  {
+    id: "track",
+    title: "Track Lighting",
+    description: "Adjustable track spots and linear track fittings for retail, gallery and display applications with precise aiming control.",
+    applications: "Retail, galleries, showrooms and hospitality displays",
+    imageUrl: "/product-images/categories/track.jpg",
+    linkLabel: "Explore Track Lighting",
+  },
+  {
+    id: "strips",
+    title: "LED Strips",
+    description: "Flexible and COB dotless strip lighting for seamless cove, display, under-cabinet and joinery accent illumination.",
+    applications: "Cove lighting, display shelving, signage and joinery accent",
+    imageUrl: "/product-images/categories/strips.jpg",
+    linkLabel: "Explore LED Strips",
+  },
+  {
+    id: "linears",
+    title: "Linear Lighting",
+    description: "Continuous, seamless and profile linear systems for architectural, retail and workspace environments — surface, suspended or recessed.",
+    applications: "Offices, retail, education and architectural interiors",
+    imageUrl: "/product-images/categories/linears.jpg",
+    linkLabel: "Explore Linear Lighting",
   },
   {
     id: "downlights",
@@ -20,14 +52,6 @@ export const SCRAPED_CATEGORIES: ProductCategory[] = [
     linkLabel: "Explore Downlights",
   },
   {
-    id: "floods",
-    title: "Floodlights",
-    description: "High-output exterior luminaires for area lighting, security, facades and perimeters with asymmetric and symmetric beam options.",
-    applications: "Facades, sports facilities, yards, perimeters and area lighting",
-    imageUrl: "/product-images/categories/floods.jpg",
-    linkLabel: "Explore Floodlights",
-  },
-  {
     id: "highbays",
     title: "Highbays",
     description: "High-output luminaires engineered for high ceilings, racking aisles and demanding industrial environments with industry-leading guarantees.",
@@ -36,28 +60,28 @@ export const SCRAPED_CATEGORIES: ProductCategory[] = [
     linkLabel: "Explore Highbays",
   },
   {
-    id: "indoor-architectural",
-    title: "Architectural — Indoor",
-    description: "Recessed, surface and suspended architectural luminaires for refined interior detailing — circular systems, pendants and ceiling lights.",
-    applications: "Offices, hospitality, retail and residential architecture",
-    imageUrl: "/product-images/categories/indoor-architectural.jpg",
+    id: "bulkheads",
+    title: "Bulkheads",
+    description: "Robust wall and ceiling luminaires for corridors, stairwells, entrances and wet areas. Impact-resistant housings with IP ratings for indoor and outdoor use.",
+    applications: "Corridors, stairwells, entrances, plant rooms and exterior walkways",
+    imageUrl: "/product-images/categories/bulkheads.jpg",
+    linkLabel: "Explore Bulkheads",
+  },
+  {
+    id: "floods",
+    title: "Floodlights",
+    description: "High-output exterior luminaires for area lighting, security, facades and perimeters with asymmetric and symmetric beam options.",
+    applications: "Facades, sports facilities, yards, perimeters and area lighting",
+    imageUrl: "/product-images/categories/floods.jpg",
+    linkLabel: "Explore Floodlights",
+  },
+  {
+    id: "architectural-indoor",
+    title: "Architectural — Indoor & Decorative",
+    description: "Recessed, surface and suspended architectural luminaires for refined interior detailing — circular systems, pendants, ceiling lights and statement decorative series.",
+    applications: "Offices, hospitality, retail, residential architecture and feature interiors",
+    imageUrl: "/product-images/categories/architectural-indoor.jpg",
     linkLabel: "Explore Architectural — Indoor",
-  },
-  {
-    id: "decorative",
-    title: "Decorative",
-    description: "Statement chandeliers and decorative series that make interiors feel curated — layered acrylic, crystal and sculptural forms.",
-    applications: "Hotels, restaurants, residences and feature interiors",
-    imageUrl: "/product-images/categories/decorative.jpg",
-    linkLabel: "Explore Decorative",
-  },
-  {
-    id: "linears",
-    title: "Linear Lighting",
-    description: "Continuous, seamless and profile linear systems for architectural, retail and workspace environments — surface, suspended or recessed.",
-    applications: "Offices, retail, education and architectural interiors",
-    imageUrl: "/product-images/categories/linears.jpg",
-    linkLabel: "Explore Linear Lighting",
   },
   {
     id: "outdoor-architectural",
@@ -76,20 +100,12 @@ export const SCRAPED_CATEGORIES: ProductCategory[] = [
     linkLabel: "Explore Bollards",
   },
   {
-    id: "panels",
-    title: "Panels",
-    description: "Low-glare, flicker-free LED panels for clean general illumination across offices, education and healthcare environments.",
-    applications: "Offices, education, healthcare and corporate interiors",
-    imageUrl: "/product-images/categories/panels.jpg",
-    linkLabel: "Explore Panels",
-  },
-  {
-    id: "sensors",
-    title: "Sensors",
-    description: "Motion and presence detectors for indoor and outdoor automation — PIR, HF and ultrasonic with adjustable detection zones.",
-    applications: "Offices, warehouses, corridors, parking and security",
-    imageUrl: "/product-images/categories/sensors.jpg",
-    linkLabel: "Explore Sensors",
+    id: "street",
+    title: "Street & Area Lighting",
+    description: "Roadway and area luminaires with precision street optics and zero upward light for municipal roads, access routes and public spaces.",
+    applications: "Residential streets, urban roads, industrial access and public parks",
+    imageUrl: "/product-images/categories/street.jpg",
+    linkLabel: "Explore Street & Area Lighting",
   },
   {
     id: "solar",
@@ -100,14 +116,6 @@ export const SCRAPED_CATEGORIES: ProductCategory[] = [
     linkLabel: "Explore Solar",
   },
   {
-    id: "strips",
-    title: "LED Strips",
-    description: "Flexible and COB dotless strip lighting for seamless cove, display, under-cabinet and joinery accent illumination.",
-    applications: "Cove lighting, display shelving, signage and joinery accent",
-    imageUrl: "/product-images/categories/strips.jpg",
-    linkLabel: "Explore LED Strips",
-  },
-  {
     id: "profiles",
     title: "Profiles & Accessories",
     description: "Extrusion profiles and system accessories for integrating LED tape into architecture and millwork.",
@@ -116,20 +124,12 @@ export const SCRAPED_CATEGORIES: ProductCategory[] = [
     linkLabel: "Explore Profiles & Accessories",
   },
   {
-    id: "track",
-    title: "Track Lighting",
-    description: "Adjustable track spots and linear track fittings for retail, gallery and display applications with precise aiming control.",
-    applications: "Retail, galleries, showrooms and hospitality displays",
-    imageUrl: "/product-images/categories/track.jpg",
-    linkLabel: "Explore Track Lighting",
-  },
-  {
-    id: "vapourproof",
-    title: "Vapour Proof",
-    description: "Sealed IP65/IP66 luminaires resistant to dust, moisture and vapour for demanding industrial, parking and washdown environments.",
-    applications: "Parking structures, food processing, warehousing and washdown areas",
-    imageUrl: "/product-images/categories/vapourproof.jpg",
-    linkLabel: "Explore Vapour Proof Lighting",
+    id: "sensors",
+    title: "Sensors",
+    description: "Motion and presence detectors for indoor and outdoor automation — PIR, HF and ultrasonic with adjustable detection zones.",
+    applications: "Offices, warehouses, corridors, parking and security",
+    imageUrl: "/product-images/categories/sensors.jpg",
+    linkLabel: "Explore Sensors",
   },
 ];
 
@@ -190,6 +190,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     pdfUrl: "/api/download/datasheet/generated/rhea",
     warranty: "6 years",
+    brand: "orbitx",
   },
   {
     slug: "phoebe",
@@ -247,6 +248,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     pdfUrl: "/api/download/datasheet/generated/phoebe",
     warranty: "8 years",
+    brand: "orbitx",
   },
   {
     slug: "hero",
@@ -345,7 +347,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     specs: [
       { label: "Wattage", value: "10W, 15W, 20W, 30W, 36W" },
       { label: "Colour", value: "White" },
-      { label: "Power", value: "10–35 W" },
       { label: "Lumens", value: "1200–4320 lm" },
       { label: "Housing", value: "Die-Cast Aluminium" },
       { label: "Mounting", value: "Recessed" },
@@ -683,7 +684,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     description: "High-powered 3CCT round downlight range for demanding commercial applications, available in 10W, 20W and 35W with selectable colour temperature and a 60° beam for uniform general illumination.",
     specs: [
       { label: "Power", value: "10–35 W" },
-      { label: "Wattage", value: "Contact our team for more details" },
       { label: "Lumens", value: "3500 lm" },
       { label: "Housing", value: "Aluminium" },
       { label: "Colour Temperature", value: "3CCT · 3000K / 4000K / 6000K" },
@@ -724,54 +724,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     warranty: "5 Years",
   },
   {
-    slug: "gu10-downlight",
-    name: "GU10 Downlight",
-    category: "downlights",
-    summary: "GU10 lamp-based fixtures and accessories for flexible accent and downlighting — a family of adjustable and fixed GU10 holders plus compatible accessories.",
-    description: "GU10 lamp-based fixtures and accessories for flexible accent and downlighting — a family of adjustable and fixed GU10 holders plus compatible accessories.",
-    specs: [
-      { label: "Wattage", value: "Contact our team for more details" },
-      { label: "Lumen Output", value: "Contact our team for more details" },
-      { label: "IP Rating", value: "IP20" },
-      { label: "Type", value: "Fixture & accessories" },
-      { label: "Colour Temperature", value: "3CCT(3000K/4000K/6000K) / 3CCT(3000K/4000K/6000K)/ 6000K" },
-      { label: "Beam Angle", value: "60° / 90° / 120°" },
-      { label: "Housing", value: "Contact our team for more details" },
-      { label: "Colour", value: "Contact our team for more details" },
-      { label: "length", value: "1 Meter, 2 Meter, 3 Meter" },
-      { label: "Operating Temp", value: "Contact our team for more details" },
-      { label: "Certifications", value: "EMC, ErP, CE / CE, EMC, RoHS / RoHS / CE" },
-      { label: "IK Rating", value: "IK10" },
-      { label: "Range", value: "Colour · Decor Colour · Vers 3CCT" },
-      { label: "Lamp Base", value: "GU10" },
-      { label: "CRI", value: "Contact our team for more details" },
-      { label: "LED Chips", value: "Contact our team for more details" },
-      { label: "lens", value: "120°, 90°" },
-      { label: "available in", value: "1m/2m/3m" },
-      { label: "includes", value: "Power feed and end cap" },
-      { label: "Input Voltage", value: "Contact our team for more details" },
-      { label: "Dimmable", value: "No" },
-      { label: "Surge Protection", value: "Contact our team for more details" },
-    ],
-    features: [
-      "Colour GU10 downlighters",
-      "Decor Colour GU10 downlighters",
-      "Vers 3CCT GU10 downlighters",
-      "Lamp-based — easy re-lamping",
-    ],
-    applications: [
-      "Residential",
-      "Retail",
-      "Hospitality",
-      "Display",
-    ],
-    imageUrl: "/scraped/downlights/gu10-downlight/member-01-pioled-lighting-d001-6-5w-vers-non-dimmable-gu10-3cct-1.jpg",// hero
-    images: [
-      { src: "/scraped/downlights/gu10-downlight/member-04-pioled-lighting-im028-im102-14w-led-retrofit-module.png", fit: "contain", alt: "member-04-pioled-lighting-im028-im102-14w-led-retrofit-module.png" },
-    ],
-    pdfUrl: "/api/download/datasheet/generated/gu10",
-  },
-  {
     slug: "surface-adjustable-downlight",
     name: "Surface Adjustable Downlight",
     category: "downlights",
@@ -779,7 +731,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     description: "IP20 tiltable round downlighter with selectable colour temperature, available in 15W, 25W and 35W. A 36° beam with 340° rotation suits adjustable accent and general lighting; a removable honeycomb louvre is included for glare control.",
     specs: [
       { label: "Power", value: "15–35 W" },
-      { label: "Wattage", value: "Contact our team for more details" },
       { label: "Lumens", value: "3500 lm" },
       { label: "Housing", value: "Aluminium" },
       { label: "Colour Temperature", value: "3CCT · 3000K / 4000K / 6000K" },
@@ -917,6 +868,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     pdfUrl: "/api/download/datasheet/generated/flood",
     warranty: "5 years",
+    brand: "orbitx",
   },
   {
     slug: "ace",
@@ -999,7 +951,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     description: "The Themisto is a lensed linear for controlled illumination. With various mounting options, its ideal for warehouses, workshops and retail spaces for higher general lighting.",
     specs: [
       { label: "Wattage", value: "17W - 126W" },
-      { label: "Power", value: "17–100 W" },
       { label: "Lumens", value: "2300–12000 lm" },
       { label: "Profile", value: "53 × 60mm" },
       { label: "Housing", value: "Aluminium" },
@@ -1122,7 +1073,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
   {
     slug: "circular",
     name: "Circular",
-    category: "indoor-architectural",
+    category: "architectural-indoor",
     summary: "The circle harmonizes the space.",
     description: "The circle harmonizes the space. Its various configurations, both structural and lighting, shape its personality.",
     specs: [
@@ -1162,7 +1113,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
   {
     slug: "circular-vertical",
     name: "Circular Vertical",
-    category: "indoor-architectural",
+    category: "architectural-indoor",
     summary: "The circle harmonizes the space.",
     description: "The circle harmonizes the space. Its various configurations, both structural and lighting, shape its personality.",
     specs: [
@@ -1201,7 +1152,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
   {
     slug: "attic",
     name: "Attic",
-    category: "indoor-architectural",
+    category: "architectural-indoor",
     summary: "The Attic system is based on a compositional modularity that starts from screens with customizable finishes.",
     description: "The Attic system is based on a compositional modularity that starts from screens with customizable finishes.",
     specs: [
@@ -1238,7 +1189,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
   {
     slug: "vetro",
     name: "Vetro",
-    category: "indoor-architectural",
+    category: "architectural-indoor",
     summary: "Vetro is a surface solution with a noble double-thickness pressed glass and waterproof properties.",
     description: "Vetro is a surface solution with a noble double-thickness pressed glass and waterproof properties.",
     specs: [
@@ -1274,11 +1225,10 @@ export const SCRAPED_PRODUCTS: Product[] = [
   {
     slug: "fabric-tape",
     name: "Fabric Tape",
-    category: "indoor-architectural",
+    category: "architectural-indoor",
     summary: "Braided fabric LED lighting tape in a flexible family of per-metre tape and finished forms — strips, spheres, cones, pendants and spots.",
     description: "Braided fabric LED lighting tape in a flexible family of per-metre tape and finished forms — strips, spheres, cones, pendants and spots. 3000K warm light, 48V low-voltage operation, IP20, in Black or Terra Red.",
     specs: [
-      { label: "Power", value: "12–46 W" },
       { label: "Wattage", value: "12W – 46W" },
       { label: "IP Rating", value: "IP20" },
       { label: "Size", value: "34 × 17 × 1500mm (1.5m strip)" },
@@ -1317,7 +1267,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
   {
     slug: "cloud-bell",
     name: "Cloud Bell",
-    category: "decorative",
+    category: "architectural-indoor",
     summary: "Explore the Cloud Bell Series, a decorative chandelier collection for hotel lobbies, villas, and commercial interiors.",
     description: "Explore the Cloud Bell Series, a decorative chandelier collection for hotel lobbies, villas, and commercial interiors.",
     specs: [
@@ -1326,7 +1276,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { label: "Dimensions", value: "Bell Ø150mm – Ø600mm per element" },
       { label: "Lead Time", value: "Standard: 5–7 weeks · Grand Installation: 10–16 weeks" },
       { label: "Certifications", value: "CE" },
-      { label: "Power", value: "15–500 W" },
       { label: "Wattage", value: "15W – 500W (configuration-dependent)" },
       { label: "IP Rating", value: "IP20" },
       { label: "Finish Options", value: "Champagne Gold · Matte Black · Brushed Silver" },
@@ -1373,7 +1322,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
   {
     slug: "pearl",
     name: "Pearl",
-    category: "decorative",
+    category: "architectural-indoor",
     summary: "Explore the Pearl Series, a timeless spherical decorative lighting collection for luxury residential and hospitality spaces.",
     description: "Explore the Pearl Series, a timeless spherical decorative lighting collection for luxury residential and hospitality spaces.",
     specs: [
@@ -1382,7 +1331,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { label: "Dimensions", value: "Sphere Ø60 / Ø80 / Ø100 / Ø150 / Ø200mm" },
       { label: "Lead Time", value: "Standard: 4–6 weeks · Custom: 6–10 weeks" },
       { label: "Certifications", value: "CE" },
-      { label: "Power", value: "5–200 W" },
       { label: "Wattage", value: "5W – 200W (sphere count-dependent)" },
       { label: "IP Rating", value: "IP20" },
       { label: "Finish Options", value: "Champagne Gold · Chrome · Antique Brass · Matte Black" },
@@ -1432,7 +1380,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
   {
     slug: "dream-pen",
     name: "Dream Pen",
-    category: "decorative",
+    category: "architectural-indoor",
     summary: "Explore the Dream Pen Series, a precise linear chandelier collection for modern hotels, villas, and commercial spaces.",
     description: "Explore the Dream Pen Series, a precise linear chandelier collection for modern hotels, villas, and commercial spaces.",
     specs: [
@@ -1441,7 +1389,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { label: "Dimensions", value: "L600 / L900 / L1200 / L1500 / L1800 / L2400mm" },
       { label: "Lead Time", value: "Standard: 3–5 weeks · Custom: 6–10 weeks" },
       { label: "Certifications", value: "CE / UL / DLC" },
-      { label: "Power", value: "20–40 W" },
       { label: "Wattage", value: "20W/m – 40W/m (length-dependent)" },
       { label: "IP Rating", value: "IP20" },
       { label: "Finish Options", value: "Anodised Silver · Matte Black · Champagne Gold Powder Coat · White" },
@@ -1491,7 +1438,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
   {
     slug: "jiangnan",
     name: "Jiangnan",
-    category: "decorative",
+    category: "architectural-indoor",
     summary: "Explore the Jiangnan Series, an Eastern-inspired decorative lighting collection for hotels and refined interiors.",
     description: "Explore the Jiangnan Series, an Eastern-inspired decorative lighting collection for hotels and refined interiors.",
     specs: [
@@ -1500,7 +1447,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { label: "Dimensions", value: "Single pendant: Ø400–Ø1200mm · Linear: L600–L2400mm" },
       { label: "Lead Time", value: "Standard: 5–7 weeks · Bespoke: 10–16 weeks" },
       { label: "Certifications", value: "CE / UL" },
-      { label: "Power", value: "18–300 W" },
       { label: "Wattage", value: "18W – 300W (configuration-dependent)" },
       { label: "IP Rating", value: "IP20" },
       { label: "Size Range", value: "Single pendant: Ø400–Ø1200mm · Linear: L600–L2400mm" },
@@ -1550,7 +1496,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
   {
     slug: "crystal-cloud",
     name: "Crystal Cloud",
-    category: "decorative",
+    category: "architectural-indoor",
     summary: "Explore the Crystal Cloud Series, a suspended crystal chandelier collection for luxury hotels, atriums, and bespoke interior projects.",
     description: "Explore the Crystal Cloud Series, a suspended crystal chandelier collection for luxury hotels, atriums, and bespoke interior projects.",
     specs: [
@@ -1559,7 +1505,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
       { label: "Dimensions", value: "Ø1200mm single cluster to full atrium bespoke" },
       { label: "Lead Time", value: "Standard: 6–8 weeks · Grand Installation: 12–20 weeks" },
       { label: "Certifications", value: "CE / UL / SASO" },
-      { label: "Power", value: "40–1200 W" },
       { label: "Wattage", value: "40W – 1200W+ (installation-scale dependent)" },
       { label: "IP Rating", value: "IP20" },
       { label: "Finish Options", value: "Champagne Gold PVD · Chrome · Rose Gold" },
@@ -1659,6 +1604,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     pdfUrl: "/api/download/datasheet/generated/puck-seamless",
     warranty: "6 years",
+    brand: "orbitx",
   },
   {
     slug: "puck-profile-70x36",
@@ -1712,6 +1658,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     pdfUrl: "/api/download/datasheet/generated/puck-profile-70x36",
     warranty: "6 years",
+    brand: "orbitx",
   },
   {
     slug: "puck-profile-40x43",
@@ -1765,6 +1712,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     pdfUrl: "/api/download/datasheet/generated/puck-profile-40x43",
     warranty: "6 years",
+    brand: "orbitx",
   },
   {
     slug: "kepler",
@@ -1818,6 +1766,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     pdfUrl: "/api/download/datasheet/generated/kepler",
     warranty: "8 years",
+    brand: "orbitx",
   },
   {
     slug: "lds5083",
@@ -2064,7 +2013,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     description: "The Themisto is a lensed linear for controlled illumination. With various mounting options, its ideal for warehouses, workshops and retail spaces for higher general lighting.",
     specs: [
       { label: "Wattage", value: "17W - 126W" },
-      { label: "Power", value: "17–100 W" },
       { label: "Lumens", value: "2300–12000 lm" },
       { label: "Profile", value: "53 × 60mm" },
       { label: "Housing", value: "Aluminium" },
@@ -2224,7 +2172,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     summary: "3-wattage seamless linkable linear for continuous runs with flexible output.",
     description: "3-wattage seamless linkable linear for continuous runs with flexible output.",
     specs: [
-      { label: "Power", value: "3 W" },
       { label: "Wattage", value: "3 selectable wattages" },
       { label: "Lumen Output", value: "Contact our team for more details" },
       { label: "Type", value: "Seamless linkable linear" },
@@ -3365,47 +3312,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     warranty: "5-year warranty",
   },
   {
-    slug: "veris",
-    name: "Veris",
-    category: "panels",
-    summary: "The Veris is a back-lit panel for general lighting with low-glare.",
-    description: "The Veris is a back-lit panel for general lighting with low-glare. Suitable for offices, educational and hospital spaces for a clean finish and general lighting.",
-    specs: [
-      { label: "Wattage", value: "30W, 40W, 50W" },
-      { label: "Power", value: "24 W" },
-      { label: "Lumens", value: "3600 lm" },
-      { label: "Dimensions", value: "1195 × 295 × 32mm" },
-      { label: "Housing", value: "Aluminium" },
-      { label: "Mounting", value: "Recessed" },
-      { label: "Beam Angle", value: "120°" },
-      { label: "IP Rating", value: "IP40" },
-      { label: "Lifetime", value: "L80B10 @ 50,000 hrs" },
-      { label: "Efficacy", value: "150 lm/W" },
-      { label: "CCT", value: "4000K / 5000K / 6000K" },
-      { label: "CRI", value: ">80" },
-      { label: "UGR", value: "<19" },
-      { label: "Surge Protection", value: "1.5kV" },
-      { label: "Voltage", value: "220–240V AC" },
-      { label: "Dimming", value: "Contact our team for more details" },
-    ],
-    features: [
-      "Low-glare UGR<19 output",
-      "Back-lit, flicker-free",
-      "Clean architectural finish",
-    ],
-    applications: [
-      "Offices",
-      "Education",
-      "Hospitals",
-      "Corporate interiors",
-    ],
-    imageUrl: "/scraped/panels/veris/01-veris.webp",// hero
-    images: [
-      { src: "/scraped/panels/veris/02-eazi-access-december-2017-00006-rt.webp", fit: "contain", alt: "02-eazi-access-december-2017-00006-rt.webp" },
-    ],
-    pdfUrl: "/api/download/datasheet/generated/veris",
-  },
-  {
     slug: "is-2360-r",
     name: "IS 2360 R",
     category: "sensors",
@@ -4515,6 +4421,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     pdfUrl: "/api/download/datasheet/generated/cob-strip-lumenx",
     warranty: "3-year warranty",
+    brand: "orbitx",
   },
   {
     slug: "profiles",
@@ -4838,6 +4745,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     pdfUrl: "/api/download/datasheet/generated/neptune",
     warranty: "8 years (365d x 24h)",
+    brand: "orbitx",
   },
   {
     slug: "titan",
@@ -4891,6 +4799,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     ],
     pdfUrl: "/api/download/datasheet/generated/titan",
     warranty: "6 years",
+    brand: "orbitx",
   },
   {
     slug: "saxa",
@@ -4901,7 +4810,6 @@ export const SCRAPED_PRODUCTS: Product[] = [
     specs: [
       { label: "Wattage", value: "18W, 36W, 54W" },
       { label: "Configuration", value: "Standard" },
-      { label: "Power", value: "18–54 W" },
       { label: "Lumens", value: "2160–6480 lm" },
       { label: "Housing", value: "Polycarbonate" },
       { label: "Mounting", value: "Surface" },

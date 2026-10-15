@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1125" role="img" aria-label="Placeholder for Frans Rossouw's headshot — photograph still to be supplied">
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0" stop-color="#0B111C"/>
+      <stop offset="0.6" stop-color="#0C1523"/>
+      <stop offset="1" stop-color="#06090F"/>
+    </linearGradient>
+    <radialGradient id="pglow" cx="0.5" cy="0.32" r="0.62">
+      <stop offset="0" stop-color="#00D4FF" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#00D4FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="900" height="1125" fill="url(#pbg)"/>
+  <rect width="900" height="1125" fill="url(#pglow)"/>
+
+  <!-- Corner frame motif, matching the other placeholders in this folder -->
+  <g stroke="#1E293B" stroke-width="3" fill="none">
+    <path d="M60 150 V60 H150"/>
+    <path d="M750 60 H840 V150"/>
+    <path d="M840 975 V1065 H750"/>
+    <path d="M150 1065 H60 V975"/>
+  </g>
+
+  <!-- Camera / portrait motif -->
+  <g transform="translate(450 430)" fill="none" stroke="#00D4FF" stroke-opacity="0.45"
+     stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-150" y="-110" width="300" height="220" rx="22"/>
+    <circle cx="0" cy="0" r="66"/>
+    <path d="M-96 -110 L-70 -150 H70 L96 -110"/>
+    <circle cx="104" cy="-70" r="9" fill="#00D4FF" stroke="none"/>
+  </g>
+
+  <!-- Label. Deliberately explicit so nobody ships this by accident. -->
+  <text x="450" y="640" text-anchor="middle" fill="#E2E8F0"
+        font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="34" letter-spacing="2">
+    FRANS ROSSOUW
+  </text>
+  <text x="450" y="690" text-anchor="middle" fill="#64748B"
+        font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" letter-spacing="3">
+    CO-FOUNDER &amp; TECHNICAL DIRECTOR
+  </text>
+
+  <g stroke="#1E293B" stroke-width="2">
+    <line x1="300" y1="740" x2="600" y2="740"/>
+  </g>
+
+  <text x="450" y="800" text-anchor="middle" fill="#00D4FF" fill-opacity="0.85"
+        font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26" letter-spacing="4">
+    HEADSHOT TO BE SUPPLIED
+  </text>
+  <text x="450" y="850" text-anchor="middle" fill="#475569"
+        font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="22">
+    Replace this file at
+  </text>
+  <text x="450" y="886" text-anchor="middle" fill="#64748B"
+        font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20">
+    public/headshots/Frans-Rossouw-Headshot-placeholder.svg
+  </text>
+  <text x="450" y="940" text-anchor="middle" fill="#475569"
+        font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="20">
+    Portrait, 4:5, roughly 900 x 1125px
+  </text>
+</svg>

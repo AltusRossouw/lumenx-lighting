@@ -50,8 +50,48 @@ export function getCategory(categoryId: string): ProductCategory | undefined {
   return PRODUCT_CATEGORIES.find((c) => c.id === categoryId);
 }
 
+/* ── Brands ─────────────────────────────────────────────────────────────────
+ * OrbitX and LumenX have a partnership, so OrbitX fittings are published under
+ * the OrbitX name. The slug never changes — 118 product URLs stay stable — only
+ * the display name gains the prefix. `src/product-tiles.ts` and the sitemap
+ * both read the plain `name`, so the prefix is a render-time concern.
+ */
+const BRAND_LABELS: Record<string, string> = {
+  orbitx: 'OrbitX',
+};
+
+/** 'orbitx' -> 'OrbitX'; an unknown id is title-cased rather than hidden. */
+export function brandLabel(brand: string): string {
+  return (
+    BRAND_LABELS[brand] ??
+    brand.replace(/(^|[\s-])([a-z])/g, (_, lead, letter) => `${lead}${letter.toUpperCase()}`)
+  );
+}
+
+/** The name to render: `OrbitX Neptune`, or the plain name for LumenX's own. */
+export function displayName(product: Pick<Product, 'name' | 'brand'>): string {
+  return product.brand ? `${brandLabel(product.brand)} ${product.name}` : product.name;
+}
+
+/**
+ * Catalogue order within a category: partner-branded fittings first, then
+ * everything else, each group alphabetical.
+ *
+ * The client asked for OrbitX at the top — "Orbitex is supposed to be on the
+ * top" — and this is applied inside `getProductsByCategory` so every consumer
+ * inherits it in one place: the category grid, prev/next on product pages, the
+ * datasheet library and the sitemap.
+ */
+export function sortProducts(products: Product[]): Product[] {
+  return [...products].sort((a, b) => {
+    const branded = Number(Boolean(b.brand)) - Number(Boolean(a.brand));
+    if (branded !== 0) return branded;
+    return a.name.localeCompare(b.name);
+  });
+}
+
 export function getProductsByCategory(categoryId: string): Product[] {
-  return PRODUCTS_BY_CATEGORY[categoryId] || [];
+  return sortProducts(PRODUCTS_BY_CATEGORY[categoryId] || []);
 }
 
 export function getProduct(categoryId: string, slug: string): Product | undefined {
@@ -169,7 +209,13 @@ export const DATASHEET_LIBRARY_BY_CATEGORY: DatasheetCategoryGroup[] = (() => {
     seen.add(product.pdfUrl);
     const group = groups.get(product.category);
     if (!group) continue;
-    group.sheets.push({ name: product.name, href: product.pdfUrl, category: product.category });
+    // Branded, so the datasheet library names the fitting the same way its
+    // product page does.
+    group.sheets.push({
+      name: displayName(product),
+      href: product.pdfUrl,
+      category: product.category,
+    });
   }
   return [...groups.values()]
     .filter((group) => group.sheets.length > 0)

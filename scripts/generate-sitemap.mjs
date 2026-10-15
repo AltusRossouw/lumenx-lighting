@@ -15,9 +15,11 @@ const SCRAPED_SRC = readFileSync(path.join(ROOT, 'src/catalogue-scraped.ts'), 'u
 const BASE = 'https://www.lumenx.co.za';
 
 // Static pages always present on the site.
+// '/the-solution' is deliberately absent: the page was retired in the 15 Oct
+// review and the route now redirects to the homepage anchor, so listing it
+// would advertise a URL that immediately bounces.
 const STATIC_PATHS = [
   '/',
-  '/the-solution',
   '/products',
   '/resources',
   '/design-tool',
@@ -93,11 +95,30 @@ for (const line of scr) {
 
 // Update this when the published range changes. It guards the parser against
 // silently emitting a short sitemap after a source reshuffle.
-const EXPECTED_PRODUCT_COUNT = 117;
+// The published range is `scraped − consumed-by-a-curated-entry + curated`, so
+// the curated count is what moves when a product is added. It is counted here
+// rather than hard-coded, and the scraped total is the guard against the parser
+// silently emitting a short sitemap after a source reshuffle.
+const EXPECTED_SCRAPED_PRODUCT_COUNT = 105;
+
+const scrapedCount = (SCRAPED_SRC.match(/^ {4}slug: "/gm) || []).length;
+if (scrapedCount !== EXPECTED_SCRAPED_PRODUCT_COUNT) {
+  console.error(
+    `sitemap: expected ${EXPECTED_SCRAPED_PRODUCT_COUNT} scraped products in ` +
+      `catalogue-scraped.ts, found ${scrapedCount}. If the range genuinely changed, ` +
+      'update EXPECTED_SCRAPED_PRODUCT_COUNT.',
+  );
+  process.exit(1);
+}
+
+const curatedCount = SRC.match(/^(?: {2}createOfficialProduct\(\{| {2}fromScraped\()/gm)?.length ?? 0;
+const EXPECTED_PRODUCT_COUNT = scrapedCount - consumed.size + curatedCount;
 
 if (products.length !== EXPECTED_PRODUCT_COUNT) {
   console.error(
-    `sitemap: expected ${EXPECTED_PRODUCT_COUNT} published products, parsed ${products.length}`,
+    `sitemap: expected ${EXPECTED_PRODUCT_COUNT} published products ` +
+      `(${scrapedCount} scraped − ${consumed.size} consumed + ${curatedCount} curated), ` +
+      `parsed ${products.length}`,
   );
   process.exit(1);
 }
@@ -108,7 +129,28 @@ for (const p of products) {
   }
 }
 
-const categories = [...new Set(products.map((p) => p.category))].sort();
+// Every published category, read from SCRAPED_CATEGORIES rather than inferred
+// from the products. A category with no *scraped* product of its own — `street`
+// today, whose one product is curated in official-products.ts — would otherwise
+// be missing from the sitemap.
+const categories = [
+  ...new Set(
+    [...SCRAPED_SRC.matchAll(/^ {4}id: "([^"]+)",$/gm)].map((m) => m[1]),
+  ),
+].sort();
+
+const categoryIds = new Set(categories);
+
+// A product sitting in a category that is not published would produce a URL
+// that 404s. Fail loudly instead — that is how a rename or a merge shows up.
+const orphans = products.filter((p) => !categoryIds.has(p.category));
+if (orphans.length > 0) {
+  console.error(
+    `sitemap: ${orphans.length} product(s) sit in an unpublished category:\n` +
+      orphans.map((p) => `  · ${p.category}/${p.slug}`).join('\n'),
+  );
+  process.exit(1);
+}
 
 const urls = new Set([
   ...STATIC_PATHS,

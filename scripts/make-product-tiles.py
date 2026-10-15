@@ -139,6 +139,82 @@ SRC_OVERRIDE = {
 }
 MAX_CANDIDATES = 10
 
+# ── W7 · white-on-white contrast pass ────────────────────────────────────────
+#
+# The tile is painted the colour of the product's own backdrop and everything
+# ends up on white (card_art.tile_background), so a white fitting photographed
+# on a white sweep lands white-on-white and the client reads it as "blending in
+# there". Two of those products are worse than that: their shot is a transparent
+# cut-out, so there is no sweep left to hold a seam and the body is the only
+# thing in frame — it is white because the product is white, not because of a
+# backdrop decision.
+#
+# The fix has to be per-product. A global pass would darken the 100-odd tiles
+# that are correctly exposed — a black track spot, a street light, a bollard —
+# which is the thing the brief explicitly rules out. So the adjustment is an
+# allow-list of slugs, and each entry carries the calibration for that product.
+#
+# `SHADE` is the strength of a highlight shoulder applied to the pixels of the
+# product ONLY (card_art.shade_product). The tile background, and every pixel
+# outside the subject mask, are untouched, so the white frame the catalogue
+# contract asks for stays pure white and only the body moves. 1.0 is a no-op;
+# the value compresses the body's top end onto a white point of
+# 200 + 55 * value. These were calibrated, not guessed: each product was swept
+# until the 98th percentile of its body landed on 238 in the finished tile, which
+# is a 17-level separation from the 255 frame — enough to read as a body, short
+# of the point where a white fitting starts to look grey.
+#
+# A shoulder rather than an exposure gain, deliberately. These shots are already
+# clipped in places, and a gain pulls a clipped 255 and the 244 next to it apart
+# until a blown highlight turns into a hard-edged patch. On the 600x1200 panel,
+# which has a large specular flare burned into its diffuser, the gain version put
+# a mottled white blob across the panel that the shipped tile did not show at
+# all; the shoulder keeps it as the soft flare the photograph actually has. See
+# the note on card_art.shade_product.
+#
+# Affected families, per the brief:
+#   panels   — Superlume LED panels: a flat white diffuser filling the tile.
+#   track    — white track fittings.
+#   linears  — white linear bodies, including the Superlume linkable range.
+#   vapourproof — white vapour-proof / triproof bodies.
+#
+# Deliberately NOT listed: products of the same families whose shot is a dark or
+# mid-grey body (snypa, metropolis, saxa, lf55, lds5083, protega, the Puck
+# profiles), products the brief did not name (downlights, bulkheads, sensors)
+# even where their measurement is similar, and anything whose tile is built from
+# a composite where the white is a rendered backdrop rather than the product.
+CONTRAST_SHADE = {
+    # Superlume panels. Both are back-lit panels whose diffuser fills the tile,
+    # so the body IS the white area the client is describing. The 600x1200 is the
+    # catalogue's worst on measurement — 72% of its subject pixels sit above L235
+    # against a pure-white frame — and it is also the one whose correction has to
+    # stay restrained, because the specular flare burned into its diffuser is
+    # what a stronger shoulder would turn into a visible white patch.
+    #
+    # Veris and Thermisto are NOT here: W5 deleted Veris from the scrape, so its
+    # tile went with it, and Thermisto is a highbay rather than a panel.
+    'panels/600x1200-recessed-panel': 0.78,
+    'panels/recessed-panel': 0.84,
+    # White track fittings. Leda is the tiltable linear whose white variant the
+    # client rejected in favour of the black one; Standard and the 35W spot are
+    # white-bodied after their single-object crops.
+    'track/leda': 0.84,
+    'track/standard': 0.78,
+    'track/35w-track-spot': 0.96,
+    # White linear bodies.
+    'linears/lf20': 0.76,
+    'linears/lf40': 0.78,
+    'linears/base': 0.90,
+    'linears/puck-seamless': 0.72,
+    'linears/kepler': 0.72,
+    # White vapour-proof bodies.
+    'vapourproof/48w-3-cct-triproof': 0.98,
+    'vapourproof/kuda': 0.76,
+    'vapourproof/neptune': 0.70,
+    'vapourproof/titan': 0.72,
+    'vapourproof/vp': 0.94,
+}
+
 # The scraper sometimes filed the category banner itself as one of a product's
 # gallery images — it is on the page, so it looked like a product photo. It put
 # the Sensors card in three products' candidate lists and the Highbays card in
@@ -438,7 +514,12 @@ def render(category, slug, name, cands, force=False, report=False):
     # mask is the one thing that cannot be made reliable on a pale product
     # against a pale sweep, and it is where the halos, the notches and the
     # flat-clipped domes came from.
-    card_art.compose_flat(best, dest, height_frac=FLAT_HEIGHT_FRAC)
+    #
+    # `shade` is the W7 white-on-white correction, and it comes from the
+    # allow-list -- every product not named in CONTRAST_SHADE gets None, so the
+    # pass cannot leak onto a tile that was already correctly exposed.
+    card_art.compose_flat(best, dest, height_frac=FLAT_HEIGHT_FRAC,
+                          shade=CONTRAST_SHADE.get(f'{category}/{slug}'))
     return 'rendered', os.path.relpath(best, ROOT), best_score
 
 

@@ -8,6 +8,17 @@ SCRAPED_CATEGORIES (ProductCategory[]) and SCRAPED_PRODUCTS (Product[]) array in
 the exact shape the LumenX site expects.
 
 Run from the repo root:  python3 data-scrape/generate_catalogue.py
+
+This generator is NOT the last word on the catalogue. It deliberately cannot
+express a few things the site needs — category ordering, a handful of product
+deletions and corrections, and per-product brand attribution. Those live in a
+small, reviewable post-processing step that runs immediately afterwards:
+
+    python3 data-scrape/generate_catalogue.py
+    node scripts/apply-catalogue-overrides.mjs
+
+Always run both, in that order. The override script is the durable home for
+anything this generator would otherwise forget on the next regeneration.
 """
 import hashlib
 import json
@@ -91,23 +102,37 @@ CATEGORY_MAP = {
         'applications': 'Parking structures, food processing, warehousing and washdown areas',
         'linkLabel': 'Explore Vapour Proof Lighting',
     }),
-    'Indoor Architectural': ('indoor-architectural', {
-        'title': 'Architectural — Indoor',
-        'description': 'Recessed, surface and suspended architectural luminaires for refined interior detailing — circular systems, pendants and ceiling lights.',
-        'applications': 'Offices, hospitality, retail and residential architecture',
+    # These two folders publish as ONE category (client decision, 15 Oct
+    # review). Both keys point at the same id so the entry the generator emits
+    # is the merged copy no matter which folder it reaches first — without the
+    # second key, a product.json that still named 'Indoor Decorative' won the
+    # `setdefault` and the category shipped with the old Decorative copy.
+    'Indoor Architectural': ('architectural-indoor', {
+        'title': 'Architectural — Indoor & Decorative',
+        'description': 'Recessed, surface and suspended architectural luminaires for refined interior detailing — circular systems, pendants, ceiling lights and statement decorative series.',
+        'applications': 'Offices, hospitality, retail, residential architecture and feature interiors',
         'linkLabel': 'Explore Architectural — Indoor',
     }),
-    'Indoor Decorative': ('decorative', {
-        'title': 'Decorative',
-        'description': 'Statement chandeliers and decorative series that make interiors feel curated — layered acrylic, crystal and sculptural forms.',
-        'applications': 'Hotels, restaurants, residences and feature interiors',
-        'linkLabel': 'Explore Decorative',
+    'Indoor Decorative': ('architectural-indoor', {
+        'title': 'Architectural — Indoor & Decorative',
+        'description': 'Recessed, surface and suspended architectural luminaires for refined interior detailing — circular systems, pendants, ceiling lights and statement decorative series.',
+        'applications': 'Offices, hospitality, retail, residential architecture and feature interiors',
+        'linkLabel': 'Explore Architectural — Indoor',
     }),
     'Outdoor Architectural': ('outdoor-architectural', {
         'title': 'Architectural — Outdoor',
         'description': 'Outdoor spots, bollards, post-tops, wall lights and in-ground luminaires for considered exterior architecture and landscape.',
         'applications': 'Facades, gardens, pathways, plazas and streetscapes',
         'linkLabel': 'Explore Architectural — Outdoor',
+    }),
+    # No source folder yet: the only product in this range (the 60W Street
+    # Light) is curated in src/official-products.ts. The entry lives here so
+    # the category's copy has one home and so the id is emitted.
+    'Street': ('street', {
+        'title': 'Street & Area Lighting',
+        'description': 'Roadway and area luminaires with precision street optics and zero upward light for municipal roads, access routes and public spaces.',
+        'applications': 'Residential streets, urban roads, industrial access and public parks',
+        'linkLabel': 'Explore Street & Area Lighting',
     }),
     'Sensors': ('sensors', {
         'title': 'Sensors',
@@ -137,6 +162,12 @@ FOLDER_CATEGORY_OVERRIDE = {
     'Outdoor Architectural/23-pioled-fuji-round': 'Bollards',
     'Outdoor Architectural/24-pioled-everest-square': 'Bollards',
     'Outdoor Architectural/25-pioled-everest-round': 'Bollards',
+    # Indoor Architectural + Decorative are one published category (Q15).
+    'Indoor Decorative/01-kinglong-cloud-bell': 'Indoor Architectural',
+    'Indoor Decorative/02-kinglong-pearl-series': 'Indoor Architectural',
+    'Indoor Decorative/03-kinglong-dream-pen': 'Indoor Architectural',
+    'Indoor Decorative/04-kinglong-jiangnan': 'Indoor Architectural',
+    'Indoor Decorative/05-kinglong-crystal-cloud': 'Indoor Architectural',
 }
 
 # Products deliberately not published, keyed by their folder under products/.
@@ -145,6 +176,31 @@ FOLDER_CATEGORY_OVERRIDE = {
 # generator does not silently bring them back. The source scrape is left intact.
 EXCLUDED_PRODUCTS = {
     'Outdoor Architectural/21-superlume-palm-coco',   # withdrawn — replaced in range
+    # GU10 is a lamp-based fitting range, not an LED luminaire (Q: drop it).
+    'Downlights/10-pioled-gu10-gu10-downlight',
+    # Veris is discontinued and its page was being kept alive by the scrape.
+    'Panels/01-rubicon-veris',
+}
+
+# The scraped "supplier" column is unreliable for a few ranges: the Puck
+# profiles are attributed to Rubicon in the scrape even though the spec PDFs
+# they link to are OrbitX's. Brand attribution is therefore keyed on the
+# product's own folder where the URL evidence disagrees with the column.
+#
+# OrbitX and LumenX have a partnership, so OrbitX fittings carry the OrbitX
+# brand in their display name and sort to the top of their category (Q5).
+BRAND_OVERRIDES = {
+    'Linears/01-orbitx-puck-seamless': 'orbitx',
+    'Linears/02-orbitx-puck-profile-70x36': 'orbitx',
+    'Linears/03-orbitx-puck-profile-40x43': 'orbitx',
+    'Linears/04-orbitx-kepler': 'orbitx',
+    'Strips/01-pioled-cob': 'orbitx',
+}
+
+# Supplier name (product.json row.supplier) -> brand id, for the ranges where
+# the scrape's own attribution is correct.
+BRAND_BY_SUPPLIER = {
+    'OrbitX': 'orbitx',
 }
 
 # ─────────────────────────────────────────────────────────────────────────
@@ -1358,6 +1414,15 @@ def main():
         if warranty:
             product['warranty'] = warranty
 
+        # Brand attribution. The scraped supplier column is right for most of
+        # the OrbitX range but mis-files the Puck profiles under Rubicon, so a
+        # folder-keyed override wins where the URL evidence disagrees.
+        brand = BRAND_OVERRIDES.get(folder_rel) or BRAND_BY_SUPPLIER.get(
+            (row.get('supplier') or '').strip()
+        )
+        if brand:
+            product['brand'] = brand
+
         products.append(product)
 
     # ── Emit TypeScript ──
@@ -1416,6 +1481,8 @@ def main():
             lines.append(f"    pdfUrl: {js_str(p['pdfUrl'])},")
         if p.get('warranty'):
             lines.append(f"    warranty: {js_str(p['warranty'])},")
+        if p.get('brand'):
+            lines.append(f"    brand: {js_str(p['brand'])},")
         lines.append('  },')
     lines.append('];')
     lines.append('')

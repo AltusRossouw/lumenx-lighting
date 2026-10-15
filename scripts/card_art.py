@@ -26,6 +26,11 @@ CORE_BOTTOM = (4, 65, 83)
 
 KEY = (255, 0, 255)
 
+# Where the white-on-white highlight shoulder begins — see shade_product. 200 is
+# below every white body's own shading but above the greys of a dark fitting that
+# happens to be allow-listed, so a product's contrast survives the correction.
+HIGHLIGHT_KNEE = 200
+
 
 def gradient(width=W, height=H):
     """The shared background: a soft teal glow, slightly above centre."""
@@ -262,12 +267,72 @@ def whiten(im, bg):
     return Image.fromarray(np.clip(a * gain, 0, 255).astype(np.uint8), 'RGB')
 
 
-def compose_flat(src, dest, height_frac=0.88, width_frac=0.90, quality=92):
+def shade_product(im, shade, bg):
+    """Pull the PRODUCT's own highlights down on a flat tile.
+
+    This exists for one client note: *"the gray background… could we not adjust
+    the contrast on the product itself so it's not so white? It's just blending
+    in there."* A white fitting on a white tile has nowhere to sit: everything
+    ends up on white, because a product shot's own sweep is lifted to white so
+    the grid reads as one frame (see tile_background and whiten), and a product
+    that is genuinely white then has no edge at all.
+
+    The point of doing it here rather than in the tile script is the mask. The
+    adjustment is applied to the subject pixels ONLY, so the white frame stays
+    pure white and only the body moves — which is what separates the product from
+    the tile instead of greying the whole card. `bg` is the colour the tile will
+    be painted, so the same mask works whether the source is a transparent
+    cut-out (mask on alpha) or an opaque shot (mask on distance from its sweep).
+
+    `shade` is a highlight-rolloff strength in (0, 1). It compresses the top of
+    the range with a shoulder that starts at KNEE and lands 255 on
+    KNEE + (255 - KNEE) * shade, leaving everything at or below the knee exactly
+    as it was. So 0.55 takes a clipped 255 down to about 225 while the product's
+    own shading, its shadows and its mid-greys are untouched, and nothing is
+    crushed.
+
+    A plain gain was tried first and is wrong here. Multiplying a *clipped* 255
+    by 0.86 and multiplying the 244 next to it by 0.86 moves the two apart by
+    1.7 levels, so the ragged edge of every blown highlight on the product turns
+    into a visible hard-edged patch — on the 600x1200 panel it put a mottled
+    white blob across the diffuser that the unadjusted tile did not show at all.
+    Compressing the top instead keeps neighbours together: those same two pixels
+    move 30 and 3.6 levels, but towards each other rather than apart. The white
+    point still lands where the brief wants it; the texture inside it survives.
+    """
+    if not shade or shade >= 1.0:
+        return im
+    rgba = np.array(im.convert('RGBA')).astype(np.float32)
+    rgb, alpha = rgba[:, :, :3], rgba[:, :, 3]
+    if (alpha < 250).mean() > 0.05:
+        subject = alpha > 10                       # a real cut-out: alpha is the mask
+    else:
+        subject = np.abs(rgb - np.array(bg, dtype=np.float32)).sum(axis=2) > 12
+    if not subject.any():
+        return im
+    target = HIGHLIGHT_KNEE + (255.0 - HIGHLIGHT_KNEE) * shade
+    body = rgb[subject]
+    hi = body > HIGHLIGHT_KNEE
+    body[hi] = HIGHLIGHT_KNEE + (body[hi] - HIGHLIGHT_KNEE) * (
+        (target - HIGHLIGHT_KNEE) / (255.0 - HIGHLIGHT_KNEE))
+    rgb[subject] = np.clip(body, 0, 255)
+    return Image.fromarray(
+        np.dstack([rgb, alpha]).astype(np.uint8), 'RGBA')
+
+
+def compose_flat(src, dest, height_frac=0.88, width_frac=0.90, quality=92, shade=None):
     """Place a product shot, whole, on a flat tile of its own backdrop colour.
 
     No segmentation, no mask, nothing to go wrong at the edges, and the product
     is never cropped. Compare compose_cutout, which needs a mask and shows every
     flaw in it.
+
+    `shade` is the per-product white-on-white correction — see shade_product. It
+    is None for every product except the allow-listed ones in
+    make-product-tiles.py, so nothing else shifts. It is applied AFTER the
+    resize: resampling a corrected image pulls the corrected body back toward the
+    white frame at every edge pixel, and the seam that leaves is the exact halo
+    the flat treatment exists to avoid.
     """
     im = Image.open(src)
     rgba = im.convert('RGBA')
@@ -286,6 +351,7 @@ def compose_flat(src, dest, height_frac=0.88, width_frac=0.90, quality=92):
     if rgba.width * r > W * width_frac:
         r = (W * width_frac) / rgba.width
     placed = resize_rgba(rgba, (max(1, int(rgba.width * r)), max(1, int(rgba.height * r))))
+    placed = shade_product(placed, shade, bg)
     base = Image.new('RGB', (W, H), bg)
     base.paste(placed, ((W - placed.width) // 2, (H - placed.height) // 2), placed)
     base.save(dest, quality=quality, optimize=True)

@@ -42,8 +42,13 @@ PICKS = {
     'strips':                 ['COB',                        'public/scraped/strips/cob/01-pioled-lighting-s303-sr303-a-10w-24v-cob-ip20-strip-3000k-1.jpg'],
     'track':                  ['Bazuka',                     'public/scraped/track/bazuka/member-01-pioled-lighting-tkb099-25w-bazuka-3-wire-track-3cct-honeycomb-black.png'],
     'vapourproof':            ['Neptune',                    'public/scraped/vapourproof/neptune/01-neptune-800x416.png'],
-    'decorative':             ['Dream Pen',                  'public/scraped/decorative/dream-pen/03-dreampen-s1-l1231-w617-h1178.png'],
-    'indoor-architectural':   ['Circular Vertical',          'public/scraped/indoor-architectural/circular-vertical/07-aea62d768c704212-b0f107f9acc8036a-2000-1-6.png'],
+    # Indoor Architectural and Decorative are one published category (Q15), so
+    # one card serves both. Circular Vertical is the pick: a suspension form
+    # that reads as "architectural" without looking like the adjacent panels.
+    'architectural-indoor':   ['Circular Vertical',          'public/scraped/indoor-architectural/circular-vertical/07-aea62d768c704212-b0f107f9acc8036a-2000-1-6.png'],
+    # Street & Area Lighting holds one curated product today, so its own hero is
+    # the only honest source for the card.
+    'street':                 ['60W Street Light',           'public/product-images/60W_Street_light.png'],
     # Was Moal, which is a bollard — and on a Products page that reads almost
     # identically to the Bollards card sitting next to it. Cube is a wall-washer
     # and shares no silhouette with anything else in the grid.

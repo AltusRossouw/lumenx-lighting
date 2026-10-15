@@ -8,6 +8,17 @@
   <url><loc>https://www.lumenx.co.za/planner</loc></url>
   <url><loc>https://www.lumenx.co.za/privacy</loc></url>
   <url><loc>https://www.lumenx.co.za/products</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/architectural-indoor</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/architectural-indoor/attic</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/architectural-indoor/circular</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/architectural-indoor/circular-vertical</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/architectural-indoor/cloud-bell</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/architectural-indoor/crystal-cloud</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/architectural-indoor/dream-pen</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/architectural-indoor/fabric-tape</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/architectural-indoor/jiangnan</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/architectural-indoor/pearl</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/architectural-indoor/vetro</loc></url>
   <url><loc>https://www.lumenx.co.za/products/bollards</loc></url>
   <url><loc>https://www.lumenx.co.za/products/bollards/everest-round</loc></url>
   <url><loc>https://www.lumenx.co.za/products/bollards/everest-square</loc></url>
@@ -19,13 +30,8 @@
   <url><loc>https://www.lumenx.co.za/products/bulkheads/hero</loc></url>
   <url><loc>https://www.lumenx.co.za/products/bulkheads/pc-bulkhead</loc></url>
   <url><loc>https://www.lumenx.co.za/products/bulkheads/phoebe</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/bulkheads/retrofit-module</loc></url>
   <url><loc>https://www.lumenx.co.za/products/bulkheads/rhea</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/decorative</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/decorative/cloud-bell</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/decorative/crystal-cloud</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/decorative/dream-pen</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/decorative/jiangnan</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/decorative/pearl</loc></url>
   <url><loc>https://www.lumenx.co.za/products/downlights</loc></url>
   <url><loc>https://www.lumenx.co.za/products/downlights/9w-surface-downlight</loc></url>
   <url><loc>https://www.lumenx.co.za/products/downlights/cob-dr</loc></url>
@@ -33,7 +39,6 @@
   <url><loc>https://www.lumenx.co.za/products/downlights/cob-square-downlight</loc></url>
   <url><loc>https://www.lumenx.co.za/products/downlights/cob-square-triple-downlight</loc></url>
   <url><loc>https://www.lumenx.co.za/products/downlights/diffused-downlight</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/downlights/gu10-downlight</loc></url>
   <url><loc>https://www.lumenx.co.za/products/downlights/lean-153</loc></url>
   <url><loc>https://www.lumenx.co.za/products/downlights/legend</loc></url>
   <url><loc>https://www.lumenx.co.za/products/downlights/mario</loc></url>
@@ -41,21 +46,15 @@
   <url><loc>https://www.lumenx.co.za/products/downlights/small-cob-anti-glare-downlight</loc></url>
   <url><loc>https://www.lumenx.co.za/products/downlights/surface-adjustable-downlight</loc></url>
   <url><loc>https://www.lumenx.co.za/products/floods</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/floods/60w-street-light</loc></url>
   <url><loc>https://www.lumenx.co.za/products/floods/flood</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/floods/orbitx-floodlight</loc></url>
   <url><loc>https://www.lumenx.co.za/products/highbays</loc></url>
   <url><loc>https://www.lumenx.co.za/products/highbays/ace</loc></url>
   <url><loc>https://www.lumenx.co.za/products/highbays/delta</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/highbays/jupiter</loc></url>
   <url><loc>https://www.lumenx.co.za/products/highbays/raptor</loc></url>
   <url><loc>https://www.lumenx.co.za/products/highbays/thermisto</loc></url>
   <url><loc>https://www.lumenx.co.za/products/highbays/umgeni</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/highbays/v200-highbay</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/indoor-architectural</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/indoor-architectural/attic</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/indoor-architectural/circular</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/indoor-architectural/circular-vertical</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/indoor-architectural/fabric-tape</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/indoor-architectural/vetro</loc></url>
   <url><loc>https://www.lumenx.co.za/products/linears</loc></url>
   <url><loc>https://www.lumenx.co.za/products/linears/ace</loc></url>
   <url><loc>https://www.lumenx.co.za/products/linears/base</loc></url>
@@ -99,8 +98,8 @@
   <url><loc>https://www.lumenx.co.za/products/outdoor-architectural/zod102-round-led-wall</loc></url>
   <url><loc>https://www.lumenx.co.za/products/panels</loc></url>
   <url><loc>https://www.lumenx.co.za/products/panels/600x1200-recessed-panel</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/panels/puck-panel</loc></url>
   <url><loc>https://www.lumenx.co.za/products/panels/recessed-panel</loc></url>
-  <url><loc>https://www.lumenx.co.za/products/panels/veris</loc></url>
   <url><loc>https://www.lumenx.co.za/products/profiles</loc></url>
   <url><loc>https://www.lumenx.co.za/products/profiles/profiles</loc></url>
   <url><loc>https://www.lumenx.co.za/products/sensors</loc></url>
@@ -123,6 +122,8 @@
   <url><loc>https://www.lumenx.co.za/products/solar/sky-ele-15-solar-post-top</loc></url>
   <url><loc>https://www.lumenx.co.za/products/solar/sky-spt-150-solar-post-top</loc></url>
   <url><loc>https://www.lumenx.co.za/products/solar/vista-solar-post-top</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/street</loc></url>
+  <url><loc>https://www.lumenx.co.za/products/street/60w-street-light</loc></url>
   <url><loc>https://www.lumenx.co.za/products/strips</loc></url>
   <url><loc>https://www.lumenx.co.za/products/strips/cob</loc></url>
   <url><loc>https://www.lumenx.co.za/products/strips/high-voltage-strip</loc></url>
@@ -142,5 +143,4 @@
   <url><loc>https://www.lumenx.co.za/products/vapourproof/titan</loc></url>
   <url><loc>https://www.lumenx.co.za/products/vapourproof/vp</loc></url>
   <url><loc>https://www.lumenx.co.za/resources</loc></url>
-  <url><loc>https://www.lumenx.co.za/the-solution</loc></url>
 </urlset>

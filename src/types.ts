@@ -49,6 +49,14 @@ export interface Product {
   pdfUrl?: string;
   /** Warranty / guarantee statement. */
   warranty?: string;
+  /**
+   * Manufacturer brand id, when the fitting is not LumenX's own.
+   *
+   * OrbitX and LumenX have a partnership, so OrbitX fittings are published
+   * under the OrbitX name and sort ahead of the rest of their category. The
+   * slug never changes — only the display name does (see `displayName`).
+   */
+  brand?: string;
 }
 
 export interface ProductDetail {
@@ -127,8 +135,6 @@ export interface ManagingDirector {
   phone: string;
   email: string;
   headshot: string;
-  signatureImage: string;
-  signatureAlt: string;
 }
 
 /* ── About page ─────────────────────────────────────────────────────────── */
@@ -160,11 +166,15 @@ export interface AboutPageContent {
     label: string;
     heading: string;
     lede: string;
-    photo: string;
-    photoAlt: string;
-    photoCaption: string;
-    /** Credential strip beside the group photograph. */
+    /** Credential strip beneath the introduction. */
     highlights: { value: string; label: string }[];
+    /**
+     * The founders, each with their own headshot.
+     *
+     * There is deliberately no group photograph: the client could not find one
+     * to use, and agreed on the 15 Oct call to show a headshot per founder
+     * instead ("I'll just add a nice headshot of each of you").
+     */
     members: TeamMember[];
   };
   closing: {
