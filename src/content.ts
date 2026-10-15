@@ -303,9 +303,6 @@ export const DEFAULT_CONTENT: SiteContent = {
       label: ABOUT.team.label,
       heading: ABOUT.team.heading,
       lede: ABOUT.team.lede,
-      photo: ABOUT.team.photo,
-      photoAlt: ABOUT.team.photoAlt,
-      photoCaption: ABOUT.team.photoCaption,
       highlights: ABOUT.team.highlights.map((h) => ({ ...h })),
       members: ABOUT.team.members.map((m) => ({
         ...m,
@@ -395,9 +392,6 @@ const resolveAbout = (about: SiteContent['about']): AboutPageContent => ({
     label: about.team.label,
     heading: about.team.heading,
     lede: about.team.lede,
-    photo: ABOUT.team.photo,
-    photoAlt: about.team.photoAlt || ABOUT.team.photoAlt,
-    photoCaption: about.team.photoCaption,
     highlights: about.team.highlights,
     members: ABOUT.team.members.map((defaults, i) => {
       const stored = about.team.members[i];

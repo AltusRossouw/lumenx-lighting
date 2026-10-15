@@ -317,19 +317,24 @@ export const ContactSection: React.FC = () => {
                   </a>
                 </div>
               </div>
-              <div className="rounded-xl overflow-hidden border border-[#1E293B] bg-[#06090F]">
-                <img
-                  src={MANAGING_DIRECTOR.signatureImage}
-                  alt={MANAGING_DIRECTOR.signatureAlt}
-                  loading="lazy"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
+              {/*
+                The emailed signature banner used to sit here. The client asked
+                for the banner image to go while Kaylen stays listed as Managing
+                Director, so the card now ends on his contact details.
+              */}
             </div>
 
             {/* Brand */}
             <div className="text-center p-4 rounded-2xl bg-gradient-to-b from-[#0F141C] to-[#0A0D14] border border-[#1E293B]">
-              <LumenXWordmark className="h-9 mx-auto" />
+              {/*
+                Sized against the header logo, not the old h-9. The header
+                renders the wordmark at h-24 (96px) but the image is 2981x1275,
+                so its lines only occupy the middle ~300px of that box — h-9 read
+                as visibly smaller than the header mark. `w-full max-w-[15rem]`
+                with `h-auto` keeps the same optical size while staying inside
+                the card at every breakpoint.
+              */}
+              <LumenXWordmark className="!h-auto w-full max-w-[15rem] mx-auto" />
               <p className="text-[10px] text-slate-500 font-mono tracking-widest mt-2">{contact.tagline}</p>
             </div>
           </motion.div>

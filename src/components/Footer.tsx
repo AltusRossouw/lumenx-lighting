@@ -9,7 +9,8 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { label: 'The Solution', path: '/the-solution' },
+    // 'The Solution' was removed here too — the six steps now live on the
+    // homepage under the "One partner" block.
     { label: 'Products', path: '/products' },
     // Design Tool temporarily disabled for testing — re-add when ready.
     // Lighting Planner temporarily disabled for testing — re-add when ready.

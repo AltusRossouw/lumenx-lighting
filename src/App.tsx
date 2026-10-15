@@ -62,7 +62,8 @@ function SeoManager() {
       title: seo.homeTitle,
       description: seo.homeDescription,
     },
-    { match: /^\/the-solution(\/|$)/, title: seo.solutionTitle, description: seo.solutionDescription },
+    // No entry for /the-solution any more: the page is gone and the route
+    // redirects to the homepage anchor, which matches /^\/$/ below.
     { match: /^\/products\/[^/]+\/[^/]+$/, title: 'Product Details — LumenX Lighting' },
     { match: /^\/products\/[^/]+$/, title: 'Product Range — LumenX Lighting' },
     { match: /^\/products(\/|$)/, title: seo.productsTitle, description: seo.productsDescription },
@@ -160,8 +161,15 @@ function AppLayout() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/the-solution" element={<ServicesPage />} />
-          <Route path="/services" element={<Navigate to="/the-solution" replace />} />
+          {/*
+            '/the-solution' was a page until the 15 Oct review, when the six-step
+            Solution moved onto the homepage. The route is kept as a redirect so
+            old links, bookmarks and search results still land somewhere useful
+            instead of 404ing. '/services' pointed at it and now lands on the
+            same anchor.
+          */}
+          <Route path="/the-solution" element={<Navigate to="/#solution" replace />} />
+          <Route path="/services" element={<Navigate to="/#solution" replace />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:categoryId/:slug" element={<ProductPageWrapper />} />
           <Route path="/products/:categoryId" element={<ProductDetailWrapper />} />

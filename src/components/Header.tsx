@@ -6,7 +6,8 @@ import { api, User } from '../lib/api';
 
 const NAV_ITEMS: { id: string; label: string; path: string }[] = [
   { id: 'home', label: 'Home', path: '/' },
-  { id: 'services', label: 'The Solution', path: '/the-solution' },
+  // 'The Solution' was a nav tab until the 15 Oct review: the six-step Solution
+  // now lives on the homepage under the "One partner" block, so the tab is gone.
   { id: 'products', label: 'Products', path: '/products' },
   { id: 'resources', label: 'Technical Resources', path: '/resources' },
   { id: 'about', label: 'About', path: '/about' },

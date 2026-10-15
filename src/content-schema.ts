@@ -251,7 +251,7 @@ export const CONTENT_SCHEMA: Group[] = [
   {
     title: 'About page',
     description:
-      'The founders story. Team photographs are fixed images — only their alt text and captions are edited here.',
+      'The founders story. Team headshots are fixed images — only their alt text and the surrounding copy are edited here.',
     fields: [
       { kind: 'text', label: 'Hero eyebrow label', path: ['about', 'hero', 'eyebrow'] },
       heading('Hero heading', ['about', 'hero', 'heading']),
@@ -260,8 +260,8 @@ export const CONTENT_SCHEMA: Group[] = [
       { kind: 'text', label: 'Team eyebrow label', path: ['about', 'team', 'label'] },
       { kind: 'text', label: 'Team heading', path: ['about', 'team', 'heading'] },
       { kind: 'textarea', label: 'Team introduction', path: ['about', 'team', 'lede'] },
-      { kind: 'text', label: 'Group photo caption', path: ['about', 'team', 'photoCaption'] },
-      { kind: 'text', label: 'Group photo alt text', path: ['about', 'team', 'photoAlt'] },
+      // No group-photo fields any more: the client could not find a group
+      // photograph and agreed to a headshot per founder instead.
       {
         kind: 'objectList',
         label: 'Credential strip',
@@ -281,7 +281,7 @@ export const CONTENT_SCHEMA: Group[] = [
           { key: 'name', label: 'Name', kind: 'text' },
           { key: 'role', label: 'Role', kind: 'text' },
           { key: 'focus', label: 'One-line focus', kind: 'textarea' },
-          { key: 'imageAlt', label: 'Portrait alt text', kind: 'text' },
+          { key: 'imageAlt', label: 'Headshot alt text', kind: 'text' },
         ],
       },
       {

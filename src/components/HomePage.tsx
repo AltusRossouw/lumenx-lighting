@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { HeroSection } from './HeroSection';
 import { DifferenceCarousel } from './DifferenceCarousel';
+import { CompleteSolutionSection } from './CompleteSolutionSection';
 import { CTASection } from './CTASection';
 import { AccreditationBar } from './AccreditationBar';
 import { LumenXMark } from './ui/lumenx-mark';
@@ -63,9 +64,20 @@ const TeaserLink: React.FC<{ to: string; label: string }> = ({ to, label }) => {
   );
 };
 
-/* ── 1 · The Solution teaser ── */
+/* ── 1 · The Solution ──
+ *
+ * The six-step Solution used to live on its own `/the-solution` tab. The client
+ * asked for it on the homepage instead, "underneath the 'one partner'". So the
+ * "One partner" heading and copy stay as this section's introduction and the
+ * six steps render directly beneath them, replacing the six small capability
+ * cards that used to sit here.
+ *
+ * `CompleteSolutionSection` is rendered with `heading={false}`: it carries its
+ * own centred h2 for the standalone page, and two headings for one section read
+ * as a mistake.
+ */
 const SolutionTeaser: React.FC = () => {
-  const { home, completeSolution } = useSiteContent();
+  const { home } = useSiteContent();
   const t = home.solution;
   return (
     <Teaser
@@ -74,22 +86,7 @@ const SolutionTeaser: React.FC = () => {
       copy={t.copy}
       tightBottom
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-        {completeSolution.map((cap) => (
-          <div
-            key={cap.title}
-            className="flex items-center gap-3 px-5 py-4 border border-[#1E293B]/70 bg-[#0A0F17] hover:border-primary/40 hover:bg-primary/[0.03] transition-colors duration-300"
-          >
-            <img
-              src={cap.heroIcon}
-              alt=""
-              className="w-9 h-9 object-contain drop-shadow-[0_0_12px_rgba(0,212,255,0.35)] shrink-0"
-            />
-            <span className="font-display text-sm font-semibold text-slate-200">{cap.title}</span>
-          </div>
-        ))}
-      </div>
-      <TeaserLink to="/the-solution" label={t.link} />
+      <CompleteSolutionSection heading={false} />
     </Teaser>
   );
 };

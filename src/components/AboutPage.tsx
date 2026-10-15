@@ -80,42 +80,57 @@ export const AboutPage: React.FC = () => {
             </h2>
           </Reveal>
 
-          {/* Group photograph beside the introduction */}
-          <div
-            ref={teamRef}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start"
-          >
+          {/*
+            Founder headshots, one per founder.
+
+            A group photograph sat here until the 15 Oct review. The client
+            could not find one to use ("maybe we just leave pictures out for
+            now") and agreed on the call to use a headshot per founder instead,
+            so the two portraits carry this block and the introduction flows
+            beneath them.
+          */}
+          <div ref={teamRef} className="mt-12 sm:mt-14">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={teamInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8 }}
-              className="lg:col-span-6 lg:sticky lg:top-[128px]"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 max-w-3xl"
             >
-              <figure className="relative overflow-hidden rounded-2xl border border-[#1E293B]">
-                <img
-                  src={team.photo}
-                  alt={team.photoAlt}
-                  loading="lazy"
-                  className="w-full h-64 sm:h-80 lg:h-[420px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#06090F]/85 via-transparent to-transparent pointer-events-none" />
-                <figcaption className="absolute bottom-4 left-4 right-4 text-[11px] font-mono text-slate-400 tracking-wide">
-                  {team.photoCaption}
-                </figcaption>
-              </figure>
+              {team.members.map((member) => (
+                <figure
+                  key={member.name}
+                  className="relative overflow-hidden rounded-2xl border border-[#1E293B]"
+                >
+                  <img
+                    src={member.image}
+                    alt={member.imageAlt}
+                    loading="lazy"
+                    className="w-full aspect-[4/5] object-cover object-top"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#06090F]/90 via-transparent to-transparent pointer-events-none" />
+                  <figcaption className="absolute bottom-4 left-4 right-4">
+                    <span className="block font-display text-sm font-semibold text-white tracking-tight">
+                      {member.name}
+                    </span>
+                    <span className="block text-[10px] font-mono text-slate-400 tracking-wide mt-0.5">
+                      {member.role}
+                    </span>
+                  </figcaption>
+                </figure>
+              ))}
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={teamInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.15, duration: 0.8 }}
-              className="lg:col-span-6"
+              className="mt-12 sm:mt-14"
             >
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-sans font-light mb-8">
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-sans font-light mb-8 max-w-3xl">
                 {team.lede}
               </p>
 
-              <dl className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-[#1E293B]/60 border border-[#1E293B]/60 rounded-2xl overflow-hidden">
+              <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#1E293B]/60 border border-[#1E293B]/60 rounded-2xl overflow-hidden">
                 {team.highlights.map((item) => (
                   <div key={item.label} className="bg-[#0A101A] px-5 py-5 sm:px-6 sm:py-6">
                     <dt className="sr-only">{item.label}</dt>

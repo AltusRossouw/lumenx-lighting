@@ -4,33 +4,39 @@ import { useSiteContent } from '../content';
 import { ArrowRight } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
-export const CompleteSolutionSection: React.FC = () => {
+export const CompleteSolutionSection: React.FC<{ heading?: boolean }> = ({ heading = true }) => {
   const { solution, completeSolution } = useSiteContent();
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
   return (
-    <section ref={ref} id="complete-solution" className="relative py-24 sm:py-32 overflow-hidden bg-[#06090F]">
+    <section ref={ref} id="complete-solution" className={`relative overflow-hidden bg-[#06090F] ${heading ? 'py-24 sm:py-32' : 'py-0'}`}>
       <PageHeroBackground rays={false} particles={false} dots={false} />
-      {/* Subtle top gradient line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />
+      {/* Subtle top gradient line — only when this section owns its heading,
+          otherwise it doubles up with the one the caller already drew. */}
+      {heading && <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent" />}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="mb-20 text-center"
-        >
-          <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-[-0.02em] mb-5">
-            {solution.headingTop}<br className="hidden sm:block" />
-            {solution.headingBottom}
-          </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto text-base leading-relaxed font-sans font-light">
-            {solution.subcopy}
-          </p>
-        </motion.div>
+        {/* Header.
+            Suppressed when the section is rendered beneath a heading the caller
+            already provides — on the homepage it sits inside the "One partner"
+            teaser, and two headings for one section read as a mistake. */}
+        {heading && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="mb-20 text-center"
+          >
+            <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-[-0.02em] mb-5">
+              {solution.headingTop}<br className="hidden sm:block" />
+              {solution.headingBottom}
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto text-base leading-relaxed font-sans font-light">
+              {solution.subcopy}
+            </p>
+          </motion.div>
+        )}
 
         {/* Process line — horizontal on desktop, vertical on mobile */}
         <motion.div

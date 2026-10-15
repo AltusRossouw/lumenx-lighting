@@ -215,19 +215,17 @@ export const MANAGING_DIRECTOR: ManagingDirector = {
   phone: '083 499 5340',
   email: 'kaylen@lumenx.co.za',
   headshot: '/headshots/Kaylen-Reddy-Headshot.png',
-  signatureImage: '/installation-images/lumenx-email-signature-kaylen.jpeg',
-  signatureAlt: 'LumenX email signature banner for Kaylen Reddy, Managing Director.',
 };
 
 /**
  * About page copy — the founders' story.
  *
- * Both team photographs are placeholders until the real shoot is delivered;
- * swap the files at `ABOUT_TEAM_PHOTO` / `ABOUT_PORTRAIT` and nothing else
- * on the page changes.
+ * Each founder carries their own headshot. Kaylen's is the supplied photograph;
+ * Frans's is still a labelled placeholder in `public/headshots/`, so replacing
+ * that one file is the whole job once his photograph arrives.
  */
-export const ABOUT_TEAM_PHOTO = '/headshots/team-kaylen-frans-placeholder.svg';
-export const ABOUT_PORTRAIT = '/headshots/team-portrait-placeholder.svg';
+export const ABOUT_HEADSHOT_KAYLEN = '/headshots/Kaylen-Reddy-Headshot.png';
+export const ABOUT_HEADSHOT_FRANS = '/headshots/Frans-Rossouw-Headshot-placeholder.svg';
 
 export const ABOUT: AboutPageContent = {
   hero: {
@@ -241,9 +239,6 @@ export const ABOUT: AboutPageContent = {
     heading: 'Two engineers. Over 40 years of experience on projects.',
     lede:
       'Engineer, specifier, supplier, manufacturer, operator: between them, Kaylen and Frans have held every one of these roles. They’ve drawn the single-lines, adjudicated the tenders, managed contractors on site, built the fittings and run the factories those fittings light. They know what the engineer needs on the drawing, what the contractor is up against on site, and what the client expects at handover. They’ve been there, and they know how to solve those problems.',
-    photo: ABOUT_TEAM_PHOTO,
-    photoAlt: 'Kaylen Reddy and Frans Rossouw, co-founders of LumenX Lighting, photographed together.',
-    photoCaption: 'Kaylen Reddy and Frans Rossouw, co-founders.',
     highlights: [
       { value: '40+', label: 'Years of combined project experience' },
       { value: '18', label: 'Years Kaylen has spent in the lighting industry' },
@@ -254,7 +249,7 @@ export const ABOUT: AboutPageContent = {
       {
         name: 'Kaylen Reddy',
         role: 'Co-Founder & Managing Director',
-        image: ABOUT_PORTRAIT,
+        image: ABOUT_HEADSHOT_KAYLEN,
         imageAlt: 'Portrait of Kaylen Reddy, Co-Founder and Managing Director of LumenX Lighting.',
         focus: 'Kaylen sees the whole project, from the first drawing to delivery and aftercare.',
         blocks: [
@@ -271,7 +266,7 @@ export const ABOUT: AboutPageContent = {
       {
         name: 'Frans Rossouw',
         role: 'Co-Founder & Technical Director',
-        image: ABOUT_PORTRAIT,
+        image: ABOUT_HEADSHOT_FRANS,
         imageAlt: 'Portrait of Frans Rossouw, Co-Founder and Technical Director of LumenX Lighting.',
         focus:
           'Frans goes deep on the technical side: the product, the performance and the proof.',
