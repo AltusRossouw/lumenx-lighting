@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Under Maintenance — LumenX Lighting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #06090f;
+      --panel: #0a101a;
+      --fg: #cbd5e1;
+      --muted: #71787b;
+      --cyan: #00d4ff;
+      --blue: #5165ff;
+      --line: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+    }
+
+    body {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Outfit", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-align: center;
+    }
+
+    /* Blueprint grid */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image:
+        linear-gradient(rgba(0, 212, 255, 0.7) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.7) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+
+    /* Radial glow */
+    .glow {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(52% 42% at 50% 38%, rgba(0, 212, 255, 0.1), transparent 70%),
+        radial-gradient(40% 30% at 50% 105%, rgba(81, 101, 255, 0.1), transparent 70%);
+    }
+
+    .shell {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 560px;
+    }
+
+    /* Wordmark */
+    .wordmark {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.125em;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.32em;
+      color: #f8fafc;
+      text-transform: uppercase;
+    }
+    .wordmark .x {
+      color: var(--cyan);
+      text-shadow: 0 0 14px rgba(0, 212, 255, 0.7);
+    }
+
+    .card {
+      margin-top: 3.25rem;
+      padding: 3.5rem 2.25rem 3rem;
+      border-radius: 20px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.35), rgba(81, 101, 255, 0.12) 45%, transparent 70%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    /* Badge */
+    .badge {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: rgba(0, 212, 255, 0.05);
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      box-shadow: 0 0 0 10px rgba(0, 212, 255, 0.03), 0 0 40px rgba(0, 212, 255, 0.12);
+      animation: float 7s ease-in-out infinite;
+    }
+    .badge svg {
+      width: 40px;
+      height: 40px;
+      color: var(--cyan);
+      filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.5));
+    }
+    .ring {
+      position: absolute;
+      inset: -1px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 212, 255, 0.4);
+      animation: pulse-ring 2.6s ease-out infinite;
+      pointer-events: none;
+    }
+
+    h1 {
+      margin-top: 2.25rem;
+      font-size: clamp(1.9rem, 5vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: #f8fafc;
+    }
+    h1 .accent {
+      background: linear-gradient(90deg, var(--cyan), var(--blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    p.lead {
+      margin: 1.25rem auto 0;
+      max-width: 40ch;
+      font-size: 1.02rem;
+      font-weight: 300;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 2rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.02);
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--fg);
+    }
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--cyan);
+      animation: led 2.4s ease-in-out infinite;
+    }
+
+    .divider {
+      margin: 2.75rem auto 1.75rem;
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), rgba(81, 101, 255, 0.2), transparent);
+    }
+
+    .contact {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    .contact a {
+      color: var(--cyan);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 212, 255, 0.25);
+    }
+    .contact a:hover {
+      border-bottom-color: var(--cyan);
+    }
+
+    .foot {
+      margin-top: 2.25rem;
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: #3f4a57;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes pulse-ring {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.65); opacity: 0; }
+    }
+    @keyframes led {
+      0%, 100% { opacity: 0.3; box-shadow: 0 0 4px rgba(0, 212, 255, 0.4); }
+      50% { opacity: 1; box-shadow: 0 0 10px rgba(0, 212, 255, 0.8); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .badge, .ring, .dot { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow"></div>
+  <main class="shell">
+    <span class="wordmark">Lumen<span class="x">X</span></span>
+
+    <section class="card">
+      <span class="badge">
+        <span class="ring"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+        </svg>
+      </span>
+
+      <h1>We're <span class="accent">under maintenance</span></h1>
+      <p class="lead">
+        LumenX Lighting is temporarily offline while we carry out scheduled
+        maintenance. We're making improvements and will be back shortly.
+      </p>
+
+      <span class="status">
+        <span class="dot"></span>
+        Systems offline · back soon
+      </span>
+
+      <div class="divider"></div>
+
+      <p class="contact">
+        Need to reach us? Email
+        <a href="mailto:info@lumenx.co.za">info@lumenx.co.za</a>
+      </p>
+    </section>
+
+    <p class="foot">© LumenX Lighting · Durban, South Africa</p>
+  </main>
+</body>
+</html>
