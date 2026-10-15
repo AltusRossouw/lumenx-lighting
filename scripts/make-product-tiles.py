@@ -59,7 +59,7 @@ SRC_OVERRIDE = {
     # This pointed at 02-lightframe55surfaceblack.jpg, which is only 526x242 --
     # the card scales the product to 522px tall, so it was being upscaled 2.2x
     # and read soft. 06 is the same black finish as a 4652x2912 studio shot.
-    'linears/lf55': 'public/scraped/linears/lf55/06-lightframe55x80.jpg',
+    'linears/lf55': 'public/scraped/linears/lf55/06-lightframe55x80.webp',
     # The shipped ALU_BLUKHEAD.png stacks a side view over a front view, and the
     # side view's dome is clipped flat. Cropped from the unclipped img-001.png to
     # the round front view alone, so the card shows one product rather than two
@@ -117,6 +117,25 @@ SRC_OVERRIDE = {
     # A linear batten with an unrelated round fitting beside it. Keeps the
     # batten (--blob 1), which is the product this slug names.
     'vapourproof/kuda': 'public/product-images/kuda-single.png',
+
+    # The rest of the range shots. Each of these put several objects on one
+    # card -- a fitting with its loose driver, three sizes of the same spot, a
+    # light and a black one together. Cropped to the largest single object.
+    'downlights/mario': 'public/product-images/mario-single.png',
+    'downlights/legend': 'public/product-images/legend-single.png',
+    'downlights/sauron': 'public/product-images/sauron-single.png',
+    'downlights/surface-adjustable-downlight': 'public/product-images/pakman-single.png',
+    'downlights/gu10-downlight': 'public/product-images/gu10-single.png',
+    'linears/lds5083': 'public/product-images/lds5083-single.png',
+    'outdoor-architectural/orbit': 'public/product-images/orbit-single.png',
+
+    # The four bollards each shipped two posts and a detached head plate. One
+    # post each now -- the head still differs between Fuji and Everest, which is
+    # what tells the two families apart, but the card shows one product.
+    'bollards/fuji-round': 'public/product-images/fuji-round-single.png',
+    'bollards/fuji-square': 'public/product-images/fuji-square-single.png',
+    'bollards/everest-round': 'public/product-images/everest-round-single.png',
+    'bollards/everest-square': 'public/product-images/everest-square-single.png',
 }
 MAX_CANDIDATES = 10
 

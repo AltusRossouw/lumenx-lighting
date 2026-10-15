@@ -137,7 +137,7 @@ export const OFFICIAL_PRODUCTS: Product[] = [
     applications: ['Retail stores', 'Hospitality', 'Residential', 'Corridors'],
     sheet: 'lumenx-datasheet-9w-surface-downlight.pdf',
   }),
-  fromScraped('downlights', 'diffused-downlight', 'Diffused Downlight', 'lumenx-datasheet-aegeon-downlight.pdf', { hero: '/product-images/Aegeon_Downlight.png', exclude: ['/scraped/downlights/diffused-downlight/01-aegeon.jpg'] }),
+  fromScraped('downlights', 'diffused-downlight', 'Diffused Downlight', 'lumenx-datasheet-aegeon-downlight.pdf', { hero: '/product-images/Aegeon_Downlight.png', exclude: ['/scraped/downlights/diffused-downlight/01-aegeon.webp'] }),
   fromScraped('floods', 'flood', 'Performance Floods', 'lumenx-datasheet-performance-floods.pdf', { hero: '/product-images/Performance_Floods.png' }),
   createOfficialProduct({
     slug: '60w-street-light', name: '60W Street Light', category: 'floods',
@@ -159,7 +159,7 @@ export const OFFICIAL_PRODUCTS: Product[] = [
     applications: ['Manufacturing plants', 'Logistics warehouses', 'Assembly halls', 'Exhibition centres'],
     sheet: 'lumenx-datasheet-v200-highbay.pdf',
   }),
-  fromScraped('highbays', 'thermisto', 'Thermisto', 'lumenx-datasheet-thermisto.pdf', { hero: '/product-images/Thermisto.png', exclude: ['/scraped/highbays/thermisto/01-themisto-lowbay-55-surface-suspension.jpg'] }),
+  fromScraped('highbays', 'thermisto', 'Thermisto', 'lumenx-datasheet-thermisto.pdf', { hero: '/product-images/Thermisto.png', exclude: ['/scraped/highbays/thermisto/01-themisto-lowbay-55-surface-suspension.webp'] }),
   createOfficialProduct({
     slug: '600x1200-recessed-panel', name: '600x1200 Recessed Panel', category: 'panels',
     summary: 'Wide-format recessed LED panel for modern architectural ceiling layouts.',
@@ -237,6 +237,6 @@ export const OFFICIAL_PRODUCTS: Product[] = [
     ],
   }),
   fromScraped('downlights', 'sauron', 'Sauron', 'lumenx-datasheet-sauron.pdf', { hero: '/product-images/sauron.png', exclude: ['/scraped/downlights/sauron/01-pioled-lighting-hd016-25-20-18-16w-sauron-recessed-round-led-downlight.jpg'] }),
-  fromScraped('track', 'standard', 'Standard', 'lumenx-datasheet-standard.pdf', { hero: '/scraped/track/standard/01-standard.jpg' }),
+  fromScraped('track', 'standard', 'Standard', 'lumenx-datasheet-standard.pdf', { hero: '/scraped/track/standard/01-standard.webp' }),
   fromScraped('track', 'bazuka', 'Bazuka', 'lumenx-datasheet-bazuka.pdf', { hero: '/product-images/bazuka.png', exclude: ['/scraped/track/bazuka/member-06-pioled-lighting-tkb099d-25w-3-wire-dim-driver.png'] }),
 ];
