@@ -38,7 +38,6 @@ COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
 COPY server ./server
 COPY db ./db
-COPY public/datasheets ./public/datasheets
 COPY public/downloads ./public/downloads
 
 # Datasheet renderer inputs (template + brand/product art it references).
