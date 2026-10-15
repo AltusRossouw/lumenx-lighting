@@ -19,7 +19,7 @@
     },
     {
       "label": "Available in",
-      "value": "Black/White \\",
+      "value": "Black/White",
       "unit": ""
     }
   ],
@@ -61,7 +61,7 @@
         "title": "Compliance",
         "rows": [
           {
-            "label": "Operating temp",
+            "label": "Operating Temp",
             "value": "-20~45°C"
           },
           {
@@ -70,10 +70,10 @@
           },
           {
             "label": "Certifications",
-            "value": "CE,"
+            "value": "CE"
           },
           {
-            "label": "RoHS IES File",
+            "label": "RoHS / IES File",
             "value": "Yes"
           }
         ]
@@ -82,8 +82,8 @@
         "title": "Technical Data",
         "rows": [
           {
-            "label": "Available in",
-            "value": "Black/White \\"
+            "label": "Available In",
+            "value": "Black/White"
           },
           {
             "label": "Round/Square Colour Temperature",
@@ -110,7 +110,7 @@
           },
           {
             "label": "Additional Features",
-            "value": "Flicker Free, Wattage and CCT Selectable LED Bulkhead *5 YEAR WARRANTY DOWNLOAD SPEC SHEET:"
+            "value": "Flicker Free, Wattage and CCT Selectable LED Bulkhead"
           }
         ]
       },
@@ -123,7 +123,7 @@
           },
           {
             "label": "Input Voltage",
-            "value": "185-265V"
+            "value": "185–265V"
           },
           {
             "label": "Surge Protection",

@@ -14,7 +14,7 @@
     },
     {
       "label": "Lumens",
-      "value": "0–653",
+      "value": "653",
       "unit": "lm"
     }
   ],
@@ -61,7 +61,7 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "0–653 lm"
+            "value": "653lm"
           }
         ]
       }
@@ -81,7 +81,7 @@
         "rows": [
           {
             "label": "Power",
-            "value": "7.1 W"
+            "value": "7.1W"
           },
           {
             "label": "Input Voltage",

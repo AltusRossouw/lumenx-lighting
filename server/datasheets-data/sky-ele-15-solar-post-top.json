@@ -19,7 +19,7 @@
     },
     {
       "label": "Efficacy",
-      "value": "Up to 100 lm/W",
+      "value": "Up to 100lm/W",
       "unit": ""
     }
   ],
@@ -31,10 +31,10 @@
     "All-in-one solar-powered LED post top fitting for areas with no electrical infrastructure — fully integrated battery, zero wiring and minimal maintenance. Ideal for estates, public parks, isolated streets and gate posts."
   ],
   "features": [
-    "20 W power",
-    "2000 lm lumens",
+    "20W power",
+    "2000lm lumens",
     "IP65 rated",
-    "Up to 100 lm/W efficacy",
+    "Up to 100lm/W efficacy",
     "6000K colour temperature"
   ],
   "applications": [
@@ -76,15 +76,15 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "2000 lm"
+            "value": "2000lm"
           },
           {
             "label": "Efficacy",
-            "value": "Up to 100 lm/W"
+            "value": "Up to 100lm/W"
           },
           {
             "label": "Nominal Flux",
-            "value": "Up to 2000 lm"
+            "value": "Up to 2000lm"
           }
         ]
       }
@@ -95,7 +95,7 @@
         "rows": [
           {
             "label": "Recommended Mounting Height",
-            "value": "4-5 m"
+            "value": "4–5 m"
           },
           {
             "label": "Storage Capacity",
@@ -107,7 +107,7 @@
           },
           {
             "label": "Solar Panel",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       },
@@ -116,11 +116,11 @@
         "rows": [
           {
             "label": "Power",
-            "value": "20 W"
+            "value": "20W"
           },
           {
             "label": "Charging Time",
-            "value": "7-8 h"
+            "value": "7–8 h"
           }
         ]
       }

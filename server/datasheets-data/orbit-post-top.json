@@ -13,8 +13,8 @@
       "unit": ""
     },
     {
-      "label": "Lumen Output",
-      "value": "36W = 4680 Lumens \\",
+      "label": "Lumens",
+      "value": "36W = 4680 Lumens",
       "unit": ""
     },
     {
@@ -33,9 +33,9 @@
   "features": [
     "36W/48W/60W power",
     "3CCT (6000K/4000K/3000K) colour temperature",
-    "Up to 36W = 4680 Lumens \\",
+    "Up to 36W = 4680 Lumens",
     "CRI >80",
-    "100-277V input",
+    "100–277V input",
     "Epistar 2835 LEDs",
     "120° beam",
     "Pure Aluminium + housing"
@@ -68,12 +68,12 @@
         "title": "Compliance",
         "rows": [
           {
-            "label": "Operating temp",
+            "label": "Operating Temp",
             "value": "-25~50°C"
           },
           {
             "label": "Certifications",
-            "value": "CE, EMC,"
+            "value": "CE / EMC"
           }
         ]
       },
@@ -82,7 +82,7 @@
         "rows": [
           {
             "label": "Lumen Output",
-            "value": "36W = 4680 Lumens \\"
+            "value": "36W = 4680 Lumens"
           },
           {
             "label": "Lumens PF",
@@ -113,7 +113,7 @@
           },
           {
             "label": "Additional Features",
-            "value": "From Batch 2412 Orbit is available in 3 Wattages (All in one) *5 YEAR WARRANTY DOWNLOAD SPEC SHEET"
+            "value": "From Batch 2412 Orbit is available in 3 Wattages (All in one)"
           }
         ]
       },
@@ -126,7 +126,7 @@
           },
           {
             "label": "Input Voltage",
-            "value": "100-277V"
+            "value": "100–277V"
           },
           {
             "label": "Dimmable",

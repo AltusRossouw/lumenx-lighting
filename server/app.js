@@ -17,7 +17,6 @@ import { plannerRouter } from './routes/planner.js';
 import { quoteRouter } from './routes/quote.js';
 import { contactRouter } from './routes/contact.js';
 import { contentRouter } from './routes/content.js';
-import { maintenance } from './middleware/maintenance.js';
 
 // Map known database errors to a clean 503 so the API never leaks internals.
 const isDbError = (err) =>
@@ -76,12 +75,8 @@ export const createApp = () => {
     }),
   );
 
-  // Health probe (no DB dependency) — kept live even during maintenance so the
-  // container healthcheck keeps passing.
+  // Health probe (no DB dependency).
   app.get('/api/health', (_req, res) => res.json({ ok: true, service: 'lumenx-api' }));
-
-  // Maintenance mode: takes the whole site offline (SPA + API) when enabled.
-  app.use(maintenance());
 
   app.use('/api/auth', authRouter());
   app.use('/api/admin', adminRouter());

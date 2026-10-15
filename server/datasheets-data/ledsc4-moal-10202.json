@@ -29,7 +29,7 @@
     "Protection against impacts and high-pressure water (IK10 and IP66)",
     "Available in two sizes",
     "LED with 50,000h L80 B20 lifespan",
-    "5-year warranty for heavy use (4,000 hours/year) and in a marine atmosphere."
+    "5-year warranty for heavy use (4,000hours/year) and in a marine atmosphere."
   ],
   "applications": [
     "Architectural",
@@ -61,7 +61,7 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "729 lm"
+            "value": "729lm"
           }
         ]
       }
@@ -81,7 +81,7 @@
         "rows": [
           {
             "label": "Power",
-            "value": "16.3 W"
+            "value": "16.3W"
           },
           {
             "label": "Input Voltage",

@@ -13,11 +13,6 @@
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "30W, 40W, 50W",
-      "unit": ""
-    },
-    {
       "label": "Lumens",
       "value": "3600",
       "unit": "lm"
@@ -73,7 +68,7 @@
           },
           {
             "label": "Lifetime",
-            "value": "L80B10 @ 50,000 hrs"
+            "value": "L80B10 @ 50,000hrs"
           }
         ]
       },
@@ -82,11 +77,11 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "3600 lm"
+            "value": "3600lm"
           },
           {
             "label": "Efficacy",
-            "value": "150 lm/W"
+            "value": "150lm/W"
           }
         ]
       }
@@ -118,7 +113,7 @@
           },
           {
             "label": "Power",
-            "value": "24 W"
+            "value": "24W"
           },
           {
             "label": "Surge Protection",
@@ -130,7 +125,7 @@
           },
           {
             "label": "Dimming",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       }

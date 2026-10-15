@@ -18,7 +18,7 @@
       "unit": ""
     },
     {
-      "label": "Detection angle",
+      "label": "Detection Angle",
       "value": "360",
       "unit": "°"
     }
@@ -28,7 +28,7 @@
     "alt": "DualTech"
   },
   "overview": [
-    "DualTech COM1 - Concealed wiring - The best of both worlds. Combined in one detector. Ultrasonic presence detector DualTech, ideal for offices, conference rooms and class rooms. 36 sq.m. presence zone"
+    "DualTech COM1 - Concealed wiring - The best of both worlds. Combined in one detector. Ultrasonic presence detector DualTech, ideal for offices, conference rooms and classrooms. 36m² presence zone, ultrasonic technology provides reliable detection behind objects regardless of temperature, additional detection capability with PIR technology, electronic adjustment for ultrasonic reach, COM1 for switching light ON and OFF."
   ],
   "features": [
     "white finish",
@@ -52,7 +52,7 @@
           },
           {
             "label": "Dimensions (L x W x H)",
-            "value": "66 x 120 x 120 mm"
+            "value": "66 x 120 x 120mm"
           },
           {
             "label": "Type",
@@ -112,8 +112,8 @@
             "value": "007997"
           },
           {
-            "label": "PU1, net weight",
-            "value": "0,2 kg"
+            "label": "net weight",
+            "value": "0,2kg"
           },
           {
             "label": "Package content",
@@ -132,12 +132,12 @@
             "value": "No"
           },
           {
-            "label": "PU1, EAN",
+            "label": "EAN",
             "value": "4007841007997"
           },
           {
             "label": "Application, room",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Includes corner wall mount",
@@ -153,15 +153,15 @@
           },
           {
             "label": "Ambient temperature",
-            "value": "from -25 up to 55 °C"
+            "value": "from -25 up to 55°C"
           },
           {
             "label": "Mains power supply",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Fluorescent lamps, electronic ballast",
-            "value": "1500 W"
+            "value": "1500W"
           },
           {
             "label": "Fluorescent lamps, uncorrected",
@@ -180,16 +180,16 @@
             "value": "2000 VA"
           },
           {
-            "label": "LED lamps < 2 W",
-            "value": "100 W"
+            "label": "LED lamps < 2W",
+            "value": "100W"
           },
           {
-            "label": "LED lamps > 2 W < 8 W",
-            "value": "300 W"
+            "label": "LED lamps > 2W < 8W",
+            "value": "300W"
           },
           {
-            "label": "LED lamps > 8 W",
-            "value": "600 W"
+            "label": "LED lamps > 8W",
+            "value": "600W"
           }
         ]
       }
@@ -264,7 +264,7 @@
           },
           {
             "label": "Twilight setting",
-            "value": "10 – 1000 lx"
+            "value": "10–1000 lx"
           },
           {
             "label": "Time setting",
@@ -301,11 +301,11 @@
         "rows": [
           {
             "label": "Voltage range (min)",
-            "value": "220 V"
+            "value": "220V"
           },
           {
             "label": "Voltage range (max)",
-            "value": "240 V"
+            "value": "240V"
           }
         ]
       }

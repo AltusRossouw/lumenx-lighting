@@ -44,7 +44,7 @@
         "rows": [
           {
             "label": "Lumen Output",
-            "value": "871–968 lm"
+            "value": "871–968lm"
           },
           {
             "label": "Colour Temperature",
@@ -61,7 +61,7 @@
         "rows": [
           {
             "label": "Wattage",
-            "value": "10.3 W"
+            "value": "10.3W"
           },
           {
             "label": "Input Voltage",

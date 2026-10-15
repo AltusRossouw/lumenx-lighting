@@ -13,11 +13,6 @@
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "18W, 36W, 54W",
-      "unit": ""
-    },
-    {
       "label": "Lumens",
       "value": "2160–6480",
       "unit": "lm"
@@ -70,7 +65,7 @@
           },
           {
             "label": "Lifetime",
-            "value": "L90B10 @ 50,000 hrs"
+            "value": "L90B10 @ 50,000hrs"
           }
         ]
       },
@@ -83,7 +78,7 @@
           },
           {
             "label": "Lumens",
-            "value": "2160–6480 lm"
+            "value": "2160–6480lm"
           }
         ]
       }
@@ -94,7 +89,7 @@
         "rows": [
           {
             "label": "Efficacy",
-            "value": "120 lm/W"
+            "value": "120lm/W"
           },
           {
             "label": "CCT",
@@ -115,7 +110,7 @@
           },
           {
             "label": "Power",
-            "value": "18–54 W"
+            "value": "18–54W"
           },
           {
             "label": "Surge Protection",

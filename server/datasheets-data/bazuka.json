@@ -6,23 +6,7 @@
   "name": "BAZUKA",
   "category": "TRACK",
   "variant": "3-wire track / surface mount spot for flexible accent lighting.",
-  "stats": [
-    {
-      "label": "Wattage",
-      "value": "Contact our team for more details",
-      "unit": ""
-    },
-    {
-      "label": "Lumen Output",
-      "value": "Contact our team for more details",
-      "unit": ""
-    },
-    {
-      "label": "Colour Temperature",
-      "value": "Contact our team for more details",
-      "unit": ""
-    }
-  ],
+  "stats": [],
   "heroImage": {
     "src": "../public/product-images/cutouts/track/bazuka.png",
     "alt": "Bazuka"
@@ -48,7 +32,7 @@
         "rows": [
           {
             "label": "Colour Temperature",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Mounting",
@@ -64,11 +48,11 @@
           },
           {
             "label": "Housing",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Colour",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       },
@@ -77,7 +61,7 @@
         "rows": [
           {
             "label": "Operating Temp",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "IK Rating",
@@ -85,7 +69,7 @@
           },
           {
             "label": "Certifications",
-            "value": "CE, EMC / CE / CE, EMC, IEC60598"
+            "value": "CE / EMC / IEC 60598"
           }
         ]
       },
@@ -94,11 +78,11 @@
         "rows": [
           {
             "label": "Lumen Output",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "CRI",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       }
@@ -109,10 +93,10 @@
         "rows": [
           {
             "label": "LED Chips",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
-            "label": "available in",
+            "label": "Available In",
             "value": "White / Black / Black/White"
           }
         ]
@@ -122,19 +106,19 @@
         "rows": [
           {
             "label": "Wattage",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Input Voltage",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Surge Protection",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Dimmable",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       }

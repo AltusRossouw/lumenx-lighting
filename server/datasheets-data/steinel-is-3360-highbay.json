@@ -100,27 +100,27 @@
           },
           {
             "label": "Version",
-            "value": "COM1 - surface, sq."
+            "value": "COM1 - surface, square"
           },
           {
-            "label": "PU1, net weight",
-            "value": "0,176 kg"
+            "label": "net weight",
+            "value": "0,176kg"
           },
           {
-            "label": "infrared sensor 360°",
+            "label": "Infrared Sensor 360°",
             "value": "18 m"
           },
           {
-            "label": "max. 2000 W",
+            "label": "Max. 2000W",
             "value": "IP54"
           },
           {
-            "label": "2 - 1000 lux",
+            "label": "2–1000 lux",
             "value": "5 sec - 15 min"
           },
           {
-            "label": "manual override",
-            "value": "ideal 4 - 14 m"
+            "label": "Manual Override",
+            "value": "ideal 4–14 m"
           }
         ]
       }

@@ -26,9 +26,9 @@
     "Mega, with a diameter of up to 1.2 meters, is ideal for lighting large surfaces."
   ],
   "features": [
-    "81.4 W power",
-    "8303 lm lumens",
-    "Up to 8303 lm",
+    "81.4W power",
+    "8303lm lumens",
+    "Up to 8303lm",
     "3000K / 4000K colour temperature",
     "CRI 80",
     "220V input"
@@ -54,7 +54,7 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "8303 lm"
+            "value": "8303lm"
           }
         ]
       }
@@ -74,7 +74,7 @@
         "rows": [
           {
             "label": "Power",
-            "value": "81.4 W"
+            "value": "81.4W"
           },
           {
             "label": "Input Voltage",

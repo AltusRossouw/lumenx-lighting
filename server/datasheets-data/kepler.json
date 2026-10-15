@@ -78,7 +78,7 @@
           },
           {
             "label": "Nominal Lifetime (L70)",
-            "value": "70,000 hours"
+            "value": "70,000hours"
           },
           {
             "label": "Testing Standards",
@@ -86,7 +86,7 @@
           },
           {
             "label": "Luminous Efficacy",
-            "value": "110 lm/W"
+            "value": "110lm/W"
           },
           {
             "label": "Correlated Colour Temperature (CCT)",
@@ -145,7 +145,7 @@
           },
           {
             "label": "Electrical",
-            "value": "IEC60598-1, IEC60598-2-5 compliant"
+            "value": "IEC60598-1, IEC60598–2-5 compliant"
           },
           {
             "label": "WiFi, Barcode Scanner, Radio Frequency",
@@ -153,11 +153,11 @@
           },
           {
             "label": "Standards",
-            "value": "IEC 61547, SANS 215 (CISPR15) compliant"
+            "value": "IEC 61547 / SANS 215 (CISPR15) compliant"
           },
           {
             "label": "Total Harmonic Distortion",
-            "value": "IEC 61000-3-2 Class D Compliant"
+            "value": "IEC 61000–3-2 Class D Compliant"
           }
         ]
       },

@@ -5,7 +5,7 @@
   },
   "name": "DELTA",
   "category": "HIGHBAYS",
-  "variant": "240W linear IP65 highbay delivering 40,800 lumens with 3CCT switching.",
+  "variant": "240W linear IP65 highbay delivering 40,800lm with 3CCT switching.",
   "stats": [
     {
       "label": "Wattage",
@@ -13,7 +13,7 @@
       "unit": "W"
     },
     {
-      "label": "Lumen Output",
+      "label": "Lumens",
       "value": "240W = 40 800lm PF: 0.9",
       "unit": ""
     },
@@ -28,7 +28,7 @@
     "alt": "Delta"
   },
   "overview": [
-    "240W linear IP65 highbay delivering 40,800 lumens with 3CCT switching."
+    "240W linear IP65 highbay delivering 40,800lm with 3CCT switching."
   ],
   "features": [
     "Very high 40,800lm output",
@@ -65,7 +65,7 @@
         "title": "Compliance",
         "rows": [
           {
-            "label": "Operating temp",
+            "label": "Operating Temp",
             "value": "-30~45°C"
           },
           {
@@ -74,7 +74,7 @@
           },
           {
             "label": "Certifications",
-            "value": "CE. EMC,"
+            "value": "CE / EMC"
           }
         ]
       },
@@ -110,7 +110,7 @@
           },
           {
             "label": "Additional Features",
-            "value": "Mounting Bracket included *5 YEAR WARRANTY DOWNLOAD SPEC SHEET"
+            "value": "Mounting Bracket included"
           }
         ]
       },
@@ -123,7 +123,7 @@
           },
           {
             "label": "Input Voltage",
-            "value": "100-277V"
+            "value": "100–277V"
           },
           {
             "label": "Dimmable",

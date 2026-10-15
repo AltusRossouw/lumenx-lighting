@@ -13,11 +13,6 @@
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "12W – 46W",
-      "unit": ""
-    },
-    {
       "label": "IP Rating",
       "value": "IP20",
       "unit": ""
@@ -32,7 +27,7 @@
   ],
   "features": [
     "Braided fabric construction",
-    "12W – 46W across the range",
+    "12W–46W across the range",
     "3000K warm light",
     "48V low voltage"
   ],
@@ -53,7 +48,7 @@
           },
           {
             "label": "Colour",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Colour Temperature",
@@ -77,11 +72,11 @@
         "rows": [
           {
             "label": "Power",
-            "value": "12–46 W"
+            "value": "12–46W"
           },
           {
             "label": "Wattage",
-            "value": "12W – 46W"
+            "value": "12W–46W"
           },
           {
             "label": "Voltage",

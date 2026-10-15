@@ -13,11 +13,6 @@
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "17W – 100W",
-      "unit": ""
-    },
-    {
       "label": "Lumens",
       "value": "2300–12000",
       "unit": "lm"
@@ -48,7 +43,7 @@
         "rows": [
           {
             "label": "Length",
-            "value": "600 - 2300mm"
+            "value": "600–2300mm"
           },
           {
             "label": "Colour",
@@ -81,7 +76,7 @@
           },
           {
             "label": "Lifetime",
-            "value": "L80B10 @ 50,000 hrs"
+            "value": "L80B10 @ 50,000hrs"
           }
         ]
       },
@@ -90,11 +85,11 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "2300–12000 lm"
+            "value": "2300–12000lm"
           },
           {
             "label": "Efficacy",
-            "value": "Up to 136 lm/W"
+            "value": "Up to 136lm/W"
           }
         ]
       }
@@ -118,11 +113,11 @@
         "rows": [
           {
             "label": "Power",
-            "value": "17–100 W"
+            "value": "17–100W"
           },
           {
             "label": "Wattage",
-            "value": "17W – 100W"
+            "value": "17W–100W"
           },
           {
             "label": "Surge Protection",
@@ -134,7 +129,7 @@
           },
           {
             "label": "Dimming",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       }

@@ -9,7 +9,7 @@
   "stats": [
     {
       "label": "Wattage",
-      "value": "34W - 60W",
+      "value": "34W–60W",
       "unit": ""
     },
     {
@@ -81,7 +81,7 @@
         "rows": [
           {
             "label": "Wattage",
-            "value": "34W - 60W"
+            "value": "34W–60W"
           }
         ]
       }

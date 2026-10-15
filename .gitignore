@@ -48,3 +48,7 @@ __pycache__/
 # here (Cookies, Login Data, History) and must never be committed.
 .catalogue-build/
 probe-test.png
+
+# Throwaway local Postgres cluster for dev/testing (created by pg_ctl inside the
+# workspace so it needs no writes outside the repo). Never committed.
+.pgdev/

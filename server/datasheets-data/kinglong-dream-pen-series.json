@@ -13,11 +13,6 @@
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "20W/m – 40W/m (length-dependent)",
-      "unit": ""
-    },
-    {
       "label": "IP Rating",
       "value": "IP20",
       "unit": ""
@@ -33,11 +28,11 @@
   "features": [
     "Aluminium Extrusion Profile (T6 alloy)",
     "Anodised Silver · Matte Black · Champagne Gold Powder Coat · White finish",
-    "20–40 W power",
+    "20–40W power",
     "IP20 rated",
     "5 Years (aluminium structure) · LED Driver: 5 Years warranty",
     "20W/m – 40W/m (length-dependent) power",
-    "110V – 240V, 50/60Hz Universal Input",
+    "110V–240V, 50/60Hz Universal Input",
     "Dimming: DALI · 0–10V · KNX compatible"
   ],
   "applications": [
@@ -69,7 +64,7 @@
           },
           {
             "label": "Profile Lengths",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       },
@@ -114,11 +109,11 @@
         "rows": [
           {
             "label": "Frame / Suspension",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Light Source",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "UGR< 19",
@@ -131,7 +126,7 @@
         "rows": [
           {
             "label": "Power",
-            "value": "20–40 W"
+            "value": "20–40W"
           },
           {
             "label": "Wattage",
@@ -139,7 +134,7 @@
           },
           {
             "label": "Voltage",
-            "value": "110V – 240V, 50/60Hz Universal Input"
+            "value": "110V–240V, 50/60Hz Universal Input"
           },
           {
             "label": "Dimming",

@@ -13,11 +13,6 @@
       "unit": ""
     },
     {
-      "label": "Lumen Output",
-      "value": "Contact our team for more details",
-      "unit": ""
-    },
-    {
       "label": "IP Rating",
       "value": "IP65",
       "unit": ""
@@ -52,7 +47,7 @@
           },
           {
             "label": "Colour Temperature",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Beam Angle",
@@ -60,14 +55,14 @@
           },
           {
             "label": "Housing",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Colour",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
-            "label": "length",
+            "label": "Length",
             "value": "1 Meter, 2 Meter, 3 Meter"
           }
         ]
@@ -81,11 +76,11 @@
           },
           {
             "label": "Operating Temp",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Certifications",
-            "value": "CE, EMC, IEC60598 / CE, EMC, RoHS / RoHS / CE / EMC, ErP, CE"
+            "value": "CE / EMC / IEC 60598 / RoHS / ErP"
           },
           {
             "label": "IK Rating",
@@ -98,15 +93,15 @@
         "rows": [
           {
             "label": "Lumen Output",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "CRI",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "LED Chips",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       }
@@ -116,15 +111,15 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "lens",
+            "label": "Lens",
             "value": "120°, 90°"
           },
           {
-            "label": "available in",
+            "label": "Available In",
             "value": "1m/2m/3m"
           },
           {
-            "label": "includes",
+            "label": "Includes",
             "value": "Power feed and end cap"
           }
         ]
@@ -138,11 +133,11 @@
           },
           {
             "label": "Input Voltage",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Surge Protection",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Dimmable",

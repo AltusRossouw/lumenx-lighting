@@ -48,11 +48,11 @@
           },
           {
             "label": "Beam",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Lengths",
-            "value": "580 – 1420mm"
+            "value": "580–1420mm"
           },
           {
             "label": "CRI",
@@ -69,11 +69,11 @@
         "rows": [
           {
             "label": "Wattage",
-            "value": "16W – 54W (30/40/50 W/m)"
+            "value": "16W–54W (30/40/50W/m)"
           },
           {
             "label": "Control",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       }

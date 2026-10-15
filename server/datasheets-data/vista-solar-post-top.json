@@ -13,7 +13,7 @@
       "unit": "W"
     },
     {
-      "label": "Lumen Output",
+      "label": "Lumens",
       "value": "2 500",
       "unit": "lm"
     },
@@ -67,7 +67,7 @@
         "title": "Compliance",
         "rows": [
           {
-            "label": "Operating temp",
+            "label": "Operating Temp",
             "value": "0~35°C"
           },
           {
@@ -76,7 +76,7 @@
           },
           {
             "label": "Certifications",
-            "value": "CE, EMC, MSDS,"
+            "value": "CE / EMC"
           }
         ]
       },
@@ -112,7 +112,7 @@
           },
           {
             "label": "Additional Features",
-            "value": "8meter remote controller distance, Automatic Mode last > 14hour *3 YEAR WARRANTY DOWNLOAD SPEC SHEET"
+            "value": "8meter remote controller distance, Automatic Mode last > 14hour"
           }
         ]
       },

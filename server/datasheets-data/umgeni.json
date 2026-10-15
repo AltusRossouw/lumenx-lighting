@@ -5,7 +5,7 @@
   },
   "name": "UMGENI",
   "category": "HIGHBAYS",
-  "variant": "High-performance linear highbay delivering over 35,000 lumens with excellent thermal design.",
+  "variant": "High-performance linear highbay delivering over 35,000lm with excellent thermal design.",
   "stats": [
     {
       "label": "Wattage",
@@ -28,10 +28,10 @@
     "alt": "Umgeni"
   },
   "overview": [
-    "High-performance linear highbay delivering over 35,000 lumens with excellent thermal design."
+    "High-performance linear highbay delivering over 35,000lm with excellent thermal design."
   ],
   "features": [
-    "High output exceeding 35,000 lumens",
+    "High output exceeding 35,000lm",
     "Optimised thermal management",
     "Locally manufactured"
   ],
@@ -72,7 +72,7 @@
         "rows": [
           {
             "label": "Output",
-            "value": "> 35,000 lm"
+            "value": "> 35,000lm"
           },
           {
             "label": "Manufacture",

@@ -11,16 +11,6 @@
       "label": "Power",
       "value": "3",
       "unit": "W"
-    },
-    {
-      "label": "Wattage",
-      "value": "3 selectable wattages",
-      "unit": ""
-    },
-    {
-      "label": "Lumen Output",
-      "value": "Contact our team for more details",
-      "unit": ""
     }
   ],
   "heroImage": {
@@ -52,7 +42,7 @@
           },
           {
             "label": "Colour Temperature",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Beam Angle",
@@ -60,11 +50,11 @@
           },
           {
             "label": "Housing",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Colour",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       },
@@ -73,7 +63,7 @@
         "rows": [
           {
             "label": "Operating Temp",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "IK Rating",
@@ -81,7 +71,7 @@
           },
           {
             "label": "Certifications",
-            "value": "CE, EMC, IEC60958 / CE, EMC / CE / CE, EMC, IEC60598"
+            "value": "CE / EMC / IEC 60598"
           }
         ]
       },
@@ -90,7 +80,7 @@
         "rows": [
           {
             "label": "Lumen Output",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Linking",
@@ -105,11 +95,11 @@
         "rows": [
           {
             "label": "CRI",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "LED Chips",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       },
@@ -118,7 +108,7 @@
         "rows": [
           {
             "label": "Power",
-            "value": "3 W"
+            "value": "3W"
           },
           {
             "label": "Wattage",
@@ -126,15 +116,15 @@
           },
           {
             "label": "Input Voltage",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Surge Protection",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Dimmable",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       }

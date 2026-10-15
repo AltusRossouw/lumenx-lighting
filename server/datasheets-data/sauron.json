@@ -9,12 +9,12 @@
   "stats": [
     {
       "label": "Wattage",
-      "value": "25W/20w/18w/16w",
+      "value": "25W/20W/18W/16W",
       "unit": ""
     },
     {
-      "label": "Lumen Output",
-      "value": "25W = 3000lm \\",
+      "label": "Lumens",
+      "value": "25W = 3000lm",
       "unit": ""
     },
     {
@@ -65,7 +65,7 @@
         "title": "Compliance",
         "rows": [
           {
-            "label": "Operating temp",
+            "label": "Operating Temp",
             "value": "-15~45°C"
           }
         ]
@@ -83,10 +83,10 @@
           },
           {
             "label": "Lumen Output",
-            "value": "25W = 3000lm \\"
+            "value": "25W = 3000lm"
           },
           {
-            "label": "Flicker Free CRI",
+            "label": "Flicker-free CRI",
             "value": ">80"
           }
         ]
@@ -110,7 +110,7 @@
           },
           {
             "label": "Additional Features",
-            "value": "Flicker free AGT Driver *5 YEAR WARRANTY DOWNLOAD SPEC SHEET"
+            "value": "Flicker free AGT Driver"
           }
         ]
       },
@@ -119,11 +119,11 @@
         "rows": [
           {
             "label": "Wattage",
-            "value": "25W/20w/18w/16w"
+            "value": "25W/20W/18W/16W"
           },
           {
             "label": "Input Voltage",
-            "value": "200- 277V"
+            "value": "200–277V"
           },
           {
             "label": "Surge Protection",
@@ -135,7 +135,7 @@
           },
           {
             "label": "Dimmable Driver Certifications",
-            "value": "CE, RoHS,"
+            "value": "CE / RoHS"
           }
         ]
       }

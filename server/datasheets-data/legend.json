@@ -13,11 +13,6 @@
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "Contact our team for more details",
-      "unit": ""
-    },
-    {
       "label": "Lumens",
       "value": "3500",
       "unit": "lm"
@@ -61,7 +56,7 @@
           },
           {
             "label": "Colour",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       },
@@ -78,7 +73,7 @@
           },
           {
             "label": "Operating Temp",
-            "value": "-20 ~ 45 °C"
+            "value": "-20 ~ 45°C"
           }
         ]
       },
@@ -87,7 +82,7 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "3500 lm"
+            "value": "3500lm"
           },
           {
             "label": "Cutout",
@@ -95,7 +90,7 @@
           },
           {
             "label": "Lumen Output",
-            "value": "3500 lm (35W)"
+            "value": "3500lm (35W)"
           }
         ]
       }
@@ -123,15 +118,15 @@
         "rows": [
           {
             "label": "Power",
-            "value": "10–35 W"
+            "value": "10–35W"
           },
           {
             "label": "Wattage",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Input Voltage",
-            "value": "185-270V"
+            "value": "185–270V"
           },
           {
             "label": "Power Factor",
@@ -143,7 +138,7 @@
           },
           {
             "label": "Surge Protection",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       }

@@ -248,4 +248,58 @@ export const CONTENT_SCHEMA: Group[] = [
       { kind: 'text', label: 'Email', path: ['managingDirector', 'email'] },
     ],
   },
+  {
+    title: 'About page',
+    description:
+      'The founders story. Team photographs are fixed images — only their alt text and captions are edited here.',
+    fields: [
+      { kind: 'text', label: 'Hero eyebrow label', path: ['about', 'hero', 'eyebrow'] },
+      heading('Hero heading', ['about', 'hero', 'heading']),
+      { kind: 'textarea', label: 'Hero subcopy', path: ['about', 'hero', 'subcopy'] },
+
+      { kind: 'text', label: 'Team eyebrow label', path: ['about', 'team', 'label'] },
+      { kind: 'text', label: 'Team heading', path: ['about', 'team', 'heading'] },
+      { kind: 'textarea', label: 'Team introduction', path: ['about', 'team', 'lede'] },
+      { kind: 'text', label: 'Group photo caption', path: ['about', 'team', 'photoCaption'] },
+      { kind: 'text', label: 'Group photo alt text', path: ['about', 'team', 'photoAlt'] },
+      {
+        kind: 'objectList',
+        label: 'Credential strip',
+        path: ['about', 'team', 'highlights'],
+        addable: false,
+        itemFields: [
+          { key: 'value', label: 'Figure', kind: 'text' },
+          { key: 'label', label: 'Caption', kind: 'text' },
+        ],
+      },
+      {
+        kind: 'objectList',
+        label: 'Team members',
+        path: ['about', 'team', 'members'],
+        addable: false,
+        itemFields: [
+          { key: 'name', label: 'Name', kind: 'text' },
+          { key: 'role', label: 'Role', kind: 'text' },
+          { key: 'focus', label: 'One-line focus', kind: 'textarea' },
+          { key: 'imageAlt', label: 'Portrait alt text', kind: 'text' },
+        ],
+      },
+      {
+        kind: 'objectList',
+        label: 'Kaylen Reddy — biography paragraphs',
+        path: ['about', 'team', 'members', '0', 'blocks'],
+        itemFields: [{ key: 'body', label: 'Paragraph', kind: 'textarea' }],
+      },
+      {
+        kind: 'objectList',
+        label: 'Frans Rossouw — biography paragraphs',
+        path: ['about', 'team', 'members', '1', 'blocks'],
+        itemFields: [{ key: 'body', label: 'Paragraph', kind: 'textarea' }],
+      },
+
+      heading('Closing heading', ['about', 'closing', 'heading']),
+      { kind: 'textarea', label: 'Closing subcopy', path: ['about', 'closing', 'subcopy'] },
+      { kind: 'text', label: 'Closing button label', path: ['about', 'closing', 'cta'] },
+    ],
+  },
 ];

@@ -20,6 +20,7 @@ import {
   AUDIENCE_PROFILES,
   FAQS,
   CONTACT,
+  ABOUT,
 } from './data';
 import type {
   CompanyOverview,
@@ -30,6 +31,8 @@ import type {
   ProcessStep,
   AudienceProfile,
   FAQ,
+  AboutPageContent,
+  TeamMember,
 } from './types';
 
 /* ── Editable shapes (stored) ──────────────────────────────────────────── */
@@ -139,6 +142,7 @@ export interface SiteContent {
   };
   complianceBar: { text: string };
   managingDirector: { name: string; role: string; phone: string; email: string };
+  about: AboutPageContent;
 }
 
 /* ── Defaults (current hardcoded copy) ─────────────────────────────────── */
@@ -293,6 +297,23 @@ export const DEFAULT_CONTENT: SiteContent = {
     phone: MANAGING_DIRECTOR.phone,
     email: MANAGING_DIRECTOR.email,
   },
+  about: {
+    hero: { ...ABOUT.hero, heading: { ...ABOUT.hero.heading } },
+    team: {
+      label: ABOUT.team.label,
+      heading: ABOUT.team.heading,
+      lede: ABOUT.team.lede,
+      photo: ABOUT.team.photo,
+      photoAlt: ABOUT.team.photoAlt,
+      photoCaption: ABOUT.team.photoCaption,
+      highlights: ABOUT.team.highlights.map((h) => ({ ...h })),
+      members: ABOUT.team.members.map((m) => ({
+        ...m,
+        blocks: m.blocks.map((b) => ({ ...b })),
+      })),
+    },
+    closing: { ...ABOUT.closing, heading: { ...ABOUT.closing.heading } },
+  },
 };
 
 /* ── Resolved shape (what components consume) ──────────────────────────── */
@@ -329,6 +350,7 @@ export interface ResolvedContent {
   seo: SiteContent['seo'];
   complianceBar: SiteContent['complianceBar'];
   managingDirector: SiteContent['managingDirector'];
+  about: AboutPageContent;
 }
 
 /** Recursively merge a stored (possibly partial) document over DEFAULT_CONTENT. */
@@ -361,6 +383,38 @@ const zip = <T extends { icon?: string; iconImg?: string; number?: string }>(
     if (!o) return d;
     return { ...d, title: o.title, description: o.description };
   });
+
+/**
+ * About page copy with its fixed images zipped back in. The founders' names
+ * pair to their portraits by index, so editing one name never re-points a
+ * photograph at the wrong person.
+ */
+const resolveAbout = (about: SiteContent['about']): AboutPageContent => ({
+  hero: about.hero,
+  team: {
+    label: about.team.label,
+    heading: about.team.heading,
+    lede: about.team.lede,
+    photo: ABOUT.team.photo,
+    photoAlt: about.team.photoAlt || ABOUT.team.photoAlt,
+    photoCaption: about.team.photoCaption,
+    highlights: about.team.highlights,
+    members: ABOUT.team.members.map((defaults, i) => {
+      const stored = about.team.members[i];
+      const blocks = (stored?.blocks?.length ? stored.blocks : defaults.blocks).filter(
+        (b) => b.body.trim().length > 0,
+      );
+      return {
+        ...defaults,
+        name: stored?.name ?? defaults.name,
+        role: stored?.role ?? defaults.role,
+        focus: stored?.focus ?? defaults.focus,
+        blocks,
+      } satisfies TeamMember;
+    }),
+  },
+  closing: about.closing,
+});
 
 const resolve = (content: SiteContent): ResolvedContent => ({
   company: { ...COMPANY, ...content.company },
@@ -411,6 +465,7 @@ const resolve = (content: SiteContent): ResolvedContent => ({
   seo: content.seo,
   complianceBar: content.complianceBar,
   managingDirector: content.managingDirector,
+  about: resolveAbout(content.about),
 });
 
 /* ── Reactive store ────────────────────────────────────────────────────── */

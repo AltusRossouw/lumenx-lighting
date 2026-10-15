@@ -13,11 +13,6 @@
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "10W, 15W, 20W, 30W, 36W",
-      "unit": ""
-    },
-    {
       "label": "Lumens",
       "value": "1200–4320",
       "unit": "lm"
@@ -74,7 +69,7 @@
           },
           {
             "label": "Lifetime",
-            "value": "L70B10 @ 50,000 hrs"
+            "value": "L70B10 @ 50,000hrs"
           }
         ]
       },
@@ -83,11 +78,11 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "1200–4320 lm"
+            "value": "1200–4320lm"
           },
           {
             "label": "Efficacy",
-            "value": "120 lm/W"
+            "value": "120lm/W"
           }
         ]
       }
@@ -115,7 +110,7 @@
           },
           {
             "label": "Power",
-            "value": "10–35 W"
+            "value": "10–35W"
           },
           {
             "label": "Power Factor",

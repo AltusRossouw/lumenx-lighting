@@ -9,6 +9,7 @@ import {
   FAQ,
   InstallationImage,
   ManagingDirector,
+  AboutPageContent,
 } from './types';
 
 export const LOGO_URL = '/logo-wide.png';
@@ -216,6 +217,83 @@ export const MANAGING_DIRECTOR: ManagingDirector = {
   headshot: '/headshots/Kaylen-Reddy-Headshot.png',
   signatureImage: '/installation-images/lumenx-email-signature-kaylen.jpeg',
   signatureAlt: 'LumenX email signature banner for Kaylen Reddy, Managing Director.',
+};
+
+/**
+ * About page copy — the founders' story.
+ *
+ * Both team photographs are placeholders until the real shoot is delivered;
+ * swap the files at `ABOUT_TEAM_PHOTO` / `ABOUT_PORTRAIT` and nothing else
+ * on the page changes.
+ */
+export const ABOUT_TEAM_PHOTO = '/headshots/team-kaylen-frans-placeholder.svg';
+export const ABOUT_PORTRAIT = '/headshots/team-portrait-placeholder.svg';
+
+export const ABOUT: AboutPageContent = {
+  hero: {
+    eyebrow: 'About LumenX',
+    heading: { lead: 'The people behind ', accent: 'the projects', tail: '' },
+    subcopy:
+      'LumenX is two engineers with over 40 years of combined project experience — and every role in the lighting chain behind them.',
+  },
+  team: {
+    label: 'The Team',
+    heading: 'Two engineers. Over 40 years of experience on projects.',
+    lede:
+      'Engineer, specifier, supplier, manufacturer, operator: between them, Kaylen and Frans have held every one of these roles. They’ve drawn the single-lines, adjudicated the tenders, managed contractors on site, built the fittings and run the factories those fittings light. They know what the engineer needs on the drawing, what the contractor is up against on site, and what the client expects at handover. They’ve been there, and they know how to solve those problems.',
+    photo: ABOUT_TEAM_PHOTO,
+    photoAlt: 'Kaylen Reddy and Frans Rossouw, co-founders of LumenX Lighting, photographed together.',
+    photoCaption: 'Kaylen Reddy and Frans Rossouw, co-founders.',
+    highlights: [
+      { value: '40+', label: 'Years of combined project experience' },
+      { value: '18', label: 'Years Kaylen has spent in the lighting industry' },
+      { value: '25+', label: 'Years of engineering and operational leadership behind Frans' },
+      { value: '8 yr', label: 'Guarantee behind the luminaires Frans engineers' },
+    ],
+    members: [
+      {
+        name: 'Kaylen Reddy',
+        role: 'Co-Founder & Managing Director',
+        image: ABOUT_PORTRAIT,
+        imageAlt: 'Portrait of Kaylen Reddy, Co-Founder and Managing Director of LumenX Lighting.',
+        focus: 'Kaylen sees the whole project, from the first drawing to delivery and aftercare.',
+        blocks: [
+          {
+            body:
+              'Kaylen holds a National Diploma in Electrical Engineering from the Durban University of Technology and began his career as a consulting engineer, working on MV and LV reticulation, industrial plants and commercial builds. He designed and specified systems, wrote and adjudicated tenders, ran FATs and managed contractors through to commissioning. From there he moved into lighting, first as a lighting solutions engineer and then as head of lighting. After that he spent six years running a regional business across KwaZulu-Natal, responsible for sales, operations, project delivery and the P&L.',
+          },
+          {
+            body:
+              'Eighteen years in the industry have taught him that lighting on a project has to be treated as one complete system, from first drawing to final handover. It needs one owner: someone technically sound who supplies the right product, understands every stakeholder on the job, delivers for each of them, and stays on after installation with proper aftercare. He co-founded LumenX to be that owner.',
+          },
+        ],
+      },
+      {
+        name: 'Frans Rossouw',
+        role: 'Co-Founder & Technical Director',
+        image: ABOUT_PORTRAIT,
+        imageAlt: 'Portrait of Frans Rossouw, Co-Founder and Technical Director of LumenX Lighting.',
+        focus:
+          'Frans goes deep on the technical side: the product, the performance and the proof.',
+        blocks: [
+          {
+            body:
+              'Frans holds a master’s degree in electrical engineering from Stellenbosch, cum laude, and has more than 25 years of engineering and operational leadership behind him. He started in mining with a global resources group, where he designed protection grading for an 11 kV network with two 120 MVA substations, managed power quality across the mine’s distribution, and ran a 9 MW power plant before going on to manage its smelter and refinery. He then moved into large-scale manufacturing, where he installed what was then the largest heatset print press in South Africa and was responsible for health and safety across ten factories nationwide. He later became CEO of a national food manufacturer and tripled its turnover in three years. At every site, lighting audits and compliance with standards were part of his job.',
+          },
+          {
+            body:
+              'In 2015 he went a step further and started designing and manufacturing his own LED luminaires. They’re engineered in-house from the driver up, benchmarked against the best at international lighting fairs, and backed by an 8-year guarantee. Few people in the industry have built a light fitting from scratch. Frans has, and that hands-on product knowledge sits behind every specification LumenX puts its name to.',
+          },
+        ],
+      },
+    ],
+  },
+  closing: {
+    heading: { lead: 'Together, they cover your project from ', accent: 'every angle', tail: '.' },
+    subcopy:
+      'Kaylen sees the whole project through, from the first drawing to delivery and aftercare. Frans goes deep on the product, the performance and the proof. Between them, nothing on the lighting scope is left unowned.',
+    cta: 'Talk to the team about your project',
+  },
 };
 
 /** Homepage hero slideshow — all installation photography in curated order. */

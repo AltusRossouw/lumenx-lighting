@@ -60,7 +60,7 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "1240 lm"
+            "value": "1240lm"
           }
         ]
       }
@@ -80,7 +80,7 @@
         "rows": [
           {
             "label": "Power",
-            "value": "22.4 W"
+            "value": "22.4W"
           },
           {
             "label": "Input Voltage",

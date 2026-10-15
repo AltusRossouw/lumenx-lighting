@@ -26,10 +26,10 @@
     "Outdoor LED luminaire from the LumenX range — output and finishes vary by configuration; see the model table for per-variant values."
   ],
   "features": [
-    "1826–2080 lm lumens",
+    "1826–2080lm lumens",
     "2200K / 2700K / 3000K / 3200K / 4000K colour temperature",
-    "Up to 1826–2080 lm",
-    "100-277V input"
+    "Up to 1826–2080lm",
+    "100–277V input"
   ],
   "applications": [
     "Architectural",
@@ -52,7 +52,7 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "1826–2080 lm"
+            "value": "1826–2080lm"
           }
         ]
       }
@@ -63,7 +63,7 @@
         "rows": [
           {
             "label": "Input Voltage",
-            "value": "100-277V"
+            "value": "100–277V"
           }
         ]
       }

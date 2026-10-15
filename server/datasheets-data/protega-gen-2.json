@@ -5,16 +5,16 @@
   },
   "name": "PROTEGA GEN 2",
   "category": "LINEARS",
-  "variant": "LED linear luminaire delivering up to 171 lm/W in a sleek, easily maintained profile.",
+  "variant": "LED linear luminaire delivering up to 171lm/W in a sleek, easily maintained profile.",
   "stats": [
     {
       "label": "Wattage",
-      "value": "32W - 98W",
+      "value": "32W–98W",
       "unit": ""
     },
     {
       "label": "Efficacy",
-      "value": "Up to 171 lm/W",
+      "value": "Up to 171lm/W",
       "unit": ""
     },
     {
@@ -28,10 +28,10 @@
     "alt": "Protega Gen 2"
   },
   "overview": [
-    "LED linear luminaire delivering up to 171 lm/W in a sleek, easily maintained profile."
+    "LED linear luminaire delivering up to 171lm/W in a sleek, easily maintained profile."
   ],
   "features": [
-    "Industry-leading 171 lm/W efficacy",
+    "Industry-leading 171lm/W efficacy",
     "Sleek architectural profile",
     "Easy maintenance access",
     "Retail, commercial and industrial"
@@ -62,7 +62,7 @@
         "rows": [
           {
             "label": "Efficacy",
-            "value": "Up to 171 lm/W"
+            "value": "Up to 171lm/W"
           }
         ]
       }
@@ -82,7 +82,7 @@
         "rows": [
           {
             "label": "Wattage",
-            "value": "32W - 98W"
+            "value": "32W–98W"
           }
         ]
       }

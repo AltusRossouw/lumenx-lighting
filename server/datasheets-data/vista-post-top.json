@@ -13,8 +13,8 @@
       "unit": ""
     },
     {
-      "label": "Lumen Output",
-      "value": "20W = 2 600lm \\",
+      "label": "Lumens",
+      "value": "20W = 2 600lm",
       "unit": ""
     },
     {
@@ -33,9 +33,9 @@
   "features": [
     "20/35W power",
     "3CCT (3000K/4000K/6000K) colour temperature",
-    "Up to 20W = 2 600lm \\",
+    "Up to 20W = 2 600lm",
     "CRI >80",
-    "170-265V input",
+    "170–265V input",
     "SMD 2835 LEDs",
     "120° beam",
     "Aluminum housing"
@@ -68,7 +68,7 @@
         "title": "Compliance",
         "rows": [
           {
-            "label": "Operating temp",
+            "label": "Operating Temp",
             "value": "-20~40°C"
           },
           {
@@ -81,7 +81,7 @@
           },
           {
             "label": "IES File",
-            "value": "No *5 YEAR WARRANTY DOWNLOAD SPEC SHEET"
+            "value": "No"
           }
         ]
       },
@@ -90,7 +90,7 @@
         "rows": [
           {
             "label": "Lumen Output",
-            "value": "20W = 2 600lm \\"
+            "value": "20W = 2 600lm"
           }
         ]
       }
@@ -118,7 +118,7 @@
           },
           {
             "label": "Input Voltage",
-            "value": "170-265V"
+            "value": "170–265V"
           },
           {
             "label": "Dimmable",

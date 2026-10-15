@@ -13,11 +13,6 @@
       "unit": ""
     },
     {
-      "label": "Lumen Output",
-      "value": "Contact our team for more details",
-      "unit": ""
-    },
-    {
       "label": "IP Rating",
       "value": "IP65",
       "unit": ""
@@ -52,7 +47,7 @@
           },
           {
             "label": "Colour",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Beam Angle",
@@ -60,7 +55,7 @@
           },
           {
             "label": "Housing",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Colour Temperature",
@@ -77,11 +72,11 @@
           },
           {
             "label": "Operating Temp",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Certifications",
-            "value": "CE, EMC / IEC"
+            "value": "CE / EMC / IEC"
           },
           {
             "label": "IK Rating",
@@ -94,7 +89,7 @@
         "rows": [
           {
             "label": "Lumen Output",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "CCT",
@@ -109,15 +104,15 @@
         "rows": [
           {
             "label": "CRI",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
-            "label": "available in",
+            "label": "Available In",
             "value": "White"
           },
           {
             "label": "LED Chips",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       },
@@ -130,15 +125,15 @@
           },
           {
             "label": "Input Voltage",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Surge Protection",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Dimmable",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       }

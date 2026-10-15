@@ -61,7 +61,7 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "2456–5458 lm"
+            "value": "2456–5458lm"
           }
         ]
       }
@@ -81,7 +81,7 @@
         "rows": [
           {
             "label": "Power",
-            "value": "26–49 W"
+            "value": "26–49W"
           },
           {
             "label": "Input Voltage",

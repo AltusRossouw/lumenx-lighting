@@ -9,17 +9,12 @@
   "stats": [
     {
       "label": "Power",
-      "value": "30-34",
+      "value": "30–34",
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "30W, 34W",
-      "unit": ""
-    },
-    {
       "label": "Lumens",
-      "value": "3300-3900",
+      "value": "3300–3900",
       "unit": "lm"
     }
   ],
@@ -60,7 +55,7 @@
           },
           {
             "label": "Luminaire Colour",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       },
@@ -73,7 +68,7 @@
           },
           {
             "label": "Lifetime",
-            "value": "L80B10 @ 50 000 hrs"
+            "value": "L80B10 @ 50 000hrs"
           }
         ]
       }
@@ -84,11 +79,11 @@
         "rows": [
           {
             "label": "Lumen Output",
-            "value": "3300-3900 lm"
+            "value": "3300–3900lm"
           },
           {
             "label": "Efficacy",
-            "value": "Up to 118 lm/W"
+            "value": "Up to 118lm/W"
           },
           {
             "label": "CCT",
@@ -113,7 +108,7 @@
           },
           {
             "label": "Input Voltage",
-            "value": "220-240V AC"
+            "value": "220–240V AC"
           },
           {
             "label": "Dimmable",

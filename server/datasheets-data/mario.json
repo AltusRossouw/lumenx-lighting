@@ -81,11 +81,11 @@
           },
           {
             "label": "Operating Temp",
-            "value": "-15 ~ 45 °C"
+            "value": "-15 ~ 45°C"
           },
           {
             "label": "Lifespan",
-            "value": "L80B10 @ 50 000 hrs"
+            "value": "L80B10 @ 50 000hrs"
           }
         ]
       },
@@ -94,7 +94,7 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "3500 lm"
+            "value": "3500lm"
           }
         ]
       }
@@ -118,11 +118,11 @@
         "rows": [
           {
             "label": "Power",
-            "value": "35 W"
+            "value": "35W"
           },
           {
             "label": "Input Voltage",
-            "value": "200-277V AC"
+            "value": "200–277V AC"
           },
           {
             "label": "Power Factor",

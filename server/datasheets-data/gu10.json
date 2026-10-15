@@ -8,16 +8,6 @@
   "variant": "GU10 fixtures and accessories for flexible lamp-based accent and downlighting.",
   "stats": [
     {
-      "label": "Wattage",
-      "value": "Contact our team for more details",
-      "unit": ""
-    },
-    {
-      "label": "Lumen Output",
-      "value": "Contact our team for more details",
-      "unit": ""
-    },
-    {
       "label": "IP Rating",
       "value": "IP20",
       "unit": ""
@@ -61,14 +51,14 @@
           },
           {
             "label": "Housing",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Colour",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
-            "label": "length",
+            "label": "Length",
             "value": "1 Meter, 2 Meter, 3 Meter"
           }
         ]
@@ -82,11 +72,11 @@
           },
           {
             "label": "Operating Temp",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Certifications",
-            "value": "EMC, ErP, CE / CE, EMC, RoHS / RoHS / CE"
+            "value": "EMC / ErP / CE / RoHS"
           },
           {
             "label": "IK Rating",
@@ -99,7 +89,7 @@
         "rows": [
           {
             "label": "Lumen Output",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Range",
@@ -111,7 +101,7 @@
           },
           {
             "label": "CRI",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       }
@@ -122,18 +112,18 @@
         "rows": [
           {
             "label": "LED Chips",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
-            "label": "lens",
+            "label": "Lens",
             "value": "120°, 90°"
           },
           {
-            "label": "available in",
+            "label": "Available In",
             "value": "1m/2m/3m"
           },
           {
-            "label": "includes",
+            "label": "Includes",
             "value": "Power feed and end cap"
           }
         ]
@@ -143,11 +133,11 @@
         "rows": [
           {
             "label": "Wattage",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Input Voltage",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Dimmable",
@@ -155,7 +145,7 @@
           },
           {
             "label": "Surge Protection",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       }

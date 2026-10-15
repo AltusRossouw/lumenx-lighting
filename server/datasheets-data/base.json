@@ -5,7 +5,7 @@
   },
   "name": "BASE",
   "category": "LINEARS",
-  "variant": "BACE base linear profile offering 135 lm/W efficacy in single or continuous form.",
+  "variant": "BACE base linear profile offering 135lm/W efficacy in single or continuous form.",
   "stats": [
     {
       "label": "IP Rating",
@@ -28,10 +28,10 @@
     "alt": "BASE"
   },
   "overview": [
-    "BACE base linear profile offering 135 lm/W efficacy in single or continuous form."
+    "BACE base linear profile offering 135lm/W efficacy in single or continuous form."
   ],
   "features": [
-    "High 135 lm/W efficacy",
+    "High 135lm/W efficacy",
     "Single and continuous options",
     "Cost-effective architectural linear"
   ],
@@ -56,7 +56,7 @@
           },
           {
             "label": "Colour Rendering Index (CRI)",
-            "value": "CRI80 , (CRI90 on request)"
+            "value": "CRI80, (CRI90 on request)"
           }
         ]
       },
@@ -69,7 +69,7 @@
           },
           {
             "label": "Warranty",
-            "value": "5 year warranty as per LumenX standard terms of warranty"
+            "value": ""
           }
         ]
       },
@@ -105,11 +105,11 @@
           },
           {
             "label": "LED Lifetime",
-            "value": "L80B10 >50,000 hrs at Ta = 25° Celsius"
+            "value": "L80B10 >50,000hrs at Ta = 25° Celsius"
           },
           {
-            "label": "Operating Voltage/ Frequency",
-            "value": "220 – 240 V/ 50 – 60 Hz"
+            "label": "Operating Voltage / Frequency",
+            "value": "220–240V/ 50–60Hz"
           },
           {
             "label": "Optional Add-ons",

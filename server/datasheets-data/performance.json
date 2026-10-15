@@ -64,11 +64,11 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "1,400 – 25,000 lm"
+            "value": "1,400 – 25,000lm"
           },
           {
             "label": "Efficacy",
-            "value": "140 lm/W"
+            "value": "140lm/W"
           },
           {
             "label": "CCT",
@@ -96,7 +96,7 @@
           },
           {
             "label": "Lifetime",
-            "value": "L80B30 @ 100,000 hrs"
+            "value": "L80B30 @ 100,000hrs"
           }
         ]
       },
@@ -105,7 +105,7 @@
         "rows": [
           {
             "label": "Wattage",
-            "value": "10W – 175W"
+            "value": "10W–175W"
           },
           {
             "label": "Voltage",

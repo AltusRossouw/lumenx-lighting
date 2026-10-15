@@ -34,7 +34,7 @@
     "Direct Drive — no external driver required",
     "No-metal, no-glass polycarbonate housing",
     "80% flicker-free (OHS/MHS compliant)",
-    "Optional battery backup: 1,000lm for 4 hours",
+    "Optional battery backup: 1,000lm for 4hours",
     "Fire rated UL-94 V2"
   ],
   "applications": [
@@ -72,7 +72,7 @@
         "rows": [
           {
             "label": "Nominal Lifetime (L70)",
-            "value": "60,000 hours (IES LM-80, TM-21)"
+            "value": "60,000hours (IES LM-80, TM-21)"
           },
           {
             "label": "Operational Guarantee (24/7)",
@@ -84,7 +84,7 @@
           },
           {
             "label": "Luminous Efficacy",
-            "value": "135 lm/W"
+            "value": "135lm/W"
           },
           {
             "label": "CCT",
@@ -108,7 +108,7 @@
           },
           {
             "label": "Operating Voltage",
-            "value": "220-240V AC"
+            "value": "220–240V AC"
           },
           {
             "label": "Min Sustained Voltage",
@@ -147,7 +147,7 @@
           },
           {
             "label": "Electrical Safety",
-            "value": "IEC60598-1, IEC60598-2-5 compliant"
+            "value": "IEC 60598–1 / IEC 60598–2-5 compliant"
           },
           {
             "label": "WiFi/Barcode/Radio",
@@ -155,7 +155,7 @@
           },
           {
             "label": "THD",
-            "value": "IEC 61000-3-2 Class D Compliant"
+            "value": "IEC 61000–3-2 Class D Compliant"
           },
           {
             "label": "Variable Switching",

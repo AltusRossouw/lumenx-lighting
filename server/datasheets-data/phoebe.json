@@ -72,7 +72,7 @@
         "rows": [
           {
             "label": "Nominal Lifetime (L70)",
-            "value": "70,000 hours (IES LM-80, TM-21)"
+            "value": "70,000hours (IES LM-80, TM-21)"
           },
           {
             "label": "Operational Guarantee (24/7)",
@@ -84,7 +84,7 @@
           },
           {
             "label": "Luminous Efficacy",
-            "value": "113 lm/W"
+            "value": "113lm/W"
           },
           {
             "label": "CCT",
@@ -104,7 +104,7 @@
           },
           {
             "label": "Operating Voltage",
-            "value": "220-240V AC"
+            "value": "220–240V AC"
           },
           {
             "label": "Min Sustained Voltage",
@@ -143,7 +143,7 @@
           },
           {
             "label": "Electrical Safety",
-            "value": "IEC60598-1, IEC60598-2-5 compliant"
+            "value": "IEC 60598–1 / IEC 60598–2-5 compliant"
           },
           {
             "label": "WiFi/Barcode/Radio",
@@ -151,7 +151,7 @@
           },
           {
             "label": "THD",
-            "value": "IEC 61000-3-2 Class D Compliant"
+            "value": "IEC 61000–3-2 Class D Compliant"
           },
           {
             "label": "Radar Motion Sensor",

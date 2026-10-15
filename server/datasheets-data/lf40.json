@@ -9,7 +9,7 @@
   "stats": [
     {
       "label": "Length",
-      "value": "620mm - 3020mm (100mm Increments)",
+      "value": "620mm–3020mm (100mm Increments)",
       "unit": ""
     },
     {
@@ -48,7 +48,7 @@
         "rows": [
           {
             "label": "Length",
-            "value": "620mm - 3020mm (100mm Increments)"
+            "value": "620mm–3020mm (100mm Increments)"
           },
           {
             "label": "Colour",

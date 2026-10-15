@@ -47,7 +47,7 @@
         "rows": [
           {
             "label": "Dimensions (L x W x H)",
-            "value": "6 x 56 x 94 mm"
+            "value": "6 x 56 x 94mm"
           },
           {
             "label": "Colour",
@@ -67,8 +67,8 @@
             "value": "559410"
           },
           {
-            "label": "PU1, net weight",
-            "value": "0,025 kg"
+            "label": "net weight",
+            "value": "0,025kg"
           },
           {
             "label": "Package content",
@@ -86,7 +86,7 @@
             "value": "5 years"
           },
           {
-            "label": "PU1, EAN",
+            "label": "EAN",
             "value": "4007841559410"
           },
           {

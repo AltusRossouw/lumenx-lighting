@@ -8,16 +8,6 @@
   "variant": "3-wire track tilt IP20 linear for directional linear accent lighting.",
   "stats": [
     {
-      "label": "Wattage",
-      "value": "Contact our team for more details",
-      "unit": ""
-    },
-    {
-      "label": "Lumen Output",
-      "value": "Contact our team for more details",
-      "unit": ""
-    },
-    {
       "label": "IP Rating",
       "value": "IP20",
       "unit": ""
@@ -64,11 +54,11 @@
           },
           {
             "label": "Housing",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Colour",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       },
@@ -81,11 +71,11 @@
           },
           {
             "label": "Operating Temp",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Certifications",
-            "value": "CE, EMC / CE"
+            "value": "CE / EMC"
           }
         ]
       },
@@ -94,11 +84,11 @@
         "rows": [
           {
             "label": "Lumen Output",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "CRI",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       }
@@ -109,10 +99,10 @@
         "rows": [
           {
             "label": "LED Chips",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
-            "label": "available in",
+            "label": "Available In",
             "value": "Black/White"
           }
         ]
@@ -122,15 +112,15 @@
         "rows": [
           {
             "label": "Wattage",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Input Voltage",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Surge Protection",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Dimmable",

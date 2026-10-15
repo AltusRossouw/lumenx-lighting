@@ -14,7 +14,7 @@
     },
     {
       "label": "Lumens",
-      "value": "0–5595",
+      "value": "5595",
       "unit": "lm"
     }
   ],
@@ -29,7 +29,7 @@
     "LED and driver easily replaceable.",
     "Zero light pollution (ULOR: 0%)",
     "50,000h L80 B20 useful life.",
-    "5-year warranty for heavy use (4,000 hours/year) and in a marine atmosphere."
+    "5-year warranty for heavy use (4,000hours/year) and in a marine atmosphere."
   ],
   "applications": [
     "Architectural",
@@ -52,7 +52,7 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "0–5595 lm"
+            "value": "5595lm"
           }
         ]
       }
@@ -72,7 +72,7 @@
         "rows": [
           {
             "label": "Power",
-            "value": "62.1 W"
+            "value": "62.1W"
           },
           {
             "label": "Input Voltage",

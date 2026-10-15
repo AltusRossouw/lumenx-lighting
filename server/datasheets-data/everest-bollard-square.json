@@ -34,7 +34,7 @@
     "12W power",
     "4CCT (2200K/3000K/4000K/6000K) colour temperature",
     "CRI >80",
-    "100-265V input",
+    "100–265V input",
     "Sanan 2835 LEDs",
     "360° beam",
     "Aluminium + housing"
@@ -67,7 +67,7 @@
         "title": "Compliance",
         "rows": [
           {
-            "label": "Operating temp",
+            "label": "Operating Temp",
             "value": "-35~45°C"
           },
           {
@@ -76,7 +76,7 @@
           },
           {
             "label": "Certifications",
-            "value": "CE, EMC,"
+            "value": "CE / EMC"
           }
         ]
       },
@@ -112,7 +112,7 @@
           },
           {
             "label": "Additional Features",
-            "value": "Aluminium Pole, 304 Stainless steel screws *5 YEAR WARRANTY DOWNLOAD SPEC SHEET:"
+            "value": "Aluminium Pole, 304 Stainless steel screws"
           }
         ]
       },
@@ -125,7 +125,7 @@
           },
           {
             "label": "Input Voltage",
-            "value": "100-265V"
+            "value": "100–265V"
           },
           {
             "label": "Dimmable",

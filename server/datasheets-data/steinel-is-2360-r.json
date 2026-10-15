@@ -103,19 +103,19 @@
             "value": "white"
           },
           {
-            "label": "PU1, net weight",
-            "value": "0,117 kg"
+            "label": "net weight",
+            "value": "0,117kg"
           },
           {
-            "label": "infrared sensor 360°",
+            "label": "Infrared Sensor 360°",
             "value": "max. 4 m"
           },
           {
-            "label": "1000 W max.",
+            "label": "1000W max.",
             "value": "IP54"
           },
           {
-            "label": "2 - 2000 lux",
+            "label": "2–2000 lux",
             "value": "8 sec - 35 min"
           },
           {

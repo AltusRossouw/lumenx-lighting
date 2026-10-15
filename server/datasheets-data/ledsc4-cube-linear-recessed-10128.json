@@ -52,7 +52,7 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "1344–8888 lm"
+            "value": "1344–8888lm"
           }
         ]
       }
@@ -72,11 +72,11 @@
         "rows": [
           {
             "label": "Power",
-            "value": "24.5–676 W"
+            "value": "24.5–676W"
           },
           {
             "label": "Input Voltage",
-            "value": "220-240V"
+            "value": "220–240V"
           }
         ]
       }

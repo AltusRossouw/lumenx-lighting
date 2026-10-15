@@ -100,27 +100,27 @@
           },
           {
             "label": "Version",
-            "value": "COM1 - in-ceiling installation, rd. white"
+            "value": "COM1 - in-ceiling installation, round white"
           },
           {
-            "label": "PU1, net weight",
-            "value": "0,161 kg"
+            "label": "net weight",
+            "value": "0,161kg"
           },
           {
-            "label": "infrared sensor 360°",
+            "label": "Infrared Sensor 360°",
             "value": "max. 20 m"
           },
           {
-            "label": "max. 2000 W",
+            "label": "Max. 2000W",
             "value": "IP20"
           },
           {
-            "label": "2 - 1000 lux",
+            "label": "2–1000 lux",
             "value": "5 sec - 15 min"
           },
           {
-            "label": "manual override",
-            "value": "ideal 2,5 - 4 m"
+            "label": "Manual Override",
+            "value": "ideal 2,5–4 m"
           }
         ]
       }

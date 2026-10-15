@@ -26,11 +26,11 @@
     "The Afrodita LED is an outdoor luminaire from the LumenX range, available in multiple configurations."
   ],
   "features": [
-    "2880–2952 lm lumens",
+    "2880–2952lm lumens",
     "2700K / 3000K / 4000K colour temperature",
-    "Up to 2880–2952 lm",
+    "Up to 2880–2952lm",
     "100° beam",
-    "220-240V input"
+    "220–240V input"
   ],
   "applications": [
     "Architectural",
@@ -57,7 +57,7 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "2880–2952 lm"
+            "value": "2880–2952lm"
           }
         ]
       }
@@ -68,7 +68,7 @@
         "rows": [
           {
             "label": "Input Voltage",
-            "value": "220-240V"
+            "value": "220–240V"
           }
         ]
       }

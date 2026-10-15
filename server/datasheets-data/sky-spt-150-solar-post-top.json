@@ -31,7 +31,7 @@
     "Self-sustaining solar-powered post top light delivering reliable performance for estates, isolated areas and security perimeters — no electrical connection required."
   ],
   "features": [
-    "1100 lm lumens",
+    "1100lm lumens",
     "IP65 rated",
     "6000K colour temperature"
   ],
@@ -69,11 +69,11 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "1100 lm"
+            "value": "1100lm"
           },
           {
             "label": "Nominal Flux",
-            "value": "Up to 1100 lm"
+            "value": "Up to 1100lm"
           }
         ]
       }
@@ -84,11 +84,11 @@
         "rows": [
           {
             "label": "Storage Capacity",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Solar Panel",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       },
@@ -97,7 +97,7 @@
         "rows": [
           {
             "label": "Charging Time",
-            "value": "7-8 h"
+            "value": "7–8 h"
           }
         ]
       }

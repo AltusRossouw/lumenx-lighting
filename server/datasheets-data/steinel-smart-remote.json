@@ -28,7 +28,7 @@
     "alt": "Smart Remote"
   },
   "overview": [
-    "Remote control Smart Remote - Full control via remote control. In connection with the corresponding app, the remote control Smart Remote becomes the universal remote control. The Smart Remote replaces"
+    "Remote control Smart Remote - Full control via remote control. In connection with the corresponding app, the remote control Smart Remote becomes the universal remote control. The Smart Remote replaces remote controls RC1 to RC12."
   ],
   "features": [
     "Remote control Smart Remote - Full control via remote control",
@@ -47,7 +47,7 @@
         "rows": [
           {
             "label": "Dimensions (L x W x H)",
-            "value": "26 x 52 x 115 mm"
+            "value": "26 x 52 x 115mm"
           },
           {
             "label": "Colour, RAL",
@@ -63,8 +63,8 @@
             "value": "009151"
           },
           {
-            "label": "PU1, net weight",
-            "value": "0,054 kg"
+            "label": "net weight",
+            "value": "0,054kg"
           },
           {
             "label": "Package content",
@@ -82,7 +82,7 @@
             "value": "5 years"
           },
           {
-            "label": "PU1, EAN",
+            "label": "EAN",
             "value": "4007841009151"
           },
           {

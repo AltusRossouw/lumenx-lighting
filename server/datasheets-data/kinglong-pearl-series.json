@@ -13,11 +13,6 @@
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "5W – 200W (sphere count-dependent)",
-      "unit": ""
-    },
-    {
       "label": "IP Rating",
       "value": "IP20",
       "unit": ""
@@ -33,11 +28,11 @@
   "features": [
     "Mouth-Blown Glass · Optical Acrylic",
     "Champagne Gold · Chrome · Antique Brass · Matte Black finish",
-    "5–200 W power",
+    "5–200W power",
     "IP20 rated",
     "3 Years · LED Driver: 5 Years warranty",
-    "5W – 200W (sphere count-dependent) power",
-    "110V – 240V, 50/60Hz Universal Input",
+    "5W–200W (sphere count-dependent) power",
+    "110V–240V, 50/60Hz Universal Input",
     "Dimming: Triac · 0–10V"
   ],
   "applications": [
@@ -110,7 +105,7 @@
         "rows": [
           {
             "label": "Frame",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Sphere Diameter Options",
@@ -122,7 +117,7 @@
           },
           {
             "label": "Light Source",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       },
@@ -131,15 +126,15 @@
         "rows": [
           {
             "label": "Power",
-            "value": "5–200 W"
+            "value": "5–200W"
           },
           {
             "label": "Wattage",
-            "value": "5W – 200W (sphere count-dependent)"
+            "value": "5W–200W (sphere count-dependent)"
           },
           {
             "label": "Voltage",
-            "value": "110V – 240V, 50/60Hz Universal Input"
+            "value": "110V–240V, 50/60Hz Universal Input"
           },
           {
             "label": "Dimming",

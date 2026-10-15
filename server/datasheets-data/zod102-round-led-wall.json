@@ -5,7 +5,7 @@
   },
   "name": "ZOD102 ROUND LED WALL",
   "category": "OUTDOOR ARCHITECTURAL",
-  "variant": "ZOD102 Round LED Wall — decorative coastal-ready wall light from LumenX: IP65 rated, 12W with up to 1200 lm in 4000K, designed for covered and outdoor wall mounting",
+  "variant": "ZOD102 Round LED Wall — decorative coastal-ready wall light from LumenX: IP65 rated, 12W with up to 1200lm in 4000K, designed for covered and outdoor wall mounting",
   "stats": [
     {
       "label": "Power",
@@ -23,15 +23,15 @@
     "alt": "ZOD102 Round LED Wall"
   },
   "overview": [
-    "ZOD102 Round LED Wall — decorative coastal-ready wall light from LumenX: IP65 rated, 12W with up to 1200 lm in 4000K, designed for covered and outdoor wall mounting."
+    "ZOD102 Round LED Wall — decorative coastal-ready wall light from LumenX: IP65 rated, 12W with up to 1200lm in 4000K, designed for covered and outdoor wall mounting."
   ],
   "features": [
-    "12 W power",
-    "1200 lm lumens",
+    "12W power",
+    "1200lm lumens",
     "IP65 rated",
     "Wall Mount mounting",
     "Black finish",
-    "Up to 100 lm/w efficacy",
+    "Up to 100lm/w efficacy",
     "4000k colour temperature",
     "CRI >80"
   ],
@@ -77,7 +77,7 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "1200 lm"
+            "value": "1200lm"
           },
           {
             "label": "Body",
@@ -100,11 +100,11 @@
           },
           {
             "label": "Nominal Flux",
-            "value": "Up to 1200 lm"
+            "value": "Up to 1200lm"
           },
           {
             "label": "Efficacy",
-            "value": "Up to 100 lm/w"
+            "value": "Up to 100lm/w"
           },
           {
             "label": "CRI",
@@ -117,7 +117,7 @@
         "rows": [
           {
             "label": "Power",
-            "value": "12 W"
+            "value": "12W"
           },
           {
             "label": "Power Factor",
@@ -125,7 +125,7 @@
           },
           {
             "label": "Input Voltage",
-            "value": "220-240V"
+            "value": "220–240V"
           }
         ]
       }

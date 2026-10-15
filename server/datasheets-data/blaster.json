@@ -14,12 +14,17 @@
     },
     {
       "label": "Colour Temperature",
-      "value": "3CCT (3000K/4000K/6000K) Lumen Output:28W = >3220lm \\",
+      "value": "3CCT (3000K/4000K/6000K)",
       "unit": ""
     },
     {
       "label": "Flicker Free CRI",
       "value": ">90",
+      "unit": ""
+    },
+    {
+      "label": "Lumens",
+      "value": "28W = >3220lm",
       "unit": ""
     }
   ],
@@ -28,7 +33,7 @@
     "alt": "Blaster"
   },
   "overview": [
-    "The Blaster is a LumenX track luminaire. It is designed for Retail, Showrooms, Galleries environments. Available in 35/30/28W. Available in 3CCT (3000K/4000K/6000K) Lumen Output:28W = >3220lm \\."
+    "The Blaster is a LumenX track luminaire. It is designed for Retail, Showrooms, Galleries environments. Available in 35/30/28W. Available in 3CCT (3000K/4000K/6000K) Lumen Output:28W = >3220lm."
   ],
   "features": [
     "CRI>90 accurate colour",
@@ -49,7 +54,7 @@
         "rows": [
           {
             "label": "Colour Temperature",
-            "value": "3CCT (3000K/4000K/6000K) Lumen Output:28W = >3220lm \\"
+            "value": "3CCT (3000K/4000K/6000K) Lumen Output:28W = >3220lm"
           },
           {
             "label": "Beam",
@@ -69,7 +74,7 @@
         "title": "Compliance",
         "rows": [
           {
-            "label": "Operating temp",
+            "label": "Operating Temp",
             "value": "-30~40°C"
           },
           {
@@ -78,10 +83,10 @@
           },
           {
             "label": "Certifications",
-            "value": "CE, EMC, IEC60598,"
+            "value": "CE / EMC / IEC 60598"
           },
           {
-            "label": "RoHs IES File",
+            "label": "RoHS / IES File",
             "value": "Yes"
           }
         ]
@@ -90,7 +95,7 @@
         "title": "Technical Data",
         "rows": [
           {
-            "label": "Flicker Free CRI",
+            "label": "Flicker-free CRI",
             "value": ">90"
           }
         ]
@@ -106,7 +111,7 @@
           },
           {
             "label": "Additional Features",
-            "value": "340° Rotation for Aiming *5 YEAR WARRANTY"
+            "value": "340° Rotation for Aiming"
           }
         ]
       },
@@ -119,7 +124,7 @@
           },
           {
             "label": "Input Voltage",
-            "value": "200-265V"
+            "value": "200–265V"
           },
           {
             "label": "Surge Protection",

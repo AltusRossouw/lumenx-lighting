@@ -13,11 +13,6 @@
       "unit": "W"
     },
     {
-      "label": "Wattage",
-      "value": "18W – 300W (configuration-dependent)",
-      "unit": ""
-    },
-    {
       "label": "IP Rating",
       "value": "IP20",
       "unit": ""
@@ -33,11 +28,11 @@
   "features": [
     "Eco-Leather · Stainless Steel",
     "Champagne Gold PVD · Matte Black · Brushed Nickel finish",
-    "18–300 W power",
+    "18–300W power",
     "IP20 rated",
     "3 Years · LED Driver: 5 Years warranty",
-    "18W – 300W (configuration-dependent) power",
-    "110V – 240V, 50/60Hz Universal Input",
+    "18W–300W (configuration-dependent) power",
+    "110V–240V, 50/60Hz Universal Input",
     "Dimming: DALI · 0–10V · Triac"
   ],
   "applications": [
@@ -118,7 +113,7 @@
           },
           {
             "label": "Light Source",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Awards",
@@ -131,15 +126,15 @@
         "rows": [
           {
             "label": "Power",
-            "value": "18–300 W"
+            "value": "18–300W"
           },
           {
             "label": "Wattage",
-            "value": "18W – 300W (configuration-dependent)"
+            "value": "18W–300W (configuration-dependent)"
           },
           {
             "label": "Voltage",
-            "value": "110V – 240V, 50/60Hz Universal Input"
+            "value": "110V–240V, 50/60Hz Universal Input"
           },
           {
             "label": "Dimming",

@@ -29,7 +29,7 @@
     "Protection against dust and high-pressure water (IK10 and IP66)",
     "Made 100% of cement",
     "50,000h L80 B20 useful life.",
-    "5-year warranty for heavy use (4,000 hours/year) and in a marine atmosphere."
+    "5-year warranty for heavy use (4,000hours/year) and in a marine atmosphere."
   ],
   "applications": [
     "Architectural",
@@ -61,7 +61,7 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "1071 lm"
+            "value": "1071lm"
           }
         ]
       }
@@ -81,7 +81,7 @@
         "rows": [
           {
             "label": "Power",
-            "value": "19.3 W"
+            "value": "19.3W"
           },
           {
             "label": "Input Voltage",

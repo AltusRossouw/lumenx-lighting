@@ -8,11 +8,6 @@
   "variant": "Integrated seamless linear with a <3mm end-cap line for continuous runs, in 1200mm and 2400mm.",
   "stats": [
     {
-      "label": "Power",
-      "value": "Contact our team for more details",
-      "unit": ""
-    },
-    {
       "label": "CCT",
       "value": "4000K/5000K (options available)",
       "unit": ""
@@ -75,7 +70,7 @@
         "rows": [
           {
             "label": "Nominal Lifetime (L70)",
-            "value": "60,000 hours (IES LM-80, TM-21)"
+            "value": "60,000hours (IES LM-80, TM-21)"
           },
           {
             "label": "Operational Guarantee (24/7)",
@@ -87,7 +82,7 @@
           },
           {
             "label": "Luminous Efficacy",
-            "value": "110 lm/W"
+            "value": "110lm/W"
           },
           {
             "label": "CCT",
@@ -111,7 +106,7 @@
           },
           {
             "label": "Operating Voltage",
-            "value": "220-240V AC"
+            "value": "220–240V AC"
           }
         ]
       }
@@ -150,7 +145,7 @@
           },
           {
             "label": "Electrical Safety",
-            "value": "IEC60598-1, IEC60598-2-5 compliant"
+            "value": "IEC 60598–1 / IEC 60598–2-5 compliant"
           },
           {
             "label": "WiFi/Barcode/Radio",
@@ -158,7 +153,7 @@
           },
           {
             "label": "THD",
-            "value": "IEC 61000-3-2 Class D Compliant"
+            "value": "IEC 61000–3-2 Class D Compliant"
           },
           {
             "label": "Seamless Design",
@@ -171,7 +166,7 @@
         "rows": [
           {
             "label": "Power",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Power Factor",

@@ -8,16 +8,6 @@
   "variant": "Die-cast aluminium IP65 bulkhead with 4CCT selectable colour temperature for robust exterior applications.",
   "stats": [
     {
-      "label": "Wattage",
-      "value": "Contact our team for more details",
-      "unit": ""
-    },
-    {
-      "label": "Lumen Output",
-      "value": "Contact our team for more details",
-      "unit": ""
-    },
-    {
       "label": "IP Rating",
       "value": "IP65",
       "unit": ""
@@ -65,7 +55,7 @@
           },
           {
             "label": "Colour",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       },
@@ -78,15 +68,15 @@
           },
           {
             "label": "Operating Temp",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "IK Rating",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Certifications",
-            "value": "CE / CE, EMC / IEC"
+            "value": "CE / EMC / IEC"
           }
         ]
       },
@@ -95,7 +85,7 @@
         "rows": [
           {
             "label": "Lumen Output",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "CCT",
@@ -109,16 +99,16 @@
         "title": "Product Information",
         "rows": [
           {
-            "label": "available in",
+            "label": "Available In",
             "value": "Black/White / White"
           },
           {
             "label": "CRI",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "LED Chips",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       },
@@ -127,19 +117,19 @@
         "rows": [
           {
             "label": "Wattage",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Input Voltage",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Surge Protection",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Dimmable",
-            "value": "Contact our team for more details"
+            "value": "—"
           }
         ]
       }

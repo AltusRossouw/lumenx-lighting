@@ -83,7 +83,7 @@
           },
           {
             "label": "Nominal Lifetime (L70)",
-            "value": "70,000 hours"
+            "value": "70,000hours"
           },
           {
             "label": "Testing Standards",
@@ -91,7 +91,7 @@
           },
           {
             "label": "Luminous Efficacy",
-            "value": "135 lm/W"
+            "value": "135lm/W"
           },
           {
             "label": "Correlated Colour Temperature (CCT)",
@@ -111,7 +111,7 @@
           },
           {
             "label": "Operating Voltage",
-            "value": "220-240V AC"
+            "value": "220–240V AC"
           },
           {
             "label": "Minimum Sustained Voltage",
@@ -150,7 +150,7 @@
           },
           {
             "label": "Electrical Standards",
-            "value": "IEC60598-1, IEC60598-2-5 compliant"
+            "value": "IEC60598-1, IEC60598–2-5 compliant"
           },
           {
             "label": "SABS",
@@ -162,15 +162,15 @@
           },
           {
             "label": "Standards",
-            "value": "IEC 61547, SANS 215 (CISPR15) compliant"
+            "value": "IEC 61547 / SANS 215 (CISPR15) compliant"
           },
           {
             "label": "Total Harmonic Distortion",
-            "value": "IEC 61000-3-2 Class C Compliant"
+            "value": "IEC 61000–3-2 Class C Compliant"
           },
           {
             "label": "Optional Battery Backup",
-            "value": "Output 1000 lm for 4h; 6h charge; 1y guarantee"
+            "value": "Output 1000lm for 4h; 6h charge; 1y guarantee"
           },
           {
             "label": "Optional Variable Switching",

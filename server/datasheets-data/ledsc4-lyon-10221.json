@@ -14,7 +14,7 @@
     },
     {
       "label": "Lumens",
-      "value": "0–4741",
+      "value": "4741",
       "unit": "lm"
     }
   ],
@@ -29,7 +29,7 @@
     "Protection against dust and high-pressure water (IK10 and IP66)",
     "BREEAM certification",
     "50,000h L80 B20 useful life.",
-    "5-year warranty for heavy use (4,000 hours/year) and in a marine atmosphere."
+    "5-year warranty for heavy use (4,000hours/year) and in a marine atmosphere."
   ],
   "applications": [
     "Architectural",
@@ -61,7 +61,7 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "0–4741 lm"
+            "value": "4741lm"
           }
         ]
       }
@@ -81,7 +81,7 @@
         "rows": [
           {
             "label": "Power",
-            "value": "55 W"
+            "value": "55W"
           },
           {
             "label": "Input Voltage",

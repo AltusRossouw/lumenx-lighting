@@ -5,7 +5,7 @@
   },
   "name": "V200 UFO HIGHBAY",
   "category": "HIGHBAYS",
-  "variant": "High-performance 160W UFO highbay delivering up to 32,000 lumens for high-ceiling industrial spaces.",
+  "variant": "High-performance 160W UFO highbay delivering up to 32,000lm for high-ceiling industrial spaces.",
   "stats": [
     {
       "label": "Wattage",
@@ -31,7 +31,7 @@
     "A high-output UFO highbay with passive cooling and multiple beam options for manufacturing, logistics and other high-ceiling environments."
   ],
   "features": [
-    "32,000 lm output",
+    "32,000lm output",
     "Passive cooling",
     "Multiple beam options"
   ],
@@ -68,7 +68,7 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "32,000 lm"
+            "value": "32,000lm"
           },
           {
             "label": "Beam Angle",
@@ -86,5 +86,17 @@
         ]
       }
     ]
+  },
+  "notes": [
+    "E &amp; O.E (Errors And Omissions Excepted).",
+    "Due to the rapid development in LED technology the performance values, power consumption and lumen output levels stated above are subject to change without prior notice.",
+    "Due to the interoperability of LED modules and drivers, up to a 10% deviation in these values is possible.",
+    "Nominal flux values are stated at 25° C, based on LED manufacturer’s data.",
+    "Installation environmental conditions may impact the performance and efficiency of the luminaire."
+  ],
+  "contact": {
+    "web": "www.lumenx.co.za",
+    "email": "info@lumenx.co.za",
+    "phone": "+27 83 499 5340"
   }
 }

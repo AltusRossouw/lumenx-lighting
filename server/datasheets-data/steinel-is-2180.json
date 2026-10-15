@@ -18,7 +18,7 @@
       "unit": ""
     },
     {
-      "label": "Detection angle",
+      "label": "Detection Angle",
       "value": "180",
       "unit": "°"
     }
@@ -28,7 +28,7 @@
     "alt": "IS 2180"
   },
   "overview": [
-    "IS 2180 ECO black - Attractive, clever, efficient. Infrared motion detector IS 2180 ECO for outdoors, ideal for building fronts and properties, medium-sized business and outdoor spaces, ideal installa"
+    "IS 2180 ECO black - Attractive, clever, efficient. Infrared motion detector IS 2180 ECO for outdoors, ideal for building fronts and properties, medium-sized business and outdoor spaces, ideal installation height 2m, 180° angle of coverage, reach 12m max. or 5m max. (tangential), selectable time and twilight threshold, manual override, for mounting on outside and inside corners."
   ],
   "features": [
     "black finish",
@@ -52,7 +52,7 @@
           },
           {
             "label": "Dimensions (L x W x H)",
-            "value": "55 x 78 x 120 mm"
+            "value": "55 x 78 x 120mm"
           },
           {
             "label": "Type",
@@ -97,7 +97,7 @@
           },
           {
             "label": "Reach, tangential",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Interconnection via",
@@ -112,8 +112,8 @@
             "value": "034702"
           },
           {
-            "label": "PU1, net weight",
-            "value": "0,2 kg"
+            "label": "net weight",
+            "value": "0,2kg"
           },
           {
             "label": "Package content",
@@ -132,12 +132,12 @@
             "value": "No"
           },
           {
-            "label": "PU1, EAN",
+            "label": "EAN",
             "value": "4007841034702"
           },
           {
             "label": "Application, room",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Includes corner wall mount",
@@ -153,19 +153,19 @@
           },
           {
             "label": "Ambient temperature",
-            "value": "from -20 up to 50 °C"
+            "value": "from -20 up to 50°C"
           },
           {
             "label": "Mains power supply",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Switching output 1, resistive",
-            "value": "2000 W"
+            "value": "2000W"
           },
           {
             "label": "Fluorescent lamps, electronic ballast",
-            "value": "350 W"
+            "value": "350W"
           },
           {
             "label": "Fluorescent lamps, uncorrected",
@@ -191,16 +191,16 @@
             "value": "1000 VA"
           },
           {
-            "label": "LED lamps < 2 W",
-            "value": "100 W"
+            "label": "LED lamps < 2W",
+            "value": "100W"
           },
           {
-            "label": "LED lamps > 2 W < 8 W",
-            "value": "175 W"
+            "label": "LED lamps > 2W < 8W",
+            "value": "175W"
           },
           {
-            "label": "LED lamps > 8 W",
-            "value": "350 W"
+            "label": "LED lamps > 8W",
+            "value": "350W"
           },
           {
             "label": "Capacitive load in μF",
@@ -236,7 +236,7 @@
           },
           {
             "label": "Reach, radial",
-            "value": "Contact our team for more details"
+            "value": "—"
           },
           {
             "label": "Switching zones",
@@ -244,7 +244,7 @@
           },
           {
             "label": "Twilight setting",
-            "value": "2 – 2000 lx"
+            "value": "2–2000 lx"
           },
           {
             "label": "Time setting",
@@ -281,11 +281,11 @@
         "rows": [
           {
             "label": "Voltage range (min)",
-            "value": "230 V"
+            "value": "230V"
           },
           {
             "label": "Voltage range (max)",
-            "value": "240 V"
+            "value": "240V"
           }
         ]
       }

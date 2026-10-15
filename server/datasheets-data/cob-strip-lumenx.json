@@ -13,7 +13,7 @@
       "unit": ""
     },
     {
-      "label": "Lumen Output",
+      "label": "Lumens",
       "value": ">500lm/1100lm",
       "unit": ""
     },
@@ -74,10 +74,10 @@
           },
           {
             "label": "Certifications",
-            "value": "CE,"
+            "value": "CE"
           },
           {
-            "label": "RohS IES File",
+            "label": "RoHS / IES File",
             "value": "No"
           }
         ]
@@ -86,7 +86,7 @@
         "title": "Technical Data",
         "rows": [
           {
-            "label": "Available in",
+            "label": "Available In",
             "value": "1m/5m/50m"
           },
           {
@@ -114,7 +114,7 @@
           },
           {
             "label": "Additional Features",
-            "value": "Max 5m series installation with no voltage drop *3 YEAR WARRANTY DOWNLOAD SPEC SHEET"
+            "value": "Max 5m series installation with no voltage drop"
           }
         ]
       },
@@ -131,7 +131,7 @@
           },
           {
             "label": "Dimmable",
-            "value": "Yes 0-24V"
+            "value": "Yes 0–24V"
           }
         ]
       }

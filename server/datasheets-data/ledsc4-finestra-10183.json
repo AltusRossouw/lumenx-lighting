@@ -61,7 +61,7 @@
         "rows": [
           {
             "label": "Lumens",
-            "value": "281–414 lm"
+            "value": "281–414lm"
           }
         ]
       }
@@ -81,11 +81,11 @@
         "rows": [
           {
             "label": "Power",
-            "value": "5.4–10.8 W"
+            "value": "5.4–10.8W"
           },
           {
             "label": "Input Voltage",
-            "value": "100-240V"
+            "value": "100–240V"
           }
         ]
       }
