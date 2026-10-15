@@ -9,12 +9,12 @@
   "stats": [
     {
       "label": "Wattage",
-      "value": "12W/16W/18W / 120W (10 / 35W",
+      "value": "Contact our team for more details",
       "unit": ""
     },
     {
       "label": "Lumen Output",
-      "value": "130lm/W / 30 000lm / 3 500lm / 153 600lm",
+      "value": "Contact our team for more details",
       "unit": ""
     },
     {
@@ -65,7 +65,7 @@
           },
           {
             "label": "Colour",
-            "value": "Black / 6000K"
+            "value": "Contact our team for more details"
           }
         ]
       },
@@ -78,11 +78,11 @@
           },
           {
             "label": "Operating Temp",
-            "value": "-20~45°C / -35°C to 45°C / -30 ~ 50°C / -15~45°C / -20~40°C"
+            "value": "Contact our team for more details"
           },
           {
             "label": "IK Rating",
-            "value": "IK08 / IK05"
+            "value": "Contact our team for more details"
           },
           {
             "label": "Certifications",
@@ -95,7 +95,7 @@
         "rows": [
           {
             "label": "Lumen Output",
-            "value": "130lm/W / 30 000lm / 3 500lm / 153 600lm"
+            "value": "Contact our team for more details"
           },
           {
             "label": "CCT",
@@ -114,11 +114,11 @@
           },
           {
             "label": "CRI",
-            "value": ">80 / >83"
+            "value": "Contact our team for more details"
           },
           {
             "label": "LED Chips",
-            "value": "Sanan 2835 / Bridgelux / Lumileds 5050"
+            "value": "Contact our team for more details"
           }
         ]
       },
@@ -127,19 +127,19 @@
         "rows": [
           {
             "label": "Wattage",
-            "value": "12W/16W/18W / 120W (10 / 35W"
+            "value": "Contact our team for more details"
           },
           {
             "label": "Input Voltage",
-            "value": "100-265V / 200-260V (DOB) / 175-264V / 200V-265V / 180-277V"
+            "value": "Contact our team for more details"
           },
           {
             "label": "Surge Protection",
-            "value": "2kV / 10kV / 1kV / 3kV / 10kV (Meanwell"
+            "value": "Contact our team for more details"
           },
           {
             "label": "Dimmable",
-            "value": "No / Yes with 35W"
+            "value": "Contact our team for more details"
           }
         ]
       }

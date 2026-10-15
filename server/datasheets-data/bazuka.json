@@ -9,17 +9,17 @@
   "stats": [
     {
       "label": "Wattage",
-      "value": "25W / 15W / 35W / 18W / 30W/35W/40W/50W",
+      "value": "Contact our team for more details",
       "unit": ""
     },
     {
       "label": "Lumen Output",
-      "value": "2 500lm / 1 500lm / 3 500lm / 800lm PF: / 100lm/W / 36°",
+      "value": "Contact our team for more details",
       "unit": ""
     },
     {
       "label": "Colour Temperature",
-      "value": "3CCT (3000K/4000K/6000K) / 3000K / 6000K/4000K / 3CCT(3000K/4000K/6000K)",
+      "value": "Contact our team for more details",
       "unit": ""
     }
   ],
@@ -48,7 +48,7 @@
         "rows": [
           {
             "label": "Colour Temperature",
-            "value": "3CCT (3000K/4000K/6000K) / 3000K / 6000K/4000K / 3CCT(3000K/4000K/6000K)"
+            "value": "Contact our team for more details"
           },
           {
             "label": "Mounting",
@@ -64,11 +64,11 @@
           },
           {
             "label": "Housing",
-            "value": "Aluminium / Round, Square / CNC / Glass"
+            "value": "Contact our team for more details"
           },
           {
             "label": "Colour",
-            "value": "Matt / Silver / White"
+            "value": "Contact our team for more details"
           }
         ]
       },
@@ -77,7 +77,7 @@
         "rows": [
           {
             "label": "Operating Temp",
-            "value": "-15~45°C / -20~45°C"
+            "value": "Contact our team for more details"
           },
           {
             "label": "IK Rating",
@@ -94,11 +94,11 @@
         "rows": [
           {
             "label": "Lumen Output",
-            "value": "2 500lm / 1 500lm / 3 500lm / 800lm PF: / 100lm/W / 36°"
+            "value": "Contact our team for more details"
           },
           {
             "label": "CRI",
-            "value": ">83 / >85"
+            "value": "Contact our team for more details"
           }
         ]
       }
@@ -109,7 +109,7 @@
         "rows": [
           {
             "label": "LED Chips",
-            "value": "Bridgelux / 2835 / High"
+            "value": "Contact our team for more details"
           },
           {
             "label": "available in",
@@ -122,19 +122,19 @@
         "rows": [
           {
             "label": "Wattage",
-            "value": "25W / 15W / 35W / 18W / 30W/35W/40W/50W"
+            "value": "Contact our team for more details"
           },
           {
             "label": "Input Voltage",
-            "value": "200-277V / 200V-265V / 200-265V / 180V- 265V"
+            "value": "Contact our team for more details"
           },
           {
             "label": "Surge Protection",
-            "value": "3kV / 1kv / 2kV"
+            "value": "Contact our team for more details"
           },
           {
             "label": "Dimmable",
-            "value": "Yes with 35W / Yes / No"
+            "value": "Contact our team for more details"
           }
         ]
       }

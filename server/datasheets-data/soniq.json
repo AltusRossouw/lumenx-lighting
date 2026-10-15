@@ -19,7 +19,7 @@
     },
     {
       "label": "Lumen Output",
-      "value": "60W=9 000lm/80W=12 000lm/100W=15 000lm / 1 500lm / 30W= 4 500lm | 40W= 6 000lm 50W= 7 500lm / 800lm PF: / 100lm/W / 36°",
+      "value": "Contact our team for more details",
       "unit": ""
     }
   ],
@@ -52,7 +52,7 @@
           },
           {
             "label": "Colour Temperature",
-            "value": "3CCT ( 3000K/4000K/6000K) / 6000K/4000K / 3CCT(3000K/4000K/6000K)"
+            "value": "Contact our team for more details"
           },
           {
             "label": "Beam Angle",
@@ -60,11 +60,11 @@
           },
           {
             "label": "Housing",
-            "value": "Pure / CNC / Glass / Round, Square / Aluminium"
+            "value": "Contact our team for more details"
           },
           {
             "label": "Colour",
-            "value": "Silver / Matt / White"
+            "value": "Contact our team for more details"
           }
         ]
       },
@@ -73,7 +73,7 @@
         "rows": [
           {
             "label": "Operating Temp",
-            "value": "-25~45°C / -20~45°C / -15~45°C"
+            "value": "Contact our team for more details"
           },
           {
             "label": "IK Rating",
@@ -90,7 +90,7 @@
         "rows": [
           {
             "label": "Lumen Output",
-            "value": "60W=9 000lm/80W=12 000lm/100W=15 000lm / 1 500lm / 30W= 4 500lm | 40W= 6 000lm 50W= 7 500lm / 800lm PF: / 100lm/W / 36°"
+            "value": "Contact our team for more details"
           },
           {
             "label": "Linking",
@@ -105,11 +105,11 @@
         "rows": [
           {
             "label": "CRI",
-            "value": ">80 / >83 / >85"
+            "value": "Contact our team for more details"
           },
           {
             "label": "LED Chips",
-            "value": "Epistar 2835 / 2835 / High"
+            "value": "Contact our team for more details"
           }
         ]
       },
@@ -126,15 +126,15 @@
           },
           {
             "label": "Input Voltage",
-            "value": "AC180-277V / 180V- 265V / 200-277V"
+            "value": "Contact our team for more details"
           },
           {
             "label": "Surge Protection",
-            "value": "2.5kV / 1kv / 2kV"
+            "value": "Contact our team for more details"
           },
           {
             "label": "Dimmable",
-            "value": "No / Yes"
+            "value": "Contact our team for more details"
           }
         ]
       }
