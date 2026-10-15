@@ -43,3 +43,8 @@ docs/fromKaylen/
 scripts/examples/generated/
 scripts/__pycache__/
 __pycache__/
+
+# Scratch from the catalogue/image scripts: a full Chrome profile lands in
+# here (Cookies, Login Data, History) and must never be committed.
+.catalogue-build/
+probe-test.png
