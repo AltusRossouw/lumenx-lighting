@@ -267,18 +267,27 @@ export const OFFICIAL_PRODUCTS: Product[] = [
   //    photo with the "pioled" logo visible, so the clean asset heads the
   //    gallery and the branded original is dropped from it by `exclude`.
 
-  // Client asked for "a different image"; the scraped shot is the only one and
-  // it is branded, so the three-quarter view replaces the flat front-on frame.
+  // Client asked for "a different image". The only supplier file is one
+  // composite of three views, and `/product-images/mario.png` was a re-export of
+  // that same composite rather than a different photograph, so the page looked
+  // unchanged. The hero is now the front-on view cut out of the composite on its
+  // own — see scripts/make-derivative-crops.py.
   fromScraped('downlights', 'mario', 'Mario', 'lumenx-datasheet-mario.pdf', {
-    hero: '/product-images/mario.png',
+    hero: '/product-images/mario-front.png',
     exclude: ['/scraped/downlights/mario/01-pioled-lighting-hd020-35w-mario-led-round-tilt-downlight-3cct-1.jpg'],
   }),
-  // "Enlarge the fitting in frame" plus "remove the logo". The shipped
-  // /product-images/blaster.png showed the fitting at 29% of a 1024px frame and
-  // carried the supplier's name on the driver label inside it, so the hero is a
-  // cropped, enlarged, de-branded derivative — see scripts/make-derivative-crops.py.
+  // "Enlarge the fitting in frame" plus "remove the logo". The hero is the
+  // supplier's own studio shot of the TKW101 track spot, cropped in and with the
+  // "PIOLED LIGHTING" driver label inpainted off the track adapter — see
+  // scripts/make-derivative-crops.py.
+  //
+  // This previously pointed at `/product-images/blaster-crop.png`, a crop of
+  // `/product-images/blaster.png`. That file is NOT the Blaster: it is an 18W
+  // PioLED magnetic ceiling module (PIO-SRL-18W), so the Blaster product page was
+  // fronting a completely unrelated fitting. The mislabelled asset is kept as
+  // `/product-images/unidentified-led-ceiling-module-18w.png`.
   fromScraped('track', 'blaster', 'Blaster', 'lumenx-datasheet-blaster.pdf', {
-    hero: '/product-images/blaster-crop.png',
+    hero: '/product-images/blaster-track.png',
     exclude: ['/scraped/track/blaster/01-pioled-lighting-tkw101-blaster-high-power-3-wire-track-spot-white-c.png'],
   }),
   // "Use the black one." The shipped leda.png is a three-fitting card, so the

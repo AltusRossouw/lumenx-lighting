@@ -379,14 +379,31 @@ currently showing **supplier photos with the "pioled" branding visible** — whi
 
 | Product | Current hero | Replace with | Also |
 |---|---|---|---|
-| Mario | `/scraped/downlights/mario/01-pioled-…jpg` | `/product-images/mario.png` | client asked for "a different image" |
-| Blaster | `/scraped/track/blaster/01-pioled-…png` | `/product-images/blaster.png` | remove logo; **enlarge the fitting in frame** |
+| Mario | `/scraped/downlights/mario/01-pioled-…jpg` | `/product-images/mario-front.png` | client asked for "a different image" — see note below |
+| Blaster | `/scraped/track/blaster/01-pioled-…png` | `/product-images/blaster-track.png` | remove logo; **enlarge the fitting in frame** — see note below |
 | Leda | `/scraped/track/leda/member-01-…png` | black variant + `/product-images/leda.png` | client: "use the black one" |
 | Kuda | `/scraped/vapourproof/kuda/member-01-…png` | `/product-images/kuda.png` | client: "use a different image" |
 | Soniq | `/scraped/linears/soniq/member-01-…png` | `/product-images/soniq.png` | |
 | Strip lighting | blued-out LED image | `/product-images/COB_STRIP.png` | client: "the LEDs are blued out… use the COB image" |
 | PC Bulkhead | tile duplicates the **Hero** product's image | a distinct PC Bulkhead shot | this is what "remove Hero" actually meant (Q: keep PC Bulkhead) |
 | Cloud Bell | `/scraped/decorative/cloud-bell/03-cloudbell-s1-…webp` | pick best of 12 candidates | Q8: "choose the most suitable" |
+
+> **Two of these rows were wrong as first written, and both shipped.**
+>
+> **Blaster** — `/product-images/blaster.png` is not the Blaster. It is an 18W PioLED
+> magnetic ceiling module (PIO-SRL-18W), so pointing the hero at it put an unrelated
+> fitting on the Blaster product page, and on its card in the track grid. The file is
+> kept as `/product-images/unidentified-led-ceiling-module-18w.png`. The correct source
+> is the scraped TKW101 studio shot, which this row already names as the current hero.
+>
+> **Mario** — `/product-images/mario.png` was a re-export of the very composite the
+> client asked to move away from (0.994 correlation on product pixels against the
+> scraped original), so the page looked unchanged. The "different image" is the
+> front-on view cut out of that composite.
+>
+> Both are now produced by `scripts/make-derivative-crops.py`, which owns the crop
+> geometry and the Blaster de-brand. The standing lesson: **check that an asset's
+> filename matches the product in it** before wiring it up.
 
 Wire these up in `src/official-products.ts` using the existing `fromScraped(..., { hero, exclude })`
 pattern (see `sauron` and `bazuka` for worked examples).
@@ -477,7 +494,7 @@ Do **not** remove Kaylen. Confirmed in Q12: *"yes, keep the same just remove the
 |---|---|
 | F5 | **No group photo.** The client could not find one (*"maybe we just leave pictures out for now"*), so drop `ABOUT_TEAM_PHOTO` from the About page and use a **headshot per founder** instead — agreed on the call (*"I'll just add a nice headshot of each of you"*) |
 | F5b | `public/headshots/team-kaylen-frans-placeholder.svg` is still a placeholder ("Kaylen and Frans together") and is referenced at `src/data.ts:229` and rendered at `src/components/AboutPage.tsx:96`. Replace with the founder-headshot layout |
-| F5c | Only `Kaylen-Reddy-Headshot.png` exists in `public/headshots/`. **Frans's headshot is still needed** |
+| F5c | ~~Only `Kaylen-Reddy-Headshot.png` exists in `public/headshots/`. **Frans's headshot is still needed**~~ **Done.** Frans's photograph arrived as `public/headshots/IMG_3557_Original.png` and is used as `/headshots/Frans-Rossouw-Headshot.jpg` (see the derivation note in `src/data.ts`). The `HEADSHOT TO BE SUPPLIED` placeholder is no longer referenced |
 | F4 | **Blocked:** "the text here and there" — Franz was going to send updated About copy ("I will quickly send the change text to Altus"). Not present in the repo. Chase before implementing |
 
 ---
@@ -549,7 +566,7 @@ files, shadowing the real `.png` of the same name next to it. `catalogue-build/`
 
 | Item | Why it is blocked |
 |---|---|
-| Frans's headshot | Only Kaylen's exists in `public/headshots/` |
+| ~~Frans's headshot~~ | **Resolved** — supplied and wired up as `/headshots/Frans-Rossouw-Headshot.jpg` |
 | Updated About page copy (F4) | Franz said he would send it; not in the repo |
 | Clean panel / vapour-proof originals (8c) | Watermarks and water splashes cannot be retouched out |
 | Hi-res Fabric Tape imagery (8c) | All 24 sources are low-res watermarked `.avif` |

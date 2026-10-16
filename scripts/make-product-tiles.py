@@ -121,7 +121,10 @@ SRC_OVERRIDE = {
     # The rest of the range shots. Each of these put several objects on one
     # card -- a fitting with its loose driver, three sizes of the same spot, a
     # light and a black one together. Cropped to the largest single object.
-    'downlights/mario': 'public/product-images/mario-single.png',
+    #
+    # mario used to be pinned here to `mario-single.png`, the three-quarter view.
+    # The curated hero is now `mario-front.png`, the front-on view cut from the
+    # same composite, and a pin here would silently outrank it.
     'downlights/legend': 'public/product-images/legend-single.png',
     'downlights/sauron': 'public/product-images/sauron-single.png',
     'downlights/surface-adjustable-downlight': 'public/product-images/pakman-single.png',
