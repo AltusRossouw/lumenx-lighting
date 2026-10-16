@@ -220,12 +220,18 @@ export const MANAGING_DIRECTOR: ManagingDirector = {
 /**
  * About page copy — the founders' story.
  *
- * Each founder carries their own headshot. Kaylen's is the supplied photograph;
- * Frans's is still a labelled placeholder in `public/headshots/`, so replacing
- * that one file is the whole job once his photograph arrives.
+ * Each founder carries their own headshot, and both are supplied photographs
+ * now — the "HEADSHOT TO BE SUPPLIED" placeholder that used to front Frans's
+ * card is no longer referenced.
+ *
+ * Frans's is derived from `public/headshots/IMG_3557_Original.png` (2436x3045
+ * PNG, 10.5 MB): resampled to 1080x1350, JPEG quality 88 + progressive, which
+ * is ~300 KB. The source is already 4:5, so the card's `object-cover` never has
+ * to crop his face. The 10.5 MB original stays untracked rather than going into
+ * the repo and the Docker image.
  */
 export const ABOUT_HEADSHOT_KAYLEN = '/headshots/Kaylen-Reddy-Headshot.png';
-export const ABOUT_HEADSHOT_FRANS = '/headshots/Frans-Rossouw-Headshot-placeholder.svg';
+export const ABOUT_HEADSHOT_FRANS = '/headshots/Frans-Rossouw-Headshot.jpg';
 
 export const ABOUT: AboutPageContent = {
   hero: {
