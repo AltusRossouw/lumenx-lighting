@@ -103,17 +103,46 @@ SRC_OVERRIDE = {
     'track/snypa': 'public/product-images/snypa-single.png',
     # A white and a black spot together; one reads as two products.
     'track/35w-track-spot': 'public/product-images/35w-track-spot-single.png',
+    # NOTE: the category id here is `architectural-indoor`. These three keys were
+    # written as `indoor-architectural/…`, which matches no product, so the
+    # overrides silently never applied and both tiles kept rendering the raw
+    # scrape. That is what the client was seeing when they said the fabric tape
+    # image "hasn't uploaded". Keys are now validated against src/products.ts.
+    #
     # Three cone pendants at different sizes in one frame. The crop is only
     # 206px, so this card is soft -- flagged for a supplier shot.
     # ...and the 3x ML Super Resolution takes it to 618px, so it now downscales
     # for the card instead of being blown up 2.5x.
-    'indoor-architectural/attic': 'public/product-images/attic-single-upscaled.png',
+    'architectural-indoor/attic': 'public/product-images/attic-single-upscaled.png',
     # Every one of the twelve candidates in this folder is a 147x147 thumbnail,
     # which the card blew up 3.55x -- the worst image in the catalogue. The
     # supplier only ever published thumbnails, so this is the same photograph at
     # 441x441 via Pixelmator's 3x ML Super Resolution. Still a 1.18x upscale, but
     # no longer mush. A real studio shot is still wanted from the supplier.
-    'indoor-architectural/fabric-tape': 'public/product-images/fabric-tape-upscaled.png',
+    'architectural-indoor/fabric-tape': 'public/product-images/fabric-tape-upscaled.png',
+
+    # ── The Kinglong decorative range: applications, not product renders ──────
+    # Every supplier render of these five carries a "KINGLONG / MO FUN PROJECT"
+    # watermark burned into the middle of the product, which the client asked to
+    # be rid of. The instruction was explicit about how: not retouching, but
+    # "changing it to the application picture… the installation picture, from the
+    # website". So these are the supplier's own case-study installation shots,
+    # pulled from kinglong-lighting.net (crystal-cloud-series, pearl-series,
+    # jiangnan-series, dream-pen-series, cloud-bell-series) — the fitting in a
+    # real interior, no watermark, and they double as the "seen in application"
+    # image the decorative range never had.
+    #
+    # They are 3:4 portraits, so the flat treatment (the shot whole, uncropped, on
+    # its own backdrop) is what does the framing here.
+    #
+    # `apply-catalogue-overrides.mjs` also replaces these products' scraped
+    # gallery images with the same photograph, so the watermarked renders cannot
+    # be reached from the product page either.
+    'architectural-indoor/crystal-cloud': 'public/product-images/crystal-cloud-installation.jpg',
+    'architectural-indoor/pearl': 'public/product-images/pearl-installation.jpg',
+    'architectural-indoor/jiangnan': 'public/product-images/jiangnan-installation.jpg',
+    'architectural-indoor/dream-pen': 'public/product-images/dream-pen-installation.jpg',
+    'architectural-indoor/cloud-bell': 'public/product-images/cloud-bell-installation.jpg',
     # A linear batten with an unrelated round fitting beside it. Keeps the
     # batten (--blob 1), which is the product this slug names.
     'vapourproof/kuda': 'public/product-images/kuda-single.png',
@@ -122,13 +151,16 @@ SRC_OVERRIDE = {
     # card -- a fitting with its loose driver, three sizes of the same spot, a
     # light and a black one together. Cropped to the largest single object.
     #
-    # mario used to be pinned here to `mario-single.png`, the three-quarter view.
-    # The curated hero is now `mario-front.png`, the front-on view cut from the
-    # same composite, and a pin here would silently outrank it.
+    # mario is deliberately NOT pinned here. It was, to `mario-single.png`, and a
+    # pin silently outranks the curated hero — which would keep the old view on
+    # the tile no matter what official-products.ts said. The curated hero is
+    # `mario-tilt.png`, the top-right view the client picked out of the composite.
     'downlights/legend': 'public/product-images/legend-single.png',
     'downlights/sauron': 'public/product-images/sauron-single.png',
     'downlights/surface-adjustable-downlight': 'public/product-images/pakman-single.png',
-    'downlights/gu10-downlight': 'public/product-images/gu10-single.png',
+    # NOTE: there is no `downlights/gu10-downlight` product any more — the GU10
+    # range went with the Snypa merge. The pin that used to sit here matched
+    # nothing, and its `gu10-single.png` is now orphaned.
     'linears/lds5083': 'public/product-images/lds5083-single.png',
     'outdoor-architectural/orbit': 'public/product-images/orbit-single.png',
 
@@ -141,6 +173,17 @@ SRC_OVERRIDE = {
     'bollards/everest-square': 'public/product-images/everest-square-single.png',
 }
 MAX_CANDIDATES = 10
+
+# Products whose chosen source is an application/installation photograph rather
+# than a product-on-sweep shot. These take card_art.compose_photo (full-bleed)
+# instead of compose_flat — see the note in render().
+PHOTO_TILES = {
+    'architectural-indoor/crystal-cloud',
+    'architectural-indoor/pearl',
+    'architectural-indoor/jiangnan',
+    'architectural-indoor/dream-pen',
+    'architectural-indoor/cloud-bell',
+}
 
 # ── W7 · white-on-white contrast pass ────────────────────────────────────────
 #
@@ -216,18 +259,16 @@ CONTRAST_SHADE = {
     'vapourproof/neptune': 0.70,
     'vapourproof/titan': 0.72,
     'vapourproof/vp': 0.94,
-    # Two more white-on-white subjects, added 16 Oct when the client replaced
-    # their heroes. Neither was in the families the client originally named:
+    # Added 16 Oct. The OrbitX Retrofit module is a white PCB disc photographed
+    # straight on. It used to be shown as a dimension drawing, which at least had
+    # red callouts to read against the frame; the real photograph has only the
+    # connector, so the disc's silhouette is all there is to see.
     #
-    #  · Mario is the client-supplied three-view shot. The large front view fills
-    #    its third of the frame with a white COB reflector, and pure white on a
-    #    pure-white frame loses that reflector's outer edge completely. (The
-    #    single-view hero it replaced had a darker outer ring and did not.)
-    #  · the OrbitX Retrofit module is a white PCB disc photographed straight on.
-    #    It used to be shown as a dimension drawing, which at least had red
-    #    callouts to read against the frame; the real photograph has only the
-    #    connector, so the disc's silhouette is all there is to see.
-    'downlights/mario': 0.78,
+    # Mario sat in this list for a day, while its hero was the three-view
+    # composite: the large front view filled its third of the frame with a white
+    # COB reflector that vanished into a white frame. The hero is now the single
+    # tilted view, which carries a black bezel and grey ribs, so it no longer
+    # needs shading — and shading it would only grey the product.
     'bulkheads/retrofit-module': 0.80,
 }
 
@@ -525,6 +566,15 @@ def render(category, slug, name, cands, force=False, report=False):
         return 'scored', os.path.relpath(best, ROOT) + tag, best_score
 
     os.makedirs(dest_dir, exist_ok=True)
+
+    # Application photographs get their own treatment. They are pictures of a
+    # room, not a product on a sweep: compose_flat would whiten them against
+    # their own border colour and blow the frame out, and there is no product to
+    # isolate for a cut-out. compose_photo fills the tile full-bleed instead.
+    if f'{category}/{slug}' in PHOTO_TILES:
+        card_art.compose_photo(best, dest)
+        return 'rendered', os.path.relpath(best, ROOT), best_score
+
     # Flat treatment: the shot goes on a tile of its own backdrop colour, whole
     # and uncropped. The cut-out path is deliberately no longer used here -- a
     # mask is the one thing that cannot be made reliable on a pale product

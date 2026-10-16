@@ -186,7 +186,7 @@ export const OFFICIAL_PRODUCTS: Product[] = [
     slug: '600x1200-recessed-panel', name: '600x1200 Recessed Panel', category: 'panels',
     summary: 'Wide-format recessed LED panel for modern architectural ceiling layouts.',
     description: 'A 600x1200mm back-lit recessed LED panel delivering uniform, low-glare illumination for elongated architectural ceiling layouts. UGR <19 and flicker-free.',
-    image: '/product-images/600x1200_Recessed_Panel.png',
+    image: '/product-images/600x1200_Recessed_Panel.jpg',
     specs: [{ label: 'Wattage', value: '50W' }, { label: 'Lumens', value: '6,500 lm' }, { label: 'IP Rating', value: 'IP20' }, { label: 'Dimensions', value: '595 x 1195 x 30mm' }, { label: 'UGR', value: '<19' }, { label: 'CRI', value: '>80' }, { label: 'Beam Angle', value: '120°' }, { label: 'Driver', value: 'Flicker-free' }],
     features: ['Uniform edge-to-edge illumination', 'Flicker-free driver', 'Architectural 600x1200 format'],
     applications: ['Architectural offices', 'Boardrooms', 'Reception areas', 'Corridors'],
@@ -267,17 +267,19 @@ export const OFFICIAL_PRODUCTS: Product[] = [
   //    photo with the "pioled" logo visible, so the clean asset heads the
   //    gallery and the branded original is dropped from it by `exclude`.
 
-  // Client asked for "a different image", then supplied the replacement
-  // directly on 16 Oct. The hero is that supplied shot — three views on white —
-  // and `exclude` drops the scraped original, which carries the "pioled" logo.
+  // Client: "the Mario, you've used the wrong image on that one… it's the one on
+  // the top right", and "the main one just have that one image". The supplier
+  // ships one 1024px sheet of three views, so the hero is the top-right (tilted)
+  // view cut out of it on its own by scripts/make-derivative-crops.py.
   //
-  // Mario's previous hero was a single front-on view cut from the old composite
-  // by scripts/make-derivative-crops.py; the supplied image supersedes it, and
-  // the tile contrast allow-list in scripts/make-product-tiles.py shades the
-  // white COB face so its outer edge does not vanish into the frame.
+  // The three-view sheet stays in the gallery — the client asked to keep it
+  // available ("we can have this in once we select it") — so it is deliberately
+  // NOT `exclude`d. It carries no supplier logo, so there is nothing to hide.
+  //
+  // Do not point this back at the sheet: an earlier fix set the hero to a
+  // re-encode of it, which is the composite the client had just rejected.
   fromScraped('downlights', 'mario', 'Mario', 'lumenx-datasheet-mario.pdf', {
-    hero: '/product-images/mario-front.png',
-    exclude: ['/scraped/downlights/mario/01-pioled-lighting-hd020-35w-mario-led-round-tilt-downlight-3cct-1.jpg'],
+    hero: '/product-images/mario-tilt.png',
   }),
   // "Enlarge the fitting in frame" plus "remove the logo". The hero is the
   // supplier's own studio shot of the TKW101 track spot, cropped in and with the
@@ -293,15 +295,16 @@ export const OFFICIAL_PRODUCTS: Product[] = [
     hero: '/product-images/blaster-track.png',
     exclude: ['/scraped/track/blaster/01-pioled-lighting-tkw101-blaster-high-power-3-wire-track-spot-white-c.png'],
   }),
-  // "Use the black one." The shipped leda.png is a three-fitting card, so the
-  // black track linear is cropped out of it on its own.
+  // "Use the black one." The hero is the black 4ft 3-wire track tiltable linear,
+  // cut from the scrape by scripts/make-derivative-crops.py.
+  //
+  // It used to be cut from `/product-images/leda.png`, which is a three-object
+  // card of HIGH-BAY fittings — the wrong product entirely, and the reason the
+  // Leda card was showing a high bay. That file is kept, renamed, as
+  // `/product-images/unidentified-highbay-composite.png`. The three scraped Leda
+  // shots are the real product and are no longer `exclude`d.
   fromScraped('track', 'leda', 'Leda', 'lumenx-datasheet-leda.pdf', {
     hero: '/product-images/leda-single.png',
-    exclude: [
-      '/scraped/track/leda/member-01-pioled-lighting-tk005-4ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png',
-      '/scraped/track/leda/member-02-pioled-lighting-tk004-3ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png',
-      '/scraped/track/leda/member-03-pioled-lighting-tk002-2ft-leda-3-wire-track-tiltable-linear-3cct-white.png',
-    ],
   }),
   fromScraped('vapourproof', 'kuda', 'Kuda', 'lumenx-datasheet-kuda.pdf', {
     hero: '/product-images/kuda.png',

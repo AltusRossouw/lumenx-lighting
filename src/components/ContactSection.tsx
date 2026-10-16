@@ -330,11 +330,17 @@ export const ContactSection: React.FC = () => {
                 Sized against the header logo, not the old h-9. The header
                 renders the wordmark at h-24 (96px) but the image is 2981x1275,
                 so its lines only occupy the middle ~300px of that box — h-9 read
-                as visibly smaller than the header mark. `w-full max-w-[15rem]`
+                as visibly smaller than the header mark. `w-full max-w-[…]`
                 with `h-auto` keeps the same optical size while staying inside
                 the card at every breakpoint.
+
+                16 Oct: the client asked for this one bigger — "on the contact
+                page, remember we discussed making that Luminex bigger?" — so the
+                cap goes 15rem -> 19rem. This is the contact page's standalone
+                brand mark; the inline wordmark in the h2 above ("Bring ___ into
+                the project") is a heading element at !h-20 and is left alone.
               */}
-              <LumenXWordmark className="!h-auto w-full max-w-[15rem] mx-auto" />
+              <LumenXWordmark className="!h-auto w-full max-w-[19rem] mx-auto" />
               <p className="text-[10px] text-slate-500 font-mono tracking-widest mt-2">{contact.tagline}</p>
             </div>
           </motion.div>

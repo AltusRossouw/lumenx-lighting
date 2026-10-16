@@ -81,50 +81,20 @@ export const AboutPage: React.FC = () => {
           </Reveal>
 
           {/*
-            Founder headshots, one per founder.
+            Founder stories.
 
-            A group photograph sat here until the 15 Oct review. The client
-            could not find one to use ("maybe we just leave pictures out for
-            now") and agreed on the call to use a headshot per founder instead,
-            so the two portraits carry this block and the introduction flows
-            beneath them.
+            A group photograph sat here until the 15 Oct review, and a 2-up
+            headshot grid replaced it. That grid showed the same two portraits as
+            the biography block below, so each founder's face appeared twice on
+            one page — "I don't think we need to have a picture in twice… just
+            the bottom, the bottom ones". The portraits now appear once, beside
+            their biographies; the introduction flows above them.
           */}
           <div ref={teamRef} className="mt-12 sm:mt-14">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={teamInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8 }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 max-w-3xl"
-            >
-              {team.members.map((member) => (
-                <figure
-                  key={member.name}
-                  className="relative overflow-hidden rounded-2xl border border-[#1E293B]"
-                >
-                  <img
-                    src={member.image}
-                    alt={member.imageAlt}
-                    loading="lazy"
-                    className="w-full aspect-[4/5] object-cover object-top"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#06090F]/90 via-transparent to-transparent pointer-events-none" />
-                  <figcaption className="absolute bottom-4 left-4 right-4">
-                    <span className="block font-display text-sm font-semibold text-white tracking-tight">
-                      {member.name}
-                    </span>
-                    <span className="block text-[10px] font-mono text-slate-400 tracking-wide mt-0.5">
-                      {member.role}
-                    </span>
-                  </figcaption>
-                </figure>
-              ))}
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={teamInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.15, duration: 0.8 }}
-              className="mt-12 sm:mt-14"
             >
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-sans font-light mb-8 max-w-3xl">
                 {team.lede}

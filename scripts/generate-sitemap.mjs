@@ -99,7 +99,12 @@ for (const line of scr) {
 // the curated count is what moves when a product is added. It is counted here
 // rather than hard-coded, and the scraped total is the guard against the parser
 // silently emitting a short sitemap after a source reshuffle.
-const EXPECTED_SCRAPED_PRODUCT_COUNT = 105;
+//
+// 16 Oct: 105 -> 104. The Hero bulkhead was withdrawn — the client confirmed
+// Hero and PC Bulkhead are the same product, so `apply-catalogue-overrides.mjs`
+// deletes it. The count moves when that script deletes something, not only when
+// the underlying range changes.
+const EXPECTED_SCRAPED_PRODUCT_COUNT = 104;
 
 const scrapedCount = (SCRAPED_SRC.match(/^ {4}slug: "/gm) || []).length;
 if (scrapedCount !== EXPECTED_SCRAPED_PRODUCT_COUNT) {

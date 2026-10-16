@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Derive framing-corrected product shots from the full-frame originals.
 
-Two W8a jobs need a source that is either framed too small or carries the
-supplier's branding on a part that is not the product:
+Three W8a jobs need a source that is framed too small, is a multi-view composite,
+or carries the supplier's branding on a part that is not the product:
 
   blaster — the supplier's own studio shot
             (`scraped/track/blaster/01-pioled-…-white-c.png`) is the correct
@@ -20,20 +20,24 @@ supplier's branding on a part that is not the product:
             it again.
 
   mario   — the supplier ships one 1024px composite of three views. The client
-            asked for a *different image* from the flat three-quarter view the
-            site was fronting, so this keeps the front-on view on its own.
+            picked the top-right (tilted) view as the main picture and asked for
+            the main picture to be that single view rather than the composite;
+            the composite stays in the gallery. The third view sits close enough
+            that its fin reaches into the crop, so `ISOLATE` drops it.
 
-  leda    — the shipped `leda.png` is a three-object composite on a near-black
-            backing, and the client asked for the BLACK variant in frame. The
-            crop keeps the large black track linear on its own.
+  leda    — `/product-images/leda.png` is a three-object card of HIGH-BAY
+            fittings. It is the wrong product entirely, and it is what put a high
+            bay on the Leda card. The real Leda is a 3-wire track tiltable
+            linear, and the scrape has it: the job is cut from the black 4ft one
+            (the client asked for the black variant). `leda.png` is kept, renamed,
+            as `unidentified-highbay-composite.png`.
 
 Run from the repo root:
 
     python3 scripts/make-derivative-crops.py
 
-Writes next to the originals and never overwrites a `-single` that is not
-rebuilt here. Re-running is idempotent: each output is always cut from the
-pristine original, never from a previous derivative.
+Writes next to the originals. Re-running is idempotent: each output is always
+cut from the pristine original, never from a previous derivative.
 """
 import os
 import sys
@@ -64,24 +68,29 @@ JOBS = [
         scale=2,
     ),
     dict(
-        # The supplier composite is three views on one 1024px sheet. The front-on
-        # panel is x 73-456, y 73-429; a 420px square around it keeps that panel
-        # whole with margin, and keeps the neighbouring panels out of frame.
+        # The supplier composite is three views on one 1024px sheet. The client
+        # picked the TOP-RIGHT view — the tilted one — as Mario's main picture,
+        # and asked for the main picture to be that single view rather than the
+        # composite. The composite stays in the gallery behind it.
+        #
+        # That panel is x 517-969, y 48-578, so a 550px square centred on it
+        # leaves ~16px above and below and ~55px either side.
+        #
+        # The third view sits below and reaches up into y 545-590 across
+        # x 415-720, i.e. into this box; ISOLATE takes it out.
         src='scraped/downlights/mario/01-pioled-lighting-hd020-35w-mario-led-round-tilt-downlight-3cct-1.jpg',
-        dest='mario-front.png',
-        box=(55, 41, 475, 461),
+        dest='mario-tilt.png',
+        box=(468, 38, 1018, 588),
         scale=2,
     ),
     dict(
-        src='product-images/leda.png',
+        # The real Leda: the black 4ft 3-wire track tiltable linear. Content is
+        # x 27-572, y 168-400 on a 600px sheet, so the box adds a ~10px margin
+        # and the 2x takes the long edge back over 1000px for the tile.
+        src='scraped/track/leda/member-01-pioled-lighting-tk005-4ft-leda-3-wire-track-tiltable-linear-3cct-600x6.png',
         dest='leda-single.png',
-        # The shipped file is three fittings on one near-black card. The client
-        # asked for the black variant in frame, so this keeps the largest single
-        # object — the black circular fitting at the top — on its own.
-        # Left/right stay inside the card so the crop's edge is the transparent
-        # card margin, not a slice through the fitting or its neighbours.
-        box=(72, 4, 228, 168),
-        scale=5,
+        box=(10, 150, 590, 420),
+        scale=2,
     ),
 ]
 
@@ -104,6 +113,16 @@ BRANDING = [
 INK_LEVEL = 235
 # Inpaint radius. The glyph strokes are ~2px at source resolution.
 INPAINT_RADIUS = 3
+
+# Jobs whose crop can catch a corner of the view next to it in a supplier
+# composite. Handled by keeping only the largest blob of non-white pixels in the
+# crop and flattening the rest to the sweep.
+#
+# This cannot be done with a luminance threshold: the neighbour's anti-aliased
+# edge measures lighter (167-250) than parts of the product that must be kept
+# (Mario's cone sits at 207-213). The two never touch, though, so they come apart
+# cleanly as connected components.
+ISOLATE = ['mario-tilt.png']
 
 
 def debrand(im, box):
@@ -146,6 +165,41 @@ def debrand(im, box):
     return out, int(mask.sum())
 
 
+def isolate_dominant(im, threshold=248, grow=4):
+    """Whiten every blob of non-white pixels except the largest one.
+
+    `im` must already be cropped, so only content actually inside the frame is
+    considered. Returns the cleaned image and the number of pixels flattened.
+    """
+    from scipy import ndimage
+
+    a = np.asarray(im.convert('L')).astype(int)
+    mask = a < threshold
+    if not mask.any():
+        return im, 0
+
+    # Grow before labelling so a product broken into several parts (a separate
+    # black bezel, a detached spring clip) still counts as one blob.
+    lab, n = ndimage.label(ndimage.binary_dilation(mask, iterations=grow))
+    if n <= 1:
+        return im, 0
+
+    sizes = np.bincount(lab.ravel())
+    sizes[0] = 0                      # 0 is the dilated background, not a blob
+    keep = int(sizes.argmax())
+
+    # Drop the *undilated* pixels, so the kept product keeps its soft edge.
+    drop = mask & (lab != keep)
+    if not drop.any():
+        return im, 0
+
+    # These composites are shot on a pure white sweep, so match it rather than
+    # sampling — there is no gradient here to preserve.
+    out = np.asarray(im.convert('RGB')).copy()
+    out[drop] = (255, 255, 255)
+    return Image.fromarray(out).convert('RGBA'), int(drop.sum())
+
+
 def main():
     if not os.path.isdir(PRODUCT_IMAGES):
         sys.exit(f'no such directory: {PRODUCT_IMAGES}')
@@ -171,27 +225,23 @@ def main():
                 sys.exit(f'  {job["dest"]}: branding box {bbox} is not inside crop {job["box"]}')
             im, branded = debrand(im, bbox)
 
-        # A crop of a larger frame keeps a hard rectangular edge, so the result
-        # is only usable when the source is a cut-out: the rectangle is then
-        # entirely transparent and the tile composites the product alone.
+        # Crop first, then isolate — so only neighbours that are actually inside
+        # the frame are considered, and the ones left outside cannot win.
         out = im.crop((x0, y0, x1, y1))
-        alpha = out.getchannel('A')
-        edge_opaque = max(
-            alpha.crop((0, 0, out.width, 1)).getextrema()[1],
-            alpha.crop((0, out.height - 1, out.width, out.height)).getextrema()[1],
-            alpha.crop((0, 0, 1, out.height)).getextrema()[1],
-            alpha.crop((out.width - 1, 0, out.width, out.height)).getextrema()[1],
-        ) > 10
+
+        cleared = 0
+        if job['dest'] in ISOLATE:
+            out, cleared = isolate_dominant(out)
 
         if job['scale'] != 1:
             out = out.resize((out.width * job['scale'], out.height * job['scale']), Image.LANCZOS)
-        # Kept in RGBA: `leda.png` is a cut-out card whose transparent margin is
-        # what lets the tile composite the fitting on its own. Flattening to RGB
-        # here would put a black rectangle behind it.
+        # Kept in RGBA: a cut-out source's transparent margin is what lets the
+        # tile composite the fitting on its own. Flattening to RGB would put a
+        # black rectangle behind it.
         out.save(dest)
         print(f'  WROTE {job["dest"]:22} {im.size} -> {out.size}'
               f'{"  (de-branded " + str(branded) + "px)" if branded else ""}'
-              f'{"  (edge opaque: crop will show a rectangle)" if edge_opaque else ""}')
+              f'{"  (isolated, dropped " + str(cleared) + "px)" if cleared else ""}')
 
 
 if __name__ == '__main__':

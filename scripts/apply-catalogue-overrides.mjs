@@ -17,7 +17,7 @@
 //
 //   · the published category order (W5) and the Indoor Architectural +
 //     Decorative merge (Q15)
-//   · product deletions (V200, GU10, Veris — Q9/Q16)
+//   · product deletions (V200, GU10, Veris, Hero — Q9/Q16)
 //   · the streetlight's move out of Floodlights (Q6)
 //   · brand attribution for the OrbitX range (Q5/W6)
 //   · spec corrections the scrape gets wrong (Soniq's wattage — Q4)
@@ -45,10 +45,13 @@ const CATALOGUE = path.join(ROOT, 'src', 'catalogue-scraped.ts');
 const CATEGORY_ORDER = [
   'panels',
   'vapourproof',
-  'track',
+  // Downlights and Track Lighting swapped on 16 Oct — "can we move downlights?
+  // In the place of track lighting, maybe just swap those 2 around in terms of
+  // position." Downlights takes the earlier slot; Track Lighting moves back.
+  'downlights',
   'strips',
   'linears',
-  'downlights',
+  'track',
   'highbays',
   'bulkheads',
   'floods',
@@ -69,6 +72,11 @@ const CATEGORY_ORDER = [
 const DELETED_PRODUCTS = [
   { category: 'downlights', slug: 'gu10-downlight', reason: 'lamp-based fitting range, not an LED luminaire' },
   { category: 'panels', slug: 'veris', reason: 'discontinued (mis-spelled "varis" in the review notes)' },
+  // 16 Oct: "remember we discussed removing the hero bulkhead" — the client then
+  // confirmed Hero and PC Bulkhead "are the same thing", so one had to go. PC
+  // Bulkhead is the curated entry with the finished datasheet, so Hero is the
+  // one withdrawn. Not discontinued — duplicated.
+  { category: 'bulkheads', slug: 'hero', reason: 'duplicate of PC Bulkhead (client: "they\'re the same thing")' },
 ];
 
 /* ── Category moves ──────────────────────────────────────────────────────────
@@ -77,6 +85,27 @@ const DELETED_PRODUCTS = [
  */
 const CATEGORY_MOVES = {
   'floods/60w-street-light': 'street',
+};
+
+/* ── Photograph replacements ─────────────────────────────────────────────────
+ * Products whose scraped photographs cannot be published as they stand.
+ *
+ * The five Kinglong decorative ranges have the supplier's "KINGLONG / MO FUN
+ * PROJECT" watermark burned into the middle of every product render. The client
+ * asked for them to be replaced with the *application* picture from the
+ * supplier's own site rather than retouched, so each entry below swaps both the
+ * hero and the whole gallery for the supplier's case-study installation shot —
+ * which also keeps the watermarked renders unreachable from the product page.
+ *
+ * The tile source for the same five lives in `make-product-tiles.py`
+ * (`SRC_OVERRIDE`); the two must name the same file.
+ */
+const PRODUCT_PHOTO_OVERRIDES = {
+  'architectural-indoor/crystal-cloud': '/product-images/crystal-cloud-installation.jpg',
+  'architectural-indoor/pearl': '/product-images/pearl-installation.jpg',
+  'architectural-indoor/jiangnan': '/product-images/jiangnan-installation.jpg',
+  'architectural-indoor/dream-pen': '/product-images/dream-pen-installation.jpg',
+  'architectural-indoor/cloud-bell': '/product-images/cloud-bell-installation.jpg',
 };
 
 /**
@@ -529,6 +558,7 @@ const products = parseProducts(text);
 let deleted = 0;
 let branded = 0;
 let corrected = 0;
+let replaced = 0;
 
 for (const product of [...products].reverse()) {
   const key = `${product.category}/${product.slug}`;
@@ -571,6 +601,26 @@ for (const product of [...products].reverse()) {
     }
     branded += 1;
     touched = true;
+  }
+
+  // Photograph replacement, for products whose scraped shots cannot be used.
+  const photo = PRODUCT_PHOTO_OVERRIDES[key];
+  if (photo) {
+    const before = body;
+    body = body
+      // The generator writes the hero line with a trailing `,// hero` comment,
+      // so the replacement has to keep whatever follows the closing quote —
+      // anchoring on `",$` silently matched nothing and left the scraped hero
+      // in place while only the gallery was replaced.
+      .replace(/^( {4}imageUrl: ")(?:[^"\\]|\\.)*(",\s*(?:\/\/.*)?)$/m, `$1${photo}$2`)
+      .replace(
+        /^ {4}images: \[[\s\S]*?^ {4}\],$/m,
+        `    images: [\n      { src: "${photo}", fit: "contain", alt: "${photo.split('/').pop()}" },\n    ],`,
+      );
+    if (body !== before) {
+      replaced += 1;
+      touched = true;
+    }
   }
 
   // Spec corrections
@@ -633,6 +683,7 @@ if (text === before) {
   report.push(`products deleted: ${deleted}`);
   report.push(`products re-branded: ${branded}`);
   report.push(`products moved between categories: ${moved}`);
+  report.push(`product photographs replaced: ${replaced}`);
   report.push(`spec rows dropped: ${corrected}`);
   report.push(`categories: ${CATEGORY_ORDER.length} published in fixed order`);
   console.log(`apply-catalogue-overrides: rewrote src/catalogue-scraped.ts\n  ${report.join('\n  ')}`);

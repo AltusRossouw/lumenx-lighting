@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { api, IesFile, User } from '../lib/api';
+import { groupIesByCategory } from '../products';
 import { PageHeroBackground } from './animations';
 import { FileDown, Loader2, Lock, ShieldCheck } from 'lucide-react';
 
@@ -13,6 +14,11 @@ export const IESLibraryPage: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
   const [files, setFiles] = useState<IesFile[]>([]);
   const [error, setError] = useState<string | null>(null);
+
+  // Files arrive as one flat list; the page renders them under the same
+  // categories as the catalogue. Memoised because the map walk is over ~500
+  // files and this component re-renders on auth state changes.
+  const groups = useMemo(() => groupIesByCategory(files), [files]);
 
   useEffect(() => {
     let active = true;
@@ -99,35 +105,61 @@ export const IESLibraryPage: React.FC = () => {
                     <p className="text-sm text-slate-500 font-mono">No IES files are currently available.</p>
                   </div>
                 ) : (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {files.map((file, i) => (
-                      <motion.div
-                        key={file.id}
-                        initial={{ opacity: 0, y: 14 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: i * 0.05, duration: 0.5 }}
-                        className="border border-[#1E293B]/70 bg-[#0A0F17] hover:border-primary/30 transition-colors duration-300 p-5"
-                      >
-                        <div className="flex items-start gap-3 mb-4">
-                          <div className="w-9 h-9 bg-primary/[0.06] flex items-center justify-center shrink-0">
-                            <FileDown className="w-4 h-4 text-primary/60" />
-                          </div>
-                          <div className="min-w-0">
-                            <p className="text-sm font-semibold text-white truncate font-display">{file.name}</p>
-                            <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">
-                              {file.lumens ? `${file.lumens.toLocaleString()} lm` : 'LumenX'} · .IES
-                            </p>
-                          </div>
+                  <div className="space-y-10">
+                    {groups.map((group) => (
+                      <section key={group.id}>
+                        <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-[#1E293B]/70">
+                          <h2 className="font-display text-lg font-bold text-white tracking-tight">
+                            {group.title}
+                          </h2>
+                          <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">
+                            {group.files.length} file{group.files.length === 1 ? '' : 's'}
+                            {group.productCount > 0
+                              ? ` · ${group.productCount} product${group.productCount === 1 ? '' : 's'}`
+                              : ''}
+                          </span>
                         </div>
-                        <a
-                          href={`/api/ies/${encodeURIComponent(file.filename)}`}
-                          download
-                          className="btn btn-outline btn-sm w-full no-underline"
-                        >
-                          <FileDown className="w-3.5 h-3.5" />
-                          Download IES
-                        </a>
-                      </motion.div>
+
+                        {group.unassigned && (
+                          <p className="text-xs text-slate-500 font-sans font-light mb-4 max-w-2xl">
+                            These files are not linked to a product yet, so they cannot be filed
+                            under a category. Attaching them to a product in the admin moves them
+                            into that product's category.
+                          </p>
+                        )}
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                          {group.files.map((file, i) => (
+                            <motion.div
+                              key={file.id}
+                              initial={{ opacity: 0, y: 14 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: Math.min(i * 0.03, 0.3), duration: 0.5 }}
+                              className="border border-[#1E293B]/70 bg-[#0A0F17] hover:border-primary/30 transition-colors duration-300 p-5"
+                            >
+                              <div className="flex items-start gap-3 mb-4">
+                                <div className="w-9 h-9 bg-primary/[0.06] flex items-center justify-center shrink-0">
+                                  <FileDown className="w-4 h-4 text-primary/60" />
+                                </div>
+                                <div className="min-w-0">
+                                  <p className="text-sm font-semibold text-white truncate font-display">{file.name}</p>
+                                  <p className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">
+                                    {file.lumens ? `${file.lumens.toLocaleString()} lm` : 'LumenX'} · .IES
+                                  </p>
+                                </div>
+                              </div>
+                              <a
+                                href={`/api/ies/${encodeURIComponent(file.filename)}`}
+                                download
+                                className="btn btn-outline btn-sm w-full no-underline"
+                              >
+                                <FileDown className="w-3.5 h-3.5" />
+                                Download IES
+                              </a>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </section>
                     ))}
                   </div>
                 )}

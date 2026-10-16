@@ -1,6 +1,7 @@
 import { Product, ProductCategory, ProductImage } from './types';
 import { SCRAPED_CATEGORIES } from './catalogue-scraped';
 import { ALL_PRODUCTS } from './catalogue-full';
+import { IES_PRODUCT_MAP } from './ies-product-map';
 
 /**
  * LumenX product catalogue.
@@ -162,6 +163,87 @@ export const iesVariantLabel = (filename: string): string => {
   const label = [facts.join(' · '), tail].filter(Boolean).join(' — ');
   return label || stem.replace(/[-_]+/g, ' ');
 };
+
+/* ── IES files, grouped the way the catalogue is ──────────────────────────────
+ * The downloads page used to render one flat grid of every photometric file.
+ * The client's note on that: "it's just not organized. The guys are not going to
+ * go through it like that… under category, have the category of the products
+ * match that." So files are grouped under the same categories as the catalogue,
+ * in the catalogue's own order.
+ *
+ * `IES_PRODUCT_MAP` is the only link from a file to a product, and it is
+ * generated from the `ies_product_files` table — so a file never attached to a
+ * product in the admin cannot be categorised. Those go into a trailing
+ * "Unassigned" group rather than being hidden: its size is the signal that the
+ * admin link still has to be filled in (`npm run ies:map` after attaching).
+ */
+export interface IesGroup<T> {
+  id: string;
+  title: string;
+  files: T[];
+  /** Distinct products the group's files belong to. */
+  productCount: number;
+  unassigned?: boolean;
+}
+
+/** filename -> the published product that owns it. */
+const IES_OWNER: Map<string, Product> = (() => {
+  const bySlug = new Map(PRODUCTS.map((product) => [product.slug, product]));
+  const owner = new Map<string, Product>();
+  for (const [slug, filenames] of Object.entries(IES_PRODUCT_MAP)) {
+    const product = bySlug.get(slug);
+    // A slug with no published product is a withdrawn range (GU10, Veris,
+    // Arena…). Its files stay unassigned rather than pointing at a page that
+    // no longer exists.
+    if (!product) continue;
+    for (const filename of filenames) if (!owner.has(filename)) owner.set(filename, product);
+  }
+  return owner;
+})();
+
+export function groupIesByCategory<T extends { filename: string }>(files: T[]): IesGroup<T>[] {
+  const groups = new Map<string, IesGroup<T> & { slugs: Set<string> }>();
+  const unassigned: T[] = [];
+
+  for (const file of files) {
+    const product = IES_OWNER.get(file.filename);
+    if (!product) {
+      unassigned.push(file);
+      continue;
+    }
+    let group = groups.get(product.category);
+    if (!group) {
+      group = {
+        id: product.category,
+        title: getCategory(product.category)?.title ?? product.category,
+        files: [],
+        productCount: 0,
+        slugs: new Set<string>(),
+      };
+      groups.set(product.category, group);
+    }
+    group.files.push(file);
+    group.slugs.add(product.slug);
+  }
+
+  // Catalogue order, so this page reads in the same sequence as the grid.
+  const ordered = PRODUCT_CATEGORIES
+    .map((category) => groups.get(category.id))
+    .filter((group): group is IesGroup<T> & { slugs: Set<string> } => Boolean(group))
+    .map(({ slugs, ...group }) => ({ ...group, productCount: slugs.size }));
+
+  if (unassigned.length > 0) {
+    ordered.push({
+      id: 'unassigned',
+      title: 'Unassigned files',
+      files: unassigned,
+      productCount: 0,
+      unassigned: true,
+    });
+  }
+
+  return ordered;
+}
 
 /** Flat list of all unique local datasheet downloads. */
 export function getAllDatasheets(): { name: string; href: string }[] {

@@ -320,6 +320,34 @@ def shade_product(im, shade, bg):
         np.dstack([rgb, alpha]).astype(np.uint8), 'RGBA')
 
 
+def compose_photo(src, dest, focus=0.42, quality=92):
+    """Fill the tile with an application/installation photograph.
+
+    Used for the decorative range, where the client asked for the *installation*
+    picture rather than a product render. `compose_flat` cannot take these: it
+    whitens an opaque source against its dominant border colour, which is right
+    for a product on a white sweep and ruinous for a photograph of a room — the
+    border colour is the room, so the whitening eats the walls and the ceiling
+    and leaves the frame blown out.
+
+    There is no product to isolate here either, so the photograph is scaled to
+    *cover* the 16:9 tile and cropped, rather than fitted inside it. Fitting a
+    3:4 portrait would leave a 460px empty margin either side; covering keeps the
+    tile full-bleed like every other card in the grid.
+
+    `focus` is where the crop window sits vertically, as a fraction of the
+    overflow. These shots frame the fitting high in the room, so the default
+    biases the crop upwards rather than taking the dead centre.
+    """
+    im = Image.open(src).convert('RGB')
+    scale = max(W / im.width, H / im.height)
+    resized = im.resize((max(1, round(im.width * scale)), max(1, round(im.height * scale))), Image.LANCZOS)
+    left = (resized.width - W) // 2
+    top = round((resized.height - H) * focus)
+    resized.crop((left, top, left + W, top + H)).save(dest, quality=quality, optimize=True)
+    return (W, H)
+
+
 def compose_flat(src, dest, height_frac=0.88, width_frac=0.90, quality=92, shade=None):
     """Place a product shot, whole, on a flat tile of its own backdrop colour.
 
