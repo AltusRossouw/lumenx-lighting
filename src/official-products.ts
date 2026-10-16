@@ -267,11 +267,14 @@ export const OFFICIAL_PRODUCTS: Product[] = [
   //    photo with the "pioled" logo visible, so the clean asset heads the
   //    gallery and the branded original is dropped from it by `exclude`.
 
-  // Client asked for "a different image". The only supplier file is one
-  // composite of three views, and `/product-images/mario.png` was a re-export of
-  // that same composite rather than a different photograph, so the page looked
-  // unchanged. The hero is now the front-on view cut out of the composite on its
-  // own — see scripts/make-derivative-crops.py.
+  // Client asked for "a different image", then supplied the replacement
+  // directly on 16 Oct. The hero is that supplied shot — three views on white —
+  // and `exclude` drops the scraped original, which carries the "pioled" logo.
+  //
+  // Mario's previous hero was a single front-on view cut from the old composite
+  // by scripts/make-derivative-crops.py; the supplied image supersedes it, and
+  // the tile contrast allow-list in scripts/make-product-tiles.py shades the
+  // white COB face so its outer edge does not vanish into the frame.
   fromScraped('downlights', 'mario', 'Mario', 'lumenx-datasheet-mario.pdf', {
     hero: '/product-images/mario-front.png',
     exclude: ['/scraped/downlights/mario/01-pioled-lighting-hd020-35w-mario-led-round-tilt-downlight-3cct-1.jpg'],

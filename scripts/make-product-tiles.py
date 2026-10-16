@@ -216,6 +216,19 @@ CONTRAST_SHADE = {
     'vapourproof/neptune': 0.70,
     'vapourproof/titan': 0.72,
     'vapourproof/vp': 0.94,
+    # Two more white-on-white subjects, added 16 Oct when the client replaced
+    # their heroes. Neither was in the families the client originally named:
+    #
+    #  · Mario is the client-supplied three-view shot. The large front view fills
+    #    its third of the frame with a white COB reflector, and pure white on a
+    #    pure-white frame loses that reflector's outer edge completely. (The
+    #    single-view hero it replaced had a darker outer ring and did not.)
+    #  · the OrbitX Retrofit module is a white PCB disc photographed straight on.
+    #    It used to be shown as a dimension drawing, which at least had red
+    #    callouts to read against the frame; the real photograph has only the
+    #    connector, so the disc's silhouette is all there is to see.
+    'downlights/mario': 0.78,
+    'bulkheads/retrofit-module': 0.80,
 }
 
 # The scraper sometimes filed the category banner itself as one of a product's
