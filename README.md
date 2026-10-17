@@ -104,10 +104,19 @@ See `.env.example`. The key values:
 - create and edit categories (title, description, range, image, order);
 - create products and edit any product from the base catalogue — edits are stored
   as a database override, and **Reset to catalogue version** removes it;
+- toggle each product between **Live** and **Hidden** without deleting it. Hidden
+  products are removed from public listings, product pages, the datasheet
+  library, IES grouping and the sitemap; they stay in the admin so they can be
+  shown again;
 - upload multiple product images, choose the main image, and edit alt text /
   contain-vs-cover per image;
 - upload a PDF spec sheet, or have LumenX generate a branded A4 datasheet;
 - attach one or more IES files (still behind the member login gate).
+
+Hidden is a **publication flag, not an access-control boundary**: the base
+catalogue is compiled into the public JavaScript bundle, and hidden products
+remain in the admin overlay so they can be restored. Use it to delist a product,
+not to keep confidential material discoverable.
 
 ### AI spec-sheet import
 
@@ -170,6 +179,9 @@ any other datasheet.
 - Raw **IES files** live outside the public root and are only served through
   `GET /api/ies/:filename`, which requires a signed-in account (sign-up is
   self-serve — no admin approval).
+- IES downloads are offered **only on individual product pages** while signed
+  in. The standalone IES library page was removed; `/ies` now redirects to
+  `/products`, and the public resources page no longer advertises an IES card.
 - Registration: `POST /api/auth/register` (hashes the password and creates the
   account immediately).
 - Administrators (for viewing users and download activity) sign in at `/admin`

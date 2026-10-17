@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight, FileDown, FileText, ShieldCheck, Download, FolderOpen } from 'lucide-react';
+import { ArrowRight, FileText, ShieldCheck, Download, FolderOpen } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 import { datasheetDownloadUrl } from '../products';
 import { useCatalog } from '../catalog';
@@ -28,19 +28,22 @@ export const ResourcesPage: React.FC = () => {
     })),
   ];
 
-  const cardMeta = [
-    { icon: FileText, to: '/resources' },
-    { icon: FileDown, to: '/ies' },
-    { icon: ShieldCheck, to: '/contact' },
-    { icon: FileText, to: '/contact' },
-  ];
-
-  const downloads = resources.cards.map((card, i) => ({
-    label: card.label,
-    description: card.description,
-    icon: cardMeta[i]?.icon ?? FileText,
-    to: cardMeta[i]?.to ?? '/contact',
-  }));
+  // IES downloads are intentionally not part of the public downloads hub:
+  // they live on each individual product page behind the account gate. Filter
+  // the card out even if an older saved CMS document still contains it.
+  const downloads = resources.cards
+    .filter((card) => !/\bIES\b|photometric/i.test(card.label + ' ' + card.description))
+    .map((card) => {
+      const isLibrary = /datasheet/i.test(card.label);
+      const isCompliance = /compliance/i.test(card.label);
+      return {
+        label: card.label,
+        description: card.description,
+        icon: isCompliance ? ShieldCheck : FileText,
+        to: isLibrary ? '/resources' : '/contact',
+        library: isLibrary,
+      };
+    });
 
   return (
     <div className="pt-[104px]">
@@ -67,10 +70,10 @@ export const ResourcesPage: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {downloads.map((item, i) => {
               const Icon = item.icon;
-              const isLibrary = item.to === '/resources';
+              const isLibrary = item.library;
               return (
                 <motion.div
                   key={i}

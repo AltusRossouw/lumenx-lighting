@@ -272,10 +272,9 @@ export const DEFAULT_CONTENT: SiteContent = {
     label: 'Technical Resources',
     heading: { lead: 'Documentation and ', accent: 'downloads', tail: '' },
     subcopy:
-      'Technical datasheets, IES files, compliance documentation, and warranty information for specifiers, engineers, and contractors.',
+      'Technical datasheets, compliance documentation, and warranty information for specifiers, engineers, and contractors.',
     cards: [
       { label: 'Technical Datasheets', description: 'Product specifications, dimensions, and performance data — download every datasheet below.' },
-      { label: 'IES Files', description: 'Photometric data files for lighting simulation software — create a free account and download instantly.' },
       { label: 'Compliance Documentation', description: 'SABS, IEC, and OHSACT compliance certificates — available with quotations and projects.' },
       { label: 'Warranty Terms', description: 'Manufacturer-backed warranty documentation per product range, confirmed in quotation.' },
     ],

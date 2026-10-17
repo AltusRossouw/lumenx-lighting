@@ -23,6 +23,7 @@ import {
   deleteCategory,
   deleteProduct,
   listCatalog,
+  setProductVisibility,
   normalizeImages,
   normalizeSpecs,
   normalizeStrings,
@@ -147,6 +148,29 @@ export const catalogAdminRouter = () => {
       }
       const input = validateProductInput(req.body, { category, slug });
       const product = await updateProduct({ category, slug, input, updatedBy: actor(req) });
+      return res.json({ ok: true, product });
+    } catch (err) {
+      return sendError(err, res, next);
+    }
+  });
+
+  // PUT /products/:category/:slug/visibility — hide/show without deleting.
+  // Existing rows update only the flag; a base product is copied into an
+  // override on first hide so its URL and IES mapping stay stable.
+  router.put('/products/:category/:slug/visibility', async (req, res, next) => {
+    try {
+      const category = String(req.params.category ?? '').trim();
+      const slug = String(req.params.slug ?? '').trim();
+      if (!SLUG_RE.test(category) || !SLUG_RE.test(slug)) {
+        return res.status(400).json({ error: 'A valid category and product slug are required.' });
+      }
+      const product = await setProductVisibility({
+        category,
+        slug,
+        published: req.body?.published,
+        product: req.body?.product,
+        updatedBy: actor(req),
+      });
       return res.json({ ok: true, product });
     } catch (err) {
       return sendError(err, res, next);

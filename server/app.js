@@ -131,6 +131,18 @@ export const createApp = () => {
 
     try {
       const { categories, products } = await listCatalog();
+      const visibleProducts = products.filter((product) => product.published !== false);
+
+      // A base product hidden in the admin still appears in the build-time
+      // sitemap. Remove those URLs before appending the visible overlay rows.
+      for (const product of products) {
+        if (product.published !== false) continue;
+        const loc = config.publicUrl + '/products/' + product.category + '/' + product.slug;
+        const tag = '  <url><loc>' + loc + '</loc></url>';
+        xml = xml.split(tag + '\n').join('');
+        xml = xml.split(tag).join('');
+      }
+
       const existing = new Set(
         [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]),
       );
@@ -139,7 +151,7 @@ export const createApp = () => {
         const loc = config.publicUrl + '/products/' + category.id;
         if (!existing.has(loc)) extra.push(loc);
       }
-      for (const product of products) {
+      for (const product of visibleProducts) {
         const loc = config.publicUrl + '/products/' + product.category + '/' + product.slug;
         if (!existing.has(loc)) extra.push(loc);
       }

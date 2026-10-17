@@ -9,9 +9,11 @@ import { AdminCategoryForm } from './AdminCategoryForm';
 import { AdminImportWizard } from './AdminImportWizard';
 import { api } from '../lib/api';
 import type { CatalogImportCapabilities } from '../lib/api';
-import { Badge, inputCls } from './CatalogFormUi';
+import { Badge, StatusLine, inputCls } from './CatalogFormUi';
 import {
   AlertTriangle,
+  Eye,
+  EyeOff,
   FileText,
   FolderTree,
   ImageOff,
@@ -26,7 +28,7 @@ import {
 } from 'lucide-react';
 
 type View = 'products' | 'categories';
-type ProductFilter = 'all' | 'new' | 'edited' | 'catalogue' | 'no-images';
+type ProductFilter = 'all' | 'new' | 'edited' | 'catalogue' | 'hidden' | 'no-images';
 type Editor =
   | { type: 'product'; initial: AdminCatalogProduct; create: boolean; sourceLabel?: string }
   | { type: 'category'; initial: ProductCategory; create: boolean }
@@ -74,6 +76,8 @@ export const AdminCatalogue: React.FC = () => {
   const [categoryFilter, setCategoryFilter] = useState('all');
   const [productFilter, setProductFilter] = useState<ProductFilter>('all');
   const [capabilities, setCapabilities] = useState<CatalogImportCapabilities | null>(null);
+  const [visibilityBusy, setVisibilityBusy] = useState<string | null>(null);
+  const [actionError, setActionError] = useState<string | null>(null);
 
   useEffect(() => {
     void loadCatalog();
@@ -117,6 +121,7 @@ export const AdminCatalogue: React.FC = () => {
         if (productFilter === 'new' && staticProduct) return false;
         if (productFilter === 'edited' && (!staticProduct || product.source !== 'db')) return false;
         if (productFilter === 'catalogue' && (!staticProduct || product.source === 'db')) return false;
+        if (productFilter === 'hidden' && product.published !== false) return false;
         if (productFilter === 'no-images' && (product.images ?? []).length > 0) return false;
         if (!needle) return true;
         const haystack = [
@@ -145,6 +150,7 @@ export const AdminCatalogue: React.FC = () => {
     (product) =>
       isStaticProduct(product.category, product.slug) && product.source === 'db',
   ).length;
+  const hiddenCount = catalog.products.filter((product) => product.published === false).length;
 
   const apiReady = catalog.status === 'ready';
 
@@ -173,6 +179,26 @@ export const AdminCatalogue: React.FC = () => {
 
   const handleSaved = async () => {
     await refreshCatalog();
+  };
+
+  const toggleVisibility = async (product: Product) => {
+    const key = product.category + '/' + product.slug;
+    const nextPublished = product.published === false;
+    setVisibilityBusy(key);
+    setActionError(null);
+    try {
+      await api.setCatalogProductVisibility(
+        product.category,
+        product.slug,
+        nextPublished,
+        product,
+      );
+      await refreshCatalog();
+    } catch (err) {
+      setActionError((err as Error).message || 'Could not change the product visibility.');
+    } finally {
+      setVisibilityBusy(null);
+    }
   };
 
   if (editor?.type === 'import') {
@@ -351,6 +377,7 @@ export const AdminCatalogue: React.FC = () => {
               <option value="new">New ({newCount})</option>
               <option value="edited">Edited ({editedCount})</option>
               <option value="catalogue">Catalogue only</option>
+              <option value="hidden">Hidden ({hiddenCount})</option>
               <option value="no-images">No images</option>
             </select>
           </div>
@@ -360,13 +387,19 @@ export const AdminCatalogue: React.FC = () => {
             <span className="text-slate-700">·</span>
             <span>{catalog.products.length} total</span>
             <span className="text-slate-700">·</span>
+            <span className="text-emerald-300">{catalog.products.length - hiddenCount} live</span>
+            <span className="text-slate-700">·</span>
+            <span className="text-amber-300">{hiddenCount} hidden</span>
+            <span className="text-slate-700">·</span>
             <span className="text-primary">{newCount} new</span>
             <span className="text-slate-700">·</span>
             <span className="text-amber-300">{editedCount} edited</span>
           </div>
 
+          {actionError && <StatusLine tone="error">{actionError}</StatusLine>}
+
           <div className="overflow-hidden rounded-2xl border border-[#1E293B] bg-[#0A0D14]">
-            <div className="hidden grid-cols-[56px_minmax(0,1fr)_140px_170px_70px] gap-4 border-b border-[#1E293B] bg-white/[0.02] px-4 py-2.5 sm:grid">
+            <div className="hidden grid-cols-[56px_minmax(0,1fr)_140px_170px_190px] gap-4 border-b border-[#1E293B] bg-white/[0.02] px-4 py-2.5 sm:grid">
               {['', 'Product', 'Category', 'Media', ''].map((label, index) => (
                 <span
                   key={label + index}
@@ -397,10 +430,12 @@ export const AdminCatalogue: React.FC = () => {
                 const isNew = !staticProduct;
                 const imageCount = (product.images ?? []).length;
                 const iesCount = catalog.iesMap[product.slug]?.length ?? 0;
+                const isPublished = product.published !== false;
+                const rowKey = product.category + '/' + product.slug;
                 return (
                   <div
                     key={product.category + '/' + product.slug}
-                    className="grid grid-cols-1 gap-3 border-b border-[#1E293B]/60 px-4 py-3 last:border-b-0 sm:grid-cols-[56px_minmax(0,1fr)_140px_170px_70px] sm:items-center sm:gap-4"
+                    className="grid grid-cols-1 gap-3 border-b border-[#1E293B]/60 px-4 py-3 last:border-b-0 sm:grid-cols-[56px_minmax(0,1fr)_140px_170px_190px] sm:items-center sm:gap-4"
                   >
                     <div className="h-14 w-14 shrink-0 overflow-hidden rounded-lg border border-[#1E293B] bg-white">
                       <img
@@ -423,6 +458,9 @@ export const AdminCatalogue: React.FC = () => {
                         ) : (
                           <Badge>Catalogue</Badge>
                         )}
+                        <Badge tone={isPublished ? 'green' : 'amber'}>
+                          {isPublished ? 'Live' : 'Hidden'}
+                        </Badge>
                       </div>
                       <p className="truncate text-[11px] font-mono text-slate-500">
                         {product.slug}
@@ -458,15 +496,36 @@ export const AdminCatalogue: React.FC = () => {
                       )}
                     </div>
 
-                    <button
-                      type="button"
-                      onClick={() => openProduct(product)}
-                      disabled={!apiReady}
-                      className="btn btn-outline btn-sm justify-self-start sm:justify-self-end"
-                    >
-                      <Pencil className="h-3 w-3" />
-                      Edit
-                    </button>
+                    <div className="flex flex-nowrap items-center gap-1.5 justify-self-start sm:justify-self-end">
+                      <button
+                        type="button"
+                        onClick={() => void toggleVisibility(product)}
+                        disabled={!apiReady || visibilityBusy === rowKey}
+                        title={isPublished ? 'Hide from the public site' : 'Publish to the public site'}
+                        className={
+                          'btn btn-outline btn-row ' +
+                          (isPublished ? 'text-amber-300' : 'text-emerald-300')
+                        }
+                      >
+                        {visibilityBusy === rowKey ? (
+                          <Loader2 className="h-3 w-3 animate-spin" />
+                        ) : isPublished ? (
+                          <EyeOff className="h-3 w-3" />
+                        ) : (
+                          <Eye className="h-3 w-3" />
+                        )}
+                        {isPublished ? 'Hide' : 'Show'}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => openProduct(product)}
+                        disabled={!apiReady}
+                        className="btn btn-outline btn-row"
+                      >
+                        <Pencil className="h-3 w-3" />
+                        Edit
+                      </button>
+                    </div>
                   </div>
                 );
               })

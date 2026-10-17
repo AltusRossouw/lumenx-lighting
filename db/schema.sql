@@ -169,6 +169,10 @@ CREATE TABLE IF NOT EXISTS catalog_products (
   pdf_url             TEXT,
   pdf_name            TEXT,
   pdf_source          TEXT NOT NULL DEFAULT 'none',
+  -- Public visibility toggle. Hidden products stay in the admin and in the
+  -- overlay so they can be restored, but are filtered from every public page,
+  -- datasheet library and sitemap.
+  published           BOOLEAN NOT NULL DEFAULT true,
   warranty            TEXT,
   brand               TEXT,
   manufacturer        TEXT,
@@ -180,6 +184,10 @@ CREATE TABLE IF NOT EXISTS catalog_products (
   updated_by          TEXT,
   UNIQUE (category_id, slug)
 );
+
+-- Idempotent backfill for databases created before the visibility toggle.
+ALTER TABLE catalog_products
+  ADD COLUMN IF NOT EXISTS published BOOLEAN NOT NULL DEFAULT true;
 
 -- AI spec-sheet import jobs. The source PDF lives under uploads/manufacturer-specs
 -- and is intentionally never served publicly.

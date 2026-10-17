@@ -16,7 +16,6 @@ import { ProductPage } from './components/ProductPage';
 import { DesignToolPage } from './components/DesignToolPage';
 import { AuthPage } from './components/AuthPage';
 import { AdminPage } from './components/AdminPage';
-import { IESLibraryPage } from './components/IESLibraryPage';
 import { NotFoundPage } from './components/NotFoundPage';
 import { PrivacyPage } from './components/PrivacyPage';
 import { FloatingWhatsAppButton } from './components/FloatingWhatsAppButton';
@@ -71,7 +70,6 @@ function SeoManager() {
     { match: /^\/products(\/|$)/, title: seo.productsTitle, description: seo.productsDescription },
     { match: /^\/resources(\/|$)/, title: 'Technical Resources — LumenX Lighting' },
     { match: /^\/design-tool(\/|$)/, title: 'Lighting Design Tool — LumenX Lighting' },
-    { match: /^\/ies(\/|$)/, title: 'IES Downloads — LumenX Lighting' },
     { match: /^\/planner(\/|$)/, title: 'Lighting Planner — LumenX Lighting' },
     { match: /^\/about(\/|$)/, title: 'About — LumenX Lighting' },
     { match: /^\/contact(\/|$)/, title: 'Contact — LumenX Lighting' },
@@ -150,6 +148,8 @@ function AppLayout() {
 
   // The OrbitX planner is a full-screen tool with its own header/chrome.
   const isFullscreenTool = location.pathname.startsWith('/planner');
+  // Keep the customer WhatsApp FAB out of the admin; it can cover row actions.
+  const isAdmin = location.pathname.startsWith('/admin');
 
   return (
     <div className="min-h-screen bg-[#06090F] text-slate-300 flex flex-col selection:bg-primary/30 selection:text-white">
@@ -159,7 +159,7 @@ function AppLayout() {
 
       {!isFullscreenTool && <Header />}
 
-      {!isFullscreenTool && <FloatingWhatsAppButton />}
+      {!isFullscreenTool && !isAdmin && <FloatingWhatsAppButton />}
 
       <main className="flex-grow">
         <Routes>
@@ -178,7 +178,8 @@ function AppLayout() {
           <Route path="/products/:categoryId" element={<ProductDetailWrapper />} />
           <Route path="/resources" element={<ResourcesPage />} />
           <Route path="/design-tool" element={<DesignToolPage />} />
-          <Route path="/ies" element={<IESLibraryPage />} />
+          {/* IES downloads now live on individual product pages (signed-in only). */}
+          <Route path="/ies" element={<Navigate to="/products" replace />} />
           <Route path="/account" element={<AuthPage />} />
           <Route path="/reset-password" element={<AuthPage />} />
           <Route path="/admin" element={<AdminPage />} />

@@ -12,7 +12,7 @@ export const AuthPage: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [searchParams] = useSearchParams();
-  const redirectTo = (location.state as { from?: string } | null)?.from || '/ies';
+  const redirectTo = (location.state as { from?: string } | null)?.from || '/products';
 
   const resetToken = searchParams.get('token') ?? '';
   const [mode, setMode] = useState<Mode>(resetToken ? 'reset' : 'login');
@@ -33,7 +33,7 @@ export const AuthPage: React.FC = () => {
           : 'Choose a new password';
 
   const subtitle =
-    mode === 'login' || mode === 'register' ? 'IES download access' : 'Account recovery';
+    mode === 'login' || mode === 'register' ? 'Product download access' : 'Account recovery';
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -93,7 +93,7 @@ export const AuthPage: React.FC = () => {
             {(mode === 'login' || mode === 'register') && (
               <div className="flex items-center gap-2 text-[11px] font-mono text-slate-500 mb-6 border border-[#1E293B] rounded-lg p-3">
                 <ShieldCheck className="w-4 h-4 text-primary/60 shrink-0" />
-                Create a free account to download photometric (IES) files — no approval required.
+                Create a free account to download photometric (IES) files from individual product pages — no approval required.
               </div>
             )}
 
@@ -222,8 +222,8 @@ export const AuthPage: React.FC = () => {
               )}
             </div>
 
-            <Link to="/ies" className="block mt-4 text-center text-xs text-slate-500 hover:text-slate-300 transition-colors">
-              Back to IES library
+            <Link to="/products" className="block mt-4 text-center text-xs text-slate-500 hover:text-slate-300 transition-colors">
+              Browse products
             </Link>
           </motion.div>
         </div>

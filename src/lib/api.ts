@@ -68,15 +68,6 @@ export interface DesignResult {
   wattsPerFixture: number;
 }
 
-export interface IesFile {
-  id: string;
-  filename: string;
-  name: string;
-  lumens: number | null;
-  watts: number | null;
-  manufacturer: string;
-}
-
 /* ── Editable catalogue overlay ─────────────────────────────────────────── */
 
 export interface CatalogPayload {
@@ -308,9 +299,6 @@ export const api = {
       body: JSON.stringify(payload),
     }),
 
-  // IES walled garden
-  listIes: () => request<{ files: IesFile[] }>('/api/ies'),
-
   // Design tool
   designProducts: () => request<{ products: DesignProduct[] }>('/api/design/products'),
   calculateDesign: (payload: Record<string, unknown>) =>
@@ -362,6 +350,16 @@ export const api = {
     request<{ ok: boolean }>(
       `/api/admin/catalog/products/${encodeURIComponent(category)}/${encodeURIComponent(slug)}`,
       { method: 'DELETE' },
+    ),
+  setCatalogProductVisibility: (
+    category: string,
+    slug: string,
+    published: boolean,
+    product?: Product,
+  ) =>
+    request<{ ok: boolean; product: AdminCatalogProduct }>(
+      `/api/admin/catalog/products/${encodeURIComponent(category)}/${encodeURIComponent(slug)}/visibility`,
+      { method: 'PUT', body: JSON.stringify({ published, product }) },
     ),
   uploadCatalogImage: async (
     scope: 'product' | 'category',

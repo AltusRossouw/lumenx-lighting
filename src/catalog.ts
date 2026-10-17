@@ -37,6 +37,7 @@ export interface Catalog {
   status: CatalogStatus;
   getCategory(id: string): ProductCategory | undefined;
   getProduct(category: string, slug: string): Product | undefined;
+  getAnyProduct(category: string, slug: string): Product | undefined;
   getProductsByCategory(id: string): Product[];
   getIesFiles(slug: string): string[];
   getDatasheetLibrary(): { name: string; href: string }[];
@@ -91,6 +92,7 @@ const normalizeProduct = (product: Product): Product => {
     images,
     mainImage,
     imageUrl: mainImage || PLACEHOLDER_PRODUCT_IMAGE,
+    published: product.published !== false,
     pdfSource:
       product.pdfSource === 'generated'
         ? 'generated'
@@ -195,6 +197,9 @@ export function groupIesByCategory<T extends { filename: string }>(
       unassigned.push(file);
       continue;
     }
+    // Photometry belonging to a hidden product is not listed publicly. It is
+    // neither grouped nor dumped into the unassigned bucket.
+    if (product.published === false) continue;
     let group = groups.get(product.category);
     if (!group) {
       group = {
@@ -238,6 +243,7 @@ const buildCatalog = (
   }
   const categoriesById = new Map(categories.map((category) => [category.id, category]));
   const productsByKey = new Map(products.map((product) => [keyOf(product.category, product.slug), product]));
+  const visibleProducts = products.filter((product) => product.published !== false);
 
   return {
     categories,
@@ -248,11 +254,16 @@ const buildCatalog = (
     iesMap,
     status,
     getCategory: (id) => categoriesById.get(id),
-    getProduct: (category, slug) => productsByKey.get(keyOf(category, slug)),
-    getProductsByCategory: (id) => productsByCategory[id] ?? [],
+    getProduct: (category, slug) => {
+      const product = productsByKey.get(keyOf(category, slug));
+      return product && product.published !== false ? product : undefined;
+    },
+    getAnyProduct: (category, slug) => productsByKey.get(keyOf(category, slug)),
+    getProductsByCategory: (id) =>
+      (productsByCategory[id] ?? []).filter((product) => product.published !== false),
     getIesFiles: (slug) => iesMap[slug] ?? [],
-    getDatasheetLibrary: () => datasheetLibrary(products),
-    getDatasheetGroups: () => datasheetGroups(products, categories),
+    getDatasheetLibrary: () => datasheetLibrary(visibleProducts),
+    getDatasheetGroups: () => datasheetGroups(visibleProducts, categories),
     groupIesByCategory: (files) => groupIesByCategory(files, { products, categories, iesMap }),
   };
 };
@@ -329,6 +340,8 @@ export const getCatalogSnapshot = (): Catalog => current;
 export const getCategory = (id: string): ProductCategory | undefined => current.getCategory(id);
 export const getProduct = (category: string, slug: string): Product | undefined =>
   current.getProduct(category, slug);
+export const getAnyProduct = (category: string, slug: string): Product | undefined =>
+  current.getAnyProduct(category, slug);
 export const getProductsByCategory = (id: string): Product[] => current.getProductsByCategory(id);
 export const getIesFilesForProduct = (slug: string): string[] => current.getIesFiles(slug);
 

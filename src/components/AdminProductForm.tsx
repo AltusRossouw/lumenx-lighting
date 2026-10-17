@@ -302,7 +302,7 @@ export const AdminProductForm: React.FC<AdminProductFormProps> = ({
       return 'Slug must be lowercase letters, numbers and dashes (max 80 characters).';
     }
     if (mode === 'create') {
-      if (catalog.getProduct(draft.category, slug) || isStaticProduct(draft.category, slug)) {
+      if (catalog.getAnyProduct(draft.category, slug) || isStaticProduct(draft.category, slug)) {
         return 'A product with this slug already exists in that category.';
       }
       const existing = catalog.products.find((product) => product.slug === slug);
@@ -485,6 +485,7 @@ export const AdminProductForm: React.FC<AdminProductFormProps> = ({
         <div className="flex flex-wrap items-center gap-2">
           {modeBadge}
           <Badge>{categoryTitle || 'No category'}</Badge>
+          {draft.published === false && <Badge tone="amber">Hidden</Badge>}
           {dirty && <Badge tone="amber">Unsaved</Badge>}
         </div>
         <div className="ml-auto flex flex-wrap items-center gap-2">

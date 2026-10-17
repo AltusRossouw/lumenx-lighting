@@ -59,6 +59,8 @@ export interface Product {
   pdfName?: string;
   /** How the spec sheet is produced: none, an uploaded PDF, or generated. */
   pdfSource?: 'none' | 'uploaded' | 'generated';
+  /** Public visibility; false keeps the product in the admin but off the site. */
+  published?: boolean;
   /** Warranty / guarantee statement. */
   warranty?: string;
   /** Manufacturer name captured from the source spec sheet. */

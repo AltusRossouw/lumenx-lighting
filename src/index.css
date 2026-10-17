@@ -92,6 +92,12 @@ body { background-color: #06090F; color: #CBD5E1; -webkit-font-smoothing: antial
   padding: 0.6rem 1.25rem;
   font-size: 0.75rem;
 }
+/* Compact action buttons used inside catalogue list rows. */
+.btn-row {
+  gap: 0.35rem;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.7rem;
+}
 .btn-block { width: 100%; }
 
 

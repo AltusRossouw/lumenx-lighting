@@ -23,7 +23,6 @@ const STATIC_PATHS = [
   '/products',
   '/resources',
   '/design-tool',
-  '/ies',
   '/planner',
   '/about',
   '/contact',

@@ -15,7 +15,6 @@ export const Footer: React.FC = () => {
     // Design Tool temporarily disabled for testing — re-add when ready.
     // Lighting Planner temporarily disabled for testing — re-add when ready.
     { label: 'Technical Resources', path: '/resources' },
-    { label: 'IES Downloads', path: '/ies' },
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' },
     { label: 'Privacy Policy', path: '/privacy' },

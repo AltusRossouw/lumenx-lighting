@@ -166,6 +166,7 @@ export const productView = (row, { admin = false } = {}) => {
     pdfUrl: pdfUrl || undefined,
     pdfName: row.pdf_name || undefined,
     pdfSource,
+    published: row.published !== false,
     warranty: row.warranty || undefined,
     brand: row.brand || undefined,
     manufacturer: row.manufacturer || undefined,
@@ -382,16 +383,22 @@ const productParams = (input) => [
   input.sourceImportId,
 ];
 
-export const createProduct = async ({ category, slug, input, updatedBy }) => {
+export const createProduct = async ({
+  category,
+  slug,
+  input,
+  updatedBy,
+  published = true,
+}) => {
   const result = await query(
     `INSERT INTO catalog_products
        (category_id, slug, name, summary, description, specs, features, applications, images,
         main_image, pdf_url, pdf_name, pdf_source, warranty, brand, manufacturer, manufacturer_model,
-        datasheet, source_import_id, updated_by)
-     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20)
+        datasheet, source_import_id, published, updated_by)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21)
      ON CONFLICT (category_id, slug) DO NOTHING
      RETURNING *`,
-    [category, slug, ...productParams(input), updatedBy],
+    [category, slug, ...productParams(input), published, updatedBy],
   );
   if (!result.rows[0]) {
     throw httpError(`A product with the slug "${slug}" already exists in this category.`, 409);
@@ -430,6 +437,51 @@ export const updateProduct = async ({ category, slug, input, updatedBy }) => {
     [category, slug, ...productParams(input), updatedBy],
   );
   return productView(result.rows[0], { admin: true });
+};
+
+/**
+ * Toggle public visibility without touching the product content.
+ *
+ * Existing rows are a one-column update, so a generated datasheet, images and
+ * source provenance are all preserved. Hiding a base-catalogue product for the
+ * first time creates an override from the full product supplied by the admin;
+ * showing it again simply flips the flag on that override.
+ */
+export const setProductVisibility = async ({
+  category,
+  slug,
+  published,
+  product,
+  updatedBy,
+}) => {
+  if (typeof published !== 'boolean') {
+    throw httpError('A boolean published value is required.');
+  }
+
+  const existing = await getProductRow(category, slug);
+  if (existing) {
+    const result = await query(
+      `UPDATE catalog_products
+       SET published = $1, updated_at = now(), updated_by = $2
+       WHERE category_id = $3 AND slug = $4
+       RETURNING *`,
+      [published, updatedBy, category, slug],
+    );
+    return productView(result.rows[0], { admin: true });
+  }
+
+  if (published) {
+    throw httpError(
+      'This base-catalogue product is already visible; there is no override to update.',
+      409,
+    );
+  }
+  if (!product || typeof product !== 'object' || Array.isArray(product)) {
+    throw httpError('The full product data is required to hide a base-catalogue product.');
+  }
+
+  const input = validateProductInput(product, { category, slug });
+  return createProduct({ category, slug, input, updatedBy, published: false });
 };
 
 export const deleteProduct = async (category, slug) => {
