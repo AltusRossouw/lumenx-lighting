@@ -32,6 +32,66 @@ import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CATALOGUE = path.join(ROOT, 'src', 'catalogue-scraped.ts');
 
+/* ── Gallery additions ───────────────────────────────────────────────────────
+ * Extra product photographs imported from the Oct 2026 scrape
+ * (`scraped-products/`) for products whose published gallery was thin.
+ *
+ * The scrape was NOT merged wholesale: it renames products, moves categories
+ * and marks 41 live pages blocked, so only photographs that were genuinely new
+ * were carried over. Every candidate was compared against the published
+ * gallery with a perceptual hash before it was copied into `public/scraped/`,
+ * and the Kinglong decorative renders were skipped — they still carry the
+ * supplier watermark the client asked us to remove.
+ *
+ * The manifest is committed so a regenerated catalogue gets the same gallery
+ * back; the images themselves live in `public/scraped/<category>/<slug>/`.
+ */
+const GALLERY_ADDITIONS = (() => {
+  const file = path.join(ROOT, 'scripts', 'catalogue-gallery-additions.json');
+  if (!existsSync(file)) return {};
+  try {
+    return JSON.parse(readFileSync(file, 'utf8')).products ?? {};
+  } catch (err) {
+    console.error(`apply-catalogue-overrides: could not read ${file}: ${err.message}`);
+    return {};
+  }
+})();
+
+/**
+ * Append gallery photos to a product's `images: [...]` block.
+ *
+ * Keeps the existing order (the hero stays first) and skips any `src` already
+ * present, so re-running after a regeneration is a no-op.
+ */
+function appendGallery(body, images) {
+  const existing = new Set([...body.matchAll(/\{ src: "([^"]+)"/g)].map((match) => match[1]));
+  const lines = images
+    .filter((image) => image.src && !existing.has(image.src))
+    .map((image) => {
+      const dims = Number.isFinite(image.width) && Number.isFinite(image.height)
+        ? `, width: ${image.width}, height: ${image.height}`
+        : '';
+      return `      { src: ${JSON.stringify(image.src)}, fit: ${JSON.stringify(image.fit ?? 'contain')}, alt: ${JSON.stringify(image.alt ?? '')}${dims} },`;
+    });
+  if (lines.length === 0) return { body, added: 0 };
+
+  if (/^ {4}images: \[\],$/m.test(body)) {
+    return {
+      body: body.replace(/^ {4}images: \[\],$/m, `    images: [\n${lines.join('\n')}\n    ],`),
+      added: lines.length,
+    };
+  }
+
+  const block = body.match(/^ {4}images: \[[\s\S]*?^ {4}\],$/m);
+  if (!block) return { body, added: 0 };
+
+  const close = block.index + block[0].length - '    ],'.length;
+  return {
+    body: `${body.slice(0, close)}${lines.join('\n')}\n${body.slice(close)}`,
+    added: lines.length,
+  };
+}
+
 /* ── The published category order (W5) ───────────────────────────────────────
  * The client wants the common products first: "your panels, your vapour
  * proofs, your tracks". Only those three were named on the call, so the rest of
@@ -559,6 +619,7 @@ let deleted = 0;
 let branded = 0;
 let corrected = 0;
 let replaced = 0;
+let galleryAdded = 0;
 
 for (const product of [...products].reverse()) {
   const key = `${product.category}/${product.slug}`;
@@ -619,6 +680,18 @@ for (const product of [...products].reverse()) {
       );
     if (body !== before) {
       replaced += 1;
+      touched = true;
+    }
+  }
+
+  // Extra gallery photographs imported from the Oct 2026 scrape. Appended
+  // after the existing gallery so the hero and its order stay untouched.
+  const gallery = GALLERY_ADDITIONS[key];
+  if (gallery?.length) {
+    const result = appendGallery(body, gallery);
+    if (result.added > 0) {
+      body = result.body;
+      galleryAdded += result.added;
       touched = true;
     }
   }
@@ -684,6 +757,7 @@ if (text === before) {
   report.push(`products re-branded: ${branded}`);
   report.push(`products moved between categories: ${moved}`);
   report.push(`product photographs replaced: ${replaced}`);
+  report.push(`gallery photographs added: ${galleryAdded}`);
   report.push(`spec rows dropped: ${corrected}`);
   report.push(`categories: ${CATEGORY_ORDER.length} published in fixed order`);
   console.log(`apply-catalogue-overrides: rewrote src/catalogue-scraped.ts\n  ${report.join('\n  ')}`);

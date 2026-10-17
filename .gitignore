@@ -32,6 +32,11 @@ data-scrape/product-lists/
 
 # …but keep the reproducible scraper scripts themselves.
 !data-scrape/tools/scrape-collections.mjs
+
+# New scraped catalogue (Oct 2026) — ~335MB of images, PDFs and a full site
+# payload. Not consumed by src/ yet; held out of version control for now.
+scraped-products/
+
 # CocoIndex Code (ccc)
 /.cocoindex_code/
 

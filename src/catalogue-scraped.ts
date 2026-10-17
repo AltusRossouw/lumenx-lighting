@@ -365,6 +365,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
     imageUrl: "/scraped/downlights/cob-adjustable-downlight/01-aegeon.webp",// hero
     images: [
       { src: "/scraped/downlights/cob-adjustable-downlight/02-aegeon-downlight.webp", fit: "contain", alt: "02-aegeon-downlight.webp" },
+      { src: "/scraped/downlights/cob-adjustable-downlight/refresh-01.webp", fit: "contain", alt: "Rubicon Lean 153 LED Downlight - White Finish", width: 800, height: 800 },
+      { src: "/scraped/downlights/cob-adjustable-downlight/refresh-02.webp", fit: "contain", alt: "Rubicon Lean 153 LED Downlight - Silver Finish", width: 800, height: 800 },
+      { src: "/scraped/downlights/cob-adjustable-downlight/refresh-03.webp", fit: "cover", alt: "Rubicon Lean 153 Downlight - Recessed Ceiling Installation", width: 800, height: 600 },
     ],
     pdfUrl: "/api/download/datasheet/generated/lean-153",
   },
@@ -629,6 +632,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     imageUrl: "/scraped/downlights/sauron/01-pioled-lighting-hd016-25-20-18-16w-sauron-recessed-round-led-downlight.jpg",// hero
     images: [
       { src: "/scraped/downlights/sauron/01-pioled-lighting-hd016-25-20-18-16w-sauron-recessed-round-led-downlight.jpg", fit: "contain", alt: "01-pioled-lighting-hd016-25-20-18-16w-sauron-recessed-round-led-downlight.jpg" },
+      { src: "/scraped/downlights/sauron/refresh-01.webp", fit: "contain", alt: "PioLED Lighting HD016a 25 20 18 16W Sauron Recessed Round LED Downlight 3CCT Black Trim", width: 800, height: 800 },
     ],
     pdfUrl: "/api/download/datasheet/generated/sauron",
     warranty: "5-year warranty",
@@ -3036,6 +3040,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     imageUrl: "/scraped/outdoor-architectural/everest-round/01-pioled-lighting-fb001-12w-everest-round-ip65-bollard-4cct-black-1.png",// hero
     images: [
       { src: "/scraped/outdoor-architectural/everest-round/01-pioled-lighting-fb001-12w-everest-round-ip65-bollard-4cct-black-1.png", fit: "contain", alt: "01-pioled-lighting-fb001-12w-everest-round-ip65-bollard-4cct-black-1.png" },
+      { src: "/scraped/outdoor-architectural/everest-round/refresh-01.webp", fit: "contain", alt: "PioLED Lighting FB001 12W Everest Round IP65 Bollard 4CCT Black B", width: 800, height: 800 },
     ],
     pdfUrl: "/api/download/datasheet/generated/everest-bollard-round",
     warranty: "5-year warranty",
@@ -4325,6 +4330,7 @@ export const SCRAPED_PRODUCTS: Product[] = [
     imageUrl: "/scraped/strips/cob/01-pioled-lighting-s303-sr303-a-10w-24v-cob-ip20-strip-3000k-1.jpg",// hero
     images: [
       { src: "/scraped/strips/cob/01-pioled-lighting-s303-sr303-a-10w-24v-cob-ip20-strip-3000k-1.jpg", fit: "contain", alt: "01-pioled-lighting-s303-sr303-a-10w-24v-cob-ip20-strip-3000k-1.jpg" },
+      { src: "/scraped/strips/cob/refresh-01.webp", fit: "contain", alt: "PioLED Lighting S302 SR302 A 10W 24V COB IP20 Strip 4000K", width: 800, height: 800 },
     ],
     pdfUrl: "/api/download/datasheet/generated/cob-strip-lumenx",
     warranty: "3-year warranty",
@@ -4502,6 +4508,9 @@ export const SCRAPED_PRODUCTS: Product[] = [
     imageUrl: "/scraped/track/blaster/01-pioled-lighting-tkw101-blaster-high-power-3-wire-track-spot-white-c.png",// hero
     images: [
       { src: "/scraped/track/blaster/01-pioled-lighting-tkw101-blaster-high-power-3-wire-track-spot-white-c.png", fit: "contain", alt: "01-pioled-lighting-tkw101-blaster-high-power-3-wire-track-spot-white-c.png" },
+      { src: "/scraped/track/blaster/refresh-01.webp", fit: "contain", alt: "PioLED Lighting TKW101 Blaster High power 3 Wire Track Spot White", width: 800, height: 800 },
+      { src: "/scraped/track/blaster/refresh-02.webp", fit: "contain", alt: "PioLED Lighting TKB101 Blaster High power 3 Wire Track Spot Black", width: 800, height: 800 },
+      { src: "/scraped/track/blaster/refresh-03.webp", fit: "contain", alt: "PioLED Lighting TKB101 Blaster High power 3 Wire Track Spot Black B", width: 800, height: 800 },
     ],
     pdfUrl: "/api/download/datasheet/generated/blaster",
     warranty: "5-year warranty",

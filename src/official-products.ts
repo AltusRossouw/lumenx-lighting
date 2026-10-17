@@ -240,10 +240,20 @@ export const OFFICIAL_PRODUCTS: Product[] = [
     applications: ['Parking structures', 'Canopies', 'Industrial corridors', 'Loading bays'],
     sheet: 'lumenx-datasheet-48w-3-cct-triproof.pdf',
   }),
+  // The old scrape captured Lean 153 from the Aegeon page, so its second gallery
+  // image is the wrong fitting. The gallery is set explicitly to keep that
+  // image out; the three extra shots are the genuine Lean 153 finishes and
+  // installation photo imported from the Oct 2026 scrape
+  // (`scripts/catalogue-gallery-additions.json`).
   fromScraped('downlights', 'cob-adjustable-downlight', 'COB Adjustable Downlight', 'lumenx-datasheet-lean-153.pdf', {
     publicSlug: 'lean-153',
     hero: '/product-images/lean-153.png',
-    images: [{ src: '/product-images/lean-153.png', fit: 'contain', alt: 'COB Adjustable Downlight' }],
+    images: [
+      { src: '/product-images/lean-153.png', fit: 'contain', alt: 'COB Adjustable Downlight' },
+      { src: '/scraped/downlights/cob-adjustable-downlight/refresh-01.webp', fit: 'contain', alt: 'Lean 153 downlight — white finish', width: 800, height: 800 },
+      { src: '/scraped/downlights/cob-adjustable-downlight/refresh-02.webp', fit: 'contain', alt: 'Lean 153 downlight — silver finish', width: 800, height: 800 },
+      { src: '/scraped/downlights/cob-adjustable-downlight/refresh-03.webp', fit: 'cover', alt: 'Lean 153 downlight installed in a recessed ceiling', width: 800, height: 600 },
+    ],
   }),
   fromScraped('downlights', 'cob-anti-glare-downlight', 'COB Anti-glare Downlight', 'lumenx-datasheet-cob-dr.pdf', {
     publicSlug: 'cob-dr',

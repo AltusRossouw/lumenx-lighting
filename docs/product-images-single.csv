@@ -1,0 +1,47 @@
+category,name,slug,reason,scrape_status,scrape_images
+bulkheads,ALU Bulkhead,alu-bulkhead,Curated single hero (by design),,0
+bulkheads,PC Bulkhead,pc-bulkhead,Curated single hero (by design),,0
+downlights,9W Surface Downlight,9w-surface-downlight,Curated single hero (by design),,0
+street,60W Street Light,60w-street-light,Curated single hero (by design),,0
+panels,600x1200 Recessed Panel,600x1200-recessed-panel,Curated single hero (by design),,0
+strips,High Voltage Strip,high-voltage-strip,Curated single hero (by design),,0
+panels,Recessed Panel,recessed-panel,Curated single hero (by design),,0
+track,35W Track Spot,35w-track-spot,Curated single hero (by design),,0
+vapourproof,48W 3 CCT Triproof,48w-3-cct-triproof,Curated single hero (by design),,0
+vapourproof,Kuda,kuda,Curated single hero (by design),complete,2
+linears,Soniq,soniq,Curated single hero (by design),complete,2
+highbays,Jupiter 1200mm,jupiter,Curated single hero (by design),complete,2
+panels,Puck Panel 1200mm,puck-panel,Curated single hero (by design),missing_source,0
+bulkheads,Retrofit Module 15W,retrofit-module,Curated single hero (by design),missing_source,0
+floods,Floodlight,orbitx-floodlight,Curated single hero (by design),,0
+downlights,Small COB Anti-glare Downlight,small-cob-anti-glare-downlight,Scrape has no extra photos,complete,1
+downlights,COB Square Downlight,cob-square-downlight,Scrape has no extra photos,complete,1
+downlights,COB Square Double Downlight,cob-square-double-downlight,Scrape has no extra photos,complete,1
+highbays,Delta,delta,Scrape has no extra photos,complete,1
+highbays,Raptor,raptor,Scrape photos belong to child SKUs,complete,1
+architectural-indoor,Pearl,pearl,Watermarked supplier renders excluded,complete,13
+architectural-indoor,Dream Pen,dream-pen,Watermarked supplier renders excluded,complete,12
+architectural-indoor,Jiangnan,jiangnan,Watermarked supplier renders excluded,complete,12
+architectural-indoor,Crystal Cloud,crystal-cloud,Watermarked supplier renders excluded,complete,12
+linears,Kepler,kepler,Scrape has no extra photos,complete,1
+linears,LDR6563,ldr6563,Scrape has no extra photos,complete,1
+linears,LRD9063,lrd9063,Scrape has no extra photos,complete,1
+linears,BASE,base,Scrape has no extra photos,complete,1
+bollards,Fuji Square,fuji-square,Scrape has no extra photos,complete,1
+bollards,Fuji Round,fuji-round,Scrape has no extra photos,complete,1
+bollards,Everest Square,everest-square,Scrape has no extra photos,complete,1
+outdoor-architectural,ZOD101 Square LED Wall,zod101-square-led-wall,Scrape has no extra photos,complete,1
+outdoor-architectural,ZOD102 Round LED Wall,zod102-round-led-wall,Scrape has no extra photos,complete,1
+outdoor-architectural,Orbit,orbit,Scrape has no extra photos,complete,1
+outdoor-architectural,Vista,vista,Scrape has no extra photos,complete,1
+sensors,IS 2360 S,is-2360-s,Scrape blocked / no source,blocked,0
+sensors,DualTech,dualtech,Scrape blocked / no source,blocked,0
+sensors,IS 3360,is-3360,Scrape blocked / no source,blocked,0
+sensors,IS 3360 Highbay,is-3360-highbay,Scrape blocked / no source,blocked,0
+sensors,IS 345 Highbay,is-345-highbay,Scrape blocked / no source,blocked,0
+sensors,IS 2180,is-2180,Scrape blocked / no source,blocked,0
+sensors,Service Remote,service-remote,Scrape blocked / no source,blocked,0
+solar,Sky ELE-15 Solar Post Top,sky-ele-15-solar-post-top,Scrape has no extra photos,complete,1
+solar,Sky SPT-150 Solar Post Top,sky-spt-150-solar-post-top,Scrape has no extra photos,complete,1
+solar,Vista Solar Post Top,vista-solar-post-top,Scrape has no extra photos,complete,1
+vapourproof,VP,vp,Scrape has no extra photos,complete,1
