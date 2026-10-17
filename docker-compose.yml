@@ -6,7 +6,8 @@
 #
 # Secrets are injected via ${VAR} interpolation from the stack's environment
 # variables (set in Portainer): POSTGRES_PASSWORD, JWT_SECRET, ADMIN_API_KEY,
-# RESEND_API_KEY.
+# RESEND_API_KEY, DEEPSEEK_API_KEY. Leave DEEPSEEK_API_KEY empty to disable AI
+# spec-sheet import; the manual catalogue editor still works.
 
 services:
   db:
@@ -42,9 +43,21 @@ services:
       ADMIN_API_KEY: ${ADMIN_API_KEY}
       COOKIE_SECURE: "true"
       RESEND_API_KEY: ${RESEND_API_KEY}
+      # Admin catalogue media + AI spec-sheet import. Leave DEEPSEEK_API_KEY
+      # empty to disable AI import; the manual editor still works.
+      UPLOADS_DIR: /app/uploads
+      IES_UPLOADS_DIR: /app/uploads/ies
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY}
+      DEEPSEEK_BASE_URL: https://api.deepseek.com
+      DEEPSEEK_MODEL: ${DEEPSEEK_MODEL:-deepseek-flash}
+      AI_IMPORT_ENABLED: "true"
       RESEND_FROM: "LumenX Lighting <leads@lumenx.co.za>"
       LEAD_NOTIFY_EMAIL: info@lumenx.co.za
       CORS_ORIGINS: https://www.lumenx.co.za
+    volumes:
+      # Persistent admin uploads: product/category images, spec sheets,
+      # manufacturer source PDFs and uploaded IES files.
+      - lumenx_uploads:/app/uploads
     ports:
       - "4000:4000" # NPM (separate container) proxies to host:4000
     healthcheck:
@@ -56,3 +69,4 @@ services:
 
 volumes:
   lumenx_pgdata:
+  lumenx_uploads:

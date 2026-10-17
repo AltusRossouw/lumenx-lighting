@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { api, IesFile, User } from '../lib/api';
-import { groupIesByCategory } from '../products';
+import { useCatalog } from '../catalog';
 import { PageHeroBackground } from './animations';
 import { FileDown, Loader2, Lock, ShieldCheck } from 'lucide-react';
 
@@ -10,6 +10,7 @@ type AuthState = 'loading' | 'anonymous' | 'authenticated';
 
 export const IESLibraryPage: React.FC = () => {
   const location = useLocation();
+  const catalog = useCatalog();
   const [state, setState] = useState<AuthState>('loading');
   const [user, setUser] = useState<User | null>(null);
   const [files, setFiles] = useState<IesFile[]>([]);
@@ -18,7 +19,7 @@ export const IESLibraryPage: React.FC = () => {
   // Files arrive as one flat list; the page renders them under the same
   // categories as the catalogue. Memoised because the map walk is over ~500
   // files and this component re-renders on auth state changes.
-  const groups = useMemo(() => groupIesByCategory(files), [files]);
+  const groups = useMemo(() => catalog.groupIesByCategory(files), [files, catalog]);
 
   useEffect(() => {
     let active = true;

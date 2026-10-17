@@ -15,7 +15,9 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { config } from '../config.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..', '..');
@@ -43,6 +45,51 @@ export async function generateDatasheetPdf(rawSlug) {
   const job = doGenerate(slug).finally(() => pending.delete(slug));
   pending.set(slug, job);
   return job;
+}
+
+/**
+ * Render a datasheet from an in-memory payload. Used for admin-created products
+ * (and the admin draft preview), where there is no JSON file on disk.
+ *
+ * The cache key includes a hash of the payload, so editing a product always
+ * produces a fresh PDF without a separate invalidation step.
+ */
+export async function renderDatasheetData({ key, data }) {
+  if (!data || typeof data !== 'object') return null;
+  const safeKey = sanitizeSlug(key) || 'product';
+  const hash = createHash('sha256').update(JSON.stringify(data)).digest('hex').slice(0, 12);
+  const cacheName = 'product-' + safeKey + '-' + hash;
+  if (pending.has(cacheName)) return pending.get(cacheName);
+  const job = doGenerateData({ key: safeKey, data, cacheName }).finally(() => pending.delete(cacheName));
+  pending.set(cacheName, job);
+  return job;
+}
+
+async function doGenerateData({ key, data, cacheName }) {
+  fs.mkdirSync(CACHE_DIR, { recursive: true });
+  const pdfPath = path.join(CACHE_DIR, cacheName + '.pdf');
+  const templateMtime = fs.statSync(TEMPLATE_PATH).mtimeMs;
+  const stale =
+    !fs.existsSync(pdfPath) || fs.statSync(pdfPath).mtimeMs < templateMtime;
+
+  if (stale) {
+    const html = buildHtml(data);
+    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'lumenx-ds-live-'));
+    const htmlPath = path.join(tmpDir, key + '.html');
+    try {
+      fs.writeFileSync(htmlPath, html);
+      fs.rmSync(pdfPath, { force: true });
+      await renderHtmlToPdf(htmlPath, pdfPath);
+    } finally {
+      fs.rmSync(tmpDir, { recursive: true, force: true });
+    }
+  }
+
+  return {
+    file: pdfPath,
+    filename: 'LumenX_Datasheet_' + (data.fileStem || key) + '.pdf',
+    slug: key,
+  };
 }
 
 async function doGenerate(slug) {
@@ -98,6 +145,12 @@ function buildHtml(data) {
 
   const publicPrefix = pathToFileURL(path.join(ROOT, 'public') + '/').href;
   html = html.split('../public/').join(publicPrefix);
+
+  // Admin-uploaded product images live outside public/. The template payload
+  // refers to them as ../uploads/...; rewrite that to a file:// URL so headless
+  // Chromium can embed the image in the rendered PDF.
+  const uploadsPrefix = pathToFileURL(config.uploadsDir + '/').href;
+  html = html.split('../uploads/').join(uploadsPrefix);
   return html;
 }
 

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { getCategory, getProduct, getProductsByCategory, getProductImages, datasheetDownloadUrl, iesVariantLabel, displayName } from '../products';
-import { iesFilesForProduct } from '../ies-product-map';
+import { getProductImages, datasheetDownloadUrl, iesVariantLabel, displayName } from '../products';
+import { useCatalog } from '../catalog';
 import { api } from '../lib/api';
 import {
   ArrowLeft,
@@ -46,11 +46,20 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
     setIesVisible(10);
   }, [slug]);
 
-  const category = getCategory(categoryId);
-  const product = getProduct(categoryId, slug);
-  const iesFiles = iesFilesForProduct(slug);
+  const catalog = useCatalog();
+  const category = catalog.getCategory(categoryId);
+  const product = catalog.getProduct(categoryId, slug);
+  const iesFiles = catalog.getIesFiles(slug);
 
   if (!category || !product) {
+    if (catalog.status === 'idle' || catalog.status === 'loading') {
+      return (
+        <div className="py-40 text-center text-slate-400">
+          <p className="font-display text-xl font-semibold text-white mb-2">Loading product…</p>
+          <p className="text-sm font-mono text-slate-500">Fetching the latest catalogue.</p>
+        </div>
+      );
+    }
     return (
       <div className="py-40 text-center text-slate-400">
         <p className="font-display text-xl font-semibold text-white mb-2">Product not found</p>
@@ -61,7 +70,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
     );
   }
 
-  const siblings = getProductsByCategory(categoryId);
+  const siblings = catalog.getProductsByCategory(categoryId);
   // OrbitX fittings render with their brand prefix on every surface — heading,
   // breadcrumb, gallery alt text and prev/next — while the slug stays put.
   const name = displayName(product);
@@ -270,39 +279,44 @@ export const ProductPage: React.FC<ProductPageProps> = ({ categoryId, slug }) =>
                 </div>
             </div>
 
-            {/* Sidebar: features + applications */}
+            {/* Sidebar: features + applications. New admin-created products may
+                legitimately have neither yet, so empty cards are not rendered. */}
             <div className="space-y-6">
-              <div className="p-6 rounded-2xl border border-[#1E293B] bg-[#0A0D14]">
-                <div className="flex items-center gap-2 mb-4">
-                  <Layers className="w-4 h-4 text-primary" />
-                  <h3 className="font-display text-sm font-semibold text-white tracking-tight">Key Features</h3>
+              {product.features.length > 0 && (
+                <div className="p-6 rounded-2xl border border-[#1E293B] bg-[#0A0D14]">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Layers className="w-4 h-4 text-primary" />
+                    <h3 className="font-display text-sm font-semibold text-white tracking-tight">Key Features</h3>
+                  </div>
+                  <ul className="list-disc pl-5 space-y-3 marker:text-primary">
+                    {product.features.map((f) => (
+                      <li key={f} className="text-sm text-slate-300 leading-relaxed font-sans font-light">
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="list-disc pl-5 space-y-3 marker:text-primary">
-                  {product.features.map((f) => (
-                    <li key={f} className="text-sm text-slate-300 leading-relaxed font-sans font-light">
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              )}
 
-              <div className="p-6 rounded-2xl border border-[#1E293B] bg-[#0A0D14]">
-                <div className="flex items-center gap-2 mb-4">
-                  <Target className="w-4 h-4 text-primary" />
-                  <h3 className="font-display text-sm font-semibold text-white tracking-tight">Applications</h3>
+              {product.applications.length > 0 && (
+                <div className="p-6 rounded-2xl border border-[#1E293B] bg-[#0A0D14]">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Target className="w-4 h-4 text-primary" />
+                    <h3 className="font-display text-sm font-semibold text-white tracking-tight">Applications</h3>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {product.applications.map((app) => (
+                      <span
+                        key={app}
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-primary/5 border border-primary/10 text-[11px] text-primary font-mono"
+                      >
+                        <Check className="w-3 h-3" />
+                        {app}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {product.applications.map((app) => (
-                    <span
-                      key={app}
-                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-primary/5 border border-primary/10 text-[11px] text-primary font-mono"
-                    >
-                      <Check className="w-3 h-3" />
-                      {app}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              )}
             </div>
           </div>
 

@@ -7,8 +7,9 @@ import { CompleteSolutionSection } from './CompleteSolutionSection';
 import { CTASection } from './CTASection';
 import { AccreditationBar } from './AccreditationBar';
 import { LumenXMark } from './ui/lumenx-mark';
-import { PRODUCT_CATEGORIES } from '../data';
 import { useSiteContent } from '../content';
+import { useCatalog } from '../catalog';
+import { PLACEHOLDER_PRODUCT_IMAGE } from '../products';
 import { ArrowRight } from 'lucide-react';
 
 /* ── Shared teaser shell: headline + short copy (body sits under the heading) ── */
@@ -94,6 +95,7 @@ const SolutionTeaser: React.FC = () => {
 /* ── 2 · Product Categories teaser ── */
 const CategoriesTeaser: React.FC = () => {
   const { home } = useSiteContent();
+  const catalog = useCatalog();
   const t = home.categories;
   return (
     <Teaser
@@ -103,14 +105,14 @@ const CategoriesTeaser: React.FC = () => {
       copy={t.copy}
     >
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {PRODUCT_CATEGORIES.map((c) => (
+        {catalog.categories.map((c) => (
           <Link
             key={c.id}
             to={`/products/${c.id}`}
             className="group relative overflow-hidden aspect-video bg-black gradient-border-card card-lift text-left"
           >
             <img
-              src={c.imageUrl}
+              src={c.imageUrl || PLACEHOLDER_PRODUCT_IMAGE}
               alt={c.title}
               loading="lazy"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"

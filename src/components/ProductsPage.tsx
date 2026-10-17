@@ -1,21 +1,18 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { LIGHTING_CATEGORIES, PRODUCT_CATEGORIES, SENSOR_CATEGORIES } from '../data';
 import { useSiteContent } from '../content';
+import { useCatalog } from '../catalog';
+import { PLACEHOLDER_PRODUCT_IMAGE } from '../products';
+import type { ProductCategory } from '../types';
 import { ArrowRight, ShieldCheck, Zap, Clock } from 'lucide-react';
 import { PageHeroBackground } from './animations';
 
 /* ── Ranges shown by the selector at the top of the page ── */
 type RangeId = 'lighting' | 'sensors';
 
-const RANGES: { id: RangeId; label: string; categories: typeof PRODUCT_CATEGORIES }[] = [
-  { id: 'lighting', label: 'Lighting Solutions', categories: LIGHTING_CATEGORIES },
-  { id: 'sensors', label: 'Sensors', categories: SENSOR_CATEGORIES },
-];
-
 /* ── Product category card ── */
-const CategoryCard: React.FC<{ category: (typeof PRODUCT_CATEGORIES)[number]; index: number }> = ({ category, index }) => {
+const CategoryCard: React.FC<{ category: ProductCategory; index: number }> = ({ category, index }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -25,7 +22,7 @@ const CategoryCard: React.FC<{ category: (typeof PRODUCT_CATEGORIES)[number]; in
     >
       <Link to={`/products/${category.id}`} className="aspect-video overflow-hidden relative block bg-black" aria-label={category.title}>
         <img
-          src={category.imageUrl}
+          src={category.imageUrl || PLACEHOLDER_PRODUCT_IMAGE}
           alt={category.title}
           loading="lazy"
           className="absolute inset-0 w-full h-full object-cover"
@@ -58,10 +55,28 @@ const CategoryCard: React.FC<{ category: (typeof PRODUCT_CATEGORIES)[number]; in
 
 export const ProductsPage: React.FC = () => {
   const { products } = useSiteContent();
+  const catalog = useCatalog();
   const [activeRange, setActiveRange] = useState<RangeId>('lighting');
+
+  const ranges = useMemo(
+    () => [
+      {
+        id: 'lighting' as const,
+        label: 'Lighting Solutions',
+        categories: catalog.categories.filter((category) => category.range !== 'sensors'),
+      },
+      {
+        id: 'sensors' as const,
+        label: 'Sensors',
+        categories: catalog.categories.filter((category) => category.range === 'sensors'),
+      },
+    ],
+    [catalog.categories],
+  );
+
   const activeRangeData = useMemo(
-    () => RANGES.find((range) => range.id === activeRange) ?? RANGES[0],
-    [activeRange],
+    () => ranges.find((range) => range.id === activeRange) ?? ranges[0],
+    [activeRange, ranges],
   );
   return (
     <div className="min-h-screen">
@@ -96,7 +111,7 @@ export const ProductsPage: React.FC = () => {
             aria-label="Product range"
             className="flex flex-wrap items-center justify-center gap-3 mb-10"
           >
-            {RANGES.map((range) => {
+            {ranges.map((range) => {
               const isActive = range.id === activeRange;
               return (
                 <button

@@ -3,6 +3,7 @@
 // cookie keeps auth state.
 
 import type { SiteContent } from '../content';
+import type { Product, ProductCategory, ProductImage, ProductSpec } from '../types';
 
 export interface ApiError extends Error {
   status?: number;
@@ -74,6 +75,153 @@ export interface IesFile {
   lumens: number | null;
   watts: number | null;
   manufacturer: string;
+}
+
+/* ── Editable catalogue overlay ─────────────────────────────────────────── */
+
+export interface CatalogPayload {
+  categories: ProductCategory[];
+  products: Product[];
+}
+
+export interface AdminCatalogProduct extends Product {
+  id?: string;
+  datasheet?: unknown;
+  sourceImportId?: string | null;
+}
+
+export interface AdminCatalogPayload {
+  categories: ProductCategory[];
+  products: AdminCatalogProduct[];
+}
+
+export interface CatalogCategoryInput {
+  id?: string;
+  title: string;
+  description: string;
+  applications: string;
+  imageUrl: string;
+  linkLabel: string;
+  range: 'lighting' | 'sensors';
+  sortOrder: number;
+}
+
+export interface CatalogProductInput {
+  category: string;
+  slug: string;
+  name: string;
+  summary: string;
+  description: string;
+  specs: ProductSpec[];
+  features: string[];
+  applications: string[];
+  images: ProductImage[];
+  mainImage?: string | null;
+  pdfUrl?: string | null;
+  pdfName?: string | null;
+  pdfSource: 'none' | 'uploaded' | 'generated';
+  warranty?: string | null;
+  brand?: string | null;
+  manufacturer?: string | null;
+  manufacturerModel?: string | null;
+  datasheet?: unknown;
+  sourceImportId?: string | null;
+}
+
+export interface CatalogImageUpload {
+  url: string;
+  filename: string;
+  mime: string;
+  bytes: number;
+  width: number | null;
+  height: number | null;
+  originalName?: string | null;
+}
+
+export interface CatalogPdfUpload {
+  url: string;
+  filename: string;
+  bytes: number;
+  originalName?: string | null;
+}
+
+export type CatalogImportStatus =
+  | 'queued'
+  | 'extracting'
+  | 'analyzing'
+  | 'ready'
+  | 'failed'
+  | 'canceled';
+
+export interface CatalogImportImage {
+  url: string;
+  width: number | null;
+  height: number | null;
+  mime: string;
+}
+
+export interface CatalogImportDraft {
+  schemaVersion: number;
+  confidence: 'high' | 'medium' | 'low';
+  warnings: string[];
+  source: {
+    manufacturer: string | null;
+    model: string | null;
+    pageCount: number | null;
+  };
+  product: {
+    suggestedName: string;
+    manufacturerName: string | null;
+    categoryId: string | null;
+    brand: 'orbitx' | null;
+    summary: string;
+    description: string;
+    warranty: string | null;
+    specs: ProductSpec[];
+    features: string[];
+    applications: string[];
+    manufacturer: string | null;
+    manufacturerModel: string | null;
+  };
+  datasheet: {
+    variant?: string;
+    stats: { label: string; value: string; unit: string }[];
+    columns: {
+      left: { title: string; rows: { label: string; value: string }[] }[];
+      right: { title: string; rows: { label: string; value: string }[] }[];
+    };
+  } | null;
+  evidence: { field: string; quote: string; page: number | null }[];
+}
+
+export interface CatalogImportJob {
+  id: string;
+  status: CatalogImportStatus;
+  statusMessage: string | null;
+  originalName: string | null;
+  bytes: number | null;
+  pageCount: number | null;
+  model: string | null;
+  sourceUrl: string;
+  images: CatalogImportImage[];
+  warnings: string[];
+  result: CatalogImportDraft | null;
+  error: string | null;
+  tokensIn: number | null;
+  tokensOut: number | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface CatalogImportCapabilities {
+  enabled: boolean;
+  configured: boolean;
+  model: string;
+  baseUrl: string;
+  pdfTools: {
+    available: boolean;
+    tools: Record<string, boolean>;
+  };
 }
 
 async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
@@ -175,6 +323,116 @@ export const api = {
       method: 'POST',
       body: JSON.stringify({ email, report }),
     }),
+
+  // Editable catalogue overlay
+  catalog: () => request<CatalogPayload>('/api/catalog'),
+  iesProductMap: () =>
+    request<{
+      map: Record<string, string[]>;
+      files: number;
+      missing: number;
+      ambiguous: { slug: string; categories: string[] }[];
+    }>('/api/ies/product-map'),
+  adminCatalog: () => request<AdminCatalogPayload>('/api/admin/catalog'),
+  createCatalogCategory: (input: CatalogCategoryInput) =>
+    request<{ ok: boolean; category: ProductCategory }>('/api/admin/catalog/categories', {
+      method: 'POST',
+      body: JSON.stringify(input),
+    }),
+  updateCatalogCategory: (id: string, input: CatalogCategoryInput) =>
+    request<{ ok: boolean; category: ProductCategory }>(
+      `/api/admin/catalog/categories/${encodeURIComponent(id)}`,
+      { method: 'PUT', body: JSON.stringify(input) },
+    ),
+  deleteCatalogCategory: (id: string) =>
+    request<{ ok: boolean }>(`/api/admin/catalog/categories/${encodeURIComponent(id)}`, {
+      method: 'DELETE',
+    }),
+  createCatalogProduct: (input: CatalogProductInput) =>
+    request<{ ok: boolean; product: AdminCatalogProduct }>('/api/admin/catalog/products', {
+      method: 'POST',
+      body: JSON.stringify(input),
+    }),
+  updateCatalogProduct: (category: string, slug: string, input: CatalogProductInput) =>
+    request<{ ok: boolean; product: AdminCatalogProduct }>(
+      `/api/admin/catalog/products/${encodeURIComponent(category)}/${encodeURIComponent(slug)}`,
+      { method: 'PUT', body: JSON.stringify(input) },
+    ),
+  deleteCatalogProduct: (category: string, slug: string) =>
+    request<{ ok: boolean }>(
+      `/api/admin/catalog/products/${encodeURIComponent(category)}/${encodeURIComponent(slug)}`,
+      { method: 'DELETE' },
+    ),
+  uploadCatalogImage: async (
+    scope: 'product' | 'category',
+    slug: string,
+    blob: Blob,
+    filename: string,
+    width?: number | null,
+    height?: number | null,
+  ) => {
+    const params = new URLSearchParams({ scope, slug, filename });
+    if (width) params.set('width', String(width));
+    if (height) params.set('height', String(height));
+    return requestOctet<{ ok: boolean; image: CatalogImageUpload }>(
+      `/api/admin/catalog/upload/image?${params.toString()}`,
+      await blob.arrayBuffer(),
+    );
+  },
+  uploadCatalogSpecSheet: async (slug: string, file: File) => {
+    const params = new URLSearchParams({ slug, filename: file.name });
+    return requestOctet<{ ok: boolean; pdf: CatalogPdfUpload }>(
+      `/api/admin/catalog/upload/spec-sheet?${params.toString()}`,
+      await file.arrayBuffer(),
+    );
+  },
+  previewCatalogDatasheet: (payload: Record<string, unknown>) =>
+    requestBlob('/api/admin/catalog/datasheet/preview', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    }),
+
+  // AI spec-sheet import
+  catalogImportStatus: () =>
+    request<CatalogImportCapabilities>('/api/admin/catalog/imports/status'),
+  uploadCatalogImportSource: async (file: File) => {
+    const params = new URLSearchParams({ filename: file.name });
+    return requestOctet<{ ok: boolean; import: CatalogImportJob }>(
+      `/api/admin/catalog/imports/source?${params.toString()}`,
+      await file.arrayBuffer(),
+    );
+  },
+  startCatalogImport: (
+    sourceId: string,
+    categories: { id: string; title: string }[],
+    pageHint = '',
+    modelHint = '',
+  ) =>
+    request<{ ok: boolean; import: CatalogImportJob }>('/api/admin/catalog/imports', {
+      method: 'POST',
+      body: JSON.stringify({ sourceId, categories, pageHint, modelHint }),
+    }),
+  getCatalogImport: (id: string) =>
+    request<{ import: CatalogImportJob }>(
+      `/api/admin/catalog/imports/${encodeURIComponent(id)}`,
+    ),
+  listCatalogImports: () =>
+    request<{ imports: CatalogImportJob[] }>('/api/admin/catalog/imports'),
+  retryCatalogImport: (id: string) =>
+    request<{ ok: boolean; import: CatalogImportJob }>(
+      `/api/admin/catalog/imports/${encodeURIComponent(id)}/retry`,
+      { method: 'POST' },
+    ),
+  cancelCatalogImport: (id: string) =>
+    request<{ ok: boolean; import: CatalogImportJob }>(
+      `/api/admin/catalog/imports/${encodeURIComponent(id)}/cancel`,
+      { method: 'POST' },
+    ),
+  adoptCatalogImportImages: (id: string, slug: string) =>
+    request<{ ok: boolean; images: ProductImage[] }>(
+      `/api/admin/catalog/imports/${encodeURIComponent(id)}/adopt`,
+      { method: 'POST', body: JSON.stringify({ slug }) },
+    ),
 };
 
 /* ── IES library management (admin) ──────────────────────────────────────
@@ -221,7 +479,11 @@ const asApiError = (message: string, status: number): ApiError => {
 };
 
 /** Same contract as `request`, but for a raw binary body. */
-async function requestBinary<T>(path: string, body: ArrayBuffer, filename: string): Promise<T> {
+async function requestOctet<T>(
+  path: string,
+  body: ArrayBuffer,
+  headers: Record<string, string> = {},
+): Promise<T> {
   let res: Response;
   try {
     res = await fetch(path, {
@@ -229,7 +491,7 @@ async function requestBinary<T>(path: string, body: ArrayBuffer, filename: strin
       credentials: 'include',
       headers: {
         'Content-Type': 'application/octet-stream',
-        'X-IES-Filename': filename,
+        ...headers,
       },
       body,
     });
@@ -243,6 +505,40 @@ async function requestBinary<T>(path: string, body: ArrayBuffer, filename: strin
     throw asApiError(data?.error || `Upload failed (${res.status})`, res.status);
   }
   return data as T;
+}
+
+/** Raw IES upload (keeps the existing X-IES-Filename contract). */
+async function requestBinary<T>(path: string, body: ArrayBuffer, filename: string): Promise<T> {
+  return requestOctet<T>(path, body, { 'X-IES-Filename': filename });
+}
+
+/** Same contract as `request`, but the response is a binary blob (PDF preview). */
+async function requestBlob(path: string, options: RequestInit = {}): Promise<Blob> {
+  let res: Response;
+  try {
+    res = await fetch(path, {
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      ...options,
+    });
+  } catch {
+    throw new Error('Cannot reach the server. Is the backend running?');
+  }
+
+  if (!res.ok) {
+    const text = await res.text();
+    let message = 'Request failed (' + res.status + ')';
+    try {
+      const data = JSON.parse(text);
+      if (data?.error) message = data.error;
+    } catch {
+      // Keep the generic message.
+    }
+    const err = new Error(message) as ApiError;
+    err.status = res.status;
+    throw err;
+  }
+  return res.blob();
 }
 
 export const iesAdminApi = {

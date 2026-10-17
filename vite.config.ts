@@ -33,6 +33,12 @@ export default defineConfig(() => {
           target: process.env.API_TARGET || 'http://localhost:4000',
           changeOrigin: true,
         },
+        // Admin-uploaded product/category images live in the backend's
+        // uploads/ directory, not public/, so Vite must proxy them in dev.
+        '/uploads': {
+          target: process.env.API_TARGET || 'http://localhost:4000',
+          changeOrigin: true,
+        },
       },
     },
   };

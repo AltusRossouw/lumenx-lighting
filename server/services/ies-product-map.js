@@ -95,23 +95,36 @@ export const validateIesUpload = (body) => {
 
 // ── Disk helpers ──────────────────────────────────────────────────────────
 
-/** Filenames present in the walled-garden directory (empty when missing). */
+/**
+ * Both IES roots: the committed/importer directory and the writable uploads
+ * directory. Committed files win when a name exists in both.
+ */
+const iesRoots = () => [...new Set([config.iesDir, config.iesUploadsDir].filter(Boolean))];
+
+/** Filenames present across both IES roots (empty when neither exists). */
 export const listIesDirFilenames = async () => {
-  try {
-    const entries = await fs.readdir(config.iesDir);
-    return entries.filter((entry) => entry.toLowerCase().endsWith('.ies')).sort();
-  } catch {
-    return [];
+  const names = new Set();
+  for (const dir of iesRoots()) {
+    try {
+      const entries = await fs.readdir(dir);
+      for (const entry of entries) {
+        if (entry.toLowerCase().endsWith('.ies')) names.add(entry);
+      }
+    } catch {
+      // Missing directory is not an error.
+    }
   }
+  return [...names].sort();
 };
 
 /**
- * Write an uploaded file into the walled-garden directory and return its
- * canonical filename.
+ * Write an uploaded file into the writable IES directory (uploads/ies) and
+ * return its canonical filename.
  *
- * Re-uploading the same bytes is idempotent (the existing name is reused);
- * different bytes under the same name are never overwritten — a `-2`, `-3`, …
- * suffix keeps both files.
+ * Committed files in server/files/ies stay read-only. Re-uploading the same
+ * bytes is idempotent: if either root already has those bytes under a candidate
+ * name, that name is reused. Different bytes under the same name are never
+ * overwritten — a `-2`, `-3`, … suffix keeps both files.
  */
 export const writeIesFile = async (originalName, body) => {
   const base = iesFilenameForUpload(originalName);
@@ -119,24 +132,31 @@ export const writeIesFile = async (originalName, body) => {
     throw Object.assign(new Error('Cannot derive a filename from that upload.'), { status: 400 });
   }
 
-  await fs.mkdir(config.iesDir, { recursive: true });
+  await fs.mkdir(config.iesUploadsDir, { recursive: true });
+  const roots = iesRoots();
 
-  const candidates = [base, ...Array.from({ length: 50 }, (_, i) => base.replace(/\.ies$/, `-${i + 2}.ies`))];
+  const candidates = [
+    base,
+    ...Array.from({ length: 50 }, (_, i) => base.replace(/\.ies$/, `-${i + 2}.ies`)),
+  ];
   for (const candidate of candidates) {
-    const target = path.join(config.iesDir, candidate);
-    let existing = null;
-    try {
-      existing = await fs.readFile(target);
-    } catch {
-      existing = null;
+    let conflict = false;
+    for (const dir of roots) {
+      let existing = null;
+      try {
+        existing = await fs.readFile(path.join(dir, candidate));
+      } catch {
+        existing = null;
+      }
+      if (existing === null) continue;
+      if (existing.equals(body)) return { filename: candidate, reused: true };
+      conflict = true;
+      break;
     }
-    if (existing === null) {
-      await fs.writeFile(target, body);
-      return { filename: candidate, reused: false };
-    }
-    if (existing.equals(body)) {
-      return { filename: candidate, reused: true };
-    }
+    if (conflict) continue;
+
+    await fs.writeFile(path.join(config.iesUploadsDir, candidate), body);
+    return { filename: candidate, reused: false };
   }
   throw Object.assign(new Error('Too many files with that name already exist.'), { status: 409 });
 };

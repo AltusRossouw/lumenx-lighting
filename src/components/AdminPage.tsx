@@ -4,6 +4,7 @@ import { api, AdminUser, DownloadRecord, DownloadStats, Lead } from '../lib/api'
 import { PageHeroBackground } from './animations';
 import { ContentEditor } from './ContentEditor';
 import { AdminIesLibrary } from './AdminIesLibrary';
+import { AdminCatalogue } from './AdminCatalogue';
 import {
   AtSign,
   FileDown,
@@ -13,6 +14,7 @@ import {
   Loader2,
   Lock,
   LogOut,
+  Package,
   Search,
   ShieldCheck,
   UserPlus,
@@ -21,7 +23,7 @@ import {
 
 type AuthState = 'loading' | 'login' | 'authenticated';
 type Filter = 'all' | 'admins';
-type Tab = 'users' | 'downloads' | 'leads' | 'content' | 'ies';
+type Tab = 'users' | 'downloads' | 'leads' | 'catalog' | 'content' | 'ies';
 
 export const AdminPage: React.FC = () => {
   const [authState, setAuthState] = useState<AuthState>('loading');
@@ -136,7 +138,7 @@ export const AdminPage: React.FC = () => {
     <div className="pt-[104px] min-h-screen">
       <section className="relative py-16 sm:py-20 overflow-hidden bg-[#06090F]">
         <PageHeroBackground rays={false} particles={false} dots={false} />
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Loading */}
           {authState === 'loading' && (
             <div className="gradient-border-card p-10 text-center">
@@ -211,8 +213,8 @@ export const AdminPage: React.FC = () => {
                     <span className="w-8 h-px bg-primary/40" />
                     <span className="text-[10px] font-mono text-primary tracking-[0.25em] uppercase">Administration</span>
                   </div>
-                  <h1 className="font-display text-3xl font-bold text-white tracking-[-0.02em]">User management</h1>
-                  <p className="text-sm text-slate-500 mt-1 font-sans font-light">Signed in as {adminEmail}</p>
+                  <h1 className="font-display text-3xl font-bold text-white tracking-[-0.02em]">Administration</h1>
+                  <p className="text-sm text-slate-500 mt-1 font-sans font-light">Manage the catalogue, users and site activity · signed in as {adminEmail}</p>
                 </div>
                 <button onClick={logout} className="btn btn-outline btn-sm">
                   <LogOut className="w-3.5 h-3.5" />
@@ -221,12 +223,13 @@ export const AdminPage: React.FC = () => {
               </div>
 
               {/* Tabs */}
-              <div className="flex items-center gap-1.5 mb-8 border-b border-[#1E293B]">
+              <div className="flex items-center gap-1.5 mb-8 border-b border-[#1E293B] overflow-x-auto">
                 {(
                   [
                     { id: 'users', label: 'Users', icon: Users },
                     { id: 'leads', label: 'Leads', icon: Inbox },
                     { id: 'downloads', label: 'Downloads', icon: FileDown },
+                    { id: 'catalog', label: 'Catalogue', icon: Package },
                     { id: 'ies', label: 'IES files', icon: Lightbulb },
                     { id: 'content', label: 'Content', icon: FileText },
                   ] as { id: Tab; label: string; icon: React.ComponentType<{ className?: string }> }[]
@@ -236,7 +239,7 @@ export const AdminPage: React.FC = () => {
                     <button
                       key={t.id}
                       onClick={() => setTab(t.id)}
-                      className={`flex items-center gap-2 px-4 py-3 text-sm font-sans -mb-px border-b-2 transition-colors cursor-pointer ${
+                      className={`flex shrink-0 items-center gap-2 whitespace-nowrap px-4 py-3 text-sm font-sans -mb-px border-b-2 transition-colors cursor-pointer ${
                         tab === t.id
                           ? 'border-primary text-white'
                           : 'border-transparent text-slate-500 hover:text-white'
@@ -400,6 +403,8 @@ export const AdminPage: React.FC = () => {
                     )}
                   </div>
                 </>
+              ) : tab === 'catalog' ? (
+                <AdminCatalogue />
               ) : tab === 'content' ? (
                 <ContentEditor />
               ) : tab === 'ies' ? (

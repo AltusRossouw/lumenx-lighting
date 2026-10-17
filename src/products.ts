@@ -15,6 +15,9 @@ import { IES_PRODUCT_MAP } from './ies-product-map';
  * product-page carousel, headed by its tile from `make-product-tiles.py`.
  */
 
+/** Neutral fallback for a product/category that has no image yet. */
+export const PLACEHOLDER_PRODUCT_IMAGE = '/product-images/placeholder.svg';
+
 /* ── Categories ── */
 /**
  * Every catalogue category is published, not only the ones that already carry
@@ -99,10 +102,27 @@ export function getProduct(categoryId: string, slug: string): Product | undefine
   return PRODUCTS.find((p) => p.category === categoryId && p.slug === slug);
 }
 
-/** Ordered gallery for a product (hero first); falls back to the single image. */
+/**
+ * Ordered gallery for a product (hero first).
+ *
+ * The admin's explicit main image is moved to the front here, so every
+ * consumer - cards, gallery, datasheets - uses the same hero without each one
+ * re-implementing the rule. Products without an image fall back to the brand
+ * placeholder rather than rendering a broken image element.
+ */
 export function getProductImages(product: Product): ProductImage[] {
-  if (product.images && product.images.length > 0) return product.images;
-  return [{ src: product.imageUrl, fit: 'contain' as const }];
+  const stored = (product.images ?? []).filter((image) => image && image.src);
+  const images: ProductImage[] =
+    stored.length > 0
+      ? stored
+      : [{ src: product.imageUrl || PLACEHOLDER_PRODUCT_IMAGE, fit: 'contain' as const }];
+
+  const main = product.mainImage || product.imageUrl;
+  if (main) {
+    const index = images.findIndex((image) => image.src === main);
+    if (index > 0) return [images[index], ...images.slice(0, index), ...images.slice(index + 1)];
+  }
+  return images;
 }
 
 /**

@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { iesAdminApi, IesLibraryFile } from '../lib/api';
-import { PRODUCTS, PRODUCT_CATEGORIES } from '../products';
+import { useCatalog } from '../catalog';
+import type { Product } from '../types';
 import { AlertTriangle, Check, FileUp, Link2, Loader2, Search, Trash2, X } from 'lucide-react';
 
 /**
@@ -8,31 +9,19 @@ import { AlertTriangle, Check, FileUp, Link2, Loader2, Search, Trash2, X } from 
  *
  * This is the "E3" admin upload: pick a product, upload one or more `.ies`
  * files, and the file is written into the walled-garden directory
- * (server/files/ies/) under the repository's slugified naming convention and
- * recorded against the product in `ies_product_files`.
+ * (uploads/ies/ on the persistent Docker volume, with the committed supplier
+ * files in server/files/ies/ still readable) under the repository's slugified
+ * naming convention and recorded against the product in `ies_product_files`.
  *
- * The committed map `src/ies-product-map.ts` is rendered from that table by
- * `npm run ies:map`, which is a build step — the hint below says so, because
- * an upload alone does not change the published frontend until it is re-run.
+ * The SPA reads the runtime map from /api/ies/product-map, so an upload is live
+ * on the next page load without a rebuild. `src/ies-product-map.ts` remains the
+ * fail-safe fallback used when the API is unavailable.
  */
 
 const inputCls =
   'w-full px-3 py-2 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary/50 transition-colors font-sans';
 
 type Status = { tone: 'ok' | 'error'; text: string };
-
-/** Product names by slug, so the library reads as products, not slugs. */
-const PRODUCT_BY_SLUG = new Map(PRODUCTS.map((product) => [product.slug, product]));
-
-const productLabel = (slug: string): string => {
-  const product = PRODUCT_BY_SLUG.get(slug);
-  return product ? product.name : slug;
-};
-
-const categoryLabel = (id: string | null): string => {
-  if (!id) return '';
-  return PRODUCT_CATEGORIES.find((category) => category.id === id)?.title ?? id;
-};
 
 const fmtDate = (iso: string | null) =>
   iso
@@ -44,32 +33,6 @@ const fmtDate = (iso: string | null) =>
         minute: '2-digit',
       })
     : '—';
-
-/**
- * Catalogue slugs used by more than one category.
- *
- * `iesFilesForProduct(slug)` on the product page has no category argument, so
- * two entries sharing a slug (ACE and Thermisto each exist under both Highbays
- * and Linears) necessarily share their photometry. Flagged here rather than
- * discovered later on a product page.
- */
-const SHARED_SLUGS: { slug: string; categories: string[] }[] = (() => {
-  const bySlug = new Map<string, Set<string>>();
-  for (const product of PRODUCTS) {
-    const categories = bySlug.get(product.slug) ?? new Set<string>();
-    categories.add(product.category);
-    bySlug.set(product.slug, categories);
-  }
-  return [...bySlug.entries()]
-    .filter(([, categories]) => categories.size > 1)
-    .map(([slug, categories]) => ({ slug, categories: [...categories].sort() }))
-    .sort((a, b) => a.slug.localeCompare(b.slug));
-})();
-
-const PRODUCT_OPTION_LABEL = (name: string, slug: string, category: string) =>
-  SHARED_SLUGS.some((entry) => entry.slug === slug)
-    ? `${name} (${slug}) · ${categoryLabel(category)}`
-    : `${name} (${slug})`;
 
 export const AdminIesLibrary: React.FC = () => {
   const [files, setFiles] = useState<IesLibraryFile[]>([]);
@@ -85,6 +48,39 @@ export const AdminIesLibrary: React.FC = () => {
   const [view, setView] = useState<'assigned' | 'unassigned' | 'all'>('assigned');
   const [search, setSearch] = useState('');
   const fileInput = useRef<HTMLInputElement>(null);
+
+  const catalog = useCatalog();
+  const productBySlug = useMemo(
+    () => new Map<string, Product>(catalog.products.map((product) => [product.slug, product])),
+    [catalog.products],
+  );
+  const categoryLabel = (id: string | null): string => {
+    if (!id) return '';
+    return catalog.getCategory(id)?.title ?? id;
+  };
+  const productLabel = (slug: string): string => productBySlug.get(slug)?.name ?? slug;
+
+  /**
+   * Catalogue slugs used by more than one category. The runtime IES map is
+   * keyed by slug only, so two entries sharing a slug share their photometry.
+   */
+  const sharedSlugs = useMemo(() => {
+    const bySlug = new Map<string, Set<string>>();
+    for (const product of catalog.products) {
+      const categories = bySlug.get(product.slug) ?? new Set<string>();
+      categories.add(product.category);
+      bySlug.set(product.slug, categories);
+    }
+    return [...bySlug.entries()]
+      .filter(([, categories]) => categories.size > 1)
+      .map(([slug, categories]) => ({ slug, categories: [...categories].sort() }))
+      .sort((a, b) => a.slug.localeCompare(b.slug));
+  }, [catalog.products]);
+
+  const productOptionLabel = (name: string, slug: string, category: string) =>
+    sharedSlugs.some((entry) => entry.slug === slug)
+      ? `${name} (${slug}) · ${categoryLabel(category)}`
+      : `${name} (${slug})`;
 
   const load = async () => {
     setLoadError(null);
@@ -106,7 +102,7 @@ export const AdminIesLibrary: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const selectedProduct = PRODUCT_BY_SLUG.get(productSlug) ?? null;
+  const selectedProduct = productBySlug.get(productSlug) ?? null;
 
   const upload = async () => {
     const input = fileInput.current;
@@ -141,7 +137,7 @@ export const AdminIesLibrary: React.FC = () => {
     if (!slug) return;
     setBusy(true);
     try {
-      const product = PRODUCT_BY_SLUG.get(slug);
+      const product = productBySlug.get(slug);
       await iesAdminApi.assign(slug, product?.category ?? null, filename);
       setStatus([{ tone: 'ok', text: `${filename} attached to ${productLabel(slug)}` }]);
       await load();
@@ -156,7 +152,7 @@ export const AdminIesLibrary: React.FC = () => {
     setBusy(true);
     try {
       await iesAdminApi.detach(filename);
-      setStatus([{ tone: 'ok', text: `${filename} detached — the file stays in server/files/ies/.` }]);
+      setStatus([{ tone: 'ok', text: `${filename} detached — the file stays in the IES directory.` }]);
       await load();
     } catch (err) {
       setStatus([{ tone: 'error', text: (err as Error).message }]);
@@ -177,7 +173,7 @@ export const AdminIesLibrary: React.FC = () => {
         productLabel(file.productSlug ?? '').toLowerCase().includes(needle)
       );
     });
-  }, [files, view, search]);
+  }, [files, view, search, productBySlug]);
 
   const assignedCount = files.filter((file) => file.assigned).length;
   const productCount = Object.keys(map).length;
@@ -185,7 +181,7 @@ export const AdminIesLibrary: React.FC = () => {
   // Shared slugs known from the catalogue, plus any the API inferred from the
   // categories recorded against uploads.
   const sharedSlugWarnings = useMemo(() => {
-    const merged = new Map(SHARED_SLUGS.map((entry) => [entry.slug, new Set(entry.categories)]));
+    const merged = new Map(sharedSlugs.map((entry) => [entry.slug, new Set(entry.categories)]));
     for (const entry of ambiguous) {
       const categories = merged.get(entry.slug) ?? new Set<string>();
       entry.categories.forEach((category) => categories.add(category));
@@ -207,9 +203,9 @@ export const AdminIesLibrary: React.FC = () => {
           </h2>
         </div>
         <p className="text-xs text-slate-500 mb-5 font-sans font-light">
-          The file is stored in <span className="font-mono">server/files/ies/</span> under the
+          The file is stored in <span className="font-mono">uploads/ies/</span> under the
           repository&rsquo;s slugified name and recorded against the product. Downloads stay behind
-          the login gate.
+          the login gate, and the mapping is live on the next page load.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -223,14 +219,14 @@ export const AdminIesLibrary: React.FC = () => {
               className={inputCls}
             >
               <option value="">Select a product…</option>
-              {PRODUCT_CATEGORIES.map((category) => {
-                const items = PRODUCTS.filter((product) => product.category === category.id);
+              {catalog.categories.map((category) => {
+                const items = catalog.products.filter((product) => product.category === category.id);
                 if (items.length === 0) return null;
                 return (
                   <optgroup key={category.id} label={category.title}>
                     {items.map((product) => (
                       <option key={`${category.id}-${product.slug}`} value={product.slug}>
-                        {PRODUCT_OPTION_LABEL(product.name, product.slug, product.category)}
+                        {productOptionLabel(product.name, product.slug, product.category)}
                       </option>
                     ))}
                   </optgroup>
@@ -264,7 +260,7 @@ export const AdminIesLibrary: React.FC = () => {
             Upload &amp; attach
           </button>
           <span className="text-[11px] font-mono text-slate-600">
-            publish with <span className="text-slate-400">npm run ies:map</span> &amp; rebuild
+            live on product pages after a refresh
           </span>
         </div>
 
@@ -413,14 +409,14 @@ export const AdminIesLibrary: React.FC = () => {
                     className="w-full px-2 py-1.5 bg-[#0A0D14] border border-[#1E293B] rounded-lg text-xs text-slate-300 focus:outline-none focus:border-primary/50 font-sans"
                   >
                     <option value="">Attach to…</option>
-                    {PRODUCT_CATEGORIES.map((category) => {
-                      const items = PRODUCTS.filter((product) => product.category === category.id);
+                    {catalog.categories.map((category) => {
+                      const items = catalog.products.filter((product) => product.category === category.id);
                       if (items.length === 0) return null;
                       return (
                         <optgroup key={category.id} label={category.title}>
                           {items.map((product) => (
                             <option key={`${category.id}-${product.slug}`} value={product.slug}>
-                              {PRODUCT_OPTION_LABEL(product.name, product.slug, product.category)}
+                              {productOptionLabel(product.name, product.slug, product.category)}
                             </option>
                           ))}
                         </optgroup>

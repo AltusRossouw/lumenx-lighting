@@ -1,7 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { getCategory, getProductsByCategory, getProductImages, displayName } from '../products';
+import { getProductImages, displayName } from '../products';
+import { useCatalog } from '../catalog';
 import { resolveProductTiles, type ProductTile } from '../product-tiles';
 import { ArrowLeft, ArrowRight, Check, Search, X } from 'lucide-react';
 import { PageHeroBackground } from './animations';
@@ -31,8 +32,9 @@ interface ProductDetailPageProps {
 }
 
 export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId }) => {
-  const category = getCategory(categoryId);
-  const products = getProductsByCategory(categoryId);
+  const catalog = useCatalog();
+  const category = catalog.getCategory(categoryId);
+  const products = catalog.getProductsByCategory(categoryId);
 
   const [query, setQuery] = useState('');
   const [ip, setIp] = useState('');
@@ -80,6 +82,14 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ categoryId
   const hasFilters = Boolean(query || ip || cct || wattage);
 
   if (!category) {
+    if (catalog.status === 'idle' || catalog.status === 'loading') {
+      return (
+        <div className="py-40 text-center text-slate-400">
+          <p className="font-display text-xl font-semibold text-white mb-2">Loading category…</p>
+          <p className="text-sm font-mono text-slate-500">Fetching the latest catalogue.</p>
+        </div>
+      );
+    }
     return (
       <div className="py-40 text-center text-slate-400">
         <p className="font-display text-xl font-semibold text-white mb-2">Category not found</p>

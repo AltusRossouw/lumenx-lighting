@@ -471,8 +471,10 @@
     val.textContent = s.value || "";
     // Step long values down rather than letting them overflow the sheet.
     var len = String(s.value || "").length;
-    if (len > 58) val.className = "stat-value is-longer";
-    else if (len > 24) val.className = "stat-value is-long";
+    // Values such as "900-36000" are common on range datasheets. Step them
+    // down before they start breaking mid-number in a four-up stat row.
+    if (len > 14) val.className = "stat-value is-longer";
+    else if (len > 5) val.className = "stat-value is-long";
     if (s.unit) {
       var u = document.createElement("span");
       u.className = "unit";
@@ -503,10 +505,17 @@
     h.textContent = title;
     return h;
   }
+  function escapeHtml(value) {
+    return String(value == null ? "" : value).replace(/[&<>"']/g, function (ch) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch];
+    });
+  }
   function tableHtml(rows) {
     var html = "<table class=\"spec\">";
     rows.forEach(function (r) {
-      html += "<tr><td class=\"k\">" + r.label + "</td><td class=\"v\">" + r.value + "</td></tr>";
+      // Spec rows can contain AI-extracted text or values such as "<3 SDCM".
+      // Escape them; notes below deliberately keep their trusted HTML entities.
+      html += "<tr><td class=\"k\">" + escapeHtml(r.label) + "</td><td class=\"v\">" + escapeHtml(r.value) + "</td></tr>";
     });
     return html + "</table>";
   }

@@ -8,6 +8,8 @@ dist
 .env.*
 design-system
 coverage
+# Local admin uploads; production uses the lumenx_uploads volume instead.
+uploads
 # Raw supplier IES source dumps — must never enter the image.
 public/downloads/ies/OrbitX
 public/downloads/ies/Pioled

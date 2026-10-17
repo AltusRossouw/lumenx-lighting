@@ -5,6 +5,12 @@ export interface ProductCategory {
   applications: string;
   imageUrl: string;
   linkLabel: string;
+  /** Which range selector the category appears under. */
+  range?: 'lighting' | 'sensors';
+  /** Position for admin-created categories (base categories keep their order). */
+  sortOrder?: number;
+  /** Present when this row comes from the admin catalogue overlay. */
+  source?: 'db';
 }
 
 export interface ProductSpec {
@@ -45,10 +51,22 @@ export interface Product {
   imageUrl: string;
   /** Full ordered gallery of product images (hero first). Falls back to [imageUrl]. */
   images?: ProductImage[];
+  /** Explicit main image. When set, it is shown first and used on cards. */
+  mainImage?: string;
   /** Local datasheet download. */
   pdfUrl?: string;
+  /** Original file name of an uploaded spec sheet. */
+  pdfName?: string;
+  /** How the spec sheet is produced: none, an uploaded PDF, or generated. */
+  pdfSource?: 'none' | 'uploaded' | 'generated';
   /** Warranty / guarantee statement. */
   warranty?: string;
+  /** Manufacturer name captured from the source spec sheet. */
+  manufacturer?: string;
+  /** Manufacturer's own model code. */
+  manufacturerModel?: string;
+  /** Present when this row comes from the admin catalogue overlay. */
+  source?: 'db';
   /**
    * Manufacturer brand id, when the fitting is not LumenX's own.
    *

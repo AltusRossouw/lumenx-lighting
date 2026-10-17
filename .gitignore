@@ -7,6 +7,10 @@ coverage/
 .env*
 !.env.example
 
+# Admin-uploaded product/category images, spec sheets, manufacturer source PDFs
+# and uploaded IES files. In production this path is a persistent Docker volume.
+uploads/
+
 # Generated datasheet PDF cache (rendered on demand from the template + JSON).
 server/cache/
 

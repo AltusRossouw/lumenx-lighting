@@ -9,10 +9,47 @@
 //    a scraper uploading (or requesting) a third-party IES file is rejected.
 
 import fs from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { config } from '../config.js';
 
 const LUMENX_MANUFACTURERS = ['lumenx', 'luminex'];
+
+/**
+ * The IES walled garden has two roots: the committed/importer files in
+ * server/files/ies and admin uploads in uploads/ies (a persistent volume).
+ * Committed files win when the same name exists in both, so an admin upload
+ * can never shadow the supplier import.
+ */
+const iesDirs = () => [...new Set([config.iesDir, config.iesUploadsDir].filter(Boolean))];
+
+const resolveInDirs = (safeFilename) => {
+  for (const dir of iesDirs()) {
+    const candidate = path.join(dir, safeFilename);
+    if (existsSync(candidate)) return candidate;
+  }
+  return null;
+};
+
+/**
+ * Every filename across both roots, deduped. The value carries the directory
+ * the file was found in so callers read the right bytes.
+ */
+const listIesEntries = async () => {
+  const entries = new Map();
+  for (const dir of iesDirs()) {
+    let names;
+    try {
+      names = await fs.readdir(dir);
+    } catch {
+      continue;
+    }
+    for (const name of names.sort()) {
+      if (!entries.has(name)) entries.set(name, { filename: name, dir });
+    }
+  }
+  return [...entries.values()];
+};
 
 // Filenames are only considered Luminex when prefixed with the brand marker.
 // This keeps the allowlist explicit rather than trusting arbitrary uploads.
@@ -85,7 +122,9 @@ export const isLuminexIes = (parsed) =>
 export const readLuminexIesFile = async (filename) => {
   const safe = safeIesFilename(filename);
   if (!safe) return null;
-  const text = await fs.readFile(path.join(config.iesDir, safe), 'utf8');
+  const filePath = resolveInDirs(safe);
+  if (!filePath) return null;
+  const text = await fs.readFile(filePath, 'utf8');
   const parsed = parseIes(text);
   if (!isLuminexIes(parsed)) return null;
   return { filename: safe, text, parsed };
@@ -93,24 +132,20 @@ export const readLuminexIesFile = async (filename) => {
 
 // List every Luminex IES file as public-safe metadata (never raw file content).
 export const listLuminexIesFiles = async () => {
-  let entries;
-  try {
-    entries = await fs.readdir(config.iesDir);
-  } catch {
-    return [];
-  }
-
+  const entries = await listIesEntries();
   const files = [];
-  for (const entry of entries.sort()) {
-    if (!isLuminexFilename(entry)) continue;
+  for (const entry of entries) {
+    if (!isLuminexFilename(entry.filename)) continue;
     try {
-      const text = await fs.readFile(path.join(config.iesDir, entry), 'utf8');
+      const text = await fs.readFile(path.join(entry.dir, entry.filename), 'utf8');
       const parsed = parseIes(text);
       if (!isLuminexIes(parsed)) continue;
       files.push({
-        id: entry,
-        filename: entry,
-        name: parsed.luminaireName || entry.replace(/^lumenx[_-]/i, '').replace(/\.ies$/i, ''),
+        id: entry.filename,
+        filename: entry.filename,
+        name:
+          parsed.luminaireName ||
+          entry.filename.replace(/^lumenx[_-]/i, '').replace(/\.ies$/i, ''),
         lumens: parsed.lumensPerLamp,
         watts: parsed.inputWatts,
         manufacturer: parsed.manufacturer,
@@ -210,26 +245,21 @@ export const humanizeIesName = (parsed, filename) => {
 
 // List every IES file across all distributed brands (public-safe metadata).
 export const listIesFiles = async () => {
-  let entries;
-  try {
-    entries = await fs.readdir(config.iesDir);
-  } catch {
-    return [];
-  }
-
+  const entries = await listIesEntries();
   const files = [];
-  for (const entry of entries.sort()) {
-    if (!isIesFilename(entry)) continue;
+  for (const entry of entries) {
+    if (!isIesFilename(entry.filename)) continue;
     try {
-      const text = await fs.readFile(path.join(config.iesDir, entry), 'utf8');
+      const text = await fs.readFile(path.join(entry.dir, entry.filename), 'utf8');
       const parsed = parseIes(text);
       files.push({
-        id: entry,
-        filename: entry,
-        name: humanizeIesName(parsed, entry),
+        id: entry.filename,
+        filename: entry.filename,
+        name: humanizeIesName(parsed, entry.filename),
         lumens: parsed.lumensPerLamp,
         watts: parsed.inputWatts,
-        manufacturer: BRAND_LABELS[brandOf(entry)] || parsed.manufacturer || 'LumenX',
+        manufacturer:
+          BRAND_LABELS[brandOf(entry.filename)] || parsed.manufacturer || 'LumenX',
       });
     } catch {
       // Skip unreadable/corrupt files rather than failing the whole listing.
@@ -241,7 +271,7 @@ export const listIesFiles = async () => {
 // Full path for an allowed IES file (used by the protected download route).
 export const resolveIesPath = (filename) => {
   const safe = safeAllowedIesFilename(filename);
-  return safe ? path.join(config.iesDir, safe) : null;
+  return safe ? resolveInDirs(safe) : null;
 };
 
 // Legacy LumenX-only resolver, kept for the design tool, which offers the
@@ -250,5 +280,5 @@ export const resolveIesPath = (filename) => {
 // OrbitX profiles returning 404 on download.
 export const resolveLuminexIesPath = (filename) => {
   const safe = safeIesFilename(filename);
-  return safe ? path.join(config.iesDir, safe) : null;
+  return safe ? resolveInDirs(safe) : null;
 };

@@ -10,7 +10,9 @@ walled garden and the lighting design tool.
 
 ## Run locally
 
-**Prerequisites:** Node.js 18+ and PostgreSQL.
+**Prerequisites:** Node.js 18+ and PostgreSQL. Optional: Poppler for the AI
+spec-sheet import (`poppler-utils` on Debian, `brew install poppler` on macOS);
+it is already installed in the Docker image.
 
 1. Install dependencies:
    ```bash
@@ -41,13 +43,16 @@ Production runs Node + Express in a single container that serves both the API
 and the built frontend on port 4000, behind Nginx Proxy Manager (SSL).
 
 1. Create `.env` from `.env.example` and fill in real values (`JWT_SECRET`,
-   `ADMIN_API_KEY`, `RESEND_API_KEY`, `COOKIE_SECURE=true`).
+   `ADMIN_API_KEY`, `RESEND_API_KEY`, `COOKIE_SECURE=true`). Add
+   `DEEPSEEK_API_KEY` too if you want the AI spec-sheet import; leave it empty
+   to disable that feature.
 2. Build and start the stack:
    ```bash
    docker compose up -d --build
    ```
    The `db` service (PostgreSQL 16) is provisioned automatically and the app
-   applies `db/schema.sql` on start (idempotent).
+   applies `db/schema.sql` on start (idempotent). The `lumenx_uploads` volume
+   holds admin-uploaded media; back it up alongside `lumenx_pgdata`.
 3. Point Nginx Proxy Manager at `http://<host>:4000` for `www.lumenx.co.za`
    with WebSocket support enabled.
 4. Create an admin account to view leads and download activity:
@@ -83,6 +88,70 @@ See `.env.example`. The key values:
 - `JWT_SECRET` — secret for signing session JWTs.
 - `ADMIN_API_KEY` — the key a human admin sends as the `x-admin-key` header for script/CLI access to admin endpoints.
 - `IES_DIR` — (optional) absolute path to the protected IES directory.
+- `IES_UPLOADS_DIR` — (optional) writable IES upload directory; defaults to
+  `<UPLOADS_DIR>/ies`.
+- `UPLOADS_DIR` — (optional) writable media root for product/category images,
+  spec sheets and source PDFs; defaults to `./uploads`.
+- `DEEPSEEK_API_KEY` — optional; enables the AI spec-sheet import.
+- `DEEPSEEK_MODEL` — optional; defaults to `deepseek-flash`.
+- `AI_IMPORT_ENABLED` — optional; set to `false` to disable AI import even when
+  a key is present.
+
+## Catalogue admin (products, categories and AI import)
+
+`/admin` → **Catalogue** lets an administrator:
+
+- create and edit categories (title, description, range, image, order);
+- create products and edit any product from the base catalogue — edits are stored
+  as a database override, and **Reset to catalogue version** removes it;
+- upload multiple product images, choose the main image, and edit alt text /
+  contain-vs-cover per image;
+- upload a PDF spec sheet, or have LumenX generate a branded A4 datasheet;
+- attach one or more IES files (still behind the member login gate).
+
+### AI spec-sheet import
+
+Upload a manufacturer PDF and the server extracts its text (and, for scanned
+PDFs, page images) with Poppler, then asks DeepSeek to extract the product data,
+specifications and a branded datasheet draft. The result is a **draft** that
+opens in the product editor; nothing is published until an administrator reviews
+it and clicks **Create product**.
+
+Requirements:
+
+- `DEEPSEEK_API_KEY` in the server environment. Leave it empty to disable AI
+  import — the manual editor keeps working.
+- [Poppler](https://poppler.freedesktop.org/) (`pdftotext`, `pdftoppm`,
+  `pdfimages`, `pdfinfo`). Installed in the Docker image as
+  `poppler-utils`; on macOS install it with `brew install poppler`.
+- The default model alias is `deepseek-flash` (currently served by
+  DeepSeek-V4.1-Flash-1017). Override it with `DEEPSEEK_MODEL` if needed.
+
+The source PDF is stored privately under `uploads/manufacturer-specs/` and is
+only downloadable by an administrator. Its text and page images are sent to
+DeepSeek for analysis, so confirm that is acceptable for your documents. The
+admin UI shows confidence, warnings and source quotes; treat every imported
+value as a draft until reviewed.
+
+### Uploads and persistence
+
+- Local development: uploads go to `./uploads` (gitignored).
+- Docker: `UPLOADS_DIR=/app/uploads` is backed by the named
+  `lumenx_uploads` volume, so images, spec sheets and IES uploads survive
+  redeploys. **Back up this volume together with the Postgres volume.**
+- Only `uploads/products/` and `uploads/categories/` are served publicly.
+  Spec sheets are streamed through the tracked download route, and IES files
+  remain behind the authenticated gate.
+- Admin-uploaded IES files live in `uploads/ies/`; the committed supplier files
+  in `server/files/ies/` stay readable as a read-only fallback.
+
+### Generated LumenX datasheets
+
+Products created in the admin (or base products with an override) can use
+**LumenX sheet** as their spec sheet. The existing branded template and headless
+Chromium render a one-page A4 PDF from the reviewed product fields. The product
+editor has a **Preview LumenX sheet** button; the public download is tracked like
+any other datasheet.
 
 ## Structure
 

@@ -55,10 +55,11 @@ const HEADER = [
   '//',
   '//     npm run ies:map',
   '//',
-  '// Only files that exist in server/files/ies/ are listed, so a product page can',
-  '// never offer a download that 404s. Each key is a product slug; each value is',
-  '// that product\'s photometry. Products absent from this map have no IES file',
-  '// yet, so their product page shows "Contact us for the IES file" instead.',
+  '// Only files that exist in server/files/ies/ or uploads/ies/ are listed, so a',
+  '// product page can never offer a download that 404s. Each key is a product',
+  '// slug; each value is that product\'s photometry. Products absent from this',
+  '// map have no IES file yet, so their product page shows "Contact us for the',
+  '// IES file" instead.',
   '',
 ];
 

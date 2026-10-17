@@ -1,7 +1,7 @@
 import { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useParams, useLocation } from 'react-router-dom';
 import { useSiteContent, loadSiteContent } from './content';
-import { getCategory, getProduct } from './products';
+import { loadCatalog, useCatalog } from './catalog';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { HomePage } from './components/HomePage';
@@ -55,6 +55,7 @@ function ScrollToHash() {
 /** Set per-route <title> and meta description (the SPA ships one static index). */
 function SeoManager() {
   const { seo } = useSiteContent();
+  const catalog = useCatalog();
   const { pathname } = useLocation();
 
   const SEO_MAP: { match: RegExp; title: string; description?: string }[] = [
@@ -85,16 +86,16 @@ function SeoManager() {
 
     let dynamic: { title: string; description?: string } | undefined;
     if (product) {
-      const match = getProduct(product[1], product[2]);
+      const match = catalog.getProduct(product[1], product[2]);
       if (match) {
-        const category = getCategory(match.category);
+        const category = catalog.getCategory(match.category);
         dynamic = {
           title: `${match.name} — ${category?.title ?? 'Products'} | LumenX Lighting`,
           description: match.summary,
         };
       }
     } else if (categoryOnly) {
-      const match = getCategory(categoryOnly[1]);
+      const match = catalog.getCategory(categoryOnly[1]);
       if (match) {
         dynamic = { title: `${match.title} — LumenX Lighting`, description: match.description };
       }
@@ -112,7 +113,7 @@ function SeoManager() {
       }
       tag.setAttribute('content', entry.description);
     }
-  }, [pathname, seo]);
+  }, [pathname, seo, catalog]);
   return null;
 }
 
@@ -144,6 +145,7 @@ function AppLayout() {
 
   useEffect(() => {
     loadSiteContent();
+    void loadCatalog();
   }, []);
 
   // The OrbitX planner is a full-screen tool with its own header/chrome.

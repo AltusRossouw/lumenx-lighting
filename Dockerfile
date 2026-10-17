@@ -30,7 +30,9 @@ ENV NODE_ENV=production \
 # Chromium + fonts for datasheet rendering. font-carlito is metric-compatible
 # with Calibri (the template body face); ttf-freefont covers Arial/Helvetica
 # fallbacks. Run fc-cache so fontconfig picks them up.
-RUN apk add --no-cache chromium font-carlito ttf-freefont fontconfig \
+# Chromium renders the branded datasheet PDFs. poppler-utils supplies the
+# PDF text/page-image extraction used by the AI spec-sheet import.
+RUN apk add --no-cache chromium poppler-utils font-carlito ttf-freefont fontconfig \
     && fc-cache -f >/dev/null 2>&1 || true
 
 # Reuse the full dependency tree installed in the build stage.
@@ -47,8 +49,10 @@ COPY public/logo-wide.png ./public/logo-wide.png
 COPY public/product-images ./public/product-images
 COPY public/scraped ./public/scraped
 
-# Run as a non-root user.
-RUN addgroup -S nodejs && adduser -S nodejs -G nodejs && \
+# Run as a non-root user. /app/uploads is the mount point for the named
+# lumenx_uploads volume (product images, spec sheets, source PDFs, IES).
+RUN mkdir -p /app/uploads && \
+    addgroup -S nodejs && adduser -S nodejs -G nodejs && \
     chown -R nodejs:nodejs /app
 USER nodejs
 

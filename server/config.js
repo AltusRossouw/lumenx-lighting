@@ -24,6 +24,12 @@ const splitList = (value, fallback) =>
     .map((s) => s.trim())
     .filter(Boolean);
 
+// Writable media root. In production this is a mounted Docker volume
+// (/app/uploads); locally it sits beside the repo as ./uploads (gitignored).
+// Public product/category images are served from here, but spec sheets, source
+// PDFs and IES uploads are only ever streamed through their own routes.
+const uploadsDir = path.resolve(process.env.UPLOADS_DIR || path.join(__dirname, '..', 'uploads'));
+
 export const config = Object.freeze({
   // Network — bind to localhost by default; nginx reverse-proxies public traffic.
   host: process.env.HOST || '127.0.0.1',
@@ -44,10 +50,22 @@ export const config = Object.freeze({
   adminApiKey: process.env.ADMIN_API_KEY || '',
 
   // IES walled garden — protected directory (never served as static files).
+  // Committed/importer files live in server/files/ies; admin uploads land in
+  // uploads/ies, which is a persistent Docker volume.
   iesDir: path.resolve(process.env.IES_DIR || path.join(__dirname, 'files', 'ies')),
+  iesUploadsDir: path.resolve(process.env.IES_UPLOADS_DIR || path.join(uploadsDir, 'ies')),
+
+  // Writable media root (product/category images, spec sheets, source PDFs).
+  uploadsDir,
 
   // Public datasheets — served through the backend so downloads can be tracked.
   datasheetsDir: path.resolve(__dirname, '..', 'public', 'datasheets'),
+
+  // DeepSeek AI spec-sheet import. Disabled automatically when no key is set.
+  deepseekApiKey: process.env.DEEPSEEK_API_KEY || '',
+  deepseekBaseUrl: (process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com').replace(/\/+$/, ''),
+  deepseekModel: process.env.DEEPSEEK_MODEL || 'deepseek-flash',
+  aiImportEnabled: toBool(process.env.AI_IMPORT_ENABLED, true),
 
   // CORS origins allowed for the API (dev convenience; same-origin in prod).
   corsOrigins: splitList(process.env.CORS_ORIGINS, 'http://localhost:3000'),

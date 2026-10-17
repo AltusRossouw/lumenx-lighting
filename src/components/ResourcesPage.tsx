@@ -1,24 +1,27 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowRight, FileDown, FileText, ShieldCheck, Download, FolderOpen } from 'lucide-react';
 import { PageHeroBackground } from './animations';
-import { DATASHEET_LIBRARY, DATASHEET_LIBRARY_BY_CATEGORY, datasheetDownloadUrl } from '../products';
+import { datasheetDownloadUrl } from '../products';
+import { useCatalog } from '../catalog';
 import { useSiteContent } from '../content';
 
 export const ResourcesPage: React.FC = () => {
   const { resources } = useSiteContent();
-  const datasheets = DATASHEET_LIBRARY;
+  const catalog = useCatalog();
+  const datasheets = useMemo(() => catalog.getDatasheetLibrary(), [catalog]);
+  const categoryGroups = useMemo(() => catalog.getDatasheetGroups(), [catalog]);
   const [activeCategory, setActiveCategory] = React.useState<string>('all');
 
   const visibleGroups =
     activeCategory === 'all'
-      ? DATASHEET_LIBRARY_BY_CATEGORY
-      : DATASHEET_LIBRARY_BY_CATEGORY.filter((group) => group.categoryId === activeCategory);
+      ? categoryGroups
+      : categoryGroups.filter((group) => group.categoryId === activeCategory);
 
   const filterOptions = [
     { id: 'all', label: 'All Datasheets', count: datasheets.length },
-    ...DATASHEET_LIBRARY_BY_CATEGORY.map((group) => ({
+    ...categoryGroups.map((group) => ({
       id: group.categoryId,
       label: group.title,
       count: group.sheets.length,

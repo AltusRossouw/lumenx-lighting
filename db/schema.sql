@@ -124,3 +124,103 @@ CREATE INDEX IF NOT EXISTS contact_requests_email_idx   ON contact_requests (ema
 -- this (see the table comment above).
 CREATE UNIQUE INDEX IF NOT EXISTS ies_product_files_filename_idx ON ies_product_files (filename);
 CREATE INDEX IF NOT EXISTS ies_product_files_product_idx         ON ies_product_files (product_slug);
+
+-- ── Editable catalogue overlay ──────────────────────────────────────────────
+--
+-- The published catalogue is still built in code (src/catalogue-scraped.ts,
+-- src/catalogue-full.ts and src/official-products.ts). These tables hold only
+-- admin-created categories/products and overrides for catalogue entries, keyed
+-- by slug. The SPA merges them over the static catalogue at runtime, exactly
+-- like site_content is merged over the hardcoded copy. Nothing here duplicates
+-- the 100+ base products unless an admin has actually edited one.
+
+-- Admin-created categories, or overrides of a base category (same id).
+CREATE TABLE IF NOT EXISTS catalog_categories (
+  id              TEXT PRIMARY KEY,
+  title           TEXT NOT NULL,
+  description     TEXT NOT NULL DEFAULT '',
+  applications    TEXT NOT NULL DEFAULT '',
+  image_url       TEXT,
+  link_label      TEXT NOT NULL DEFAULT 'View Range',
+  category_range  TEXT NOT NULL DEFAULT 'lighting',  -- 'lighting' | 'sensors'
+  sort_order      INTEGER NOT NULL DEFAULT 0,
+  created_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_by      TEXT
+);
+
+-- One row per admin-created product or base-product override.
+--
+-- pdf_source: 'none' | 'uploaded' | 'generated'. When 'generated', pdf_url is
+-- the tracked LumenX datasheet route and the datasheet JSONB drives the render.
+-- images is ProductImage[]: { src, alt, fit, width, height }.
+CREATE TABLE IF NOT EXISTS catalog_products (
+  id                  UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  category_id         TEXT NOT NULL,
+  slug                TEXT NOT NULL,
+  name                TEXT NOT NULL,
+  summary             TEXT NOT NULL DEFAULT '',
+  description         TEXT NOT NULL DEFAULT '',
+  specs               JSONB NOT NULL DEFAULT '[]'::jsonb,
+  features            JSONB NOT NULL DEFAULT '[]'::jsonb,
+  applications        JSONB NOT NULL DEFAULT '[]'::jsonb,
+  images              JSONB NOT NULL DEFAULT '[]'::jsonb,
+  main_image          TEXT,
+  pdf_url             TEXT,
+  pdf_name            TEXT,
+  pdf_source          TEXT NOT NULL DEFAULT 'none',
+  warranty            TEXT,
+  brand               TEXT,
+  manufacturer        TEXT,
+  manufacturer_model  TEXT,
+  datasheet           JSONB,
+  source_import_id    UUID,
+  created_at          TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at          TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_by          TEXT,
+  UNIQUE (category_id, slug)
+);
+
+-- AI spec-sheet import jobs. The source PDF lives under uploads/manufacturer-specs
+-- and is intentionally never served publicly.
+CREATE TABLE IF NOT EXISTS catalog_imports (
+  id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  source_path     TEXT NOT NULL,                    -- relative to UPLOADS_DIR
+  original_name   TEXT,
+  bytes           INTEGER,
+  page_count      INTEGER,
+  status          TEXT NOT NULL DEFAULT 'queued',   -- queued|extracting|analyzing|ready|failed|canceled
+  status_message  TEXT,
+  model           TEXT,
+  category_ids    JSONB NOT NULL DEFAULT '[]'::jsonb,
+  page_hint       TEXT,
+  model_hint      TEXT,
+  result          JSONB,
+  raw_response    TEXT,
+  images          JSONB NOT NULL DEFAULT '[]'::jsonb,
+  warnings        JSONB NOT NULL DEFAULT '[]'::jsonb,
+  error           TEXT,
+  tokens_in       INTEGER,
+  tokens_out      INTEGER,
+  created_by      TEXT,
+  created_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at      TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- The FK is added after both tables exist, so a partially seeded database can
+-- still run this schema idempotently.
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_constraint WHERE conname = 'catalog_products_source_import_fk'
+  ) THEN
+    ALTER TABLE catalog_products
+      ADD CONSTRAINT catalog_products_source_import_fk
+      FOREIGN KEY (source_import_id) REFERENCES catalog_imports(id) ON DELETE SET NULL;
+  END IF;
+END $$;
+
+CREATE INDEX IF NOT EXISTS catalog_products_category_idx ON catalog_products (category_id, name);
+CREATE INDEX IF NOT EXISTS catalog_categories_order_idx   ON catalog_categories (sort_order, title);
+CREATE INDEX IF NOT EXISTS catalog_imports_created_idx    ON catalog_imports (created_at DESC);
+CREATE INDEX IF NOT EXISTS catalog_imports_status_idx     ON catalog_imports (status);
