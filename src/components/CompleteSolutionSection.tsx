@@ -10,7 +10,12 @@ export const CompleteSolutionSection: React.FC<{ heading?: boolean }> = ({ headi
   const isInView = useInView(ref, { once: true, margin: '-150px' });
 
   return (
-    <section ref={ref} id="complete-solution" className={`relative overflow-hidden bg-[#06090F] ${heading ? 'py-24 sm:py-32' : 'py-0'}`}>
+    /* No `overflow-hidden` here: the numbered badges below deliberately overhang
+       the top of their icon circles. With the homepage rendering (`heading={false}`)
+       the section's top edge sits exactly on that overhang, so a clip on this
+       element shaved the tops off every number. The decorative background clips
+       itself — `PageHeroBackground` is already `overflow-hidden`. */
+    <section ref={ref} id="complete-solution" className={`relative bg-[#06090F] ${heading ? 'py-24 sm:py-32' : 'py-0'}`}>
       <PageHeroBackground rays={false} particles={false} dots={false} />
       {/* Subtle top gradient line — only when this section owns its heading,
           otherwise it doubles up with the one the caller already drew. */}
