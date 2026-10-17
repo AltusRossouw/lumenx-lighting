@@ -52,7 +52,9 @@ export const createApp = () => {
           fontSrc: ["'self'", 'https:', 'data:'],
           formAction: ["'self'"],
           frameAncestors: ["'self'"],
-          imgSrc: ["'self'", 'data:'],
+          // The admin image uploader loads the selected file from a
+          // blob: URL to downscale it before upload, so blob: is required.
+          imgSrc: ["'self'", 'data:', 'blob:'],
           objectSrc: ["'none'"],
           scriptSrc: ["'self'", 'https://umami.intellixlabs.co.za'],
           scriptSrcAttr: ["'none'"],
