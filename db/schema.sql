@@ -115,6 +115,29 @@ CREATE INDEX IF NOT EXISTS design_exports_created_idx ON design_exports (created
 CREATE INDEX IF NOT EXISTS downloads_created_idx      ON downloads (created_at DESC);
 CREATE INDEX IF NOT EXISTS downloads_user_idx         ON downloads (user_id);
 CREATE INDEX IF NOT EXISTS downloads_kind_idx         ON downloads (kind);
+
+-- Append-only per-user changelog. The email is a snapshot so the entry survives
+-- a user deletion; user_id and email are nullable for system/anonymous actions.
+-- metadata is deliberately small and must never contain passwords or file bytes.
+CREATE TABLE IF NOT EXISTS user_activity (
+  id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id     UUID REFERENCES users(id) ON DELETE SET NULL,
+  email       TEXT,
+  action      TEXT NOT NULL,
+  entity_type TEXT,
+  entity_id   TEXT,
+  summary     TEXT NOT NULL,
+  metadata    JSONB NOT NULL DEFAULT '{}'::jsonb,
+  ip          TEXT,
+  user_agent  TEXT,
+  created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS user_activity_created_idx      ON user_activity (created_at DESC);
+CREATE INDEX IF NOT EXISTS user_activity_user_created_idx ON user_activity (user_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS user_activity_action_created_idx ON user_activity (action, created_at DESC);
+CREATE INDEX IF NOT EXISTS user_activity_email_idx        ON user_activity (email);
+
 CREATE INDEX IF NOT EXISTS quote_requests_created_idx ON quote_requests (created_at DESC);
 CREATE INDEX IF NOT EXISTS quote_requests_email_idx   ON quote_requests (email);
 CREATE INDEX IF NOT EXISTS contact_requests_created_idx ON contact_requests (created_at DESC);

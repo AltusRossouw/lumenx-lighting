@@ -34,6 +34,7 @@ import {
   SLUG_RE,
 } from '../services/catalog.js';
 import { saveImage, saveSpecSheet, slugify } from '../services/uploads.js';
+import { logActivity } from '../services/activity.js';
 import { buildDatasheetData, categoryTitleFor } from '../services/datasheet-product.js';
 import { renderDatasheetData } from '../services/datasheet-pdf.js';
 
@@ -97,6 +98,13 @@ export const catalogAdminRouter = () => {
     try {
       const input = validateCategoryInput(req.body);
       const category = await createCategory(input, actor(req));
+      await logActivity(req, {
+        action: 'catalog.category.create',
+        entityType: 'category',
+        entityId: category.id,
+        summary: `Created category "${category.title}"`,
+        metadata: { categoryId: category.id },
+      });
       return res.status(201).json({ ok: true, category });
     } catch (err) {
       return sendError(err, res, next);
@@ -107,6 +115,13 @@ export const catalogAdminRouter = () => {
     try {
       const input = validateCategoryInput(req.body, { id: String(req.params.id ?? '').trim() });
       const category = await updateCategory(input, actor(req));
+      await logActivity(req, {
+        action: 'catalog.category.update',
+        entityType: 'category',
+        entityId: category.id,
+        summary: `Updated category "${category.title}"`,
+        metadata: { categoryId: category.id },
+      });
       return res.json({ ok: true, category });
     } catch (err) {
       return sendError(err, res, next);
@@ -115,7 +130,14 @@ export const catalogAdminRouter = () => {
 
   router.delete('/categories/:id', async (req, res, next) => {
     try {
-      await deleteCategory(String(req.params.id ?? '').trim());
+      const id = String(req.params.id ?? '').trim();
+      await deleteCategory(id);
+      await logActivity(req, {
+        action: 'catalog.category.delete',
+        entityType: 'category',
+        entityId: id,
+        summary: 'Deleted category ' + id,
+      });
       return res.json({ ok: true });
     } catch (err) {
       return sendError(err, res, next);
@@ -133,6 +155,13 @@ export const catalogAdminRouter = () => {
       }
       const input = validateProductInput(req.body, { category, slug });
       const product = await createProduct({ category, slug, input, updatedBy: actor(req) });
+      await logActivity(req, {
+        action: 'catalog.product.create',
+        entityType: 'product',
+        entityId: category + '/' + slug,
+        summary: `Created product "${product.name}"`,
+        metadata: { category, slug },
+      });
       return res.status(201).json({ ok: true, product });
     } catch (err) {
       return sendError(err, res, next);
@@ -148,6 +177,13 @@ export const catalogAdminRouter = () => {
       }
       const input = validateProductInput(req.body, { category, slug });
       const product = await updateProduct({ category, slug, input, updatedBy: actor(req) });
+      await logActivity(req, {
+        action: 'catalog.product.update',
+        entityType: 'product',
+        entityId: category + '/' + slug,
+        summary: `Updated product "${product.name}"`,
+        metadata: { category, slug },
+      });
       return res.json({ ok: true, product });
     } catch (err) {
       return sendError(err, res, next);
@@ -171,6 +207,14 @@ export const catalogAdminRouter = () => {
         product: req.body?.product,
         updatedBy: actor(req),
       });
+      const published = product.published !== false;
+      await logActivity(req, {
+        action: 'catalog.product.visibility',
+        entityType: 'product',
+        entityId: category + '/' + slug,
+        summary: (published ? 'Published' : 'Hid') + ' product "' + product.name + '"',
+        metadata: { category, slug, published },
+      });
       return res.json({ ok: true, product });
     } catch (err) {
       return sendError(err, res, next);
@@ -179,7 +223,16 @@ export const catalogAdminRouter = () => {
 
   router.delete('/products/:category/:slug', async (req, res, next) => {
     try {
-      await deleteProduct(String(req.params.category ?? '').trim(), String(req.params.slug ?? '').trim());
+      const category = String(req.params.category ?? '').trim();
+      const slug = String(req.params.slug ?? '').trim();
+      await deleteProduct(category, slug);
+      await logActivity(req, {
+        action: 'catalog.product.delete',
+        entityType: 'product',
+        entityId: category + '/' + slug,
+        summary: 'Deleted product ' + category + '/' + slug,
+        metadata: { category, slug },
+      });
       return res.json({ ok: true });
     } catch (err) {
       return sendError(err, res, next);
@@ -258,6 +311,13 @@ export const catalogAdminRouter = () => {
         width: req.query.width,
         height: req.query.height,
       });
+      await logActivity(req, {
+        action: 'catalog.image.upload',
+        entityType: 'image',
+        entityId: image.filename,
+        summary: `Uploaded ${scope} image for ${slug}`,
+        metadata: { scope, slug, filename: image.filename, bytes: image.bytes, mime: image.mime },
+      });
       return res.status(201).json({ ok: true, image: { ...image, originalName: filename || null } });
     } catch (err) {
       return sendError(err, res, next);
@@ -269,6 +329,13 @@ export const catalogAdminRouter = () => {
       const slug = String(req.query.slug ?? '').trim() || 'spec-sheet';
       const originalName = String(req.query.filename ?? '').trim();
       const pdf = await saveSpecSheet({ buffer: req.body, slug, originalName });
+      await logActivity(req, {
+        action: 'catalog.spec_sheet.upload',
+        entityType: 'spec-sheet',
+        entityId: pdf.filename,
+        summary: `Uploaded spec sheet for ${slug}`,
+        metadata: { slug, filename: pdf.filename, originalName: pdf.originalName },
+      });
       return res.status(201).json({ ok: true, pdf });
     } catch (err) {
       return sendError(err, res, next);

@@ -4,6 +4,7 @@
 import express, { Router } from 'express';
 import { query, queryOne } from '../db.js';
 import { requireAdmin } from '../middleware/auth.js';
+import { listActivity, logActivity } from '../services/activity.js';
 import {
   assignIesFile,
   buildProductMap,
@@ -22,6 +23,7 @@ const adminView = (row) => ({
 
 // Product slugs are URL-safe lowercase tokens (see src/types.ts `Product.slug`).
 const SLUG_RE = /^[a-z0-9][a-z0-9-]{0,80}$/;
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 // IES files are text; 8 MB is far above the largest real LM-63 file (~120 KB)
 // while still bounding an admin-only upload.
@@ -40,6 +42,27 @@ export const adminRouter = () => {
         'SELECT id, email, role, created_at FROM users ORDER BY created_at DESC',
       );
       return res.json({ users: result.rows.map(adminView) });
+    } catch (err) {
+      return next(err);
+    }
+  });
+
+  // GET /api/admin/activity — append-only per-user changelog. Supports
+  // userId/action filters, free-text search and offset pagination.
+  router.get('/activity', async (req, res, next) => {
+    try {
+      const userId = String(req.query.userId ?? '').trim() || null;
+      if (userId && !UUID_RE.test(userId)) {
+        return res.status(400).json({ error: 'A valid user id is required.' });
+      }
+      const page = await listActivity({
+        userId,
+        action: String(req.query.action ?? '').trim() || null,
+        q: String(req.query.q ?? '').trim() || null,
+        limit: req.query.limit,
+        offset: req.query.offset,
+      });
+      return res.json(page);
     } catch (err) {
       return next(err);
     }
@@ -186,6 +209,13 @@ export const adminRouter = () => {
       });
 
       const { map, files } = await buildProductMap();
+      await logActivity(req, {
+        action: 'ies.upload',
+        entityType: 'ies',
+        entityId: filename,
+        summary: `Uploaded IES file ${filename} for ${productSlug}`,
+        metadata: { productSlug, categorySlug, filename, bytes: req.body.length, reused },
+      });
       return res.status(reused ? 200 : 201).json({ ok: true, reused, file: assignment, map, files });
     } catch (err) {
       if (err?.status) return res.status(err.status).json({ error: err.message });
@@ -221,6 +251,13 @@ export const adminRouter = () => {
       });
 
       const { map } = await buildProductMap();
+      await logActivity(req, {
+        action: 'ies.assign',
+        entityType: 'ies',
+        entityId: filename,
+        summary: `Assigned IES file ${filename} to ${productSlug}`,
+        metadata: { productSlug, categorySlug, filename },
+      });
       return res.json({ ok: true, file: assignment, map });
     } catch (err) {
       return next(err);
@@ -239,6 +276,13 @@ export const adminRouter = () => {
         return res.status(404).json({ error: 'That file is not attached to a product.' });
       }
       const { map } = await buildProductMap();
+      await logActivity(req, {
+        action: 'ies.remove',
+        entityType: 'ies',
+        entityId: filename,
+        summary: `Detached IES file ${filename}`,
+        metadata: { filename, removed },
+      });
       return res.json({ ok: true, removed, map });
     } catch (err) {
       return next(err);

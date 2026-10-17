@@ -5,10 +5,12 @@ import { PageHeroBackground } from './animations';
 import { ContentEditor } from './ContentEditor';
 import { AdminIesLibrary } from './AdminIesLibrary';
 import { AdminCatalogue } from './AdminCatalogue';
+import { AdminActivity } from './AdminActivity';
 import {
   AtSign,
   FileDown,
   FileText,
+  History,
   Inbox,
   Lightbulb,
   Loader2,
@@ -23,7 +25,7 @@ import {
 
 type AuthState = 'loading' | 'login' | 'authenticated';
 type Filter = 'all' | 'admins';
-type Tab = 'users' | 'downloads' | 'leads' | 'catalog' | 'content' | 'ies';
+type Tab = 'users' | 'activity' | 'downloads' | 'leads' | 'catalog' | 'content' | 'ies';
 
 export const AdminPage: React.FC = () => {
   const [authState, setAuthState] = useState<AuthState>('loading');
@@ -33,6 +35,7 @@ export const AdminPage: React.FC = () => {
   const [stats, setStats] = useState<DownloadStats | null>(null);
   const [leads, setLeads] = useState<Lead[]>([]);
   const [tab, setTab] = useState<Tab>('users');
+  const [activityUserId, setActivityUserId] = useState<string | null>(null);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -107,6 +110,7 @@ export const AdminPage: React.FC = () => {
     setDownloads([]);
     setStats(null);
     setLeads([]);
+    setActivityUserId(null);
     setAdminEmail('');
     setEmail('');
     setPassword('');
@@ -229,6 +233,7 @@ export const AdminPage: React.FC = () => {
                     { id: 'users', label: 'Users', icon: Users },
                     { id: 'leads', label: 'Leads', icon: Inbox },
                     { id: 'downloads', label: 'Downloads', icon: FileDown },
+                    { id: 'activity', label: 'Changelog', icon: History },
                     { id: 'catalog', label: 'Catalogue', icon: Package },
                     { id: 'ies', label: 'IES files', icon: Lightbulb },
                     { id: 'content', label: 'Content', icon: FileText },
@@ -303,8 +308,8 @@ export const AdminPage: React.FC = () => {
 
                   {/* Users table */}
                   <div className="overflow-hidden rounded-2xl border border-[#1E293B] bg-[#0A0D14]">
-                    <div className="hidden sm:grid grid-cols-[1fr_120px_160px] gap-4 px-6 py-3 border-b border-[#1E293B] bg-white/[0.02]">
-                      {['Email', 'Role', 'Joined'].map((h) => (
+                    <div className="hidden sm:grid grid-cols-[1fr_120px_150px_120px] gap-4 px-6 py-3 border-b border-[#1E293B] bg-white/[0.02]">
+                      {['Email', 'Role', 'Joined', 'Changelog'].map((h) => (
                         <span key={h} className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">{h}</span>
                       ))}
                     </div>
@@ -315,7 +320,7 @@ export const AdminPage: React.FC = () => {
                       visible.map((u) => (
                         <div
                           key={u.id}
-                          className="grid grid-cols-1 sm:grid-cols-[1fr_120px_160px] gap-3 sm:gap-4 px-6 py-4 border-b border-[#1E293B]/60 last:border-b-0 items-center"
+                          className="grid grid-cols-1 sm:grid-cols-[1fr_120px_150px_120px] gap-3 sm:gap-4 px-6 py-4 border-b border-[#1E293B]/60 last:border-b-0 items-center"
                         >
                           <div className="min-w-0">
                             <p className="text-sm font-medium text-white truncate font-sans">{u.email}</p>
@@ -335,6 +340,21 @@ export const AdminPage: React.FC = () => {
 
                           <div className="text-[11px] font-mono text-slate-500">
                             {new Date(u.created_at).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
+                          </div>
+
+                          <div>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setActivityUserId(u.id);
+                                setTab('activity');
+                              }}
+                              title={'View changelog for ' + u.email}
+                              className="inline-flex items-center gap-1.5 rounded-lg border border-[#1E293B] px-2.5 py-1.5 text-[10px] font-mono text-slate-400 transition-colors hover:border-primary/30 hover:text-primary"
+                            >
+                              <History className="h-3 w-3" />
+                              Changelog
+                            </button>
                           </div>
                         </div>
                       ))
@@ -403,6 +423,12 @@ export const AdminPage: React.FC = () => {
                     )}
                   </div>
                 </>
+              ) : tab === 'activity' ? (
+                <AdminActivity
+                  users={users}
+                  userId={activityUserId}
+                  onUserIdChange={setActivityUserId}
+                />
               ) : tab === 'catalog' ? (
                 <AdminCatalogue />
               ) : tab === 'content' ? (

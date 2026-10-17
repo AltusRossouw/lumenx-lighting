@@ -111,7 +111,11 @@ See `.env.example`. The key values:
 - upload multiple product images, choose the main image, and edit alt text /
   contain-vs-cover per image;
 - upload a PDF spec sheet, or have LumenX generate a branded A4 datasheet;
-- attach one or more IES files (still behind the member login gate).
+- attach one or more IES files (still behind the member login gate);
+- open the **Changelog** tab for an append-only per-user activity log —
+  sign-ins, authenticated IES downloads and catalogue/content/IES/import changes.
+  Filter by user or action, search it, or open a specific user's changelog from
+  the **Users** table.
 
 Hidden is a **publication flag, not an access-control boundary**: the base
 catalogue is compiled into the public JavaScript bundle, and hidden products

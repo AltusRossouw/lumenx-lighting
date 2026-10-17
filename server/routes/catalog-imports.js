@@ -27,6 +27,7 @@ import {
   startImport,
 } from '../services/catalog-import.js';
 import { sanitizeOriginalName } from '../services/uploads.js';
+import { logActivity } from '../services/activity.js';
 
 const rawPdf = express.raw({ type: () => true, limit: '25mb' });
 
@@ -67,6 +68,13 @@ export const catalogImportRouter = () => {
         originalName,
         createdBy: actor(req),
       });
+      await logActivity(req, {
+        action: 'import.source',
+        entityType: 'import',
+        entityId: job.id,
+        summary: `Uploaded manufacturer spec sheet "${originalName}"`,
+        metadata: { filename: originalName },
+      });
       return res.status(201).json({ ok: true, import: job });
     } catch (err) {
       return sendError(err, res, next);
@@ -82,6 +90,13 @@ export const catalogImportRouter = () => {
         categories: req.body?.categories,
         pageHint: req.body?.pageHint,
         modelHint: req.body?.modelHint,
+      });
+      await logActivity(req, {
+        action: 'import.create',
+        entityType: 'import',
+        entityId: job.id,
+        summary: 'Started an AI spec-sheet import',
+        metadata: { sourceId },
       });
       return res.status(202).json({ ok: true, import: job });
     } catch (err) {
@@ -133,6 +148,12 @@ export const catalogImportRouter = () => {
   router.post('/:id/retry', async (req, res, next) => {
     try {
       const job = await retryImport(String(req.params.id ?? '').trim());
+      await logActivity(req, {
+        action: 'import.retry',
+        entityType: 'import',
+        entityId: job.id,
+        summary: 'Retried an AI spec-sheet import',
+      });
       return res.status(202).json({ ok: true, import: job });
     } catch (err) {
       return sendError(err, res, next);
@@ -142,6 +163,12 @@ export const catalogImportRouter = () => {
   router.post('/:id/cancel', async (req, res, next) => {
     try {
       const job = await cancelImport(String(req.params.id ?? '').trim());
+      await logActivity(req, {
+        action: 'import.cancel',
+        entityType: 'import',
+        entityId: job.id,
+        summary: 'Cancelled an AI spec-sheet import',
+      });
       return res.json({ ok: true, import: job });
     } catch (err) {
       return sendError(err, res, next);
@@ -150,8 +177,16 @@ export const catalogImportRouter = () => {
 
   router.post('/:id/adopt', async (req, res, next) => {
     try {
+      const importId = String(req.params.id ?? '').trim();
       const slug = String(req.body?.slug ?? '').trim();
-      const images = await adoptImportImages(String(req.params.id ?? '').trim(), { slug });
+      const images = await adoptImportImages(importId, { slug });
+      await logActivity(req, {
+        action: 'import.adopt',
+        entityType: 'import',
+        entityId: importId,
+        summary: 'Adopted images from an AI spec-sheet import',
+        metadata: { importId, slug, images: Array.isArray(images) ? images.length : 0 },
+      });
       return res.json({ ok: true, images });
     } catch (err) {
       return sendError(err, res, next);

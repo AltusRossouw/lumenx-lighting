@@ -2,6 +2,7 @@
 // Tracking is best-effort: it must never break the actual download.
 
 import { query } from '../db.js';
+import { recordActivity } from './activity.js';
 
 export const recordDownload = async ({ userId = null, email = null, filename, kind, ip = null }) => {
   try {
@@ -10,6 +11,21 @@ export const recordDownload = async ({ userId = null, email = null, filename, ki
        VALUES ($1, $2, $3, $4, $5)`,
       [userId, email, filename, kind, ip],
     );
+
+    // Only authenticated/identified downloads belong in a per-user changelog.
+    if (userId || email) {
+      const isIes = kind === 'ies';
+      await recordActivity({
+        userId,
+        email,
+        action: isIes ? 'download.ies' : 'download.datasheet',
+        entityType: 'download',
+        entityId: filename,
+        summary: `Downloaded ${isIes ? 'IES file' : 'datasheet'}: ${filename}`,
+        metadata: { kind, filename },
+        ip,
+      });
+    }
   } catch (err) {
     // Log and swallow — a failed INSERT should never fail the download.
     console.error('[downloads] failed to record:', err.message);

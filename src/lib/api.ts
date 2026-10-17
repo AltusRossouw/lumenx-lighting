@@ -37,6 +37,27 @@ export interface DownloadStats {
   datasheet: number;
 }
 
+export interface ActivityEvent {
+  id: string;
+  userId: string | null;
+  email: string | null;
+  role: string | null;
+  action: string;
+  entityType: string | null;
+  entityId: string | null;
+  summary: string;
+  metadata: Record<string, unknown>;
+  ip: string | null;
+  createdAt: string;
+}
+
+export interface ActivityPage {
+  events: ActivityEvent[];
+  total: number;
+  limit: number;
+  offset: number;
+}
+
 export interface Lead {
   id: string;
   source: 'contact' | 'quote' | 'design';
@@ -276,6 +297,28 @@ export const api = {
       '/api/admin/downloads/stats',
     ),
   adminLeads: () => request<{ leads: Lead[] }>('/api/admin/leads'),
+  adminActivity: ({
+    userId,
+    action,
+    q,
+    limit,
+    offset,
+  }: {
+    userId?: string | null;
+    action?: string | null;
+    q?: string | null;
+    limit?: number;
+    offset?: number;
+  } = {}) => {
+    const params = new URLSearchParams();
+    if (userId) params.set('userId', userId);
+    if (action) params.set('action', action);
+    if (q) params.set('q', q);
+    if (limit) params.set('limit', String(limit));
+    if (offset) params.set('offset', String(offset));
+    const query = params.toString();
+    return request<ActivityPage>('/api/admin/activity' + (query ? '?' + query : ''));
+  },
 
   // Site content (CMS)
   content: () => request<{ content: SiteContent | null }>('/api/content'),

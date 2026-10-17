@@ -11,6 +11,7 @@
 import { Router } from 'express';
 import { query, queryOne } from '../db.js';
 import { requireAdmin } from '../middleware/auth.js';
+import { logActivity } from '../services/activity.js';
 
 const REVISION_LIMIT = 50;
 
@@ -77,6 +78,14 @@ export const contentRouter = () => {
                        updated_by = EXCLUDED.updated_by`,
         [JSON.stringify(data), by],
       );
+
+      await logActivity(req, {
+        action: 'content.update',
+        entityType: 'content',
+        entityId: 'site',
+        summary: 'Updated site content',
+        metadata: { sections: Object.keys(data).slice(0, 20) },
+      });
 
       return res.json({ ok: true, updated_at: new Date().toISOString(), updated_by: by });
     } catch (err) {
